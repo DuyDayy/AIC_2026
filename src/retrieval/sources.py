@@ -57,7 +57,7 @@ from typing import Callable, Mapping, Sequence
 
 import numpy as np
 
-from src.ingestion.transcript_store import strip_diacritics
+from src.text.fold import strip_diacritics
 from src.retrieval.bm25 import Bm25Index
 
 FrameKey = tuple[str, int]

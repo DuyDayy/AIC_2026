@@ -34,8 +34,8 @@ Chỉ mục phẳng dựng ở bước cuối, trên máy, bằng `build_flat_in
 hưởng gì.
 
 Chạy:
-    modal run scripts/embed/01_encode_modal.py --benchmark 400   # ĐO trước
-    modal run scripts/embed/01_encode_modal.py                   # lượt đủ
+    modal run scripts/index/2_encode_frames.py --benchmark 400   # ĐO trước
+    modal run scripts/index/2_encode_frames.py                   # lượt đủ
 """
 
 from __future__ import annotations
@@ -284,4 +284,4 @@ def main(benchmark: int = 0, trial: int = 0, batch_size: int = 32, max_usd: floa
     wall = time.time() - t0
     print(f"\n✓ {tot['frames']:,} khung · {tot['videos']} video · {tot['skipped']} bỏ qua "
           f"· {wall/60:.0f} phút · ≈${wall/3600*usd_per_hour*MAX_CONTAINERS:.2f}")
-    print(f"  → /data/{OUT_SUBDIR}/{{video_id}}.npy — tải về rồi chạy 02_build_index.py")
+    print(f"  → /data/{OUT_SUBDIR}/{{video_id}}.npy — tải về rồi chạy 3_build_index.py")

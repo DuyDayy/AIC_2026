@@ -25,8 +25,8 @@ một bậc độ lớn thì cộng thẳng vào `S` là sai, phải chuẩn ho�
     cosine chữ↔ảnh        ~0,05  ·  chữ↔chữ ~0,93   ⟹ LỆCH ~19×, phải chuẩn hoá z
 
 Chạy:
-    modal run scripts/embed/00_probe_model.py
-    modal run scripts/embed/00_probe_model.py --model jinaai/jina-embeddings-v4
+    modal run scripts/index/1_probe_model.py
+    modal run scripts/index/1_probe_model.py --model jinaai/jina-embeddings-v4
 """
 
 from __future__ import annotations

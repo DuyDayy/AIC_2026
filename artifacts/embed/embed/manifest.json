@@ -1,7 +1,7 @@
 {
  "schema": "aic2026.embed.provenance/1",
- "generated_utc": "2026-08-15T15:05:12.810041+00:00",
- "generated_by": "scripts/embed/06_write_manifest.py",
+ "generated_utc": "2026-08-15T15:17:17.965752+00:00",
+ "generated_by": "scripts/index/4_write_manifest.py",
  "model": {
   "id": "jinaai/jina-clip-v2",
   "commit_sha": "e10d47f5691d0454a0fb5d13f46f2199b74cb436",
@@ -72,16 +72,16 @@
   }
  },
  "code": {
-  "git_head": "d7157b2de58f4f15bb0667709b1b8e3dc9e5b067",
+  "git_head": "b1e058f4b83087581772ab1705f2404e5d30c3f6",
   "git_clean": false,
   "files": {
-   "scripts/embed/01_encode_modal.py": "370f14b9d33f34f3f115b036cd55e44137f9b71107d2aa6be8bc802bc5d1a873",
+   "scripts/index/2_encode_frames.py": "e606f3e964e23f2b72b918bde81369817400322ebdcdc722fdd408f1080d92ef",
    "src/ingestion/jina_encoder.py": "0d44030a4117269aea13f93404d928783b8430e183d6e6bf56216f1ce0ec6eee",
-   "src/ingestion/vector_index.py": "beda8360aa93b66af374fbedd579a78e1b41a7589ecaa17f66072395c2be2d7c"
+   "src/ingestion/vector_index.py": "6a04fb4fb3616a95137d7adbc35b737fc06ffb9bf047e2dd13e130d4f87940c6"
   }
  },
  "not_applicable": {
-  "task": "không dùng: 01_encode_modal.py:152 gọi encode_image(imgs, batch_size=…) không truyền task; encode_text cũng vậy",
+  "task": "không dùng: 2_encode_frames.py:152 gọi encode_image(imgs, batch_size=…) không truyền task; encode_text cũng vậy",
   "faiss_index": "không tồn tại: tìm kiếm là quét phẳng chính xác (vector_index.FlatIndex.search), không có ANN index"
  },
  "unverifiable": {}

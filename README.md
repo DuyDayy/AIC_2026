@@ -44,10 +44,10 @@ vấn thì không tốn GPU lần nào nữa.
 ### Dựng lại chỉ mục
 
 ```bash
-modal run scripts/embed/01_encode_modal.py --benchmark 400   # ĐO trước
-modal run scripts/embed/01_encode_modal.py                   # lượt đủ, ~$4,32
-python  scripts/embed/02_build_index.py --src /tmp/emb/embed-jina-v2
-modal run scripts/embed/06_write_manifest.py                 # provenance
+modal run scripts/index/2_encode_frames.py --benchmark 400   # ĐO trước
+modal run scripts/index/2_encode_frames.py                   # lượt đủ, ~$4,32
+python  scripts/index/3_build_index.py --src /tmp/emb/embed-jina-v2
+modal run scripts/index/4_write_manifest.py                 # provenance
 ```
 
 ---
@@ -137,8 +137,8 @@ và **không gì báo**. Tách **thừa** nguy hiểm hơn tách **thiếu**.
 hẳn nhau: *"có dữ liệu và không khớp"* so với *"không có dữ liệu"*. Gộp chúng là lỗi đã
 giết RRF.
 
-⚠️ **Bỏ dấu cả hai phía.** `bm25.py` cố tình không tự bỏ dấu (một cài đặt duy nhất, ở
-`transcript_store`). Đưa truy vấn còn dấu vào chỉ mục đã bỏ dấu làm `object` chấm ra
+⚠️ **Bỏ dấu cả hai phía.** `bm25.py` cố tình không tự bỏ dấu — nó ép chỗ gọi dùng
+`src/text/fold.py`, cài đặt **duy nhất** trong toàn hệ. Đưa truy vấn còn dấu vào chỉ mục đã bỏ dấu làm `object` chấm ra
 trung vị hạng **14.407** thay vì 3.653 — `looks_unfolded` bắt được lỗi này.
 
 **Cửa sổ ASR = 5.000 ms**, và hoá ra gần như không phải tham số: độ phủ đã **93% ngay ở
@@ -371,13 +371,31 @@ người khác viết để kiểm chéo.
 ## Bố cục
 
 ```
-scripts/run.py              đường chạy tổng — ①②③④⑤⑥⑦
-scripts/embed/              dựng lại chỉ mục + provenance manifest
-src/ingestion/              jina_encoder · vector_index · transcript_store
-src/retrieval/              probe · sources · bm25 · score_matrix · dante · rerank
-src/submission/coverage.py  Định lý 1 + rải khung vào khe
-artifacts/embed/            provenance manifest
-data/eval/                  bộ eval có ground truth (226 KIS + 6 TRAKE + màu)
-queries/                    thả file .txt vào đây
-submission/                 đầu ra
+scripts/run.py                 đường chạy tổng — ①②③④⑤⑥⑦
+scripts/index/                 dựng lại chỉ mục, chạy theo số thứ tự
+  1_probe_model.py             soi hành vi encoder TRƯỚC khi tiêu tiền
+  2_encode_frames.py           mã hoá 173.426 khung (~$4,32)
+  3_build_index.py             gộp .npy theo video → chỉ mục phẳng ($0)
+  4_write_manifest.py          provenance: SHA model, preprocessing, hash
+scripts/eval/                  công cụ đo, không thuộc đường nộp bài
+  encode_queries.py            mã hoá truy vấn eval, cache lại
+  score_index.py               ba phép đo chỉ mục, không cần nhãn tay
+
+src/index-building
+  ingestion/jina_encoder.py    Matryoshka: CẮT rồi mới chuẩn hoá
+  ingestion/vector_index.py    chỉ mục phẳng, mang cả `n` lẫn `frame_idx`
+src/query-time
+  retrieval/probe.py           ①  tách mốc, rút trích dẫn
+  retrieval/sources.py         ②  bốn nguồn + `covered`
+  retrieval/bm25.py                BM25, cố tình KHÔNG tự bỏ dấu
+  retrieval/score_matrix.py    ③  chuẩn hoá z trong tập có dữ liệu
+  retrieval/dante.py           ④  DP O(N·T), trục mili-giây
+  retrieval/rerank.py          ⑤  mảnh cắt buộc thuộc tính vào vật
+  submission/coverage.py       ⑦  Định lý 1 + rải khung vào khe
+src/text/fold.py               bỏ dấu tiếng Việt — MỘT cài đặt duy nhất
+
+artifacts/embed/               provenance manifest
+data/eval/                     ground truth (226 KIS · 6 TRAKE · 30 màu)
+queries/                       thả file .txt vào đây
+submission/                    đầu ra
 ```

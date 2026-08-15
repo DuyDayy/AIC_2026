@@ -3,7 +3,7 @@
 Gộp các file .npy theo-từng-video thành MỘT chỉ mục phẳng — $0, không GPU
 =========================================================================
 
-`01_encode_modal.py` ghi mỗi video một file để checkpoint được (container Modal là
+`2_encode_frames.py` ghi mỗi video một file để checkpoint được (container Modal là
 spot). Nhưng tầng truy vấn cần **một ma trận**: quét phẳng là một lệnh `emb @ q`, và
 DANTE cần lát `emb[lo:hi]` liên tục cho mỗi video.
 
@@ -20,7 +20,7 @@ team TRƯỚC khi ghi, và **từ chối ghi** nếu thiếu — trừ khi `--al
 
 Chạy:
     modal volume get aic-data-vol embed-jina-v2 /tmp/emb/
-    python scripts/embed/02_build_index.py --src /tmp/emb/embed-jina-v2
+    python scripts/index/3_build_index.py --src /tmp/emb/embed-jina-v2
 """
 
 from __future__ import annotations

@@ -46,8 +46,8 @@ nhiêu?** Đo bằng hai cách trên cùng bộ truy vấn:
 Đây là số duy nhất cho phép chốt `dim` bằng bằng chứng thay vì bằng cảm giác.
 
 Chạy:
-    modal run scripts/embed/03_eval_index.py::encode_queries   # 1 lần, ~$0.05, cache lại
-    python scripts/embed/03_eval_index.py --index data/embed   # $0, chạy lại bao nhiêu cũng được
+    modal run scripts/index/03_eval_index.py::encode_queries   # 1 lần, ~$0.05, cache lại
+    python scripts/index/03_eval_index.py --index data/embed   # $0, chạy lại bao nhiêu cũng được
 """
 
 from __future__ import annotations

@@ -291,7 +291,7 @@ def load_flat_index(out_dir: str | Path, dim: int | None = None) -> FlatIndex:
     fp = d / FIDX_FILE
     if not fp.exists():
         raise ValueError(
-            f"thiếu {FIDX_FILE} — chỉ mục cũ chỉ có `n`. Dựng lại bằng 02_build_index.py: "
+            f"thiếu {FIDX_FILE} — chỉ mục cũ chỉ có `n`. Dựng lại bằng 3_build_index.py: "
             f"nộp `n` thay `frame_idx` làm sai MỌI câu và validator không bắt được"
         )
     fidx = np.load(fp).astype(np.int32)

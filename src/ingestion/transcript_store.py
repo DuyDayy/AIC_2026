@@ -82,11 +82,9 @@ class TranscriptSegment:
         return (self.start_frame - margin) <= frame_id <= (self.end_frame + margin)
 
 
-def strip_diacritics(s: str) -> str:
-    """Bỏ dấu tiếng Việt — cùng quy ước với `frame_text_folded` của PP-OCRv5."""
-    s = unicodedata.normalize("NFD", s)
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
-    return s.replace("đ", "d").replace("Đ", "D").lower()
+# Cài đặt DUY NHẤT nằm ở `src/text/fold.py`. Tái xuất ở đây để mã cũ khỏi phải sửa,
+# nhưng KHÔNG cài lại — hai cài đặt lệch nhau một ký tự là điểm tụt mà không gì báo.
+from src.text.fold import strip_diacritics  # noqa: F401
 
 
 def ms_to_frame_id(ts_ms: float, fps: float) -> int:

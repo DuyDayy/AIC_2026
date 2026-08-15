@@ -3,7 +3,7 @@
 Sinh provenance manifest cho chỉ mục embedding — CHỈ ghi thứ xác minh được
 ============================================================================
 
-    modal run scripts/embed/06_write_manifest.py
+    modal run scripts/index/4_write_manifest.py
 
 Ghi `artifacts/embed/embed/manifest.json`.
 
@@ -44,7 +44,7 @@ import modal
 OUT = Path("artifacts/embed/embed/manifest.json")
 EMBED_DIR = Path("data/embed")
 ARTEFACTS = ("emb.npy", "ids.npy", "frame_idx.npy", "ranges.json")
-ENCODE_SCRIPT = Path("scripts/embed/01_encode_modal.py")
+ENCODE_SCRIPT = Path("scripts/index/2_encode_frames.py")
 ENCODER_SRC = Path("src/ingestion/jina_encoder.py")
 INDEX_SRC = Path("src/ingestion/vector_index.py")
 
@@ -158,7 +158,7 @@ def main():
     impl_sha = resolve("jinaai/jina-clip-implementation")
 
     # ── trường được yêu cầu nhưng hệ này KHÔNG có ────────────────────────
-    na["task"] = ("không dùng: 01_encode_modal.py:152 gọi encode_image(imgs, "
+    na["task"] = ("không dùng: 2_encode_frames.py:152 gọi encode_image(imgs, "
                   "batch_size=…) không truyền task; encode_text cũng vậy")
     na["faiss_index"] = ("không tồn tại: tìm kiếm là quét phẳng chính xác "
                          "(vector_index.FlatIndex.search), không có ANN index")
@@ -168,7 +168,7 @@ def main():
     man = {
         "schema": "aic2026.embed.provenance/1",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "generated_by": "scripts/embed/06_write_manifest.py",
+        "generated_by": "scripts/index/4_write_manifest.py",
 
         "model": {
             "id": "jinaai/jina-clip-v2",

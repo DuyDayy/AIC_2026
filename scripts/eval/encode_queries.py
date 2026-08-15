@@ -12,7 +12,7 @@ từng lớp (`entities_vi`), rồi bọc bằng một khuôn tối giản. Nh�
 đạt câu hỏi hay tới đâu".
 
 Chạy:
-    modal run scripts/embed/03_encode_queries.py
+    modal run scripts/eval/encode_queries.py
 """
 
 from __future__ import annotations
