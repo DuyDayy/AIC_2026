@@ -345,6 +345,7 @@ Giữ lại để không ai dựng lại chúng.
 | 3 | **Chốt `β, γ, δ`** | cần truy vấn **gán nhãn tay**, ưu tiên câu có tên riêng / chữ trên màn hình / lời thoại | $0 |
 | 4 | **Chốt λ** | hiện 6 truy vấn TRAKE, p=0,69 — cần ~35 | $0 |
 | 5 | Rerank mảnh cắt quy mô đầy đủ | 54%→77% mới đo trên 8 câu | ~$0,15 |
+| 5b | Quét `VLM_WEIGHT` rồi quyết có bật ⑤ bậc 2 mặc định không | xác suất VLM đã tính sẵn, chỉ đổi trọng số | $0 |
 | 6 | Quét `k1`, `b` của BM25 | chưa đụng; phải chạy trên Modal vì máy cục bộ hết RAM | ~$0,10 |
 | 7 | Nối `allocator` / `kbest` vào ⑦ | `kbest` cho TRAKE k-best; hiện chỉ lấy đường DP tốt nhất mỗi video | $0 |
 | 8 | `writer.py` validator | chờ **mẫu file nộp chính thức** của BTC | $0 |
@@ -358,6 +359,18 @@ Giữ lại để không ai dựng lại chúng.
 3. **Đo lại `spread` sau khi có ⑤** — rerank đổi thứ hạng nên số mốc đáng giữ có thể khác.
 
 ---
+
+## Bài học đo lường
+
+**Kiểm định phải chạy trên `Final`, không phải trên hạng thô.** Hạng đổi ở vùng sâu
+(200 → 400) **không đổi `R@k` nào** nên không đổi điểm. Đo trên hạng thô cho ⑤ bậc 2 ra
+"36/2"; đo trên `Final` ra "11/1" — cùng dữ liệu, hai bức tranh khác hẳn, và chỉ bức
+thứ hai nói đúng thứ cuộc thi chấm.
+
+**Con số tự mâu thuẫn là dấu hiệu lỗi phép đo, không phải phát hiện.** Lần đầu chạy ⑤
+bậc 2, mọi `R@k` đều tăng nhưng kiểm định ra "thua 36/60". Hai điều đó không thể cùng
+đúng — hoá ra nhãn thắng/thua bị đảo do `zip(B, A)` đặt tên biến ngược. Nếu chỉ nhìn
+p-value mà không đối chiếu bảng `R@k` thì đã báo cáo ngược hoàn toàn.
 
 ## Thiên lệch phải biết
 

@@ -39,6 +39,24 @@ Nên tầng này trả về `SourceScores(scores, covered)` và đi qua **cùng 
 z** của ③. Khung không có mảnh cắt nhận đúng 0, bằng kỳ vọng của khung có mảnh cắt.
 
 =============================================================================
+HAI BẬC, VÌ CHI PHÍ MỖI ỨNG VIÊN CHÊNH NHAU MỘT BẬC ĐỘ LỚN
+=============================================================================
+
+    ④ DP  →  top-1000  →  bậc 1: mảnh cắt jina-clip  →  top-100
+                          bậc 2: VLM chấm từng khung →  danh sách cuối
+
+Bậc 1 là **một phép nhân vector** cho mỗi mảnh cắt: rẻ tới mức chạy được trên hàng nghìn
+ứng viên. Nó giỏi đúng một việc — buộc **thuộc tính** (màu, chất liệu) vào **vật** — vì
+mảnh cắt chỉ chứa vật đó.
+
+Bậc 2 là **một lượt suy luận VLM** cho mỗi khung: đắt hơn khoảng hai bậc độ lớn, nên chỉ
+chạy trên trăm ứng viên. Đổi lại nó đọc được thứ mảnh cắt không thấy: **quan hệ giữa các
+vật** ("người bên trái", "đứng sau"), **hành động**, **chữ trong cảnh**, và mệnh đề phủ
+định.
+
+Hai bậc không thay thế nhau. Bậc 1 sửa lỗi *binding*; bậc 2 sửa lỗi *hiểu cảnh*.
+
+=============================================================================
 GIỚI HẠN PHẢI BIẾT
 =============================================================================
 
@@ -128,6 +146,44 @@ def collect_crops(rows: Sequence[int], ids: Sequence[FrameKey],
         for a, e, box in cand[:max_per_frame]:
             out.append(CropRef(int(r), vid, int(n), e, box, float(a)))
     return out
+
+
+def vlm_scores(n_frames: int, rows: Sequence[int], probs: Sequence[float],
+               name: str = "vlm") -> SourceScores:
+    """
+    Bậc 2 — `[hàng]` + `[xác suất khớp]` → `SourceScores` trên MỌI khung.
+
+    `probs[i]` là `P(khớp)` cho `rows[i]`, do VLM chấm. Khung không được chấm ⟹
+    `covered=False`, **không phải điểm 0** — cùng lý do với `crop_scores`: chỉ chấm được
+    trăm ứng viên đầu, nên nếu coi phần còn lại là 0 thì việc *được chấm* thành lợi thế
+    bất kể liên quan, đúng lỗi đã giết RRF.
+
+    =========================================================================
+    VÌ SAO LÀ XÁC SUẤT MỘT TOKEN, KHÔNG PHẢI ĐIỂM MODEL TỰ VIẾT RA
+    =========================================================================
+
+    Bảo model "chấm từ 0 đến 10" thì phải **phân tích chuỗi nó sinh ra**, và chuỗi đó
+    không ổn định: `"8"`, `"8/10"`, `"khoảng 7"`, hoặc một câu giải thích. Mỗi ca hỏng là
+    một khung mất điểm vì lý do không liên quan gì tới nội dung.
+
+    Ép trả lời **một ký tự** rồi đọc xác suất của token đó thì luôn xác định, luôn liên
+    tục, và **tất định** ở nhiệt độ 0. Không có gì để phân tích, nên không có gì để hỏng.
+
+    Raises:
+        ValueError: `rows` và `probs` lệch độ dài · hàng ngoài chỉ mục.
+    """
+    if len(rows) != len(probs):
+        raise ValueError(f"{len(rows)} hàng ≠ {len(probs)} xác suất — hai mảng song "
+                         f"song lệch thì điểm gắn nhầm khung")
+    s = np.zeros(n_frames, dtype=np.float32)
+    cov = np.zeros(n_frames, dtype=bool)
+    for r, p in zip(rows, probs):
+        r = int(r)
+        if not 0 <= r < n_frames:
+            raise ValueError(f"hàng {r} ngoài chỉ mục {n_frames} khung")
+        s[r] = float(p)
+        cov[r] = True
+    return SourceScores(name, s, cov)
 
 
 def crop_scores(n_frames: int, refs: Sequence[CropRef], crop_vecs: np.ndarray,

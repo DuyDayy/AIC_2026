@@ -55,3 +55,5 @@ src/retrieval/engine.py
 src/submission/allocator.py
 src/submission/kbest.py
 src/submission/writer.py
+# bộ 100 truy vấn gán nhãn tay — do người khác export, chờ quyết định đưa vào
+export_for_fusion/

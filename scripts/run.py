@@ -35,7 +35,8 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ② bốn nguồn   thị giác · OCR · vật thể · lời nói
     ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,1/0,1/0,1 (TẠM)
     ④ DANTE       DP thứ tự thời gian; λ=0 (đo được mọi λ>0 tệ hơn)
-    ⑤ rerank      mảnh cắt buộc thuộc tính vào vật — đúng màu 54% → 77%
+    ⑤ rerank      bậc 1 mảnh cắt jina-clip (đúng màu 54% → 77%)
+                  bậc 2 VLM chấm P(khớp) — TẮT mặc định, bật bằng --vlm-top-k
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
     ⑦ nộp         khử trùng CẢNH (+2,0pp) rồi RẢI khung vào khe giữa keyframe
 
@@ -91,6 +92,11 @@ KEYFRAME_ROOTS = ("data/Framme/L21-L25/Keyframes L21-L25",
                   "data/Framme/L26/L26",
                   "data/Framme/L27-L30/DATA")
 RERANK_TOP_K = 100
+
+# Trọng số bậc 2. Điểm VLM nằm trong [0,1] còn điểm nền là z-score, nhưng `fuse` chuẩn
+# hoá z cả hai nên trọng số chỉ diễn đạt MỨC TIN CẬY. 1,0 = tin VLM ngang thị giác.
+# CHƯA QUÉT trên dữ liệu thật — xem README, mục "còn phải làm".
+VLM_WEIGHT = 1.0
 CROP_BATCH = 400          # ~10 MB base64 mỗi lượt gọi Modal
 
 app = modal.App("aic-run")
@@ -146,6 +152,55 @@ def encode_crops(blobs: list[str]) -> list[list[float]]:
 
 
 QA_MODEL = "Qwen/Qwen2.5-VL-7B-Instruct"
+
+
+@app.function(image=vl_image, gpu="A10G", volumes={"/cache": cache_vol}, timeout=3600)
+def score_frames_vlm(jobs: list[dict]) -> list[float]:
+    """
+    Tầng ⑤ bậc 2 — VLM chấm `P(khung khớp mô tả)` cho từng khung.
+
+    Ép model trả **một ký tự** `1` hoặc `0`, rồi đọc **softmax trên đúng hai token đó**.
+    Không sinh chuỗi, không phân tích văn bản: điểm luôn xác định, liên tục, tất định.
+
+    Bậc này thấy thứ mảnh cắt không thấy — quan hệ giữa các vật, hành động, phủ định —
+    nên nó bổ sung chứ không thay thế bậc 1.
+    """
+    import base64 as b64
+    import io as _io
+
+    import torch
+    from PIL import Image
+    from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
+
+    proc = AutoProcessor.from_pretrained(QA_MODEL)
+    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+        QA_MODEL, torch_dtype=torch.bfloat16, device_map="cuda").eval()
+    tok = proc.tokenizer
+    # Lấy id của "1" và "0". Nếu vốn từ tách chúng thành nhiều token thì phép đọc xác
+    # suất mất nghĩa — chặn ngay thay vì trả điểm rác.
+    ids = {}
+    for ch in ("1", "0"):
+        t = tok.encode(ch, add_special_tokens=False)
+        if len(t) != 1:
+            raise RuntimeError(f"ký tự {ch!r} tách thành {len(t)} token — không đọc "
+                               f"được xác suất một token")
+        ids[ch] = t[0]
+
+    out = []
+    for j in jobs:
+        im = Image.open(_io.BytesIO(b64.b64decode(j["image_b64"]))).convert("RGB")
+        msg = [{"role": "user", "content": [
+            {"type": "image"},
+            {"type": "text", "text":
+             f"Mô tả cần tìm: {j['query']}\n\nKhung hình này có khớp mô tả trên không? "
+             f"Chỉ trả lời một ký tự: 1 nếu khớp, 0 nếu không."}]}]
+        text = proc.apply_chat_template(msg, tokenize=False, add_generation_prompt=True)
+        inp = proc(text=[text], images=[im], return_tensors="pt").to("cuda")
+        with torch.inference_mode():
+            logits = model(**inp).logits[0, -1]
+        p1, p0 = logits[ids["1"]].float(), logits[ids["0"]].float()
+        out.append(float(torch.softmax(torch.stack([p0, p1]), dim=0)[1]))
+    return out
 
 
 @app.function(image=vl_image, gpu="A10G", volumes={"/cache": cache_vol}, timeout=3600)
@@ -265,13 +320,13 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         spread: int = 7):
+         spread: int = 7, vlm_top_k: int = 0):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
     from src.retrieval.dante import dante_over_videos
     from src.retrieval.probe import build_probes
-    from src.retrieval.rerank import collect_crops, crop_scores
+    from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
     from src.submission.coverage import spread_in_gap
     from src.ingestion.vector_index import load_flat_index
@@ -413,6 +468,42 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 if q["id"] in qa_of:
                     q["answer"] = answers[qa_of[q["id"]]]
                     print(f"   {q['id']}: {q['answer']!r}")
+
+    # ⑤ bậc 2 — VLM chấm top-K sau bậc mảnh cắt
+    if vlm_top_k > 0:
+        vjobs, vspan = [], {}
+        for q in queries:
+            if q["kind"] == "trake":
+                continue          # TRAKE chấm theo ĐƯỜNG, không theo khung lẻ
+            base = q["S"].max(axis=0)
+            cand = [int(r) for r in np.argsort(-base)[:vlm_top_k]]
+            vspan[q["id"]] = (len(vjobs), len(vjobs) + len(cand), cand)
+            for r in cand:
+                vid, n = idx.ids[r]
+                fp = frame_path(vid, n)
+                if fp is None:
+                    continue
+                from PIL import Image as _Im2
+                im = _Im2.open(fp).convert("RGB")
+                im.thumbnail((640, 640))
+                b = io.BytesIO()
+                im.save(b, "JPEG", quality=85)
+                vjobs.append({"image_b64": base64.b64encode(b.getvalue()).decode(),
+                              "query": q["text"]})
+        if vjobs:
+            print(f"⑤ bậc 2 (VLM): {len(vjobs)} khung")
+            probs = []
+            for s_ in range(0, len(vjobs), 200):
+                probs += score_frames_vlm.remote(vjobs[s_:s_ + 200])
+                print(f"   {min(s_ + 200, len(vjobs))}/{len(vjobs)}")
+            for q in queries:
+                if q["id"] not in vspan:
+                    continue
+                lo, hi, cand = vspan[q["id"]]
+                vs = vlm_scores(idx.n_frames, cand[:hi - lo], probs[lo:hi])
+                base = SourceScores("visual", q["S"][0], np.ones(idx.n_frames, bool))
+                q["S"] = fuse([base, vs], {"visual": 1.0, "vlm": VLM_WEIGHT}
+                              )[None, :].astype(np.float32)
 
     # ④⑦ ra đáp án
     odir.mkdir(parents=True, exist_ok=True)
