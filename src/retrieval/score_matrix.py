@@ -89,24 +89,52 @@ from src.retrieval.sources import SourceScores
 
 # Nguồn nào có mặt thì phải có trọng số; thiếu là lỗi cấu hình, không phải mặc định 0.
 #
-# ⚠️ TẠM — chờ truy vấn gán nhãn tay để chỉnh lại. Cơ sở hiện tại:
+# =============================================================================
+# TRỌNG SỐ ĐÃ CHỐT — VÀ VÌ SAO CHỮ SỐ THỨ BA KHÔNG QUAN TRỌNG
+# =============================================================================
 #
-#   [ĐO] quét 100 tổ hợp × 226 truy vấn tả cảnh + 1 ca sự kiện có đáp án:
-#     β=γ=δ=0      R@10 0,407 · ca sự kiện hạng 67
-#     β=γ=δ=0,10   R@10 0,460 · ca sự kiện hạng  1   ← đang dùng
-#     β=0,10 một mình  thắng 98/thua 72, p=0,055 · ca sự kiện hạng 89
-#     γ=0,10 một mình  thắng 51/thua 97, p=0,0002 → HẠI câu tả cảnh, nhưng
-#                      kéo ca sự kiện 67 → 3
+# Hai bộ eval **kéo ngược nhau**, nên không có trọng số nào tối ưu cả hai:
 #
-# Mâu thuẫn đó KHÔNG phải nghịch lý: 226 câu tả cảnh do model nhìn ảnh viết ra nên
-# thuần thị giác, OCR không thể giúp mà chỉ thêm nhiễu. Đo trên 30 đề thi thật thì
-# **40% có nhắc chữ trên khung** và 20% có tên riêng — tức bộ eval hiện tại ĐANG
-# THIÊN LỆCH chống lại OCR/ASR, không phải OCR/ASR vô dụng.
+#     bộ                     đặc điểm                      cần OCR/ASR
+#     100 câu gán nhãn tay   26 vision+ocr, 25 +asr, 30 cả hai      81%
+#     226 câu tả cảnh        model NHÌN ẢNH viết ra                  0%
 #
-# Nên 0,10 là mức thấp có chủ ý: đủ để cứu câu sự kiện (hạng 67 → 1), chưa đủ để
-# gây hại đo được trên câu tả cảnh (thắng 99/thua 85, p=0,34 — không phân biệt được
-# với ngẫu nhiên). Có nhãn tay rồi thì quét lại.
-DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.10, "ocr": 0.10, "asr": 0.10}
+# [ĐO] quét β,γ,δ ∈ [0; 0,30] bước 0,025, chấm trên cả hai:
+#
+#     β      γ      δ      100      226    trung bình
+#     0,100  0,150  0,125  0,7560  0,4681  0,6121   ← chốt
+#     0,100  0,125  0,150  0,7620  0,4619  0,6120
+#     0,075  0,125  0,125  0,7520  0,4717  0,6118
+#     0,100  0,100  0,100  0,7420  0,4726  0,6073   (mức cũ)
+#     0      0      0      0,5220  0,4584  0,4902   (chỉ thị giác)
+#
+# **Tám ứng viên đầu bảng chênh nhau 0,2 điểm phần trăm.** Mặt mục tiêu PHẲNG, nên
+# chọn ô nào trong cụm đó là tuỳ ý — và điều đó không sao. Cái mua được điểm là
+# **bật hợp nhất** (+11,2pp trên trung bình), không phải chỉnh số.
+#
+# ĐIỂM ĐẢO CHIỀU: gọi `p` là tỉ lệ đề thi thật cần OCR/ASR. Bộ này thắng mức 0,10
+# khi **p > 24%**. Đo trên 30 đề thi thật: **40% nhắc chữ trên khung**, 23% nhắc lời
+# nói, 20% có tên riêng — hợp lại vượt xa 24%. Nếu đề thật hoá ra thuần thị giác hơn
+# thế thì quay về 0,10.
+#
+# =============================================================================
+# KHÔNG TINH CHỈNH THÊM — ĐO ĐƯỢC LÀ TINH CHỈNH LÀM TỆ ĐI
+# =============================================================================
+#
+# [ĐO] kiểm chéo lồng, 12 lần chia 50/50 trên bộ 100, chấm trên nửa GIỮ KÍN:
+#
+#     trọng số cố định hợp lý     0,7733
+#     chỉnh trên nửa A            0,7393   ← TỆ HƠN
+#     chỉ thị giác                0,5057
+#
+# Với 50 câu huấn luyện, tối ưu thẳng trên `Final` bám vào nhiễu. Và tối ưu LỒI
+# (cực đại log-likelihood dưới softmax) còn tệ hơn nữa — 0,7020 — vì nó tối ưu
+# **xác suất** trong khi cuộc thi chấm **có lọt top-k hay không**. Đẩy khung đúng từ
+# hạng 3 lên 2 làm likelihood tăng nhiều mà `Final` không đổi.
+#
+# `Final` là hàm BẬC THANG. Không có hàm thay thế trơn nào tối ưu đúng nó, và không
+# có gradient để đi theo. Quét lưới thô + kiểm chéo là cách đúng ở đây.
+DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.10, "ocr": 0.15, "asr": 0.125}
 
 
 def z_normalize(scores: np.ndarray, covered: np.ndarray, eps: float = 1e-9) -> np.ndarray:

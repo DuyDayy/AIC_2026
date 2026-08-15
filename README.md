@@ -150,7 +150,7 @@ cửa sổ 0** vì đoạn Whisper dài hàng chục giây. Nới lên 45 giây 
 
 ```
 S[i,t] = α·z_visual + β·z_object + γ·z_ocr + δ·z_asr
-         α=1  ·  β=γ=δ=0,10  (TẠM)
+         α=1 · β=0,10 · γ=0,15 · δ=0,125     ĐÃ CHỐT
 ```
 
 **Chuẩn hoá z tính μ, σ chỉ trên tập CÓ dữ liệu**, nên `E[z | có dữ liệu] = 0` — đúng
@@ -172,7 +172,7 @@ giác phủ 100% khung nên bị dàn đều khắp 173.426 vị trí — hai h�
 thị giác (với `z` là 1,2 lần). Bản **trộn** (`z` cho thị giác, `rank` cho nguồn thưa)
 cũng thua.
 
-### Trọng số — hợp nhất mua +21,5pp, đã kiểm chéo
+### Trọng số — ĐÃ CHỐT `1 / 0,10 / 0,15 / 0,125`
 
 Trên **100 truy vấn gán nhãn tay** (`export_for_fusion/`), có nhãn modality thật:
 19 vision · 26 vision+ocr · 25 vision+asr · 30 vision+ocr+asr.
@@ -208,6 +208,42 @@ không câu nào cần OCR hay ASR.
 ⚠️ Dùng được bảng này thì phải **biết loại lúc chạy thi**, mà đề không cho. `query_type`
 là nhãn của người annotate. Bộ đoán loại từ nội dung đã đo được **thua** trọng số cố định
 — nay có nhãn thật thì kiểm lại được tử tế.
+
+### Chốt thế nào, và vì sao không tinh chỉnh thêm
+
+Hai bộ eval **kéo ngược nhau**: bộ 100 có 81% câu cần OCR/ASR, bộ 226 có 0%. Không
+trọng số nào tối ưu cả hai. Quét β,γ,δ ∈ [0; 0,30] bước 0,025, chấm trên cả hai:
+
+| β | γ | δ | 100 | 226 | trung bình |
+|---|---|---|---|---|---|
+| **0,100** | **0,150** | **0,125** | 0,7560 | 0,4681 | **0,6121** ← chốt |
+| 0,100 | 0,125 | 0,150 | 0,7620 | 0,4619 | 0,6120 |
+| 0,075 | 0,125 | 0,125 | 0,7520 | 0,4717 | 0,6118 |
+| 0,100 | 0,100 | 0,100 | 0,7420 | 0,4726 | 0,6073 |
+| 0 | 0 | 0 | 0,5220 | 0,4584 | 0,4902 |
+
+**Tám ứng viên đầu bảng chênh nhau 0,2 điểm phần trăm.** Mặt mục tiêu **phẳng**, nên chọn
+ô nào trong cụm đó là tuỳ ý — và điều đó không sao. Cái mua điểm là **bật hợp nhất**
+(+11,2pp trên trung bình), không phải chỉnh số.
+
+**Điểm đảo chiều:** gọi `p` là tỉ lệ đề thi thật cần OCR/ASR. Bộ chốt thắng mức 0,10 khi
+**`p > 24%`**. Đo trên 30 đề thi thật: 40% nhắc chữ trên khung, 23% nhắc lời nói, 20% có
+tên riêng — vượt xa 24%. Nếu đề thật thuần thị giác hơn thế thì quay về `0,10`.
+
+**Không tinh chỉnh thêm — đo được là tinh chỉnh làm TỆ ĐI.** Kiểm chéo lồng, 12 lần chia
+50/50, chấm trên nửa giữ kín:
+
+    trọng số cố định hợp lý     0,7733
+    chỉnh trên nửa A            0,7393   ← tệ hơn
+    chỉ thị giác                0,5057
+
+Với 50 câu huấn luyện, tối ưu thẳng trên `Final` bám vào nhiễu. Và **tối ưu lồi** (cực
+đại log-likelihood dưới softmax) còn tệ hơn — **0,7020** — vì nó tối ưu *xác suất* trong
+khi cuộc thi chấm *có lọt top-k hay không*: đẩy khung đúng từ hạng 3 lên 2 làm likelihood
+tăng nhiều mà `Final` không đổi.
+
+`Final` là hàm **bậc thang**. Không có hàm thay thế trơn nào tối ưu đúng nó, và không có
+gradient để đi theo. Quét lưới thô + kiểm chéo là cách đúng ở đây, không phải giải tích.
 
 ---
 
@@ -367,6 +403,7 @@ Giữ lại để không ai dựng lại chúng.
 | 1 | ~~Đo lại theo mô hình đúng~~ **XONG** | và nó đã đảo một kết luận: khử trùng cảnh từ +2,0pp thành **−4,3pp** | $0 |
 | 2 | **Bộ eval QA** | ⑥ chưa có phép đo nào; ca thử duy nhất trả lời sai | $0 |
 | 3 | Dựng bộ **đoán loại truy vấn** rồi kiểm lại trọng số theo loại | bảng theo loại cho tới +41pp nhưng cần biết loại; nay đã có 100 nhãn thật để huấn luyện/kiểm | $0 |
+| 3b | Thêm truy vấn gán nhãn tay **thuần thị giác** | hai bộ eval hiện kéo ngược nhau và tỉ lệ thật chưa biết; điểm đảo chiều nằm ở p=24% | $0 |
 | 4 | **Chốt λ** | hiện 6 truy vấn TRAKE, p=0,69 — cần ~35 | $0 |
 | 5 | Rerank mảnh cắt quy mô đầy đủ | 54%→77% mới đo trên 8 câu | ~$0,15 |
 | 5b | Quét `VLM_WEIGHT` rồi quyết có bật ⑤ bậc 2 mặc định không | xác suất VLM đã tính sẵn, chỉ đổi trọng số | $0 |
