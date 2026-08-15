@@ -381,10 +381,11 @@ scripts/eval/                  công cụ đo, không thuộc đường nộp b�
   encode_queries.py            mã hoá truy vấn eval, cache lại
   score_index.py               ba phép đo chỉ mục, không cần nhãn tay
 
-src/index-building
+src/  dựng chỉ mục
   ingestion/jina_encoder.py    Matryoshka: CẮT rồi mới chuẩn hoá
   ingestion/vector_index.py    chỉ mục phẳng, mang cả `n` lẫn `frame_idx`
-src/query-time
+  index/shard_plan.py          chia lô giữa container + chiếu chi phí
+src/  truy vấn
   retrieval/probe.py           ①  tách mốc, rút trích dẫn
   retrieval/sources.py         ②  bốn nguồn + `covered`
   retrieval/bm25.py                BM25, cố tình KHÔNG tự bỏ dấu

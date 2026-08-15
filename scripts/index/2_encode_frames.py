@@ -206,7 +206,7 @@ def main(benchmark: int = 0, trial: int = 0, batch_size: int = 32, max_usd: floa
     import sys
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from src.object.shard_plan import balance_shards, projected_cost
+    from src.index.shard_plan import balance_shards, projected_cost
 
     weights = []
     for mp in sorted(Path().glob("data/Framme/*/metadata/*.csv")):

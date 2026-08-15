@@ -50,6 +50,7 @@ src/scoring/
 src/ingestion/frame_index.py
 src/ingestion/keyframe_store.py
 src/ingestion/ocr_store.py
+src/ingestion/transcript_store.py
 src/retrieval/engine.py
 src/submission/allocator.py
 src/submission/kbest.py

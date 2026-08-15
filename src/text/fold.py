@@ -2,8 +2,8 @@
 Bỏ dấu tiếng Việt — MỘT cài đặt duy nhất cho toàn hệ
 ======================================================
 
-Tách khỏi `transcript_store` vì nó không liên quan gì tới transcript: nó là phép chuẩn
-hoá chuỗi mà **cả bốn nguồn điểm** và mọi chỉ mục BM25 đều đi qua.
+Nó không thuộc về bất kỳ nguồn dữ liệu nào: đây là phép chuẩn hoá chuỗi mà **cả bốn
+nguồn điểm** và mọi chỉ mục BM25 đều phải đi qua.
 
 =============================================================================
 VÌ SAO PHẢI LÀ MỘT, KHÔNG ĐƯỢC HAI

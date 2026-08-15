@@ -153,7 +153,7 @@ class TextSource:
         rows = [i for i, k in enumerate(ids) if (text_of.get(k) or "").strip()]
         self._rows = rows
         # BỎ DẤU cả hai phía. `bm25.py` cố tình KHÔNG tự bỏ dấu (một cài đặt duy nhất,
-        # ở `transcript_store`), nên chỗ gọi phải làm — và nếu quên thì token bị xé vụn
+        # ở `src/text/fold.py`), nên chỗ gọi phải làm — và nếu quên thì token bị xé vụn
         # và điểm gần như vô nghĩa. Chính `bm25.looks_unfolded` đã bắt được lỗi này khi
         # tôi đưa truy vấn còn dấu vào: ba nguồn BM25 chấm ra trung vị hạng 14k–47k.
         self._bm25 = (Bm25Index.build((str(i), strip_diacritics(text_of[ids[i]]))
