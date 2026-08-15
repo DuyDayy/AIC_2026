@@ -1,0 +1,67 @@
+{
+  "purpose": "Đo riêng khả năng BẮT MÀU của jina-clip-v2 — 57% đề thi thật có nhắc màu, mà quan sát của người dùng là 'sai về màu khá nhiều'.",
+  "design": "CẶP TỐI THIỂU: cùng một danh từ, chỉ đổi từ chỉ màu. Mọi thứ khác trong câu giữ nguyên, nên chênh lệch kết quả CHỈ do màu.",
+  "grading": {
+    "how": "Không gán nhãn tay. Với mỗi khung trong top-k: tra hộp của lớp tương ứng trong data/objects-full, cắt vùng LÕI hộp (bỏ 25% mỗi biên để tránh nền), lấy TRUNG VỊ pixel, phân loại HSV thành tên màu tiếng Việt.",
+    "why_median": "Trung vị chịu được vật thể nhiều màu và nền lọt vào hộp; trung bình thì không.",
+    "why_core_crop": "Hộp bao luôn chứa nền ở góc — với vật nghiêng thì tới ~40% diện tích hộp là nền.",
+    "min_area": 0.01,
+    "two_numbers_not_one": "Tách 'có đúng vật không' (hiện diện) khỏi 'có đúng màu không, với điều kiện đã đúng vật' (màu|hiện diện). Nếu hiện diện cao mà màu|hiện diện ≈ tỉ lệ nền, nghĩa là model tìm đúng vật rồi PHỚT LỜ từ chỉ màu — đó chính là chế độ hỏng cần khẳng định hoặc bác bỏ.",
+    "baseline": "So với tỉ lệ nền của màu đó trong lớp đó, đo trên mẫu ngẫu nhiên. Không có mốc này thì 'đúng 30%' vô nghĩa."
+  },
+  "accept": {
+    "đỏ": ["đỏ"], "cam": ["cam"], "vàng": ["vàng"], "trắng": ["trắng"],
+    "đen": ["đen"], "hồng": ["hồng"], "tím": ["tím"], "xám": ["xám"], "nâu": ["nâu"],
+    "xanh": ["xanh", "xanh lá"]
+  },
+  "accept_note": "'xanh' trong tiếng Việt gộp cả lam lẫn lục — đề thi thật cũng dùng vậy ('dải yếm xanh'), nên gộp là ĐÚNG với cách người ta hỏi, không phải nới lỏng cho dễ.",
+  "queries": [
+    {"id": "c01", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "đỏ",    "query": "một người mặc áo màu đỏ"},
+    {"id": "c02", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "xanh",  "query": "một người mặc áo màu xanh"},
+    {"id": "c03", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "vàng",  "query": "một người mặc áo màu vàng"},
+    {"id": "c04", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "trắng", "query": "một người mặc áo màu trắng"},
+    {"id": "c05", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "đen",   "query": "một người mặc áo màu đen"},
+    {"id": "c06", "noun": "áo", "classes": ["Clothing", "Shirt", "Dress"], "colour": "hồng",  "query": "một người mặc áo màu hồng"},
+
+    {"id": "c07", "noun": "xe hơi", "classes": ["Car"], "colour": "đỏ",    "query": "một chiếc xe hơi màu đỏ"},
+    {"id": "c08", "noun": "xe hơi", "classes": ["Car"], "colour": "xanh",  "query": "một chiếc xe hơi màu xanh"},
+    {"id": "c09", "noun": "xe hơi", "classes": ["Car"], "colour": "vàng",  "query": "một chiếc xe hơi màu vàng"},
+    {"id": "c10", "noun": "xe hơi", "classes": ["Car"], "colour": "trắng", "query": "một chiếc xe hơi màu trắng"},
+    {"id": "c11", "noun": "xe hơi", "classes": ["Car"], "colour": "đen",   "query": "một chiếc xe hơi màu đen"},
+    {"id": "c12", "noun": "xe hơi", "classes": ["Car"], "colour": "cam",   "query": "một chiếc xe hơi màu cam"},
+
+    {"id": "c13", "noun": "bông hoa", "classes": ["Flower"], "colour": "đỏ",    "query": "một bông hoa màu đỏ"},
+    {"id": "c14", "noun": "bông hoa", "classes": ["Flower"], "colour": "vàng",  "query": "một bông hoa màu vàng"},
+    {"id": "c15", "noun": "bông hoa", "classes": ["Flower"], "colour": "hồng",  "query": "một bông hoa màu hồng"},
+    {"id": "c16", "noun": "bông hoa", "classes": ["Flower"], "colour": "tím",   "query": "một bông hoa màu tím"},
+    {"id": "c17", "noun": "bông hoa", "classes": ["Flower"], "colour": "trắng", "query": "một bông hoa màu trắng"},
+    {"id": "c18", "noun": "bông hoa", "classes": ["Flower"], "colour": "cam",   "query": "một bông hoa màu cam"},
+
+    {"id": "c19", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "đỏ",    "query": "một chiếc mũ bảo hiểm màu đỏ"},
+    {"id": "c20", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "xanh",  "query": "một chiếc mũ bảo hiểm màu xanh"},
+    {"id": "c21", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "vàng",  "query": "một chiếc mũ bảo hiểm màu vàng"},
+    {"id": "c22", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "trắng", "query": "một chiếc mũ bảo hiểm màu trắng"},
+    {"id": "c23", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "đen",   "query": "một chiếc mũ bảo hiểm màu đen"},
+    {"id": "c24", "noun": "mũ bảo hiểm", "classes": ["Helmet"], "colour": "cam",   "query": "một chiếc mũ bảo hiểm màu cam"},
+
+    {"id": "c25", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "đỏ",    "query": "một chiếc ô màu đỏ"},
+    {"id": "c26", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "xanh",  "query": "một chiếc ô màu xanh"},
+    {"id": "c27", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "vàng",  "query": "một chiếc ô màu vàng"},
+    {"id": "c28", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "trắng", "query": "một chiếc ô màu trắng"},
+    {"id": "c29", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "đen",   "query": "một chiếc ô màu đen"},
+    {"id": "c30", "noun": "chiếc ô", "classes": ["Umbrella"], "colour": "hồng",  "query": "một chiếc ô màu hồng"}
+  ],
+  "control_queries": [
+    {"id": "n01", "noun": "áo",          "classes": ["Clothing", "Shirt", "Dress"], "colour": null, "query": "một người mặc áo"},
+    {"id": "n02", "noun": "xe hơi",      "classes": ["Car"],                        "colour": null, "query": "một chiếc xe hơi"},
+    {"id": "n03", "noun": "bông hoa",    "classes": ["Flower"],                     "colour": null, "query": "một bông hoa"},
+    {"id": "n04", "noun": "mũ bảo hiểm", "classes": ["Helmet"],                     "colour": null, "query": "một chiếc mũ bảo hiểm"},
+    {"id": "n05", "noun": "chiếc ô",     "classes": ["Umbrella"],                   "colour": null, "query": "một chiếc ô"}
+  ],
+  "control_note": "Câu KHÔNG có từ chỉ màu, cùng danh từ. Đây là mốc so trực tiếp: thêm từ chỉ màu vào có làm phân bố màu của top-k lệch về màu được hỏi hay không. Nếu phân bố y hệt câu không màu ⟹ từ chỉ màu bị bỏ qua hoàn toàn.",
+  "known_limits": [
+    "Màu tính từ pixel chịu ảnh hưởng ánh sáng, cân bằng trắng và nén — áo trắng dưới đèn vàng sân khấu sẽ ra 'vàng'. Nên con số tuyệt đối là CẬN DƯỚI; phần so sánh (có màu vs không màu) không bị ảnh hưởng vì cùng chịu một thiên lệch.",
+    "Hộp từ detector của BTC, ngưỡng gốc 0.1 — hộp sai lớp thì màu chấm sai theo.",
+    "Chỉ chấm được khung có vật thuộc lớp đích. Khung top-k không có vật nào được tính vào 'trượt hiện diện', không tính vào phần màu."
+  ]
+}

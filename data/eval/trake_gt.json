@@ -1,0 +1,251 @@
+{
+ "purpose": "Bộ eval TRAKE tự sinh — mốc đọc được từ chú thích trên khung nên đáp án không mơ hồ.",
+ "how": "Mở dải khung liên tục của 3 chương trình dạy nấu ăn, đọc chú thích màn hình (DẦU HÀNH ĐẬP DẬP, TIÊU XANH…), chọn 3 mốc phân biệt được bằng mắt rồi viết truy vấn theo lối đề thi.",
+ "why_spans_vary": "span trải 6→45 giây vì λ ở tầng ④ phạt đúng khoảng cách này. Nếu mọi câu cùng span thì quét λ không phân biệt được gì.",
+ "bias": "Người viết truy vấn cũng là người nhìn khung — cùng thiên lệch đã ghi ở textual_kis_gt.json. Dùng để chỉnh λ, KHÔNG dùng để công bố điểm.",
+ "key_note": "gt là số keyframe `n`; gt_frame_idx là số khung thật, thứ luật thi chấm.",
+ "queries": [
+  {
+   "id": "tk1",
+   "video_id": "L26_V075",
+   "query": "Một đoạn dạy nấu ăn. E1: Dầu sôi sủi bọt trắng xoá trong chảo. E2: Chiếc vợt lưới kim loại vớt những miếng tôm chiên vàng ra khỏi chảo dầu. E3: Rau hành lá thái nhỏ được cho vào tô thuỷ tinh.",
+   "gt": [
+    [
+     106,
+     107
+    ],
+    [
+     114,
+     115,
+     116
+    ],
+    [
+     124,
+     125,
+     126
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     5026,
+     5051
+    ],
+    [
+     5417,
+     5424,
+     5468
+    ],
+    [
+     5735,
+     5750,
+     5791
+    ]
+   ],
+   "giay": [
+    201.0,
+    216.7,
+    229.4
+   ],
+   "span_s": 28.4,
+   "N": 3
+  },
+  {
+   "id": "tk2",
+   "video_id": "L26_V084",
+   "query": "Cảnh nêm gia vị vào một nồi đất nung màu nâu. E1: Chiếc thìa đổ dầu hành băm vào nồi đất. E2: Rót nước mắm màu nâu sẫm từ trên cao xuống nồi. E3: Bàn tay trần bốc và trộn hỗn hợp trong nồi đất.",
+   "gt": [
+    [
+     38
+    ],
+    [
+     47
+    ],
+    [
+     52,
+     53
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     2060
+    ],
+    [
+     2422
+    ],
+    [
+     2632,
+     2648
+    ]
+   ],
+   "giay": [
+    82.4,
+    96.9,
+    105.3
+   ],
+   "span_s": 22.9,
+   "N": 3
+  },
+  {
+   "id": "tk3",
+   "video_id": "L26_V401",
+   "query": "Cảnh sơ chế nguyên liệu trong bếp. E1: Bàn tay đeo găng nhựa cắt lát cà chua đỏ trên thớt gỗ. E2: Con dao thái nhỏ tôm trên thớt. E3: Chiếc thìa trộn hỗn hợp nhân trong tô sứ trắng.",
+   "gt": [
+    [
+     61,
+     62,
+     63
+    ],
+    [
+     64
+    ],
+    [
+     88,
+     89,
+     90,
+     91
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     2777,
+     2820,
+     2837
+    ],
+    [
+     2887
+    ],
+    [
+     3752,
+     3767,
+     3804,
+     3820
+    ]
+   ],
+   "giay": [
+    111.1,
+    115.5,
+    150.1
+   ],
+   "span_s": 39.0,
+   "N": 3
+  },
+  {
+   "id": "tk4",
+   "video_id": "L26_V401",
+   "query": "Cảnh sơ chế trên thớt gỗ. E1: Bàn tay đeo găng nhựa cắt lát cà chua đỏ. E2: Con dao thái nhỏ tôm trên thớt. E3: Tôm đã thái nhỏ nằm trên đĩa sứ trắng.",
+   "gt": [
+    [
+     61,
+     62,
+     63
+    ],
+    [
+     64
+    ],
+    [
+     65,
+     66
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     2777,
+     2820,
+     2837
+    ],
+    [
+     2887
+    ],
+    [
+     2926,
+     2933
+    ]
+   ],
+   "giay": [
+    111.1,
+    115.5,
+    117.0
+   ],
+   "span_s": 6.0,
+   "N": 3
+  },
+  {
+   "id": "tk5",
+   "video_id": "L26_V084",
+   "query": "Cảnh chế biến trong nồi đất nung. E1: Miếng thịt sống màu hồng nhạt nằm trong nồi đất nâu. E2: Chiếc thìa nhỏ đổ tiêu xanh vào nồi. E3: Chiếc thìa xúc ớt sừng đỏ đã thái.",
+   "gt": [
+    [
+     30
+    ],
+    [
+     41
+    ],
+    [
+     56,
+     57
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     1651
+    ],
+    [
+     2187
+    ],
+    [
+     2763,
+     2778
+    ]
+   ],
+   "giay": [
+    66.0,
+    87.5,
+    110.5
+   ],
+   "span_s": 44.5,
+   "N": 3
+  },
+  {
+   "id": "tk6",
+   "video_id": "L26_V075",
+   "query": "Cảnh chiên rán trong bếp. E1: Dầu sôi sủi bọt trắng xoá trong chảo. E2: Đôi đũa thả nguyên liệu vào chảo màu đỏ đầy dầu sôi. E3: Những miếng tôm chiên vàng ruộm nằm trên vợt lưới.",
+   "gt": [
+    [
+     106,
+     107
+    ],
+    [
+     110,
+     111
+    ],
+    [
+     114,
+     115,
+     116
+    ]
+   ],
+   "gt_frame_idx": [
+    [
+     5026,
+     5051
+    ],
+    [
+     5192,
+     5223
+    ],
+    [
+     5417,
+     5424,
+     5468
+    ]
+   ],
+   "giay": [
+    201.0,
+    207.7,
+    216.7
+   ],
+   "span_s": 15.6,
+   "N": 3
+  }
+ ]
+}

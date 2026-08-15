@@ -1,0 +1,88 @@
+{
+ "schema": "aic2026.embed.provenance/1",
+ "generated_utc": "2026-08-15T15:05:12.810041+00:00",
+ "generated_by": "scripts/embed/06_write_manifest.py",
+ "model": {
+  "id": "jinaai/jina-clip-v2",
+  "commit_sha": "e10d47f5691d0454a0fb5d13f46f2199b74cb436",
+  "remote_code": {
+   "repo": "jinaai/jina-clip-implementation",
+   "commit_sha": "39e6a55ae971b59bea6e44675d237c99762e7ee2"
+  },
+  "tokenizer_revision": "e10d47f5691d0454a0fb5d13f46f2199b74cb436",
+  "image_processor_revision": "39e6a55ae971b59bea6e44675d237c99762e7ee2"
+ },
+ "preprocessing": {
+  "input_mode": "RGB",
+  "size": 512,
+  "resize_mode": "shortest",
+  "interpolation": "bicubic",
+  "fill_color": 0,
+  "mean": [
+   0.48145466,
+   0.4578275,
+   0.40821073
+  ],
+  "std": [
+   0.26862954,
+   0.26130258,
+   0.27577711
+  ],
+  "vision_image_size": 512
+ },
+ "embedding": {
+  "n_vectors": 173426,
+  "dim": 1024,
+  "dtype": "float16",
+  "truncate_dim_at_encode": 1024,
+  "normalize_embeddings": true,
+  "l2_norm_range_5000_rows": [
+   0.999752,
+   1.000252
+  ]
+ },
+ "runtime": {
+  "python": "3.11",
+  "gpu": "A10G",
+  "torch": "2.5.1",
+  "torchvision": "0.20.1",
+  "transformers": "4.48.0",
+  "pillow": "11.1.0",
+  "numpy": "1.26.4",
+  "einops": "0.8.0",
+  "timm": "1.0.13",
+  "peft": "0.14.0"
+ },
+ "artifacts": {
+  "emb.npy": {
+   "bytes": 355176576,
+   "sha256": "9ebae4e3a64cefb8c01a78bf7fcc352f404ad97a5d2750f37dfbef458e0949d7"
+  },
+  "ids.npy": {
+   "bytes": 1820921,
+   "sha256": "620c3c86b28639fc7951f2d2bfb28f29d7d81878a66adde20b1d4584f78d934c"
+  },
+  "frame_idx.npy": {
+   "bytes": 693832,
+   "sha256": "ab2d74e602b1ad81f1b351ca8bc58dd82b057c39ed3273427d503ad214e93317"
+  },
+  "ranges.json": {
+   "bytes": 25179,
+   "sha256": "2f8b35ed885ebbc963d7f39fa0dec3bacf1c8fbf9dc9a896ebad6b81f900be8c"
+  }
+ },
+ "code": {
+  "git_head": "d7157b2de58f4f15bb0667709b1b8e3dc9e5b067",
+  "git_clean": false,
+  "files": {
+   "scripts/embed/01_encode_modal.py": "370f14b9d33f34f3f115b036cd55e44137f9b71107d2aa6be8bc802bc5d1a873",
+   "src/ingestion/jina_encoder.py": "0d44030a4117269aea13f93404d928783b8430e183d6e6bf56216f1ce0ec6eee",
+   "src/ingestion/vector_index.py": "beda8360aa93b66af374fbedd579a78e1b41a7589ecaa17f66072395c2be2d7c"
+  }
+ },
+ "not_applicable": {
+  "task": "không dùng: 01_encode_modal.py:152 gọi encode_image(imgs, batch_size=…) không truyền task; encode_text cũng vậy",
+  "faiss_index": "không tồn tại: tìm kiếm là quét phẳng chính xác (vector_index.FlatIndex.search), không có ANN index"
+ },
+ "unverifiable": {}
+}

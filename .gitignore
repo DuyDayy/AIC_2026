@@ -1,0 +1,56 @@
+# ───────── dữ liệu và đầu ra: không vào git ─────────
+# Neo GỐC bằng dấu `/` đầu: pattern trần `submission/` khớp cả `src/submission/`
+# và từng nuốt mất `coverage.py` — file mà đường chạy CẦN.
+/data/
+/submission/
+artifacts/**/*.npy
+*.zip
+*.pdf
+
+# Ngoại lệ: ĐÚNG ba file ground truth mà README dẫn số. Thiếu chúng thì không
+# kiểm lại được bất kỳ con số nào. Phần còn lại của data/eval là ảnh ablation OCR
+# và log chạy cũ — 16 MB, không thuộc đường chạy.
+!/data/
+/data/*
+!/data/eval/
+/data/eval/*
+!/data/eval/textual_kis_gt.json
+!/data/eval/trake_gt.json
+!/data/eval/colour_probe.json
+*.mp4
+*.webp
+
+# ───────── build output, dựng lại được ─────────
+soi_khung.html
+dante_trake.html
+mau_va_vat.html
+khe_keyframe.html
+
+# ───────── môi trường ─────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.modal/
+
+# ───────── KHÔNG lên repo: test và logic ngoài đường chạy ─────────
+# Repo này chỉ mang thứ THẬT SỰ VẬN HÀNH. Đường chạy `scripts/run.py` truy vết
+# import ra đúng 11 file; nhóm `scripts/embed/` giữ lại vì thiếu nó thì không
+# dựng lại được chỉ mục. Mọi thứ dưới đây nằm ngoài hai nhóm đó.
+tests/
+scripts/search.py
+scripts/asr/
+scripts/ocr/
+scripts/object/
+scripts/calibration/
+scripts/eval/
+src/object/
+src/scoring/
+src/ingestion/frame_index.py
+src/ingestion/keyframe_store.py
+src/ingestion/ocr_store.py
+src/retrieval/engine.py
+src/submission/allocator.py
+src/submission/kbest.py
+src/submission/writer.py

@@ -1,0 +1,14 @@
+# Phụ thuộc của ĐƯỜNG CHẠY, không phải của toàn dự án.
+#
+# Danh sách này rút bằng cách truy vết import thật của các file đã ship
+# (`scripts/run.py` + closure của nó), không phải chép tay. Bản cũ có 27 gói,
+# trong đó `faiss-cpu` chưa bao giờ được import — tìm kiếm là quét phẳng chính xác.
+#
+# TẠI MÁY chỉ cần `modal` + `numpy` + `pillow`: chỉ mục, BM25, DP, khử trùng và
+# ghi bài nộp đều chạy trên CPU. `torch` và `transformers` chỉ chạy TRONG container
+# Modal, và ở đó chúng được ghim riêng trong `modal.Image` — xem
+# `scripts/run.py` và `scripts/embed/01_encode_modal.py`.
+
+modal>=0.64
+numpy==1.26.4
+pillow==11.1.0
