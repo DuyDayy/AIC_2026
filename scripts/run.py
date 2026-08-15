@@ -38,10 +38,29 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ⑤ rerank      bậc 1 mảnh cắt jina-clip (đúng màu 54% → 77%)
                   bậc 2 VLM chấm P(khớp) — TẮT mặc định, bật bằng --vlm-top-k
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
-    ⑦ nộp         khử trùng CẢNH (+2,0pp) rồi RẢI khung vào khe giữa keyframe
+    ⑦ nộp         RẢI khung vào khe giữa keyframe; KHÔNG khử trùng
 
-**Khử trùng theo VIDEO là bẫy**: −12,0pp. Khi đã đúng video thì nhiều khung trong đó
-cùng nằm trong cửa sổ đáp án; ép mỗi video một khung là tự vứt các cơ hội ấy.
+=============================================================================
+KHÔNG KHỬ TRÙNG — VÀ ĐÂY LÀ MỘT KẾT LUẬN ĐÃ BỊ ĐẢO
+=============================================================================
+
+Khử trùng theo cảnh từng đo được **+2,0pp** (thắng 23/thua 0). Nhưng phép đo đó giả
+định `đáp án = keyframe của ta`, mà thể lệ bác bỏ điều đó. Đo lại theo mô hình đúng —
+mốc thật lệch ngẫu nhiên trong khe:
+
+    khử trùng  rải     L=9      L=11     L=21
+    không        7   0,2317   0,2476   0,2788   ← mặc định
+    cảnh         7   0,1889   0,2037   0,2408
+    không        5   0,2120   0,2406   0,2974
+    không        1   0,0831   0,1022   0,1844
+
+Khử trùng cảnh **mất 4,3pp** (−23% tương đối). Khử trùng theo video còn tệ hơn nữa.
+
+**Cơ chế:** phép rải ĐÃ TỰ LO việc chống trùng. Mỗi keyframe chỉ rải trong **nửa khe
+của chính nó**, nên các dải rải **lát kề nhau, không chồng lên nhau**. Khử trùng sau đó
+chỉ bỏ đi phần PHỦ mà không bỏ được phần TRÙNG nào — vì không còn phần trùng nào.
+
+Bật lại bằng `--dedup` nếu cần so.
 
 =============================================================================
 VÌ SAO PHẢI RẢI KHUNG — ĐÁP ÁN KHÔNG PHẢI KEYFRAME BTC CẤP
@@ -320,7 +339,7 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         spread: int = 7, vlm_top_k: int = 0):
+         spread: int = 7, vlm_top_k: int = 0, dedup: bool = False):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
@@ -523,7 +542,9 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             for r in order:
                 r = int(r)
                 vid, n = idx.ids[r]
-                g = (vid, shot.get((vid, n), ("n", n)))
+                # Khử trùng cảnh TẮT mặc định — đo được nó HẠI. Xem khối bình luận
+                # ở `DEDUP_NOTE` phía trên.
+                g = (vid, shot.get((vid, n), ("n", n))) if dedup else r
                 if g in seen:
                     continue
                 seen.add(g)
@@ -549,6 +570,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                      encoding="utf-8")
         report.append({"id": q["id"], "kind": q["kind"], "n_probes": len(q["probes"]),
                        "n_answers": len(lines), "spread": spread if q["kind"] != "trake" else 1,
+                       "dedup": bool(dedup),
                        "answer": q.get("answer"), "top1": lines[0] if lines else None})
         print(f"  {q['id']:<20} {q['kind']:<6} {len(lines):>3} đáp án → {p}")
     (odir / "_report.json").write_text(

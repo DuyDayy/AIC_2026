@@ -172,20 +172,42 @@ giác phủ 100% khung nên bị dàn đều khắp 173.426 vị trí — hai h�
 thị giác (với `z` là 1,2 lần). Bản **trộn** (`z` cho thị giác, `rank` cho nguồn thưa)
 cũng thua.
 
-### Trọng số — TẠM, chờ nhãn tay
+### Trọng số — hợp nhất mua +21,5pp, đã kiểm chéo
 
-| trọng số | R@10 (tả cảnh) | kiểm định dấu | ca sự kiện |
-|---|---|---|---|
-| β=γ=δ=0 | 0,407 | — | hạng 67 |
-| β=0,10 một mình | 0,456 | 98/72 · p=0,055 | hạng 89 |
-| γ=0,10 một mình | 0,425 | 51/97 · **p=0,0002 → HẠI** | hạng 3 |
-| **β=γ=δ=0,10** | **0,460** | 99/85 · p=0,34 | **hạng 1** |
+Trên **100 truy vấn gán nhãn tay** (`export_for_fusion/`), có nhãn modality thật:
+19 vision · 26 vision+ocr · 25 vision+asr · 30 vision+ocr+asr.
 
-γ (OCR) hại câu tả cảnh nhưng cứu câu sự kiện. Không nghịch lý: 226 câu tả cảnh do model
-**nhìn ảnh** viết ra nên thuần thị giác. Đo trên 30 đề thi thật thì **40% nhắc chữ trên
-khung**, 20% có tên riêng ⟹ bộ eval hiện tại thiên lệch **chống lại** OCR/ASR.
+| trọng số | R@1 | R@10 | Final | thắng/thua | p |
+|---|---|---|---|---|---|
+| chỉ thị giác | 0,150 | 0,520 | 0,5200 | — | — |
+| **β=γ=δ=0,10** | 0,310 | 0,750 | **0,7420** | 56/3 | **<0,0001** |
+| 0 / 0,10 / 0,20 | 0,380 | 0,820 | 0,7760 | 57/1 | <0,0001 |
 
-0,10 là mức thấp có chủ ý: đủ cứu câu sự kiện, chưa đủ gây hại đo được.
+**Kiểm chéo** — chỉnh trên 50 câu, chấm trên 50 câu giữ kín, 10 lần chia:
+
+    chỉ thị giác              0,5420
+    cố định 0,10/0,10/0,10    0,7568
+    chỉnh trên nửa A          0,7732     thắng 9/0 so cố định
+
+Gain **tổng quát hoá được**. Nhưng chú ý tỉ lệ: **bật hợp nhất mua +21,5pp**, tinh chỉnh
+trọng số chỉ thêm **+1,6pp**. Việc lớn không phải chỉnh số.
+
+Trên bộ 226 câu cũ, cùng phép so cho **p = 0,34** — không phân biệt được với ngẫu nhiên.
+Khác biệt **hoàn toàn ở bộ eval**: 226 câu do model *nhìn ảnh* viết ra nên thuần thị giác,
+không câu nào cần OCR hay ASR.
+
+**Trọng số tối ưu theo loại** chênh nhau rất xa:
+
+| loại | n | β | γ | δ | Final gốc → tốt nhất |
+|---|---|---|---|---|---|
+| vision | 19 | 0,10 | 0,10 | 0,10 | 0,621 → 0,684 |
+| vision+ocr | 26 | 0 | **0,35** | 0,20 | 0,385 → **0,731** |
+| vision+asr | 25 | 0 | 0 | **0,60** | 0,496 → **0,904** |
+| vision+ocr+asr | 30 | 0,20 | 0,35 | 0,60 | 0,593 → **0,913** |
+
+⚠️ Dùng được bảng này thì phải **biết loại lúc chạy thi**, mà đề không cho. `query_type`
+là nhãn của người annotate. Bộ đoán loại từ nội dung đã đo được **thua** trọng số cố định
+— nay có nhãn thật thì kiểm lại được tử tế.
 
 ---
 
@@ -266,16 +288,23 @@ Ngân sách **100 câu trả lời** mỗi truy vấn. `R@k = max_{i≤k} R(rᵢ
 `k ∈ {1,5,20,50,100}`, `Final = (1/5)·Σ R@k` — nên vị trí trong danh sách có trọng số
 rất lệch: câu số 1 được tính vào cả 5 mức, câu số 51–100 chỉ 1 mức.
 
-### Khử trùng theo CẢNH — và VIDEO là bẫy
+### KHÔNG khử trùng — một kết luận đã bị ĐẢO
 
-| cách nộp | Final |
-|---|---|
-| thô | 0,5168 |
-| **khử trùng cảnh** | **0,5372** (+2,0pp · thắng 23/thua 0 · p<0,0001) |
-| khử trùng video | 0,3965 (**−12,0pp**) |
+Khử trùng theo cảnh từng đo được **+2,0pp** (thắng 23/thua 0, p<0,0001). Phép đo đó giả
+định `đáp án = keyframe của ta` — điều thể lệ bác bỏ. Đo lại theo mô hình đúng:
 
-Khử trùng video hại nặng vì khi đã đúng video thì **nhiều khung trong đó cùng nằm trong
-cửa sổ đáp án** — ép mỗi video một khung là tự vứt các cơ hội ấy.
+| khử trùng | rải | L=9 | L=11 | L=21 |
+|---|---|---|---|---|
+| **không** | **7** | **0,2317** | **0,2476** | 0,2788 |
+| cảnh | 7 | 0,1889 | 0,2037 | 0,2408 |
+| không | 5 | 0,2120 | 0,2406 | **0,2974** |
+| không | 1 | 0,0831 | 0,1022 | 0,1844 |
+
+Khử trùng cảnh **mất 4,3pp** (−23% tương đối). Theo video còn tệ hơn.
+
+**Cơ chế:** phép rải **đã tự lo việc chống trùng**. Mỗi keyframe chỉ rải trong *nửa khe
+của chính nó*, nên các dải rải **lát kề nhau, không chồng lên nhau**. Khử trùng sau đó
+chỉ bỏ phần **phủ** mà không bỏ được phần **trùng** nào — vì không còn phần trùng nào.
 
 ### Đáp án KHÔNG phải keyframe của ta — trần cứng 23,5%
 
@@ -297,17 +326,12 @@ gọn vào khe. Xác suất một cửa sổ rộng `L` đặt bất kỳ **ch�
 **Ở `L ≈ 10`, nộp thuần keyframe có trần cứng ~23%** — ba phần tư số câu thua vì **hình
 học**, không phải vì ngữ nghĩa.
 
-**Sửa: rải khung vào khe.** 226 truy vấn, mốc thật lệch ngẫu nhiên trong khe:
+**Sửa: rải khung vào khe.** Bảng trên cho `0,0831 → 0,2317` ở `L=9` — **×2,8**.
 
-| cách nộp | L=9 | L=11 | L=15 | L=21 |
-|---|---|---|---|---|
-| 100 mốc × 1 khung | 0,0608 | 0,0758 | 0,1002 | 0,1384 |
-| 20 mốc × 5 khung | 0,1624 | 0,1877 | **0,2137** | **0,2349** |
-| **14 mốc × 7 khung** ← mặc định | **0,1742** | **0,1882** | 0,2038 | 0,2184 |
-
-**×2,5.** Chọn `spread=7` vì hai lý do cộng lại: tốt nhất ở `L=9` — điểm vận hành nhiều
-khả năng nhất — và 7 khung trong khe trung vị 48 cho **bước 8 khung**, nên theo Định lý 1
-nó **bảo đảm** trúng khi `L ≥ 8`, không còn là xác suất.
+Chọn `spread=7` vì hai lý do cộng lại: tốt nhất ở `L=9`/`L=11` — dải vận hành nhiều khả
+năng nhất theo thể lệ — và 7 khung trong khe trung vị 48 cho **bước 8 khung**, nên theo
+Định lý 1 nó **bảo đảm** trúng khi `L ≥ 8`, không còn là xác suất. `spread=5` nhỉnh hơn
+từ `L ≥ 21`.
 
 Lưới **thích ứng theo khe cục bộ**, không bước cố định — khe chênh hơn 5 lần giữa p10 và
 p90.
@@ -340,9 +364,9 @@ Giữ lại để không ai dựng lại chúng.
 
 | # | việc | vì sao | chi phí |
 |---|---|---|---|
-| 1 | **Đo lại toàn bộ theo mô hình đúng** | mọi Final trước đây dùng giả định *đáp án = keyframe*, mà thể lệ đã bác bỏ ⟹ vài kết luận có thể đảo | $0 |
+| 1 | ~~Đo lại theo mô hình đúng~~ **XONG** | và nó đã đảo một kết luận: khử trùng cảnh từ +2,0pp thành **−4,3pp** | $0 |
 | 2 | **Bộ eval QA** | ⑥ chưa có phép đo nào; ca thử duy nhất trả lời sai | $0 |
-| 3 | **Chốt `β, γ, δ`** | cần truy vấn **gán nhãn tay**, ưu tiên câu có tên riêng / chữ trên màn hình / lời thoại | $0 |
+| 3 | Dựng bộ **đoán loại truy vấn** rồi kiểm lại trọng số theo loại | bảng theo loại cho tới +41pp nhưng cần biết loại; nay đã có 100 nhãn thật để huấn luyện/kiểm | $0 |
 | 4 | **Chốt λ** | hiện 6 truy vấn TRAKE, p=0,69 — cần ~35 | $0 |
 | 5 | Rerank mảnh cắt quy mô đầy đủ | 54%→77% mới đo trên 8 câu | ~$0,15 |
 | 5b | Quét `VLM_WEIGHT` rồi quyết có bật ⑤ bậc 2 mặc định không | xác suất VLM đã tính sẵn, chỉ đổi trọng số | $0 |
