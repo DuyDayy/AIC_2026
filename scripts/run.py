@@ -36,7 +36,7 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,089/0,132/0,213
     ⑤a rổ         mỗi nguồn đề cử TOP RIÊNG 40 → rổ ~155 khung, là bộ lọc CỨNG
     ⑤b bậc 1      mảnh cắt vật thể — TẮT mặc định, đo được nó phá điểm
-    ⑤c bậc 2      VLM chấm P(khớp) trên top 40 — BẬT mặc định, trọng số 0,25
+    ⑤c bậc 2      VLM chấm P(khớp) trên CẢ RỔ — BẬT mặc định, trọng số 0,25
     ④ kbest       DP thứ tự thời gian, k-best mỗi video rồi sắp toàn cục; λ=0
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
     ⑦ nộp         KHÔNG khử trùng; `--spread` quyết có rải khung vào khe hay không
@@ -217,12 +217,29 @@ POOL_MARGIN = 1000.0
 # KHÔNG phải đỉnh.
 RERANK_WEIGHTS = {"fused4": 1.0, "crop": 0.0, "vlm": 0.25}
 
-# Bậc 2 chỉ chấm top-K SAU bậc 1 — thác nước, không quét cả rổ.
-# [ĐO] Ở K=30, 87/88 đáp án nằm trong rổ lọt được vào tầm VLM; K=40 đưa nốt câu còn
-# lại (88/88). Hạng `fused4` của đáp án trong rổ: trung vị 2, p75 4, MAX 40 — nên 40
-# là ngưỡng có căn cứ, không phải số tròn. Thêm 10 khung/câu ≈ +33% chi phí bậc 2,
-# mà bậc 2 chỉ chiếm ~60s trong ~5 phút chạy 100 câu.
-VLM_TOP_K = 40
+# ⑤c chấm top-K của rổ. [ĐO] trên bộ GIỮ KÍN 110 câu (chưa dùng để chọn gì), bắt cặp
+# theo truy vấn, bootstrap 4000:
+#
+#     L      bỏ VLM     K=30     K=160    Δ bỏ→160              KTC95      T/H/Th
+#     9      0,2309   0,2493   0,2651     +0,0342   [+0,0077,+0,0618]    18/85/7  ✓
+#     11     0,2445   0,2635   0,2802     +0,0356   [+0,0091,+0,0659]    18/85/7  ✓
+#     21     0,2713   0,2907   0,3101     +0,0388   [+0,0111,+0,0711]    18/84/8  ✓
+#     51     0,3118   0,3344   0,3564     +0,0447   [+0,0145,+0,0791]    18/84/8  ✓
+#
+# Bỏ VLM mất ~13% điểm tương đối. K=30 mua 0,019; nới lên 160 mua thêm 0,017 — chưa
+# thấy bão hoà, nên chấm CẢ RỔ (`POOL_CAP` = 200 ⟹ 160 phủ hết trong thực tế).
+#
+# ⚠️ **VLM là cú can thiệp MẠNH và HIẾM, không phải bộ chỉnh êm.** 85/110 câu nó không
+# đụng tới; toàn bộ khoản lợi đến từ **18 câu thắng, 7 câu thua** — tỉ lệ 2,6 ăn 1. Hệ
+# quả: với đề 35 câu thì kỳ vọng chỉ ~8 câu bị đụng, nên `+0,0356` là kỳ vọng DÀI HẠN,
+# một kỳ thi đơn lẻ lệch khá xa cả hai chiều được.
+#
+# ⚠️ Vì thắng/thua là 2,6:1 chứ không phải luôn đúng, `RERANK_WEIGHTS["vlm"] = 0,25`
+# đang giữ nó đúng vai trò CHỈNH chứ không LẬT. Nâng trọng số là khuếch đại cả 18 lần
+# đúng lẫn 7 lần sai.
+#
+# Chi phí: ~7 giây/câu ⟹ ~4 phút cho 35 câu, tức ~3% ngân sách 2h30.
+VLM_TOP_K = 160
 
 # TRAKE: mỗi video nộp bao nhiêu ĐƯỜNG. `1` = chỉ đường DP tốt nhất, đúng hành vi cũ.
 # CHƯA CHỈNH ĐƯỢC và sẽ không chỉnh được cho tới khi có bộ eval TRAKE: hiện chỉ có 6 truy
@@ -288,6 +305,16 @@ def encode_crops(blobs: list[str]) -> list[list[float]]:
 QA_MODEL = "Qwen/Qwen2.5-VL-7B-Instruct"
 
 
+# ⚠️ ĐÃ THỬ `modal.Cls` + `@modal.enter()` ĐỂ NẠP MODEL MỘT LẦN MỖI CONTAINER — HOÀN NGUYÊN.
+# [ĐO] bản này nạp lại Qwen 7B ở MỖI lượt gọi: 110 truy vấn × 160 khung = 88 lô, đếm
+# được **176 lần nạp checkpoint**, ~13 phút, trong đó ~90% là nạp chứ không phải suy
+# luận. `modal.Cls` lẽ ra chữa đúng chỗ đó.
+# Nhưng ở quy mô thật (88 lô) nó chết bằng `TimeoutError` phía client kèm
+# `App state is APP_STATE_STOPPED` — map chưa xong thì app đã đóng. Smoke test 4 lô thì
+# chạy được, nên lỗi chỉ lộ ra ở quy mô lớn.
+# GIỮ BẢN NÀY vì nó **đã chạy được ở đúng quy mô này**. Đường ống ngày thi chạy MỘT lần
+# và không sửa được; đổi lấy ~3 phút trong ngân sách 150 phút không đáng rủi ro đó.
+# Muốn làm lại thì phải kiểm ở ≥88 lô TRƯỚC, không phải ở 4 lô.
 @app.function(image=vl_image, gpu="A10G", volumes={"/cache": cache_vol}, timeout=3600)
 def score_frames_vlm(jobs: list[dict]) -> list[float]:
     """
@@ -463,7 +490,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.retrieval.probe import build_probes, declarativize
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
-    from src.submission.coverage import spread_in_window
+    from src.submission.coverage import adaptive_m, spread_in_window
     from src.submission.kbest import k_best_alignments
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
@@ -471,6 +498,21 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         load_frame_ms, load_object_text, load_ocr_text, load_shot_bounds,
         load_video_last_frame,
     )
+
+    # ─── CHỐT AN TOÀN: `--spread 1` là lỗi tốn kém nhất có thể mắc ────────────
+    # [ĐO] bộ giữ kín 110 câu: rải 1 → 0,0857 · rải 7 → 0,2334 (Δ=+0,1477, KTC95
+    # [+0,1070,+0,1913], thắng 47 thua 17). Quên gõ `--spread 7` là mất 63% điểm.
+    # Không tự đổi mặc định — đó là quyết định của người dùng — nhưng KHÔNG để nó
+    # trôi qua im lặng.
+    if spread == 1:
+        print("\n" + "!" * 76)
+        print("!!  CẢNH BÁO: --spread 1 (nộp THUẦN keyframe, KHÔNG rải khung vào khe)")
+        print("!!  [ĐO trên bộ giữ kín 110 câu]  rải 1 = 0,0857   rải 7 = 0,2334")
+        print("!!  Mất khoảng 63% điểm. Trần hình học của nộp thuần keyframe là ~23,5%")
+        print("!!  vì khe giữa hai keyframe trung vị 48 khung còn cửa sổ đáp án ~10.")
+        print("!!  Cố ý thì bỏ qua. Nếu KHÔNG cố ý:  thêm  --spread 0  (thích ứng,")
+        print("!!  tốt nhất đo được) hoặc  --spread 7  (cố định)")
+        print("!" * 76 + "\n", flush=True)
 
     qdir, odir = Path(dir), Path(out)
     if not qdir.is_dir():
@@ -827,7 +869,11 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 vid, _ = idx.ids[r]
                 wlo, whi = win[r]
                 c = int(FI[r])
-                for f in spread_in_window(c, min(wlo, c), max(whi, c), spread):
+                # `spread = 0` ⟹ THÍCH ỨNG: cố định BƯỚC ~10 khung rồi suy ra m.
+                # Cửa sổ đo được p10=28 · p50=43 · p90=88 nên số khung cố định hoặc
+                # phủ thừa chỗ hẹp hoặc hụt chỗ rộng. Xem `coverage.adaptive_m`.
+                m = adaptive_m(min(wlo, c), max(whi, c)) if spread <= 0 else spread
+                for f in spread_in_window(c, min(wlo, c), max(whi, c), m):
                     k = (vid, int(f))
                     if k in emitted:
                         continue

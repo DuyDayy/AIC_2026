@@ -335,3 +335,65 @@ def hit_probability(
             covered[left : right + 1] = True
 
     return float(weights[covered].sum()) / total
+
+
+# =============================================================================
+# RẢI THÍCH ỨNG — BƯỚC CỐ ĐỊNH, KHÔNG PHẢI SỐ KHUNG CỐ ĐỊNH
+# =============================================================================
+#
+# `spread_in_window(…, m)` rải `m` khung dù cửa sổ rộng hay hẹp. Nhưng cửa sổ đo được
+# **p10 = 28 · p50 = 43 · p90 = 88 khung** — chênh hơn 3 lần. Bước cố định `m = 7` vì thế
+# hoặc phủ thừa ở cửa sổ hẹp (phí ô ngân sách), hoặc hụt ở cửa sổ rộng.
+#
+# Hàm này lật ngược tham số: cố định **BƯỚC** rồi suy ra `m`.
+#
+# `step = 10` KHÔNG phải số fit ra — thể lệ nói cửa sổ đáp án rộng ~9–11 khung, nên bước
+# 10 đặt hai khung rải liền nhau cách nhau **đúng một bề rộng cửa sổ**: phủ tối đa mà
+# không chồng lấn phí.
+#
+# [ĐO] Final tại L=11, bootstrap bắt cặp, so với `m = 7` cố định:
+#
+#     bước    bộ GIỮ KÍN (n=110)              bộ tune (n=100)
+#      8     +0,0146  [+0,0057,+0,0254] ✓     +0,0214  [+0,0074,+0,0360] ✓
+#     10     +0,0280  [+0,0169,+0,0406] ✓     +0,0397  [+0,0260,+0,0546] ✓   ← chốt
+#     12     +0,0107  [−0,0039,+0,0259] —     +0,0243  [+0,0078,+0,0410] ✓
+#
+# Đỉnh ở 10 trên **cả hai** bộ, và trùng bề rộng cửa sổ thể lệ nêu — cơ chế, không phải
+# trùng hợp. `m` sinh ra: p10=4 · p50=5 · p90=10, trung bình 6,3 ⟹ ~16 mốc/bài nộp, xấp
+# xỉ 14 mốc của bản cố định. Nó KHÔNG mua điểm bằng "nhiều mốc hơn" mà bằng **phân bổ
+# đúng chỗ hơn**.
+
+DEFAULT_SPREAD_STEP = 10
+SPREAD_M_MIN = 3
+SPREAD_M_MAX = 20
+
+
+def adaptive_m(lo: int, hi: int, step: int = DEFAULT_SPREAD_STEP) -> int:
+    """Số khung nên rải trong cửa sổ `[lo, hi]` để bước giữa chúng ≈ `step`.
+
+    Args:
+        lo: mép trái cửa sổ rải.
+        hi: mép phải cửa sổ rải.
+        step: bước mong muốn giữa hai khung liền nhau, tính bằng khung.
+
+    Returns:
+        `m` đã kẹp vào `[SPREAD_M_MIN, SPREAD_M_MAX]` — dưới 3 thì cửa sổ rộng bị bỏ
+        trống, trên 20 thì một mốc ăn hết ngân sách 100 dòng.
+
+    Raises:
+        ValueError: `step < 1` · `hi < lo`.
+
+    Examples:
+        >>> adaptive_m(0, 43)          # cửa sổ trung vị
+        5
+        >>> adaptive_m(0, 8)           # cửa sổ hẹp — rải ít, khỏi phí ô
+        3
+        >>> adaptive_m(0, 120)         # cửa sổ rộng — rải dày hơn
+        13
+    """
+    if step < 1:
+        raise ValueError(f"step phải ≥ 1, nhận {step}")
+    if hi < lo:
+        raise ValueError(f"cửa sổ rỗng: [{lo}, {hi}]")
+    width = hi - lo + 1
+    return int(min(SPREAD_M_MAX, max(SPREAD_M_MIN, round(width / step) + 1)))

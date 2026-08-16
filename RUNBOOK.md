@@ -9,7 +9,7 @@
 
 ```bash
 git pull && python -m pytest tests/ -q         # phải thấy 779 passed
-modal run scripts/run.py --dir queries_smoke --out /tmp/smoke --spread 7
+modal run scripts/run.py --dir queries_smoke --out /tmp/smoke --spread 0
 ```
 
 `queries_smoke/` là 3 file `.txt` bất kỳ. Lượt này **hâm nóng container Modal và nạp
@@ -46,49 +46,66 @@ không thì nó bị chấm như KIS và mất sạch câu đó.
 ## 2. Chạy — MỘT lệnh
 
 ```bash
-modal run scripts/run.py --dir queries_thi --out nop_thi --spread 7
+modal run scripts/run.py --dir queries_thi --out nop_thi --spread 0
 ```
 
-🔴 **`--spread 7` KHÔNG được quên.** Mặc định là `1`, và đo được nó **mất 3,3 lần điểm**
-(0,4477 → 0,1366). Đây là lỗi tốn kém nhất có thể mắc trong cả ngày.
+🔴 **`--spread 0` KHÔNG được quên.** `0` = chế độ **thích ứng** (bước ~10 khung), tốt nhất
+đo được. Mặc định là `1` — nộp thuần keyframe — và nó **mất 63% điểm**. Đây là lỗi tốn kém
+nhất có thể mắc trong cả ngày. Quên mà lỡ gõ `--spread 7` thì vẫn ổn, chỉ kém ~0,028.
 
 Chạy nền và ghi log ra file để đọc được tiến trình:
 
 ```bash
-modal run scripts/run.py --dir queries_thi --out nop_thi --spread 7 > thi.log 2>&1 &
+modal run scripts/run.py --dir queries_thi --out nop_thi --spread 0 > thi.log 2>&1 &
 tail -f thi.log
 ```
 
 ---
 
-## 3. Ngân sách thời gian — đo thật, 100 câu
+## 3. Ngân sách thời gian — đo thật
 
-| tầng | thời gian | ghi chú |
-|---|---|---|
-| khởi động Modal | ~30s | ~2–3 phút nếu container nguội |
-| mã hoá đề trên GPU | ~40s | đề mới nên **không** có trong cache |
-| nạp chỉ mục + 4 nguồn | **~40s** | cố định, không theo số câu |
-| ②③ chấm 4 nguồn | **~135s** | phần tốn nhất; BM25 chiếm đa số |
-| ⑤a dựng rổ | 4s | |
-| ⑤c VLM chấm | ~60s | |
-| ⑦ ghi bài nộp | vài giây | |
-| **tổng** | **~5 phút** | |
+Đề dự kiến **30–40 câu**. Đo trên các lượt chạy thật rồi ngoại suy:
 
-**5 phút cho 100 câu.** Trong 2h30 chạy được **nhiều lượt**, nên còn dư giờ để kiểm và
-chạy lại nếu cần.
+| tầng | 35 câu | 100 câu | co giãn theo số câu? |
+|---|---|---|---|
+| khởi động Modal | 30s | 30s | không |
+| mã hoá đề trên GPU | 14s | 40s | có |
+| **nạp chỉ mục + 4 nguồn** | **80s** | **80s** | **KHÔNG** |
+| ②③ chấm 4 nguồn | 47s | 135s | có |
+| ⑤a dựng rổ | 2s | 4s | có |
+| ⑤c VLM (cả rổ) | **~250s** | ~790s | có |
+| ⑦ ghi bài nộp | 2s | 5s | có |
+| **tổng** | **~7 phút** | **~19 phút** | |
 
-⚠️ Phí cố định ~80 giây (nạp chỉ mục + nguồn) trả **mỗi lần gọi `modal run`**.
-**Gom lô** — đừng chạy từng câu một.
+🟢 **Đường ống dùng ~5% ngân sách 2h30.** Chạy được ~20 lượt. Không có lý do gì phải cắt
+tầng nào vì thiếu giờ — bảng cắt bên dưới chỉ dùng khi Modal trục trặc.
+
+🔴 **THỜI GIAN BẬC 2 KHÔNG ỔN ĐỊNH.** Cùng mã, cùng dữ liệu, hai lần chạy 110 câu ×
+160 khung đo được **13 phút** và **>40 phút**. Nguyên nhân ở phía Modal (số container cấp
+được, tình trạng nguội/ấm), không ở mã ta. Hệ quả cho ngày thi:
+
+- **Chạy bậc 2 SỚM**, đừng để sát giờ nộp.
+- Nếu sau **10 phút** mà tiến trình `⑤c` chưa quá nửa: còn giờ thì cứ chờ; sắp hết giờ thì
+  **dừng, chạy lại với `--vlm-top-k 0`** và nộp bản không có bậc 2. Mất ~13% điểm tương
+  đối, nhưng **không nộp được thì mất 100%**.
+- Luôn giữ một bài nộp **đã hoàn chỉnh** trước khi thử cấu hình đắt hơn.
+
+⚠️ **Phí cố định 80 giây chiếm 41% một lượt 35 câu** (so với 23% ở 100 câu). Gom cả đề
+vào **một lần gọi**; chạy từng câu một là trả 80 giây × số câu.
+
+🟢 **Dư giờ nên dùng để KIỂM, không phải để chạy nhiều cấu hình.** Không có ground truth
+lúc thi nên chạy 5 cấu hình rồi cũng không biết chọn cái nào — chỉ tổ rối. Chạy **một**
+cấu hình đã chốt, rồi dành giờ soi bài nộp bằng mắt.
 
 ### Thiếu giờ thì cắt theo thứ tự này
 
 | bỏ | lệnh | mất gì |
 |---|---|---|
-| ⑤c VLM | `--vlm-top-k 0` | ~60s. Mất phần đẩy hạng của reranker |
+| ⑤c VLM | `--vlm-top-k 0` | tiết kiệm ~4 phút nhưng **mất 13% điểm tương đối** — chỉ cắt khi Modal hỏng |
 | cả ⑤ | `--no-rerank` | thêm chút nữa |
 | ba nguồn văn bản | `--light` | ~120s, nhưng **mất dung hợp** — đừng dùng trừ khi hết cách |
 
-**Không bao giờ cắt `--spread`.** Nó không tốn giờ (chạy tại máy, vài giây) mà đổi 3,3 lần điểm.
+**Không bao giờ cắt `--spread`.** Nó chạy tại máy, tốn vài giây, mà đổi 63% điểm.
 
 ---
 
@@ -149,8 +166,8 @@ dung nên lượt hai không tốn GPU.
 | `POOL_PER_SOURCE` | 40 | mỗi nguồn tự đề cử, rổ ~155 khung |
 | `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
 | `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | bậc 1 đo được phá điểm |
-| `VLM_TOP_K` | 40 | hạng `fused4` của đáp án trong rổ max = 40 |
-| `--spread` | **7** ← phải gõ tay | mặc định 1 mất 3,3 lần điểm |
+| `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
+| `--spread` | **0** ← phải gõ tay | thích ứng, bước ~10 khung. Mặc định 1 mất 63% điểm |
 
 ---
 
@@ -162,6 +179,9 @@ Trên 100 truy vấn gán nhãn tay, chấm đúng luật BTC, `L = 11`:
 |---|---|
 | mốc = keyframe (lạc quan) | 0,6240 |
 | mốc lệch ngẫu nhiên (bi quan) | 0,4886 |
+
+Trên bộ **110 câu giữ kín** (chưa dùng để chỉnh gì, câu ngắn hơn nên khó hơn):
+`L=11` bi quan = **0,2802**. Hai bộ **không so ngang được**.
 
 Đề thi thật nằm đâu đó giữa hai số, **và nhiều khả năng thấp hơn cả hai** — bộ 100 câu do
 chính đội viết nên câu chữ hợp với hệ hơn đề của người ngoài.
