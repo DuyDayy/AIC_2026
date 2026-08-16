@@ -88,9 +88,9 @@ def uniform_grid(
     return sorted(set(clamped))
 
 
-def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
+def spread_in_window(center: int, lo: int, hi: int, m: int) -> list[int]:
     """
-    `m` khung rải đều **nửa khe** hai bên `center` — lưới THÍCH ỨNG theo mật độ cục bộ.
+    `m` khung rải đều trong cửa sổ `[lo, hi]` — lưới THÍCH ỨNG, không bước cố định.
 
     Khác `uniform_grid` ở chỗ bước không cố định: khoảng cách giữa hai keyframe liền
     nhau đo được **p10 = 19, p50 = 48, p90 = 105 khung**, chênh hơn 5 lần. Bước cố định
@@ -124,9 +124,25 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
     `20 × 5` tốt nhất trung bình trên cả dải; `14 × 7` nhỉnh hơn ở `L` hẹp nhất. Cả hai
     hơn cách nộp thuần keyframe **~2,5 lần**.
 
+    =========================================================================
+    CỬA SỔ DO CHỖ GỌI QUYẾT ĐỊNH, KHÔNG SUY RA Ở ĐÂY
+    =========================================================================
+
+    Bản đầu tự suy cửa sổ từ hai keyframe hàng xóm ("nửa khe"). Cách đó sinh hai lỗi
+    mà `writer.validate_all` bắt được trên bài nộp thật:
+
+    * **Vượt số khung video.** Keyframe cuối cùng không có hàng xóm phải, nên phải
+      đoán bằng hằng số và dải rải chạy ra ngoài: *"frame_id 16994 ≥ số khung 16993"*.
+    * **Vắt qua ranh giới CẢNH.** Nửa khe không biết gì về cảnh, nên nó rải sang nội
+      dung hoàn toàn khác.
+
+    Chỗ gọi có đủ dữ liệu để tính đúng — biên cảnh ở `sources.load_shot_bounds`, chặn
+    trên video ở `load_video_last_frame` — nên cửa sổ vào đây là tham số, không phải
+    suy đoán.
+
     Args:
-        center: khung của keyframe được chọn.
-        prev, next_: khung của keyframe liền trước/liền sau trong CÙNG video.
+        center: khung của keyframe được chọn, phải nằm trong `[lo, hi]`.
+        lo, hi: biên cửa sổ, đã giao với biên cảnh và chặn trên của video.
         m: số khung được phép nộp cho mốc này.
 
     =========================================================================
@@ -155,19 +171,14 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
         khung.
 
     Raises:
-        ValueError: `m < 1` · `prev > center` · `next_ < center` (thứ tự sai thì "khe"
-            mất nghĩa và lưới rải ra ngoài cảnh).
+        ValueError: `m < 1` · `center` nằm ngoài `[lo, hi]`.
     """
     if m < 1:
         raise ValueError(f"m phải ≥ 1, nhận {m}")
-    if prev > center or next_ < center:
-        raise ValueError(
-            f"hàng xóm phải bao quanh center: prev={prev} ≤ {center} ≤ next={next_}"
-        )
+    if not lo <= center <= hi:
+        raise ValueError(f"center={center} phải nằm trong cửa sổ [{lo}, {hi}]")
     if m == 1:
         return [center]
-    lo = center - (center - prev) // 2
-    hi = center + (next_ - center) // 2
     if hi <= lo:
         return [center]
     step = (hi - lo) / (m - 1)

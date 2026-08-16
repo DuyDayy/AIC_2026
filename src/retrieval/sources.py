@@ -50,6 +50,7 @@ chuẩn hoá z đúng bất kể độ phủ.
 
 from __future__ import annotations
 
+import csv
 import json
 from dataclasses import dataclass
 from pathlib import Path
@@ -228,6 +229,47 @@ def load_ocr_text(path: str | Path, field: str = "text_ascii_folded") -> dict[Fr
             t = (d.get(field) or "").strip()
             if t:
                 out[(d["video_id"], int(d["n"]))] = t
+    return out
+
+
+def load_shot_bounds(meta_glob: str = "data/Framme/*/metadata/*.csv"
+                     ) -> dict[FrameKey, tuple[int, int]]:
+    """
+    `{(video, n) → (shot_start_frame, shot_end_frame)}` — biên CẢNH thật của keyframe.
+
+    Metadata TransNetV2 mang sẵn hai cột này. Dùng chúng thay cho ước lượng "nửa khe
+    tới keyframe hàng xóm" ở ⑦ vì hai lý do:
+
+    * **Đúng hơn.** Mốc ngữ nghĩa mà một keyframe đại diện nằm TRONG cảnh của nó. Nửa
+      khe có thể vắt qua ranh giới cảnh, tức rải sang nội dung khác hẳn.
+    * **Hợp lệ.** Với keyframe cuối video, "nửa khe" phải đoán bằng một hằng số và có
+      thể vượt quá số khung thật — bài nộp khi đó SAI ĐỊNH DẠNG. `writer.validate_all`
+      bắt được: *"frame_id 16994 ≥ số khung hình 16993"*.
+    """
+    out: dict[FrameKey, tuple[int, int]] = {}
+    for mp in sorted(Path().glob(meta_glob)):
+        lines = open(mp, encoding="utf-8-sig").readlines()
+        i = next(j for j, l in enumerate(lines) if l.strip())
+        for r in csv.DictReader(lines[i:]):
+            if r.get("shot_start_frame") and r.get("shot_end_frame"):
+                out[(mp.stem, int(r["n"]))] = (int(r["shot_start_frame"]),
+                                               int(r["shot_end_frame"]))
+    return out
+
+
+def load_video_last_frame(meta_glob: str = "data/Framme/*/metadata/*.csv"
+                          ) -> dict[str, int]:
+    """`{video → khung cuối cùng biết được}` = max `shot_end_frame`. Chặn trên khi nộp."""
+    out: dict[str, int] = {}
+    for mp in sorted(Path().glob(meta_glob)):
+        lines = open(mp, encoding="utf-8-sig").readlines()
+        i = next(j for j, l in enumerate(lines) if l.strip())
+        m = 0
+        for r in csv.DictReader(lines[i:]):
+            if r.get("shot_end_frame"):
+                m = max(m, int(r["shot_end_frame"]))
+        if m:
+            out[mp.stem] = m
     return out
 
 

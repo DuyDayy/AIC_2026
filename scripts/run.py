@@ -357,11 +357,12 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.retrieval.probe import build_probes
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
-    from src.submission.coverage import spread_in_gap
+    from src.submission.coverage import spread_in_window
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
         AsrSource, SourceScores, TextSource, VisualSource, load_asr_segments,
-        load_frame_ms, load_object_text, load_ocr_text,
+        load_frame_ms, load_object_text, load_ocr_text, load_shot_bounds,
+        load_video_last_frame,
     )
 
     qdir, odir = Path(dir), Path(out)
@@ -404,16 +405,28 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     W = dict(DEFAULT_WEIGHTS) if not light else {"visual": 1.0}
     fms = load_frame_ms()
     times = np.array([fms.get(k, 0.0) for k in idx.ids], dtype=np.float64)
-    # Hàng xóm THỜI GIAN trong cùng video — `spread_in_gap` cần nó để rải theo mật độ
+    # Hàng xóm THỜI GIAN trong cùng video — cần để dựng cửa sổ rải theo mật độ
     # cục bộ. Khe đo được p10=19, p50=48, p90=105 khung nên bước cố định là sai.
     FI = np.asarray(idx.frame_idx)
-    nbr: dict[int, tuple[int, int]] = {}
+    # Cửa sổ rải của mỗi keyframe = NỬA KHE tới hàng xóm, GIAO với biên CẢNH của nó,
+    # rồi kẹp vào số khung thật của video. Hai phép giao sau không phải trang trí:
+    # thiếu chúng thì bài nộp vắt qua ranh giới cảnh và vượt cuối video — cả hai đã
+    # bị `writer.validate_all` bắt trên bài nộp thật.
+    shot_b = load_shot_bounds()
+    last_f = load_video_last_frame()
+    win: dict[int, tuple[int, int]] = {}
     for v, (lo, hi) in idx.ranges.items():
         o = np.argsort(FI[lo:hi])
         f = FI[lo:hi][o]
+        vmax = last_f.get(v, int(f[-1]))
         for j, r in enumerate(o):
-            nbr[lo + int(r)] = (int(f[j - 1]) if j else int(f[j]) - 71,
-                                int(f[j + 1]) if j + 1 < len(f) else int(f[j]) + 71)
+            row = lo + int(r)
+            c = int(f[j])
+            prev = int(f[j - 1]) if j else c
+            nxt = int(f[j + 1]) if j + 1 < len(f) else c
+            a, b = c - (c - prev) // 2, c + (nxt - c) // 2
+            ss, se = shot_b.get(idx.ids[row], (a, b))
+            win[row] = (max(0, a, ss), min(b, se, vmax))
     print(f"nạp {time.time() - t0:.0f}s · {idx.n_frames:,} khung · {idx.dim} chiều "
           f"· trọng số {W}")
 
@@ -559,11 +572,21 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 moments.append(r)
                 if len(moments) * spread >= top_k * spread:
                     break
-            lines = []
+            # Hai mốc KỀ NHAU rải chạm nhau ở điểm giữa khe, nên có thể phát ra
+            # cùng một (video, frame). Nộp trùng là **phí slot**: hàm chấm lấy
+            # `R@k = max`, hai dòng giống hệt mua đúng MỘT cơ hội.
+            # [ĐO] không lọc: 266/10.000 dòng trùng (2,7%), tệ nhất 8 dòng một bài,
+            # chỉ 7/100 bài sạch. `writer.validate_all` bắt được lỗi này.
+            lines, emitted = [], set()
             for r in moments:
                 vid, _ = idx.ids[r]
-                p_, n_ = nbr[r]
-                for f in spread_in_gap(int(FI[r]), p_, n_, spread):
+                wlo, whi = win[r]
+                c = int(FI[r])
+                for f in spread_in_window(c, min(wlo, c), max(whi, c), spread):
+                    k = (vid, int(f))
+                    if k in emitted:
+                        continue
+                    emitted.add(k)
                     lines.append([vid, int(f)])
                     if len(lines) >= top_k:
                         break

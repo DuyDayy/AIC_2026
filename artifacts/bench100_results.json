@@ -1,6 +1,6 @@
 {
  "$schema": "aic2026.bench.results/1",
- "generated_utc": "2026-08-16T04:51:02+00:00",
+ "generated_utc": "2026-08-16T05:12:05+00:00",
  "generated_by": "scripts/eval/build_bench_artifact.py",
  "source": {
   "queries": "export_for_fusion/benchmark_queries.json",
@@ -38,7 +38,7 @@
  "summary": {
   "n_queries": 100,
   "final": {
-   "strict": 0.536,
+   "strict": 0.554,
    "gap": 0.59
   },
   "hit_rank_1": {
@@ -46,12 +46,12 @@
    "gap": 34
   },
   "hit_rank_le_10": {
-   "strict": 51,
+   "strict": 53,
    "gap": 56
   },
   "missed": {
-   "strict": 27,
-   "gap": 20
+   "strict": 23,
+   "gap": 19
   },
   "by_query_type": [
    {
@@ -63,7 +63,7 @@
    {
     "query_type": "vision+asr",
     "n_queries": 25,
-    "final_strict": 0.536,
+    "final_strict": 0.56,
     "final_gap": 0.616
    },
    {
@@ -75,7 +75,7 @@
    {
     "query_type": "vision+ocr+asr",
     "n_queries": 30,
-    "final_strict": 0.64,
+    "final_strict": 0.68,
     "final_gap": 0.7467
    }
   ]
@@ -97,9 +97,9 @@
    },
    "score": {
     "final_strict": 0.0,
-    "final_gap": 0.0,
+    "final_gap": 0.2,
     "hit_rank_strict": null,
-    "hit_rank_gap": null
+    "hit_rank_gap": 99
    },
    "submitted_moments": [
     {
@@ -109,7 +109,7 @@
      "keyframe_frame_idx": 3999,
      "frames_covered": [
       3984,
-      4043
+      4036
      ],
      "is_ground_truth": false
     },
@@ -130,8 +130,8 @@
      "keyframe_n": 59,
      "keyframe_frame_idx": 3904,
      "frames_covered": [
-      3894,
-      3936
+      3900,
+      3968
      ],
      "is_ground_truth": false
     },
@@ -142,7 +142,7 @@
      "keyframe_frame_idx": 3969,
      "frames_covered": [
       3937,
-      3984
+      16468
      ],
      "is_ground_truth": false
     },
@@ -152,7 +152,7 @@
      "keyframe_n": 212,
      "keyframe_frame_idx": 16462,
      "frames_covered": [
-      16375,
+      3501,
       16477
      ],
      "is_ground_truth": false
@@ -163,8 +163,8 @@
      "keyframe_n": 51,
      "keyframe_frame_idx": 3504,
      "frames_covered": [
-      3433,
-      3516
+      3472,
+      22514
      ],
      "is_ground_truth": false
     },
@@ -219,8 +219,8 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 476,
      "frames_covered": [
-      459,
-      496
+      462,
+      491
      ],
      "is_ground_truth": false
     },
@@ -230,7 +230,7 @@
      "keyframe_n": 33,
      "keyframe_frame_idx": 1662,
      "frames_covered": [
-      1641,
+      1647,
       1676
      ],
      "is_ground_truth": true
@@ -242,7 +242,7 @@
      "keyframe_frame_idx": 1767,
      "frames_covered": [
       1746,
-      1791
+      1789
      ],
      "is_ground_truth": false
     },
@@ -264,7 +264,7 @@
      "keyframe_frame_idx": 1724,
      "frames_covered": [
       1708,
-      1745
+      1744
      ],
      "is_ground_truth": false
     }
@@ -319,7 +319,7 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 1392,
      "frames_covered": [
-      1268,
+      1327,
       1421
      ],
      "is_ground_truth": false
@@ -330,7 +330,7 @@
      "keyframe_n": 19,
      "keyframe_frame_idx": 1628,
      "frames_covered": [
-      1546,
+      1560,
       1665
      ],
      "is_ground_truth": false
@@ -342,7 +342,7 @@
      "keyframe_frame_idx": 2019,
      "frames_covered": [
       1994,
-      2273
+      2073
      ],
      "is_ground_truth": false
     },
@@ -419,8 +419,8 @@
      "keyframe_n": 188,
      "keyframe_frame_idx": 17156,
      "frames_covered": [
-      17116,
-      17196
+      7914,
+      17183
      ],
      "is_ground_truth": true
     },
@@ -430,8 +430,8 @@
      "keyframe_n": 134,
      "keyframe_frame_idx": 7914,
      "frames_covered": [
-      7885,
-      7935
+      1185,
+      7933
      ],
      "is_ground_truth": false
     },
@@ -442,7 +442,7 @@
      "keyframe_frame_idx": 1182,
      "frames_covered": [
       1136,
-      1209
+      6588
      ],
      "is_ground_truth": false
     },
@@ -452,8 +452,8 @@
      "keyframe_n": 131,
      "keyframe_frame_idx": 6590,
      "frames_covered": [
-      6583,
-      6612
+      6573,
+      6610
      ],
      "is_ground_truth": false
     }
@@ -519,8 +519,8 @@
      "keyframe_n": 9,
      "keyframe_frame_idx": 1202,
      "frames_covered": [
-      1110,
-      1294
+      1141,
+      55752
      ],
      "is_ground_truth": true
     },
@@ -530,7 +530,7 @@
      "keyframe_n": 160,
      "keyframe_frame_idx": 55765,
      "frames_covered": [
-      55641,
+      32607,
       55864
      ],
      "is_ground_truth": false
@@ -541,7 +541,7 @@
      "keyframe_n": 187,
      "keyframe_frame_idx": 32608,
      "frames_covered": [
-      32502,
+      178,
       32659
      ],
      "is_ground_truth": false
@@ -576,7 +576,7 @@
      "keyframe_frame_idx": 7385,
      "frames_covered": [
       7366,
-      7443
+      7428
      ],
      "is_ground_truth": false
     },
@@ -597,8 +597,8 @@
      "keyframe_n": 52,
      "keyframe_frame_idx": 2452,
      "frames_covered": [
-      2413,
-      2464
+      2423,
+      2476
      ],
      "is_ground_truth": false
     },
@@ -608,7 +608,7 @@
      "keyframe_n": 53,
      "keyframe_frame_idx": 2476,
      "frames_covered": [
-      2464,
+      1683,
       2500
      ],
      "is_ground_truth": false
@@ -620,7 +620,7 @@
      "keyframe_frame_idx": 1688,
      "frames_covered": [
       1660,
-      1729
+      4838
      ],
      "is_ground_truth": false
     },
@@ -630,8 +630,8 @@
      "keyframe_n": 109,
      "keyframe_frame_idx": 4838,
      "frames_covered": [
-      4817,
-      4860
+      3784,
+      4859
      ],
      "is_ground_truth": false
     },
@@ -676,7 +676,7 @@
      "keyframe_frame_idx": 2962,
      "frames_covered": [
       2955,
-      2982
+      2981
      ],
      "is_ground_truth": false
     },
@@ -698,7 +698,7 @@
      "keyframe_frame_idx": 3002,
      "frames_covered": [
       2982,
-      3043
+      3021
      ],
      "is_ground_truth": false
     },
@@ -709,7 +709,7 @@
      "keyframe_frame_idx": 3298,
      "frames_covered": [
       3288,
-      3325
+      3323
      ],
      "is_ground_truth": false
     },
@@ -719,8 +719,8 @@
      "keyframe_n": 85,
      "keyframe_frame_idx": 3278,
      "frames_covered": [
-      3252,
-      3288
+      3253,
+      3907
      ],
      "is_ground_truth": false
     },
@@ -730,8 +730,8 @@
      "keyframe_n": 95,
      "keyframe_frame_idx": 3905,
      "frames_covered": [
-      3898,
-      3926
+      3889,
+      3924
      ],
      "is_ground_truth": false
     },
@@ -786,7 +786,7 @@
      "keyframe_n": 142,
      "keyframe_frame_idx": 8803,
      "frames_covered": [
-      8736,
+      8778,
       8812
      ],
      "is_ground_truth": false
@@ -798,7 +798,7 @@
      "keyframe_frame_idx": 8822,
      "frames_covered": [
       8813,
-      8864
+      8847
      ],
      "is_ground_truth": false
     },
@@ -875,7 +875,7 @@
      "keyframe_n": 92,
      "keyframe_frame_idx": 4565,
      "frames_covered": [
-      4539,
+      4542,
       4573
      ],
      "is_ground_truth": false
@@ -887,7 +887,7 @@
      "keyframe_frame_idx": 4582,
      "frames_covered": [
       4574,
-      4606
+      4605
      ],
      "is_ground_truth": false
     },
@@ -897,7 +897,7 @@
      "keyframe_n": 51,
      "keyframe_frame_idx": 2086,
      "frames_covered": [
-      2065,
+      2068,
       2099
      ],
      "is_ground_truth": false
@@ -919,8 +919,8 @@
      "keyframe_n": 145,
      "keyframe_frame_idx": 6619,
      "frames_covered": [
-      6599,
-      6647
+      6601,
+      6637
      ],
      "is_ground_truth": false
     },
@@ -1065,7 +1065,7 @@
      "keyframe_frame_idx": 17043,
      "frames_covered": [
       17035,
-      17076
+      17066
      ],
      "is_ground_truth": true
     },
@@ -1075,8 +1075,8 @@
      "keyframe_n": 258,
      "keyframe_frame_idx": 17027,
      "frames_covered": [
-      17001,
-      17035
+      16951,
+      17030
      ],
      "is_ground_truth": false
     },
@@ -1086,8 +1086,8 @@
      "keyframe_n": 256,
      "keyframe_frame_idx": 16954,
      "frames_covered": [
-      16920,
-      16964
+      16926,
+      16977
      ],
      "is_ground_truth": false
     },
@@ -1097,7 +1097,7 @@
      "keyframe_n": 257,
      "keyframe_frame_idx": 16975,
      "frames_covered": [
-      16965,
+      16852,
       17001
      ],
      "is_ground_truth": false
@@ -1108,7 +1108,7 @@
      "keyframe_n": 254,
      "keyframe_frame_idx": 16854,
      "frames_covered": [
-      16803,
+      16697,
       16870
      ],
      "is_ground_truth": false
@@ -1120,7 +1120,7 @@
      "keyframe_frame_idx": 16696,
      "frames_covered": [
       16643,
-      16724
+      16887
      ],
      "is_ground_truth": false
     }
@@ -1153,8 +1153,8 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 476,
      "frames_covered": [
-      459,
-      496
+      462,
+      491
      ],
      "is_ground_truth": false
     },
@@ -1209,7 +1209,7 @@
      "keyframe_frame_idx": 1767,
      "frames_covered": [
       1746,
-      1791
+      1789
      ],
      "is_ground_truth": false
     },
@@ -1286,7 +1286,7 @@
      "keyframe_n": 506,
      "keyframe_frame_idx": 27042,
      "frames_covered": [
-      27016,
+      27018,
       27063
      ],
      "is_ground_truth": false
@@ -1353,7 +1353,7 @@
      "keyframe_n": 124,
      "keyframe_frame_idx": 12146,
      "frames_covered": [
-      12097,
+      12113,
       12160
      ],
      "is_ground_truth": false
@@ -1365,7 +1365,7 @@
      "keyframe_frame_idx": 8705,
      "frames_covered": [
       8692,
-      8748
+      8736
      ],
      "is_ground_truth": false
     },
@@ -1454,7 +1454,7 @@
      "keyframe_frame_idx": 1032,
      "frames_covered": [
       1013,
-      1054
+      1052
      ],
      "is_ground_truth": false
     },
@@ -1465,7 +1465,7 @@
      "keyframe_frame_idx": 33340,
      "frames_covered": [
       33321,
-      33362
+      33360
      ],
      "is_ground_truth": false
     },
@@ -1476,7 +1476,7 @@
      "keyframe_frame_idx": 34534,
      "frames_covered": [
       34518,
-      34552
+      34550
      ],
      "is_ground_truth": false
     },
@@ -1487,7 +1487,7 @@
      "keyframe_frame_idx": 30860,
      "frames_covered": [
       30841,
-      30882
+      30880
      ],
      "is_ground_truth": false
     },
@@ -1498,7 +1498,7 @@
      "keyframe_frame_idx": 1804,
      "frames_covered": [
       1788,
-      1823
+      1821
      ],
      "is_ground_truth": false
     },
@@ -1509,7 +1509,7 @@
      "keyframe_frame_idx": 39903,
      "frames_covered": [
       39884,
-      39925
+      39923
      ],
      "is_ground_truth": false
     },
@@ -1586,8 +1586,8 @@
      "keyframe_n": 108,
      "keyframe_frame_idx": 4587,
      "frames_covered": [
-      4559,
-      4600
+      2425,
+      4593
      ],
      "is_ground_truth": false
     },
@@ -1597,7 +1597,7 @@
      "keyframe_n": 52,
      "keyframe_frame_idx": 2427,
      "frames_covered": [
-      2409,
+      2391,
       2458
      ],
      "is_ground_truth": false
@@ -1609,7 +1609,7 @@
      "keyframe_frame_idx": 2390,
      "frames_covered": [
       2358,
-      2408
+      2948
      ],
      "is_ground_truth": false
     },
@@ -1643,8 +1643,8 @@
    "score": {
     "final_strict": 0.2,
     "final_gap": 0.2,
-    "hit_rank_strict": 57,
-    "hit_rank_gap": 52
+    "hit_rank_strict": 55,
+    "hit_rank_gap": 51
    },
    "submitted_moments": [
     {
@@ -1653,7 +1653,7 @@
      "keyframe_n": 59,
      "keyframe_frame_idx": 1552,
      "frames_covered": [
-      1468,
+      1488,
       1582
      ],
      "is_ground_truth": false
@@ -1664,7 +1664,7 @@
      "keyframe_n": 60,
      "keyframe_frame_idx": 1612,
      "frames_covered": [
-      1582,
+      1592,
       1641
      ],
      "is_ground_truth": false
@@ -1675,7 +1675,7 @@
      "keyframe_n": 52,
      "keyframe_frame_idx": 1603,
      "frames_covered": [
-      1569,
+      1386,
       1637
      ],
      "is_ground_truth": false
@@ -1686,8 +1686,8 @@
      "keyframe_n": 50,
      "keyframe_frame_idx": 1388,
      "frames_covered": [
-      1334,
-      1409
+      1340,
+      1426
      ],
      "is_ground_truth": false
     },
@@ -1697,8 +1697,8 @@
      "keyframe_n": 51,
      "keyframe_frame_idx": 1430,
      "frames_covered": [
-      1409,
-      1461
+      1418,
+      1673
      ],
      "is_ground_truth": false
     },
@@ -1708,8 +1708,8 @@
      "keyframe_n": 61,
      "keyframe_frame_idx": 1671,
      "frames_covered": [
-      1642,
-      1766
+      1472,
+      1735
      ],
      "is_ground_truth": false
     },
@@ -1754,7 +1754,7 @@
      "keyframe_frame_idx": 4986,
      "frames_covered": [
       4971,
-      5053
+      5021
      ],
      "is_ground_truth": true
     },
@@ -1776,7 +1776,7 @@
      "keyframe_frame_idx": 8534,
      "frames_covered": [
       8513,
-      8584
+      8580
      ],
      "is_ground_truth": false
     },
@@ -1797,8 +1797,8 @@
      "keyframe_n": 79,
      "keyframe_frame_idx": 8492,
      "frames_covered": [
-      8441,
-      8513
+      5923,
+      8502
      ],
      "is_ground_truth": false
     },
@@ -1808,7 +1808,7 @@
      "keyframe_n": 107,
      "keyframe_frame_idx": 5922,
      "frames_covered": [
-      5907,
+      1052,
       5956
      ],
      "is_ground_truth": false
@@ -1853,7 +1853,7 @@
      "keyframe_n": 477,
      "keyframe_frame_idx": 30196,
      "frames_covered": [
-      30167,
+      30173,
       30214
      ],
      "is_ground_truth": false
@@ -1864,7 +1864,7 @@
      "keyframe_n": 69,
      "keyframe_frame_idx": 3459,
      "frames_covered": [
-      3422,
+      3431,
       3471
      ],
      "is_ground_truth": false
@@ -1876,7 +1876,7 @@
      "keyframe_frame_idx": 4283,
      "frames_covered": [
       4269,
-      4325
+      4315
      ],
      "is_ground_truth": false
     },
@@ -1986,7 +1986,7 @@
      "keyframe_n": 93,
      "keyframe_frame_idx": 6385,
      "frames_covered": [
-      6364,
+      6366,
       6404
      ],
      "is_ground_truth": false
@@ -2065,7 +2065,7 @@
      "keyframe_frame_idx": 3480,
      "frames_covered": [
       3472,
-      3504
+      3502
      ],
      "is_ground_truth": false
     },
@@ -2086,8 +2086,8 @@
      "keyframe_n": 56,
      "keyframe_frame_idx": 3464,
      "frames_covered": [
-      3438,
-      3472
+      3442,
+      3627
      ],
      "is_ground_truth": false
     }
@@ -2121,7 +2121,7 @@
      "keyframe_frame_idx": 1814,
      "frames_covered": [
       1798,
-      1831
+      1829
      ],
      "is_ground_truth": true
     },
@@ -2153,8 +2153,8 @@
      "keyframe_n": 34,
      "keyframe_frame_idx": 1727,
      "frames_covered": [
-      1702,
-      1735
+      1706,
+      1981
      ],
      "is_ground_truth": false
     },
@@ -2165,7 +2165,7 @@
      "keyframe_frame_idx": 1978,
      "frames_covered": [
       1948,
-      1998
+      2078
      ],
      "is_ground_truth": false
     },
@@ -2175,8 +2175,8 @@
      "keyframe_n": 43,
      "keyframe_frame_idx": 2078,
      "frames_covered": [
-      2048,
-      2095
+      2063,
+      17558
      ],
      "is_ground_truth": false
     }
@@ -2209,7 +2209,7 @@
      "keyframe_n": 35,
      "keyframe_frame_idx": 3640,
      "frames_covered": [
-      3558,
+      3610,
       3652
      ],
      "is_ground_truth": true
@@ -2221,7 +2221,7 @@
      "keyframe_frame_idx": 286,
      "frames_covered": [
       273,
-      411
+      317
      ],
      "is_ground_truth": false
     },
@@ -2231,8 +2231,8 @@
      "keyframe_n": 5,
      "keyframe_frame_idx": 260,
      "frames_covered": [
-      215,
-      273
+      229,
+      9058
      ],
      "is_ground_truth": false
     },
@@ -2242,7 +2242,7 @@
      "keyframe_n": 53,
      "keyframe_frame_idx": 9060,
      "frames_covered": [
-      8994,
+      3667,
       9069
      ],
      "is_ground_truth": false
@@ -2254,7 +2254,7 @@
      "keyframe_frame_idx": 3665,
      "frames_covered": [
       3653,
-      3737
+      9081
      ],
      "is_ground_truth": false
     },
@@ -2264,7 +2264,7 @@
      "keyframe_n": 54,
      "keyframe_frame_idx": 9079,
      "frames_covered": [
-      9070,
+      7910,
       9102
      ],
      "is_ground_truth": false
@@ -2309,7 +2309,7 @@
      "keyframe_n": 3,
      "keyframe_frame_idx": 165,
      "frames_covered": [
-      127,
+      137,
       176
      ],
      "is_ground_truth": true
@@ -2320,8 +2320,8 @@
      "keyframe_n": 4,
      "keyframe_frame_idx": 187,
      "frames_covered": [
-      176,
-      230
+      182,
+      2418
      ],
      "is_ground_truth": false
     },
@@ -2332,7 +2332,7 @@
      "keyframe_frame_idx": 2419,
      "frames_covered": [
       2368,
-      2469
+      6207
      ],
      "is_ground_truth": false
     },
@@ -2342,7 +2342,7 @@
      "keyframe_n": 58,
      "keyframe_frame_idx": 6207,
      "frames_covered": [
-      6183,
+      4756,
       6231
      ],
      "is_ground_truth": false
@@ -2353,7 +2353,7 @@
      "keyframe_n": 41,
      "keyframe_frame_idx": 4754,
      "frames_covered": [
-      4698,
+      2511,
       4785
      ],
      "is_ground_truth": false
@@ -2387,7 +2387,7 @@
      "keyframe_n": 81,
      "keyframe_frame_idx": 3637,
      "frames_covered": [
-      3616,
+      3619,
       3655
      ],
      "is_ground_truth": true
@@ -2398,8 +2398,8 @@
      "keyframe_n": 83,
      "keyframe_frame_idx": 3706,
      "frames_covered": [
-      3690,
-      3724
+      3692,
+      3719
      ],
      "is_ground_truth": false
     },
@@ -2420,8 +2420,8 @@
      "keyframe_n": 78,
      "keyframe_frame_idx": 3510,
      "frames_covered": [
-      3492,
-      3529
+      3494,
+      3527
      ],
      "is_ground_truth": false
     },
@@ -2432,7 +2432,7 @@
      "keyframe_frame_idx": 3548,
      "frames_covered": [
       3529,
-      3571
+      3569
      ],
      "is_ground_truth": false
     },
@@ -2487,8 +2487,8 @@
      "keyframe_n": 106,
      "keyframe_frame_idx": 7208,
      "frames_covered": [
-      7137,
-      7278
+      7160,
+      9648
      ],
      "is_ground_truth": false
     },
@@ -2498,8 +2498,8 @@
      "keyframe_n": 162,
      "keyframe_frame_idx": 9646,
      "frames_covered": [
-      9637,
-      9670
+      9392,
+      9669
      ],
      "is_ground_truth": false
     },
@@ -2510,7 +2510,7 @@
      "keyframe_frame_idx": 9392,
      "frames_covered": [
       9352,
-      9431
+      9478
      ],
      "is_ground_truth": false
     },
@@ -2521,7 +2521,7 @@
      "keyframe_frame_idx": 9471,
      "frames_covered": [
       9432,
-      9525
+      9626
      ],
      "is_ground_truth": false
     },
@@ -2531,8 +2531,8 @@
      "keyframe_n": 161,
      "keyframe_frame_idx": 9628,
      "frames_covered": [
-      9604,
-      9637
+      9306,
+      9632
      ],
      "is_ground_truth": false
     }
@@ -2565,8 +2565,8 @@
      "keyframe_n": 15,
      "keyframe_frame_idx": 3833,
      "frames_covered": [
-      3740,
-      3855
+      3812,
+      3854
      ],
      "is_ground_truth": true
     },
@@ -2587,8 +2587,8 @@
      "keyframe_n": 212,
      "keyframe_frame_idx": 12015,
      "frames_covered": [
-      11974,
-      12044
+      7718,
+      12032
      ],
      "is_ground_truth": false
     },
@@ -2598,7 +2598,7 @@
      "keyframe_n": 122,
      "keyframe_frame_idx": 7717,
      "frames_covered": [
-      7672,
+      1185,
       7736
      ],
      "is_ground_truth": false
@@ -2610,7 +2610,7 @@
      "keyframe_frame_idx": 1182,
      "frames_covered": [
       1136,
-      1209
+      33176
      ],
      "is_ground_truth": false
     },
@@ -2620,7 +2620,7 @@
      "keyframe_n": 524,
      "keyframe_frame_idx": 33174,
      "frames_covered": [
-      33133,
+      16202,
       33197
      ],
      "is_ground_truth": false
@@ -2654,7 +2654,7 @@
      "keyframe_n": 66,
      "keyframe_frame_idx": 3895,
      "frames_covered": [
-      3868,
+      3870,
       3904
      ],
      "is_ground_truth": true
@@ -2687,7 +2687,7 @@
      "keyframe_n": 71,
      "keyframe_frame_idx": 4058,
      "frames_covered": [
-      4047,
+      3840,
       4086
      ],
      "is_ground_truth": false
@@ -2698,8 +2698,8 @@
      "keyframe_n": 65,
      "keyframe_frame_idx": 3841,
      "frames_covered": [
-      3802,
-      3868
+      3813,
+      7626
      ],
      "is_ground_truth": false
     },
@@ -2709,8 +2709,8 @@
      "keyframe_n": 134,
      "keyframe_frame_idx": 7626,
      "frames_covered": [
-      7609,
-      7645
+      3647,
+      7644
      ],
      "is_ground_truth": false
     }
@@ -2733,8 +2733,8 @@
    "score": {
     "final_strict": 0.4,
     "final_gap": 0.4,
-    "hit_rank_strict": 29,
-    "hit_rank_gap": 29
+    "hit_rank_strict": 28,
+    "hit_rank_gap": 28
    },
    "submitted_moments": [
     {
@@ -2744,7 +2744,7 @@
      "keyframe_frame_idx": 1368,
      "frames_covered": [
       1359,
-      1393
+      1392
      ],
      "is_ground_truth": false
     },
@@ -2755,7 +2755,7 @@
      "keyframe_frame_idx": 1350,
      "frames_covered": [
       1328,
-      1359
+      2682
      ],
      "is_ground_truth": false
     },
@@ -2765,7 +2765,7 @@
      "keyframe_n": 48,
      "keyframe_frame_idx": 2684,
      "frames_covered": [
-      2659,
+      1708,
       2728
      ],
      "is_ground_truth": false
@@ -2777,7 +2777,7 @@
      "keyframe_frame_idx": 1709,
      "frames_covered": [
       1683,
-      1720
+      1733
      ],
      "is_ground_truth": false
     },
@@ -2788,7 +2788,7 @@
      "keyframe_frame_idx": 1732,
      "frames_covered": [
       1721,
-      1756
+      3889
      ],
      "is_ground_truth": true
     },
@@ -2798,8 +2798,8 @@
      "keyframe_n": 94,
      "keyframe_frame_idx": 3891,
      "frames_covered": [
-      3837,
-      3898
+      3872,
+      3907
      ],
      "is_ground_truth": false
     }
@@ -2832,7 +2832,7 @@
      "keyframe_n": 9,
      "keyframe_frame_idx": 424,
      "frames_covered": [
-      390,
+      392,
       437
      ],
      "is_ground_truth": true
@@ -2843,7 +2843,7 @@
      "keyframe_n": 7,
      "keyframe_frame_idx": 325,
      "frames_covered": [
-      287,
+      290,
       340
      ],
      "is_ground_truth": false
@@ -2854,7 +2854,7 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 450,
      "frames_covered": [
-      437,
+      357,
       479
      ],
      "is_ground_truth": false
@@ -2866,7 +2866,7 @@
      "keyframe_frame_idx": 356,
      "frames_covered": [
       341,
-      390
+      1576
      ],
      "is_ground_truth": false
     },
@@ -2876,8 +2876,8 @@
      "keyframe_n": 27,
      "keyframe_frame_idx": 1576,
      "frames_covered": [
-      1516,
-      1595
+      1563,
+      13389
      ],
      "is_ground_truth": false
     },
@@ -2887,8 +2887,8 @@
      "keyframe_n": 209,
      "keyframe_frame_idx": 13387,
      "frames_covered": [
-      13374,
-      13429
+      518,
+      13418
      ],
      "is_ground_truth": false
     }
@@ -2932,8 +2932,8 @@
      "keyframe_n": 235,
      "keyframe_frame_idx": 10602,
      "frames_covered": [
-      10586,
-      10621
+      10587,
+      10617
      ],
      "is_ground_truth": true
     },
@@ -2943,8 +2943,8 @@
      "keyframe_n": 231,
      "keyframe_frame_idx": 10464,
      "frames_covered": [
-      10444,
-      10483
+      10447,
+      10481
      ],
      "is_ground_truth": false
     },
@@ -2954,8 +2954,8 @@
      "keyframe_n": 273,
      "keyframe_frame_idx": 13559,
      "frames_covered": [
-      13540,
-      13582
+      13541,
+      13577
      ],
      "is_ground_truth": false
     },
@@ -3043,7 +3043,7 @@
      "keyframe_n": 15,
      "keyframe_frame_idx": 924,
      "frames_covered": [
-      880,
+      882,
       941
      ],
      "is_ground_truth": false
@@ -3110,7 +3110,7 @@
      "keyframe_n": 8,
      "keyframe_frame_idx": 451,
      "frames_covered": [
-      428,
+      431,
       470
      ],
      "is_ground_truth": false
@@ -3122,7 +3122,7 @@
      "keyframe_frame_idx": 1756,
      "frames_covered": [
       1733,
-      1783
+      1779
      ],
      "is_ground_truth": true
     },
@@ -3132,8 +3132,8 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 526,
      "frames_covered": [
-      508,
-      544
+      509,
+      542
      ],
      "is_ground_truth": false
     },
@@ -3143,7 +3143,7 @@
      "keyframe_n": 27,
      "keyframe_frame_idx": 1546,
      "frames_covered": [
-      1482,
+      1522,
       1554
      ],
      "is_ground_truth": false
@@ -3154,7 +3154,7 @@
      "keyframe_n": 30,
      "keyframe_frame_idx": 1667,
      "frames_covered": [
-      1642,
+      1646,
       1688
      ],
      "is_ground_truth": false
@@ -3243,8 +3243,8 @@
      "keyframe_n": 56,
      "keyframe_frame_idx": 7416,
      "frames_covered": [
-      7348,
-      7438
+      7367,
+      8810
      ],
      "is_ground_truth": false
     },
@@ -3254,7 +3254,7 @@
      "keyframe_n": 79,
      "keyframe_frame_idx": 8810,
      "frames_covered": [
-      8754,
+      5666,
       8866
      ],
      "is_ground_truth": false
@@ -3321,7 +3321,7 @@
      "keyframe_n": 21,
      "keyframe_frame_idx": 1159,
      "frames_covered": [
-      1131,
+      1132,
       1169
      ],
      "is_ground_truth": false
@@ -3333,7 +3333,7 @@
      "keyframe_frame_idx": 35684,
      "frames_covered": [
       35673,
-      35714
+      35712
      ],
      "is_ground_truth": false
     },
@@ -3343,7 +3343,7 @@
      "keyframe_n": 562,
      "keyframe_frame_idx": 35661,
      "frames_covered": [
-      35632,
+      35633,
       35672
      ],
      "is_ground_truth": false
@@ -3355,7 +3355,7 @@
      "keyframe_frame_idx": 1180,
      "frames_covered": [
       1170,
-      1209
+      1207
      ],
      "is_ground_truth": false
     }
@@ -3410,7 +3410,7 @@
      "keyframe_n": 108,
      "keyframe_frame_idx": 6852,
      "frames_covered": [
-      6823,
+      6831,
       6860
      ],
      "is_ground_truth": false
@@ -3421,8 +3421,8 @@
      "keyframe_n": 109,
      "keyframe_frame_idx": 6868,
      "frames_covered": [
-      6860,
-      6893
+      2221,
+      6889
      ],
      "is_ground_truth": false
     },
@@ -3433,7 +3433,7 @@
      "keyframe_frame_idx": 2219,
      "frames_covered": [
       2211,
-      2243
+      24882
      ],
      "is_ground_truth": false
     },
@@ -3443,8 +3443,8 @@
      "keyframe_n": 349,
      "keyframe_frame_idx": 24882,
      "frames_covered": [
-      24866,
-      24900
+      21029,
+      24897
      ],
      "is_ground_truth": false
     }
@@ -3488,8 +3488,8 @@
      "keyframe_n": 61,
      "keyframe_frame_idx": 3650,
      "frames_covered": [
-      3614,
-      3663
+      3577,
+      3656
      ],
      "is_ground_truth": false
     },
@@ -3500,7 +3500,7 @@
      "keyframe_frame_idx": 3577,
      "frames_covered": [
       3559,
-      3613
+      3732
      ],
      "is_ground_truth": false
     },
@@ -3510,8 +3510,8 @@
      "keyframe_n": 63,
      "keyframe_frame_idx": 3733,
      "frames_covered": [
-      3705,
-      3744
+      3707,
+      3756
      ],
      "is_ground_truth": false
     },
@@ -3521,7 +3521,7 @@
      "keyframe_n": 64,
      "keyframe_frame_idx": 3755,
      "frames_covered": [
-      3744,
+      3532,
       3781
      ],
      "is_ground_truth": false
@@ -3533,7 +3533,7 @@
      "keyframe_frame_idx": 3540,
      "frames_covered": [
       3506,
-      3558
+      23964
      ],
      "is_ground_truth": false
     }
@@ -3578,7 +3578,7 @@
      "keyframe_frame_idx": 8212,
      "frames_covered": [
       8198,
-      8256
+      8247
      ],
      "is_ground_truth": false
     },
@@ -3622,7 +3622,7 @@
      "keyframe_frame_idx": 21964,
      "frames_covered": [
       21950,
-      22007
+      21996
      ],
      "is_ground_truth": false
     }
@@ -3655,7 +3655,7 @@
      "keyframe_n": 143,
      "keyframe_frame_idx": 7296,
      "frames_covered": [
-      7265,
+      7277,
       7303
      ],
      "is_ground_truth": true
@@ -3666,8 +3666,8 @@
      "keyframe_n": 144,
      "keyframe_frame_idx": 7310,
      "frames_covered": [
-      7303,
-      7330
+      7307,
+      7348
      ],
      "is_ground_truth": false
     },
@@ -3678,7 +3678,7 @@
      "keyframe_frame_idx": 7350,
      "frames_covered": [
       7330,
-      7357
+      7367
      ],
      "is_ground_truth": false
     },
@@ -3689,7 +3689,7 @@
      "keyframe_frame_idx": 7365,
      "frames_covered": [
       7358,
-      7386
+      7405
      ],
      "is_ground_truth": false
     },
@@ -3700,7 +3700,7 @@
      "keyframe_frame_idx": 7407,
      "frames_covered": [
       7386,
-      7415
+      7753
      ],
      "is_ground_truth": false
     },
@@ -3710,7 +3710,7 @@
      "keyframe_n": 158,
      "keyframe_frame_idx": 7755,
      "frames_covered": [
-      7730,
+      7232,
       7764
      ],
      "is_ground_truth": false
@@ -3734,8 +3734,8 @@
    "score": {
     "final_strict": 0.2,
     "final_gap": 0.2,
-    "hit_rank_strict": 64,
-    "hit_rank_gap": 64
+    "hit_rank_strict": 61,
+    "hit_rank_gap": 61
    },
    "submitted_moments": [
     {
@@ -3745,7 +3745,7 @@
      "keyframe_frame_idx": 11441,
      "frames_covered": [
       11424,
-      11488
+      11479
      ],
      "is_ground_truth": false
     },
@@ -3778,7 +3778,7 @@
      "keyframe_frame_idx": 24065,
      "frames_covered": [
       24036,
-      24153
+      24128
      ],
      "is_ground_truth": false
     },
@@ -3788,8 +3788,8 @@
      "keyframe_n": 422,
      "keyframe_frame_idx": 24007,
      "frames_covered": [
-      23948,
-      24036
+      10032,
+      24021
      ],
      "is_ground_truth": false
     },
@@ -3800,7 +3800,7 @@
      "keyframe_frame_idx": 10033,
      "frames_covered": [
       9994,
-      10051
+      11415
      ],
      "is_ground_truth": false
     },
@@ -3856,7 +3856,7 @@
      "keyframe_frame_idx": 48573,
      "frames_covered": [
       48531,
-      49373
+      48664
      ],
      "is_ground_truth": false
     },
@@ -3866,7 +3866,7 @@
      "keyframe_n": 192,
      "keyframe_frame_idx": 29232,
      "frames_covered": [
-      28936,
+      29092,
       29299
      ],
      "is_ground_truth": false
@@ -3889,7 +3889,7 @@
      "keyframe_frame_idx": 29367,
      "frames_covered": [
       29300,
-      29434
+      29648
      ],
      "is_ground_truth": true
     },
@@ -3899,7 +3899,7 @@
      "keyframe_n": 195,
      "keyframe_frame_idx": 29636,
      "frames_covered": [
-      29569,
+      17164,
       29728
      ],
      "is_ground_truth": false
@@ -3924,7 +3924,7 @@
     "final_strict": 0.6,
     "final_gap": 0.6,
     "hit_rank_strict": 15,
-    "hit_rank_gap": 14
+    "hit_rank_gap": 15
    },
    "submitted_moments": [
     {
@@ -3933,7 +3933,7 @@
      "keyframe_n": 128,
      "keyframe_frame_idx": 5138,
      "frames_covered": [
-      5115,
+      5116,
       5160
      ],
      "is_ground_truth": false
@@ -3944,7 +3944,7 @@
      "keyframe_n": 115,
      "keyframe_frame_idx": 4545,
      "frames_covered": [
-      4507,
+      4510,
       4560
      ],
      "is_ground_truth": false
@@ -3966,7 +3966,7 @@
      "keyframe_n": 251,
      "keyframe_frame_idx": 11973,
      "frames_covered": [
-      11951,
+      11954,
       11980
      ],
      "is_ground_truth": false
@@ -3977,8 +3977,8 @@
      "keyframe_n": 116,
      "keyframe_frame_idx": 4575,
      "frames_covered": [
-      4560,
-      4604
+      4567,
+      12512
      ],
      "is_ground_truth": false
     },
@@ -3988,7 +3988,7 @@
      "keyframe_n": 267,
      "keyframe_frame_idx": 12511,
      "frames_covered": [
-      12498,
+      11990,
       12541
      ],
      "is_ground_truth": false
@@ -4010,9 +4010,9 @@
     ]
    },
    "score": {
-    "final_strict": 0.0,
+    "final_strict": 0.4,
     "final_gap": 0.4,
-    "hit_rank_strict": null,
+    "hit_rank_strict": 22,
     "hit_rank_gap": 22
    },
    "submitted_moments": [
@@ -4034,7 +4034,7 @@
      "keyframe_frame_idx": 3376,
      "frames_covered": [
       3361,
-      3414
+      3413
      ],
      "is_ground_truth": false
     },
@@ -4056,7 +4056,7 @@
      "keyframe_frame_idx": 2308,
      "frames_covered": [
       2288,
-      2371
+      2353
      ],
      "is_ground_truth": true
     },
@@ -4066,7 +4066,7 @@
      "keyframe_n": 91,
      "keyframe_frame_idx": 4239,
      "frames_covered": [
-      4215,
+      2271,
       4276
      ],
      "is_ground_truth": false
@@ -4077,8 +4077,8 @@
      "keyframe_n": 36,
      "keyframe_frame_idx": 2268,
      "frames_covered": [
-      2237,
-      2288
+      1937,
+      2280
      ],
      "is_ground_truth": false
     }
@@ -4144,8 +4144,8 @@
      "keyframe_n": 223,
      "keyframe_frame_idx": 12147,
      "frames_covered": [
-      12136,
-      12173
+      12142,
+      20111
      ],
      "is_ground_truth": false
     },
@@ -4155,8 +4155,8 @@
      "keyframe_n": 349,
      "keyframe_frame_idx": 20109,
      "frames_covered": [
-      20097,
-      20155
+      454,
+      20138
      ],
      "is_ground_truth": false
     },
@@ -4167,7 +4167,7 @@
      "keyframe_frame_idx": 454,
      "frames_covered": [
       415,
-      494
+      9261
      ],
      "is_ground_truth": false
     }
@@ -4188,9 +4188,9 @@
     ]
    },
    "score": {
-    "final_strict": 0.0,
+    "final_strict": 0.2,
     "final_gap": 0.4,
-    "hit_rank_strict": null,
+    "hit_rank_strict": 69,
     "hit_rank_gap": 35
    },
    "submitted_moments": [
@@ -4256,7 +4256,7 @@
      "keyframe_frame_idx": 6001,
      "frames_covered": [
       5259,
-      6744
+      6496
      ],
      "is_ground_truth": false
     },
@@ -4390,7 +4390,7 @@
      "keyframe_frame_idx": 18721,
      "frames_covered": [
       18706,
-      18771
+      18757
      ],
      "is_ground_truth": true
     },
@@ -4422,7 +4422,7 @@
      "keyframe_n": 297,
      "keyframe_frame_idx": 17151,
      "frames_covered": [
-      17109,
+      17116,
       17165
      ],
      "is_ground_truth": false
@@ -4433,7 +4433,7 @@
      "keyframe_n": 321,
      "keyframe_frame_idx": 18690,
      "frames_covered": [
-      18631,
+      18654,
       18705
      ],
      "is_ground_truth": false
@@ -4445,7 +4445,7 @@
      "keyframe_frame_idx": 24742,
      "frames_covered": [
       24720,
-      24767
+      24766
      ],
      "is_ground_truth": false
     }
@@ -4579,7 +4579,7 @@
      "keyframe_frame_idx": 24742,
      "frames_covered": [
       24720,
-      24767
+      24766
      ],
      "is_ground_truth": false
     },
@@ -4589,7 +4589,7 @@
      "keyframe_n": 114,
      "keyframe_frame_idx": 6189,
      "frames_covered": [
-      6149,
+      6166,
       6197
      ],
      "is_ground_truth": false
@@ -4623,7 +4623,7 @@
      "keyframe_frame_idx": 10635,
      "frames_covered": [
       10628,
-      10658
+      10656
      ],
      "is_ground_truth": false
     },
@@ -4633,7 +4633,7 @@
      "keyframe_n": 263,
      "keyframe_frame_idx": 15113,
      "frames_covered": [
-      15099,
+      6207,
       15138
      ],
      "is_ground_truth": false
@@ -4678,7 +4678,7 @@
      "keyframe_n": 295,
      "keyframe_frame_idx": 19988,
      "frames_covered": [
-      19958,
+      19964,
       20011
      ],
      "is_ground_truth": true
@@ -4689,7 +4689,7 @@
      "keyframe_n": 293,
      "keyframe_frame_idx": 19896,
      "frames_covered": [
-      19847,
+      19860,
       19911
      ],
      "is_ground_truth": false
@@ -4778,7 +4778,7 @@
      "keyframe_n": 7,
      "keyframe_frame_idx": 423,
      "frames_covered": [
-      402,
+      405,
       441
      ],
      "is_ground_truth": false
@@ -4789,7 +4789,7 @@
      "keyframe_n": 24,
      "keyframe_frame_idx": 1687,
      "frames_covered": [
-      1599,
+      1662,
       1696
      ],
      "is_ground_truth": false
@@ -4844,9 +4844,9 @@
     ]
    },
    "score": {
-    "final_strict": 0.0,
+    "final_strict": 0.6,
     "final_gap": 0.6,
-    "hit_rank_strict": null,
+    "hit_rank_strict": 8,
     "hit_rank_gap": 8
    },
    "submitted_moments": [
@@ -4857,7 +4857,7 @@
      "keyframe_frame_idx": 30315,
      "frames_covered": [
       30236,
-      30918
+      30479
      ],
      "is_ground_truth": false
     },
@@ -4867,7 +4867,7 @@
      "keyframe_n": 185,
      "keyframe_frame_idx": 35806,
      "frames_covered": [
-      35219,
+      35675,
       35869
      ],
      "is_ground_truth": true
@@ -4978,8 +4978,8 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 646,
      "frames_covered": [
-      624,
-      668
+      627,
+      666
      ],
      "is_ground_truth": false
     },
@@ -5000,7 +5000,7 @@
      "keyframe_n": 183,
      "keyframe_frame_idx": 9404,
      "frames_covered": [
-      9318,
+      9343,
       9432
      ],
      "is_ground_truth": false
@@ -5025,7 +5025,7 @@
     "final_strict": 0.6,
     "final_gap": 0.8,
     "hit_rank_strict": 8,
-    "hit_rank_gap": 3
+    "hit_rank_gap": 4
    },
    "submitted_moments": [
     {
@@ -5034,7 +5034,7 @@
      "keyframe_n": 12,
      "keyframe_frame_idx": 628,
      "frames_covered": [
-      604,
+      608,
       635
      ],
      "is_ground_truth": false
@@ -5045,8 +5045,8 @@
      "keyframe_n": 13,
      "keyframe_frame_idx": 642,
      "frames_covered": [
-      635,
-      664
+      579,
+      662
      ],
      "is_ground_truth": true
     },
@@ -5056,7 +5056,7 @@
      "keyframe_n": 11,
      "keyframe_frame_idx": 579,
      "frames_covered": [
-      567,
+      554,
       603
      ],
      "is_ground_truth": false
@@ -5067,8 +5067,8 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 555,
      "frames_covered": [
-      510,
-      567
+      527,
+      833
      ],
      "is_ground_truth": false
     },
@@ -5078,7 +5078,7 @@
      "keyframe_n": 19,
      "keyframe_frame_idx": 828,
      "frames_covered": [
-      811,
+      778,
       843
      ],
      "is_ground_truth": false
@@ -5089,8 +5089,8 @@
      "keyframe_n": 17,
      "keyframe_frame_idx": 779,
      "frames_covered": [
-      760,
-      786
+      761,
+      794
      ],
      "is_ground_truth": false
     }
@@ -5134,7 +5134,7 @@
      "keyframe_n": 81,
      "keyframe_frame_idx": 7729,
      "frames_covered": [
-      7657,
+      7679,
       7752
      ],
      "is_ground_truth": false
@@ -5145,7 +5145,7 @@
      "keyframe_n": 43,
      "keyframe_frame_idx": 4324,
      "frames_covered": [
-      4232,
+      4250,
       4359
      ],
      "is_ground_truth": false
@@ -5156,7 +5156,7 @@
      "keyframe_n": 39,
      "keyframe_frame_idx": 4012,
      "frames_covered": [
-      3965,
+      3980,
       4026
      ],
      "is_ground_truth": false
@@ -5167,7 +5167,7 @@
      "keyframe_n": 67,
      "keyframe_frame_idx": 6838,
      "frames_covered": [
-      6750,
+      6769,
       6870
      ],
      "is_ground_truth": false
@@ -5267,7 +5267,7 @@
      "keyframe_n": 49,
      "keyframe_frame_idx": 3548,
      "frames_covered": [
-      3478,
+      3513,
       3563
      ],
      "is_ground_truth": false
@@ -5278,7 +5278,7 @@
      "keyframe_n": 50,
      "keyframe_frame_idx": 3578,
      "frames_covered": [
-      3563,
+      1441,
       3607
      ],
      "is_ground_truth": false
@@ -5324,7 +5324,7 @@
      "keyframe_frame_idx": 22177,
      "frames_covered": [
       22160,
-      22228
+      22216
      ],
      "is_ground_truth": false
     },
@@ -5345,7 +5345,7 @@
      "keyframe_n": 345,
      "keyframe_frame_idx": 22142,
      "frames_covered": [
-      22091,
+      22103,
       22159
      ],
      "is_ground_truth": false
@@ -5357,7 +5357,7 @@
      "keyframe_frame_idx": 21192,
      "frames_covered": [
       21155,
-      21214
+      22281
      ],
      "is_ground_truth": false
     },
@@ -5367,7 +5367,7 @@
      "keyframe_n": 347,
      "keyframe_frame_idx": 22279,
      "frames_covered": [
-      22228,
+      2376,
       22307
      ],
      "is_ground_truth": false
@@ -5412,7 +5412,7 @@
      "keyframe_n": 9,
      "keyframe_frame_idx": 421,
      "frames_covered": [
-      388,
+      391,
       433
      ],
      "is_ground_truth": false
@@ -5423,7 +5423,7 @@
      "keyframe_n": 10,
      "keyframe_frame_idx": 445,
      "frames_covered": [
-      433,
+      356,
       474
      ],
      "is_ground_truth": true
@@ -5435,7 +5435,7 @@
      "keyframe_frame_idx": 355,
      "frames_covered": [
       340,
-      388
+      2152
      ],
      "is_ground_truth": false
     },
@@ -5445,7 +5445,7 @@
      "keyframe_n": 51,
      "keyframe_frame_idx": 2148,
      "frames_covered": [
-      2128,
+      403,
       2199
      ],
      "is_ground_truth": false
@@ -5456,8 +5456,8 @@
      "keyframe_n": 8,
      "keyframe_frame_idx": 402,
      "frames_covered": [
-      375,
-      475
+      349,
+      460
      ],
      "is_ground_truth": false
     },
@@ -5468,7 +5468,7 @@
      "keyframe_frame_idx": 348,
      "frames_covered": [
       298,
-      375
+      2110
      ],
      "is_ground_truth": false
     }
@@ -5513,7 +5513,7 @@
      "keyframe_frame_idx": 12175,
      "frames_covered": [
       12121,
-      12202
+      27695
      ],
      "is_ground_truth": true
     },
@@ -5523,8 +5523,8 @@
      "keyframe_n": 428,
      "keyframe_frame_idx": 27696,
      "frames_covered": [
-      27674,
-      27704
+      27676,
+      27713
      ],
      "is_ground_truth": false
     },
@@ -5534,8 +5534,8 @@
      "keyframe_n": 429,
      "keyframe_frame_idx": 27712,
      "frames_covered": [
-      27704,
-      27779
+      14410,
+      27732
      ],
      "is_ground_truth": false
     },
@@ -5545,8 +5545,8 @@
      "keyframe_n": 222,
      "keyframe_frame_idx": 14412,
      "frames_covered": [
-      14358,
-      14435
+      14361,
+      14461
      ],
      "is_ground_truth": false
     },
@@ -5557,7 +5557,7 @@
      "keyframe_frame_idx": 14459,
      "frames_covered": [
       14436,
-      14513
+      23593
      ],
      "is_ground_truth": false
     }
@@ -5601,8 +5601,8 @@
      "keyframe_n": 73,
      "keyframe_frame_idx": 2676,
      "frames_covered": [
-      2631,
-      2721
+      2646,
+      2758
      ],
      "is_ground_truth": true
     },
@@ -5612,8 +5612,8 @@
      "keyframe_n": 74,
      "keyframe_frame_idx": 2766,
      "frames_covered": [
-      2721,
-      2833
+      2740,
+      2909
      ],
      "is_ground_truth": false
     },
@@ -5623,8 +5623,8 @@
      "keyframe_n": 75,
      "keyframe_frame_idx": 2901,
      "frames_covered": [
-      2834,
-      2918
+      2863,
+      5326
      ],
      "is_ground_truth": false
     },
@@ -5634,7 +5634,7 @@
      "keyframe_n": 114,
      "keyframe_frame_idx": 5318,
      "frames_covered": [
-      5278,
+      3029,
       5374
      ],
      "is_ground_truth": false
@@ -5646,7 +5646,7 @@
      "keyframe_frame_idx": 3034,
      "frames_covered": [
       3021,
-      3076
+      3730
      ],
      "is_ground_truth": false
     }
@@ -5679,7 +5679,7 @@
      "keyframe_n": 113,
      "keyframe_frame_idx": 4533,
      "frames_covered": [
-      4503,
+      4510,
       4541
      ],
      "is_ground_truth": true
@@ -5691,7 +5691,7 @@
      "keyframe_frame_idx": 4550,
      "frames_covered": [
       4542,
-      4609
+      4573
      ],
      "is_ground_truth": false
     },
@@ -5734,7 +5734,7 @@
      "keyframe_n": 45,
      "keyframe_frame_idx": 2318,
      "frames_covered": [
-      2286,
+      2288,
       2331
      ],
      "is_ground_truth": false
@@ -5779,7 +5779,7 @@
      "keyframe_n": 48,
      "keyframe_frame_idx": 6256,
      "frames_covered": [
-      6211,
+      6080,
       6351
      ],
      "is_ground_truth": true
@@ -5790,8 +5790,8 @@
      "keyframe_n": 46,
      "keyframe_frame_idx": 6076,
      "frames_covered": [
-      5997,
-      6121
+      2700,
+      6100
      ],
      "is_ground_truth": false
     },
@@ -5801,8 +5801,8 @@
      "keyframe_n": 20,
      "keyframe_frame_idx": 2702,
      "frames_covered": [
-      2679,
-      2709
+      2681,
+      3972
      ],
      "is_ground_truth": false
     },
@@ -5813,7 +5813,7 @@
      "keyframe_frame_idx": 3972,
      "frames_covered": [
       3885,
-      4060
+      7469
      ],
      "is_ground_truth": false
     },
@@ -5823,7 +5823,7 @@
      "keyframe_n": 57,
      "keyframe_frame_idx": 7460,
      "frames_covered": [
-      7438,
+      1210,
       7500
      ],
      "is_ground_truth": false
@@ -5858,7 +5858,7 @@
      "keyframe_frame_idx": 2481,
      "frames_covered": [
       2474,
-      2502
+      2499
      ],
      "is_ground_truth": true
     },
@@ -5868,8 +5868,8 @@
      "keyframe_n": 52,
      "keyframe_frame_idx": 2467,
      "frames_covered": [
-      2448,
-      2474
+      2449,
+      2544
      ],
      "is_ground_truth": false
     },
@@ -5879,7 +5879,7 @@
      "keyframe_n": 55,
      "keyframe_frame_idx": 2543,
      "frames_covered": [
-      2534,
+      2523,
       2565
      ],
      "is_ground_truth": false
@@ -5891,7 +5891,7 @@
      "keyframe_frame_idx": 2524,
      "frames_covered": [
       2503,
-      2533
+      2844
      ],
      "is_ground_truth": false
     },
@@ -5901,8 +5901,8 @@
      "keyframe_n": 63,
      "keyframe_frame_idx": 2844,
      "frames_covered": [
-      2819,
-      2892
+      2825,
+      6784
      ],
      "is_ground_truth": false
     },
@@ -5912,7 +5912,7 @@
      "keyframe_n": 111,
      "keyframe_frame_idx": 6775,
      "frames_covered": [
-      6721,
+      2378,
       6846
      ],
      "is_ground_truth": false
@@ -5947,7 +5947,7 @@
      "keyframe_frame_idx": 6590,
      "frames_covered": [
       6583,
-      6612
+      6610
      ],
      "is_ground_truth": true
     },
@@ -5957,7 +5957,7 @@
      "keyframe_n": 130,
      "keyframe_frame_idx": 6575,
      "frames_covered": [
-      6551,
+      6555,
       6582
      ],
      "is_ground_truth": false
@@ -5968,7 +5968,7 @@
      "keyframe_n": 284,
      "keyframe_frame_idx": 15125,
      "frames_covered": [
-      15058,
+      15071,
       15149
      ],
      "is_ground_truth": false
@@ -5980,7 +5980,7 @@
      "keyframe_frame_idx": 6555,
      "frames_covered": [
       6526,
-      6590
+      6555
      ],
      "is_ground_truth": false
     },
@@ -5991,7 +5991,7 @@
      "keyframe_frame_idx": 6652,
      "frames_covered": [
       6643,
-      6680
+      6675
      ],
      "is_ground_truth": false
     },
@@ -6001,8 +6001,8 @@
      "keyframe_n": 138,
      "keyframe_frame_idx": 6872,
      "frames_covered": [
-      6848,
-      6893
+      6853,
+      6891
      ],
      "is_ground_truth": false
     }
@@ -6036,7 +6036,7 @@
      "keyframe_frame_idx": 17589,
      "frames_covered": [
       17561,
-      17715
+      17650
      ],
      "is_ground_truth": false
     },
@@ -6135,8 +6135,8 @@
      "keyframe_n": 12,
      "keyframe_frame_idx": 704,
      "frames_covered": [
-      684,
-      750
+      695,
+      1109
      ],
      "is_ground_truth": false
     },
@@ -6146,8 +6146,8 @@
      "keyframe_n": 19,
      "keyframe_frame_idx": 1110,
      "frames_covered": [
-      1082,
-      1135
+      1083,
+      4795
      ],
      "is_ground_truth": false
     },
@@ -6158,7 +6158,7 @@
      "keyframe_frame_idx": 4790,
      "frames_covered": [
       4744,
-      4821
+      33129
      ],
      "is_ground_truth": false
     },
@@ -6168,7 +6168,7 @@
      "keyframe_n": 683,
      "keyframe_frame_idx": 33130,
      "frames_covered": [
-      33104,
+      4853,
       33141
      ],
      "is_ground_truth": false
@@ -6180,7 +6180,7 @@
      "keyframe_frame_idx": 4853,
      "frames_covered": [
       4822,
-      4884
+      33154
      ],
      "is_ground_truth": false
     }
@@ -6224,7 +6224,7 @@
      "keyframe_n": 34,
      "keyframe_frame_idx": 4846,
      "frames_covered": [
-      4777,
+      4789,
       4872
      ],
      "is_ground_truth": false
@@ -6235,7 +6235,7 @@
      "keyframe_n": 35,
      "keyframe_frame_idx": 4898,
      "frames_covered": [
-      4872,
+      3877,
       4923
      ],
      "is_ground_truth": false
@@ -6247,7 +6247,7 @@
      "keyframe_frame_idx": 3877,
      "frames_covered": [
       3795,
-      3959
+      5093
      ],
      "is_ground_truth": false
     },
@@ -6257,7 +6257,7 @@
      "keyframe_n": 55,
      "keyframe_frame_idx": 5093,
      "frames_covered": [
-      5039,
+      3737,
       5147
      ],
      "is_ground_truth": false
@@ -6269,7 +6269,7 @@
      "keyframe_frame_idx": 3740,
      "frames_covered": [
       3714,
-      3784
+      4658
      ],
      "is_ground_truth": false
     },
@@ -6325,7 +6325,7 @@
      "keyframe_frame_idx": 11907,
      "frames_covered": [
       11766,
-      12049
+      23998
      ],
      "is_ground_truth": true
     },
@@ -6335,7 +6335,7 @@
      "keyframe_n": 428,
      "keyframe_frame_idx": 24005,
      "frames_covered": [
-      23937,
+      10250,
       24060
      ],
      "is_ground_truth": false
@@ -6347,7 +6347,7 @@
      "keyframe_frame_idx": 10252,
      "frames_covered": [
       10188,
-      10281
+      28091
      ],
      "is_ground_truth": false
     },
@@ -6357,8 +6357,8 @@
      "keyframe_n": 495,
      "keyframe_frame_idx": 28091,
      "frames_covered": [
-      28064,
-      28126
+      10310,
+      28086
      ],
      "is_ground_truth": false
     },
@@ -6368,8 +6368,8 @@
      "keyframe_n": 145,
      "keyframe_frame_idx": 10310,
      "frames_covered": [
-      10281,
-      10339
+      10291,
+      24227
      ],
      "is_ground_truth": false
     }
@@ -6402,7 +6402,7 @@
      "keyframe_n": 57,
      "keyframe_frame_idx": 3488,
      "frames_covered": [
-      3462,
+      3465,
       3496
      ],
      "is_ground_truth": false
@@ -6414,7 +6414,7 @@
      "keyframe_frame_idx": 3505,
      "frames_covered": [
       3497,
-      3532
+      3528
      ],
      "is_ground_truth": false
     },
@@ -6435,7 +6435,7 @@
      "keyframe_n": 61,
      "keyframe_frame_idx": 3641,
      "frames_covered": [
-      3612,
+      3614,
       3652
      ],
      "is_ground_truth": false
@@ -6446,8 +6446,8 @@
      "keyframe_n": 206,
      "keyframe_frame_idx": 10733,
      "frames_covered": [
-      10718,
-      10758
+      10722,
+      10744
      ],
      "is_ground_truth": false
     },
@@ -6457,7 +6457,7 @@
      "keyframe_n": 56,
      "keyframe_frame_idx": 3435,
      "frames_covered": [
-      3423,
+      716,
       3461
      ],
      "is_ground_truth": false
@@ -6491,7 +6491,7 @@
      "keyframe_n": 17,
      "keyframe_frame_idx": 711,
      "frames_covered": [
-      687,
+      688,
       720
      ],
      "is_ground_truth": false
@@ -6503,7 +6503,7 @@
      "keyframe_frame_idx": 730,
      "frames_covered": [
       721,
-      756
+      753
      ],
      "is_ground_truth": true
     },
@@ -6547,7 +6547,7 @@
      "keyframe_frame_idx": 872,
      "frames_covered": [
       865,
-      894
+      892
      ],
      "is_ground_truth": false
     }
@@ -6592,7 +6592,7 @@
      "keyframe_frame_idx": 4709,
      "frames_covered": [
       4694,
-      4756
+      4743
      ],
      "is_ground_truth": false
     },
@@ -6602,8 +6602,8 @@
      "keyframe_n": 87,
      "keyframe_frame_idx": 4679,
      "frames_covered": [
-      4631,
-      4694
+      4645,
+      5465
      ],
      "is_ground_truth": false
     },
@@ -6613,7 +6613,7 @@
      "keyframe_n": 105,
      "keyframe_frame_idx": 5466,
      "frames_covered": [
-      5442,
+      4805,
       5476
      ],
      "is_ground_truth": false
@@ -6624,8 +6624,8 @@
      "keyframe_n": 93,
      "keyframe_frame_idx": 4807,
      "frames_covered": [
-      4758,
-      4822
+      4771,
+      7721
      ],
      "is_ground_truth": false
     },
@@ -6635,8 +6635,8 @@
      "keyframe_n": 143,
      "keyframe_frame_idx": 7719,
      "frames_covered": [
-      7704,
-      7756
+      5116,
+      7755
      ],
      "is_ground_truth": false
     }
@@ -6657,9 +6657,9 @@
     ]
    },
    "score": {
-    "final_strict": 0.0,
+    "final_strict": 0.6,
     "final_gap": 0.8,
-    "hit_rank_strict": null,
+    "hit_rank_strict": 8,
     "hit_rank_gap": 4
    },
    "submitted_moments": [
@@ -6680,8 +6680,8 @@
      "keyframe_n": 46,
      "keyframe_frame_idx": 5188,
      "frames_covered": [
-      5103,
-      5212
+      5135,
+      6842
      ],
      "is_ground_truth": true
     },
@@ -6691,7 +6691,7 @@
      "keyframe_n": 142,
      "keyframe_frame_idx": 6844,
      "frames_covered": [
-      6821,
+      1052,
       6852
      ],
      "is_ground_truth": false
@@ -6703,7 +6703,7 @@
      "keyframe_frame_idx": 1050,
      "frames_covered": [
       1041,
-      1075
+      4069
      ],
      "is_ground_truth": false
     },
@@ -6713,7 +6713,7 @@
      "keyframe_n": 80,
      "keyframe_frame_idx": 4071,
      "frames_covered": [
-      4040,
+      1029,
       4079
      ],
      "is_ground_truth": false
@@ -6724,8 +6724,8 @@
      "keyframe_n": 27,
      "keyframe_frame_idx": 1031,
      "frames_covered": [
-      1004,
-      1040
+      1007,
+      6863
      ],
      "is_ground_truth": false
     }
@@ -6791,7 +6791,7 @@
      "keyframe_n": 58,
      "keyframe_frame_idx": 4782,
      "frames_covered": [
-      4711,
+      2851,
       4852
      ],
      "is_ground_truth": false
@@ -6803,7 +6803,7 @@
      "keyframe_frame_idx": 2851,
      "frames_covered": [
       2792,
-      2910
+      4911
      ],
      "is_ground_truth": false
     },
@@ -6813,7 +6813,7 @@
      "keyframe_n": 59,
      "keyframe_frame_idx": 4923,
      "frames_covered": [
-      4853,
+      2224,
       5026
      ],
      "is_ground_truth": false
@@ -6859,7 +6859,7 @@
      "keyframe_frame_idx": 10601,
      "frames_covered": [
       10588,
-      10644
+      10635
      ],
      "is_ground_truth": false
     },
@@ -6927,7 +6927,7 @@
     "final_strict": 0.6,
     "final_gap": 0.8,
     "hit_rank_strict": 8,
-    "hit_rank_gap": 3
+    "hit_rank_gap": 4
    },
    "submitted_moments": [
     {
@@ -6937,7 +6937,7 @@
      "keyframe_frame_idx": 1951,
      "frames_covered": [
       1943,
-      1979
+      1974
      ],
      "is_ground_truth": false
     },
@@ -6947,8 +6947,8 @@
      "keyframe_n": 30,
      "keyframe_frame_idx": 1935,
      "frames_covered": [
-      1903,
-      1943
+      1871,
+      1938
      ],
      "is_ground_truth": true
     },
@@ -6959,7 +6959,7 @@
      "keyframe_frame_idx": 1871,
      "frames_covered": [
       1855,
-      1903
+      4615
      ],
      "is_ground_truth": false
     },
@@ -6969,7 +6969,7 @@
      "keyframe_n": 77,
      "keyframe_frame_idx": 4614,
      "frames_covered": [
-      4590,
+      2094,
       4640
      ],
      "is_ground_truth": false
@@ -6980,7 +6980,7 @@
      "keyframe_n": 34,
      "keyframe_frame_idx": 2096,
      "frames_covered": [
-      2065,
+      1836,
       2108
      ],
      "is_ground_truth": false
@@ -6992,7 +6992,7 @@
      "keyframe_frame_idx": 1838,
      "frames_covered": [
       1799,
-      1854
+      9315
      ],
      "is_ground_truth": false
     }
@@ -7037,7 +7037,7 @@
      "keyframe_frame_idx": 17156,
      "frames_covered": [
       17140,
-      17200
+      17194
      ],
      "is_ground_truth": false
     },
@@ -7069,8 +7069,8 @@
      "keyframe_n": 129,
      "keyframe_frame_idx": 4911,
      "frames_covered": [
-      4898,
-      4941
+      4905,
+      16894
      ],
      "is_ground_truth": false
     },
@@ -7081,7 +7081,7 @@
      "keyframe_frame_idx": 16896,
      "frames_covered": [
       16849,
-      16916
+      16937
      ],
      "is_ground_truth": false
     }
@@ -7115,7 +7115,7 @@
      "keyframe_frame_idx": 3075,
      "frames_covered": [
       3065,
-      3108
+      3101
      ],
      "is_ground_truth": true
     },
@@ -7126,7 +7126,7 @@
      "keyframe_frame_idx": 3055,
      "frames_covered": [
       3030,
-      3065
+      10763
      ],
      "is_ground_truth": false
     },
@@ -7136,8 +7136,8 @@
      "keyframe_n": 155,
      "keyframe_frame_idx": 10763,
      "frames_covered": [
-      10749,
-      10818
+      4582,
+      10790
      ],
      "is_ground_truth": false
     },
@@ -7147,7 +7147,7 @@
      "keyframe_n": 80,
      "keyframe_frame_idx": 4584,
      "frames_covered": [
-      4553,
+      572,
       4597
      ],
      "is_ground_truth": false
@@ -7159,7 +7159,7 @@
      "keyframe_frame_idx": 573,
      "frames_covered": [
       549,
-      583
+      2942
      ],
      "is_ground_truth": false
     },
@@ -7170,7 +7170,7 @@
      "keyframe_frame_idx": 2940,
      "frames_covered": [
       2931,
-      2963
+      22327
      ],
      "is_ground_truth": false
     }
@@ -7193,8 +7193,8 @@
    "score": {
     "final_strict": 0.2,
     "final_gap": 0.2,
-    "hit_rank_strict": 71,
-    "hit_rank_gap": 71
+    "hit_rank_strict": 69,
+    "hit_rank_gap": 69
    },
    "submitted_moments": [
     {
@@ -7203,7 +7203,7 @@
      "keyframe_n": 237,
      "keyframe_frame_idx": 21878,
      "frames_covered": [
-      21822,
+      21849,
       21890
      ],
      "is_ground_truth": false
@@ -7214,8 +7214,8 @@
      "keyframe_n": 238,
      "keyframe_frame_idx": 21902,
      "frames_covered": [
-      21890,
-      21949
+      18356,
+      21931
      ],
      "is_ground_truth": false
     },
@@ -7225,7 +7225,7 @@
      "keyframe_n": 202,
      "keyframe_frame_idx": 18356,
      "frames_covered": [
-      18323,
+      16972,
       18389
      ],
      "is_ground_truth": false
@@ -7236,7 +7236,7 @@
      "keyframe_n": 192,
      "keyframe_frame_idx": 16974,
      "frames_covered": [
-      16946,
+      16892,
       16984
      ],
      "is_ground_truth": false
@@ -7247,8 +7247,8 @@
      "keyframe_n": 190,
      "keyframe_frame_idx": 16894,
      "frames_covered": [
-      16864,
-      16906
+      16865,
+      16997
      ],
      "is_ground_truth": false
     },
@@ -7258,8 +7258,8 @@
      "keyframe_n": 193,
      "keyframe_frame_idx": 16995,
      "frames_covered": [
-      16985,
-      17029
+      16919,
+      17021
      ],
      "is_ground_truth": false
     },
@@ -7326,7 +7326,7 @@
      "keyframe_frame_idx": 4021,
      "frames_covered": [
       4012,
-      4045
+      4044
      ],
      "is_ground_truth": true
     },
@@ -7337,7 +7337,7 @@
      "keyframe_frame_idx": 3957,
      "frames_covered": [
       3950,
-      3979
+      3978
      ],
      "is_ground_truth": false
     },
@@ -7347,7 +7347,7 @@
      "keyframe_n": 95,
      "keyframe_frame_idx": 3827,
      "frames_covered": [
-      3799,
+      3805,
       3835
      ],
      "is_ground_truth": false
@@ -7392,7 +7392,7 @@
      "keyframe_n": 97,
      "keyframe_frame_idx": 7383,
      "frames_covered": [
-      7357,
+      7358,
       7393
      ],
      "is_ground_truth": true
@@ -7447,7 +7447,7 @@
      "keyframe_n": 275,
      "keyframe_frame_idx": 15432,
      "frames_covered": [
-      15392,
+      15396,
       15447
      ],
      "is_ground_truth": false
@@ -7503,8 +7503,8 @@
      "keyframe_n": 60,
      "keyframe_frame_idx": 2972,
      "frames_covered": [
-      2938,
-      3023
+      2952,
+      20208
      ],
      "is_ground_truth": false
     },
@@ -7514,8 +7514,8 @@
      "keyframe_n": 301,
      "keyframe_frame_idx": 20206,
      "frames_covered": [
-      20193,
-      20260
+      2742,
+      20238
      ],
      "is_ground_truth": false
     },
@@ -7525,8 +7525,8 @@
      "keyframe_n": 57,
      "keyframe_frame_idx": 2741,
      "frames_covered": [
-      2733,
-      2788
+      2724,
+      2761
      ],
      "is_ground_truth": false
     },
@@ -7537,7 +7537,7 @@
      "keyframe_frame_idx": 2725,
      "frames_covered": [
       2705,
-      2733
+      20186
      ],
      "is_ground_truth": false
     }
@@ -7581,7 +7581,7 @@
      "keyframe_n": 93,
      "keyframe_frame_idx": 3700,
      "frames_covered": [
-      3670,
+      3580,
       3759
      ],
      "is_ground_truth": false
@@ -7593,7 +7593,7 @@
      "keyframe_frame_idx": 3580,
      "frames_covered": [
       3521,
-      3610
+      9086
      ],
      "is_ground_truth": false
     },
@@ -7604,7 +7604,7 @@
      "keyframe_frame_idx": 9086,
      "frames_covered": [
       9061,
-      9111
+      9942
      ],
      "is_ground_truth": false
     },
@@ -7614,7 +7614,7 @@
      "keyframe_n": 169,
      "keyframe_frame_idx": 9934,
      "frames_covered": [
-      9908,
+      9137,
       9959
      ],
      "is_ground_truth": false
@@ -7626,7 +7626,7 @@
      "keyframe_frame_idx": 9148,
      "frames_covered": [
       9126,
-      9193
+      14057
      ],
      "is_ground_truth": false
     }
@@ -7659,8 +7659,8 @@
      "keyframe_n": 358,
      "keyframe_frame_idx": 19312,
      "frames_covered": [
-      19284,
-      19334
+      19291,
+      19332
      ],
      "is_ground_truth": false
     },
@@ -7670,7 +7670,7 @@
      "keyframe_n": 354,
      "keyframe_frame_idx": 19152,
      "frames_covered": [
-      19125,
+      19130,
       19160
      ],
      "is_ground_truth": false
@@ -7682,7 +7682,7 @@
      "keyframe_frame_idx": 19169,
      "frames_covered": [
       19161,
-      19197
+      19191
      ],
      "is_ground_truth": true
     },
@@ -7692,7 +7692,7 @@
      "keyframe_n": 201,
      "keyframe_frame_idx": 11376,
      "frames_covered": [
-      11337,
+      11347,
       11388
      ],
      "is_ground_truth": false
@@ -7704,7 +7704,7 @@
      "keyframe_frame_idx": 11401,
      "frames_covered": [
       11389,
-      11437
+      11430
      ],
      "is_ground_truth": false
     },
@@ -7792,8 +7792,8 @@
      "keyframe_n": 93,
      "keyframe_frame_idx": 6157,
      "frames_covered": [
-      6134,
-      6196
+      6144,
+      23397
      ],
      "is_ground_truth": false
     },
@@ -7803,7 +7803,7 @@
      "keyframe_n": 453,
      "keyframe_frame_idx": 23395,
      "frames_covered": [
-      23374,
+      17148,
       23442
      ],
      "is_ground_truth": false
@@ -7938,7 +7938,7 @@
      "keyframe_frame_idx": 1284,
      "frames_covered": [
       1261,
-      1310
+      1308
      ],
      "is_ground_truth": true
     },
@@ -7948,7 +7948,7 @@
      "keyframe_n": 36,
      "keyframe_frame_idx": 1564,
      "frames_covered": [
-      1535,
+      1538,
       1574
      ],
      "is_ground_truth": false
@@ -7959,8 +7959,8 @@
      "keyframe_n": 42,
      "keyframe_frame_idx": 1754,
      "frames_covered": [
-      1731,
-      1777
+      1732,
+      1775
      ],
      "is_ground_truth": false
     },
@@ -7982,7 +7982,7 @@
      "keyframe_frame_idx": 570,
      "frames_covered": [
       558,
-      596
+      594
      ],
      "is_ground_truth": false
     },
@@ -7993,7 +7993,7 @@
      "keyframe_frame_idx": 2209,
      "frames_covered": [
       2200,
-      2244
+      2209
      ],
      "is_ground_truth": false
     }
@@ -8027,7 +8027,7 @@
      "keyframe_frame_idx": 2879,
      "frames_covered": [
       2860,
-      2928
+      2923
      ],
      "is_ground_truth": false
     },
@@ -8038,7 +8038,7 @@
      "keyframe_frame_idx": 24652,
      "frames_covered": [
       24640,
-      24724
+      24681
      ],
      "is_ground_truth": true
     },
@@ -8048,7 +8048,7 @@
      "keyframe_n": 363,
      "keyframe_frame_idx": 24627,
      "frames_covered": [
-      24579,
+      24598,
       24639
      ],
      "is_ground_truth": false
@@ -8060,7 +8060,7 @@
      "keyframe_frame_idx": 23597,
      "frames_covered": [
       23585,
-      23632
+      23627
      ],
      "is_ground_truth": false
     },
@@ -8070,7 +8070,7 @@
      "keyframe_n": 49,
      "keyframe_frame_idx": 2840,
      "frames_covered": [
-      2787,
+      2796,
       2859
      ],
      "is_ground_truth": false
@@ -8105,7 +8105,7 @@
    "score": {
     "final_strict": 0.6,
     "final_gap": 0.6,
-    "hit_rank_strict": 15,
+    "hit_rank_strict": 14,
     "hit_rank_gap": 7
    },
    "submitted_moments": [
@@ -8127,7 +8127,7 @@
      "keyframe_frame_idx": 4153,
      "frames_covered": [
       4118,
-      4168
+      4249
      ],
      "is_ground_truth": false
     },
@@ -8137,8 +8137,8 @@
      "keyframe_n": 70,
      "keyframe_frame_idx": 4251,
      "frames_covered": [
-      4217,
-      4264
+      4219,
+      4279
      ],
      "is_ground_truth": true
     },
@@ -8148,8 +8148,8 @@
      "keyframe_n": 71,
      "keyframe_frame_idx": 4277,
      "frames_covered": [
-      4264,
-      4316
+      4272,
+      26436
      ],
      "is_ground_truth": false
     },
@@ -8159,8 +8159,8 @@
      "keyframe_n": 491,
      "keyframe_frame_idx": 26434,
      "frames_covered": [
-      26426,
-      26458
+      26416,
+      26455
      ],
      "is_ground_truth": false
     },
@@ -8171,7 +8171,7 @@
      "keyframe_frame_idx": 26418,
      "frames_covered": [
       26397,
-      26426
+      28496
      ],
      "is_ground_truth": false
     }
@@ -8248,8 +8248,8 @@
      "keyframe_n": 261,
      "keyframe_frame_idx": 16833,
      "frames_covered": [
-      16817,
-      16863
+      16825,
+      25259
      ],
      "is_ground_truth": false
     },
@@ -8259,7 +8259,7 @@
      "keyframe_n": 389,
      "keyframe_frame_idx": 25262,
      "frames_covered": [
-      25205,
+      11339,
       25278
      ],
      "is_ground_truth": false
@@ -8294,7 +8294,7 @@
      "keyframe_frame_idx": 2801,
      "frames_covered": [
       2781,
-      2827
+      2822
      ],
      "is_ground_truth": true
     },
@@ -8305,7 +8305,7 @@
      "keyframe_frame_idx": 7248,
      "frames_covered": [
       7242,
-      7269
+      7267
      ],
      "is_ground_truth": false
     },
@@ -8327,7 +8327,7 @@
      "keyframe_frame_idx": 7376,
      "frames_covered": [
       7367,
-      7404
+      7401
      ],
      "is_ground_truth": false
     },
@@ -8337,8 +8337,8 @@
      "keyframe_n": 164,
      "keyframe_frame_idx": 7193,
      "frames_covered": [
-      7184,
-      7214
+      7189,
+      7355
      ],
      "is_ground_truth": false
     },
@@ -8348,7 +8348,7 @@
      "keyframe_n": 169,
      "keyframe_frame_idx": 7357,
      "frames_covered": [
-      7333,
+      7233,
       7366
      ],
      "is_ground_truth": false
@@ -8405,7 +8405,7 @@
      "keyframe_frame_idx": 24098,
      "frames_covered": [
       24072,
-      24160
+      24157
      ],
      "is_ground_truth": false
     },
@@ -8460,9 +8460,9 @@
    },
    "score": {
     "final_strict": 0.6,
-    "final_gap": 0.8,
+    "final_gap": 0.6,
     "hit_rank_strict": 8,
-    "hit_rank_gap": 5
+    "hit_rank_gap": 8
    },
    "submitted_moments": [
     {
@@ -8471,8 +8471,8 @@
      "keyframe_n": 53,
      "keyframe_frame_idx": 3042,
      "frames_covered": [
-      3024,
-      3076
+      3042,
+      3062
      ],
      "is_ground_truth": false
     },
@@ -8493,7 +8493,7 @@
      "keyframe_n": 51,
      "keyframe_frame_idx": 2975,
      "frames_covered": [
-      2925,
+      2940,
       2990
      ],
      "is_ground_truth": false
@@ -8504,8 +8504,8 @@
      "keyframe_n": 59,
      "keyframe_frame_idx": 3493,
      "frames_covered": [
-      3455,
-      3516
+      3493,
+      3504
      ],
      "is_ground_truth": false
     },
@@ -8550,8 +8550,8 @@
    "score": {
     "final_strict": 0.4,
     "final_gap": 0.4,
-    "hit_rank_strict": 29,
-    "hit_rank_gap": 29
+    "hit_rank_strict": 28,
+    "hit_rank_gap": 28
    },
    "submitted_moments": [
     {
@@ -8560,7 +8560,7 @@
      "keyframe_n": 251,
      "keyframe_frame_idx": 11973,
      "frames_covered": [
-      11951,
+      11954,
       11980
      ],
      "is_ground_truth": false
@@ -8583,7 +8583,7 @@
      "keyframe_frame_idx": 12596,
      "frames_covered": [
       12584,
-      12628
+      12625
      ],
      "is_ground_truth": false
     },
@@ -8593,8 +8593,8 @@
      "keyframe_n": 268,
      "keyframe_frame_idx": 12572,
      "frames_covered": [
-      12542,
-      12584
+      12484,
+      12577
      ],
      "is_ground_truth": false
     },
@@ -8605,7 +8605,7 @@
      "keyframe_frame_idx": 12484,
      "frames_covered": [
       12458,
-      12497
+      12512
      ],
      "is_ground_truth": true
     },
@@ -8616,7 +8616,7 @@
      "keyframe_frame_idx": 12511,
      "frames_covered": [
       12498,
-      12541
+      25803
      ],
      "is_ground_truth": false
     }
@@ -8661,7 +8661,7 @@
      "keyframe_frame_idx": 5591,
      "frames_covered": [
       5574,
-      5635
+      5632
      ],
      "is_ground_truth": true
     },
@@ -8671,8 +8671,8 @@
      "keyframe_n": 503,
      "keyframe_frame_idx": 31281,
      "frames_covered": [
-      31253,
-      31289
+      5554,
+      31284
      ],
      "is_ground_truth": false
     },
@@ -8682,7 +8682,7 @@
      "keyframe_n": 89,
      "keyframe_frame_idx": 5556,
      "frames_covered": [
-      5514,
+      1172,
       5573
      ],
      "is_ground_truth": false
@@ -8693,8 +8693,8 @@
      "keyframe_n": 24,
      "keyframe_frame_idx": 1172,
      "frames_covered": [
-      1122,
-      1190
+      1153,
+      4754
      ],
      "is_ground_truth": false
     },
@@ -8704,8 +8704,8 @@
      "keyframe_n": 97,
      "keyframe_frame_idx": 4754,
      "frames_covered": [
-      4742,
-      4807
+      4752,
+      19251
      ],
      "is_ground_truth": false
     }
@@ -8761,7 +8761,7 @@
      "keyframe_frame_idx": 11470,
      "frames_covered": [
       11444,
-      11530
+      11527
      ],
      "is_ground_truth": false
     },
@@ -8771,7 +8771,7 @@
      "keyframe_n": 112,
      "keyframe_frame_idx": 12355,
      "frames_covered": [
-      12299,
+      12300,
       12380
      ],
      "is_ground_truth": false
@@ -8782,8 +8782,8 @@
      "keyframe_n": 113,
      "keyframe_frame_idx": 12405,
      "frames_covered": [
-      12380,
-      12461
+      7414,
+      12460
      ],
      "is_ground_truth": true
     },
@@ -8793,8 +8793,8 @@
      "keyframe_n": 56,
      "keyframe_frame_idx": 7416,
      "frames_covered": [
-      7348,
-      7438
+      4011,
+      7426
      ],
      "is_ground_truth": false
     }
@@ -8828,7 +8828,7 @@
      "keyframe_frame_idx": 7479,
      "frames_covered": [
       7462,
-      7526
+      7520
      ],
      "is_ground_truth": false
     },
@@ -8850,7 +8850,7 @@
      "keyframe_frame_idx": 7730,
      "frames_covered": [
       7718,
-      7783
+      7761
      ],
      "is_ground_truth": false
     },
@@ -8861,7 +8861,7 @@
      "keyframe_frame_idx": 8100,
      "frames_covered": [
       8090,
-      8134
+      8126
      ],
      "is_ground_truth": false
     },
@@ -8939,7 +8939,7 @@
      "keyframe_frame_idx": 21122,
      "frames_covered": [
       21109,
-      21159
+      21152
      ],
      "is_ground_truth": false
     },
@@ -8949,8 +8949,8 @@
      "keyframe_n": 18,
      "keyframe_frame_idx": 1710,
      "frames_covered": [
-      1638,
-      1776
+      1687,
+      1733
      ],
      "is_ground_truth": false
     },
@@ -8961,7 +8961,7 @@
      "keyframe_frame_idx": 529,
      "frames_covered": [
       501,
-      595
+      590
      ],
      "is_ground_truth": false
     },
@@ -8982,7 +8982,7 @@
      "keyframe_n": 1,
      "keyframe_frame_idx": 62,
      "frames_covered": [
-      27,
+      62,
       90
      ],
      "is_ground_truth": false
@@ -9038,7 +9038,7 @@
      "keyframe_n": 152,
      "keyframe_frame_idx": 14241,
      "frames_covered": [
-      14179,
+      14199,
       14259
      ],
      "is_ground_truth": false
@@ -9049,7 +9049,7 @@
      "keyframe_n": 19,
      "keyframe_frame_idx": 700,
      "frames_covered": [
-      675,
+      681,
       707
      ],
      "is_ground_truth": false
@@ -9061,7 +9061,7 @@
      "keyframe_frame_idx": 15334,
      "frames_covered": [
       15314,
-      15382
+      15381
      ],
      "is_ground_truth": false
     },
@@ -9072,7 +9072,7 @@
      "keyframe_frame_idx": 15880,
      "frames_covered": [
       15862,
-      15922
+      15921
      ],
      "is_ground_truth": false
     },
@@ -9082,8 +9082,8 @@
      "keyframe_n": 45,
      "keyframe_frame_idx": 5050,
      "frames_covered": [
-      5013,
-      5102
+      5034,
+      5067
      ],
      "is_ground_truth": false
     }
@@ -9127,7 +9127,7 @@
      "keyframe_n": 196,
      "keyframe_frame_idx": 9048,
      "frames_covered": [
-      9016,
+      9024,
       9072
      ],
      "is_ground_truth": false
@@ -9138,8 +9138,8 @@
      "keyframe_n": 475,
      "keyframe_frame_idx": 26400,
      "frames_covered": [
-      26380,
-      26425
+      26384,
+      26416
      ],
      "is_ground_truth": false
     },
@@ -9160,7 +9160,7 @@
      "keyframe_n": 47,
      "keyframe_frame_idx": 2656,
      "frames_covered": [
-      2614,
+      2633,
       2664
      ],
      "is_ground_truth": false
@@ -9206,8 +9206,8 @@
    "score": {
     "final_strict": 0.4,
     "final_gap": 0.4,
-    "hit_rank_strict": 36,
-    "hit_rank_gap": 36
+    "hit_rank_strict": 35,
+    "hit_rank_gap": 35
    },
    "submitted_moments": [
     {
@@ -9217,7 +9217,7 @@
      "keyframe_frame_idx": 4003,
      "frames_covered": [
       3992,
-      4035
+      4030
      ],
      "is_ground_truth": false
     },
@@ -9239,7 +9239,7 @@
      "keyframe_frame_idx": 3490,
      "frames_covered": [
       3479,
-      3532
+      3518
      ],
      "is_ground_truth": false
     },
@@ -9250,7 +9250,7 @@
      "keyframe_frame_idx": 3468,
      "frames_covered": [
       3442,
-      3479
+      13870
      ],
      "is_ground_truth": false
     },
@@ -9260,8 +9260,8 @@
      "keyframe_n": 290,
      "keyframe_frame_idx": 13872,
      "frames_covered": [
-      13850,
-      13879
+      13852,
+      13889
      ],
      "is_ground_truth": false
     },
@@ -9271,8 +9271,8 @@
      "keyframe_n": 291,
      "keyframe_frame_idx": 13887,
      "frames_covered": [
-      13880,
-      13923
+      5202,
+      13907
      ],
      "is_ground_truth": true
     }
