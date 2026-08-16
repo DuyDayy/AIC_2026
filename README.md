@@ -932,6 +932,38 @@ Họ dùng LLM; ở đây làm bằng luật vì rẻ, tất định và kiểm 
 thất bại**: không khớp mẫu thì trả nguyên câu, cắt còn dưới 3 từ thì giữ nguyên, không bao
 giờ trả rỗng (probe rỗng làm ② chấm mọi khung bằng nhau — hỏng lặng lẽ).
 
+### 🔴 MẬT ĐỘ KEYFRAME — đòn bẩy lớn nhất, và nó KHÔNG ở tầng truy vấn
+
+Họ rút đặc trưng BEiT-3 ở **mỗi khung thứ 10** rồi giữ khung khác biệt đáng kể (mục 2.1).
+Mật độ **tối đa** của họ là khe 10 khung; khe trung vị của ta là **48**.
+
+Xác suất cửa sổ đáp án **chứa sẵn** một keyframe của ta — tức trần cứng, bất kể truy xuất
+giỏi đến đâu:
+
+| mật độ | khe | L=9 | L=11 | L=21 |
+|---|---|---|---|---|
+| **ta (thật)** | p50 = 48 | **23,5%** | 28,6% | 50,9% |
+| dày gấp 2 | ~24 | 45,7% | 53,1% | 78,8% |
+| dày gấp 4 | ~12 | **73,5%** | 81,1% | 95,0% |
+| mỗi khung thứ 10 | 10 | 90,0% | 100% | 100% |
+
+**Rải khung và mật độ keyframe giải CÙNG một bài toán, trả giá ở HAI chỗ khác nhau:**
+
+| | rải (đang dùng) | keyframe dày hơn |
+|---|---|---|
+| tiền mã hoá | **$0** | $8,64 (×2) → $30,50 (×10) |
+| ô trong ngân sách 100 đáp án | **tốn** — 100 ô chỉ mua 14 mốc | **không tốn** — 100 mốc riêng biệt |
+| nạp chỉ mục | 38s | 76s → 268s |
+| ②③ chấm 100 câu | 141s | ~280s → ~1.000s |
+
+Với ×4 dày, trần lên **73,5%** *và* nộp được 100 mốc phân biệt thay vì 14. Nhiều khả năng
+lớn hơn cả dư địa `+0,2422` của rerank — nhưng nó nằm ở **tiền xử lý**, không nằm ở tầng
+này, và tiền xử lý đã xong.
+
+⚠️ Hệ của họ không cần điều này vì lý do khác ta: **VBS có người xác nhận đáp án**, không
+có cửa sổ `[s,e]` hẹp. Mật độ của họ để **duyệt cho dễ**. Việc mật độ giúp trúng cửa sổ là
+suy luận từ luật AIC, **không phải điều bài báo nói**.
+
 ### Hợp nhiều mô hình nhúng — khoảng cách thật, chưa làm
 
 Đây là khác biệt kiến trúc lớn nhất, và nó tấn công đúng chỗ có tiền: dư địa
