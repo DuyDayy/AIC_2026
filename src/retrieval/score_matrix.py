@@ -108,6 +108,39 @@ from src.retrieval.sources import SourceScores
 # một khoảng rất rộng. Đừng chỉnh chữ số thứ ba; hãy mở rộng bộ eval.
 #
 # =============================================================================
+# δ LỜI NÓI ĐÃ ĐỔI: 0,1064 → 0,2128. BỘ CŨ BỊ CHỈNH THIẾU, KHÔNG PHẢI KHỚP QUÁ
+# =============================================================================
+#
+# Bộ trên fit trên **326 truy vấn GỘP hai bộ eval**. Nhưng hai bộ đó khác hẳn nhau:
+#
+#     226 câu do model viết KHI ĐANG NHÌN khung đích →  0% câu cần OCR/ASR
+#     100 câu người gán nhãn tay mô phỏng đề thật     → 81% câu cần OCR/ASR
+#
+# Gộp lại thì 69% số câu là loại ASR vô dụng, nên nghiệm bị **kéo về 0**. Đó là bài toán
+# HỖN HỢP, không phải khớp quá: trọng số fit ra là trung bình của hai chế độ, và tỉ lệ
+# trộn trong bộ eval không khớp tỉ lệ trong đề thi.
+#
+# [ĐO] MRR theo hệ số nhân δ, cùng một thước trên cả hai bộ:
+#
+#     ×δ     Δ MRR 100 câu tay   Δ MRR 226 câu model   p hoà vốn
+#     1,5          +0,0000              −0,0234           99,9%
+#     2,0          +0,0215              −0,0330           60,6%
+#     2,5          +0,0438              −0,0479           52,3%
+#     3,0          +0,0347              −0,0648           65,1%
+#
+# `p` = tỉ lệ câu trong đề thi thật cần OCR/ASR. Kiểm chéo 5 lớp × 20 xáo trên bộ 100
+# câu cho **Δ = +0,0149, KTC95 [+0,0108; +0,0192] ✓**, và 99/100 lớp chọn ×2,0 hoặc ×2,5
+# — nên đây là tín hiệu, không phải nhiễu chọn lọc.
+#
+# **Chọn ×2,0 (δ = 0,2128)**: đi đúng hướng, giữ được nửa mức lợi, và chỉ cần `p > 61%`
+# là có lãi — trong khi bộ gán nhãn tay đo được `p = 81%`. Không lấy ×2,5 vì nó phụ thuộc
+# nặng hơn vào một `p` mà ta **không biết chắc**.
+#
+# ⚠️ Giá trị mới nằm NGOÀI khoảng bootstrap [0,062; 0,125] ở bảng trên. Điều đó đúng và
+# không mâu thuẫn: bảng đó là khoảng tin cậy **có điều kiện trên hỗn hợp 326 câu**. Đổi
+# hỗn hợp thì đổi nghiệm. Muốn thu hẹp thật sự thì phải biết `p` của đề thi.
+#
+# =============================================================================
 # BỐN CÁCH RÚT TỪ DỮ LIỆU, TẤT CẢ RƠI VÀO CÙNG MỘT VÙNG
 # =============================================================================
 #
@@ -142,7 +175,7 @@ from src.retrieval.sources import SourceScores
 #
 # Chênh giữa các cách CHỌN trọng số: 1,4 điểm. Chênh giữa CÓ và KHÔNG hợp nhất: 7,7.
 # Nếu còn thời gian, đổ vào mở rộng bộ eval chứ đừng đổ vào ba con số này.
-DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.0891, "ocr": 0.1322, "asr": 0.1064}
+DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.0891, "ocr": 0.1322, "asr": 0.2128}
 
 
 def z_normalize(scores: np.ndarray, covered: np.ndarray, eps: float = 1e-9) -> np.ndarray:

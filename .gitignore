@@ -53,8 +53,10 @@ src/ingestion/ocr_store.py
 src/ingestion/transcript_store.py
 src/retrieval/engine.py
 src/submission/allocator.py
-src/submission/kbest.py
 src/submission/writer.py
+# `kbest.py` KHÔNG còn ở đây: ⑦ đã hợp nhất KIS và TRAKE về `k_best_alignments`,
+# nên `run.py` import nó — bỏ sót là repo tải về không chạy. Đúng loại lỗi mà
+# `coverage.py` và `shard_plan.py` từng dính.
 # bộ 100 truy vấn gán nhãn tay — do người khác export, chờ quyết định đưa vào
 export_for_fusion/
 bench100.html
