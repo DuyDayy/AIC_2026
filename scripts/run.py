@@ -31,12 +31,12 @@ lại với cùng bộ truy vấn ⟹ không tốn GPU lần nào nữa. Thêm m
 TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
 =============================================================================
 
-    ① probe hoá   tách mốc E1:/E2:, rút trích dẫn
+    ① probe hoá   tách mốc E1:/E2:, rút trích dẫn; Q&A: câu hỏi → câu MÔ TẢ
     ② bốn nguồn   thị giác · OCR · vật thể · lời nói
-    ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,089/0,132/0,106
+    ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,089/0,132/0,213
     ⑤a rổ         mỗi nguồn đề cử TOP RIÊNG 40 → rổ ~155 khung, là bộ lọc CỨNG
-    ⑤b bậc 1      mảnh cắt vật thể qua jina-clip, quét CẢ rổ (đúng màu 54% → 77%)
-    ⑤c bậc 2      VLM chấm P(khớp) trên top 30 sau bậc 1 — BẬT mặc định
+    ⑤b bậc 1      mảnh cắt vật thể — TẮT mặc định, đo được nó phá điểm
+    ⑤c bậc 2      VLM chấm P(khớp) trên top 30 — BẬT mặc định, trọng số 0,25
     ④ kbest       DP thứ tự thời gian, k-best mỗi video rồi sắp toàn cục; λ=0
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
     ⑦ nộp         KHÔNG khử trùng; `--spread` quyết có rải khung vào khe hay không
@@ -455,7 +455,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.ingestion.jina_encoder import truncate_and_normalize
     from src.retrieval.dante import DEFAULT_LAMBDA
     from src.retrieval.pool import union_pool
-    from src.retrieval.probe import build_probes
+    from src.retrieval.probe import build_probes, declarativize
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
     from src.submission.coverage import spread_in_window
@@ -477,7 +477,14 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
 
     # ① probe hoá → danh sách văn bản cần mã hoá
     for q in queries:
-        q["probes"] = [p.text for p in build_probes(q["text"])] or [q["text"]]
+        # Đề Q&A: mã hoá CÂU MÔ TẢ, không mã hoá câu hỏi. "…cầm ly màu gì?" hỏi về thứ
+        # ta chưa biết — cụm "màu gì" là chỗ trống, không mô tả khung hình nào. Ý lấy từ
+        # NII-UIT @ VBS2025 mục 2.7. `q["text"]` giữ NGUYÊN cho ⑥: đầu đọc cần biết đang
+        # được hỏi gì mới trả lời được.
+        src_text = declarativize(q["text"]) if q["kind"] == "qa" else q["text"]
+        if q["kind"] == "qa" and src_text != q["text"]:
+            print(f"  ① {q['id']}: probe ← {src_text!r}")
+        q["probes"] = [p.text for p in build_probes(src_text)] or [src_text]
         if q["kind"] != "trake" and len(q["probes"]) > 1:
             print(f"  ⚠ {q['id']}: tách ra {len(q['probes'])} mốc nhưng loại là "
                   f"{q['kind']} — đổi sang TRAKE", file=sys.stderr)

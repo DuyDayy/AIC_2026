@@ -881,6 +881,66 @@ cách đào sâu hơn.
 
 ---
 
+## Đối chiếu NII-UIT @ VBS2025
+
+*Bao Tran Gia et al., "NII-UIT at VBS2025: Multimodal Video Retrieval with LLM
+Integration and Dynamic Temporal Search" (UIT–VNU HCM + NII Japan).*
+
+⚠️ **VBS là hệ CÓ NGƯỜI trong vòng lặp** — người dùng tự chọn bản diễn giải, tự kéo thanh
+trọng số, tự duyệt shot lân cận. Vòng sơ tuyển AIC **nộp tự động 100 đáp án**. Phần lớn
+thiết kế của họ không chuyển sang được, và đó là lý do chứ không phải cái cớ.
+
+| ý của họ | ta | |
+|---|---|---|
+| Query expansion bằng GPT-4o (5 bản diễn giải) — mục 2.3 | **đã thử, BÁC BỎ**: `Đa biến thể probe` xấu hơn 17/30 câu | ở VBS *người* chọn bản nào; ta phải hợp tự động, và hợp tự động là chỗ nó hỏng |
+| Hợp NHIỀU mô hình nhúng (BEiT-3 + OpenCLIP H-14 + InternVL-G) — mục 2.2 | ta dùng **một** (jina-clip-v2) | **khoảng cách kiến trúc lớn nhất**, xem dưới |
+| Xếp hạng theo SHOT, mỗi shot một khung — mục 2.6 | **đã đo, HẠI −0,0841** | xem dưới |
+| Vật thể làm **bộ lọc cứng** (Co-DETR) — mục 2.5 | ta dùng làm **điểm** (0,0891) | nguồn vật thể của ta yếu nhất; lọc cứng thì một lần nhận diện sai mất sạch câu |
+| Dynamic temporal search: dò **cả hai chiều** — mục 2.6 | ta ép `τ < t` **ngặt** | thể lệ AIC quy định TRAKE là chuỗi **có thứ tự**, khung phải tăng dần ⟹ ngặt là ĐÚNG luật ta thi |
+| Q&A: câu hỏi → **câu mô tả** trước khi truy xuất — mục 2.7 | **ĐÃ ÁP DỤNG** | xem dưới |
+| Stable Diffusion sinh ảnh làm truy vấn — mục 2.4 | chưa | đắt, chưa đo |
+
+### Lấy top-K theo SHOT — đo lại dưới kiến trúc mới, vẫn HẠI
+
+Ta từng đo khử trùng cảnh ở **−4,3pp** nhưng đó là kiến trúc cũ. Đo lại trên rổ + rerank:
+
+| cách | Final (rải 7) | Δ | KTC95 | T/Th |
+|---|---|---|---|---|
+| **theo KHUNG** (đang dùng) | **0,4881** | — | | |
+| theo SHOT · 1 khung/shot | 0,4041 | **−0,0841** | [−0,1196, −0,0506] | 3/25 ✗ |
+| theo SHOT · 2 khung/shot | 0,4794 | −0,0087 | [−0,0213, +0,0006] | 1/4 ✗ |
+| theo SHOT · 3 khung/shot | 0,4881 | +0,0000 | — | rổ vốn hiếm khi >3 khung/shot |
+
+**Cơ chế: phép rải ĐÃ tự phủ shot.** Mỗi keyframe rải trong nửa khe *của riêng nó*, nên
+hai keyframe cùng shot phủ **hai phần khác nhau**. Gom về một khung/shot là vứt phần phủ
+còn lại. Hệ của họ **không rải** — có người duyệt — nên gom theo shot đúng với họ, sai
+với ta.
+
+### Q&A: câu hỏi → câu mô tả — ĐÃ ÁP DỤNG
+
+Tháp văn bản jina-clip huấn luyện trên **caption**. Câu nghi vấn hỏi về thứ **ta chưa
+biết**: trong *"…đang cầm ly màu gì?"*, cụm "màu gì" là **chỗ trống**, không mô tả khung
+hình nào. `probe.declarativize()` bỏ cụm hỏi, giữ phần mô tả:
+
+    "Người phụ nữ mặc váy đỏ đang cầm ly màu gì?" → "Người phụ nữ mặc váy đỏ đang cầm ly"
+    "Có bao nhiêu người đứng trên sân khấu?"      → "người đứng trên sân khấu"
+
+Họ dùng LLM; ở đây làm bằng luật vì rẻ, tất định và kiểm được (14 test). **Chỉ đổi văn bản
+đi vào ②** — ⑥ vẫn nhận câu hỏi gốc, nó cần biết đang được hỏi gì.
+
+⚠️ **CHƯA ĐO trên dữ liệu thật** — ⑥ không có bộ eval nào. Nên nó viết để **an toàn khi
+thất bại**: không khớp mẫu thì trả nguyên câu, cắt còn dưới 3 từ thì giữ nguyên, không bao
+giờ trả rỗng (probe rỗng làm ② chấm mọi khung bằng nhau — hỏng lặng lẽ).
+
+### Hợp nhiều mô hình nhúng — khoảng cách thật, chưa làm
+
+Đây là khác biệt kiến trúc lớn nhất, và nó tấn công đúng chỗ có tiền: dư địa
+`R@1 → R@100` là **+0,2422**. Giá: mỗi tháp thêm là ~$4,32 mã hoá lại 173.426 khung, cộng
+lưu trữ, **cộng thời gian chấm khi thi** — mà `②③ chấm 4 nguồn` đã ăn 141 giây trong ngân
+sách 2h30.
+
+---
+
 ## Ý tưởng đã BÁC BỎ bằng đo
 
 Giữ lại để không ai dựng lại chúng.

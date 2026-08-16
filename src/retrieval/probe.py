@@ -179,3 +179,70 @@ def build_probes(query: str) -> list[Probe]:
         q = extract_quoted(seg) if len(segs) > 1 else all_quoted
         probes.append(Probe(index=len(probes), text=seg, quoted=q))
     return probes
+
+
+# =============================================================================
+# CÂU HỎI Q&A → CÂU MÔ TẢ, TRƯỚC KHI MÃ HOÁ LÀM PROBE
+# =============================================================================
+#
+# Tháp văn bản của jina-clip huấn luyện trên **caption** — câu trần thuật mô tả ảnh.
+# Câu nghi vấn là dạng ngoài phân phối, và tệ hơn: **nó hỏi về thứ ta chưa biết**.
+#
+#     "Người phụ nữ mặc váy đỏ đang cầm ly MÀU GÌ?"
+#
+# Cụm "màu gì" không mô tả khung hình nào cả — nó là chỗ TRỐNG cần điền. Đem nguyên
+# câu đi khớp với ảnh là bắt encoder khớp một câu hỏi với một cảnh.
+#
+# Ý này lấy từ NII-UIT tại VBS2025 (mục 2.7): họ biến
+# *"What is the license plate number?"* → *"A red VW Golf GTI with a license plate"*
+# rồi mới truy xuất. Họ dùng LLM; ở đây làm bằng luật vì rẻ, tất định, và kiểm được.
+#
+# ⚠️ CHỈ đổi văn bản đi vào ②. Tầng ⑥ vẫn nhận **câu hỏi gốc** — nó cần biết đang được
+# hỏi gì mới trả lời được.
+#
+# ⚠️ CHƯA ĐO trên dữ liệu thật: ⑥ hiện không có bộ eval nào. Phép biến đổi này có lý
+# thuyết đỡ nhưng **chưa có con số**, nên nó viết sao cho **an toàn khi thất bại**: không
+# khớp mẫu nào thì trả nguyên câu, và không bao giờ trả chuỗi rỗng.
+
+_HOI_DUOI = re.compile(
+    r"\s*(?:có\s+)?(?:là\s+)?(?:màu\s+gì|mấy\s+\w+|bao\s+nhiêu(?:\s+\w+)?|"
+    r"gì|nào|ai|đâu|ở\s+đâu|khi\s+nào|lúc\s+nào|thế\s+nào|ra\s+sao|"
+    r"bao\s+lâu|tại\s+sao|vì\s+sao)\s*\?*\s*$",
+    re.IGNORECASE)
+
+_HOI_DAU = re.compile(
+    r"^\s*(?:hãy\s+)?(?:cho\s+biết|trong\s+(?:video|hình|khung\s+hình)[^,]*,\s*)\s*",
+    re.IGNORECASE)
+
+# Câu ĐẾM đặt cụm hỏi ở GIỮA: "Có bao nhiêu người đứng trên sân khấu?" — phần mô tả là
+# "người đứng trên sân khấu". Regex đuôi không bắt được, cần luật riêng.
+_HOI_DEM = re.compile(r"^\s*(?:có\s+)?(?:bao\s+nhiêu|mấy)\s+", re.IGNORECASE)
+
+
+def declarativize(question: str) -> str:
+    """Câu hỏi → cụm mô tả, để mã hoá làm probe truy xuất.
+
+    Args:
+        question: câu hỏi gốc của đề Q&A.
+
+    Returns:
+        Phần MÔ TẢ của câu hỏi. Không nhận ra mẫu nào thì trả lại `question` đã
+        strip — **không bao giờ** trả chuỗi rỗng, vì probe rỗng làm ② chấm mọi khung
+        bằng nhau và hỏng lặng lẽ.
+
+    Examples:
+        >>> declarativize("Người phụ nữ mặc váy đỏ đang cầm ly màu gì?")
+        'Người phụ nữ mặc váy đỏ đang cầm ly'
+        >>> declarativize("Tìm cảnh hai người đàn ông ký văn bản")
+        'Tìm cảnh hai người đàn ông ký văn bản'
+    """
+    s = (question or "").strip()
+    if not s:
+        return s
+    out = _HOI_DAU.sub("", s)
+    out = _HOI_DEM.sub("", out)
+    out = _HOI_DUOI.sub("", out).strip(" ,.;:?")
+    # Cắt quá tay thì thà giữ nguyên: một cụm 2 từ mã hoá ra vector vô nghĩa.
+    if len(out.split()) < 3:
+        return s
+    return out
