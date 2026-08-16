@@ -172,7 +172,7 @@ giác phủ 100% khung nên bị dàn đều khắp 173.426 vị trí — hai h�
 thị giác (với `z` là 1,2 lần). Bản **trộn** (`z` cho thị giác, `rank` cho nguồn thưa)
 cũng thua.
 
-### Trọng số — ĐÃ CHỐT `1 / 0,10 / 0,15 / 0,125`
+### Trọng số — RÚT TỪ DỮ LIỆU: `1 / 0,0891 / 0,1322 / 0,1064`
 
 Trên **100 truy vấn gán nhãn tay** (`export_for_fusion/`), có nhãn modality thật:
 19 vision · 26 vision+ocr · 25 vision+asr · 30 vision+ocr+asr.
@@ -208,6 +208,40 @@ không câu nào cần OCR hay ASR.
 ⚠️ Dùng được bảng này thì phải **biết loại lúc chạy thi**, mà đề không cho. `query_type`
 là nhãn của người annotate. Bộ đoán loại từ nội dung đã đo được **thua** trọng số cố định
 — nay có nhãn thật thì kiểm lại được tử tế.
+
+### Bootstrap 200 lần — trọng số và khoảng tin cậy của nó
+
+Lấy mẫu lại 326 truy vấn của hai bộ 200 lần, mỗi lần cực đại `Final` trên lưới 0,0125,
+rồi trung bình 200 nghiệm:
+
+| trọng số | trung bình | trung vị | **KTC 5–95%** | xác định? |
+|---|---|---|---|---|
+| β vật thể | **0,0891** | 0,0875 | [0,049; 0,125] | có |
+| γ OCR | **0,1322** | 0,1250 | [0,062; 0,163] | **yếu** |
+| δ lời nói | **0,1064** | 0,1250 | [0,062; 0,125] | có |
+
+⚠️ **Khoảng tin cậy quan trọng hơn giá trị.** Mỗi trọng số chỉ xác định được trong một
+khoảng rộng khoảng **2,5 lần**. `0,0891` không có nghĩa là biết tới chữ số thứ tư — nó
+là điểm giữa của một khoảng rất rộng. Đừng chỉnh chữ số thứ ba; hãy mở rộng bộ eval.
+
+### Bốn cách rút từ dữ liệu, tất cả rơi vào cùng một vùng
+
+Kiểm chéo lồng 5-fold, chấm `Final` thật trên phần giữ kín:
+
+| cách chọn | Final giữ kín | độ lệch |
+|---|---|---|
+| lưới tròn `0,10/0,15/0,125` | 0,5546 | 0,055 |
+| một lần tìm trực tiếp | 0,5515 | 0,053 |
+| **bootstrap trung vị** | 0,5472 | **0,048** |
+| bootstrap trung bình | 0,5405 | 0,047 |
+| chỉ thị giác | 0,4779 | 0,023 |
+
+Bốn cách chênh nhau **1,4 điểm phần trăm**, nhỏ hơn độ lệch giữa các fold (5 điểm) —
+chúng **không phân biệt được**. Điều đáng nói là chúng **đồng thuận về vùng**: bootstrap
+độc lập rơi đúng chỗ điểm lưới chọn tay, nên số tròn kia không phải bịa.
+
+**Điều duy nhất thật sự mua được điểm:** có hợp nhất **0,5546** so với chỉ thị giác
+**0,4779** — **+7,7 điểm phần trăm**, gấp 5 lần khoảng chênh giữa các cách chọn trọng số.
 
 ### Chốt thế nào, và vì sao không tinh chỉnh thêm
 

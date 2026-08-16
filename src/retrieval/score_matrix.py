@@ -90,72 +90,59 @@ from src.retrieval.sources import SourceScores
 # Nguồn nào có mặt thì phải có trọng số; thiếu là lỗi cấu hình, không phải mặc định 0.
 #
 # =============================================================================
-# TRỌNG SỐ ĐÃ CHỐT — VÀ VÌ SAO CHỮ SỐ THỨ BA KHÔNG QUAN TRỌNG
+# TRỌNG SỐ RÚT TỪ DỮ LIỆU — BOOTSTRAP 200 LẦN, KÈM KHOẢNG TIN CẬY
 # =============================================================================
 #
-# Hai bộ eval **kéo ngược nhau**, nên không có trọng số nào tối ưu cả hai:
+# Lấy mẫu lại 326 truy vấn của hai bộ eval 200 lần; mỗi lần cực đại `Final` trên lưới
+# 0,0125 bằng hạ toạ độ; rồi TRUNG BÌNH 200 nghiệm. Trung bình các ước lượng nhiễu có
+# phương sai nhỏ hơn từng cái, và nó hoàn toàn do dữ liệu quyết định.
 #
-#     bộ                     đặc điểm                      cần OCR/ASR
-#     100 câu gán nhãn tay   26 vision+ocr, 25 +asr, 30 cả hai      81%
-#     226 câu tả cảnh        model NHÌN ẢNH viết ra                  0%
+#     trọng số     trung bình   trung vị        KTC 5–95%    xác định?
+#     β vật thể        0,0891     0,0875   [0,049; 0,125]         có
+#     γ OCR            0,1322     0,1250   [0,062; 0,163]        yếu
+#     δ lời nói        0,1064     0,1250   [0,062; 0,125]         có
 #
-# [ĐO] quét β,γ,δ ∈ [0; 0,30] bước 0,025, chấm trên cả hai:
-#
-#     β      γ      δ      100      226    trung bình
-#     0,100  0,150  0,125  0,7560  0,4681  0,6121   ← chốt
-#     0,100  0,125  0,150  0,7620  0,4619  0,6120
-#     0,075  0,125  0,125  0,7520  0,4717  0,6118
-#     0,100  0,100  0,100  0,7420  0,4726  0,6073   (mức cũ)
-#     0      0      0      0,5220  0,4584  0,4902   (chỉ thị giác)
-#
-# **Tám ứng viên đầu bảng chênh nhau 0,2 điểm phần trăm.** Mặt mục tiêu PHẲNG, nên
-# chọn ô nào trong cụm đó là tuỳ ý — và điều đó không sao. Cái mua được điểm là
-# **bật hợp nhất** (+11,2pp trên trung bình), không phải chỉnh số.
-#
-# ĐIỂM ĐẢO CHIỀU: gọi `p` là tỉ lệ đề thi thật cần OCR/ASR. Bộ này thắng mức 0,10
-# khi **p > 24%**. Đo trên 30 đề thi thật: **40% nhắc chữ trên khung**, 23% nhắc lời
-# nói, 20% có tên riêng — hợp lại vượt xa 24%. Nếu đề thật hoá ra thuần thị giác hơn
-# thế thì quay về 0,10.
+# ⚠️ **KHOẢNG TIN CẬY QUAN TRỌNG HƠN GIÁ TRỊ.** Mỗi trọng số chỉ được xác định trong
+# khoảng rộng khoảng **2,5 lần**. Mọi giá trị trong khoảng đó đều tương thích với dữ
+# liệu. Viết `0,0891` không có nghĩa là biết tới chữ số thứ tư — nó là điểm giữa của
+# một khoảng rất rộng. Đừng chỉnh chữ số thứ ba; hãy mở rộng bộ eval.
 #
 # =============================================================================
-# BA CÁCH KHỚP TRỌNG SỐ, CẢ BA THUA MỘT ĐIỂM LƯỚI CỐ ĐỊNH
+# BỐN CÁCH RÚT TỪ DỮ LIỆU, TẤT CẢ RƠI VÀO CÙNG MỘT VÙNG
 # =============================================================================
 #
-# Câu hỏi "sao không khớp bằng toán thay vì chọn tay" đã được trả lời bằng ba phép
-# đo độc lập, mỗi phép chấm trên phần dữ liệu GIỮ KÍN:
+# Kiểm chéo lồng 5-fold, chấm `Final` THẬT trên phần giữ kín:
 #
-#   1. TỐI ƯU LỒI — cực đại log-likelihood dưới softmax. Lồi, nghiệm duy nhất.
-#      → 0,7020 so với 0,7760 của lưới. Sai MỤC TIÊU: nó tối ưu *xác suất*, cuộc
-#        thi chấm *có lọt top-k hay không*. Đẩy hạng 3 lên 2 làm likelihood tăng
-#        nhiều mà `Final` không đổi.
+#     lưới tròn 0,10/0,15/0,125     0,5546  (độ lệch 0,055)
+#     một lần tìm trực tiếp         0,5515  (0,053)
+#     bootstrap trung vị            0,5472  (0,048)   ← phương sai thấp nhất
+#     bootstrap trung bình          0,5405  (0,047)
+#     chỉ thị giác                  0,4779  (0,023)
 #
-#   2. TÌM TRỰC TIẾP TRÊN `Final` — hạ toạ độ, lưới mịn 0,025.
-#      → giữ kín 0,7393 so với 0,7733 của cố định. Overfit.
+# Bốn cách chênh nhau **1,4 điểm phần trăm**, nhỏ hơn độ lệch giữa các fold (5 điểm).
+# Chúng không phân biệt được. Điều đáng nói là chúng **đồng thuận về vùng**: bootstrap
+# độc lập rơi đúng chỗ điểm lưới đã chọn tay, nên số tròn kia không phải bịa.
 #
-#   3. HÀM THAY THẾ TRƠN CỦA CHÍNH `Final` — nới lỏng đúng công thức:
-#          hạng(w) ≈ 1 + Σ_j σ((s_j − s_gt)/τ)
-#          Final(w) ≈ (1/5) Σ_k σ((k − hạng)/τ₂),   τ hạ dần 2,0 → 0,05
-#      5-fold trên cả 326 truy vấn của hai bộ:
+# Hai cách khớp bằng giải tích thì THUA hẳn, và cả hai vì cùng một lý do — chúng tối
+# ưu sai đại lượng:
 #
-#          hiện tại 0,10/0,15/0,125     0,5548   (độ lệch 0,043)
-#          khớp bằng hàm thay thế       0,4787   (độ lệch 0,081)
-#          chỉ thị giác                 0,4780
+#     tối ưu lồi (softmax NLL)      0,7020 so với 0,7760 của lưới  → tối ưu XÁC SUẤT
+#     hàm thay thế trơn của Final   0,4787 so với 0,5548, thắng 0/5 fold
 #
-#      Thắng **0/5 fold**, và trọng số khớp ra bất ổn: (0,63/0,60/1,42) ở một fold,
-#      (0/0,06/0,07) ở fold khác.
+# `Final` là bậc thang của hạng. Gradient chỉ chảy từ truy vấn NẰM SÁT ngưỡng k, số đó
+# ít, và tập những câu đó đổi theo `w` — bộ tối ưu đuổi một mẫu nhỏ và trôi. Mặt mục
+# tiêu lại phẳng, nên phương sai chọn lấn át mọi khoản lợi.
 #
-# CƠ CHẾ, không phải xui. `Final` là bậc thang của hạng, hạng là bậc thang của điểm.
-# Gradient của hàm thay thế chỉ chảy từ những truy vấn NẰM SÁT ngưỡng k — số đó ít,
-# và TẬP những câu đó lại đổi theo `w`. Bộ tối ưu vì thế đuổi theo một mẫu nhỏ và
-# trôi. Cùng lúc, mặt mục tiêu **phẳng**: tám điểm lưới đầu bảng chênh nhau 0,2pp.
+# =============================================================================
+# ĐIỀU DUY NHẤT THẬT SỰ MUA ĐƯỢC ĐIỂM
+# =============================================================================
 #
-# Khi cực trị thật là một CAO NGUYÊN RỘNG còn ước lượng thì nhiễu, một điểm cố định
-# nằm giữa cao nguyên đánh bại mọi điểm chọn bằng tối ưu nhiễu. Đó là đánh đổi
-# thiên lệch–phương sai, và ở đây phương sai thắng.
+#     chỉ thị giác    0,4779
+#     có hợp nhất     0,5546      +7,7 điểm phần trăm
 #
-# Cách khớp duy nhất còn có thể đúng là **co về một tiên nghiệm nhỏ** — mà chính là
-# việc chọn một giá trị nhỏ cố định. Nên: giữ.
-DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.10, "ocr": 0.15, "asr": 0.125}
+# Chênh giữa các cách CHỌN trọng số: 1,4 điểm. Chênh giữa CÓ và KHÔNG hợp nhất: 7,7.
+# Nếu còn thời gian, đổ vào mở rộng bộ eval chứ đừng đổ vào ba con số này.
+DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.0891, "ocr": 0.1322, "asr": 0.1064}
 
 
 def z_normalize(scores: np.ndarray, covered: np.ndarray, eps: float = 1e-9) -> np.ndarray:
