@@ -73,15 +73,32 @@ gốc vì nó cần biết đang được hỏi gì. *(Ý lấy từ NII-UIT @ V
 | nguồn | công nghệ | dữ liệu | phủ |
 |---|---|---|---|
 | thị giác | jina-clip-v2, cosine | vector 512 chiều | 100% |
-| OCR | **BM25** (`k1=1,5 · b=0,75`) | chữ hiện trên màn | 98% |
-| vật thể | **BM25** | nhãn vật thể đã phát hiện | 99% |
-| lời nói | **BM25** | ASR trong cửa sổ **±4 giây** quanh khung | 97% |
+| OCR | **BM25** (`k1=0,6 · b=0,9`) | chữ hiện trên màn | 98% |
+| vật thể | **BM25** (mặc định) | nhãn vật thể đã phát hiện | 99% |
+| lời nói | **BM25** (`k1=1,5 · b=0,0`) | ASR trong cửa sổ **±5 giây** quanh khung | 97% |
 
 BM25 **cố tình không tự bỏ dấu** — bỏ dấu sinh đụng độ thật: `đồng`(Nai)/`động`(vật),
 `cán`/`căn`/`cân`. Mỗi nguồn trả `SourceScores(scores, covered)`, trong đó `covered` nói
 nguồn **có dữ liệu** cho khung đó, **không** nói truy vấn khớp.
 
-⚠️ `k1` và `b` **chưa quét** — vẫn để mặc định.
+**`k1`/`b` RIÊNG từng nguồn** — ba nguồn muốn `b` ngược nhau. `b` là mức chuẩn hoá theo
+**độ dài văn bản**; MRR của khung đáp án tại `k1=1,5`:
+
+| `b` | OCR | ASR |
+|---|---|---|
+| 0,0 | 0,0194 | **0,1816** |
+| 0,75 *(mặc định cũ)* | 0,1660 | 0,1505 |
+| 0,9 | **0,1641** | 0,1520 |
+
+Cơ chế: **OCR** là chữ chạy trên màn, độ dài rất chênh — khung nhiều chữ dễ khớp bừa nên
+cần chuẩn hoá mạnh. **ASR** lấy trong cửa sổ ±5 giây **cố định** nên độ dài gần đều;
+chuẩn hoá theo độ dài chỉ thêm nhiễu.
+
+⚠️ Đầu-cuối chỉ **+0,005 với KTC chứa 0** (16/110 câu đổi). Giữ vì lý do **cơ chế** —
+`b=0` cho ASR suy ra từ thiết kế nguồn, đúng bất kể bộ eval — chứ không vì con số.
+
+⚠️ Nguồn **vật thể có MRR 0,0003**, hạng đáp án cỡ 3.000. Chỉnh tham số cho nó là vô
+nghĩa; vấn đề ở chất lượng nhãn.
 
 ### ③ Ma trận S — dung hợp
 
@@ -318,6 +335,8 @@ trong khoảng rộng ~2,5 lần. Đừng chỉnh chữ số thứ ba; hãy mở
 | Phân bổ ngân sách nộp phi đồng đều | vùng phẳng, KTC chứa 0 |
 | 1024 chiều thay 512 | Δ=−0,002, KTC chứa 0, tốn gấp đôi RAM |
 | Token 2 âm tiết cho BM25 tiếng Việt | trung tính tới hơi tệ |
+| Xếp hạng bằng HẠNG PHẦN TRĂM thay z-score | −0,033 — độ lớn điểm mang thông tin thật |
+| VLM nhân thay vì cộng · VLM chỉ sửa 20 hạng đầu | −0,017 · −0,020 |
 
 ---
 
@@ -373,13 +392,12 @@ Ngân sách: **~3,3 phút cho 35 câu** (~2% của 2h30). Phí cố định 80 g
 
 | # | việc | vì sao |
 |---|---|---|
-| 1 | 🔴 **Thu hẹp `R@1 ↔ R@100`** | dư địa **+0,2422** — gấp 7 lần mọi khoản chỉnh trọng số cộng lại |
+| 1 | 🔴 **Thu hẹp `R@1 ↔ R@100`** | dư địa **+0,2422**. Đã loại trừ: hạng phần trăm (−0,033), nhân thay cộng (−0,017), VLM chỉ sửa 20 đầu (−0,020), phá hoà đồng thuận (0 câu đổi). **Cách hợp điểm không phải chỗ** — phải thêm tín hiệu mới |
 | 2 | 🔴 **Chữa `vision+ocr`** | loại thấp điểm nhất trên **cả hai** bộ eval, dù OCR là nguồn đầy đủ nhất |
 | 3 | **Biết `p`** — tỉ lệ đề thật cần OCR/ASR | quyết trực tiếp δ ASR: `p > 61%` thì ×2 có lãi |
 | 4 | Hợp nhiều tháp nhúng | đánh đúng dư địa #1; ~$4,32/tháp + thời gian thi |
 | 5 | Bộ eval **QA** và **TRAKE** | ⑥ chưa có phép đo nào; λ mới có 6 câu, p=0,69 |
-| 6 | Quét `k1`, `b` của BM25 | chưa xong — chạy cục bộ quá chậm, phải đưa lên Modal |
-| 7 | `writer.py` validator | chờ mẫu file nộp chính thức của BTC |
+| 6 | `writer.py` validator | chờ mẫu file nộp chính thức của BTC |
 
 ---
 

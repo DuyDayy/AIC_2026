@@ -59,7 +59,7 @@ from typing import Callable, Mapping, Sequence
 import numpy as np
 
 from src.text.fold import strip_diacritics
-from src.retrieval.bm25 import Bm25Index
+from src.retrieval.bm25 import DEFAULT_B, DEFAULT_K1, Bm25Index
 
 FrameKey = tuple[str, int]
 
@@ -93,6 +93,53 @@ FrameKey = tuple[str, int]
 # lại khi có truy vấn thật sự cần lời nói.
 ASR_WINDOW_MS = 5_000
 
+
+# =============================================================================
+# BM25 `k1`, `b` — RIÊNG TỪNG NGUỒN, KHÔNG DÙNG CHUNG
+# =============================================================================
+#
+# `b` là mức chuẩn hoá theo ĐỘ DÀI văn bản. Ba nguồn muốn `b` **ngược nhau**, nên một bộ
+# tham số chung là sai thiết kế.
+#
+# [ĐO] MRR của khung đáp án, bộ giữ kín 110 câu, quét 36 tổ hợp:
+#
+#     b tại k1=1,5      OCR       ASR
+#     0,0            0,0194    0,1816   ← ASR đỉnh
+#     0,5            0,1625    0,1616
+#     0,75           0,1660    0,1505   ← mặc định cũ, không tối ưu cho nguồn nào
+#     0,9            0,1641    0,1520
+#
+#     tối ưu riêng    k1     b      MRR    so với (1,5/0,75)
+#     OCR            0,6   0,9   0,1730         +0,0070
+#     ASR            1,5   0,0   0,1816         +0,0311
+#     vật thể        2,5   0,0   0,0003         +0,0001
+#
+# **Cơ chế**, không phải trùng hợp:
+#   · OCR là chữ chạy trên màn, độ dài RẤT chênh — khung nhiều chữ dễ khớp bừa, nên cần
+#     chuẩn hoá mạnh (`b ≈ 0,9`).
+#   · ASR lấy trong cửa sổ ±4 giây CỐ ĐỊNH nên độ dài gần như đều; chuẩn hoá theo độ dài
+#     ở đây chỉ thêm nhiễu (`b = 0`).
+#
+# ⚠️ Nguồn vật thể có MRR **0,0003** — hạng đáp án cỡ 3.000. Chỉnh `k1`/`b` cho nó là vô
+# nghĩa; vấn đề nằm ở chất lượng nhãn, không ở tham số.
+#
+# [ĐO ĐẦU-CUỐI] và đây là chỗ phải thành thật: lợi ở mức nguồn **KHÔNG** chuyển thành
+# `Final` một cách chắc chắn. Bộ giữ kín, cùng rải thích ứng, cùng không VLM:
+#
+#     L      k1/b chung   riêng nguồn        Δ                KTC95    T/Th
+#     9         0,2456        0,2501   +0,0045   [−0,0036,+0,0135]    10/6  —
+#     11        0,2678        0,2727   +0,0049   [−0,0045,+0,0145]    10/6  —
+#     21        0,2833        0,2901   +0,0068   [−0,0039,+0,0182]    10/6  —
+#
+# Dương ở mọi `L` nhưng **KTC chứa 0**; chỉ 16/110 câu đổi. GIỮ thay đổi vì lý do CƠ CHẾ
+# chứ không vì con số: `b = 0` cho ASR suy ra từ **thiết kế nguồn** (cửa sổ ±5 giây cố
+# định ⟹ độ dài đều ⟹ chuẩn hoá theo độ dài là nhiễu thuần), nên nó đúng bất kể bộ eval.
+# Đó là khác biệt giữa cái này và một tham số chọn bằng argmax.
+BM25_PARAMS: dict[str, tuple[float, float]] = {
+    "ocr": (0.6, 0.9),
+    "asr": (1.5, 0.0),
+    "object": (DEFAULT_K1, DEFAULT_B),      # giữ mặc định: chỉnh cũng vô nghĩa
+}
 
 @dataclass(frozen=True)
 class SourceScores:
@@ -145,7 +192,9 @@ class TextSource:
     """
 
     def __init__(self, name: str, ids: Sequence[FrameKey],
-                 text_of: Mapping[FrameKey, str]) -> None:
+                 text_of: Mapping[FrameKey, str],
+                 k1: float | None = None, b: float | None = None) -> None:
+        """`k1`/`b` là tham số BM25. `None` ⟹ lấy theo tên nguồn từ `BM25_PARAMS`."""
         self.name = name
         self._n = len(ids)
         # `doc_id` của BM25 là CHUỖI và phải duy nhất; dùng chỉ số hàng để ánh xạ
@@ -157,8 +206,13 @@ class TextSource:
         # ở `src/text/fold.py`), nên chỗ gọi phải làm — và nếu quên thì token bị xé vụn
         # và điểm gần như vô nghĩa. Chính `bm25.looks_unfolded` đã bắt được lỗi này khi
         # tôi đưa truy vấn còn dấu vào: ba nguồn BM25 chấm ra trung vị hạng 14k–47k.
-        self._bm25 = (Bm25Index.build((str(i), strip_diacritics(text_of[ids[i]]))
-                                      for i in rows)
+        kk, bb = BM25_PARAMS.get(name, (DEFAULT_K1, DEFAULT_B))
+        if k1 is not None:
+            kk = k1
+        if b is not None:
+            bb = b
+        self._bm25 = (Bm25Index.build(((str(i), strip_diacritics(text_of[ids[i]]))
+                                       for i in rows), k1=kk, b=bb)
                       if rows else None)
 
     def score(self, query_text: str) -> SourceScores:
