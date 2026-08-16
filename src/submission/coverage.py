@@ -88,7 +88,8 @@ def uniform_grid(
     return sorted(set(clamped))
 
 
-def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
+def spread_in_gap(center: int, prev: int, next_: int, m: int,
+                  sort_by_frame: bool = False) -> list[int]:
     """
     `m` khung rải đều **nửa khe** hai bên `center` — lưới THÍCH ỨNG theo mật độ cục bộ.
 
@@ -129,9 +130,34 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
         prev, next_: khung của keyframe liền trước/liền sau trong CÙNG video.
         m: số khung được phép nộp cho mốc này.
 
+    =========================================================================
+    THỨ TỰ TRẢ VỀ: KEYFRAME TRƯỚC, RỒI TOẢ RA HAI BÊN
+    =========================================================================
+
+    Tập khung không đổi, nhưng **thứ tự thì tính điểm**: `Final` cộng `R@k` ở
+    `k ∈ {1,5,20,50,100}`, nên câu trả lời đầu tiên được tính vào cả năm mức còn câu
+    thứ 51 chỉ một mức. Đưa khung có xác suất cao nhất — chính keyframe — lên đầu.
+
+    Bản đầu trả về **tăng dần theo số khung**, khiến keyframe rơi vào GIỮA (hạng 4/7)
+    còn hạng 1 là khung ở rìa khe. [ĐO] so cặp trên 100 truy vấn, bài nộp THẬT:
+
+        mô hình cửa sổ    tăng dần   keyframe trước   tốt/tệ         p
+        chặt ±4             0,4620           0,5400    35/0    <10⁻⁶
+        cửa sổ khe          0,6040           0,5920     2/6     0,29
+        trung bình          0,5330           0,5660
+
+    Ở mô hình chặt — nơi vị trí thật sự quan trọng — nó tốt hơn **35 câu, tệ hơn 0**.
+    Ở mô hình khe, mọi khung trong khe đều trúng nên thứ tự gần như không đổi gì; chênh
+    −1,2pp đến từ **mốc cuối bị cắt** khi hết ngân sách 100, và p = 0,29 nói đó là nhiễu.
+
+    Args (tiếp):
+        sort_by_frame: `True` trả về tăng dần theo số khung thay vì theo khoảng cách
+            tới `center`. Chỉ dùng khi cần dạng chuẩn tắc để so sánh, không dùng để nộp.
+
     Returns:
-        Tối đa `m` khung tăng dần, đã khử trùng. `m = 1` trả đúng `[center]` — không
-        đoán mò khi ngân sách chỉ đủ một khung.
+        Tối đa `m` khung, đã khử trùng, **sắp theo khoảng cách tới `center`** (gần
+        trước). `m = 1` trả đúng `[center]` — không đoán mò khi ngân sách chỉ đủ một
+        khung.
 
     Raises:
         ValueError: `m < 1` · `prev > center` · `next_ < center` (thứ tự sai thì "khe"
@@ -150,7 +176,11 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
     if hi <= lo:
         return [center]
     step = (hi - lo) / (m - 1)
-    return sorted({int(round(lo + i * step)) for i in range(m)})
+    frames = {int(round(lo + i * step)) for i in range(m)}
+    if sort_by_frame:
+        return sorted(frames)
+    # Gần `center` trước; `f` phá hoà để kết quả tất định.
+    return sorted(frames, key=lambda f: (abs(f - center), f))
 
 
 def guaranteed_span(m: int, delta: int) -> int:

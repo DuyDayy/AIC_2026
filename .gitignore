@@ -57,3 +57,7 @@ src/submission/kbest.py
 src/submission/writer.py
 # bộ 100 truy vấn gán nhãn tay — do người khác export, chờ quyết định đưa vào
 export_for_fusion/
+bench100.html
+artifacts/bench100_thumbs.json
+queries_bench/
+submission_bench/
