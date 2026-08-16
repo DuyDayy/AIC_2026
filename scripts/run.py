@@ -36,7 +36,7 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,089/0,132/0,213
     ⑤a rổ         mỗi nguồn đề cử TOP RIÊNG 40 → rổ ~155 khung, là bộ lọc CỨNG
     ⑤b bậc 1      mảnh cắt vật thể — TẮT mặc định, đo được nó phá điểm
-    ⑤c bậc 2      VLM chấm P(khớp) trên top 30 — BẬT mặc định, trọng số 0,25
+    ⑤c bậc 2      VLM chấm P(khớp) trên top 40 — BẬT mặc định, trọng số 0,25
     ④ kbest       DP thứ tự thời gian, k-best mỗi video rồi sắp toàn cục; λ=0
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
     ⑦ nộp         KHÔNG khử trùng; `--spread` quyết có rải khung vào khe hay không
@@ -217,7 +217,12 @@ POOL_MARGIN = 1000.0
 # KHÔNG phải đỉnh.
 RERANK_WEIGHTS = {"fused4": 1.0, "crop": 0.0, "vlm": 0.25}
 
-VLM_TOP_K = 30            # bậc 2 chỉ chấm top-K SAU bậc 1 — thác nước, không quét cả rổ
+# Bậc 2 chỉ chấm top-K SAU bậc 1 — thác nước, không quét cả rổ.
+# [ĐO] Ở K=30, 87/88 đáp án nằm trong rổ lọt được vào tầm VLM; K=40 đưa nốt câu còn
+# lại (88/88). Hạng `fused4` của đáp án trong rổ: trung vị 2, p75 4, MAX 40 — nên 40
+# là ngưỡng có căn cứ, không phải số tròn. Thêm 10 khung/câu ≈ +33% chi phí bậc 2,
+# mà bậc 2 chỉ chiếm ~60s trong ~5 phút chạy 100 câu.
+VLM_TOP_K = 40
 
 # TRAKE: mỗi video nộp bao nhiêu ĐƯỜNG. `1` = chỉ đường DP tốt nhất, đúng hành vi cũ.
 # CHƯA CHỈNH ĐƯỢC và sẽ không chỉnh được cho tới khi có bộ eval TRAKE: hiện chỉ có 6 truy
@@ -564,16 +569,30 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     lap("②③ chấm 4 nguồn")
 
     # ⑤a RỔ ỨNG VIÊN — hợp top riêng của từng nguồn, gộp qua mọi probe của truy vấn
+    #
+    # `cap` phải áp SAU khi hợp mọi probe, không phải trong từng probe. Cap trong vòng
+    # lặp thì TRAKE N mốc sinh ra rổ tới N×POOL_CAP — ngân sách nở theo số mốc, và
+    # `POOL_CAP` mất hết ý nghĩa. KIS 1 probe nên lỗi này không lộ ra ở mọi phép đo
+    # từ trước tới nay. (OPTIMIZATION_PLAN mục 3.4)
     for q in queries:
         got: set[int] = set()
         prov: dict[int, tuple[str, ...]] = {}
         for i, ss in enumerate(q["sources"]):
-            pr = union_pool(ss, per_source=POOL_PER_SOURCE, base=q["S"][i], cap=POOL_CAP,
+            pr = union_pool(ss, per_source=POOL_PER_SOURCE, base=q["S"][i], cap=None,
                             ranges=idx.ranges, per_video=POOL_PER_VIDEO)
             got.update(pr.rows.tolist())
             for r, src_names in pr.provenance.items():
                 prov[r] = tuple(sorted(set(prov.get(r, ())) | set(src_names)))
-        q["pool"] = np.array(sorted(got), dtype=np.int64)
+        rows = np.array(sorted(got), dtype=np.int64)
+        if rows.size > POOL_CAP:
+            # Cắt theo điểm nền GỘP QUA MỌI PROBE (`max`), không theo probe đầu: với
+            # TRAKE, khung chỉ hợp cho mốc thứ ba vẫn phải được giữ.
+            agg = q["S"].max(axis=0)
+            rows = rows[np.argsort(-agg[rows], kind="stable")[:POOL_CAP]]
+            rows.sort()
+            keep = set(rows.tolist())
+            prov = {r: v for r, v in prov.items() if r in keep}
+        q["pool"] = rows
         q["prov"] = prov
     npool = [len(q["pool"]) for q in queries]
     print(f"⑤a rổ ứng viên: trung vị {int(np.median(npool))} khung/truy vấn "

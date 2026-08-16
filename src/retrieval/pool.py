@@ -133,7 +133,15 @@ def union_pool(sources: Sequence[SourceScores], per_source: int,
     prov: dict[int, list[str]] = {}
     per_n: dict[str, int] = {}
     for s in sources:
-        cov = np.flatnonzero(s.covered)
+        # `covered` chỉ nói nguồn CÓ DỮ LIỆU cho khung đó, KHÔNG nói truy vấn có khớp.
+        # Một khung có chữ OCR nhưng không khớp từ nào vẫn `covered=True` với BM25 = 0.
+        # Nếu nguồn có ít hơn `per_source` khung khớp thật, phần thiếu sẽ được lấp bằng
+        # khung điểm 0 và thứ tự do vị trí trong chỉ mục quyết định — tức NHIỄU chiếm
+        # suất của nguồn khác.
+        # [ĐO] Trên 100 truy vấn hiện có, chuyện này KHÔNG xảy ra: mỗi nguồn khớp
+        # 52.752–166.555 khung, không câu nào dưới 40. Đây là BẢO HIỂM cho truy vấn
+        # không khớp từ vựng nào, không phải phép tối ưu. (OPTIMIZATION_PLAN mục 3.3)
+        cov = np.flatnonzero(s.covered & (s.scores > 0.0))
         if cov.size == 0:
             per_n[s.name] = 0
             continue
