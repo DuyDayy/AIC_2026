@@ -1,6 +1,6 @@
 {
  "$schema": "aic2026.bench.results/1",
- "generated_utc": "2026-08-16T04:02:46+00:00",
+ "generated_utc": "2026-08-16T04:38:40+00:00",
  "generated_by": "scripts/eval/build_bench_artifact.py",
  "source": {
   "queries": "export_for_fusion/benchmark_queries.json",
@@ -18,7 +18,7 @@
   "dim": 512,
   "spread": 7,
   "rerank": false,
-  "dedup": false
+  "dedup": null
  },
  "scoring": {
   "formula": "Final = (1/5) · Σ_k R@k,  k ∈ {1, 5, 20, 50, 100}",

@@ -60,8 +60,6 @@ Khử trùng cảnh **mất 4,3pp** (−23% tương đối). Khử trùng theo v
 của chính nó**, nên các dải rải **lát kề nhau, không chồng lên nhau**. Khử trùng sau đó
 chỉ bỏ đi phần PHỦ mà không bỏ được phần TRÙNG nào — vì không còn phần trùng nào.
 
-Bật lại bằng `--dedup` nếu cần so.
-
 =============================================================================
 VÌ SAO PHẢI RẢI KHUNG — ĐÁP ÁN KHÔNG PHẢI KEYFRAME BTC CẤP
 =============================================================================
@@ -75,16 +73,28 @@ frame"*. Ví dụ KIS trong thể lệ: `[500, 510]` = 11 khung.
 
 [ĐO] Final trên 226 truy vấn, mốc thật lệch ngẫu nhiên trong khe, ngân sách 100:
 
-    100 mốc × 1 khung   L=9 0,0608   L=11 0,0758   L=15 0,1002   L=21 0,1384
-    20 mốc × 5 khung    L=9 0,1624   L=11 0,1877   L=15 0,2137   L=21 0,2349
-    14 mốc × 7 khung    L=9 0,1742   L=11 0,1882   L=15 0,2038   L=21 0,2184  ← mặc định
+    rải   số mốc     L=9      L=11     L=15     L=21
+      1      100   0,1091   0,1296   0,1750   0,2354   ← nộp thuần keyframe
+      5       20   0,2990   0,3386   0,3789   0,4134
+      7       14   0,3241   0,3460   0,3701   0,3906
+      9       11   0,3274   0,3410   0,3588   0,3769
 
-**Gấp ~2,5 lần.** Chọn `spread=7` chứ không phải 5 vì hai lý do cộng lại: nó tốt nhất ở
-`L=9` — điểm vận hành nhiều khả năng nhất, do thể lệ nói *"thường dưới 10 frame"* — và
-7 khung rải trong khe trung vị 48 cho **bước 8 khung**, nên theo Định lý 1 nó **BẢO
-ĐẢM** trúng khi `L ≥ 8`, không còn là xác suất. `--spread 5` nhỉnh hơn nếu `L ≥ 15`.
+**Nộp thuần keyframe kém 3 lần.** Bảng trên dùng mô hình "mốc thật rơi NGẪU NHIÊN trong
+khe", và ở đó 7 với 9 chênh nhau 0,003 — trong nhiễu.
 
-Đổi bằng `--spread`; `--spread 1` quay về cách nộp thuần keyframe.
+Cái phá hoà là **bài nộp THẬT**, chấm bằng cả hai mô hình cửa sổ:
+
+    spread   Final chặt ±4   Final cửa sổ khe
+      7             0,5400             0,5920   ← mặc định
+      9             0,5040             0,5820
+
+`spread = 7` thắng **cả hai**. Lý do: mô hình chặt giả định mốc TRÙNG keyframe, nên nó
+thưởng cho việc có NHIỀU MỐC hơn (14 so với 11), còn mô hình khe thưởng cho phủ dày.
+Bảy nằm ở chỗ hai áp lực đó cân nhau.
+
+⚠️ Tôi từng chốt 9 dựa trên Định lý 1 (khe trung vị 48 chia 8 cho bước 6, bảo đảm khi
+`L ≥ 6`, so với bước 8 của `m=7`). Lập luận đó đúng về mặt bảo đảm nhưng **sai về mặt
+đánh đổi**: nó bỏ qua chi phí mất 3 mốc. Phép đo trên bài nộp thật bác bỏ nó.
 
 Bài nộp ghi **`frame_idx`** — số khung thật. `n` chỉ là số thứ tự keyframe, và đo được
 0/173.426 khung có hai giá trị bằng nhau.
@@ -339,7 +349,7 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         spread: int = 7, vlm_top_k: int = 0, dedup: bool = False):
+         spread: int = 7, vlm_top_k: int = 0):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
@@ -351,7 +361,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
         AsrSource, SourceScores, TextSource, VisualSource, load_asr_segments,
-        load_frame_ms, load_object_text, load_ocr_text, load_shot_id,
+        load_frame_ms, load_object_text, load_ocr_text,
     )
 
     qdir, odir = Path(dir), Path(out)
@@ -392,7 +402,6 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 TextSource("object", idx.ids, load_object_text("data/objects-full")),
                 AsrSource(idx.ids, load_frame_ms(), load_asr_segments("data/ASR"))]
     W = dict(DEFAULT_WEIGHTS) if not light else {"visual": 1.0}
-    shot = load_shot_id()
     fms = load_frame_ms()
     times = np.array([fms.get(k, 0.0) for k in idx.ids], dtype=np.float64)
     # Hàng xóm THỜI GIAN trong cùng video — `spread_in_gap` cần nó để rải theo mật độ
@@ -542,12 +551,11 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             for r in order:
                 r = int(r)
                 vid, n = idx.ids[r]
-                # Khử trùng cảnh TẮT mặc định — đo được nó HẠI. Xem khối bình luận
-                # ở `DEDUP_NOTE` phía trên.
-                g = (vid, shot.get((vid, n), ("n", n))) if dedup else r
-                if g in seen:
+                # KHÔNG khử trùng — đo được nó hại 4,3pp, xem docstring. Giữ `seen`
+                # để chặn hàng lặp, không để gộp cảnh.
+                if r in seen:
                     continue
-                seen.add(g)
+                seen.add(r)
                 moments.append(r)
                 if len(moments) * spread >= top_k * spread:
                     break
@@ -570,7 +578,6 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                      encoding="utf-8")
         report.append({"id": q["id"], "kind": q["kind"], "n_probes": len(q["probes"]),
                        "n_answers": len(lines), "spread": spread if q["kind"] != "trake" else 1,
-                       "dedup": bool(dedup),
                        "answer": q.get("answer"), "top1": lines[0] if lines else None})
         print(f"  {q['id']:<20} {q['kind']:<6} {len(lines):>3} đáp án → {p}")
     (odir / "_report.json").write_text(

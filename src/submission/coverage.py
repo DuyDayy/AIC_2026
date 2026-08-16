@@ -88,8 +88,7 @@ def uniform_grid(
     return sorted(set(clamped))
 
 
-def spread_in_gap(center: int, prev: int, next_: int, m: int,
-                  sort_by_frame: bool = False) -> list[int]:
+def spread_in_gap(center: int, prev: int, next_: int, m: int) -> list[int]:
     """
     `m` khung rải đều **nửa khe** hai bên `center` — lưới THÍCH ỨNG theo mật độ cục bộ.
 
@@ -150,10 +149,6 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int,
     Ở mô hình khe, mọi khung trong khe đều trúng nên thứ tự gần như không đổi gì; chênh
     −1,2pp đến từ **mốc cuối bị cắt** khi hết ngân sách 100, và p = 0,29 nói đó là nhiễu.
 
-    Args (tiếp):
-        sort_by_frame: `True` trả về tăng dần theo số khung thay vì theo khoảng cách
-            tới `center`. Chỉ dùng khi cần dạng chuẩn tắc để so sánh, không dùng để nộp.
-
     Returns:
         Tối đa `m` khung, đã khử trùng, **sắp theo khoảng cách tới `center`** (gần
         trước). `m = 1` trả đúng `[center]` — không đoán mò khi ngân sách chỉ đủ một
@@ -177,9 +172,9 @@ def spread_in_gap(center: int, prev: int, next_: int, m: int,
         return [center]
     step = (hi - lo) / (m - 1)
     frames = {int(round(lo + i * step)) for i in range(m)}
-    if sort_by_frame:
-        return sorted(frames)
-    # Gần `center` trước; `f` phá hoà để kết quả tất định.
+    # MỘT thứ tự duy nhất: gần `center` trước, `f` phá hoà cho tất định. Không có cờ
+    # đổi thứ tự — thứ tự khác đã đo được là tệ hơn (35/0), và một nhánh không ai
+    # dùng là một nhánh không ai kiểm.
     return sorted(frames, key=lambda f: (abs(f - center), f))
 
 

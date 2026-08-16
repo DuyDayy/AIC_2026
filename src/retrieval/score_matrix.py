@@ -118,22 +118,43 @@ from src.retrieval.sources import SourceScores
 # thế thì quay về 0,10.
 #
 # =============================================================================
-# KHÔNG TINH CHỈNH THÊM — ĐO ĐƯỢC LÀ TINH CHỈNH LÀM TỆ ĐI
+# BA CÁCH KHỚP TRỌNG SỐ, CẢ BA THUA MỘT ĐIỂM LƯỚI CỐ ĐỊNH
 # =============================================================================
 #
-# [ĐO] kiểm chéo lồng, 12 lần chia 50/50 trên bộ 100, chấm trên nửa GIỮ KÍN:
+# Câu hỏi "sao không khớp bằng toán thay vì chọn tay" đã được trả lời bằng ba phép
+# đo độc lập, mỗi phép chấm trên phần dữ liệu GIỮ KÍN:
 #
-#     trọng số cố định hợp lý     0,7733
-#     chỉnh trên nửa A            0,7393   ← TỆ HƠN
-#     chỉ thị giác                0,5057
+#   1. TỐI ƯU LỒI — cực đại log-likelihood dưới softmax. Lồi, nghiệm duy nhất.
+#      → 0,7020 so với 0,7760 của lưới. Sai MỤC TIÊU: nó tối ưu *xác suất*, cuộc
+#        thi chấm *có lọt top-k hay không*. Đẩy hạng 3 lên 2 làm likelihood tăng
+#        nhiều mà `Final` không đổi.
 #
-# Với 50 câu huấn luyện, tối ưu thẳng trên `Final` bám vào nhiễu. Và tối ưu LỒI
-# (cực đại log-likelihood dưới softmax) còn tệ hơn nữa — 0,7020 — vì nó tối ưu
-# **xác suất** trong khi cuộc thi chấm **có lọt top-k hay không**. Đẩy khung đúng từ
-# hạng 3 lên 2 làm likelihood tăng nhiều mà `Final` không đổi.
+#   2. TÌM TRỰC TIẾP TRÊN `Final` — hạ toạ độ, lưới mịn 0,025.
+#      → giữ kín 0,7393 so với 0,7733 của cố định. Overfit.
 #
-# `Final` là hàm BẬC THANG. Không có hàm thay thế trơn nào tối ưu đúng nó, và không
-# có gradient để đi theo. Quét lưới thô + kiểm chéo là cách đúng ở đây.
+#   3. HÀM THAY THẾ TRƠN CỦA CHÍNH `Final` — nới lỏng đúng công thức:
+#          hạng(w) ≈ 1 + Σ_j σ((s_j − s_gt)/τ)
+#          Final(w) ≈ (1/5) Σ_k σ((k − hạng)/τ₂),   τ hạ dần 2,0 → 0,05
+#      5-fold trên cả 326 truy vấn của hai bộ:
+#
+#          hiện tại 0,10/0,15/0,125     0,5548   (độ lệch 0,043)
+#          khớp bằng hàm thay thế       0,4787   (độ lệch 0,081)
+#          chỉ thị giác                 0,4780
+#
+#      Thắng **0/5 fold**, và trọng số khớp ra bất ổn: (0,63/0,60/1,42) ở một fold,
+#      (0/0,06/0,07) ở fold khác.
+#
+# CƠ CHẾ, không phải xui. `Final` là bậc thang của hạng, hạng là bậc thang của điểm.
+# Gradient của hàm thay thế chỉ chảy từ những truy vấn NẰM SÁT ngưỡng k — số đó ít,
+# và TẬP những câu đó lại đổi theo `w`. Bộ tối ưu vì thế đuổi theo một mẫu nhỏ và
+# trôi. Cùng lúc, mặt mục tiêu **phẳng**: tám điểm lưới đầu bảng chênh nhau 0,2pp.
+#
+# Khi cực trị thật là một CAO NGUYÊN RỘNG còn ước lượng thì nhiễu, một điểm cố định
+# nằm giữa cao nguyên đánh bại mọi điểm chọn bằng tối ưu nhiễu. Đó là đánh đổi
+# thiên lệch–phương sai, và ở đây phương sai thắng.
+#
+# Cách khớp duy nhất còn có thể đúng là **co về một tiên nghiệm nhỏ** — mà chính là
+# việc chọn một giá trị nhỏ cố định. Nên: giữ.
 DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.10, "ocr": 0.15, "asr": 0.125}
 
 

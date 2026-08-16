@@ -230,20 +230,33 @@ trọng số nào tối ưu cả hai. Quét β,γ,δ ∈ [0; 0,30] bước 0,025
 **`p > 24%`**. Đo trên 30 đề thi thật: 40% nhắc chữ trên khung, 23% nhắc lời nói, 20% có
 tên riêng — vượt xa 24%. Nếu đề thật thuần thị giác hơn thế thì quay về `0,10`.
 
-**Không tinh chỉnh thêm — đo được là tinh chỉnh làm TỆ ĐI.** Kiểm chéo lồng, 12 lần chia
-50/50, chấm trên nửa giữ kín:
+### Ba cách khớp bằng toán, cả ba THUA điểm lưới cố định
 
-    trọng số cố định hợp lý     0,7733
-    chỉnh trên nửa A            0,7393   ← tệ hơn
-    chỉ thị giác                0,5057
+| cách | Final trên phần giữ kín | so với cố định |
+|---|---|---|
+| tối ưu **lồi** (softmax NLL) | 0,7020 | −7,4pp |
+| tìm **trực tiếp** trên `Final` | 0,7393 | −3,4pp |
+| **hàm thay thế trơn của `Final`**, 5-fold, 326 câu | 0,4787 | **−7,6pp · thắng 0/5** |
+| *cố định `0,10/0,15/0,125`* | *0,5548* ¹ | — |
 
-Với 50 câu huấn luyện, tối ưu thẳng trên `Final` bám vào nhiễu. Và **tối ưu lồi** (cực
-đại log-likelihood dưới softmax) còn tệ hơn — **0,7020** — vì nó tối ưu *xác suất* trong
-khi cuộc thi chấm *có lọt top-k hay không*: đẩy khung đúng từ hạng 3 lên 2 làm likelihood
-tăng nhiều mà `Final` không đổi.
+¹ hai dòng cuối chấm trên cả 326 câu của hai bộ nên thang khác ba dòng trên.
 
-`Final` là hàm **bậc thang**. Không có hàm thay thế trơn nào tối ưu đúng nó, và không có
-gradient để đi theo. Quét lưới thô + kiểm chéo là cách đúng ở đây, không phải giải tích.
+Cách thứ ba nới lỏng **đúng** công thức, không phải một mục tiêu thay thế:
+
+    hạng(w)  ≈ 1 + Σ_j σ((s_j − s_gt)/τ)
+    Final(w) ≈ (1/5) Σ_k σ((k − hạng)/τ₂),   τ hạ dần 2,0 → 0,05
+
+Nó vẫn thua, và trọng số khớp ra **bất ổn**: `(0,63/0,60/1,42)` ở một fold,
+`(0/0,06/0,07)` ở fold khác — độ lệch 0,081 so với 0,043 của cách cố định.
+
+**Cơ chế.** `Final` là bậc thang của hạng, hạng là bậc thang của điểm. Gradient chỉ chảy
+từ những truy vấn **nằm sát ngưỡng `k`** — số đó ít, và *tập* những câu đó lại đổi theo
+`w`. Bộ tối ưu đuổi theo một mẫu nhỏ và trôi. Cùng lúc mặt mục tiêu **phẳng**: tám điểm
+lưới đầu bảng chênh 0,2pp.
+
+Khi cực trị thật là **cao nguyên rộng** còn ước lượng thì nhiễu, một điểm cố định giữa
+cao nguyên đánh bại mọi điểm chọn bằng tối ưu nhiễu. Cách khớp duy nhất còn có thể đúng
+là **co về một tiên nghiệm nhỏ** — mà đó chính là việc chọn một giá trị nhỏ cố định.
 
 ---
 
@@ -364,10 +377,22 @@ học**, không phải vì ngữ nghĩa.
 
 **Sửa: rải khung vào khe.** Bảng trên cho `0,0831 → 0,2317` ở `L=9` — **×2,8**.
 
-Chọn `spread=7` vì hai lý do cộng lại: tốt nhất ở `L=9`/`L=11` — dải vận hành nhiều khả
-năng nhất theo thể lệ — và 7 khung trong khe trung vị 48 cho **bước 8 khung**, nên theo
-Định lý 1 nó **bảo đảm** trúng khi `L ≥ 8`, không còn là xác suất. `spread=5` nhỉnh hơn
-từ `L ≥ 21`.
+**Chọn `spread = 7`, và chốt bằng bài nộp THẬT chứ không bằng định lý.** Trên mô hình
+"mốc rơi ngẫu nhiên trong khe", 7 và 9 chênh 0,003 — trong nhiễu. Phá hoà bằng cách chấm
+đầu ra thật của đường ống theo cả hai mô hình cửa sổ:
+
+| spread | Final chặt ±4 | Final cửa sổ khe |
+|---|---|---|
+| **7** | **0,5400** | **0,5920** |
+| 9 | 0,5040 | 0,5820 |
+
+Bảy thắng **cả hai**. Cơ chế: mô hình chặt giả định mốc trùng keyframe nên nó thưởng cho
+**nhiều mốc** (14 so với 11); mô hình khe thưởng cho **phủ dày**. Bảy nằm ở chỗ hai áp
+lực cân nhau.
+
+⚠️ Tôi từng chốt 9 bằng lập luận Định lý 1 — khe trung vị 48 chia 8 cho bước 6, bảo đảm
+khi `L ≥ 6`, so với bước 8 của `m=7`. Lập luận đó **đúng về bảo đảm nhưng sai về đánh
+đổi**: nó bỏ qua chi phí mất 3 mốc. Bài nộp thật bác bỏ nó.
 
 Lưới **thích ứng theo khe cục bộ**, không bước cố định — khe chênh hơn 5 lần giữa p10 và
 p90.
