@@ -1,6 +1,6 @@
 {
  "$schema": "aic2026.bench.results/1",
- "generated_utc": "2026-08-16T05:12:05+00:00",
+ "generated_utc": "2026-08-16T05:15:06+00:00",
  "generated_by": "scripts/eval/build_bench_artifact.py",
  "source": {
   "queries": "export_for_fusion/benchmark_queries.json",
@@ -77,6 +77,43 @@
     "n_queries": 30,
     "final_strict": 0.68,
     "final_gap": 0.7467
+   }
+  ],
+  "final_vs_window_width": [
+   {
+    "L": 1,
+    "moment_at_keyframe": 0.18,
+    "moment_jittered": 0.0702
+   },
+   {
+    "L": 5,
+    "moment_at_keyframe": 0.542,
+    "moment_jittered": 0.3048
+   },
+   {
+    "L": 9,
+    "moment_at_keyframe": 0.554,
+    "moment_jittered": 0.422
+   },
+   {
+    "L": 11,
+    "moment_at_keyframe": 0.554,
+    "moment_jittered": 0.4448
+   },
+   {
+    "L": 21,
+    "moment_at_keyframe": 0.566,
+    "moment_jittered": 0.4973
+   },
+   {
+    "L": 51,
+    "moment_at_keyframe": 0.592,
+    "moment_jittered": 0.5704
+   },
+   {
+    "L": 101,
+    "moment_at_keyframe": 0.624,
+    "moment_jittered": 0.6163
    }
   ]
  },
