@@ -202,11 +202,11 @@ Trên 100 truy vấn gán nhãn tay, chấm đúng luật BTC, `L = 11`:
 
 | | Final |
 |---|---|
-| mốc = keyframe (lạc quan) | 0,6240 |
-| mốc lệch ngẫu nhiên (bi quan) | 0,4886 |
+| mốc = keyframe (lạc quan) | 0,5540 |
+| mốc lệch ngẫu nhiên (bi quan) | 0,4701 |
 
 Trên bộ **110 câu giữ kín** (chưa dùng để chỉnh gì, câu ngắn hơn nên khó hơn):
-`L=11` bi quan = **0,2802**. Hai bộ **không so ngang được**.
+`L=11` bi quan = **0,2778**. Hai bộ **không so ngang được**.
 
 Đề thi thật nằm đâu đó giữa hai số, **và nhiều khả năng thấp hơn cả hai** — bộ 100 câu do
 chính đội viết nên câu chữ hợp với hệ hơn đề của người ngoài.
@@ -215,8 +215,8 @@ chính đội viết nên câu chữ hợp với hệ hơn đề của người 
 
 | thước | Final |
 |---|---|
-| cấp khung, mốc lệch | **0,1052** |
-| cấp khung, mốc lệch, bản CÓ rải | 0,4415 |
+| cấp khung, mốc lệch | **0,1115** |
+| cấp khung, mốc lệch, bản CÓ rải | 0,4496 |
 | cấp shot (`score_shots.py`) | **0,7120** |
 
 🔴 Ba con số này phải đọc cùng nhau. Cấp shot `R@1 = 0,56` nghĩa là hệ **xếp đúng shot ở

@@ -316,21 +316,22 @@ tin hơn nên khó hơn. Chỉ so được **hiệu** giữa các cấu hình.
 
 | `L` | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
 |---|---|---|---|---|---|---|
-| 9 | 0,0450 | 0,0921 | 0,0979 | 0,1000 | 0,1008 | **0,0872** |
-| **11** | 0,0533 | 0,1113 | 0,1179 | 0,1212 | 0,1225 | **0,1052** |
-| 21 | 0,1108 | 0,2283 | 0,2471 | 0,2538 | 0,2563 | **0,2193** |
+| 9 | 0,0450 | 0,0950 | 0,1008 | 0,1029 | 0,1037 | **0,0895** |
+| **11** | 0,0546 | 0,1187 | 0,1254 | 0,1288 | 0,1300 | **0,1115** |
+| 21 | 0,1154 | 0,2462 | 0,2650 | 0,2717 | 0,2742 | **0,2345** |
 
 Bản **có rải** trước đây, cùng bộ, cùng hạt giống, để so:
 
 | `L` | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
 |---|---|---|---|---|---|---|
-| 9 | 0,0446 | 0,2033 | 0,5050 | 0,5975 | 0,6162 | **0,3933** |
-| **11** | 0,0492 | 0,2433 | 0,5642 | 0,6658 | 0,6850 | **0,4415** |
-| 21 | 0,1113 | 0,2754 | 0,5771 | 0,6754 | 0,6904 | **0,4659** |
+| 9 | 0,0454 | 0,2104 | 0,5229 | 0,6142 | 0,6308 | **0,4047** |
+| **11** | 0,0500 | 0,2508 | 0,5767 | 0,6763 | 0,6942 | **0,4496** |
+| 21 | 0,1138 | 0,2838 | 0,5863 | 0,6842 | 0,6987 | **0,4733** |
 
-🔴 **Xoá rải mất 0,3129 Final** (`L=9`, bắt cặp, KTC95 [−0,3587, −0,2665], thắng 4 / thua
-72). Đọc hai bảng theo **cột** thì thấy cơ chế: `R@1` gần như y nhau (0,0533 so với 0,0492
-— không rải còn hơn chút), rồi bản không rải **đứng im** từ `R@5` trở đi. Tức **99 trong
+🔴 **Xoá rải mất 0,3381 Final** ở `L=11` (0,1115 so với 0,4496; bắt cặp trên `L=9` cho
+Δ=−0,3129, KTC95 [−0,3587, −0,2665], thắng 4 / thua 72). Đọc hai bảng theo **cột** thì thấy
+cơ chế: `R@1` gần như y nhau (0,0546 so với 0,0500 — không rải còn hơn chút), rồi bản không
+rải **đứng im** từ `R@5` trở đi. Tức **99 trong
 100 suất ngân sách gần như vô giá trị** ở cấp khung: chúng là những keyframe cách nhau ~48
 khung, mà chỉ một cửa sổ 11 khung được tính.
 
@@ -547,6 +548,18 @@ cố định 80 giây nạp chỉ mục trả **mỗi lần gọi** — gom lô.
 cấu hình khác nhau ở **7/110 câu** (`.map()` chia lô khác nhau ⟹ đệm khác ⟹ logit bfloat16
 lệch chữ số cuối ⟹ lật thế hoà). Chênh lệch `Final` chỉ **0,0006** ở `L=11`, trong khi
 hiệu ứng nhỏ nhất được báo là +0,0153 — **cách nhau 25 lần**. Mọi kết luận nằm trên sàn.
+
+**Hai bộ chấm trong cùng một kho từng cài HAI mô hình cửa sổ khác nhau.**
+`score_submission.py` cho mốc rơi đều trong **nửa khe keyframe**; `compare_arch.py` cho nó
+rơi trong **nửa khe ∩ biên shot**. Cùng một bài nộp ra `0,2605` so với `0,2801` — lệch
+0,0197, **gấp 3 lần** biên độ nhiễu hạt giống. Đã thống nhất về bản **có chặn biên shot**,
+vì mốc ngữ nghĩa thuộc MỘT shot nên không thể rơi sang shot bên cạnh — đó là ràng buộc
+thật, không phải lựa chọn mô hình. Mọi số tuyệt đối đã báo trước bản sửa đều là **cận
+dưới**.
+
+⚠️ Và biên độ nhiễu hạt giống thật là **0,0068** ở 32 lần gieo (lệch chuẩn 0,0017), co lại
+theo `√(số lần gieo)`. Tôi từng đoán "~0,005" từ MỘT cặp quan sát — đo tử tế thì phải quét
+nhiều hạt, không suy từ một lần.
 
 **`hash()` của Python có muối ngẫu nhiên MỖI TIẾN TRÌNH — nó từng là hạt giống của bộ
 chấm.** Ba script gieo `default_rng(abs(hash(qid)) % 2**31)`, gồm chính `score_submission.py`

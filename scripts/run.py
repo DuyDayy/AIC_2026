@@ -34,8 +34,8 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ① probe hoá   tách mốc E1:/E2:, rút trích dẫn; Q&A: câu hỏi → câu MÔ TẢ
     ② bốn nguồn   thị giác · OCR · vật thể · lời nói
     ③ ma trận S   chuẩn hoá z trong tập CÓ dữ liệu, trọng số 1/0,089/0,132/0,213
-    ⑤a rổ         mỗi nguồn đề cử TOP RIÊNG 40 → rổ ~155 khung, là bộ lọc CỨNG
-    ⑤b bậc 1      mảnh cắt vật thể — TẮT mặc định, đo được nó phá điểm
+    ⑤a rổ         mỗi nguồn đề cử TOP RIÊNG 40 → rổ 158 khung, là bộ lọc CỨNG
+    ⑤b bậc 1      mảnh cắt vật thể — BỎ: trống cả ở nhóm ≥2 màu, tốn 655s + $0,77
     ⑤c bậc 2      VLM chấm P(khớp) trên CẢ RỔ — BẬT mặc định, trọng số 0,25
     ④ kbest       DP thứ tự thời gian, k-best mỗi video rồi sắp toàn cục; λ=0
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
@@ -108,8 +108,13 @@ chỉ bỏ đi phần PHỦ mà không bỏ được phần TRÙNG nào — vì 
 
 Trước đây có rải, và nó **mua rất nhiều điểm** ở mật độ keyframe hiện tại:
 
-    [ĐO] bộ giữ kín 110 câu:  rải 1 → 0,0857   ·   rải thích ứng → 0,2334
-    tức bỏ rải mất ~63% điểm
+    [ĐO] bộ giữ kín 110 câu:  rải 1 → 0,0857   ·   rải thích ứng → 0,2334   (−63%)
+    [ĐO] bộ GT v2 100 câu, L=11, cùng cấu hình còn lại, cùng hạt giống:
+         không rải → 0,1115   ·   rải 7 → 0,4496                            (−75%)
+
+    Đọc theo CỘT R@k thì thấy cơ chế: R@1 gần như y nhau (0,0546 so với 0,0500) rồi bản
+    không rải ĐỨNG IM từ R@5. Tức 99/100 suất ngân sách gần như vô giá trị ở cấp khung —
+    chúng là keyframe cách nhau ~48 khung, mà chỉ một cửa sổ 11 khung được tính.
 
 Nguyên nhân là **hình học**, không phải xếp hạng: keyframe cách nhau trung vị **48 khung**
 còn cửa sổ đáp án thể lệ chỉ ~10 khung, nên xác suất một cửa sổ chứa sẵn keyframe của ta
@@ -231,6 +236,10 @@ RERANK_WEIGHTS = {"fused4": 1.0, "crop": 0.0, "vlm": 0.25}
 #     11     0,2445   0,2635   0,2802     +0,0356   [+0,0091,+0,0659]    18/85/7  ✓
 #     21     0,2713   0,2907   0,3101     +0,0388   [+0,0111,+0,0711]    18/84/8  ✓
 #     51     0,3118   0,3344   0,3564     +0,0447   [+0,0145,+0,0791]    18/84/8  ✓
+#
+# ⚠️ Bốn cột SỐ TUYỆT ĐỐI ở bảng trên đo bằng mô hình cửa sổ CHƯA chặn biên shot, nên
+# thấp hơn thực tế (bộ này ra 0,2605 thay vì 0,2778 ở L=11). Δ bắt cặp giữ được vì cả
+# hai nhánh dùng cùng cửa sổ; muốn số tuyệt đối đúng thì chạy lại cả sweep.
 #
 # Bỏ VLM mất ~13% điểm tương đối. K=30 mua 0,019; nới lên 160 mua thêm 0,017 — chưa
 # thấy bão hoà, nên chấm CẢ RỔ (`POOL_CAP` = 200 ⟹ 160 phủ hết trong thực tế).

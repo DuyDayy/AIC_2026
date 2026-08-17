@@ -35,7 +35,9 @@ Chọn một `L` rồi gọi đó là "điểm của ta" là giấu đi tham s�
 Giả định vị trí: đoạn đặt **đối xứng quanh mốc ngữ nghĩa**, và mốc ngữ nghĩa lấy bằng
 `frame_idx` của keyframe ground truth. Đó là giả định **lạc quan** — thể lệ nói rõ khung
 ngữ nghĩa KHÁC keyframe kỹ thuật đã cấp, nên mốc thật lệch đi một khoảng chưa biết.
-Cột `lệch ngẫu nhiên` mô phỏng chiều bi quan: mốc rơi đều trong nửa khe quanh keyframe.
+Cột `lệch ngẫu nhiên` mô phỏng chiều bi quan: mốc rơi đều trong **nửa khe quanh
+keyframe ∩ biên shot ∩ độ dài video**. Chặn biên shot là bắt buộc — mốc ngữ nghĩa
+thuộc MỘT shot, không thể rơi sang shot bên cạnh.
 """
 
 from __future__ import annotations
@@ -52,6 +54,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.ingestion.vector_index import load_flat_index
+from src.retrieval.sources import load_shot_bounds, load_video_last_frame
 from src.scoring.rscore import (
     Interval,
     KISAnswer,
@@ -118,13 +121,28 @@ def main() -> int:
         return 1
 
     # ── 2. CHẤM ĐIỂM, quét L vì đó là tham số duy nhất không biết ──────────
+    # Cửa sổ mốc lệch = nửa khe keyframe ∩ BIÊN SHOT ∩ độ dài video.
+    #
+    # 🔴 Chặn biên shot là BẮT BUỘC, không phải tinh chỉnh. Mốc ngữ nghĩa nằm trong
+    # một shot — nó không thể rơi sang shot bên cạnh. Bản trước chỉ lấy nửa khe, nên
+    # cửa sổ RỘNG hơn thực tế và điểm THẤP hơn thực tế: bộ 110 giữ kín ra 0,2605 thay
+    # vì 0,2801, tức lệch 0,0197 — gấp 3 lần biên độ nhiễu hạt giống (0,0068 ở 32 lần
+    # gieo). `compare_arch.py` vốn đã chặn; hai bộ chấm trong cùng kho từng cho hai
+    # con số khác nhau cho cùng một bài nộp.
+    shot_b, last_f = load_shot_bounds(), load_video_last_frame()
     nbr = {}
     for v, (lo, hi) in idx.ranges.items():
         o = np.argsort(FI[lo:hi])
         f = FI[lo:hi][o]
+        vmax = last_f.get(v, int(f[-1])) - 1
         for j, r in enumerate(o):
-            nbr[lo + int(r)] = (int(f[j - 1]) if j else int(f[j]) - 71,
-                                int(f[j + 1]) if j + 1 < len(f) else int(f[j]) + 71)
+            row = lo + int(r)
+            c = int(f[j])
+            prev = int(f[j - 1]) if j else c - 71
+            nxt = int(f[j + 1]) if j + 1 < len(f) else c + 71
+            a, b = c - (c - prev) // 2, c + (nxt - c) // 2
+            ss, se = shot_b.get(idx.ids[row], (a, b))
+            nbr[row] = (max(0, a, ss), min(b, se, vmax))
 
     fixed = {L: [] for L in LS}
     jitter = {L: [] for L in LS}
@@ -144,8 +162,7 @@ def main() -> int:
         answers = [KISAnswer(v, f[0]) for v, f, _ in rows if f]
         g = pos[(r["video_id"], int(r["frame_id"]))]
         gf = int(FI[g])
-        prev, nxt = nbr[g]
-        lo, hi = gf - (gf - prev) // 2, gf + (nxt - gf) // 2
+        lo, hi = nbr[g]          # đã chặn biên shot ở khối dựng `nbr`
         rng = np.random.default_rng(stable_seed(qid))
         for L in LS:
             half = (L - 1) // 2
@@ -178,7 +195,7 @@ def main() -> int:
         print(f"{L:<20}{np.mean(fixed[L]):>18.4f}{np.mean(jitter[L]):>23.4f}")
     print("-" * 62)
     print("  cột trái  = giả định LẠC QUAN: mốc ngữ nghĩa trùng keyframe của ta")
-    print("  cột phải  = giả định BI QUAN: mốc rơi đều trong nửa khe quanh keyframe")
+    print("  cột phải  = giả định BI QUAN: mốc rơi đều trong nửa khe quanh keyframe ∩ biên shot")
     print("  thể lệ nói đoạn đáp án 'thường dưới 10 frame'; ví dụ KIS là 11 khung")
 
     # ── BẢNG R@k — `Final` gộp 5 mốc, bảng này mở chúng ra ──────────────────
