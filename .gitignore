@@ -44,16 +44,30 @@ scripts/asr/
 scripts/ocr/
 scripts/object/
 scripts/calibration/
-scripts/eval/
+# `scripts/eval/*` chứ KHÔNG `scripts/eval/`: git không bỏ loại được file nằm trong một
+# thư mục đã bị loại, nên pattern có dấu `/` cuối làm mọi dòng `!` bên dưới vô hiệu.
+scripts/eval/*
+!scripts/eval/encode_queries.py
+!scripts/eval/score_index.py
+# Ba script README dẫn tới. `score_submission.py` nằm trong bộ kiểm TRƯỚC KHI NỘP của
+# RUNBOOK nên nó là file VẬN HÀNH, không phải công cụ nghiên cứu.
+!scripts/eval/score_submission.py
+!scripts/eval/compare_arch.py
+!scripts/eval/make_queries.py
 src/object/
-src/scoring/
+# `rscore.py` là CÔNG THỨC CHẤM nguyên văn thể lệ — ba script eval import nó, và thiếu
+# nó thì không kiểm được bài nộp trước khi gửi.
+src/scoring/*
+!src/scoring/__init__.py
+!src/scoring/rscore.py
 src/ingestion/frame_index.py
 src/ingestion/keyframe_store.py
 src/ingestion/ocr_store.py
 src/ingestion/transcript_store.py
 src/retrieval/engine.py
 src/submission/allocator.py
-src/submission/writer.py
+# `writer.py` KHÔNG còn ở đây: `validate_all` là bộ kiểm định dạng bài nộp, dùng trong
+# RUNBOOK trước khi gửi. Nó từng bắt 266/10.000 dòng trùng và lỗi frame_id vượt độ dài.
 # `kbest.py` KHÔNG còn ở đây: ⑦ đã hợp nhất KIS và TRAKE về `k_best_alignments`,
 # nên `run.py` import nó — bỏ sót là repo tải về không chạy. Đúng loại lỗi mà
 # `coverage.py` và `shard_plan.py` từng dính.
@@ -63,3 +77,6 @@ bench100.html
 artifacts/bench100_thumbs.json
 queries_bench/
 submission_bench/
+
+# build output của `build_bench_artifact.py`; consumer `bench100.html` đã bị loại
+artifacts/bench100_*.json
