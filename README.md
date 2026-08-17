@@ -252,11 +252,22 @@ Thiếu tầng này thì câu Q&A được **0 điểm** dù tìm đúng khung �
 | khử trùng `(video, frame)` | **có** — `R@k = max`, hai dòng giống hệt mua đúng một cơ hội |
 | khử trùng theo cảnh/video | **KHÔNG** — đo được −4,3pp / −12,0pp |
 
-🔴 **Phép rải khung đã bị XOÁ**, và điều kiện để việc đó đúng phải nói rõ. Ở mật độ
-keyframe hiện tại, rải mua rất nhiều điểm:
+**Một khung mỗi mốc là THIẾT KẾ, không phải tuỳ chọn — và không có cờ để bật lại rải.**
 
-    [ĐO] bộ giữ kín 110 câu:  không rải → 0,0857  ·  rải thích ứng → 0,2334
-    tức bỏ rải mất ~63% điểm
+Vì sao không để cờ: rải không phải cách xếp hạng tốt hơn, nó là cách **tiêu 100 suất ngân
+sách để đắp khoảng trống giữa các keyframe**. Khoảng trống đó là thuộc tính của **bộ
+keyframe**, không phải của tầng truy vấn — nên chỗ giải nó là lúc **cắt khung**. Một cờ ở
+đây chỉ mời người ta lấy ngân sách đắp cho dữ liệu thiếu, rồi tưởng mình đang chỉnh mô
+hình. Ba test trong `tests/test_coverage.py` khoá quyết định này: `run.py` không được
+import `coverage`, `main()` không được có tham số nào dính `spread`/`rai`, và
+`coverage.py` **không được xoá**.
+
+Đánh đổi thì nói rõ, không giấu — ở mật độ keyframe hiện tại thiết kế này **kém hơn**:
+
+| bộ đề | một khung mỗi mốc | rải | Δ |
+|---|---|---|---|
+| GT v2 100 câu, `L=11` | **0,1115** | 0,4496 | −75% |
+| 110 giữ kín | 0,0857 | 0,2334 | −63% |
 
 Nguyên nhân là **hình học**: keyframe cách nhau trung vị **48 khung** còn cửa sổ đáp án
 thể lệ ~10 khung, nên xác suất một cửa sổ chứa sẵn keyframe của ta chỉ **23,5%**.
@@ -270,8 +281,14 @@ Trần đó là **hàm của mật độ**, và kế hoạch cắt dày hơn ho�
 | **12 (×4 dày)** | **73,5%** | **81,1%** |
 | 10 (mỗi khung thứ 10) | 90,0% | 100% |
 
-Ở ×4 dày, mỗi keyframe tự phủ cửa sổ của nó và rải thành vô nghĩa. **Xoá rải là đúng SAU
-KHI bộ keyframe dày hơn có thật** — trước đó thì nó là mất 63% điểm.
+Ở ×4 dày, mỗi keyframe tự phủ cửa sổ của nó và rải thành vô nghĩa. Hai thứ **không cộng
+dồn, chúng thay nhau** — nên thiết kế này đặt cược vào mật độ, và cược đó chỉ thắng sau khi
+bộ keyframe dày hơn có thật.
+
+Cùng hướng đó, khối dựng `win[row]` (nửa khe ∩ biên cảnh ∩ cuối video) **đã rời khỏi
+`run.py`**: nó chỉ tồn tại để phục vụ rải, nên sau khi ⑦ chốt thì nó được dựng rồi không ai
+đọc — 0,73 giây mỗi lượt cho một dict chết, và tệ hơn là nó làm người đọc tưởng hệ có rải.
+Cửa sổ đó vẫn cần để **chấm điểm**, nên nó sống ở `scripts/eval/*`.
 
 Phân tích trần vẫn ở `src/submission/coverage.py`, nay là **mã phân tích, không nằm trên
 đường chạy**: nó là tài liệu định lượng biện minh cho việc cắt dày hơn.

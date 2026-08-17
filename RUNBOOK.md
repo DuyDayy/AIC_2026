@@ -53,8 +53,9 @@ không thì nó bị chấm như KIS và mất sạch câu đó.
 modal run scripts/run.py --dir queries_thi --out nop_thi
 ```
 
-🟢 **Không còn tham số `--spread`.** ⑦ nộp một khung mỗi mốc, 100 mốc. Phép rải đã xoá
-theo hướng cắt keyframe dày hơn — xem README mục ⑦ để biết điều kiện.
+🟢 **Không có tham số `--spread`, và đó là thiết kế.** ⑦ nộp một khung mỗi mốc, 100 mốc.
+Đừng đi tìm cờ để bật rải — không có, và ba test trong `tests/test_coverage.py` chặn việc
+thêm lại. Lý lẽ ở README mục ⑦; đánh đổi ở mật độ hiện tại là −75% trên GT v2.
 
 Chạy nền và ghi log ra file để đọc được tiến trình:
 
@@ -192,7 +193,7 @@ dung nên lượt hai không tốn GPU.
 | `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
 | `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | crop trống cả ở nhóm ≥2 màu, tốn 655s |
 | `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
-| rải khung | **đã xoá** | ⑦ nộp 1 khung/mốc. Ở mật độ keyframe hiện tại việc này **mất 0,3129 Final** — xem README, chỉ hoà lại khi cắt dày hơn |
+| rải khung | **không có, theo thiết kế** | ⑦ nộp 1 khung/mốc; KHÔNG có cờ, test chặn thêm lại. Ở mật độ hiện tại việc này **mất 0,3381 Final** (0,1115 so với 0,4496) — chỉ hoà lại khi cắt dày hơn |
 
 ---
 

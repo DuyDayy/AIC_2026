@@ -381,3 +381,59 @@ def test_m_luon_dung_duoc_cho_spread_in_window():
         assert m >= 1
         out = spread_in_window(lo + w // 2, lo, lo + w - 1, m)
         assert len(out) == len(set(out)) and all(lo <= f <= lo + w - 1 for f in out)
+
+
+# =============================================================================
+# KHOÁ THIẾT KẾ ⑦: MỘT KHUNG MỖI MỐC, KHÔNG CỜ, VÀ KHÔNG XOÁ MÃ PHÂN TÍCH
+# =============================================================================
+#
+# Ba điều dưới đây là QUYẾT ĐỊNH, không phải trạng thái tình cờ. Không có test khoá lại
+# thì "không cần cờ" chỉ là ý định — ai cũng thêm `--spread` lại được, và lần sau không
+# ai biết vì sao nó từng bị bỏ.
+#
+# Rải không phải cách xếp hạng tốt hơn; nó là cách tiêu 100 suất ngân sách để đắp khoảng
+# trống giữa các keyframe. Khoảng trống đó là thuộc tính của BỘ KEYFRAME, nên chỗ giải nó
+# là lúc cắt khung. Một cờ ở tầng truy vấn chỉ mời người ta đắp ngân sách cho dữ liệu
+# thiếu rồi tưởng mình đang chỉnh mô hình.
+
+
+def _run_py_ast():
+    import ast
+    import pathlib
+    p = pathlib.Path(__file__).resolve().parents[1] / "scripts" / "run.py"
+    return ast.parse(p.read_text(encoding="utf-8")), p
+
+
+def test_duong_chay_khong_import_ma_rai():
+    """`run.py` KHÔNG được import `coverage` — rải phải ở ngoài đường chạy."""
+    import ast
+    tree, p = _run_py_ast()
+    for n in ast.walk(tree):
+        mod = (n.module if isinstance(n, ast.ImportFrom) else None) or ""
+        names = [a.name for a in getattr(n, "names", [])] if isinstance(
+            n, (ast.Import, ast.ImportFrom)) else []
+        assert "coverage" not in mod, f"{p.name} import {mod} — rải quay lại đường chạy"
+        for nm in names:
+            assert "spread" not in nm and "coverage" not in nm, \
+                f"{p.name} import {nm} — rải quay lại đường chạy"
+
+
+def test_khong_co_co_rai_nao():
+    """`main()` không được có tham số nào tên dính `spread`/`rai`."""
+    import ast
+    tree, p = _run_py_ast()
+    mains = [n for n in ast.walk(tree)
+             if isinstance(n, ast.FunctionDef) and n.name == "main"]
+    assert mains, "không tìm thấy main() trong run.py"
+    args = [a.arg for m in mains for a in
+            (m.args.args + m.args.kwonlyargs + m.args.posonlyargs)]
+    bad = [a for a in args if "spread" in a.lower() or "rai" in a.lower()]
+    assert not bad, f"main() có cờ rải: {bad} — ⑦ là thiết kế, không phải tuỳ chọn"
+
+
+def test_ma_phan_tich_rai_VAN_CON():
+    """Mặt kia của quyết định: KHÔNG xoá `coverage.py`. Cần đo lại thì dùng nó."""
+    from src.submission import coverage
+    for fn in ("spread_in_window", "adaptive_m", "hit_probability"):
+        assert callable(getattr(coverage, fn, None)), \
+            f"coverage.{fn} bị xoá — mất cách đo lại đánh đổi rải"

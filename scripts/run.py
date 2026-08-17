@@ -101,39 +101,49 @@ của chính nó**, nên các dải rải **lát kề nhau, không chồng lên 
 chỉ bỏ đi phần PHỦ mà không bỏ được phần TRÙNG nào — vì không còn phần trùng nào.
 
 =============================================================================
-ĐÃ XOÁ PHÉP RẢI KHUNG — VÀ ĐIỀU KIỆN ĐỂ ĐIỀU ĐÓ ĐÚNG
+⑦ NỘP MỘT KHUNG MỖI MỐC — THIẾT KẾ, KHÔNG PHẢI TUỲ CHỌN
 =============================================================================
 
-⑦ nộp **một khung mỗi mốc**: đúng `frame_idx` của keyframe. Không rải khung vào khe.
+⑦ nộp **đúng một dòng cho mỗi keyframe được chọn**: `frame_idx` của chính nó. Không có
+phép rải, và **không có cờ để bật lại** — đây là hình dạng của tầng nộp, không phải một
+chế độ trong nhiều chế độ.
 
-Trước đây có rải, và nó **mua rất nhiều điểm** ở mật độ keyframe hiện tại:
+VÌ SAO KHÔNG ĐỂ CỜ. Một cờ `--spread` sẽ nói dối về bản chất bài toán. Rải không phải
+cách xếp hạng tốt hơn; nó là cách **tiêu 100 suất ngân sách để phủ khoảng trống giữa các
+keyframe**. Khoảng trống đó là thuộc tính của **bộ keyframe**, không phải của tầng truy
+vấn. Nên chỗ giải nó là lúc CẮT KHUNG, và một cờ ở đây chỉ mời người ta lấy ngân sách
+đắp cho dữ liệu thiếu — rồi tưởng mình đang chỉnh mô hình.
 
+ĐÁNH ĐỔI, ĐO ĐƯỢC, KHÔNG GIẤU. Ở mật độ keyframe hiện tại thiết kế này **kém hơn**:
+
+    [ĐO] GT v2 100 câu, L=11, cùng cấu hình còn lại, cùng hạt giống:
+         một khung mỗi mốc → 0,1115   ·   rải 7 → 0,4496          (−75%)
     [ĐO] bộ giữ kín 110 câu:  rải 1 → 0,0857   ·   rải thích ứng → 0,2334   (−63%)
-    [ĐO] bộ GT v2 100 câu, L=11, cùng cấu hình còn lại, cùng hạt giống:
-         không rải → 0,1115   ·   rải 7 → 0,4496                            (−75%)
 
-    Đọc theo CỘT R@k thì thấy cơ chế: R@1 gần như y nhau (0,0546 so với 0,0500) rồi bản
-    không rải ĐỨNG IM từ R@5. Tức 99/100 suất ngân sách gần như vô giá trị ở cấp khung —
-    chúng là keyframe cách nhau ~48 khung, mà chỉ một cửa sổ 11 khung được tính.
+    Cơ chế đọc theo CỘT R@k: R@1 gần như y nhau (0,0546 so với 0,0500) rồi bản một-khung
+    ĐỨNG IM từ R@5. Tức 99/100 suất ngân sách gần như vô giá trị ở cấp khung — chúng là
+    keyframe cách nhau ~48 khung, mà chỉ một cửa sổ ~11 khung được tính.
 
-Nguyên nhân là **hình học**, không phải xếp hạng: keyframe cách nhau trung vị **48 khung**
-còn cửa sổ đáp án thể lệ chỉ ~10 khung, nên xác suất một cửa sổ chứa sẵn keyframe của ta
-chỉ **23,5%** — trần cứng bất kể truy xuất tốt đến đâu.
+ĐIỀU KIỆN ĐỂ THIẾT KẾ NÀY ĐÚNG. Trần phủ là hàm của mật độ keyframe:
 
-🔴 **XOÁ RẢI CHỈ ĐÚNG SAU KHI BỘ KEYFRAME DÀY HƠN CÓ THẬT.** Trần đó là hàm của mật độ:
+    khe keyframe            trần ở L=9    trần ở L=11
+    48 (hiện tại)               23,5%         28,6%
+    24 (×2 dày)                 45,7%         53,1%
+    12 (×4 dày)                 73,5%         81,1%
+    10 (mỗi khung thứ 10)       90,0%        100%
 
-    khe keyframe    trần ở L=9    trần ở L=11
-    48 (hiện tại)       23,5%         28,6%
-    24 (×2 dày)         45,7%         53,1%
-    12 (×4 dày)         73,5%         81,1%
-    10 (mỗi khung thứ 10)  90,0%      100%
+Ở ×4 dày, mỗi keyframe tự phủ cửa sổ của nó và rải mất hết ý nghĩa. Cắt dày hơn **hoá
+giải đúng cái trần** mà rải sinh ra để vượt — nên hai thứ không cộng dồn, chúng thay nhau.
 
-Ở ×4 dày, trần lên 73,5% và rải thành gần như vô nghĩa — mỗi keyframe tự phủ cửa sổ của
-nó. Đó là lý do phép rải bị xoá: kế hoạch cắt dày hơn **hoá giải đúng cái trần** mà rải
-sinh ra để vượt.
+🔴 CHỖ HỔNG THẬT KHÔNG PHẢI XẾP HẠNG. `R@1` cấp shot đo được **0,5600** so với `R@1` cấp
+khung **0,0546**: hệ tay đúng shot ở hạng 1 cho 56% câu, và khung hạng 1 lệch keyframe
+ground truth **trung vị 5 khung**. 50/100 câu mất điểm dù xếp hạng đã hoàn hảo. Đó là lý
+lẽ định lượng cho việc cắt dày hơn, và là lý do không nên tiêu ngân sách để đắp.
 
-Phân tích trần vẫn ở `src/submission/coverage.py`, nay là **mã phân tích, không nằm trên
-đường chạy** — nó là tài liệu định lượng biện minh cho việc cắt dày hơn.
+KHÔNG XOÁ MÃ PHÂN TÍCH. `src/submission/coverage.py` vẫn giữ `spread_in_window`,
+`adaptive_m` và phép tính trần ở trên — nhưng nó **không được import từ đường chạy**, và
+`tests/test_coverage.py` khoá hành vi đó lại. Cần đo lại đánh đổi này thì dùng module đó,
+đừng thêm cờ vào đây.
 
 Bài nộp ghi **`frame_idx`** — số khung thật. `n` chỉ là số thứ tự keyframe, và đo được
 0/173.426 khung có hai giá trị bằng nhau.
@@ -533,8 +543,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
         AsrSource, SourceScores, TextSource, VisualSource, load_asr_segments,
-        load_frame_ms, load_object_text, load_ocr_text, load_shot_bounds,
-        load_video_last_frame,
+        load_frame_ms, load_object_text, load_ocr_text,
     )
 
     # Ghi đè trọng số bậc 1 từ dòng lệnh. Có cờ này vì phép đo trước tôi làm bằng cách
@@ -592,28 +601,16 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     W = dict(DEFAULT_WEIGHTS) if not light else {"visual": 1.0}
     fms = load_frame_ms()
     times = np.array([fms.get(k, 0.0) for k in idx.ids], dtype=np.float64)
-    # Hàng xóm THỜI GIAN trong cùng video — cần để dựng cửa sổ rải theo mật độ
-    # cục bộ. Khe đo được p10=19, p50=48, p90=105 khung nên bước cố định là sai.
+    # `FI[row]` = số khung THẬT của keyframe. ⑦ nộp đúng giá trị này, nên đây là toàn bộ
+    # thông tin thời gian mà tầng nộp cần.
+    #
+    # Ở đây từng có khối dựng `win[row]` — nửa khe tới hàng xóm thời gian, giao biên cảnh,
+    # kẹp vào cuối video. Nó chỉ tồn tại để phục vụ phép rải. Sau khi ⑦ chốt một khung mỗi
+    # mốc thì `win` được DỰNG RỒI KHÔNG AI ĐỌC: 0,73 giây mỗi lượt (0,37 nạp biên cảnh +
+    # 0,22 nạp độ dài video + 0,14 vòng qua 173.426 khung) cho một dict chết. Tệ hơn con
+    # số đó là nó nói sai thiết kế — người đọc thấy bộ máy "cửa sổ rải" thì tưởng hệ có
+    # rải. Cửa sổ đó vẫn cần cho việc CHẤM ĐIỂM, nên nó sống ở `scripts/eval/*`, đúng chỗ.
     FI = np.asarray(idx.frame_idx)
-    # Cửa sổ rải của mỗi keyframe = NỬA KHE tới hàng xóm, GIAO với biên CẢNH của nó,
-    # rồi kẹp vào số khung thật của video. Hai phép giao sau không phải trang trí:
-    # thiếu chúng thì bài nộp vắt qua ranh giới cảnh và vượt cuối video — cả hai đã
-    # bị `writer.validate_all` bắt trên bài nộp thật.
-    shot_b = load_shot_bounds()
-    last_f = load_video_last_frame()
-    win: dict[int, tuple[int, int]] = {}
-    for v, (lo, hi) in idx.ranges.items():
-        o = np.argsort(FI[lo:hi])
-        f = FI[lo:hi][o]
-        vmax = last_f.get(v, int(f[-1]))
-        for j, r in enumerate(o):
-            row = lo + int(r)
-            c = int(f[j])
-            prev = int(f[j - 1]) if j else c
-            nxt = int(f[j + 1]) if j + 1 < len(f) else c
-            a, b = c - (c - prev) // 2, c + (nxt - c) // 2
-            ss, se = shot_b.get(idx.ids[row], (a, b))
-            win[row] = (max(0, a, ss), min(b, se, vmax))
     # ĐỒNG HỒ TỪNG TẦNG. Kỳ thi chỉ có 2 giờ 30, nên "chạy được" chưa đủ — phải biết
     # mỗi tầng ăn bao nhiêu phút để cắt đúng chỗ khi thiếu giờ, chứ không cắt mò.
     T: dict[str, float] = {"nạp": time.time() - t0}
