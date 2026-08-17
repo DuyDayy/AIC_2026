@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import logging
 import unicodedata
+import zlib
 from dataclasses import dataclass
 from typing import Callable, Mapping, Sequence
 
@@ -36,6 +37,22 @@ K_THRESHOLDS: tuple[int, ...] = (1, 5, 20, 50, 100)
 
 # Số câu trả lời tối đa mỗi truy vấn (PDF mục 2). Allocator dùng làm ngân sách B.
 MAX_ANSWERS: int = 100
+
+
+def stable_seed(key: str) -> int:
+    """
+    Hạt giống ĐỊNH TRƯỚC từ một chuỗi — dùng cho mô hình mốc lệch của bộ chấm.
+
+    VÌ SAO KHÔNG DÙNG `hash()`: Python băm chuỗi có muối ngẫu nhiên MỖI TIẾN TRÌNH
+    (PYTHONHASHSEED), nên `default_rng(abs(hash(qid)) % 2**31)` cho hạt khác nhau ở
+    hai lần chạy. [ĐO] cùng mã, cùng bản lưu, cùng ground truth mà Final lệch 0,0995
+    so với 0,0948 — gấp 8 lần sàn nhiễu 0,0006, và đủ để LẬT argmax của một phép quét
+    trọng số. Δ bắt cặp trong cùng tiến trình vẫn đúng vì A và B chung hạt, nhưng số
+    tuyệt đối thì không tái lập được, và không so được giữa hai lần chạy.
+
+    `crc32` chọn vì định trước, có trong thư viện chuẩn, và trả sẵn 32 bit không dấu.
+    """
+    return zlib.crc32(key.encode("utf-8"))
 
 
 # ============================================================

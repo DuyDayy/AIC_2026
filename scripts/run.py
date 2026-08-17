@@ -161,6 +161,17 @@ KEYFRAME_ROOTS = ("data/Framme/L21-L25/Keyframes L21-L25",
 POOL_PER_SOURCE = 40      # 4 nguồn × 40 ⟹ rổ ≤ 160 khung sau khi khử trùng
 POOL_CAP = 200            # chặn trên, cắt theo điểm nền SAU khi mỗi nguồn đã có suất
 
+# [ĐO] trên 100 câu GT v2: rổ trung vị 158, max ĐÚNG 160 = 4×40 ⟹ `POOL_CAP` KHÔNG BAO
+# GIỜ chạm. Muốn rổ to hơn thì bậc `POOL_PER_SOURCE`, đừng bậc `POOL_CAP`.
+# Vì sao max bằng đúng 4×40: bốn nguồn đề cử gần như RỜI NHAU — 98,6% khung trong rổ do
+# đúng một nguồn đề cử, 1,3% hai nguồn, 0,2% ba nguồn, KHÔNG khung nào cả bốn. Đây là
+# lý lẽ cơ chế cho hai kết quả đã đo: (a) cho mỗi nguồn suất riêng có lợi +0,0153, vì
+# không có suất thì ba nguồn yếu vô hình; (b) dùng `agree` làm điểm HẠI 0,0208, vì nó
+# gần như hằng số 1 nên chỉ mang nhiễu.
+
+# Mặt bit của `provenance` khi lưu npz — thứ tự khớp ④ nguồn của `DEFAULT_WEIGHTS`.
+PROV_BITS = {"visual": 1, "object": 2, "ocr": 4, "asr": 8}
+
 # Hạn ngạch mỗi nguồn được đề cử tối đa bao nhiêu khung của CÙNG một video.
 # [ĐO] Đây là CHỐT AN TOÀN, KHÔNG phải phép tối ưu — 10 đo được Δ=+0,0014 với
 # KTC95 [−0,0019, +0,0061], tức bằng 0. Siết chặt hơn thì HẠI: 5 → −0,0184, 2 → −0,0456,
@@ -304,9 +315,18 @@ QA_MODEL = "Qwen/Qwen2.5-VL-7B-Instruct"
 # [ĐO] bản này nạp lại Qwen 7B ở MỖI lượt gọi: 110 truy vấn × 160 khung = 88 lô, đếm
 # được **176 lần nạp checkpoint**, ~13 phút, trong đó ~90% là nạp chứ không phải suy
 # luận. `modal.Cls` lẽ ra chữa đúng chỗ đó.
-# Nhưng ở quy mô thật (88 lô) nó chết bằng `TimeoutError` phía client kèm
-# `App state is APP_STATE_STOPPED` — map chưa xong thì app đã đóng. Smoke test 4 lô thì
-# chạy được, nên lỗi chỉ lộ ra ở quy mô lớn.
+# Ở quy mô thật (88 lô) nó chết bằng `TimeoutError` phía client kèm
+# `App state is APP_STATE_STOPPED`; smoke test 4 lô thì chạy được.
+#
+# ⚠️ **TÔI ĐÃ QUY KẾT SAI NGUYÊN NHÂN.** Sau đó hai lần chạy KHÁC — không liên quan gì
+# tới `modal.Cls` — chết với cùng `App state is APP_STATE_STOPPED`, và lần thứ hai lộ ra
+# nguyên nhân thật: `ConnectionError: [Errno 8] nodename nor servname provided`, tức
+# **mất DNS/mạng**. Vậy `APP_STATE_STOPPED` là HẬU QUẢ của mất mạng, không phải bằng
+# chứng chống lại refactor.
+#
+# Nên lý do hoàn nguyên còn lại là **chưa chứng minh được ở quy mô thật**, chứ KHÔNG phải
+# "đã chứng minh là hỏng". Muốn thử lại thì chạy ≥88 lô khi mạng ổn định; nếu chạy được
+# thì nó cắt được ~90% thời gian bậc 2.
 # GIỮ BẢN NÀY vì nó **đã chạy được ở đúng quy mô này**. Đường ống ngày thi chạy MỘT lần
 # và không sửa được; đổi lấy ~3 phút trong ngân sách 150 phút không đáng rủi ro đó.
 # Muốn làm lại thì phải kiểm ở ≥88 lô TRƯỚC, không phải ở 4 lô.
@@ -491,7 +511,7 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         vlm_top_k: int = VLM_TOP_K):
+         vlm_top_k: int = VLM_TOP_K, crop_w: float = -1.0):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
@@ -507,6 +527,14 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         load_frame_ms, load_object_text, load_ocr_text, load_shot_bounds,
         load_video_last_frame,
     )
+
+    # Ghi đè trọng số bậc 1 từ dòng lệnh. Có cờ này vì phép đo trước tôi làm bằng cách
+    # SỬA hằng số rồi phục hồi — nếu lần chạy chết giữa đường thì repo đọng lại trạng
+    # thái đo, không phải trạng thái vận hành. `-1` = giữ `RERANK_WEIGHTS`.
+    RW = dict(RERANK_WEIGHTS)
+    if crop_w >= 0.0:
+        RW["crop"] = crop_w
+        print(f"⚠ ghi đè trọng số bậc 1: crop = {crop_w}", flush=True)
 
     qdir, odir = Path(dir), Path(out)
     if not qdir.is_dir():
@@ -639,7 +667,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     # mã hoá một lượt để đỡ vòng gọi Modal.
     # Trọng số 0 ⟹ **KHÔNG TÍNH LUÔN**, chứ không tính rồi bỏ: bậc này tốn $0,76 và ~8
     # phút cho 100 truy vấn, mà đo được nó phá điểm (xem `RERANK_WEIGHTS`).
-    if rerank and RERANK_WEIGHTS.get("crop", 0.0) > 0.0:
+    if rerank and RW.get("crop", 0.0) > 0.0:
         allrefs, span = [], {}
         for q in queries:
             cand = [int(r) for r in q["pool"]]
@@ -695,7 +723,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 parts.append(q["crop"][i])
             if "vlm" in q and i == 0:
                 parts.append(q["vlm"])
-            s = fuse(parts, RERANK_WEIGHTS)
+            s = fuse(parts, RW)
             # Rổ là bộ lọc CỨNG. Biên giữ nguyên thứ tự nội bộ hai phía nên DANTE vẫn
             # chạy được trên ma trận dày.
             s[q["pool"]] += POOL_MARGIN
@@ -776,6 +804,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                     continue
                 q["vlm"] = vlm_scores(idx.n_frames, got, probs[lo:hi])
                 q["S"] = combine(q)
+    lap("⑤c VLM bậc 2")
 
     # ⑥ đầu đọc QA — chỉ cho đề `qa`, một lượt suy luận trên khung top-1 mỗi đề
     qa_jobs, qa_of = [], {}
@@ -889,6 +918,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                        "n_answers": len(lines),
                        "answer": q.get("answer"), "top1": lines[0] if lines else None})
         print(f"  {q['id']:<20} {q['kind']:<6} {len(lines):>3} đáp án → {p}")
+    lap("⑦ phát bài nộp")
     # ── LƯU ĐIỂM TRUNG GIAN CỦA ⑤ ───────────────────────────────────────────
     # Không có bản lưu này thì mỗi lần quét `RERANK_WEIGHTS`/`VLM_WEIGHT` phải chạy lại
     # GPU. Chỉ lưu phần TRONG RỔ nên rất nhẹ: ~156 khung × 100 truy vấn.
@@ -910,6 +940,17 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             # (đo được cộng vào điểm thì hại 0,0208; xem README mục ③).
             dump[f"{q['id']}/agree"] = np.array(
                 [len(q["prov"].get(int(r), ())) for r in p], dtype=np.int8)
+            # TÊN nguồn, không chỉ số lượng: mặt bit theo `PROV_BITS`. Chỉ có số lượng
+            # thì không quy được khung TRÚNG về nguồn nào đề cử nó, mà đó đúng là phép
+            # đo cần để biết nên gia cố nguồn nào.
+            unknown = {s for v in q["prov"].values() for s in v} - set(PROV_BITS)
+            if unknown:
+                raise SystemExit(
+                    f"⑤ nguồn {sorted(unknown)} không có bit trong PROV_BITS — thêm "
+                    f"nguồn mà quên khai bit thì bản lưu mất nguồn đó trong im lặng")
+            dump[f"{q['id']}/prov"] = np.array(
+                [sum(PROV_BITS[s] for s in q["prov"].get(int(r), ())) for r in p],
+                dtype=np.int8)
         np.savez_compressed(odir / "_rerank_scores.npz", **dump)
         print(f"  đã lưu điểm ⑤ trung gian → {odir}/_rerank_scores.npz "
               f"({(odir / '_rerank_scores.npz').stat().st_size / 1e6:.1f} MB)")
@@ -917,8 +958,12 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     (odir / "_report.json").write_text(
         json.dumps({"weights": W, "dim": idx.dim, "rerank": bool(rerank),
                     "pool_per_source": POOL_PER_SOURCE, "pool_cap": POOL_CAP,
-                    "rerank_weights": RERANK_WEIGHTS,
+                    "rerank_weights": RW,
                     "vlm_top_k": vlm_top_k if rerank else 0,
+                    # Ngân sách thi 2h30 là ràng buộc CỨNG, nên thời gian từng tầng phải
+                    # nằm trong bản ghi chứ không chỉ trong log terminal — hết log là
+                    # mất căn cứ để quyết cắt tầng nào khi thiếu giờ.
+                    "timing_s": {k: round(v, 1) for k, v in T.items()},
                     "queries": report}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n✓ {odir}/ · {len(queries)} file + _report.json")
     print("  cột: video_id, frame_idx[…]  — frame_idx là số khung THẬT, không phải n")

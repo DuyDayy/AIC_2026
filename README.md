@@ -25,12 +25,12 @@ Vận hành ngày thi: [`RUNBOOK.md`](RUNBOOK.md) · Kế hoạch tối ưu: [`O
 | ① | tách mốc `E1:`/`E2:`, rút trích dẫn | một truy vấn → N probe. Q&A: câu hỏi → câu **mô tả** |
 | ② | jina-clip · **BM25** ×3 | thị giác · OCR · vật thể · lời nói, mỗi nguồn chấm độc lập |
 | ③ | chuẩn hoá **z trên tập có dữ liệu** | hợp 4 nguồn; khung không phủ nhận đúng kỳ vọng, không nhận 0 |
-| ⑤a | **rổ ứng viên** (`pool.py`) | mỗi nguồn đề cử top 40 riêng → rổ ~155 khung, **bộ lọc cứng** |
-| ⑤b | mảnh cắt vật thể + jina-clip | **TẮT** — đo được nó phá điểm |
+| ⑤a | **rổ ứng viên** (`pool.py`) | mỗi nguồn đề cử top 40 riêng → rổ 158 khung, **bộ lọc cứng** |
+| ⑤b | mảnh cắt vật thể + jina-clip | **BỎ** — trống cả ở nhóm ≥2 màu, tốn 655s + $0,77 |
 | ⑤c | **Qwen2.5-VL-7B** | `P(khung khớp)` = softmax trên đúng hai token `1`/`0` |
 | ④ | **DANTE** k-best (`kbest.py`) | DP thứ tự thời gian `O(N·T)`; **KIS = TRAKE với N=1** |
 | ⑥ | Qwen2.5-VL | chỉ đề Q&A: đọc khung + OCR + lời nói → sinh `answer` |
-| ⑦ | một khung mỗi mốc, 100 mốc | rải đã XOÁ — chờ bộ keyframe dày hơn nâng trần 23,5% |
+| ⑦ | một khung mỗi mốc, 100 mốc | rải đã XOÁ — chờ keyframe dày hơn; xoá rải mất 0,3129 ở mật độ hiện tại |
 
 Hạ tầng: **Modal** — GPU A10G, `.map()` song song (mã hoá mảnh cắt nhanh **31×** so với
 `.remote()` tuần tự: nghẽn là ĐƯỜNG TRUYỀN, không phải GPU).
@@ -119,7 +119,7 @@ phân biệt của nguồn thị giác vốn dày đặc.
 | | |
 |---|---|
 | cách chọn | mỗi nguồn đề cử **top 40 của riêng nó**, hợp lại |
-| kích thước | ~155 khung/truy vấn (`POOL_CAP = 200`) |
+| kích thước | trung vị **158**, max **160** = 4×40 (`POOL_CAP = 200` không bao giờ chạm) |
 | vai trò | **bộ lọc CỨNG** — chỉ khung trong rổ mới được nộp |
 | chốt 1 | `score > 0` — khung có chữ nhưng không khớp từ nào thì không được đề cử |
 | chốt 2 | **10 khung/video/nguồn** — chặn nguồn cho điểm phẳng cả video |
@@ -132,6 +132,25 @@ hoàn toàn, mà 9/10 nằm ở hạng 16–62 — với tới được, chỉ l
 Chốt 2 sinh ra từ một ca thật: OCR khớp **logo kênh** hiện suốt video ⟹ điểm phẳng ⟹ top-40
 của nó là 40 khung tuỳ tiện cùng một video.
 
+**Bốn nguồn đề cử gần như RỜI NHAU** — đo trên 100 câu GT v2, đếm số nguồn cùng đề cử một
+khung:
+
+| số nguồn đồng thuận | khung | tỉ lệ |
+|---|---|---|
+| 1 | 15.516 | **98,6%** |
+| 2 | 200 | 1,3% |
+| 3 | 28 | 0,2% |
+| 4 | 0 | 0% |
+
+Hai hệ quả, cả hai đều là **lý lẽ cơ chế cho kết quả đã đo trước đó**:
+
+- cho mỗi nguồn **suất riêng** có lợi `+0,0153` — vì không có suất thì ba nguồn yếu **vô
+  hình**, chứ không phải "được ưu tiên thấp";
+- dùng `agree` **làm điểm** thì hại `0,0208` — vì nó gần như hằng số 1, nên chỉ mang nhiễu.
+
+Và: rổ trung vị **158**, max **đúng 160 = 4×40** ⟹ `POOL_CAP = 200` **không bao giờ chạm**.
+Muốn rổ to hơn thì bậc `POOL_PER_SOURCE`, đừng bậc `POOL_CAP`.
+
 ### ⑤b Bậc 1 — mảnh cắt vật thể ⚠️ TẮT
 
 | | |
@@ -143,8 +162,40 @@ của nó là 40 khung tuỳ tiện cùng một video.
 | trạng thái | **TẮT** (`RERANK_WEIGHTS["crop"] = 0`) — trọng số 0 ⟹ không tính luôn |
 
 Tháp chữ mã hoá `{áo, xe, đỏ, trắng}` như **túi khái niệm**; cắt vật ra mã hoá riêng buộc
-màu vào vật bằng cấu trúc. Hai phép đo **không mâu thuẫn** — bộ 100 câu gần như không có
-câu phụ thuộc màu. Bật lại bằng cách đặt `crop > 0`.
+màu vào vật bằng cấu trúc.
+
+🔴 **Lời giải thích cũ của tôi ở đây SAI và đã bị thay.** Tôi từng viết hai phép đo không
+mâu thuẫn vì *"bộ 100 câu gần như không có câu phụ thuộc màu"*. Đo lại thì màu **rất phổ
+biến**:
+
+| bộ | có tên màu | **≥2 màu** (ca binding thật) |
+|---|---|---|
+| GT v2 | **58%** | 15% |
+| 100 câu tay | 38% | 14% |
+| 110 giữ kín | 43% | 16% |
+
+Nên ⑤b hại **dù màu phổ biến** — không bào chữa được bằng thành phần bộ eval. Cách đọc
+đúng: phép đo 54%→77% chạy trên **8 câu thuần màu, chấm bằng mắt trên 6 khung đầu**, còn
+đường ống đo *"khung đáp án có được xếp hạng đầu không"*. ⑤b có thể làm màu đúng hơn
+**mà vẫn** làm hạng của khung đáp án tệ đi.
+
+**Phép đo chốt hạ: bật crop, tách theo số màu trong câu** (GT v2, `L=11`, bắt cặp,
+bootstrap 4000):
+
+| nhóm | n | crop TẮT | crop BẬT | Δ | KTC95 | T/Th |
+|---|---|---|---|---|---|---|
+| ≥2 màu (binding thật) | 15 | 0,0717 | 0,0733 | +0,0017 | [−0,0037, +0,0087] | 1/1 |
+| đúng 1 màu | 43 | 0,1298 | 0,1301 | +0,0003 | [−0,0054, +0,0080] | 2/5 |
+| không màu | 42 | 0,1243 | 0,1254 | +0,0012 | [−0,0045, +0,0071] | 6/5 |
+| **tất cả** | 100 | 0,1187 | 0,1196 | +0,0009 | [−0,0027, +0,0051] | 9/11 |
+
+⑤b **chết ở đúng nhóm nó sinh ra để chữa**: nhóm ≥2 màu được +0,0017, KTC chứa 0, thắng 1
+thua 1 trên 15 câu. Đây không còn là "chưa đo đúng phạm vi" — phạm vi đã đo đúng và vẫn
+trống. Chi phí đối lại: **655 giây** (201s cắt + 454s mã hoá, tức ~11 phút của ngân sách
+2h30) và **$0,77**. Kết luận: **bỏ**, không phải "tắt tạm".
+
+Bật lại bằng `crop > 0` nếu muốn đo lại; cổng chặn ở `run.py` đảm bảo trọng số 0 thì
+không mã hoá mảnh nào, nên tắt là **thật sự** không tốn gì.
 
 ### ⑤c Bậc 2 — Qwen2.5-VL
 
@@ -261,14 +312,67 @@ tin hơn nên khó hơn. Chỉ so được **hiệu** giữa các cấu hình.
 
 *(`benchmark_ground_truth_final_v2`, chấm qua `representative_frame` để so ngang được.)*
 
+**Cấu hình HIỆN TẠI — không rải** (`submission_now`), mô hình mốc lệch:
+
 | `L` | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
 |---|---|---|---|---|---|---|
-| 9 | 0,0471 | 0,2104 | 0,5163 | 0,6067 | 0,6242 | **0,4009** |
-| **11** | 0,0542 | 0,2425 | 0,5596 | 0,6646 | 0,6833 | **0,4408** |
-| 21 | 0,1013 | 0,2692 | 0,5800 | 0,6792 | 0,6900 | **0,4639** |
+| 9 | 0,0450 | 0,0921 | 0,0979 | 0,1000 | 0,1008 | **0,0872** |
+| **11** | 0,0533 | 0,1113 | 0,1179 | 0,1212 | 0,1225 | **0,1052** |
+| 21 | 0,1108 | 0,2283 | 0,2471 | 0,2538 | 0,2563 | **0,2193** |
 
-Đây là **lần đầu đủ cấu hình cuối chạy cùng nhau** — rải thích ứng · `BM25_PARAMS` riêng
-nguồn · `VLM_TOP_K=160`. Trước đó ba Δ chỉ được đo riêng lẻ.
+Bản **có rải** trước đây, cùng bộ, cùng hạt giống, để so:
+
+| `L` | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
+|---|---|---|---|---|---|---|
+| 9 | 0,0446 | 0,2033 | 0,5050 | 0,5975 | 0,6162 | **0,3933** |
+| **11** | 0,0492 | 0,2433 | 0,5642 | 0,6658 | 0,6850 | **0,4415** |
+| 21 | 0,1113 | 0,2754 | 0,5771 | 0,6754 | 0,6904 | **0,4659** |
+
+🔴 **Xoá rải mất 0,3129 Final** (`L=9`, bắt cặp, KTC95 [−0,3587, −0,2665], thắng 4 / thua
+72). Đọc hai bảng theo **cột** thì thấy cơ chế: `R@1` gần như y nhau (0,0533 so với 0,0492
+— không rải còn hơn chút), rồi bản không rải **đứng im** từ `R@5` trở đi. Tức **99 trong
+100 suất ngân sách gần như vô giá trị** ở cấp khung: chúng là những keyframe cách nhau ~48
+khung, mà chỉ một cửa sổ 11 khung được tính.
+
+Rải và mật độ giải cùng một bài toán — phủ cái khe. Rải phủ nó **giả tạo** bằng ngân sách;
+cắt dày phủ nó **thật** bằng dữ liệu. Nên xoá rải là đúng **với điều kiện** mật độ tăng.
+Nếu thi trước khi cắt thêm khung, đây là khoản mất 0,31 có thật.
+
+### Cùng bài nộp, chấm CẤP SHOT (`scripts/eval/score_shots.py`)
+
+| bài nộp | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
+|---|---|---|---|---|---|---|
+| không rải | **0,5600** | 0,7200 | 0,7400 | 0,7700 | 0,7700 | **0,7120** |
+| có rải | 0,5600 | 0,5600 | 0,6800 | 0,7300 | 0,7300 | 0,6520 |
+
+Hai thước **ngược chiều nhau**, và đó không phải nghịch lý — nó là câu hỏi `L`. Cấp shot
+thì trúng khung nào trong shot cũng được, nên rải là **thuần lãng phí** suất; cấp khung với
+`L=11` thì phải đúng khung, nên rải **thắng lớn**.
+
+### 🔴 Con số quan trọng nhất: mất điểm KHÔNG phải do xếp hạng
+
+`R@1` cấp shot = **0,5600** so với `R@1` cấp khung = **0,0533**. `R@100` thì hai thước gần
+bằng nhau (0,77 so với 0,73). Đo trực tiếp trên 100 câu, `L=11`:
+
+    shot ĐÚNG ở hạng 1                        56/100
+    trong đó khung cũng vào cửa sổ ±5         6,1/56 = 10,9%
+    ⟹ 50/100 câu mất điểm dù xếp hạng HOÀN HẢO
+    khoảng cách khung nộp → mốc thật          trung vị 27 khung (p90 119)
+
+Tách tiếp phần 56 câu đó:
+
+    khung hạng 1 ĐÚNG là keyframe ground truth   3/56  =  5%
+    khung hạng 1 là keyframe KHÁC trong shot    53/56  = 95%, lệch trung vị 5 khung
+
+Nên chỗ hổng **không phải** "xếp hạng kém" mà là **độ phân giải thời gian**: hệ chỉ tay
+được vào đúng shot và gần đúng keyframe (lệch trung vị 5 khung), nhưng cửa sổ đáp án 11
+khung hẹp hơn khe keyframe 43 khung. Đây là lý lẽ định lượng cho việc cắt dày hơn, và nó
+**loại** các hướng đắt hơn: tháp nhúng thứ hai, hợp điểm khác, tín hiệu mới — cả ba đều
+tấn công xếp hạng, thứ đang ở 0,56 chứ không phải chỗ hỏng.
+
+⚠️ Không ngoại suy bằng mô hình: mô hình hình học ước `26,3%` giữ được ở mật độ hiện tại
+trong khi **đo được 10,9%** — lệch 2,4×. Muốn biết mật độ ×4 cho bao nhiêu thì phải cắt
+thật rồi đo.
 
 Độc lập ở mức: **0 câu trùng** bộ tay, **9/71 video trùng** (13%) — nhỏ nhưng có thật.
 
@@ -421,12 +525,19 @@ cố định 80 giây nạp chỉ mục trả **mỗi lần gọi** — gom lô.
 
 | # | việc | vì sao |
 |---|---|---|
-| 1 | 🔴 **Thu hẹp `R@1 ↔ R@100`** | dư địa **+0,2422**. Đã loại trừ: hạng phần trăm (−0,033), nhân thay cộng (−0,017), VLM chỉ sửa 20 đầu (−0,020), phá hoà đồng thuận (0 câu đổi). **Cách hợp điểm không phải chỗ** — phải thêm tín hiệu mới |
-| 2 | 🔴 **Mạnh hoá NGUỒN THỊ GIÁC đơn độc** | loại yếu nhất đổi theo bộ eval, nhưng câu **không có nguồn văn bản nào đỡ** luôn ở nhóm cuối. Trùng với việc #4 |
-| 3 | **Biết `p`** — tỉ lệ đề thật cần OCR/ASR | quyết trực tiếp δ ASR: `p > 61%` thì ×2 có lãi |
-| 4 | Hợp nhiều tháp nhúng | đánh đúng dư địa #1; ~$4,32/tháp + thời gian thi |
-| 5 | Bộ eval **QA** và **TRAKE** | ⑥ chưa có phép đo nào; λ mới có 6 câu, p=0,69 |
-| 6 | `writer.py` validator | chờ mẫu file nộp chính thức của BTC |
+| 1 | 🔴 **CẮT DÀY HƠN keyframe** | đo được: **50/100 câu mất điểm dù shot đúng ở hạng 1**. Khe keyframe 43 khung so với cửa sổ đáp án 11 khung. Đây là chỗ hổng LỚN NHẤT và là **chỗ duy nhất** đã chứng minh được là chỗ hổng |
+| 2 | **Biết `p`** — tỉ lệ đề thật cần OCR/ASR | quyết trực tiếp δ ASR: `p > 61%` thì ×2 có lãi |
+| 3 | Bộ eval **QA** và **TRAKE** | ⑥ chưa có phép đo nào; λ mới có 6 câu, p=0,69 |
+| 4 | `writer.py` validator | chờ mẫu file nộp chính thức của BTC |
+
+**Đã RÚT khỏi danh sách, kèm lý do:**
+
+| việc cũ | vì sao rút |
+|---|---|
+| ~~Thu hẹp `R@1 ↔ R@100`~~ | **đặt sai đề.** Cấp shot `R@1` đã là 0,56 — xếp hạng không phải chỗ hỏng. Khoảng cách đó là **độ phân giải thời gian**, tức việc #1 mới |
+| ~~Mạnh hoá nguồn thị giác đơn độc~~ | cùng lý do: khung hạng 1 chỉ lệch **trung vị 5 khung** so với keyframe ground truth. Thị giác đã tay được vào đúng chỗ |
+| ~~Hợp nhiều tháp nhúng~~ | tấn công xếp hạng (0,56), không tấn công độ phân giải. ~$4,32/tháp + 0,36 GB để đổi lấy dư địa nhỏ hơn hẳn |
+| ~~⑤b mảnh cắt~~ | đo tách nhóm màu: trống ở **cả** nhóm ≥2 màu. Bỏ |
 
 ---
 
@@ -436,6 +547,15 @@ cố định 80 giây nạp chỉ mục trả **mỗi lần gọi** — gom lô.
 cấu hình khác nhau ở **7/110 câu** (`.map()` chia lô khác nhau ⟹ đệm khác ⟹ logit bfloat16
 lệch chữ số cuối ⟹ lật thế hoà). Chênh lệch `Final` chỉ **0,0006** ở `L=11`, trong khi
 hiệu ứng nhỏ nhất được báo là +0,0153 — **cách nhau 25 lần**. Mọi kết luận nằm trên sàn.
+
+**`hash()` của Python có muối ngẫu nhiên MỖI TIẾN TRÌNH — nó từng là hạt giống của bộ
+chấm.** Ba script gieo `default_rng(abs(hash(qid)) % 2**31)`, gồm chính `score_submission.py`
+đã sinh mọi bảng `R@k`. Hệ quả đo được: **cùng mã, cùng bản lưu, cùng ground truth mà Final
+ra 0,0995 rồi 0,0948** — gấp 8 lần sàn nhiễu 0,0006, và đủ để **lật argmax** một phép quét
+trọng số (`vlm=0,25` thành `vlm=0,125`). Δ bắt cặp trong cùng tiến trình vẫn đúng vì A và B
+chung hạt; **số tuyệt đối thì không tái lập được**. Đã thay bằng `rscore.stable_seed`
+(crc32) + 2 test, một test chạy ở tiến trình con để bắt đúng loại lỗi này. Bảng nào báo
+trước bản sửa thì mang sai số ~0,005.
 
 **Mô hình cửa sổ ôm keyframe ground truth là phép đo khép kín** — nó thưởng cho việc nộp
 lại chính cái nhãn của mình. Quét phân bổ ngân sách theo mô hình đó cho "không rải" đứng

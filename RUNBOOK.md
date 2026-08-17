@@ -8,9 +8,13 @@
 ## 0. Làm TRƯỚC ngày thi
 
 ```bash
-git pull && python -m pytest tests/ -q         # phải thấy 779 passed
+git pull && python -m pytest tests/ -q         # bản clone: 380 passed · máy dev: 788
 modal run scripts/run.py --dir queries_smoke --out /tmp/smoke
 ```
+
+Hai con số vì kho chỉ mang **14 file test phụ thuộc mã đang vận hành** (380 test); 8 file
+còn lại kiểm mã ngoài đường chạy nên nằm local. Bản clone mới thấy 380 là ĐÚNG, không phải
+thiếu.
 
 `queries_smoke/` là 3 file `.txt` bất kỳ. Lượt này **hâm nóng container Modal và nạp
 model vào volume** — nếu để tới giờ thi mới chạy lần đầu thì mất thêm vài phút khởi động
@@ -76,8 +80,28 @@ tail -f thi.log
 | ⑦ ghi bài nộp | 2s | 5s | có |
 | **tổng** | **~7 phút** | **~19 phút** | |
 
+Lượt chạy 100 câu gần nhất (`submission_now`, không rải + VLM 160) đo **848 giây = 14 phút**
+đồng hồ tường, trong đó `②③` 134s và `⑤a` 4s là số in ra, phần còn lại ~555s là `⑤c`. Tức
+`⑤c` một mình chiếm **65%** một lượt chạy, và nó là tầng duy nhất đáng bàn về giờ.
+
+Từ nay **không phải đọc log để biết giờ**: `_report.json` có trường `timing_s` với mốc từng
+tầng, gồm `⑤c VLM bậc 2` và `⑦ phát bài nộp` (hai mốc trước đây thiếu — nên tầng ĐẮT NHẤT
+là tầng duy nhất không đo được).
+
 🟢 **Đường ống dùng ~5% ngân sách 2h30.** Chạy được ~20 lượt. Không có lý do gì phải cắt
 tầng nào vì thiếu giờ — bảng cắt bên dưới chỉ dùng khi Modal trục trặc.
+
+⚠️ **⑤b mảnh cắt tốn 655 giây** (201s cắt + 454s mã hoá) nếu ai bật lại bằng `--crop-w`.
+Đó là 11 phút để đổi lấy `+0,0009` với KTC chứa 0 — **đừng bật trong ngày thi**.
+
+🔴 **MẤT MẠNG GIỮA BÀI CHẠY — ĐÃ GẶP THẬT HAI LẦN.** Biểu hiện là
+`ConnectionError: [Errno 8] nodename nor servname provided` rồi
+`App state is APP_STATE_STOPPED`. Bài chạy mất sạch, không có bài nộp một phần.
+
+- **Chạy sớm, đừng để sát giờ nộp.** Một lần mất mạng là mất trọn lượt chạy.
+- Kiểm bằng `modal app list` — có kết quả là mạng đã về.
+- Chạy lại **an toàn và rẻ**: vector đề cache theo băm nội dung nên lượt hai không tốn GPU.
+- Đừng đi sửa mã vì `APP_STATE_STOPPED` — nó là **hậu quả**, không phải nguyên nhân.
 
 🔴 **THỜI GIAN BẬC 2 KHÔNG ỔN ĐỊNH.** Cùng mã, cùng dữ liệu, hai lần chạy 110 câu ×
 160 khung đo được **13 phút** và **>40 phút**. Nguyên nhân ở phía Modal (số container cấp
@@ -148,6 +172,8 @@ keyframe). Đo được 0/173.426 khung có hai giá trị bằng nhau, lệch t
 | treo ở khâu mã hoá mảnh cắt | bậc 1 bật | phải đang TẮT (`crop = 0`); nếu bật thì `--no-rerank` |
 | `frame_id ≥ số khung` | không còn xảy ra — chỉ nộp keyframe thật | — |
 | máy hết RAM | nạp chỉ mục 1024 chiều | dùng `--dim 512` (mặc định) |
+| `ConnectionError: nodename nor servname` | **mất DNS/mạng** — đã gặp thật 2 lần | kiểm `modal app list`; có kết quả là mạng đã về, chạy lại. Vector đề **đã cache** nên không tốn GPU lần hai |
+| `App state is APP_STATE_STOPPED` | **hậu quả** của mất mạng, không phải lỗi mã | như trên. Đừng đi sửa mã vì lỗi này |
 | Modal lỗi mạng giữa chừng | — | chạy lại; vector đề **đã cache** nên không tốn GPU lần hai |
 | ra ít hơn số đề | file `.txt` rỗng hoặc sai encoding | kiểm `wc -l queries_thi/*.txt` |
 
@@ -162,11 +188,11 @@ dung nên lượt hai không tốn GPU.
 |---|---|---|
 | `dim` | 512 | 1024 không hơn (Δ=−0,002, KTC chứa 0) mà tốn gấp đôi RAM |
 | trọng số 4 nguồn | `1 / 0,0891 / 0,1322 / 0,2128` | δ ASR ×2 sau kiểm chéo |
-| `POOL_PER_SOURCE` | 40 | mỗi nguồn tự đề cử, rổ ~155 khung |
+| `POOL_PER_SOURCE` | 40 | mỗi nguồn tự đề cử, rổ 158 khung. `POOL_CAP=200` không bao giờ chạm |
 | `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
-| `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | bậc 1 đo được phá điểm |
+| `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | crop trống cả ở nhóm ≥2 màu, tốn 655s |
 | `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
-| rải khung | **đã xoá** | ⑦ nộp 1 khung/mốc; trần 23,5% chờ keyframe dày hơn hoá giải |
+| rải khung | **đã xoá** | ⑦ nộp 1 khung/mốc. Ở mật độ keyframe hiện tại việc này **mất 0,3129 Final** — xem README, chỉ hoà lại khi cắt dày hơn |
 
 ---
 
@@ -184,3 +210,16 @@ Trên bộ **110 câu giữ kín** (chưa dùng để chỉnh gì, câu ngắn h
 
 Đề thi thật nằm đâu đó giữa hai số, **và nhiều khả năng thấp hơn cả hai** — bộ 100 câu do
 chính đội viết nên câu chữ hợp với hệ hơn đề của người ngoài.
+
+### Bộ 100 câu GT v2, cấu hình HIỆN TẠI (không rải), `L = 11`
+
+| thước | Final |
+|---|---|
+| cấp khung, mốc lệch | **0,1052** |
+| cấp khung, mốc lệch, bản CÓ rải | 0,4415 |
+| cấp shot (`score_shots.py`) | **0,7120** |
+
+🔴 Ba con số này phải đọc cùng nhau. Cấp shot `R@1 = 0,56` nghĩa là hệ **xếp đúng shot ở
+hạng 1 cho 56% câu**; cấp khung `R@1 = 0,05` nghĩa là nó gần như luôn trượt cửa sổ 11 khung.
+Chỗ hổng là **độ phân giải thời gian**, không phải xếp hạng — 50/100 câu mất điểm dù hạng 1
+đã đúng shot.

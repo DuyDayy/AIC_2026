@@ -1,0 +1,702 @@
+[
+ {
+  "query_id": "q_8403867d2b04aa70",
+  "query_text": "Một căn hộ có bàn ăn phủ khăn caro đặt cạnh khu bếp, một chiếc quạt đứng màu trắng ở giữa phòng và đồng hồ tròn treo trên tường, phía sau có các cửa phòng đang mở.",
+  "query_type": "vision",
+  "video_id": "L21_V008",
+  "frame_id": 123
+ },
+ {
+  "query_id": "q_77d6f68c2be166c5",
+  "query_text": "Một người phụ nữ đeo kính, mặc áo khoác hồng, đang được phỏng vấn trước hành lang một tòa nhà, phía sau có xe máy và vài người đứng gần cửa; trên màn hình hiển thị dòng chữ “BÙI NGUYÊN THANH CHI” và “PHỤ HUYNH HỌC SINH”.",
+  "query_type": "vision+ocr",
+  "video_id": "L22_V007",
+  "frame_id": 76
+ },
+ {
+  "query_id": "q_738ce9de05b3f335",
+  "query_text": "Cảnh ở khu vực đích của một chặng đua xe đạp, hai bên đường có đông người đứng xem và một người đang cầm cờ caro gần vạch đích; lúc này bình luận viên nhắc đến việc các tay đua đang cố gắng tăng tốc để hỗ trợ cho chân rút chủ lực của đội.",
+  "query_type": "vision+asr",
+  "video_id": "L23_V009",
+  "frame_id": 17
+ },
+ {
+  "query_id": "q_378d56d08e68f98f",
+  "query_text": "Đoạn mở đầu của một tiết mục múa lân trên sân khấu nhiều màu sắc, phía trước xếp nhiều đầu lân cùng cờ và đạo cụ biểu diễn, được phát trên HTV Thể Thao; nội dung xoay quanh hành trình lên núi Tản Viên tìm Kim Linh Châu để xua tan dịch bệnh, thiên tai và mang lại cuộc sống ấm no cho người dân.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L24_V037",
+  "frame_id": 3
+ },
+ {
+  "query_id": "q_7d1b8b0a148c4cbe",
+  "query_text": "Đoạn phóng sự “Độc lạ” về món mắm ong ở xứ rừng U Minh Hạ, ghi lại cảnh một người mặc áo xanh trùm kín đầu đang thao tác trên thân cây giữa khu rừng rậm; nội dung nói về việc người dân nơi đây từ lâu đã tận dụng những tàng ong có ong non để chế biến thành nhiều món ăn.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L22_V007",
+  "frame_id": 163
+ },
+ {
+  "query_id": "q_30b6237262d8d093",
+  "query_text": "Đoạn trong chương trình Món Ngon Mỗi Ngày của Ajinomoto, với một nam đầu bếp và nữ MC đứng trong gian bếp giới thiệu một món bánh áp chảo thích hợp cho bữa sáng, đồng thời hướng dẫn người xem dùng điện thoại quét mã QR trên màn hình để lưu lại công thức.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V002",
+  "frame_id": 107
+ },
+ {
+  "query_id": "q_3a96a5bf55e5e3a8",
+  "query_text": "Một đoạn sân khấu phát trên HTV Thể Thao với mô hình lò gạch nổi bật ở chính giữa và màn hình phía sau chiếu cảnh sản xuất, tái hiện câu chuyện về một làng nghề từng bắt đầu với việc làm gạch ngói phục vụ xây dựng rồi dần phát triển thành những dãy lò gạch tạo nên cảnh quan đặc trưng ở Mang Thít.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L24_V018",
+  "frame_id": 170
+ },
+ {
+  "query_id": "q_b74484d4b958b855",
+  "query_text": "Cảnh cận một màn hình máy tính đang mở giao diện quản lý với danh sách nhiều đơn vị, các ô lựa chọn và mã QR ở phía dưới, xuất hiện trong phần nội dung về những vướng mắc ở giai đoạn chuyển tiếp khi kết nối hệ thống giữa các cơ quan bảo hiểm.",
+  "query_type": "vision+asr",
+  "video_id": "L21_V010",
+  "frame_id": 33
+ },
+ {
+  "query_id": "q_cb515bd2f644082b",
+  "query_text": "Cảnh một giáo viên đeo kính đứng giảng bài cạnh laptop, phía sau là màn hình trình chiếu lớn có nhiều phần nội dung được chia thành các khối, một sơ đồ tròn nhiều màu ở giữa và bảng theo dạng dòng thời gian ở bên phải.",
+  "query_type": "vision",
+  "video_id": "L25_V002",
+  "frame_id": 167
+ },
+ {
+  "query_id": "q_434c2511a0e0365f",
+  "query_text": "Cảnh trong chương trình Món Ngon Mỗi Ngày của Ajinomoto trên HTV Online, với một nam đầu bếp mặc áo trắng và một nữ MC đeo tạp dề đứng cạnh nhau trong gian bếp, phía trước có hộp sản phẩm Bánh Rán đặt trên bàn.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V002",
+  "frame_id": 36
+ },
+ {
+  "query_id": "q_64e37f03d3e13b43",
+  "query_text": "Cảnh nhiều chai và hũ sản phẩm có hình con dê trên nhãn được xếp thành cụm ngoài trời giữa nền hoa vàng, với nội dung xoay quanh nguồn sữa dùng để làm các sản phẩm và việc nguồn sữa này được lấy trực tiếp từ chính cơ sở sản xuất.",
+  "query_type": "vision+asr",
+  "video_id": "L27_V014",
+  "frame_id": 218
+ },
+ {
+  "query_id": "q_05e7828622293855",
+  "query_text": "Cận cảnh một em nhỏ cúi nhìn với khung cảnh sông nước phía sau trong một đoạn phát trên HTV Online, gắn với những trang viết về Vàm Nao và cảm xúc nghẹn lại khi hoàn thành phần cuối, sau đó tình cờ nghe bài Trở về dòng sông tuổi thơ của nhạc sĩ Hoàng Hiệp.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L28_V003",
+  "frame_id": 448
+ },
+ {
+  "query_id": "q_f0b379f340188d91",
+  "query_text": "Cảnh hai người phụ nữ đứng trò chuyện trong một cửa hàng, phía trước là rất nhiều hũ sản phẩm nhỏ được xếp kín trên bàn, còn phía sau có nhiều hộp hàng màu xanh được xếp thành từng dãy.",
+  "query_type": "vision",
+  "video_id": "L29_V015",
+  "frame_id": 83
+ },
+ {
+  "query_id": "q_1221aca9f11638f1",
+  "query_text": "Hai bạn trẻ mặc áo đen đang đứng giới thiệu một tấm bảng của chương trình “Hát để sẻ chia – Singing for Sharing”, một hoạt động thiện nguyện phi lợi nhuận dùng tiếng hát để gây quỹ hỗ trợ các bệnh nhi có hoàn cảnh khó khăn tại TP.HCM.",
+  "query_type": "vision+ocr",
+  "video_id": "L30_V055",
+  "frame_id": 31
+ },
+ {
+  "query_id": "q_3a4eb222ccd33686",
+  "query_text": "Cảnh một nhóm tay đua xe đạp đang chạy qua cổng lớn màu đỏ ở khu vực về đích, trong khi đông khán giả đội mũ màu cam đứng sau hàng rào hai bên đường theo dõi và cổ vũ.",
+  "query_type": "vision",
+  "video_id": "L23_V013",
+  "frame_id": 51
+ },
+ {
+  "query_id": "q_641667abb715293d",
+  "query_text": "Cảnh một con lân trắng đang biểu diễn trên sân khấu nhiều màu sắc của HTV Thể Thao, xung quanh có các mô hình trang trí lớn; phía sau là một người mặc áo xám ngồi tại bàn phủ khăn trắng và một người mặc áo xanh trắng đang đứng.",
+  "query_type": "vision+ocr",
+  "video_id": "L24_V036",
+  "frame_id": 4
+ },
+ {
+  "query_id": "q_35927e484829cc1c",
+  "query_text": "Cảnh một nữ dẫn chương trình đứng trong quán ăn bình dân đông khách ở Hà Tiên, phía sau có nhiều bàn ghế nhựa đỏ và thực khách đang dùng bữa; cô giới thiệu món bún kèn đặc trưng của địa phương, trải nghiệm cách làm rồi thưởng thức món ăn.",
+  "query_type": "vision+asr",
+  "video_id": "L27_V006",
+  "frame_id": 55
+ },
+ {
+  "query_id": "q_7ac5d1a2b1335301",
+  "query_text": "Cảnh một người phụ nữ mặc áo trắng đang đứng nói chuyện ngoài trời vào buổi tối, phía sau là nhiều cây xanh và ánh đèn mờ trong khuôn viên.",
+  "query_type": "vision",
+  "video_id": "L27_V015",
+  "frame_id": 261
+ },
+ {
+  "query_id": "q_7281585e9b1d26d4",
+  "query_text": "Cảnh một người đàn ông ngồi trên thuyền nhìn ra dòng sông, bên cạnh hiện hình ảnh mang tên Vàm Nao và phần nội dung kể rằng cá bông lau trên sông Vàm Nao giờ chỉ còn được nhắc lại trong những câu chuyện xưa.",
+  "query_type": "vision+ocr",
+  "video_id": "L28_V005",
+  "frame_id": 186
+ },
+ {
+  "query_id": "q_f30ee5fb3b49b0ec",
+  "query_text": "Cảnh một kệ đầy sách giáo khoa cũ, phía trước bày hai cuốn “Tập đọc” ở hai bên và một cuốn “Học văn” ở giữa, gợi lại những cuốn sách từng học mà sau nhiều năm người kể mới có dịp tìm thấy.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L30_V074",
+  "frame_id": 24
+ },
+ {
+  "query_id": "q_9af7c707ac576375",
+  "query_text": "Cảnh một người đàn ông lớn tuổi đeo khẩu trang đang ngồi trước quầy làm thủ tục, phía bên trái có màn hình máy tính và phía sau người đàn ông có một người phụ nữ đang đứng cầm giấy tờ.",
+  "query_type": "vision",
+  "video_id": "L21_V010",
+  "frame_id": 42
+ },
+ {
+  "query_id": "q_9422b51e8302a5d4",
+  "query_text": "Cảnh vùng sông nước hoang sơ với hàng cây thốt nốt và cánh đồng ven kênh, kèm đoạn trích từ Xuôi dòng Vĩnh Tế kể về miền biên viễn Tây Nam từng đầy lam sơn chướng khí, thú dữ và những người dân công, binh lính phải dãi nắng dầm mưa đào kênh suốt nhiều năm, khó tránh khỏi thương vong.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L28_V008",
+  "frame_id": 94
+ },
+ {
+  "query_id": "q_8ea3e37c46abca81",
+  "query_text": "Tìm cảnh hai phụ nữ trò chuyện tại quầy bày rất nhiều hũ sản phẩm, khi một người kể rằng cô rất sợ và không biết sản phẩm mang đi thi có đủ sức thuyết phục hay không.",
+  "query_type": "vision+asr",
+  "video_id": "L29_V015",
+  "frame_id": 125
+ },
+ {
+  "query_id": "q_c928290cb49ef763",
+  "query_text": "Tìm cảnh một nhóm đàn ông ngồi trong phương tiện có cửa kính nhìn ra đường phố, phía dưới chạy dòng tin về việc bắt đối tượng giết người rồi tạo hiện trường giả.",
+  "query_type": "vision+ocr",
+  "video_id": "L22_V008",
+  "frame_id": 86
+ },
+ {
+  "query_id": "q_29609e288afe1ab0",
+  "query_text": "Tìm cảnh các tay đua xe đạp lao qua khu vực cổng về đích giữa hai hàng khán giả, khi bình luận viên nói tay đua số 27 chen lên hàng trên và tìm kiếm chiến thắng thứ bảy.",
+  "query_type": "vision+asr",
+  "video_id": "L23_V015",
+  "frame_id": 29
+ },
+ {
+  "query_id": "q_b2a8e69a97a9eed1",
+  "query_text": "Tìm cảnh một nam đầu bếp mặc áo trắng đứng trong gian bếp, cạnh bảng thông tin ghi món ăn hỗ trợ bổ máu và nên ăn thêm trái cây có vitamin C trong bữa ăn.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V003",
+  "frame_id": 34
+ },
+ {
+  "query_id": "q_618f2b030d8fc5ff",
+  "query_text": "Tìm cận cảnh một biển hiệu hình chữ nhật nền xanh, chữ lớn đỏ trắng, phía trên có nhiều lá cờ màu và tán dừa phía sau.",
+  "query_type": "vision",
+  "video_id": "L29_V003",
+  "frame_id": 51
+ },
+ {
+  "query_id": "q_fc037fd63f780c3f",
+  "query_text": "Tìm cảnh nhiều cuốn vở cũ ngả màu được xếp thành hai hàng trên mặt bàn, trong đó một số bìa in chữ “CAHIER”.",
+  "query_type": "vision+ocr",
+  "video_id": "L30_V074",
+  "frame_id": 70
+ },
+ {
+  "query_id": "q_3d804ad362363a24",
+  "query_text": "Tìm cảnh một bé gái mặc đồ hồng nằm nghiêng trên giường bệnh, khi lời dẫn khuyên phòng lây nhiễm, nhận biết sớm triệu chứng và đưa trẻ đi khám kịp thời.",
+  "query_type": "vision+asr",
+  "video_id": "L21_V013",
+  "frame_id": 30
+ },
+ {
+  "query_id": "q_582f344f4527c223",
+  "query_text": "Tìm cảnh nữ MC đứng cạnh màn hình minh họa các số điện thoại, phía dưới có tin “Israel gấp rút trữ máu, chuẩn bị hầm trú ẩn”, trong lúc lời dẫn cảnh báo số điện thoại cố định bị dùng để quảng cáo và lừa đảo.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L22_V008",
+  "frame_id": 170
+ },
+ {
+  "query_id": "q_3383fd34f115d9d2",
+  "query_text": "Tìm cảnh đoàn vận động viên xe đạp nước rút trên đại lộ rộng để tiến vào cổng về đích, với đông khán giả đứng kín hai bên đường.",
+  "query_type": "vision",
+  "video_id": "L23_V024",
+  "frame_id": 24
+ },
+ {
+  "query_id": "q_78ba6bfb31459588",
+  "query_text": "Tìm cảnh sân khấu thi đấu ban đêm có một con lân vàng bên các bao tải và chướng ngại vật, với logo “HTV THỂ THAO” ở góc màn hình.",
+  "query_type": "vision+ocr",
+  "video_id": "L24_V018",
+  "frame_id": 164
+ },
+ {
+  "query_id": "q_536098e764223ef6",
+  "query_text": "Tìm cảnh một thầy giáo đeo kính đứng sau laptop, bên cạnh màn hình bài toán, khi thầy bắt đầu ví dụ về mặt cầu có tâm A trong không gian Oxyz.",
+  "query_type": "vision+asr",
+  "video_id": "L25_V017",
+  "frame_id": 58
+ },
+ {
+  "query_id": "q_518630f11e16040a",
+  "query_text": "Tìm cảnh nam đầu bếp mặc áo trắng trong gian bếp, có bảng mẹo “nên trụng nấm để giảm mùi hăng của nấm”, đồng thời anh giải thích sẽ trụng hai loại nấm rồi đem xào.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V005",
+  "frame_id": 54
+ },
+ {
+  "query_id": "q_0ba386b1df7ef80c",
+  "query_text": "Tìm cảnh một phụ nữ đội mũ tai bèo xanh và quàng khăn caro đen trắng đang trả lời phỏng vấn, phía sau là bức tường treo nhiều ảnh nhỏ.",
+  "query_type": "vision",
+  "video_id": "L27_V013",
+  "frame_id": 264
+ },
+ {
+  "query_id": "q_7a18d7bc4653fc2e",
+  "query_text": "Tìm cảnh một con đường nông thôn được phủ lớp bản đồ bán trong suốt, trên bản đồ có nhãn “Quốc lộ” và một tuyến màu đỏ chạy ngang.",
+  "query_type": "vision+ocr",
+  "video_id": "L28_V008",
+  "frame_id": 158
+ },
+ {
+  "query_id": "q_38e7cae732a0ad65",
+  "query_text": "Tìm cảnh các sơ đồ mặt cắt khu nuôi có nước và hình con tôm, trong lúc người nói khẳng định nơi đây không phun thuốc cỏ hay hóa chất và tôm được chứng nhận ASC.",
+  "query_type": "vision+asr",
+  "video_id": "L29_V018",
+  "frame_id": 332
+ },
+ {
+  "query_id": "q_ebaafb3590185e19",
+  "query_text": "Tìm cảnh các mẫu khoáng vật nhiều màu đặt trên bục xanh, có nhãn tiếng Anh như “Vanadinite”, “Crocoite” và “Fluorite”, trong lúc lời dẫn nói hóa chất hoặc phân bón có thể tạo ra tinh thể với nhiều hình dạng.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L30_V075",
+  "frame_id": 71
+ },
+ {
+  "query_id": "q_688a8b09ad1a8203",
+  "query_text": "Tìm chuỗi đồ họa y tế nền trắng có các hình minh họa trẻ em nổi ban, quả địa cầu, virus và ống tiêm.",
+  "query_type": "vision",
+  "video_id": "L21_V013",
+  "frame_id": 36
+ },
+ {
+  "query_id": "q_931a1fbc0188d013",
+  "query_text": "Tìm cảnh một người đàn ông đội mũ bảo hộ trắng trả lời phỏng vấn tại công trường, phần tên ghi “Ông Doãn Đức Huy” và chức danh cán bộ phụ trách thi công dự án xây dựng cầu Rạch Đỉa.",
+  "query_type": "vision+ocr",
+  "video_id": "L22_V011",
+  "frame_id": 32
+ },
+ {
+  "query_id": "q_6b453c0ef6c3f02e",
+  "query_text": "Tìm cảnh quay lại các tay đua xe đạp tiến dưới cổng về đích giữa đám đông, khi bình luận viên nói Châu Thế Vĩnh Long không còn cơ hội tranh danh hiệu vua nước rút và chỉ có thể giữ hạng nhì áo xanh.",
+  "query_type": "vision+asr",
+  "video_id": "L23_V024",
+  "frame_id": 63
+ },
+ {
+  "query_id": "q_9b48798fed5b7efc",
+  "query_text": "Tìm cảnh hai người dẫn mặc tạp dề đứng sau quầy bếp cạnh một nồi đang nấu, phía trước có mã QR và dòng “QUÉT MÃ QR ĐỂ XEM CÔNG THỨC”.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V005",
+  "frame_id": 112
+ },
+ {
+  "query_id": "q_9eb94b304aea0945",
+  "query_text": "Tìm cảnh một chàng trai tóc nâu mặc áo polo đỏ được phỏng vấn ngoài trời, khi anh nói sẽ dẫn Nguyên đi quanh đường làng ở Hậu Giang và ngắm các vườn trái cây.",
+  "query_type": "vision+asr",
+  "video_id": "L27_V015",
+  "frame_id": 102
+ },
+ {
+  "query_id": "q_3cd0916551175cc4",
+  "query_text": "Tìm cảnh những cây thốt nốt và buồng quả xanh, trên hình hiện đoạn “Những dòng suối ngược – Trương Chí Hùng”, trong lúc lời đọc kể rễ cây xuyên qua đất đá cằn để đưa nước lên ngọn và nuôi sống đồng bào vùng Bảy Núi.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L28_V010",
+  "frame_id": 301
+ },
+ {
+  "query_id": "q_68efbb193498d1eb",
+  "query_text": "Tìm cảnh một người đàn ông mặc áo polo họa tiết ngồi giữa khu cây rậm rạp, tay cầm một dụng cụ kim loại dài.",
+  "query_type": "vision",
+  "video_id": "L29_V002",
+  "frame_id": 223
+ },
+ {
+  "query_id": "q_9973bca34e7c9d24",
+  "query_text": "Tìm cảnh nhìn từ sau vai một phụ nữ đang cầm tờ công thức, trên giấy có tiêu đề “Nhân bánh cuốn” và phần “Cách xào nhân”.",
+  "query_type": "vision+ocr",
+  "video_id": "L30_V078",
+  "frame_id": 43
+ },
+ {
+  "query_id": "q_9828aa6f64ceeda9",
+  "query_text": "Tìm cảnh các cán bộ mặc áo phao đứng cùng ngư dân bên một chiếc tàu màu xanh, khi lời nói cho biết ủy ban xã đã lập tổ xuống các thôn để rà soát tàu cá.",
+  "query_type": "vision+asr",
+  "video_id": "L21_V014",
+  "frame_id": 153
+ },
+ {
+  "query_id": "q_e52f2a1597a667d3",
+  "query_text": "Tìm cảnh vườn dừa rậm rạp trong bản tin có dòng “Sâu đầu đen tàn phá hàng trăm hecta dừa ở Tiền Giang”, khi lời thuyết minh cho biết xã Xuân Đông, huyện Chợ Gạo là tâm điểm của đợt sâu bùng phát.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L22_V012",
+  "frame_id": 118
+ },
+ {
+  "query_id": "q_0284e65d1814066b",
+  "query_text": "Tìm cảnh một đoàn vận động viên đua xe đạp tiến qua cổng đích trên đường phố, hai bên có đông khán giả đứng xem và vẫy cờ Việt Nam.",
+  "query_type": "vision",
+  "video_id": "L23_V025",
+  "frame_id": 115
+ },
+ {
+  "query_id": "q_294f8643ac5eb88a",
+  "query_text": "Tìm cảnh một con lân trắng đứng cạnh dãy cột thi đấu được đánh số, với logo “HTV Thể thao” ở góc màn hình.",
+  "query_type": "vision+ocr",
+  "video_id": "L24_V024",
+  "frame_id": 1
+ },
+ {
+  "query_id": "q_ae55001d8280bddf",
+  "query_text": "Tìm cảnh một thầy giáo mặc sơ mi trắng đứng cạnh bảng trình chiếu chia thành ba cột, trong lúc thầy nói về sự so sánh phong trào giải phóng dân tộc ở Đông Nam Á, châu Phi và châu Mỹ La Tinh.",
+  "query_type": "vision+asr",
+  "video_id": "L25_V019",
+  "frame_id": 157
+ },
+ {
+  "query_id": "q_774cd1735343e32d",
+  "query_text": "Tìm cảnh một nam đầu bếp mặc áo trắng đứng trong trường quay “Món ngon mỗi ngày”, có bảng ghi món ăn hỗ trợ xây dựng khối cơ - xương và lời nói cho biết món chiên giòn cuốn bánh tráng rất dễ làm.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V006",
+  "frame_id": 40
+ },
+ {
+  "query_id": "q_0d969440db0b78d4",
+  "query_text": "Tìm cảnh cận mặt một cụ bà tóc bạc mặc áo tím đang trò chuyện ngoài vườn cây.",
+  "query_type": "vision",
+  "video_id": "L27_V013",
+  "frame_id": 137
+ },
+ {
+  "query_id": "q_ab096da793e9c051",
+  "query_text": "Tìm cảnh một nhóm người ngồi học dưới mái che trong vườn nho, khi người nói đề cập việc mở lớp để hướng dẫn kỹ thuật canh tác nho tại chỗ.",
+  "query_type": "vision+asr",
+  "video_id": "L29_V013",
+  "frame_id": 315
+ },
+ {
+  "query_id": "q_7291682605fe672c",
+  "query_text": "Tìm cảnh một người đàn ông ngồi sửa đồ trong cửa hàng chật kín phụ tùng, cạnh bảng “Tự bơm miễn phí, gọi đừng ngại 0903 933 170”, khi lời kể nói niềm vui của ông là sửa xong xe để mọi người được về nhà.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L30_V079",
+  "frame_id": 52
+ },
+ {
+  "query_id": "q_f1a5b3ff80f37350",
+  "query_text": "Tìm cảnh bên trong một công trình có hệ khung mái thép trắng dày đặc, với một xe nâng người màu xanh nằm giữa các dầm.",
+  "query_type": "vision",
+  "video_id": "L21_V016",
+  "frame_id": 93
+ },
+ {
+  "query_id": "q_a22a6c0895b8a1f5",
+  "query_text": "Tìm cảnh hai biên tập viên nam và nữ đứng trong trường quay bản tin 60 giây, bên dưới có dòng chữ “Lăng Chủ tịch Hồ Chí Minh mở cửa trở lại từ hôm nay 13/8”.",
+  "query_type": "vision+ocr",
+  "video_id": "L22_V013",
+  "frame_id": 22
+ },
+ {
+  "query_id": "q_3e487262abea698b",
+  "query_text": "Tìm cảnh đoàn xe đạp tiến về cổng đích giữa hai hàng khán giả cầm cờ Việt Nam, khi bình luận viên nói chặng đua từ Hà Nội về thành phố biển Sầm Sơn diễn ra trong thời tiết mưa kéo dài.",
+  "query_type": "vision+asr",
+  "video_id": "L23_V006",
+  "frame_id": 73
+ },
+ {
+  "query_id": "q_8b1e429ba55a4100",
+  "query_text": "Tìm cảnh một con lân trắng biểu diễn trên các cột cao ở sân khấu ban đêm, có logo “HTV Thể thao” và vang tiếng nhạc cùng tiếng vỗ tay.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L24_V033",
+  "frame_id": 70
+ },
+ {
+  "query_id": "q_c409410dd68413d0",
+  "query_text": "Tìm cảnh một nam giáo viên đeo kính, mặc sơ mi trắng và cà vạt tím, đứng sau máy tính xách tay cạnh một sơ đồ hóa học trên nền xanh.",
+  "query_type": "vision",
+  "video_id": "L25_V021",
+  "frame_id": 42
+ },
+ {
+  "query_id": "q_d990b8e02c813bc2",
+  "query_text": "Tìm cảnh một nam đầu bếp mặc áo trắng đứng trước kệ sản phẩm trong trường quay “Món ngon mỗi ngày”, với dòng chữ “Giúp món ăn hỗ trợ phát triển khối cơ - xương”.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V007",
+  "frame_id": 33
+ },
+ {
+  "query_id": "q_d07cd1077526f9ff",
+  "query_text": "Tìm cảnh hai người đàn ông, một người áo đỏ và một người đội mũ đeo ba lô, trò chuyện trên bãi cỏ khi họ nói về cung trekking băng qua cánh đồng thốt nốt, lên suối Thanh Long và chinh phục đỉnh Bồ Hồ.",
+  "query_type": "vision+asr",
+  "video_id": "L27_V004",
+  "frame_id": 62
+ },
+ {
+  "query_id": "q_cbef9885768f40d9",
+  "query_text": "Tìm cảnh cận một bảng thống kê có dòng “Tàn sát toàn tuyến biên giới: 4.158 người” và “Làm bị thương: 774 người”, trong lúc thuyết minh kể quân Pôn Pốt đã giết 3.157 người vô tội tại Ba Chúc trong 12 ngày chiếm đóng.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L28_V011",
+  "frame_id": 282
+ },
+ {
+  "query_id": "q_2baf8e30d87b9582",
+  "query_text": "Tìm cảnh cận mặt một phụ nữ trẻ mặc áo hồng, tóc dài buộc gọn, đang trò chuyện trong một căn nhà gỗ mộc mạc.",
+  "query_type": "vision",
+  "video_id": "L29_V011",
+  "frame_id": 67
+ },
+ {
+  "query_id": "q_36c365fa21f7c757",
+  "query_text": "Tìm cảnh các tình nguyện viên đeo khẩu trang đang chuẩn bị rất nhiều tô thức ăn trên bàn, cạnh bảng kêu gọi chung tay đóng góp lương thực, thực phẩm.",
+  "query_type": "vision+ocr",
+  "video_id": "L30_V084",
+  "frame_id": 28
+ },
+ {
+  "query_id": "q_2d351f663a418bc0",
+  "query_text": "Tìm cảnh hai biên tập viên nam và nữ đứng trong trường quay có phông nền thành phố lúc bình minh, khi lời dẫn kể về một bà cụ bán hàng rong ở quận 1 thường ngủ quên để khách tự lấy hàng và trả tiền.",
+  "query_type": "vision+asr",
+  "video_id": "L21_V016",
+  "frame_id": 160
+ },
+ {
+  "query_id": "q_d0db7095c3964ead",
+  "query_text": "Tìm cảnh người dân ngồi khám tại một cơ sở y tế, phía dưới có dòng chữ nhắc “may và mặc áo dài Huế” cùng “lễ hội bơi chải làng Tiếu Mai”, trong lúc lời dẫn nói thành phố chỉ có một ca bệnh sởi và đề cập tỷ lệ trẻ tiêm đủ hai mũi.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L22_V013",
+  "frame_id": 36
+ },
+ {
+  "query_id": "q_53787c533450cbf3",
+  "query_text": "Tìm cảnh một tay đua xe đạp áo vàng đang chạy trên đại lộ rộng, phía trước và xung quanh có nhiều mô tô hộ tống; ở tiền cảnh, khán giả giơ cờ Việt Nam.",
+  "query_type": "vision",
+  "video_id": "L23_V019",
+  "frame_id": 18
+ },
+ {
+  "query_id": "q_2f105bad76f9611b",
+  "query_text": "Tìm cảnh bài giảng có sơ đồ tròn màu xanh đậm với các nhánh màu, trong lúc giảng viên nói polymer không tan trong nước và dung môi thường, chỉ tan trong xăng và benzen, có nhiệt độ nóng chảy không xác định và không bay hơi.",
+  "query_type": "vision+asr",
+  "video_id": "L25_V021",
+  "frame_id": 127
+ },
+ {
+  "query_id": "q_72bd58e05f4fca09",
+  "query_text": "Tìm cảnh hai đầu bếp nam nữ đứng sau quầy bếp cạnh một mã QR, có dòng “Quét mã QR để xem công thức”, trong lúc người nữ nói có thể dùng điện thoại quét mã trên màn hình để lưu công thức món ăn.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V007",
+  "frame_id": 93
+ },
+ {
+  "query_id": "q_00f95070ab902cae",
+  "query_text": "Tìm cảnh cận mặt một người phụ nữ lớn tuổi đeo kính gọng đen, mặc áo hoa tối màu và trò chuyện tại một quầy hàng.",
+  "query_type": "vision",
+  "video_id": "L27_V006",
+  "frame_id": 80
+ },
+ {
+  "query_id": "q_77285127b41fa8c9",
+  "query_text": "Tìm cảnh một bia đá lớn chạm hoa văn đặt ngoài trời, trên mặt bia có tên địa danh “THOẠI SƠN”.",
+  "query_type": "vision+ocr",
+  "video_id": "L28_V012",
+  "frame_id": 31
+ },
+ {
+  "query_id": "q_89dce3e1d3ea2ee2",
+  "query_text": "Tìm cảnh một phụ nữ mặc áo hồng được phỏng vấn giữa khu trồng nấm, nói người dân địa phương là khách hàng thân thiết và chính quyền xã hỗ trợ đầu ra cho trại nấm.",
+  "query_type": "vision+asr",
+  "video_id": "L29_V011",
+  "frame_id": 293
+ },
+ {
+  "query_id": "q_9552f16527f26fb5",
+  "query_text": "Tìm cảnh một cô gái mặc áo xanh nhạt đọc sách giữa nhiều chồng sách có tên tác giả THOMAS HARRIS, trong khi lời dẫn nhắc đến việc nhâm nhi một quyển sách hay tại nơi đây.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L30_V087",
+  "frame_id": 42
+ },
+ {
+  "query_id": "q_1a014eaadcbb690c",
+  "query_text": "Tìm cảnh một đoàn đua xe đạp tách thành nhiều tốp lần lượt lao qua cổng về đích, với đông khán giả đứng dọc hai bên đường.",
+  "query_type": "vision",
+  "video_id": "L23_V006",
+  "frame_id": 52
+ },
+ {
+  "query_id": "q_a89ec2c88bdb49e1",
+  "query_text": "Tìm cảnh một con lân màu vàng biểu diễn vượt qua dãy trụ trên sân khấu của HTV Thể thao.",
+  "query_type": "vision+ocr",
+  "video_id": "L24_V007",
+  "frame_id": 3
+ },
+ {
+  "query_id": "q_dbf3c052c3d00f54",
+  "query_text": "Tìm cảnh một thầy giáo áo trắng đứng cạnh màn hình có ảnh ruộng đất nứt nẻ, giải thích hạn mặn nghiêm trọng ở Đồng bằng sông Cửu Long liên quan đến mùa khô sâu sắc, biến đổi khí hậu và thủy điện thượng nguồn.",
+  "query_type": "vision+asr",
+  "video_id": "L25_V024",
+  "frame_id": 129
+ },
+ {
+  "query_id": "q_104bcc17e555a2fe",
+  "query_text": "Tìm cảnh một đầu bếp nam mặc áo trắng đứng trong bếp, cạnh bảng ghi “MÓN ĂN HỖ TRỢ TRÍ NÃO LÀM VIỆC HIỆU QUẢ”, đồng thời nói rằng theo chuyên gia dinh dưỡng, món ăn hôm nay giúp trí não làm việc hiệu quả.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V008",
+  "frame_id": 33
+ },
+ {
+  "query_id": "q_0855ca1bdeff5648",
+  "query_text": "Tìm cảnh một người đàn ông mặc áo polo xanh cổ cam ngồi ngoài trời và mỉm cười trước nền cây xanh.",
+  "query_type": "vision",
+  "video_id": "L27_V004",
+  "frame_id": 162
+ },
+ {
+  "query_id": "q_94f8eb8efaf39d8e",
+  "query_text": "Tìm cảnh một tủ trưng bày bảo tàng có ảnh tư liệu và nhiều hiện vật, phía sau là bảng giới thiệu hàng trăm công trình khoa học trong và ngoài nước về văn hóa Ốc Eo và Khu di tích Ốc Eo - Ba Thê.",
+  "query_type": "vision+ocr",
+  "video_id": "L28_V012",
+  "frame_id": 58
+ },
+ {
+  "query_id": "q_24efff864e210f8a",
+  "query_text": "Tìm cảnh một người đàn ông mặc sơ mi trắng được phỏng vấn bên khu vực ao nuôi, nói rằng mỗi năm có hai vụ tôm sú.",
+  "query_type": "vision+asr",
+  "video_id": "L29_V018",
+  "frame_id": 173
+ },
+ {
+  "query_id": "q_c97b330035625dd0",
+  "query_text": "Tìm cảnh Nguyễn Phúc Tân mặc áo đen đứng phỏng vấn trước hàng cây, bảng tên ghi “Khoa Công nghệ Ứng dụng, trường Đại học Văn Lang”, và anh nói các khó khăn là chưa vững công nghệ chế biến vật liệu cùng thiếu kiến thức thương mại hóa sản phẩm.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L30_V089",
+  "frame_id": 83
+ },
+ {
+  "query_id": "q_8b38d771bb2afb60",
+  "query_text": "Tìm cảnh một tay đua xe đạp đơn độc băng qua cổng cuối chặng, phía sau là đoàn mô tô hộ tống và khán giả đứng kín hai bên đường.",
+  "query_type": "vision",
+  "video_id": "L23_V011",
+  "frame_id": 41
+ },
+ {
+  "query_id": "q_fcb6e2eafa337d09",
+  "query_text": "Tìm cảnh cận một con lân trắng đỏ đứng cạnh lá cờ đỏ trong chương trình HTV Thể thao.",
+  "query_type": "vision+ocr",
+  "video_id": "L24_V042",
+  "frame_id": 142
+ },
+ {
+  "query_id": "q_b3bf88ef1c0e962a",
+  "query_text": "Tìm cảnh nữ MC áo hồng và nam đầu bếp áo trắng đứng trong bếp cạnh mã QR có dòng “QUÉT MÃ QR ĐỂ XEM CÔNG THỨC”, khi cô nói nhờ Phước Hưng mà Kim Thảo có thêm bí quyết làm món mì Ý hấp dẫn hơn.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V008",
+  "frame_id": 113
+ },
+ {
+  "query_id": "q_323ac8d63449fcf2",
+  "query_text": "Tìm cảnh một phòng triển lãm vắng người với nhiều ảnh tư liệu treo thành dãy trên tường, bên cạnh là bàn và ghế gỗ cổ.",
+  "query_type": "vision",
+  "video_id": "L28_V013",
+  "frame_id": 205
+ },
+ {
+  "query_id": "q_ec28bf8ae01978ee",
+  "query_text": "Tìm cảnh một người đàn ông mặc áo polo đỏ ngồi trả lời phỏng vấn, với bảng tên ghi “Anh Hồng Chí Linh” và “Hợp tác xã chồn hương Chí Tâm - Huyện Ngọc Hiển - Tỉnh Cà Mau”.",
+  "query_type": "vision+ocr",
+  "video_id": "L29_V016",
+  "frame_id": 123
+ },
+ {
+  "query_id": "q_bb0b9bee5079be81",
+  "query_text": "Tìm cảnh một cô gái trẻ ngồi đọc sách thiếu nhi trước kệ sách, trong khi lời kể nói một nỗi trăn trở vẫn hiện hữu và bản thân chưa thực sự đạt được điều mong muốn.",
+  "query_type": "vision+asr",
+  "video_id": "L30_V090",
+  "frame_id": 12
+ },
+ {
+  "query_id": "q_4b7ffb3dda167f92",
+  "query_text": "Tìm cảnh các tay đua xe đạp chạy qua cổng cuối chặng mang dòng “KỶ NIỆM 49 NĂM NGÀY GIẢI PHÓNG MIỀN NAM, THỐNG NHẤT ĐẤT NƯỚC”, trong khi lời bình nhắc đến niềm vui của các tay đua và một chiến thắng tại Cúp Truyền hình Thành phố Hồ Chí Minh năm nay.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L23_V025",
+  "frame_id": 78
+ },
+ {
+  "query_id": "q_def3ec0b5cbb2812",
+  "query_text": "Tìm cảnh một con lân trắng biểu diễn ban đêm trên dãy trụ kim loại cao, xung quanh có các tượng lân nhỏ nhiều màu.",
+  "query_type": "vision",
+  "video_id": "L24_V029",
+  "frame_id": 38
+ },
+ {
+  "query_id": "q_623984e09ad0c3e5",
+  "query_text": "Tìm cảnh một nam MC đeo tạp dề đứng cạnh nữ đầu bếp trong gian bếp, nói rằng anh muốn một món trẻ trung, mang hơi hướng châu Âu và dễ làm cho các bạn trẻ.",
+  "query_type": "vision+asr",
+  "video_id": "L26_V009",
+  "frame_id": 34
+ },
+ {
+  "query_id": "q_aa85a190e7a30449",
+  "query_text": "Tìm cảnh một bàn tay đang mở sách tranh thiếu nhi ở trang có các em nhỏ đi dưới hàng cây và bài thơ nhắc “Từ Tây quê em đẹp nơi đầu sóng”, “ngọn hải đăng sừng sững” dẫn lối những con tàu.",
+  "query_type": "vision+ocr",
+  "video_id": "L30_V090",
+  "frame_id": 40
+ },
+ {
+  "query_id": "q_28e9ea40e80ba175",
+  "query_text": "Tìm cảnh một nhóm tay đua xe đạp nước rút về phía cổng cuối chặng trước đám đông, khi bình luận viên nói cách biệt chỉ còn 80 giây và Victor gần như sẽ giành áo vàng ở chặng ngày mai.",
+  "query_type": "vision+asr",
+  "video_id": "L23_V009",
+  "frame_id": 44
+ },
+ {
+  "query_id": "q_704fe76947662053",
+  "query_text": "Tìm cảnh một nữ đầu bếp mặc áo trắng đứng cạnh một người đàn ông áo đen đeo tạp dề, cả hai cùng nhìn về phía máy quay trong gian bếp.",
+  "query_type": "vision",
+  "video_id": "L26_V009",
+  "frame_id": 38
+ },
+ {
+  "query_id": "q_7c8044db295b255c",
+  "query_text": "Tìm cảnh một phụ nữ áo xanh đội mũ đứng cạnh một bà lớn tuổi đang cầm tiền trước căn nhà xây dở, trong khi lời kể nói người con lớn đi làm keo ở nơi khác và gửi về 12 triệu để mua gạo.",
+  "query_type": "vision+asr",
+  "video_id": "L30_V091",
+  "frame_id": 84
+ },
+ {
+  "query_id": "q_aac3d9d9c008775e",
+  "query_text": "Tìm cảnh cận một màn biểu diễn lân trắng, khi hai người mặc đồ đen nâng và điều khiển bộ lân quanh các trụ nhỏ.",
+  "query_type": "vision",
+  "video_id": "L24_V029",
+  "frame_id": 148
+ },
+ {
+  "query_id": "q_e4b66e6ca8f9f37e",
+  "query_text": "Tìm cảnh quay lại đoàn tay đua xe đạp tiến dưới cổng đích của Cúp Truyền hình, khi bình luận viên nói đang xác định vị trí thứ ba giữa Lê Nguyệt Minh và Peter và cảm giác hồi hộp vẫn chưa dừng dù chặng đua đã kết thúc.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L23_V010",
+  "frame_id": 51
+ },
+ {
+  "query_id": "q_2bc5353d210c78ca",
+  "query_text": "Tìm cảnh một nam và một nữ đầu bếp đứng sau quầy bếp, phía dưới có bảng khuyên món ăn hỗ trợ bổ máu nên tránh dùng cùng nước trà đặc và trái cây có vị chát vì chúng ngăn cản hấp thu vi khoáng.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V010",
+  "frame_id": 34
+ },
+ {
+  "query_id": "q_f28787cae11ba69a",
+  "query_text": "Tìm cảnh một đầu bếp nam mặc áo trắng đứng trong bếp cạnh bảng ghi “MÓN ĂN HỖ TRỢ XÂY DỰNG KHỐI CƠ - XƯƠNG”, khi anh giới thiệu Minh Phương làm món lẩu kim chi phô mai chuẩn Hàn Quốc và nói theo chuyên gia dinh dưỡng món ăn này hỗ trợ xây dựng khối cơ xương.",
+  "query_type": "vision+ocr+asr",
+  "video_id": "L26_V011",
+  "frame_id": 36
+ },
+ {
+  "query_id": "q_56655b7b3bb55d22",
+  "query_text": "Tìm cảnh một nam đầu bếp mặc áo trắng đứng trong trường quay “Món ngon mỗi ngày”, với dòng chữ “Món ăn hỗ trợ sức khỏe tim và mạch máu”.",
+  "query_type": "vision+ocr",
+  "video_id": "L26_V014",
+  "frame_id": 35
+ }
+]

@@ -38,7 +38,28 @@ __pycache__/
 # Repo này chỉ mang thứ THẬT SỰ VẬN HÀNH. Đường chạy `scripts/run.py` truy vết
 # import ra đúng 11 file; nhóm `scripts/embed/` giữ lại vì thiếu nó thì không
 # dựng lại được chỉ mục. Mọi thứ dưới đây nằm ngoài hai nhóm đó.
-tests/
+tests/*
+# RUNBOOK bước 0 — bước kiểm TRƯỚC NGÀY THI — bảo `git pull && pytest tests/`. Với `tests/`
+# bị loại hoàn toàn thì lệnh đó chạy được trên máy đang dùng (test nằm local) nhưng KHÔNG
+# chạy được trên bản clone mới. Với một sự kiện "không sửa lại được" thì đó là rủi ro thật.
+# Nhận đúng 14 file chỉ phụ thuộc mã ĐANG VẬN HÀNH (380 test) — giữ nguyên nguyên tắc "kho
+# chỉ mang thứ thật sự vận hành". 8 file còn lại import `engine.py`, `allocator.py`,
+# `frame_index.py`, `harness.py`, `*_store.py` — đều ngoài đường chạy, nên nếu nhận chúng
+# thì bản clone mới sẽ ĐỎ vì thiếu module, tệ hơn là không có test.
+!tests/test_bm25.py
+!tests/test_coverage.py
+!tests/test_dante.py
+!tests/test_declarativize.py
+!tests/test_jina_encoder.py
+!tests/test_kbest.py
+!tests/test_kis_is_trake_n1.py
+!tests/test_pool.py
+!tests/test_probe.py
+!tests/test_rerank.py
+!tests/test_rscore.py
+!tests/test_score_matrix.py
+!tests/test_sources.py
+!tests/test_vector_index.py
 scripts/search.py
 scripts/asr/
 scripts/ocr/
@@ -54,6 +75,10 @@ scripts/eval/*
 !scripts/eval/score_submission.py
 !scripts/eval/compare_arch.py
 !scripts/eval/make_queries.py
+# `score_shots.py` — bộ chấm CẤP SHOT. README dẫn số của nó (R@1 cấp shot 0,56, chính là
+# con số chứng minh chỗ hổng nằm ở độ phân giải thời gian chứ không ở xếp hạng), nên thiếu
+# nó thì không kiểm lại được kết luận lớn nhất của dự án.
+!scripts/eval/score_shots.py
 src/object/
 # `rscore.py` là CÔNG THỨC CHẤM nguyên văn thể lệ — ba script eval import nó, và thiếu
 # nó thì không kiểm được bài nộp trước khi gửi.
@@ -80,3 +105,17 @@ submission_bench/
 
 # build output của `build_bench_artifact.py`; consumer `bench100.html` đã bị loại
 artifacts/bench100_*.json
+
+# ───────── đầu ra và dữ liệu vào của các lượt đo ─────────
+# Bài nộp dựng lại được bằng `scripts/run.py`; bộ truy vấn dựng lại được từ ground truth.
+submission_*/
+queries_*/
+# đầu ra của mô hình khác, đưa vào để so — không thuộc kho này
+results.jsonl
+
+# GROUND TRUTH GT v2: giữ đúng ba file mà README dẫn số, bỏ phần rà soát nội bộ.
+# Cùng lý lẽ với `data/eval/*.json` ở trên — thiếu chúng thì không kiểm lại được bảng nào.
+benchmark_ground_truth_final_v2/*
+!benchmark_ground_truth_final_v2/README.md
+!benchmark_ground_truth_final_v2/ground_truth_final.jsonl
+!benchmark_ground_truth_final_v2/_gt_frame.json

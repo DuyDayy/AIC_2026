@@ -59,6 +59,7 @@ from src.scoring.rscore import (
     K_THRESHOLDS,
     MAX_ANSWERS,
     final_score,
+    stable_seed,
 )
 from src.submission.writer import SubmissionError, TaskSubmission, validate_all
 
@@ -145,7 +146,7 @@ def main() -> int:
         gf = int(FI[g])
         prev, nxt = nbr[g]
         lo, hi = gf - (gf - prev) // 2, gf + (nxt - gf) // 2
-        rng = np.random.default_rng(abs(hash(qid)) % 2**31)
+        rng = np.random.default_rng(stable_seed(qid))
         for L in LS:
             half = (L - 1) // 2
             s = final_score(answers,

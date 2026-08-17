@@ -9,8 +9,13 @@ Chấm bằng `src/scoring/rscore.py` — nguyên văn thể lệ. Báo theo **m
 ngẫu nhiên**, vì hai mô hình kia ôm keyframe ground truth nên tự thưởng cho việc nộp lại
 chính cái nhãn của mình (xem README, *Bài học đo lường*).
 
-Có `_rerank_scores.npz` thì suy thêm biến thể `spread` khác **mà không chạy lại GPU**:
-bản lưu giữ rổ + điểm nền + điểm mảnh cắt + điểm VLM cho từng truy vấn.
+Có `_rerank_scores.npz` thì quét lại **trọng số rerank mà không chạy lại GPU**: bản lưu
+giữ rổ + điểm nền + điểm mảnh cắt + điểm VLM cho từng truy vấn.
+
+⚠️ GIỚI HẠN của phần suy: `fuse` chuẩn hoá z trên **toàn kho** 173.426 khung, còn npz chỉ
+lưu phần TRONG RỔ. Nên `z_normalize` ở đây tính trên rổ, khác thang với bài chạy thật.
+Tỉ lệ giữa các trọng số vẫn so được với nhau, nhưng con số Final tuyệt đối KHÔNG so ngang
+với bài nộp thật — muốn số thật thì phải chạy `scripts/run.py`.
 """
 
 from __future__ import annotations
@@ -28,8 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.ingestion.vector_index import load_flat_index
 from src.retrieval.score_matrix import z_normalize
 from src.retrieval.sources import load_shot_bounds, load_video_last_frame
-from src.scoring.rscore import Interval, KISAnswer, KISGroundTruth, final_score
-from src.submission.coverage import spread_in_window
+from src.scoring.rscore import Interval, KISAnswer, KISGroundTruth, final_score, stable_seed
 from src.submission.writer import SubmissionError, TaskSubmission, validate_all
 
 SEEDS = 32
@@ -52,7 +56,6 @@ def main() -> int:
     ap.add_argument("--gt", type=Path,
                     default=Path("export_for_fusion/benchmark_queries.json"))
     ap.add_argument("--index", type=Path, default=Path("data/embed"))
-    ap.add_argument("--spreads", type=int, nargs="*", default=[1, 3, 5, 7, 9])
     args = ap.parse_args()
 
     gt = json.loads(args.gt.read_text(encoding="utf-8"))
@@ -81,7 +84,7 @@ def main() -> int:
     for r in gt:
         g = pos[(r["video_id"], int(r["frame_id"]))]
         wl, wh = win[g]
-        rng = np.random.default_rng(abs(hash(r["query_id"])) % 2**31)
+        rng = np.random.default_rng(stable_seed(r["query_id"]))
         jit[r["query_id"]] = [int(rng.integers(wl, wh + 1)) for _ in range(SEEDS)]
 
     def score_rows(qid: str, vid_gt: str, rows) -> float:
@@ -124,72 +127,72 @@ def main() -> int:
     print(f"  KTC95 [{lo95:+.4f}, {hi95:+.4f}]  thắng {(d > 0).sum()} / thua {(d < 0).sum()}"
           f"  {'✓ chắc' if lo95 > 0 else '✗ không chắc'}")
 
-    # ── 3. Suy các `spread` khác TỪ BẢN LƯU — không chạy lại GPU ────────────
+    # ── 3. Quét TRỌNG SỐ RERANK từ bản lưu — không chạy lại GPU ─────────────
     npz = args.new / "_rerank_scores.npz"
     if not npz.exists():
-        print(f"\n(không có {npz.name} — bỏ qua phần suy `spread`)")
+        print(f"\n(không có {npz.name} — bỏ qua phần quét trọng số)")
         return 0
     z = np.load(npz)
     keys = {k.split("/")[0] for k in z.files}
     by_qid = {k.split("-")[-1]: k for k in keys}
     cfg = json.loads((args.new / "_report.json").read_text(encoding="utf-8"))
-    RW = cfg.get("rerank_weights", {"visual": 0.30, "crop": 1.0, "vlm": 1.0})
+    RW = cfg.get("rerank_weights")
+    if not RW or "fused4" not in RW:
+        print(f"✗ {args.new}/_report.json thiếu `rerank_weights` khoá `fused4` — bài nộp "
+              f"này chạy bằng lược đồ trọng số CŨ, không quét được")
+        return 1
 
     def fused(tid, w):
+        """Điểm rerank trên rổ. `fused4` là điểm ĐÃ HỢP của ④ nguồn, không phải riêng
+        thị giác — dùng khoá `visual` ở đây là lỗi sót của lược đồ cũ."""
         rows = z[f"{tid}/rows"]
-        s = w["visual"] * z_normalize(z[f"{tid}/base"][0], np.ones(len(rows), bool))
+        s = w["fused4"] * z_normalize(z[f"{tid}/base"][0], np.ones(len(rows), bool))
         if f"{tid}/crop" in z and w.get("crop"):
             s = s + w["crop"] * z_normalize(z[f"{tid}/crop"][0], z[f"{tid}/crop_cov"][0])
         if f"{tid}/vlm" in z and w.get("vlm"):
             s = s + w["vlm"] * z_normalize(z[f"{tid}/vlm"], z[f"{tid}/vlm_cov"])
         return rows, s
 
-    def emit(rows, s, sp):
-        order = rows[np.argsort(-s, kind="stable")]
+    def emit(rows, s):
+        """⑦ đúng như đường chạy hiện tại: mỗi keyframe ĐÚNG MỘT dòng, không rải."""
         lines, seen = [], set()
-        for row in order:
+        for row in rows[np.argsort(-s, kind="stable")]:
             row = int(row)
-            c = int(FI[row])
-            wl, wh = win[row]
-            for f in spread_in_window(c, min(wl, c), max(wh, c), sp):
-                k = (VID[row], int(f))
-                if k in seen:
-                    continue
-                seen.add(k)
-                lines.append(k)
-                if len(lines) >= 100:
-                    return lines
+            k = (VID[row], int(FI[row]))
+            if k in seen:
+                continue
+            seen.add(k)
+            lines.append(k)
+            if len(lines) >= 100:
+                break
         return lines
 
-    def run_cfg(w, sp):
-        vals = [score_rows(r["query_id"], r["video_id"],
-                           emit(*fused(by_qid[r["query_id"]], w), sp)) for r in gt]
-        return float(np.mean(vals))
+    def run_cfg(w):
+        return float(np.mean([score_rows(r["query_id"], r["video_id"],
+                                         emit(*fused(by_qid[r["query_id"]], w)))
+                              for r in gt]))
 
     print(f"\nSuy từ {npz.name} ({npz.stat().st_size / 1e6:.1f} MB) — KHÔNG tốn GPU")
-    print(f"\n\u2460 `spread`  (trọng số rerank giữ nguyên {RW})\n")
-    print(f"{'spread':>8}{'mốc':>7}{'Final':>9}")
-    print("-" * 26)
-    for sp in args.spreads:
-        print(f"{sp:>8}{100 // sp:>7}{run_cfg(RW, sp):>9.4f}", flush=True)
-    print("-" * 26)
-
-    sp0 = int(cfg.get("spread", 7))
-    ref = run_cfg(RW, sp0)
-    print(f"\n\u2461 TRỌNG SỐ RERANK — chỗ `VLM_WEIGHT` được quét (spread={sp0})\n")
-    print(f"{'nền':>6}{'mảnh cắt':>10}{'VLM':>7}{'Final':>9}{'Δ':>9}")
-    print("-" * 42)
+    ref = run_cfg(RW)
+    print("\nTRỌNG SỐ RERANK — `fused4` cố định 1,0 vì chỉ TỈ LỆ giữa các trọng số "
+          "có nghĩa\n")
+    print(f"{'fused4':>8}{'mảnh cắt':>10}{'VLM':>7}{'Final':>9}{'Δ':>9}")
+    print("-" * 44)
+    # Bài nộp chạy với `crop = 0` thì npz KHÔNG có khoá `crop`, nên quét nó ra 4 dòng
+    # giống hệt nhau — trông như đã đo mà thật ra tham số vô hiệu. Chỉ quét khi có dữ liệu.
+    has_crop = any(f"{t}/crop" in z for t in by_qid.values())
+    crops = (0.0, 0.25, 0.5, 1.0) if has_crop else (RW.get("crop", 0.0),)
+    if not has_crop:
+        print(f"  (npz không có điểm mảnh cắt — bài nộp chạy với crop={crops[0]}; "
+              f"muốn quét crop thì chạy lại với `--crop-w 1.0`)")
     out = []
-    for v in (0.0, 0.15, 0.30, 1.0):
-        for c_ in (0.0, 0.5, 1.0, 2.0):
-            for m in (0.0, 0.5, 1.0, 2.0):
-                if v == 0 and c_ == 0 and m == 0:
-                    continue
-                w = {"visual": v, "crop": c_, "vlm": m}
-                f = run_cfg(w, sp0)
-                out.append((f, w))
-                print(f"{v:>6}{c_:>10}{m:>7}{f:>9.4f}{f - ref:>+9.4f}", flush=True)
-    print("-" * 42)
+    for c_ in crops:
+        for m in (0.0, 0.125, 0.25, 0.5, 1.0):
+            w = {"fused4": 1.0, "crop": c_, "vlm": m}
+            f = run_cfg(w)
+            out.append((f, w))
+            print(f"{1.0:>8}{c_:>10}{m:>7}{f:>9.4f}{f - ref:>+9.4f}", flush=True)
+    print("-" * 44)
     bf, bw = max(out, key=lambda x: x[0])
     print(f"\ncao nhất {bw} · {bf:.4f}   |   đang dùng {RW} · {ref:.4f}")
     print("\u26a0 argmax trên chính bộ này là KHỚP QUÁ — tìm vùng phẳng, đừng lấy đỉnh.")
