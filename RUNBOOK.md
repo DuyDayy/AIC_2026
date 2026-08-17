@@ -9,7 +9,7 @@
 
 ```bash
 git pull && python -m pytest tests/ -q         # phải thấy 779 passed
-modal run scripts/run.py --dir queries_smoke --out /tmp/smoke --spread 0
+modal run scripts/run.py --dir queries_smoke --out /tmp/smoke
 ```
 
 `queries_smoke/` là 3 file `.txt` bất kỳ. Lượt này **hâm nóng container Modal và nạp
@@ -46,17 +46,16 @@ không thì nó bị chấm như KIS và mất sạch câu đó.
 ## 2. Chạy — MỘT lệnh
 
 ```bash
-modal run scripts/run.py --dir queries_thi --out nop_thi --spread 0
+modal run scripts/run.py --dir queries_thi --out nop_thi
 ```
 
-🔴 **`--spread 0` KHÔNG được quên.** `0` = chế độ **thích ứng** (bước ~10 khung), tốt nhất
-đo được. Mặc định là `1` — nộp thuần keyframe — và nó **mất 63% điểm**. Đây là lỗi tốn kém
-nhất có thể mắc trong cả ngày. Quên mà lỡ gõ `--spread 7` thì vẫn ổn, chỉ kém ~0,028.
+🟢 **Không còn tham số `--spread`.** ⑦ nộp một khung mỗi mốc, 100 mốc. Phép rải đã xoá
+theo hướng cắt keyframe dày hơn — xem README mục ⑦ để biết điều kiện.
 
 Chạy nền và ghi log ra file để đọc được tiến trình:
 
 ```bash
-modal run scripts/run.py --dir queries_thi --out nop_thi --spread 0 > thi.log 2>&1 &
+modal run scripts/run.py --dir queries_thi --out nop_thi > thi.log 2>&1 &
 tail -f thi.log
 ```
 
@@ -105,7 +104,7 @@ cấu hình đã chốt, rồi dành giờ soi bài nộp bằng mắt.
 | cả ⑤ | `--no-rerank` | thêm chút nữa |
 | ba nguồn văn bản | `--light` | ~120s, nhưng **mất dung hợp** — đừng dùng trừ khi hết cách |
 
-**Không bao giờ cắt `--spread`.** Nó chạy tại máy, tốn vài giây, mà đổi 63% điểm.
+Không còn tham số rải nào để cắt.
 
 ---
 
@@ -147,7 +146,7 @@ keyframe). Đo được 0/173.426 khung có hai giá trị bằng nhau, lệch t
 |---|---|---|
 | `IndexError` lúc khởi động | không có | — |
 | treo ở khâu mã hoá mảnh cắt | bậc 1 bật | phải đang TẮT (`crop = 0`); nếu bật thì `--no-rerank` |
-| `frame_id ≥ số khung` | rải vượt cuối video | đã chặn bằng `load_video_last_frame()`; nếu vẫn gặp thì `--spread 1` rồi nộp |
+| `frame_id ≥ số khung` | không còn xảy ra — chỉ nộp keyframe thật | — |
 | máy hết RAM | nạp chỉ mục 1024 chiều | dùng `--dim 512` (mặc định) |
 | Modal lỗi mạng giữa chừng | — | chạy lại; vector đề **đã cache** nên không tốn GPU lần hai |
 | ra ít hơn số đề | file `.txt` rỗng hoặc sai encoding | kiểm `wc -l queries_thi/*.txt` |
@@ -167,7 +166,7 @@ dung nên lượt hai không tốn GPU.
 | `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
 | `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | bậc 1 đo được phá điểm |
 | `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
-| `--spread` | **0** ← phải gõ tay | thích ứng, bước ~10 khung. Mặc định 1 mất 63% điểm |
+| rải khung | **đã xoá** | ⑦ nộp 1 khung/mốc; trần 23,5% chờ keyframe dày hơn hoá giải |
 
 ---
 

@@ -30,7 +30,7 @@ Vận hành ngày thi: [`RUNBOOK.md`](RUNBOOK.md) · Kế hoạch tối ưu: [`O
 | ⑤c | **Qwen2.5-VL-7B** | `P(khung khớp)` = softmax trên đúng hai token `1`/`0` |
 | ④ | **DANTE** k-best (`kbest.py`) | DP thứ tự thời gian `O(N·T)`; **KIS = TRAKE với N=1** |
 | ⑥ | Qwen2.5-VL | chỉ đề Q&A: đọc khung + OCR + lời nói → sinh `answer` |
-| ⑦ | rải **thích ứng** vào khe (`coverage.py`) | bước cố định ~10 khung; vượt trần hình học 23,5% |
+| ⑦ | một khung mỗi mốc, 100 mốc | rải đã XOÁ — chờ bộ keyframe dày hơn nâng trần 23,5% |
 
 Hạ tầng: **Modal** — GPU A10G, `.map()` song song (mã hoá mảnh cắt nhanh **31×** so với
 `.remote()` tuần tự: nghẽn là ĐƯỜNG TRUYỀN, không phải GPU).
@@ -192,37 +192,38 @@ Thiếu tầng này thì câu Q&A được **0 điểm** dù tìm đúng khung �
 
 ⚠️ Tầng này **chưa có phép đo nào**.
 
-### ⑦ Nộp bài — `src/submission/coverage.py`
+### ⑦ Nộp bài — MỘT khung mỗi mốc, KHÔNG rải
 
 | | |
 |---|---|
-| ngân sách | 100 dòng/truy vấn |
-| `spread` | **0 = THÍCH ỨNG** — cố định BƯỚC ~10 khung, suy ra `m` (p50=5, TB 6,3) |
-| cửa sổ rải | nửa khe tới keyframe hàng xóm **∩ biên shot ∩ số khung thật của video** |
-| thứ tự rải | **gần tâm trước** (đo được 35 tốt / 0 tệ) |
-| cố định | `--spread 7` vẫn dùng được; thích ứng hơn **+0,028** (giữ kín) / **+0,040** (tune) |
-| khử trùng | **KHÔNG** — theo cảnh −4,3pp, theo video −12,0pp |
-| cột ghi | `video_id, frame_idx` — số khung THẬT, không phải `n` |
+| ngân sách | 100 dòng/truy vấn = **100 mốc** |
+| mỗi mốc | đúng **một** dòng: `frame_idx` thật của keyframe |
+| khử trùng `(video, frame)` | **có** — `R@k = max`, hai dòng giống hệt mua đúng một cơ hội |
+| khử trùng theo cảnh/video | **KHÔNG** — đo được −4,3pp / −12,0pp |
 
-Thể lệ nói rõ khung ngữ nghĩa **khác** I-Frame được cấp. Keyframe của ta cách nhau trung vị
-**48 khung**, cửa sổ đáp án ~10 khung ⟹ xác suất một cửa sổ chứa sẵn keyframe của ta chỉ
-**23,5%** — trần cứng, bất kể truy xuất tốt đến đâu.
+🔴 **Phép rải khung đã bị XOÁ**, và điều kiện để việc đó đúng phải nói rõ. Ở mật độ
+keyframe hiện tại, rải mua rất nhiều điểm:
 
-Vì mỗi mốc chỉ rải trong **khe của riêng nó**, các dải **lát kề nhau, không chồng** — đó là
-lý do khử trùng cảnh sau đó chỉ làm hại. **Rải thích ứng thắng rải cố định.** Cửa sổ đo được p10=28 · p50=43 · p90=88 khung nên
-số khung cố định hoặc phủ thừa chỗ hẹp hoặc hụt chỗ rộng. Cố định **BƯỚC ~10** — đúng bề
-rộng cửa sổ đáp án — rồi suy ra `m`:
+    [ĐO] bộ giữ kín 110 câu:  không rải → 0,0857  ·  rải thích ứng → 0,2334
+    tức bỏ rải mất ~63% điểm
 
-| bước | bộ giữ kín (n=110) | bộ tune (n=100) |
+Nguyên nhân là **hình học**: keyframe cách nhau trung vị **48 khung** còn cửa sổ đáp án
+thể lệ ~10 khung, nên xác suất một cửa sổ chứa sẵn keyframe của ta chỉ **23,5%**.
+
+Trần đó là **hàm của mật độ**, và kế hoạch cắt dày hơn hoá giải đúng nó:
+
+| khe keyframe | trần `L=9` | trần `L=11` |
 |---|---|---|
-| 8 | +0,0146 ✓ | +0,0214 ✓ |
-| **10** | **+0,0280** ✓ | **+0,0397** ✓ |
-| 12 | +0,0107 — | +0,0243 ✓ |
+| 48 (hiện tại) | 23,5% | 28,6% |
+| 24 (×2 dày) | 45,7% | 53,1% |
+| **12 (×4 dày)** | **73,5%** | **81,1%** |
+| 10 (mỗi khung thứ 10) | 90,0% | 100% |
 
-Đỉnh ở 10 trên **cả hai** bộ. Đo trên bài nộp thật: bước từ dải rộng 4–16 co lại thành
-**9–11**, số mốc gần như không đổi (11 so với 12) — nó không mua điểm bằng *nhiều mốc
-hơn* mà bằng **đặt khung đúng chỗ hơn**. Trong vùng cố định, `spread ∈ [6,9]` không phân
-biệt được.
+Ở ×4 dày, mỗi keyframe tự phủ cửa sổ của nó và rải thành vô nghĩa. **Xoá rải là đúng SAU
+KHI bộ keyframe dày hơn có thật** — trước đó thì nó là mất 63% điểm.
+
+Phân tích trần vẫn ở `src/submission/coverage.py`, nay là **mã phân tích, không nằm trên
+đường chạy**: nó là tài liệu định lượng biện minh cho việc cắt dày hơn.
 
 ---
 
@@ -256,21 +257,50 @@ Cả hai là **mô hình bi quan** — mốc ngữ nghĩa rơi ngẫu nhiên tro
 ⚠️ **Không so ngang hai bảng.** Câu ở bộ giữ kín dài **27 từ** so với **51 từ**, ít thông
 tin hơn nên khó hơn. Chỉ so được **hiệu** giữa các cấu hình.
 
+### Bộ 100 câu GT v2 — ground truth cấp shot do đội gán nhãn
+
+*(`benchmark_ground_truth_final_v2`, chấm qua `representative_frame` để so ngang được.)*
+
+| `L` | R@1 | R@5 | R@20 | R@50 | R@100 | **Final** |
+|---|---|---|---|---|---|---|
+| 9 | 0,0471 | 0,2104 | 0,5163 | 0,6067 | 0,6242 | **0,4009** |
+| **11** | 0,0542 | 0,2425 | 0,5596 | 0,6646 | 0,6833 | **0,4408** |
+| 21 | 0,1013 | 0,2692 | 0,5800 | 0,6792 | 0,6900 | **0,4639** |
+
+Đây là **lần đầu đủ cấu hình cuối chạy cùng nhau** — rải thích ứng · `BM25_PARAMS` riêng
+nguồn · `VLM_TOP_K=160`. Trước đó ba Δ chỉ được đo riêng lẻ.
+
+Độc lập ở mức: **0 câu trùng** bộ tay, **9/71 video trùng** (13%) — nhỏ nhưng có thật.
+
+⚠️ GT này định danh theo **shot**, và README của nó ghi `representative_frame` *"không
+phải đơn vị chấm chính"*. Chấm qua khung đại diện là **chặt hơn** ý định bộ GT; bản chấm
+cấp shot ở `scripts/eval/score_shots.py`.
+
+⚠️ Ánh xạ có bẫy: `shot_start`/`shot_end` (giây) của GT là **thời điểm keyframe đầu–cuối
+trong shot**, KHÔNG phải biên shot. So chúng với biên metadata cho **0/105 khớp** và làm
+tưởng dữ liệu lệch. Nối đúng là qua **`shot_id`**, khớp chính xác.
+
 ### Theo loại đề, `L = 11`
 
-| loại | bộ tay | bộ giữ kín |
-|---|---|---|
-| vision | 0,5158 | 0,3100 |
-| vision+ocr | 0,4846 | 0,2733 |
-| vision+asr | 0,6720 | 0,2467 |
-| **vision+ocr+asr** | **0,7733** | **0,4667** |
+| loại | bộ tay | bộ giữ kín | **GT v2** |
+|---|---|---|---|
+| vision | 0,5158 | 0,3100 | **0,2800** ← thấp nhất |
+| vision+ocr | **0,4846** ← thấp nhất | **0,2733** ← thấp nhất | 0,5360 |
+| vision+asr | 0,6720 | 0,2467 | 0,5920 |
+| **vision+ocr+asr** | **0,7733** | **0,4667** | **0,6720** |
 
-Câu cần **cả ba nguồn** ăn điểm gấp **1,5 lần** câu thuần thị giác — **cùng tỉ lệ trên cả
-hai bộ**, dù đề khác hẳn nhau. Đó là phần dung hợp trả công.
+Câu cần **cả ba nguồn** luôn cao nhất trên **cả ba bộ** — gấp 1,5 tới **2,4 lần** câu thuần
+thị giác. Đó là phần dung hợp trả công, và nó là kết luận duy nhất bền qua ba bộ đề khác
+hẳn nhau.
+
+🔴 **Nhưng loại YẾU NHẤT thì đổi theo bộ eval.** Hai bộ đầu nói `vision+ocr`; GT v2 nói
+`vision` thuần. Nên "chữa `vision+ocr`" mà tôi từng đặt làm việc #2 là **sai đề** — nó là
+tính chất của bộ eval, không phải của hệ. Đề đúng: **nguồn thị giác đơn độc là chỗ yếu**,
+và đó chính là thứ ensemble nhiều tháp nhúng tấn công.
 
 ---
 
-## Năm quyết định lớn, kiểm chéo trên bộ giữ kín
+## Bốn quyết định lớn, kiểm chéo trên bộ giữ kín
 
 Bắt cặp theo truy vấn, bootstrap 4000 lần:
 
@@ -278,11 +308,12 @@ Bắt cặp theo truy vấn, bootstrap 4000 lần:
 |---|---|---|---|---|
 | δ ASR `0,1064 → 0,2128` | **+0,0252** | [+0,0044, +0,0472] | 20/6 | ✓ |
 | hợp điểm → **rổ ứng viên** | **+0,0153** | [+0,0063, +0,0256] | 12/1 | ✓ |
-| rải 1 → **rải 7** | **+0,1477** | [+0,1070, +0,1913] | 47/17 | ✓ |
 | bỏ VLM → **VLM cả rổ** | **+0,0356** | [+0,0091, +0,0659] | 18/7 | ✓ |
-| rải cố định 7 → **thích ứng bước 10** | **+0,0280** | [+0,0169, +0,0406] | 36/4 | ✓ |
 
-Cả năm sống sót trên tập chưa từng dùng để chọn gì.
+Cả bốn sống sót trên tập chưa từng dùng để chọn gì.
+
+⚠️ Hai quyết định về **rải** (rải 7 hơn rải 1 `+0,1477`; thích ứng hơn cố định `+0,0280`)
+cũng sống sót, nhưng **rải đã bị xoá** theo hướng cắt keyframe dày hơn — xem ⑦.
 
 ⚠️ VLM là **cú can thiệp mạnh và hiếm**, không phải bộ chỉnh êm: 85/110 câu nó không đụng
 tới. Lợi ích đến từ **18 thắng / 7 thua** — tỉ lệ 2,6 ăn 1. Với đề 35 câu thì kỳ vọng chỉ
@@ -336,6 +367,8 @@ trong khoảng rộng ~2,5 lần. Đừng chỉnh chữ số thứ ba; hãy mở
 | 1024 chiều thay 512 | Δ=−0,002, KTC chứa 0, tốn gấp đôi RAM |
 | Token 2 âm tiết cho BM25 tiếng Việt | trung tính tới hơi tệ |
 | Xếp hạng bằng HẠNG PHẦN TRĂM thay z-score | −0,033 — độ lớn điểm mang thông tin thật |
+| Đưa **OCR** vào prompt ⑤c | −0,010; hại đúng loại cần OCR (−0,032 · −0,072). VLM có giá trị vì **độc lập**; đếm trùng nguồn nhiễu thì mất phán đoán thị giác. *ASR thì có lợi +0,040* |
+| IDF trong-video cho OCR | lợi `vision+ocr` +0,007 nhưng giảm nửa `vision+asr`; tổng âm |
 | VLM nhân thay vì cộng · VLM chỉ sửa 20 hạng đầu | −0,017 · −0,020 |
 
 ---
@@ -366,12 +399,8 @@ Mỗi truy vấn là **một file `.txt`**, tên file thành `query_id`. Loại 
 chứa `trake`/`qa`/`kis` → nội dung có `E1:`/`E2:` → còn lại là KIS.
 
 ```bash
-modal run scripts/run.py --dir queries --out submission --spread 0
+modal run scripts/run.py --dir queries --out submission
 ```
-
-🔴 **`--spread 0` phải gõ tay** — `0` là chế độ **thích ứng**, tốt nhất đo được. Mặc định
-`1` (nộp thuần keyframe) mất **63% điểm** và sẽ in cảnh báo đầy màn hình. `--spread 7` là
-bản cố định, kém thích ứng ~0,028.
 
 ```bash
 modal run scripts/run.py --vlm-top-k 0    # bỏ ⑤c, tiết kiệm ~4 phút
@@ -383,8 +412,8 @@ modal run scripts/eval/make_queries.py    # sinh bộ eval giữ kín mới
 **Đầu ra** `submission/{id}.csv`; cột thứ hai trở đi là **`frame_idx`** — số khung THẬT,
 không phải `n`. Đo được 0/173.426 khung có hai giá trị bằng nhau.
 
-Ngân sách: **~3,3 phút cho 35 câu** (~2% của 2h30). Phí cố định 80 giây nạp chỉ mục trả
-**mỗi lần gọi** — gom lô.
+Ngân sách: **~3,5 phút cho 35 câu** không bật ⑤c, **~7 phút** có bật (~5% của 2h30). Phí
+cố định 80 giây nạp chỉ mục trả **mỗi lần gọi** — gom lô.
 
 ---
 
@@ -393,7 +422,7 @@ Ngân sách: **~3,3 phút cho 35 câu** (~2% của 2h30). Phí cố định 80 g
 | # | việc | vì sao |
 |---|---|---|
 | 1 | 🔴 **Thu hẹp `R@1 ↔ R@100`** | dư địa **+0,2422**. Đã loại trừ: hạng phần trăm (−0,033), nhân thay cộng (−0,017), VLM chỉ sửa 20 đầu (−0,020), phá hoà đồng thuận (0 câu đổi). **Cách hợp điểm không phải chỗ** — phải thêm tín hiệu mới |
-| 2 | 🔴 **Chữa `vision+ocr`** | loại thấp điểm nhất trên **cả hai** bộ eval, dù OCR là nguồn đầy đủ nhất |
+| 2 | 🔴 **Mạnh hoá NGUỒN THỊ GIÁC đơn độc** | loại yếu nhất đổi theo bộ eval, nhưng câu **không có nguồn văn bản nào đỡ** luôn ở nhóm cuối. Trùng với việc #4 |
 | 3 | **Biết `p`** — tỉ lệ đề thật cần OCR/ASR | quyết trực tiếp δ ASR: `p > 61%` thì ×2 có lãi |
 | 4 | Hợp nhiều tháp nhúng | đánh đúng dư địa #1; ~$4,32/tháp + thời gian thi |
 | 5 | Bộ eval **QA** và **TRAKE** | ⑥ chưa có phép đo nào; λ mới có 6 câu, p=0,69 |

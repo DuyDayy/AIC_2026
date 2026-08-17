@@ -39,7 +39,7 @@ TẦNG NÀO CHẠY, VÀ ĐIỀU GÌ ĐÃ ĐO
     ⑤c bậc 2      VLM chấm P(khớp) trên CẢ RỔ — BẬT mặc định, trọng số 0,25
     ④ kbest       DP thứ tự thời gian, k-best mỗi video rồi sắp toàn cục; λ=0
     ⑥ đầu đọc     CHỈ đề Q&A: Qwen2.5-VL đọc khung + OCR + lời nói → sinh `answer`
-    ⑦ nộp         KHÔNG khử trùng; `--spread` quyết có rải khung vào khe hay không
+    ⑦ nộp         MỘT khung mỗi mốc (`frame_idx` thật); KHÔNG rải, KHÔNG khử trùng cảnh
 
 =============================================================================
 RỔ CHỌN AI VÀO VÒNG TRONG, RERANKER QUYẾT THỨ HẠNG
@@ -101,39 +101,34 @@ của chính nó**, nên các dải rải **lát kề nhau, không chồng lên 
 chỉ bỏ đi phần PHỦ mà không bỏ được phần TRÙNG nào — vì không còn phần trùng nào.
 
 =============================================================================
-VÌ SAO PHẢI RẢI KHUNG — ĐÁP ÁN KHÔNG PHẢI KEYFRAME BTC CẤP
+ĐÃ XOÁ PHÉP RẢI KHUNG — VÀ ĐIỀU KIỆN ĐỂ ĐIỀU ĐÓ ĐÚNG
 =============================================================================
 
-Thể lệ: *"khung hình ngữ nghĩa … KHÁC VỚI I-Frame là khung hình kỹ thuật … đã được
-cung cấp cho các đội thi"*, và đoạn đáp án *"thường rất ngắn, thông thường là dưới 10
-frame"*. Ví dụ KIS trong thể lệ: `[500, 510]` = 11 khung.
+⑦ nộp **một khung mỗi mốc**: đúng `frame_idx` của keyframe. Không rải khung vào khe.
 
-[ĐO] xác suất một cửa sổ `L=9` đặt ngẫu nhiên **chứa sẵn** một keyframe của ta:
-**23,5%**. Đó là **trần cứng** của cách nộp thuần keyframe, bất kể truy xuất tốt đến đâu.
+Trước đây có rải, và nó **mua rất nhiều điểm** ở mật độ keyframe hiện tại:
 
-[ĐO] Final trên 226 truy vấn, mốc thật lệch ngẫu nhiên trong khe, ngân sách 100:
+    [ĐO] bộ giữ kín 110 câu:  rải 1 → 0,0857   ·   rải thích ứng → 0,2334
+    tức bỏ rải mất ~63% điểm
 
-    rải   số mốc     L=9      L=11     L=15     L=21
-      1      100   0,1091   0,1296   0,1750   0,2354   ← nộp thuần keyframe
-      5       20   0,2990   0,3386   0,3789   0,4134
-      7       14   0,3241   0,3460   0,3701   0,3906
-      9       11   0,3274   0,3410   0,3588   0,3769
+Nguyên nhân là **hình học**, không phải xếp hạng: keyframe cách nhau trung vị **48 khung**
+còn cửa sổ đáp án thể lệ chỉ ~10 khung, nên xác suất một cửa sổ chứa sẵn keyframe của ta
+chỉ **23,5%** — trần cứng bất kể truy xuất tốt đến đâu.
 
-**Nộp thuần keyframe kém 3 lần**, và trên bài nộp thật của 100 truy vấn gán nhãn tay:
+🔴 **XOÁ RẢI CHỈ ĐÚNG SAU KHI BỘ KEYFRAME DÀY HƠN CÓ THẬT.** Trần đó là hàm của mật độ:
 
-    rải 7 → 0,4477        rải 1 → 0,1366        (−3,3 lần)
+    khe keyframe    trần ở L=9    trần ở L=11
+    48 (hiện tại)       23,5%         28,6%
+    24 (×2 dày)         45,7%         53,1%
+    12 (×4 dày)         73,5%         81,1%
+    10 (mỗi khung thứ 10)  90,0%      100%
 
-🔴 **Mặc định hiện tại là `--spread 1` THEO YÊU CẦU.** Đây không phải vấn đề xếp hạng nên
-reranker không cứu được: trần hình học của bài nộp thuần keyframe là ~23,5%, mà rải 1 đã
-ở 0,1366 — dùng 58% của trần. Bản rải 7 ở 0,4477, **cao gấp đôi cái trần ấy**.
-Bật lại bằng `--spread 7`.
+Ở ×4 dày, trần lên 73,5% và rải thành gần như vô nghĩa — mỗi keyframe tự phủ cửa sổ của
+nó. Đó là lý do phép rải bị xoá: kế hoạch cắt dày hơn **hoá giải đúng cái trần** mà rải
+sinh ra để vượt.
 
-Trong vùng còn rải, `6` tới `9` **không phân biệt được** (0,4464–0,4488; `6` hơn `7` đúng
-+0,0021 với KTC95 [−0,0092, +0,0136]). Chọn 7 vì nằm giữa vùng phẳng.
-
-⚠️ Lý lẽ cũ ở đây SAI và đã bị thay: tôi từng phá hoà 7/9 bằng hai mô hình `chặt ±4` và
-`cửa sổ khe`, nhưng **cả hai đều ôm keyframe ground truth**, nên chúng tự thưởng cho
-phương án phát ra nhiều keyframe hơn (14 so với 11). Chỉ mô hình **mốc lệch** so được.
+Phân tích trần vẫn ở `src/submission/coverage.py`, nay là **mã phân tích, không nằm trên
+đường chạy** — nó là tài liệu định lượng biện minh cho việc cắt dày hơn.
 
 Bài nộp ghi **`frame_idx`** — số khung thật. `n` chỉ là số thứ tự keyframe, và đo được
 0/173.426 khung có hai giá trị bằng nhau.
@@ -350,6 +345,21 @@ def score_frames_vlm(jobs: list[dict]) -> list[float]:
     out = []
     for j in jobs:
         im = Image.open(_io.BytesIO(b64.b64decode(j["image_b64"]))).convert("RGB")
+        # ⚠️ ĐÃ THỬ đưa kèm OCR + lời nói vào prompt (như ⑥ vẫn làm) — HOÀN NGUYÊN.
+        # Lý do nghe rất thuyết phục: ảnh gửi 640px nên chữ lower-third khó đọc, vậy
+        # với câu cần chữ thì VLM đang chấm bằng thông tin nó không có.
+        # [ĐO] GT v2, 100 câu, L=11: 0,4408 → 0,4304. Và theo loại đề thì NGƯỢC hẳn
+        # kỳ vọng — nó hại đúng loại cần OCR:
+        #     vision          0,2800 → 0,2960   (+0,016)
+        #     vision+ocr      0,5360 → 0,5040   (−0,032)
+        #     vision+asr      0,5920 → 0,6320   (+0,040)
+        #     vision+ocr+asr  0,6720 → 0,6000   (−0,072)
+        # Cơ chế: **giá trị của VLM là làm tín hiệu ĐỘC LẬP.** Nguồn OCR ở ② đã khai
+        # thác chính văn bản đó; đưa lại vào đây khiến hai tầng ĐẾM TRÙNG một nguồn
+        # nhiễu (ticker tin khác, OCR sai), đổi lại mất phán đoán thị giác độc lập —
+        # thứ duy nhất ⑤c đóng góp. ASR ngược lại có lợi (+0,040) vì nguồn ASR ở ②
+        # chấm theo cửa sổ ±5s khá thô, nên lời nói ở đây vẫn thêm thông tin mới.
+        # Muốn thử lại thì chỉ đưa ASR, đừng đưa OCR.
         msg = [{"role": "user", "content": [
             {"type": "image"},
             {"type": "text", "text":
@@ -481,7 +491,7 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         spread: int = 1, vlm_top_k: int = VLM_TOP_K):
+         vlm_top_k: int = VLM_TOP_K):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
@@ -490,7 +500,6 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.retrieval.probe import build_probes, declarativize
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
-    from src.submission.coverage import adaptive_m, spread_in_window
     from src.submission.kbest import k_best_alignments
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
@@ -498,21 +507,6 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         load_frame_ms, load_object_text, load_ocr_text, load_shot_bounds,
         load_video_last_frame,
     )
-
-    # ─── CHỐT AN TOÀN: `--spread 1` là lỗi tốn kém nhất có thể mắc ────────────
-    # [ĐO] bộ giữ kín 110 câu: rải 1 → 0,0857 · rải 7 → 0,2334 (Δ=+0,1477, KTC95
-    # [+0,1070,+0,1913], thắng 47 thua 17). Quên gõ `--spread 7` là mất 63% điểm.
-    # Không tự đổi mặc định — đó là quyết định của người dùng — nhưng KHÔNG để nó
-    # trôi qua im lặng.
-    if spread == 1:
-        print("\n" + "!" * 76)
-        print("!!  CẢNH BÁO: --spread 1 (nộp THUẦN keyframe, KHÔNG rải khung vào khe)")
-        print("!!  [ĐO trên bộ giữ kín 110 câu]  rải 1 = 0,0857   rải 7 = 0,2334")
-        print("!!  Mất khoảng 63% điểm. Trần hình học của nộp thuần keyframe là ~23,5%")
-        print("!!  vì khe giữa hai keyframe trung vị 48 khung còn cửa sổ đáp án ~10.")
-        print("!!  Cố ý thì bỏ qua. Nếu KHÔNG cố ý:  thêm  --spread 0  (thích ứng,")
-        print("!!  tốt nhất đo được) hoặc  --spread 7  (cố định)")
-        print("!" * 76 + "\n", flush=True)
 
     qdir, odir = Path(dir), Path(out)
     if not qdir.is_dir():
@@ -713,6 +707,27 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         q["S"] = combine(q)
     lap("⑤b mã hoá + hợp")
 
+    # Chứng cứ CHỮ thô, nạp MỘT LẦN dùng chung cho ⑤c và ⑥. Trước đây chỉ ⑥ nạp, nên
+    # ⑤c chấm khung mà không thấy chữ trên màn — bất nhất trong chính hệ.
+    def _load_raw_text():
+        o, a = {}, {}
+        with open("data/OCR/ocr.jsonl", encoding="utf-8") as fh:
+            for line in fh:
+                d = json.loads(line)
+                t = (d.get("text_normalized") or d.get("text_raw") or "").strip()
+                if t:
+                    o[(d["video_id"], int(d["n"]))] = t
+        for f in Path("data/ASR").glob("*/results/*.json"):
+            d = json.loads(f.read_text(encoding="utf-8"))
+            a[d["video_id"]] = [(x["start_ms"], x["end_ms"], x["text"])
+                                for x in d.get("segments", [])]
+        return o, a
+
+    vlm_ocr: dict[tuple[str, int], str] = {}
+    vlm_asr: dict[str, list] = {}
+    if any(q["kind"] == "qa" for q in queries):
+        vlm_ocr, vlm_asr = _load_raw_text()
+
     # ⑤c bậc 2 — VLM chấm top-K SAU bậc 1. Thác nước: bậc 1 rẻ quét cả rổ, bậc 2 đắt
     # chỉ chấm phần đầu bậc 1 đã lọc.
     if rerank and vlm_top_k > 0:
@@ -765,17 +780,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     # ⑥ đầu đọc QA — chỉ cho đề `qa`, một lượt suy luận trên khung top-1 mỗi đề
     qa_jobs, qa_of = [], {}
     if any(q["kind"] == "qa" for q in queries):
-        ocr_raw, asr_raw = {}, {}
-        with open("data/OCR/ocr.jsonl", encoding="utf-8") as fh:
-            for line in fh:
-                d = json.loads(line)
-                t = (d.get("text_normalized") or d.get("text_raw") or "").strip()
-                if t:
-                    ocr_raw[(d["video_id"], int(d["n"]))] = t
-        for f in Path("data/ASR").glob("*/results/*.json"):
-            d = json.loads(f.read_text(encoding="utf-8"))
-            asr_raw[d["video_id"]] = [(s_["start_ms"], s_["end_ms"], s_["text"])
-                                      for s_ in d.get("segments", [])]
+        ocr_raw, asr_raw = (vlm_ocr, vlm_asr) if vlm_ocr else _load_raw_text()
         for q in queries:
             if q["kind"] != "qa":
                 continue
@@ -859,28 +864,18 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         else:
             moments = [r for _s, _v, _f, r in scored]
             # KHÔNG khử trùng cảnh — đo được nó hại 4,3pp, xem docstring.
-            # Hai mốc KỀ NHAU rải chạm nhau ở điểm giữa khe, nên có thể phát ra
-            # cùng một (video, frame). Nộp trùng là **phí slot**: hàm chấm lấy
-            # `R@k = max`, hai dòng giống hệt mua đúng MỘT cơ hội.
-            # [ĐO] không lọc: 266/10.000 dòng trùng (2,7%), tệ nhất 8 dòng một bài,
-            # chỉ 7/100 bài sạch. `writer.validate_all` bắt được lỗi này.
+            # MỘT khung mỗi mốc — `frame_idx` thật của keyframe. Không rải.
+            # Vẫn khử trùng `(video, frame)`: hàm chấm lấy `R@k = max`, hai dòng giống
+            # hệt mua đúng MỘT cơ hội. Sau khi bỏ rải thì trùng gần như không còn xảy
+            # ra, nhưng bỏ phép kiểm là mở đường cho nó quay lại lặng lẽ.
             lines, emitted = [], set()
             for r in moments:
                 vid, _ = idx.ids[r]
-                wlo, whi = win[r]
-                c = int(FI[r])
-                # `spread = 0` ⟹ THÍCH ỨNG: cố định BƯỚC ~10 khung rồi suy ra m.
-                # Cửa sổ đo được p10=28 · p50=43 · p90=88 nên số khung cố định hoặc
-                # phủ thừa chỗ hẹp hoặc hụt chỗ rộng. Xem `coverage.adaptive_m`.
-                m = adaptive_m(min(wlo, c), max(whi, c)) if spread <= 0 else spread
-                for f in spread_in_window(c, min(wlo, c), max(whi, c), m):
-                    k = (vid, int(f))
-                    if k in emitted:
-                        continue
-                    emitted.add(k)
-                    lines.append([vid, int(f)])
-                    if len(lines) >= top_k:
-                        break
+                k = (vid, int(FI[r]))
+                if k in emitted:
+                    continue
+                emitted.add(k)
+                lines.append([vid, int(FI[r])])
                 if len(lines) >= top_k:
                     break
         if q["kind"] == "qa":
@@ -891,7 +886,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         p.write_text("\n".join(",".join(str(x) for x in r) for r in lines) + "\n",
                      encoding="utf-8")
         report.append({"id": q["id"], "kind": q["kind"], "n_probes": len(q["probes"]),
-                       "n_answers": len(lines), "spread": spread if q["kind"] != "trake" else 1,
+                       "n_answers": len(lines),
                        "answer": q.get("answer"), "top1": lines[0] if lines else None})
         print(f"  {q['id']:<20} {q['kind']:<6} {len(lines):>3} đáp án → {p}")
     # ── LƯU ĐIỂM TRUNG GIAN CỦA ⑤ ───────────────────────────────────────────
@@ -921,7 +916,6 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
 
     (odir / "_report.json").write_text(
         json.dumps({"weights": W, "dim": idx.dim, "rerank": bool(rerank),
-                    "spread": spread,
                     "pool_per_source": POOL_PER_SOURCE, "pool_cap": POOL_CAP,
                     "rerank_weights": RERANK_WEIGHTS,
                     "vlm_top_k": vlm_top_k if rerank else 0,
