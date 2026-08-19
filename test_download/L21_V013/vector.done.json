@@ -1,0 +1,28 @@
+{
+  "candidate_sha256": "efc4c27e5ec550241f640059de368e040da2272f79d067351125c7b2efbed6a1",
+  "config_fingerprint": "153c25444ed9265685db50cfc717bbc0b6a3b9072bce497a5972c37a8ef4fef5",
+  "encode_fps": 12.40664563902136,
+  "encode_seconds": 271.46741335200005,
+  "encoder_fingerprint": "1e31bf493e5615a5994a0142804b548827654d6d94df206eca9336388f444414",
+  "gpu_type": "A10",
+  "image_batch_size": 32,
+  "integrity": {
+    "dtype": "float16",
+    "failures": [],
+    "norm": {
+      "max": 1.0002470016479492,
+      "mean": 0.9999973773956299,
+      "min": 0.9997430443763733
+    },
+    "shape": [
+      3368,
+      1024
+    ],
+    "status": "pass"
+  },
+  "metadata_sha256": "afe978f3d38e13abb6877eacd6600868b4848f315fa55f7d39940375f79d8e0c",
+  "rows": 3368,
+  "schema_version": "framme-extracting/v1",
+  "vector_sha256": "9b26dfb12a77499075f9e7d45384a6cfe2317e9003f30c750e4391d3290c1183",
+  "video_id": "L21_V013"
+}

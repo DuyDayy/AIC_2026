@@ -1,0 +1,341 @@
+Cleaning up corrupted local files...
+Switching to degeabeo to download properly...
+Active profile: degeabeo
+Active environment: main
+Downloading L21_V013
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V014
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V016
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V019
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V021
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V024
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V025
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V028
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L21_V030
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V002
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V003
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V005
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V007
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V011
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V019
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V022
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V023
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V024
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V025
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V026
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V027
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V028
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V029
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L22_V031
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V004
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V012
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V015
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V017
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V020
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V029
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V035
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V038
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V042
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V044
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V047
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V059
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V062
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V064
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V073
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Downloading L25_V082
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Switching to overfiters to upload...
+Active profile: overfiters
+Active environment: main
+Uploading L21_V013
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V013' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V013'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V013' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V013'
+Uploading L21_V014
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V014' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V014'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V014' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V014'
+Uploading L21_V016
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V016' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V016'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V016' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V016'
+Uploading L21_V019
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V019' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V019'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V019' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V019'
+Uploading L21_V021
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V021' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V021'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V021' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V021'
+Uploading L21_V024
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V024' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V024'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V024' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V024'
+Uploading L21_V025
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V025' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V025'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V025' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V025'
+Uploading L21_V028
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V028' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V028'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V028' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V028'
+Uploading L21_V030
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L21_V030' to 
+'/runs/l21-l25-prod-v1/candidates/L21_V030'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L21_V030' to 
+'/runs/l21-l25-prod-v1/vectors/L21_V030'
+Uploading L22_V002
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V002' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V002'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V002' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V002'
+Uploading L22_V003
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V003' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V003'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V003' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V003'
+Uploading L22_V005
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V005' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V005'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V005' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V005'
+Uploading L22_V007
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V007' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V007'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V007' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V007'
+Uploading L22_V011
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V011' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V011'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V011' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V011'
+Uploading L22_V019
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V019' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V019'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V019' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V019'
+Uploading L22_V022
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V022' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V022'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V022' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V022'
+Uploading L22_V023
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V023' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V023'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V023' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V023'
+Uploading L22_V024
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V024' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V024'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V024' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V024'
+Uploading L22_V025
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V025' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V025'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V025' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V025'
+Uploading L22_V026
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V026' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V026'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V026' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V026'
+Uploading L22_V027
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V027' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V027'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V027' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V027'
+Uploading L22_V028
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V028' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V028'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V028' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V028'
+Uploading L22_V029
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V029' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V029'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V029' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V029'
+Uploading L22_V031
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L22_V031' to 
+'/runs/l21-l25-prod-v1/candidates/L22_V031'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L22_V031' to 
+'/runs/l21-l25-prod-v1/vectors/L22_V031'
+Uploading L25_V004
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V004' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V004'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V004' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V004'
+Uploading L25_V012
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V012' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V012'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V012' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V012'
+Uploading L25_V015
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V015' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V015'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V015' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V015'
+Uploading L25_V017
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V017' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V017'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V017' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V017'
+Uploading L25_V020
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V020' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V020'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V020' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V020'
+Uploading L25_V029
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V029' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V029'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V029' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V029'
+Uploading L25_V035
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V035' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V035'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V035' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V035'
+Uploading L25_V038
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V038' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V038'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V038' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V038'
+Uploading L25_V042
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V042' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V042'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V042' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V042'
+Uploading L25_V044
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V044' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V044'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V044' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V044'
+Uploading L25_V047
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V047' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V047'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V047' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V047'
+Uploading L25_V059
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V059' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V059'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V059' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V059'
+Uploading L25_V062
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V062' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V062'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V062' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V062'
+Uploading L25_V064
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V064' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V064'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V064' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V064'
+Uploading L25_V073
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V073' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V073'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V073' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V073'
+Uploading L25_V082
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/candidates/L25_V082' to 
+'/runs/l21-l25-prod-v1/candidates/L25_V082'
+✓ Uploaded directory 'export_for_fusion/l21-l25-prod-v1/vectors/L25_V082' to 
+'/runs/l21-l25-prod-v1/vectors/L25_V082'
+Starting app...
+Traceback (most recent call last):
+  File "/Users/nguyennhatduy/Documents/coding/multimodal_for_aic_hcmc/scripts/frame_extracting/resume_production.py", line 40, in <module>
+    main()
+    ~~~~^^
+  File "/Users/nguyennhatduy/Documents/coding/multimodal_for_aic_hcmc/scripts/frame_extracting/resume_production.py", line 32, in main
+    call = function.spawn(args.run_id, args.image_batch_size, args.allow_reencode)
+  File "/Users/nguyennhatduy/Documents/coding/multimodal_for_aic_hcmc/.venv/lib/python3.14/site-packages/modal/_object.py", line 45, in wrapped
+    await self.hydrate()
+  File "/Users/nguyennhatduy/Documents/coding/multimodal_for_aic_hcmc/.venv/lib/python3.14/site-packages/modal/_functions.py", line 1274, in _load_remote
+    raise NotFoundError(
+        f"Lookup failed for Function '{name}' from the '{app_name}' app{env_context}: {exc}."
+    ) from None
+modal.exception.NotFoundError: Lookup failed for Function 'resume_production_remote' from the 'aic-frame-extracting' app: App 'aic-frame-extracting' not found in environment 'main'.

@@ -1,0 +1,202 @@
+   encode 63/216 videos · 283,915/627,000 rows · 63 reused
+   encode 64/216 videos · 287,418/627,000 rows · 64 reused
+   encode 65/216 videos · 291,328/627,000 rows · 65 reused
+   encode 66/216 videos · 294,863/627,000 rows · 66 reused
+   encode 67/216 videos · 298,350/627,000 rows · 67 reused
+   encode 68/216 videos · 301,838/627,000 rows · 68 reused
+   encode 69/216 videos · 305,288/627,000 rows · 69 reused
+   encode 70/216 videos · 308,774/627,000 rows · 70 reused
+   encode 71/216 videos · 312,224/627,000 rows · 71 reused
+   encode 72/216 videos · 315,641/627,000 rows · 72 reused
+   encode 73/216 videos · 319,109/627,000 rows · 73 reused
+   encode 74/216 videos · 322,469/627,000 rows · 74 reused
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L22_V026'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L21_V014'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L22_V028'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L21_V013'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L22_V027'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L22_V025'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L25_V073'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L25_V038'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L22_V022'
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_app.py", line 455, in encode_video
+    atomic_save_npy(vector_path, matrix)
+  File "/root/src/frame_extracting/storage.py", line 84, in atomic_save_npy
+    fd, temporary = _atomic_path(target)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/frame_extracting/storage.py", line 23, in _atomic_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/local/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/work/runs/l21-l25-prod-v1/vectors/L25_V042'

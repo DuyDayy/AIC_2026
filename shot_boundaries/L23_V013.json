@@ -1,0 +1,174 @@
+{
+  "video": {
+    "video_id": "L23_V013",
+    "path": "D:\\AIC\\vscode\\batch1_dataset\\Videos_L23_a\\video\\L23_V013.mp4",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "pixel_format": "yuv420p",
+    "fps": 25.0,
+    "fps_rational": "25/1",
+    "frame_count": 9286,
+    "duration_seconds": 371.496054,
+    "time_base": "1/12800"
+  },
+  "threshold": 0.5,
+  "shots": [
+    {
+      "shot_id": 1,
+      "start_frame": 0,
+      "end_frame": 592,
+      "boundary_score": 0.525998055934906
+    },
+    {
+      "shot_id": 2,
+      "start_frame": 593,
+      "end_frame": 847,
+      "boundary_score": 0.9626668691635132
+    },
+    {
+      "shot_id": 3,
+      "start_frame": 848,
+      "end_frame": 1070,
+      "boundary_score": 0.9861698150634766
+    },
+    {
+      "shot_id": 4,
+      "start_frame": 1071,
+      "end_frame": 1476,
+      "boundary_score": 0.9738622903823853
+    },
+    {
+      "shot_id": 5,
+      "start_frame": 1477,
+      "end_frame": 1978,
+      "boundary_score": 0.9897562861442566
+    },
+    {
+      "shot_id": 6,
+      "start_frame": 1979,
+      "end_frame": 2317,
+      "boundary_score": 0.984171450138092
+    },
+    {
+      "shot_id": 7,
+      "start_frame": 2318,
+      "end_frame": 2706,
+      "boundary_score": 0.9589687585830688
+    },
+    {
+      "shot_id": 8,
+      "start_frame": 2707,
+      "end_frame": 2987,
+      "boundary_score": 0.9365091323852539
+    },
+    {
+      "shot_id": 9,
+      "start_frame": 2988,
+      "end_frame": 3773,
+      "boundary_score": 0.5053092837333679
+    },
+    {
+      "shot_id": 10,
+      "start_frame": 3774,
+      "end_frame": 3976,
+      "boundary_score": 0.5110954642295837
+    },
+    {
+      "shot_id": 11,
+      "start_frame": 3977,
+      "end_frame": 4071,
+      "boundary_score": 0.5329642295837402
+    },
+    {
+      "shot_id": 12,
+      "start_frame": 4072,
+      "end_frame": 4527,
+      "boundary_score": 0.9725187420845032
+    },
+    {
+      "shot_id": 13,
+      "start_frame": 4528,
+      "end_frame": 4816,
+      "boundary_score": 0.8963450193405151
+    },
+    {
+      "shot_id": 14,
+      "start_frame": 4817,
+      "end_frame": 5059,
+      "boundary_score": 0.8851532340049744
+    },
+    {
+      "shot_id": 15,
+      "start_frame": 5060,
+      "end_frame": 5391,
+      "boundary_score": 0.9075363278388977
+    },
+    {
+      "shot_id": 16,
+      "start_frame": 5392,
+      "end_frame": 5568,
+      "boundary_score": 0.959071159362793
+    },
+    {
+      "shot_id": 17,
+      "start_frame": 5569,
+      "end_frame": 6348,
+      "boundary_score": 0.9306795001029968
+    },
+    {
+      "shot_id": 18,
+      "start_frame": 6349,
+      "end_frame": 6351,
+      "boundary_score": 0.7712774872779846
+    },
+    {
+      "shot_id": 19,
+      "start_frame": 6352,
+      "end_frame": 6998,
+      "boundary_score": 0.9920980930328369
+    },
+    {
+      "shot_id": 20,
+      "start_frame": 6999,
+      "end_frame": 7333,
+      "boundary_score": 0.8985999822616577
+    },
+    {
+      "shot_id": 21,
+      "start_frame": 7334,
+      "end_frame": 7657,
+      "boundary_score": 0.9913972616195679
+    },
+    {
+      "shot_id": 22,
+      "start_frame": 7658,
+      "end_frame": 8030,
+      "boundary_score": 0.9930444359779358
+    },
+    {
+      "shot_id": 23,
+      "start_frame": 8031,
+      "end_frame": 8237,
+      "boundary_score": 0.9963222742080688
+    },
+    {
+      "shot_id": 24,
+      "start_frame": 8238,
+      "end_frame": 8919,
+      "boundary_score": 0.9839956164360046
+    },
+    {
+      "shot_id": 25,
+      "start_frame": 8920,
+      "end_frame": 9190,
+      "boundary_score": 0.9967352747917175
+    },
+    {
+      "shot_id": 26,
+      "start_frame": 9191,
+      "end_frame": 9285,
+      "boundary_score": 0.0016605083364993334
+    }
+  ]
+}
