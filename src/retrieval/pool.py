@@ -33,7 +33,7 @@ import numpy as np
 
 from src.retrieval.sources import SourceScores
 
-__all__ = ["PoolResult", "pool_mask", "union_pool"]
+__all__ = ["PoolResult", "fused_pool", "pool_mask", "union_pool"]
 
 
 class PoolResult:
@@ -185,3 +185,78 @@ def pool_mask(rows: np.ndarray, n_frames: int) -> np.ndarray:
     m = np.zeros(n_frames, dtype=bool)
     m[rows] = True
     return m
+
+
+def fused_pool(base: np.ndarray, cap: int, *,
+               ranges: Mapping[str, tuple[int, int]] | None = None,
+               per_video: int | None = None) -> np.ndarray:
+    """
+    Rổ = top-`cap` của điểm ĐÃ HỢP. KHÔNG có đề cử riêng theo thành phần.
+
+    Vì sao đổi, và vì sao đổi được BÂY GIỜ
+    --------------------------------------
+    Đề cử riêng (`union_pool`) sinh ra để chữa một khuyết tật CỦA PHÉP HỢP CŨ, chép
+    nguyên từ đầu file này: thị giác mang hệ số `1,0` còn OCR/ASR mang `0,09–0,13`, nên
+    khung chỉ có bằng chứng **thuần OCR** không bao giờ nổi lên trong điểm hợp. Cho mỗi
+    nguồn một hạn ngạch riêng là cách vòng qua sự mất cân ấy.
+
+    Sự mất cân đó **không còn**. ③ nay hợp bằng RRF hai tầng với `alpha` chia ĐỀU —
+    OCR nắm đúng 1/3 lá phiếu, ngang thị giác — và RRF cộng theo HẠNG nên thang điểm
+    thô của từng nguồn không còn ảnh hưởng. Một khung đứng #1 trong bảng OCR nay nổi
+    lên **trong chính điểm hợp**, đúng thứ mà `union_pool` phải đi vòng để đạt. Giữ
+    lại hạn ngạch riêng lúc này là chữa một bệnh đã khỏi, và cái giá thì vẫn còn:
+
+      · rổ **không còn là top-K của bất cứ thứ gì** — nó là hợp của 7 danh sách, nên
+        `cap` cắt vào nó theo một trật tự khác với trật tự đưa nó vào (chính là chỗ
+        `POOL_CAP=200` cắt câm 25% rổ mà không ai thấy)
+      · một nguồn yếu vẫn tiêu đủ 40 suất **bất kể** nó yếu tới đâu — hạn ngạch không
+        biết tự nhường
+      · số ứng viên nở theo SỐ RUN, không theo nhu cầu: thêm một bản mở rộng là thêm
+        40 suất, dù bản ấy gần trùng bản gốc
+
+    `per_video` GIỮ LẠI và không phải ngoại lệ của quy tắc trên: nó chặn một *video*
+    chiếm rổ, không cho một *thành phần* hạn ngạch riêng.
+
+    Args:
+        base: điểm đã hợp. `(n,)`, hoặc `(n_probe, n)` thì gộp qua mọi probe bằng `max`
+            — với TRAKE, khung chỉ hợp cho mốc thứ ba vẫn phải được giữ.
+        cap: số ứng viên tối đa.
+
+    Returns:
+        Chỉ số hàng, **sắp tăng dần** (đường chạy dưới nó giả định thế).
+    """
+    if cap < 1:
+        raise ValueError(f"cap phải ≥ 1, nhận {cap}")
+    base = np.asarray(base, dtype=np.float32)
+    if base.ndim == 2:
+        base = base.max(axis=0)
+    elif base.ndim != 1:
+        raise ValueError(f"`base` phải 1 hoặc 2 chiều, nhận {base.ndim}")
+    n = base.shape[0]
+    if per_video is not None:
+        if per_video < 1:
+            raise ValueError(f"per_video phải ≥ 1, nhận {per_video}")
+        if ranges is None:
+            raise ValueError("có `per_video` thì phải có `ranges`")
+
+    # `kind="stable"` để hai lần chạy cho cùng một bài nộp khi điểm hoà.
+    order = np.argsort(-base, kind="stable")
+    if per_video is None:
+        rows = order[:cap]
+    else:
+        vid_of = np.full(n, -1, dtype=np.int32)
+        for i, (_v, (lo, hi)) in enumerate(sorted(ranges.items())):   # type: ignore[union-attr]
+            vid_of[lo:hi] = i
+        cnt: dict[int, int] = {}
+        chosen: list[int] = []
+        for r in order.tolist():
+            b = int(vid_of[r])
+            if cnt.get(b, 0) >= per_video:
+                continue
+            cnt[b] = cnt.get(b, 0) + 1
+            chosen.append(r)
+            if len(chosen) >= cap:
+                break
+        rows = np.asarray(chosen, dtype=np.int64)
+    rows = np.sort(rows.astype(np.int64))
+    return rows

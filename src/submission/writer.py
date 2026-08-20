@@ -342,3 +342,212 @@ def from_ranked_answers(
         n_moments=n_moments,
         scores=tuple(r.score for r in ranked),
     )
+
+
+# ============================================================
+# ĐỊNH DẠNG CHÍNH THỨC AIC 2026 — CSV mỗi truy vấn, đóng gói .zip
+# ============================================================
+#
+# Nguồn: "Hướng dẫn nộp bài sơ tuyển". Mẫu đã công bố, nên phần `build_payload`
+# (JSON tạm) ở trên KHÔNG còn là đường nộp — nó chỉ còn dùng cho chẩn đoán nội bộ.
+#
+# Toàn bộ mục này tồn tại vì cùng một lý do với validator ở đầu file: mọi lỗi định
+# dạng ở đây đều là lỗi CÂM. File vẫn ghi ra, vẫn mở được bằng Notepad, vẫn trông
+# đúng — và điểm về 0 vì bộ chấm tách cột ra khác thứ ta nghĩ.
+
+import csv as _csv
+import io as _io
+import re as _re
+import zipfile as _zipfile
+
+#: Thể lệ: "Answer (Q&A) có độ dài tối đa 100 ký tự".
+MAX_ANSWER_CHARS: int = 100
+
+#: Thư mục BẮT BUỘC nằm trong file zip. Thể lệ in đậm: "PHẢI có thư mục submission
+#: bên trong file zip · KHÔNG nén trực tiếp các file CSV".
+SUBMISSION_DIRNAME: str = "submission"
+
+#: "Khuyến cáo: Tên file zip chỉ nên bao gồm các ký tự chữ hoặc số".
+_SAFE_ZIP_NAME = _re.compile(r"^[A-Za-z0-9_]+$")
+
+#: Hậu tố quy định loại truy vấn, lấy từ TÊN FILE đề bài (`query-3-qa.txt` ⟹ qa).
+SUFFIX_TO_TYPE: dict[str, TaskType] = {"kis": "kis", "qa": "qa", "trake": "trake"}
+
+
+def task_type_from_filename(stem: str) -> TaskType:
+    """
+    `query-4-trake` → `"trake"`. Quy ước tên file là thứ DUY NHẤT nói loại truy vấn.
+
+    Khớp bằng ĐUÔI, không bằng `in`: `"qa" in "query-1-kis"` là **True** (chữ `q`
+    của `query`… không, nhưng `"kis" in "query-2-kis-qa-follow"` thì thật sự nhập
+    nhằng). Thể lệ nói "hậu tố", nên ta đọc đúng hậu tố sau dấu `-` cuối cùng.
+    """
+    tail = stem.rsplit("-", 1)[-1].strip().lower()
+    if tail not in SUFFIX_TO_TYPE:
+        raise SubmissionError(
+            f"tên file {stem!r} không kết thúc bằng hậu tố hợp lệ "
+            f"({'/'.join(SUFFIX_TO_TYPE)}) — không xác định được loại truy vấn"
+        )
+    return SUFFIX_TO_TYPE[tail]
+
+
+def clean_answer(answer: str) -> tuple[str, list[str]]:
+    """
+    Chuẩn đáp án Q&A về đúng thứ bộ chấm so khớp. Trả `(đáp án, các ghi chú)`.
+
+    Ba phép, mỗi phép chữa một lỗi CÂM khác nhau:
+
+    1. **Bỏ khoảng trắng đầu/cuối.** Thể lệ nói rõ hai điều cạnh nhau: "Khoảng trắng
+       đầu/cuối: Được giữ nguyên, không tự động trim" và "Answer sẽ được so sánh dưới
+       dạng chuỗi chính xác". Ghép lại: `" 5"` KHÁC `"5"` và bị chấm sai. Bộ chấm
+       không trim hộ, nên ta phải tự trim.
+    2. **Gộp xuống dòng thành khoảng trắng.** Xuống dòng trong ô là hợp lệ nếu có
+       ngoặc kép, nhưng nó không bao giờ là đáp án đúng — nó là dấu hiệu ⑥ trả ra
+       văn xuôi nhiều dòng.
+    3. **Cắt còn 100 ký tự.** CẮT chứ không NÉM: ném lúc ghi file là mất TOÀN BỘ bài
+       nộp vì một câu, trong khi cắt thì câu đó gần như chắc chắn đã sai sẵn (đáp án
+       đúng của bộ đề này là "5", "Năm người", "Màu đỏ" — chạm 100 ký tự nghĩa là ⑥
+       trả văn xuôi). Đổi một câu hỏng lấy 39 câu còn lại là đúng chiều.
+       Luôn kèm ghi chú, không bao giờ im lặng.
+    """
+    notes: list[str] = []
+    out = " ".join(answer.split())
+    if out != answer:
+        notes.append("đã bỏ khoảng trắng thừa/xuống dòng (bộ chấm KHÔNG tự trim)")
+    if len(out) > MAX_ANSWER_CHARS:
+        notes.append(f"đáp án {len(out)} ký tự > {MAX_ANSWER_CHARS} — ĐÃ CẮT")
+        out = out[:MAX_ANSWER_CHARS]
+    return out, notes
+
+
+def format_task_csv(submission: TaskSubmission) -> tuple[str, list[str]]:
+    """
+    Dựng nội dung CSV của MỘT truy vấn theo thể lệ. Trả `(nội dung, ghi chú)`.
+
+    Dùng `csv.writer` với `QUOTE_MINIMAL` chứ KHÔNG nối chuỗi bằng `","`. Đây không
+    phải chuyện gọn mã: `QUOTE_MINIMAL` cài đúng nguyên văn ba luật của thể lệ —
+    bọc ngoặc kép khi ô chứa dấu phẩy, khi chứa ngoặc kép (và nhân đôi ngoặc kép
+    bên trong), khi chứa xuống dòng; không bọc trong các trường hợp còn lại. Nối
+    tay bằng `","` thì đáp án `"Năm người, gồm nam và nữ"` biến thành HAI cột và cả
+    dòng lệch — đúng một trong "5 lỗi thường gặp nhất" mà thể lệ liệt kê.
+
+    `lineterminator="\\n"`: thể lệ nhận cả LF lẫn CRLF. Không header — thể lệ:
+    "File CSV bắt đầu trực tiếp bằng dữ liệu".
+    """
+    notes: list[str] = []
+    buf = _io.StringIO()
+    w = _csv.writer(buf, lineterminator="\n")   # QUOTE_MINIMAL là mặc định
+    for rank, (video_id, frames, answer) in enumerate(submission.answers, start=1):
+        if video_id.lower().endswith(".mp4"):
+            raise SubmissionError(
+                f"[{submission.task_id}] câu #{rank}: tên video {video_id!r} còn đuôi "
+                f".mp4 — thể lệ đòi 'L01_V028', không phải 'L01_V028.mp4'"
+            )
+        row: list[object] = [video_id, *(int(f) for f in frames)]
+        if submission.task_type == "qa":
+            a, n = clean_answer(answer or "")
+            notes += [f"[{submission.task_id}] {m}" for m in n]
+            if not a:
+                raise SubmissionError(
+                    f"[{submission.task_id}] câu #{rank}: đáp án Q&A rỗng sau khi "
+                    f"chuẩn hoá — nộp thiếu cột answer là 0 điểm"
+                )
+            row.append(a)
+        w.writerow(row)
+    return buf.getvalue(), notes
+
+
+def parse_task_csv(text: str, task_type: TaskType, n_moments: int) -> list[list[str]]:
+    """
+    Đọc NGƯỢC file CSV vừa ghi, bằng đúng `csv.reader` mà bộ chấm sẽ dùng.
+
+    Đây là phép kiểm mạnh nhất trong file này, và là phép duy nhất kiểm được thứ ta
+    thật sự quan tâm: **bộ chấm tách ra đúng số cột ta định không**. Mọi kiểm khác
+    chạy trên cấu trúc trong bộ nhớ; kiểm này chạy trên chuỗi byte sẽ nộp đi.
+    """
+    want = 1 + n_moments + (1 if task_type == "qa" else 0)
+    rows = [r for r in _csv.reader(_io.StringIO(text)) if r]
+    for i, r in enumerate(rows, start=1):
+        if len(r) != want:
+            raise SubmissionError(
+                f"dòng {i} tách ra {len(r)} cột, thể lệ đòi {want} "
+                f"({task_type}, N={n_moments}): {r!r}"
+            )
+        if not r[0] or r[0] != r[0].strip():
+            raise SubmissionError(f"dòng {i}: cột video {r[0]!r} rỗng hoặc dính khoảng trắng")
+        for c in r[1:1 + n_moments]:
+            if not c.lstrip("-").isdigit():
+                raise SubmissionError(
+                    f"dòng {i}: frame_id {c!r} không phải số nguyên thuần — "
+                    f"thể lệ: 'Frame ID sẽ được so sánh dưới dạng số nguyên'"
+                )
+        if task_type == "qa" and len(r[-1]) > MAX_ANSWER_CHARS:
+            raise SubmissionError(f"dòng {i}: đáp án {len(r[-1])} ký tự > {MAX_ANSWER_CHARS}")
+    return rows
+
+
+def write_task_csv(submission: TaskSubmission, out_dir: str | Path,
+                   *, budget: int = MAX_ANSWERS) -> tuple[Path, list[str]]:
+    """
+    Ghi `<out_dir>/<task_id>.csv` theo thể lệ, rồi ĐỌC LẠI để tự kiểm.
+
+    Tên file lấy thẳng `task_id`, vốn là `stem` của file đề (`query-1-kis.txt` ⟹
+    `query-1-kis.csv`). Thể lệ: "Tên file khớp với tên truy vấn".
+    """
+    validate_task(submission, budget=budget)
+    text, notes = format_task_csv(submission)
+    parse_task_csv(text, submission.task_type, submission.n_moments)   # tự kiểm
+    d = Path(out_dir)
+    d.mkdir(parents=True, exist_ok=True)
+    p = d / f"{submission.task_id}.csv"
+    # `newline=""` để Python không đổi `\n` thành `\r\n` lần thứ hai trên Windows.
+    with open(p, "w", encoding="utf-8", newline="") as fh:
+        fh.write(text)
+    return p, notes
+
+
+def pack_submission_zip(csv_dir: str | Path, zip_path: str | Path,
+                        *, expected: Iterable[str] | None = None) -> Path:
+    """
+    Nén các `.csv` thành `<zip>/submission/*.csv` đúng cấu trúc thể lệ đòi.
+
+    Hai điều hàm này cố ý làm khác `zip -r`:
+
+    · **Chỉ nhận `.csv`.** Thư mục đầu ra của `run.py` còn có `_report.json` và
+      `_rerank_scores.npz` (hàng chục MB). `zip -r` gói cả hai: một file lạ trong
+      `submission/` là rủi ro parse, còn npz thì biến bài nộp thành file khổng lồ
+      không lý do.
+    · **Tự tạo tiền tố `submission/`** thay vì trông chờ thư mục nguồn tên đúng.
+      "Thiếu thư mục submission" là lỗi số 2 trong danh sách lỗi thường gặp của
+      thể lệ, và nó chỉ lộ ra sau khi đã tiêu một lượt nộp — mà mỗi gói chỉ có 3.
+    """
+    d = Path(csv_dir)
+    files = sorted(p for p in d.glob("*.csv") if p.is_file())
+    if not files:
+        raise SubmissionError(f"{d} không có file .csv nào — bài nộp rỗng")
+    if expected is not None:
+        want = set(expected)
+        got = {p.stem for p in files}
+        if want - got:
+            raise SubmissionError(f"thiếu {sorted(want - got)}")
+        if got - want:
+            raise SubmissionError(f"thừa file lạ: {sorted(got - want)}")
+
+    z = Path(zip_path)
+    if not _SAFE_ZIP_NAME.match(z.stem):
+        raise SubmissionError(
+            f"tên zip {z.stem!r} có ký tự ngoài chữ/số/gạch dưới — thể lệ khuyến cáo "
+            f"chỉ dùng chữ hoặc số"
+        )
+    z.parent.mkdir(parents=True, exist_ok=True)
+    with _zipfile.ZipFile(z, "w", _zipfile.ZIP_DEFLATED) as zf:
+        for p in files:
+            zf.write(p, arcname=f"{SUBMISSION_DIRNAME}/{p.name}")
+
+    with _zipfile.ZipFile(z) as zf:
+        names = zf.namelist()
+        bad = [n for n in names if not n.startswith(f"{SUBMISSION_DIRNAME}/")]
+        if bad:
+            raise SubmissionError(f"file nằm ngoài {SUBMISSION_DIRNAME}/: {bad}")
+    logger.info("Đã đóng gói %s: %d file CSV trong %s/", z, len(files), SUBMISSION_DIRNAME)
+    return z

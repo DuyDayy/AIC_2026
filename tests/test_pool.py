@@ -211,3 +211,54 @@ def test_diem_am_cung_bi_loai():
     s = src("asr", [2.0, -1.0, -3.0], covered=[True, True, True])
     p = union_pool([s], per_source=3, weights={"asr": 1.0})
     assert p.rows.tolist() == [0]
+
+
+# ============================================================
+# `fused_pool` — rổ = top-K của điểm ĐÃ HỢP
+# ============================================================
+#
+# [ĐO] bench_kis 100 câu, độ phủ khung GT trong rổ 300 khung:
+#     union_pool (đề cử riêng, pv=10)   89,0%
+#     fused_pool (không hạn ngạch)      98,0%  = ĐÚNG trần lý thuyết của rổ cỡ 300
+#     Δ bắt cặp +0,0900 · KTC95 [+0,0400, +0,1500] · thắng 9 / thua 0 / hoà 91
+
+from src.retrieval.pool import fused_pool as _fp
+
+_np, _pytest = np, pytest
+
+
+def test_fused_pool_dung_la_top_k_va_sap_tang_dan():
+    base = _np.array([0.1, 0.9, 0.5, 0.7, 0.3], dtype=_np.float32)
+    r = _fp(base, 3)
+    assert r.tolist() == [1, 2, 3]          # top-3 là hàng 1(0,9) 3(0,7) 2(0,5), sắp tăng
+    assert _fp(base, 99).tolist() == [0, 1, 2, 3, 4]   # cap > n thì lấy hết, không NỔ
+
+
+def test_gop_qua_moi_probe_bang_max_chu_khong_lay_probe_dau():
+    """TRAKE: khung chỉ hợp cho mốc thứ ba vẫn phải vào rổ."""
+    S = _np.array([[0.9, 0.1, 0.1],
+                   [0.1, 0.1, 0.9]], dtype=_np.float32)   # hàng 2 chỉ mạnh ở probe thứ 2
+    assert set(_fp(S, 2).tolist()) == {0, 2}
+
+
+def test_hang_ngach_moi_video_lam_MAT_khung_hang_cao():
+    """Vì sao `per_video` rời đường chạy: nó cắt cả khung ③ xếp rất cao."""
+    base = _np.arange(10, 0, -1).astype(_np.float32)      # hàng 0 tốt nhất, giảm dần
+    ranges = {"A": (0, 6), "B": (6, 10)}
+    het = _fp(base, 6).tolist()
+    han = _fp(base, 6, ranges=ranges, per_video=2).tolist()
+    assert het == [0, 1, 2, 3, 4, 5]
+    assert han[:2] == [0, 1] and 2 not in han            # hàng 2 bị đá dù xếp hạng 3
+    assert 6 in han                                       # chỗ đó nhường cho video B
+
+
+def test_dau_vao_sai_thi_NO():
+    base = _np.array([1.0, 2.0], dtype=_np.float32)
+    with _pytest.raises(ValueError, match="cap"):
+        _fp(base, 0)
+    with _pytest.raises(ValueError, match="per_video"):
+        _fp(base, 2, ranges={"A": (0, 2)}, per_video=0)
+    with _pytest.raises(ValueError, match="ranges"):
+        _fp(base, 2, per_video=1)
+    with _pytest.raises(ValueError, match="chiều"):
+        _fp(_np.zeros((2, 2, 2), dtype=_np.float32), 2)

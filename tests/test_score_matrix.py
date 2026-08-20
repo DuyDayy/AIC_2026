@@ -361,15 +361,18 @@ def test_beta_chia_DEU_va_tong_bang_1():
     assert beta_for(3) == (1 / 3, 1 / 3, 1 / 3)
 
 
-def test_pool_cap_khong_duoc_cat_ro_that():
-    """`POOL_CAP` phải ≥ 7 run × `POOL_PER_SOURCE`, nếu không nó cắt mọi truy vấn."""
-    hang = {
-        t.id: node.value.value
-        for node in _RUN_AST.body
-        if isinstance(node, _ast.Assign) and isinstance(node.value, _ast.Constant)
-        for t in node.targets
-        if isinstance(t, _ast.Name)
+def test_ro_KHONG_con_de_cu_rieng_theo_thanh_phan():
+    """⑤a lấy top-K của điểm ĐÃ HỢP — `union_pool` không còn trên đường chạy thi.
+
+    `union_pool` cấp mỗi RUN một hạn ngạch top-40. Nó chữa phép hợp CŨ (thị giác hệ số
+    1,0 vs OCR 0,13); ③ nay chia `alpha` ĐỀU và cộng theo HẠNG nên tiền đề đã tan, còn
+    cái giá thì không: rổ thôi là top-K của thứ gì, nên `POOL_CAP` cắt theo trật tự
+    khác trật tự đưa vào — đúng cách nó cắt câm 25% rổ ở mọi truy vấn.
+    """
+    goi = {
+        n.func.id
+        for n in _ast.walk(_RUN_AST)
+        if isinstance(n, _ast.Call) and isinstance(n.func, _ast.Name)
     }
-    assert hang["POOL_CAP"] >= 7 * hang["POOL_PER_SOURCE"], (
-        f"POOL_CAP={hang['POOL_CAP']} cắt rổ thật (7 run × {hang['POOL_PER_SOURCE']})"
-    )
+    assert "union_pool" not in goi, "run.py gọi lại `union_pool` — ⑤a phải là `fused_pool`"
+    assert "fused_pool" in goi

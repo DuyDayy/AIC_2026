@@ -59,6 +59,9 @@ tests/*
 !tests/test_rscore.py
 !tests/test_score_matrix.py
 !tests/test_sources.py
+# Định dạng nộp bài CHÍNH THỨC — mọi lỗi ở tầng này đều CÂM, và thể lệ chỉ cho
+# 3 lượt nộp mỗi gói (nộp sai định dạng vẫn tính là một lượt).
+!tests/test_submission_format.py
 !tests/test_vector_index.py
 scripts/search.py
 scripts/asr/

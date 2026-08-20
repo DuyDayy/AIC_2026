@@ -169,49 +169,55 @@ tỉ lệ đóng góp hạng-1 so với hạng-cuối là **2844×** thay vì **
 quanh top-5000) — nên **không** cắt. Nhưng `k` kế thừa từ E3 và chưa từng được quét trong
 chế độ này.
 
-### ⑤a Rổ ứng viên — `src/retrieval/pool.py`
+### ⑤a Rổ ứng viên — top-K của điểm ĐÃ HỢP
 
-| | |
-|---|---|
-| cách chọn | mỗi RUN đề cử **top 40 của riêng nó**, hợp lại |
-| kích thước | **266–269** khung = 7 run × 40 sau khử trùng (`POOL_CAP = 300`) |
-| vai trò | **bộ lọc CỨNG** — chỉ khung trong rổ mới được nộp |
-| chốt 1 | `score > 0` — khung có chữ nhưng không khớp từ nào thì không được đề cử |
-| chốt 2 | **10 khung/video/nguồn** — chặn nguồn cho điểm phẳng cả video |
-| lai lịch | `provenance` ghi nguồn nào đề cử khung nào |
+```
+rổ = top-300 của điểm ③, gộp qua mọi probe bằng max
+```
 
-Thị giác mang hệ số `1,0` còn ba nguồn kia `0,09–0,21`, nên khung chỉ có bằng chứng **thuần
-OCR** gần như không nổi lên trong điểm đã hợp: đo được **10/100 câu** có video đúng vắng mặt
-hoàn toàn, mà 9/10 nằm ở hạng 16–62 — với tới được, chỉ là không được với tới.
+🔁 **ĐÃ ĐẢO.** Bản cũ cho **mỗi run một hạn ngạch top-40 riêng** rồi hợp lại
+(`union_pool`), cộng thêm hạn ngạch ≤10 khung mỗi video. Cách ấy sinh ra để chữa phép hợp
+**cũ**: thị giác mang hệ số `1,0` còn OCR/ASR mang `0,09–0,13`, nên khung chỉ có bằng
+chứng thuần OCR không bao giờ nổi lên — đo được 10/100 câu có video đúng **vắng mặt**
+khỏi bài nộp, 9/10 nằm ở hạng 16–62, và cấp suất riêng lãi `+0,0153`.
 
-Chốt 2 sinh ra từ một ca thật: OCR khớp **logo kênh** hiện suốt video ⟹ điểm phẳng ⟹ top-40
-của nó là 40 khung tuỳ tiện cùng một video.
+**Tiền đề ấy đã tan.** ③ nay là RRF phân cấp với `alpha` chia đều (OCR nắm đúng 1/3 lá
+phiếu, ngang thị giác) và cộng theo **hạng**, nên thang điểm thô của từng nguồn không còn
+nghĩa. Khung đứng #1 bảng OCR nổi lên **trong chính điểm hợp**.
 
-**Bốn nguồn đề cử gần như RỜI NHAU** — đo trên 100 câu GT v2, đếm số nguồn cùng đề cử một
-khung:
+[ĐO] bench_kis 100 câu — độ phủ khung ground truth trong rổ 300:
 
-| số nguồn đồng thuận | khung | tỉ lệ |
+| cách dựng rổ | độ phủ | |
 |---|---|---|
-| 1 | 15.516 | **98,6%** |
-| 2 | 200 | 1,3% |
-| 3 | 28 | 0,2% |
-| 4 | 0 | 0% |
+| đề cử riêng (`union_pool`, ≤10/video) | 89,0% | |
+| **top-300 điểm hợp** | **98,0%** | = **trần lý thuyết** của mọi rổ cỡ 300 |
 
-Hai hệ quả, cả hai đều là **lý lẽ cơ chế cho kết quả đã đo trước đó**:
+Δ bắt cặp `+0,0900` · KTC95 `[+0,0400, +0,1500]` · **thắng 9 / thua 0 / hoà 91** ·
+P(Δ>0) = 1,000. Rổ mới **chạm trần**: 98/100 câu có khung đúng trong top-300 của ③, và
+rổ lấy được cả 98.
 
-- cho mỗi nguồn **suất riêng** có lợi `+0,0153` — vì không có suất thì ba nguồn yếu **vô
-  hình**, chứ không phải "được ưu tiên thấp";
-- dùng `agree` **làm điểm** thì hại `0,0208` — vì nó gần như hằng số 1, nên chỉ mang nhiễu.
+**Hạn ngạch mỗi video đã rời đường chạy** — nó nay là mất mát thuần:
 
-🔴 **`POOL_CAP` đã từng âm thầm cắt mất 25% rổ.** Khi ③ còn 4 nguồn, rổ tối đa là
-`4×40 = 160` nên `POOL_CAP = 200` không bao giờ chạm — README cũ ghi đúng như vậy. ③
-chuyển sang RRF phân cấp thì mỗi truy vấn có **7 run**, rổ thô lên **266–269** [ĐO trên
-gtv2], và 200 bắt đầu cắt ở **mọi** truy vấn. Phép cắt ấy xếp theo điểm **nền**, nên nó
-xoá đúng phần mà suất riêng mỗi run sinh ra để bảo vệ — khoản `+0,0153`. Nâng lên **300**
-(> 7×40 = 280) để chốt trở lại đúng vai trò chốt an toàn.
+| `per_video` | không có | 40 | 20 | 10 |
+|---|---|---|---|---|
+| độ phủ | **98,0%** | 98,0% | 95,0% | 92,0% |
 
-⚠️ Thêm expansion thứ ba mỗi modality (9 run = 360) thì phải nâng tiếp, nếu không lỗi này
-quay lại y nguyên **và vẫn im lặng**.
+Hạn ngạch sinh ra để chặn một **nguồn phẳng** đổ cả trăm khung cùng điểm của một video vào
+rổ. Với rổ = top-K của điểm hợp thì không còn nguồn phẳng nào để chặn: thứ tự trong rổ
+**là** thứ hạng của ③. Và số `10` bê nguyên sang là siết chặt **gấp 7 lần** — ở
+`union_pool` hạn ngạch áp cho *từng nguồn*, nên 7 run × 10 = tối đa 70 khung/video.
+
+⚠️ `POOL_CAP` đổi vai. Trước nó là **chốt an toàn** (chỉ chạm khi bất thường); nay rổ
+*bằng đúng* top-`POOL_CAP`, nên nó là **tham số thật, cần quét** — chưa quét.
+
+Rổ mới cũng tốt hơn cho TRAKE, ngược với lo ngại ban đầu: **77 video** có mặt trong rổ so
+với 39, và số dòng TRAKE điền được 26 so với 11.
+
+⚠️ **`TRAKE_K_PER_VIDEO = 1` đang bỏ trống 74% ngân sách.** [ĐO] trung vị chỉ **26/100**
+dòng; `k=3` cho 72 dòng, `k=10` cho 100 dòng ở 92% số câu. Mọi ô tới 100 đều có trọng số
+dương (Định lý 2) nên bỏ trống là vứt điểm — nhưng nới `k` cũng **đẩy tụt** đường tốt
+nhất của video khác, nên tổng ảnh hưởng là câu hỏi thực nghiệm. Bộ TRAKE chỉ có **6 câu**
+và vector chưa có trong cache, nên **chưa đo được điểm**. Giữ `k=1` cho tới khi đo.
 
 ### ⑤b Bậc 1 — mảnh cắt vật thể ⚠️ TẮT
 
@@ -305,7 +311,46 @@ Thiếu tầng này thì câu Q&A được **0 điểm** dù tìm đúng khung �
 
 ⚠️ Tầng này **chưa có phép đo nào**.
 
-### ⑦ Nộp bài — MỘT khung mỗi mốc, KHÔNG rải
+### ⑦ Nộp bài — định dạng CHÍNH THỨC của BTC
+
+Mẫu đã công bố ("Hướng dẫn nộp bài sơ tuyển"), nên `src/submission/writer.py` không còn
+ghi JSON tạm. Toàn bộ tầng này chống **lỗi câm**: file vẫn ghi ra, vẫn mở được bằng
+Notepad, vẫn trông đúng — và điểm về 0 vì bộ chấm tách cột khác ta nghĩ. Thể lệ cho **3
+lượt nộp mỗi gói** và *"nộp sai định dạng vẫn tính là 01 lần nộp"*, nên mỗi lỗi định dạng
+tiêu mất một phần ba số lượt.
+
+| luật của thể lệ | cài ở đâu |
+|---|---|
+| một `.csv` mỗi truy vấn, tên khớp tên đề | `write_task_csv` — `task_id` = `stem` của file đề |
+| **hậu tố** `kis`/`qa`/`trake` quyết định loại | `task_type_from_filename`, khớp theo ĐUÔI |
+| ≤ 100 dòng · không header · UTF-8 · dấu phẩy | `csv.writer(lineterminator="\n")` |
+| KIS `video,frame` · Q&A `video,frame,answer` · TRAKE `video,f₁…f_N` | `format_task_csv` |
+| ngoặc kép khi đáp án có `,` `"` hoặc xuống dòng | `QUOTE_MINIMAL` — **đúng nguyên văn ba luật** |
+| đáp án ≤ 100 ký tự | `clean_answer` — CẮT kèm ghi chú, không ném |
+| tên video không có `.mp4` · `frame_id` số nguyên | `format_task_csv` ném ngay |
+| zip phải chứa thư mục `submission/` | `pack_submission_zip` tự tạo tiền tố |
+
+🔴 **Lỗi nguy hiểm nhất đã có ở đây và đã sửa.** ⑦ từng nối chuỗi bằng `","`. Một đáp án
+Q&A như `Có 3 người, bao gồm nam và nữ` khi ấy tách thành **bốn cột** thay vì ba, cả dòng
+lệch, và không có gì báo. Thể lệ liệt kê đúng lỗi này trong *"5 lỗi thường gặp nhất"*.
+`csv.writer` với `QUOTE_MINIMAL` cài đúng ba luật của BTC; và `write_task_csv` **đọc ngược
+file bằng `csv.reader`** ngay sau khi ghi — phép kiểm duy nhất chạy trên chuỗi byte sẽ nộp
+đi chứ không trên cấu trúc trong bộ nhớ.
+
+🔴 **Hậu tố tên file là thứ DUY NHẤT nói loại truy vấn — kể cả khi ta nghĩ khác.** ①
+từng tự đổi `kind` sang TRAKE khi tách được nhiều mốc từ một câu `-kis`. Hệ quả:
+`query-1-kis.csv` được ghi 4 cột trong khi bộ chấm đọc nó theo luật KIS 2 cột. Phép tách
+mốc là suy đoán **của ta**; nó không được phép sửa thể lệ. Nay các mốc tách ra vẫn dùng,
+nhưng làm **bằng chứng** — ③ chấm từng mốc rồi gộp bằng `max` trước ④.
+
+🟢 **Một câu hỏng không giết cả gói.** `validate_task` ném khi truy vấn ra 0 đáp án; ngày
+thi gói có 30–40 câu nên ⑦ bắt lỗi **theo từng truy vấn**, kêu to, và vẫn đóng gói phần
+còn lại. Danh sách câu hỏng vào `_report.json`.
+
+`pack_submission_zip` chỉ nhận `.csv`: thư mục đầu ra còn có `_report.json` và
+`_rerank_scores.npz` (hàng chục MB), mà `zip -r` thì gói cả hai.
+
+#### MỘT khung mỗi mốc, KHÔNG rải
 
 | | |
 |---|---|

@@ -168,32 +168,6 @@ CACHE = Path("data/embed/query_cache.npz")
 KEYFRAME_ROOTS = ("data/Framme/L21-L25/Keyframes L21-L25",
                   "data/Framme/L26/L26",
                   "data/Framme/L27-L30/DATA")
-# ⑤ RỔ ỨNG VIÊN — mỗi nguồn đề cử top riêng của nó, hợp lại.
-# Vì sao không lấy top của điểm ĐÃ HỢP: thị giác mang hệ số 1,0 còn OCR/ASR/vật thể mang
-# 0,09–0,13, nên khung chỉ có bằng chứng thuần OCR gần như không bao giờ nổi lên. Đo được
-# 10/100 câu có video đúng VẮNG MẶT khỏi bài nộp, mà 9/10 nằm ở hạng 16–62.
-POOL_PER_SOURCE = 40      # mỗi RUN 40 suất, không phải mỗi modality
-
-# `POOL_CAP` là CHỐT AN TOÀN, không phải phép cắt chủ động — nó chỉ được chạm khi có gì
-# đó bất thường. Giữ đúng vai trò ấy đòi hỏi nó lớn hơn `POOL_PER_SOURCE × số run`.
-#
-# 🔴 Nó đã từng SAI: khi ③ còn 4 nguồn, rổ tối đa là 4×40 = 160 và `POOL_CAP = 200` không
-# bao giờ chạm. ③ chuyển sang RRF phân cấp với expansion thì mỗi truy vấn có 7 run
-# (1 thị giác + 3 OCR + 3 ASR), rổ thô lên 266–269 khung [ĐO trên gtv2], và 200 bắt đầu
-# cắt ~25% ở MỌI truy vấn. Phép cắt đó xếp theo điểm NỀN, nên nó xoá đúng phần mà suất
-# riêng mỗi nguồn sinh ra để bảo vệ — khoản đo được +0,0153.
-#
-# 300 > 7×40 = 280 nên chốt trở lại đúng vai trò. Thêm expansion thứ ba mỗi modality
-# (9 run = 360) thì phải nâng tiếp, nếu không lỗi này quay lại y nguyên và vẫn im lặng.
-POOL_CAP = 300
-
-# [ĐO] trên 100 câu GT v2: rổ trung vị 158, max ĐÚNG 160 = 4×40 ⟹ `POOL_CAP` KHÔNG BAO
-# GIỜ chạm. Muốn rổ to hơn thì bậc `POOL_PER_SOURCE`, đừng bậc `POOL_CAP`.
-# Vì sao max bằng đúng 4×40: bốn nguồn đề cử gần như RỜI NHAU — 98,6% khung trong rổ do
-# đúng một nguồn đề cử, 1,3% hai nguồn, 0,2% ba nguồn, KHÔNG khung nào cả bốn. Đây là
-# lý lẽ cơ chế cho hai kết quả đã đo: (a) cho mỗi nguồn suất riêng có lợi +0,0153, vì
-# không có suất thì ba nguồn yếu vô hình; (b) dùng `agree` làm điểm HẠI 0,0208, vì nó
-# gần như hằng số 1 nên chỉ mang nhiễu.
 
 # ③ DUNG HỢP — RRF CÓ TRỌNG SỐ HAI TẦNG, không còn chuẩn hoá z.
 #
@@ -234,16 +208,40 @@ def _beta_for(n_runs: int) -> tuple[float, ...]:
     """
     return (1.0 / n_runs,) * max(n_runs, 1)
 
-# Mặt bit của `provenance` khi lưu npz — thứ tự khớp ④ nguồn của `DEFAULT_WEIGHTS`.
-# Bit 2 của `object` bỏ TRỐNG chứ không dồn lại: npz đã lưu từ trước vẫn giải
-# mã đúng, và một bit trống rẻ hơn một bản lưu đọc sai trong im lặng.
-PROV_BITS = {"visual": 1, "ocr": 4, "asr": 8}
 
-# Hạn ngạch mỗi nguồn được đề cử tối đa bao nhiêu khung của CÙNG một video.
-# [ĐO] Đây là CHỐT AN TOÀN, KHÔNG phải phép tối ưu — 10 đo được Δ=+0,0014 với
-# KTC95 [−0,0019, +0,0061], tức bằng 0. Siết chặt hơn thì HẠI: 5 → −0,0184, 2 → −0,0456,
-# đổi lại chỉ vớt được nhóm A từ 0,0000 lên 0,0250. Giữ 10 vì nó chặn được ca bệnh lý
-# (một nguồn cho điểm phẳng cả video chiếm sạch 40 suất bằng nhiễu) mà chi phí bằng 0.
+# ⑤a RỔ ỨNG VIÊN — top-K của điểm ĐÃ HỢP
+#
+# 🔁 ĐÃ ĐẢO. Bản cũ cho MỖI RUN một hạn ngạch top-40 riêng rồi hợp lại (`union_pool`).
+# Nó ra đời để chữa phép hợp CŨ: thị giác hệ số 1,0 còn OCR/ASR 0,09–0,13 nên khung
+# thuần OCR không nổi lên trong điểm hợp — đo được 10/100 câu có video đúng VẮNG MẶT
+# khỏi bài nộp, 9/10 nằm ở hạng 16–62, và cấp suất riêng lãi +0,0153.
+#
+# Tiền đề ấy đã tan. ③ nay là RRF phân cấp, `alpha` chia ĐỀU (OCR nắm đúng 1/3 lá phiếu,
+# ngang thị giác) và cộng theo HẠNG nên thang điểm thô của từng nguồn không còn nghĩa.
+# Khung đứng #1 bảng OCR nay nổi lên TRONG CHÍNH điểm hợp — đúng thứ hạn ngạch phải đi
+# vòng để đạt. Giữ hạn ngạch lúc này là chữa bệnh đã khỏi, mà giá thì còn nguyên:
+#   · rổ không còn là top-K của thứ gì ⟹ `POOL_CAP` cắt theo một trật tự KHÁC trật tự
+#     đưa vào. Đó chính là chỗ nó cắt câm 25% rổ ở mọi truy vấn mà không ai thấy.
+#   · nguồn yếu vẫn tiêu đủ 40 suất, bất kể yếu tới đâu — hạn ngạch không biết nhường
+#   · số ứng viên nở theo SỐ RUN: thêm một bản mở rộng là thêm 40 suất, dù nó gần trùng
+#
+# `POOL_CAP` nay là phép cắt CHỦ ĐỘNG (rổ = đúng top-`POOL_CAP`), không còn là chốt an
+# toàn — nên nó thành một tham số THẬT, cần quét, chứ không phải một con số đặt cho to.
+POOL_CAP = 300
+
+# 🔴 POOL_PER_VIDEO ĐÃ RỜI ĐƯỜNG CHẠY — hằng số giữ lại chỉ để `union_pool` còn dùng
+# được trong nghiên cứu. Nó là hạn ngạch "một video được góp tối đa bao nhiêu khung",
+# sinh ra để chặn một NGUỒN PHẲNG đổ cả trăm khung cùng điểm của một video vào rổ.
+#
+# Với rổ = top-K của điểm đã hợp thì không còn nguồn phẳng nào để chặn: thứ tự trong rổ
+# LÀ thứ hạng của ③, nên khung thứ 11 của một video vào rổ đúng khi ③ thật sự xếp nó
+# trên khung đầu của video khác. [ĐO] bench_kis 100 câu, độ phủ khung GT trong rổ 300:
+#     không hạn ngạch  98,0%   ← ĐÚNG BẰNG trần lý thuyết (98/100 câu có GT trong top-300)
+#     per_video = 40   98,0%
+#     per_video = 20   95,0%
+#     per_video = 10   92,0%   ← giá của hạn ngạch: −6,0pp, đổi lại KHÔNG được gì
+# Ở `union_pool` hạn ngạch áp cho TỪNG NGUỒN nên 7 run × 10 = tối đa 70 khung/video;
+# bê nguyên số 10 sang phép hợp một lần là siết chặt gấp 7 lần trong im lặng.
 POOL_PER_VIDEO = 10
 
 # Rổ là bộ lọc CỨNG: chỉ khung trong rổ mới được nộp. Cộng biên này để chúng luôn đứng
@@ -311,7 +309,7 @@ RERANK_WEIGHTS = {"fused4": 1.0, "crop": 0.0, "vlm": 0.25}
 # hai nhánh dùng cùng cửa sổ; muốn số tuyệt đối đúng thì chạy lại cả sweep.
 #
 # Bỏ VLM mất ~13% điểm tương đối. K=30 mua 0,019; nới lên 160 mua thêm 0,017 — chưa
-# thấy bão hoà, nên chấm CẢ RỔ (`POOL_CAP` = 200 ⟹ 160 phủ hết trong thực tế).
+# thấy bão hoà, nên chấm CẢ RỔ. `VLM_TOP_K` ≥ `POOL_CAP` ⟹ phủ hết rổ.
 #
 # ⚠️ **VLM là cú can thiệp MẠNH và HIẾM, không phải bộ chỉnh êm.** 85/110 câu nó không
 # đụng tới; toàn bộ khoản lợi đến từ **18 câu thắng, 7 câu thua** — tỉ lệ 2,6 ăn 1. Hệ
@@ -595,11 +593,15 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
 
     from src.ingestion.jina_encoder import truncate_and_normalize
     from src.retrieval.dante import DEFAULT_LAMBDA
-    from src.retrieval.pool import union_pool
+    from src.retrieval.pool import fused_pool
     from src.retrieval.probe import build_probes, declarativize
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
     from src.retrieval.score_matrix import hierarchical_rrf
     from src.submission.kbest import k_best_alignments
+    from src.submission.writer import (SubmissionError, TaskSubmission,
+                                       pack_submission_zip,
+                                       task_type_from_filename, write_task_csv)
+    from src.submission.writer import MAX_ANSWER_CHARS
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
         AsrSource, SourceScores, TextSource, VisualSource, load_asr_segments,
@@ -633,9 +635,17 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             print(f"  ① {q['id']}: probe ← {src_text!r}")
         q["probes"] = [p.text for p in build_probes(src_text)] or [src_text]
         if q["kind"] != "trake" and len(q["probes"]) > 1:
-            print(f"  ⚠ {q['id']}: tách ra {len(q['probes'])} mốc nhưng loại là "
-                  f"{q['kind']} — đổi sang TRAKE", file=sys.stderr)
-            q["kind"] = "trake"
+            # KHÔNG đổi loại. Thể lệ: "Quy ước tên file truy vấn — hậu tố kis/qa/trake",
+            # nên HẬU TỐ là thứ duy nhất nói loại, và nó quyết định luôn SỐ CỘT của file
+            # nộp. Đổi `kind` ở đây từng khiến `query-1-kis.csv` được ghi 4 cột trong khi
+            # bộ chấm đọc nó theo luật KIS 2 cột — file vẫn ghi ra, vẫn mở được, và điểm
+            # về 0. Phép tách mốc là suy đoán CỦA TA; nó không được phép sửa thể lệ.
+            #
+            # Các mốc tách ra vẫn dùng, nhưng làm BẰNG CHỨNG: ③ chấm từng mốc rồi ④ gộp
+            # bằng `max` (ngay dưới), đúng cách rổ đã gộp qua probe.
+            print(f"  ⚠ {q['id']}: tách ra {len(q['probes'])} mốc nhưng hậu tố là "
+                  f"{q['kind']} — giữ {q['kind']}, gộp các mốc bằng max ở ④",
+                  file=sys.stderr)
 
     cache = load_cache()
     need = sorted({t for q in queries for t in q["probes"] if key_of(t) not in cache})
@@ -784,7 +794,13 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             alpha = {m: w / tot for m, w in present.items()}
             beta = {m: _beta_for(len(r)) for m, r in runs.items()}
             rows.append(hierarchical_rrf(runs, alpha=alpha, beta=beta, k=RRF_K))
-        q["S"] = np.vstack(rows).astype(np.float32)
+        S = np.vstack(rows).astype(np.float32)
+        # KIS và Q&A nộp ĐÚNG MỘT khung mỗi dòng (thể lệ mục 1 và 2), nên ma trận điểm
+        # phải có đúng một hàng trước khi tới ④ — `k_best_alignments` sinh N khung theo
+        # SỐ HÀNG của nó. Gộp bằng `max`: một mốc khớp mạnh là đủ để khung vào cuộc.
+        if q["kind"] in ("kis", "qa") and S.shape[0] > 1:
+            S = S.max(axis=0, keepdims=True)
+        q["S"] = S
         q["sources"] = per_probe
     if n_fallback:
         # Lùi về câu gốc KHÔNG trung tính: nhánh expansion khi đó TRÙNG nhánh gốc, nên
@@ -792,35 +808,25 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         print(f"⚠ {n_fallback} nhánh expansion lùi về câu gốc (thiếu trong file mở rộng)")
     lap("②③ chấm 3 nguồn × 5 run")
 
-    # ⑤a RỔ ỨNG VIÊN — hợp top riêng của từng nguồn, gộp qua mọi probe của truy vấn
+    # ⑤a RỔ ỨNG VIÊN — top-K của điểm ĐÃ HỢP, KHÔNG đề cử riêng theo thành phần
     #
-    # `cap` phải áp SAU khi hợp mọi probe, không phải trong từng probe. Cap trong vòng
-    # lặp thì TRAKE N mốc sinh ra rổ tới N×POOL_CAP — ngân sách nở theo số mốc, và
-    # `POOL_CAP` mất hết ý nghĩa. KIS 1 probe nên lỗi này không lộ ra ở mọi phép đo
-    # từ trước tới nay. (OPTIMIZATION_PLAN mục 3.4)
+    # Trước đây mỗi RUN tự đề cử top-40 rồi hợp lại. Cách ấy sinh ra để chữa phép hợp
+    # CŨ, nơi thị giác mang hệ số 1,0 còn OCR/ASR mang 0,09–0,13 nên khung thuần OCR
+    # không bao giờ nổi lên. ③ nay là RRF với `alpha` chia ĐỀU và cộng theo HẠNG, nên
+    # khuyết tật ấy không còn — và ba cái giá của hạn ngạch riêng thì còn nguyên:
+    # rổ không còn là top-K của bất cứ thứ gì (nên `cap` cắt theo một trật tự khác với
+    # trật tự đưa vào — chính là chỗ POOL_CAP=200 cắt câm 25% rổ), nguồn yếu vẫn tiêu
+    # đủ 40 suất, và số ứng viên nở theo SỐ RUN chứ không theo nhu cầu.
+    # Lý lẽ đầy đủ: `src/retrieval/pool.fused_pool`.
+    #
+    # `max` qua mọi probe, không lấy probe đầu: với TRAKE, khung chỉ hợp cho mốc thứ ba
+    # vẫn phải được giữ. Đây cũng là chỗ `cap` phải áp SAU khi gộp probe — cap trong
+    # vòng lặp thì TRAKE N mốc sinh rổ tới N×POOL_CAP. (OPTIMIZATION_PLAN mục 3.4)
     for q in queries:
-        got: set[int] = set()
-        prov: dict[int, tuple[str, ...]] = {}
-        for i, ss in enumerate(q["sources"]):
-            pr = union_pool(ss, per_source=POOL_PER_SOURCE, base=q["S"][i], cap=None,
-                            ranges=idx.ranges, per_video=POOL_PER_VIDEO)
-            got.update(pr.rows.tolist())
-            for r, src_names in pr.provenance.items():
-                prov[r] = tuple(sorted(set(prov.get(r, ())) | set(src_names)))
-        rows = np.array(sorted(got), dtype=np.int64)
-        if rows.size > POOL_CAP:
-            # Cắt theo điểm nền GỘP QUA MỌI PROBE (`max`), không theo probe đầu: với
-            # TRAKE, khung chỉ hợp cho mốc thứ ba vẫn phải được giữ.
-            agg = q["S"].max(axis=0)
-            rows = rows[np.argsort(-agg[rows], kind="stable")[:POOL_CAP]]
-            rows.sort()
-            keep = set(rows.tolist())
-            prov = {r: v for r, v in prov.items() if r in keep}
-        q["pool"] = rows
-        q["prov"] = prov
+        q["pool"] = fused_pool(q["S"], POOL_CAP)
     npool = [len(q["pool"]) for q in queries]
-    print(f"⑤a rổ ứng viên: trung vị {int(np.median(npool))} khung/truy vấn "
-          f"(min {min(npool)}, max {max(npool)}) · {POOL_PER_SOURCE}/nguồn")
+    print(f"⑤a rổ ứng viên: {int(np.median(npool))} khung/truy vấn "
+          f"= top-{POOL_CAP} của điểm ③ đã hợp")
     lap("⑤a dựng rổ")
 
     # ⑤b bậc 1 — mảnh cắt vật thể, mã hoá bằng jina-clip. Gom mảnh của MỌI truy vấn rồi
@@ -1018,7 +1024,7 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
 
     # ④⑦ ra đáp án
     odir.mkdir(parents=True, exist_ok=True)
-    report = []
+    report, fmt_notes, failed = [], [], []
     for q in queries:
         # ─────────────────────────────────────────────────────────────────────
         # MỘT đường duy nhất cho MỌI loại đề. TRAKE với N=1 CHÍNH LÀ KIS.
@@ -1032,7 +1038,11 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         # Rổ là bộ lọc cứng nên ứng viên đã ít, `k_best_alignments` chạy trên vài chục
         # khung mỗi video chứ không trên cả lát.
         # ─────────────────────────────────────────────────────────────────────
-        n_mom = len(q["probes"])          # N mốc: KIS/QA là 1, TRAKE là N
+        # N mốc lấy từ SỐ HÀNG của `S`, không từ `len(probes)`: ③ đã gộp probe của
+        # KIS/QA về một hàng, nên hai con số đó khác nhau đúng ở chỗ dễ nhầm nhất.
+        # `k_best_alignments` sinh đúng `S.shape[0]` khung mỗi đường ⟹ số cột CSV đúng
+        # theo thể lệ mà không phải kiểm lại lần nữa.
+        n_mom = q["S"].shape[0]
         k_per_video = 10**9 if n_mom == 1 else TRAKE_K_PER_VIDEO
         by_video: dict[str, list[int]] = {}
         for r in q["pool"].tolist():
@@ -1085,17 +1095,48 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                 lines.append([vid, int(FI[r])])
                 if len(lines) >= top_k:
                     break
-        if q["kind"] == "qa":
-            # Thể lệ: `<video_id>, <frame_id>, <answer>`. Thiếu answer ⟹ 0 điểm.
-            a = q.get("answer", "")
-            lines = [r + [a] for r in lines]
-        p = odir / f"{q['id']}.csv"
-        p.write_text("\n".join(",".join(str(x) for x in r) for r in lines) + "\n",
-                     encoding="utf-8")
+        # ⑦ GHI THEO THỂ LỆ. Không nối chuỗi bằng `","` nữa: `write_task_csv` dùng
+        # `csv.writer` (QUOTE_MINIMAL), tự bọc ngoặc kép khi đáp án Q&A có dấu phẩy /
+        # ngoặc kép / xuống dòng, rồi ĐỌC LẠI file bằng `csv.reader` để chắc bộ chấm
+        # tách ra đúng số cột. Nối tay thì `"Năm người, gồm nam và nữ"` thành hai cột
+        # và cả dòng lệch — thể lệ liệt kê đúng lỗi này trong "5 lỗi thường gặp nhất".
+        sub = TaskSubmission(
+            task_id=q["id"],
+            task_type=task_type_from_filename(q["id"]),
+            answers=tuple((vid, tuple(int(f) for f in fr), q.get("answer"))
+                          for vid, *fr in lines),
+            n_moments=n_mom,
+        )
+        # MỘT câu hỏng KHÔNG được giết cả gói. `validate_task` ném khi truy vấn ra 0
+        # đáp án hoặc lệch số mốc — đúng ra là ném, vì đó là lỗi thật. Nhưng ngày thi
+        # thì gói có 30–40 câu và chỉ 3 lượt nộp: để một exception cuốn đi 39 câu còn
+        # lại là đổi sai chiều. Ghi ĐƯỢC câu nào giữ câu đó, hỏng thì kêu to và đi tiếp.
+        try:
+            p, notes = write_task_csv(sub, odir, budget=top_k)
+        except SubmissionError as e:
+            print(f"  ✗ {q['id']}: KHÔNG ghi được — {e}", file=sys.stderr)
+            fmt_notes.append(f"[{q['id']}] BỎ QUA: {e}")
+            failed.append(q["id"])
+            continue
+        for m in notes:
+            print(f"  ⚠ {m}", file=sys.stderr)
+        fmt_notes.extend(notes)
         report.append({"id": q["id"], "kind": q["kind"], "n_probes": len(q["probes"]),
                        "n_answers": len(lines),
                        "answer": q.get("answer"), "top1": lines[0] if lines else None})
         print(f"  {q['id']:<20} {q['kind']:<6} {len(lines):>3} đáp án → {p}")
+
+    # ⑦b ĐÓNG GÓI. Thể lệ đòi `<zip>/submission/*.csv`; "thiếu thư mục submission" là
+    # lỗi số 2 trong danh sách của BTC và nó chỉ lộ ra SAU khi đã tiêu một lượt nộp —
+    # mỗi gói chỉ có 3 lượt. `pack_submission_zip` chỉ nhận `.csv`, nên `_report.json`
+    # và `_rerank_scores.npz` (hàng chục MB) không lọt vào bài nộp.
+    if failed:
+        print(f"\n  ✗ {len(failed)}/{len(queries)} truy vấn KHÔNG có file: "
+              f"{', '.join(failed)}", file=sys.stderr)
+    zip_path = pack_submission_zip(
+        odir, odir.parent / f"{odir.name}.zip",
+        expected=[q["id"] for q in queries if q["id"] not in failed])
+    print(f"  đóng gói → {zip_path} ({zip_path.stat().st_size / 1e3:.0f} KB)")
     lap("⑦ phát bài nộp")
     # ── LƯU ĐIỂM TRUNG GIAN CỦA ⑤ ───────────────────────────────────────────
     # Không có bản lưu này thì mỗi lần quét `RERANK_WEIGHTS`/`VLM_WEIGHT` phải chạy lại
@@ -1114,21 +1155,10 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             if "vlm" in q:
                 dump[f"{q['id']}/vlm"] = q["vlm"].scores[p].astype(np.float32)
                 dump[f"{q['id']}/vlm_cov"] = q["vlm"].covered[p]
-            # Số nguồn đã đề cử mỗi khung — tín hiệu tin cậy, KHÔNG dùng làm điểm
-            # (đo được cộng vào điểm thì hại 0,0208; xem README mục ③).
-            dump[f"{q['id']}/agree"] = np.array(
-                [len(q["prov"].get(int(r), ())) for r in p], dtype=np.int8)
-            # TÊN nguồn, không chỉ số lượng: mặt bit theo `PROV_BITS`. Chỉ có số lượng
-            # thì không quy được khung TRÚNG về nguồn nào đề cử nó, mà đó đúng là phép
-            # đo cần để biết nên gia cố nguồn nào.
-            unknown = {s for v in q["prov"].values() for s in v} - set(PROV_BITS)
-            if unknown:
-                raise SystemExit(
-                    f"⑤ nguồn {sorted(unknown)} không có bit trong PROV_BITS — thêm "
-                    f"nguồn mà quên khai bit thì bản lưu mất nguồn đó trong im lặng")
-            dump[f"{q['id']}/prov"] = np.array(
-                [sum(PROV_BITS[s] for s in q["prov"].get(int(r), ())) for r in p],
-                dtype=np.int8)
+            # `agree`/`prov` ĐÃ GỠ. Chúng đếm "mấy nguồn đề cử khung này", và phép
+            # đề cử riêng không còn tồn tại — ⑤a nay lấy top-K của điểm đã hợp. Ghi ra
+            # một hằng số rồi gọi nó là lai lịch thì tệ hơn là không ghi: phần chẩn
+            # đoán đọc npz sẽ thấy một cột hợp lệ về kiểu và vô nghĩa về nội dung.
         np.savez_compressed(odir / "_rerank_scores.npz", **dump)
         print(f"  đã lưu điểm ⑤ trung gian → {odir}/_rerank_scores.npz "
               f"({(odir / '_rerank_scores.npz').stat().st_size / 1e6:.1f} MB)")
@@ -1150,7 +1180,14 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
                         "probes_with_expansion": len(EXP),
                     },
                     "dim": idx.dim, "rerank": bool(rerank),
-                    "pool_per_source": POOL_PER_SOURCE, "pool_cap": POOL_CAP,
+                    "pool": {"method": "fused_top_k", "cap": POOL_CAP},
+                    # Định dạng nộp bài theo "Hướng dẫn nộp bài sơ tuyển".
+                    "format": {"csv": "QUOTE_MINIMAL · UTF-8 · không header · LF",
+                               "zip": f"{odir.name}.zip → submission/*.csv",
+                               "max_rows": top_k,
+                               "max_answer_chars": MAX_ANSWER_CHARS,
+                               "ghi_chu": fmt_notes,
+                               "khong_ghi_duoc": failed},
                     "rerank_weights": RW,
                     "vlm_top_k": vlm_top_k if rerank else 0,
                     # Ngân sách thi 2h30 là ràng buộc CỨNG, nên thời gian từng tầng phải

@@ -183,6 +183,33 @@ dung nên lượt hai không tốn GPU.
 
 ---
 
+## 5b. Định dạng bài nộp — thể lệ chỉ cho 3 lượt mỗi gói
+
+`scripts/run.py` tự ghi CSV theo thể lệ và tự đóng gói: `submission/*.csv` →
+`submission.zip` với tiền tố `submission/` bên trong. **Không tự nén tay** — `zip -r`
+gói cả `_report.json` và `_rerank_scores.npz` (hàng chục MB), còn nén trực tiếp các CSV
+là "lỗi thường gặp số 2" của BTC và chỉ lộ ra sau khi đã tiêu một lượt.
+
+Kiểm nhanh trước khi tải lên:
+
+```bash
+unzip -l submission.zip                 # MỌI dòng phải bắt đầu bằng submission/
+python - <<'EOF'
+import csv, io, zipfile
+for n, in [(n,) for n in zipfile.ZipFile("submission.zip").namelist()]:
+    t = zipfile.ZipFile("submission.zip").read(n).decode("utf-8")
+    rows = [r for r in csv.reader(io.StringIO(t)) if r]
+    want = {"kis": 2, "qa": 3}.get(n.rsplit("-", 1)[-1][:-4])
+    print(f"{n:<34} {len(rows):>3} dòng · số cột {sorted({len(r) for r in rows})}"
+          + ("  ✗ SAI" if want and {len(r) for r in rows} != {want} else ""))
+EOF
+```
+
+`_report.json` có khối `format`: `ghi_chu` liệt kê mọi đáp án bị cắt/trim,
+`khong_ghi_duoc` liệt kê truy vấn không ra được file. **Cả hai phải rỗng.**
+
+---
+
 ## 6. Cấu hình đang chốt
 
 | tham số | giá trị | vì sao |
@@ -191,9 +218,10 @@ dung nên lượt hai không tốn GPU.
 | `alpha` (③ modality) | `visual 1/3 · ocr 1/3 · asr 1/3` | ĐỀU. Nguồn `object` đã gỡ; chuẩn hoá z đã bỏ, ③ hợp bằng RRF |
 | `beta` (③ expansion) | đều trong từng modality — 3 run ⟹ `1/3` | mỗi bản mở rộng đóng góp ngang bản gốc |
 | `RRF_K` | 60 | **chưa quét lại** trong chế độ không cắt danh sách |
-| `POOL_PER_SOURCE` | 40 | mỗi **RUN** tự đề cử (7 run, không phải 4 nguồn) ⟹ rổ 266–269 khung |
-| `POOL_CAP` | **300** | ở 200 nó cắt MỌI truy vấn và đổi `top1` của 2/3 câu đo thử |
-| `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
+| rổ ⑤a | **top-`POOL_CAP` của điểm ③ đã hợp** | bỏ đề cử riêng mỗi run: độ phủ 89,0% → **98,0%** = trần lý thuyết. Δ+0,0900, KTC95 [+0,04, +0,15], thắng 9/thua 0 |
+| `POOL_CAP` | 300 | nay là phép cắt CHỦ ĐỘNG, không còn là chốt an toàn — **chưa quét** |
+| `POOL_PER_VIDEO` | **rời đường chạy** | mất mát thuần: pv=10 kéo độ phủ 98,0% → 92,0% |
+| `TRAKE_K_PER_VIDEO` | 1 | ⚠️ chỉ điền **26/100** dòng. `k=10` điền đủ 100 ở 92% câu — chưa đo được ĐIỂM (bộ TRAKE có 6 câu) |
 | `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | crop trống cả ở nhóm ≥2 màu, tốn 655s |
 | `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
 | rải khung | **không có, theo thiết kế** | ⑦ nộp 1 khung/mốc; KHÔNG có cờ, test chặn thêm lại. Ở mật độ hiện tại việc này **mất 0,3381 Final** (0,1115 so với 0,4496) — chỉ hoà lại khi cắt dày hơn |
