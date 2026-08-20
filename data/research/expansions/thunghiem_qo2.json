@@ -1,0 +1,96 @@
+{
+  "queries": [
+    {
+      "id": "query-p1-1-kis",
+      "query": "phi hành đoàn tư nhân; nhiệm vụ nghiên cứu cực quang; sứ mệnh vùng cực; giới thiệu chuyến bay thương mại"
+    },
+    {
+      "id": "query-p1-10-kis",
+      "query": "Biểu diễn nghệ thuật; Tài năng âm nhạc; Không gian thư viện; Chương trình âm nhạc"
+    },
+    {
+      "id": "query-p1-11-kis",
+      "query": "tác phẩm nghệ thuật ánh sáng; nghệ sĩ trẻ; nghệ thuật sắp đặt; sáng tạo từ bìa carton"
+    },
+    {
+      "id": "query-p1-12-kis",
+      "query": "hướng dẫn làm bánh; công thức món tráng miệng; dạy nấu ăn; mẹo trang trí bánh"
+    },
+    {
+      "id": "query-p1-13-kis",
+      "query": "hướng dẫn vệ sinh máy ảnh tại nhà; bảo quản ống kính đúng cách; kỹ thuật viên máy ảnh"
+    },
+    {
+      "id": "query-p1-14-kis",
+      "query": "Festival điêu khắc cát quốc tế; Triển lãm nghệ thuật cát; Lễ hội cát; Nghệ nhân điêu khắc cát"
+    },
+    {
+      "id": "query-p1-15-qa",
+      "query": "Chương trình thiện nguyện; Câu lạc bộ FANA; UBND xã; Huyện ... tỉnh Khánh Hòa; Trao quà cho hộ nghèo"
+    },
+    {
+      "id": "query-p1-16-trake",
+      "query": "Liên hoan Lân Sư Rồng; Giải Múa Lân; Chung Kết; Ban Giám Khảo; Bảng Điểm; Trực Tiếp; Nhà Thi Đấu"
+    },
+    {
+      "id": "query-p1-17-kis",
+      "query": "Bệnh viện; Lễ trao quà từ thiện; Xuân Giáp Thìn 2024; Ban Tổ chức; Chúc Mừng Năm Mới; Chương trình Xuân yêu thương"
+    },
+    {
+      "id": "query-p1-18-trake",
+      "query": "Vào bếp; Món ngon mỗi ngày; Sơ chế nguyên liệu; Hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-p1-19-qa",
+      "query": "Di tích Đình thần Nguyễn Trung Trực; TP. Rạch Giá - Kiên Giang; Anh hùng dân tộc Nguyễn Trung Trực; Di tích lịch sử văn hóa"
+    },
+    {
+      "id": "query-p1-2-kis",
+      "query": "Bản tin; Tin tức 24h; Vườn thú; Khu bảo tồn; Vườn quốc gia; Thảo Cầm Viên"
+    },
+    {
+      "id": "query-p1-20-kis",
+      "query": "món tráng miệng; hướng dẫn làm panna cotta; dạy nấu ăn; món ngon mỗi ngày"
+    },
+    {
+      "id": "query-p1-21-kis",
+      "query": "Dai hoc Bach khoa Lien bang Lausanne; Thuy Si; Phong thi nghiem Robot hoc; Ban tin Khoa hoc Cong nghe; Nghien cuu sinh hoc"
+    },
+    {
+      "id": "query-p1-22-qa",
+      "query": "dạy nấu ăn; lớp học nấu ăn; hướng dẫn nấu ăn; món ngon mỗi ngày; dạy nấu ăn cho người mới bắt đầu"
+    },
+    {
+      "id": "query-p1-23-kis",
+      "query": "thị trấn ven biển; điểm du lịch hiếu kỳ; cảnh báo cá mập; du lịch biển"
+    },
+    {
+      "id": "query-p1-24-kis",
+      "query": "trực tiếp; VTV Thể thao; Giải xe đạp; bảng xếp hạng; cự ly; km"
+    },
+    {
+      "id": "query-p1-25-kis",
+      "query": "Giải xe đạp; Trực tiếp; Bảng xếp hạng; Km còn lại; Về đích"
+    },
+    {
+      "id": "query-p1-4-trake",
+      "query": "măng tây chiên giòn; công thức nấu ăn; hướng dẫn vào bếp; món chiên"
+    },
+    {
+      "id": "query-p1-5-kis",
+      "query": "mô hình chăn nuôi dê; trang trại nông nghiệp; kinh tế nông thôn; khởi nghiệp chăn nuôi"
+    },
+    {
+      "id": "query-p1-6-kis",
+      "query": "món chay thanh đạm; vào bếp cùng đầu bếp; công thức món chay; ẩm thực chay"
+    },
+    {
+      "id": "query-p1-8-kis",
+      "query": "lễ hội ẩm thực đường phố; ẩm thực Nhật Bản; khám phá văn hóa Nhật Bản; lễ hội mùa hè"
+    },
+    {
+      "id": "query-p1-9-kis",
+      "query": "Đồng bằng sông Cửu Long; Mùa thu hoạch; Nông sản miền Tây; Chuyện nhà nông"
+    }
+  ]
+}

@@ -155,7 +155,6 @@ import base64
 import hashlib
 import io
 import json
-import re
 import sys
 import time
 from pathlib import Path
@@ -173,8 +172,20 @@ KEYFRAME_ROOTS = ("data/Framme/L21-L25/Keyframes L21-L25",
 # Vì sao không lấy top của điểm ĐÃ HỢP: thị giác mang hệ số 1,0 còn OCR/ASR/vật thể mang
 # 0,09–0,13, nên khung chỉ có bằng chứng thuần OCR gần như không bao giờ nổi lên. Đo được
 # 10/100 câu có video đúng VẮNG MẶT khỏi bài nộp, mà 9/10 nằm ở hạng 16–62.
-POOL_PER_SOURCE = 40      # 4 nguồn × 40 ⟹ rổ ≤ 160 khung sau khi khử trùng
-POOL_CAP = 200            # chặn trên, cắt theo điểm nền SAU khi mỗi nguồn đã có suất
+POOL_PER_SOURCE = 40      # mỗi RUN 40 suất, không phải mỗi modality
+
+# `POOL_CAP` là CHỐT AN TOÀN, không phải phép cắt chủ động — nó chỉ được chạm khi có gì
+# đó bất thường. Giữ đúng vai trò ấy đòi hỏi nó lớn hơn `POOL_PER_SOURCE × số run`.
+#
+# 🔴 Nó đã từng SAI: khi ③ còn 4 nguồn, rổ tối đa là 4×40 = 160 và `POOL_CAP = 200` không
+# bao giờ chạm. ③ chuyển sang RRF phân cấp với expansion thì mỗi truy vấn có 7 run
+# (1 thị giác + 3 OCR + 3 ASR), rổ thô lên 266–269 khung [ĐO trên gtv2], và 200 bắt đầu
+# cắt ~25% ở MỌI truy vấn. Phép cắt đó xếp theo điểm NỀN, nên nó xoá đúng phần mà suất
+# riêng mỗi nguồn sinh ra để bảo vệ — khoản đo được +0,0153.
+#
+# 300 > 7×40 = 280 nên chốt trở lại đúng vai trò. Thêm expansion thứ ba mỗi modality
+# (9 run = 360) thì phải nâng tiếp, nếu không lỗi này quay lại y nguyên và vẫn im lặng.
+POOL_CAP = 300
 
 # [ĐO] trên 100 câu GT v2: rổ trung vị 158, max ĐÚNG 160 = 4×40 ⟹ `POOL_CAP` KHÔNG BAO
 # GIỜ chạm. Muốn rổ to hơn thì bậc `POOL_PER_SOURCE`, đừng bậc `POOL_CAP`.
@@ -184,8 +195,49 @@ POOL_CAP = 200            # chặn trên, cắt theo điểm nền SAU khi mỗi
 # không có suất thì ba nguồn yếu vô hình; (b) dùng `agree` làm điểm HẠI 0,0208, vì nó
 # gần như hằng số 1 nên chỉ mang nhiễu.
 
+# ③ DUNG HỢP — RRF CÓ TRỌNG SỐ HAI TẦNG, không còn chuẩn hoá z.
+#
+#     Score(d) = Σ_m alpha_m · ( Σ_j beta_mj / (k + rank_mj(d)) )
+#     Σ alpha_m = 1  ·  Σ_j beta_mj = 1 cho từng modality
+#
+# Trọng số áp vào ĐÓNG GÓP RRF, không áp vào raw score: cosine và BM25 không bao giờ
+# được cộng trực tiếp. Chuẩn hoá beta trong từng modality ngăn modality nhiều expansion
+# hơn tự có nhiều quyền vote hơn — [ĐO] cấu hình phẳng tụt 0,4427 so với 0,5281.
+RRF_K = 60.0
+
+# alpha ĐỀU, và đó là kết quả ĐO chứ không phải chỗ chưa tinh chỉnh. E4 quét trọng số
+# toàn cục trên 210 câu tuning rồi báo trên 100 câu held-out chưa đụng tới:
+#     alpha* tìm được = (0,30 · 0,35 · 0,35) ≈ đều
+#     held-out: đều 0,5281 → có trọng số 0,4884
+#     ΔMRR bắt cặp −0,0398 · KTC95 [−0,0783, −0,0056] · thắng 10 / thua 18
+# Khoảng tin cậy nằm TRỌN dưới 0: trọng số toàn cục kém hơn CÓ Ý NGHĨA.
+ALPHA = {"visual": 1 / 3, "ocr": 1 / 3, "asr": 1 / 3}
+
+# beta trong từng modality: (câu gốc, câu mở rộng). [ĐO] E3 trên bench_kis:
+#     bỏ bản gốc, chỉ QE          0,4867
+#     giữ cả hai, 0,5/0,5   ★     0,5281
+# Expansion BỔ SUNG cho câu gốc chứ không thay thế nó.
+def _beta_for(n_runs: int) -> tuple[float, ...]:
+    """Trọng số TRONG một modality: mọi nhánh đóng góp ĐỀU, kể cả câu gốc.
+
+    Đều là mức có căn cứ, không phải mức mặc định cho tiện. E3 đo trên bench_kis với hai
+    nhánh mỗi modality (gốc + một expansion) và `(0,5 · 0,5)` — tức ĐỀU — là cấu hình
+    thắng: MRR 0,5281 so với 0,4867 khi bỏ câu gốc.
+
+    Ở đây từng có `(0,5 · 0,25 · 0,25)` cho ba nhánh, ưu ái câu gốc. Nó lấy từ hạt giống
+    ở playbook mục 7.1 chứ KHÔNG phải từ phép đo nào — và ưu ái một nhánh mà không có
+    bằng chứng thì chỉ là một giả định đội lốt hằng số. Đều thì trùng đúng giá trị E3 đo
+    được ở `n=2`, nên nó vừa là mặc định trung tính vừa nhất quán với số liệu.
+
+    Muốn lệch khỏi đều thì phải ĐO trên tập giữ kín trước — E4 đã cho thấy trọng số toàn
+    cục lệch khỏi đều làm HẠI có ý nghĩa (ΔMRR −0,0398, KTC95 trọn dưới 0).
+    """
+    return (1.0 / n_runs,) * max(n_runs, 1)
+
 # Mặt bit của `provenance` khi lưu npz — thứ tự khớp ④ nguồn của `DEFAULT_WEIGHTS`.
-PROV_BITS = {"visual": 1, "object": 2, "ocr": 4, "asr": 8}
+# Bit 2 của `object` bỏ TRỐNG chứ không dồn lại: npz đã lưu từ trước vẫn giải
+# mã đúng, và một bit trống rẻ hơn một bản lưu đọc sai trong im lặng.
+PROV_BITS = {"visual": 1, "ocr": 4, "asr": 8}
 
 # Hạn ngạch mỗi nguồn được đề cử tối đa bao nhiêu khung của CÙNG một video.
 # [ĐO] Đây là CHỐT AN TOÀN, KHÔNG phải phép tối ưu — 10 đo được Δ=+0,0014 với
@@ -236,6 +288,13 @@ POOL_MARGIN = 1000.0
 # chuẩn hoá z đã đưa mọi nguồn về cùng đơn vị), nên chuẩn hoá `fused4 = 1` rồi lấy
 # `vlm = 0,25` — giá trị được chọn ở 63/100 lớp. Đó là điểm ỔN ĐỊNH giữa vùng phẳng,
 # KHÔNG phải đỉnh.
+#
+# ⚠️ GỐC GÁC CỦA `0,25` ĐÃ HẾT HIỆU LỰC. Con số đó rút khi ⑤ hợp bằng chuẩn hoá z, nơi
+# `fused4` và `vlm` đều được đưa về `E=0, sd=1` trước khi cộng. Nay ⑤ hợp bằng RRF, nên
+# `0,25` là trọng số TẦNG BA của RRF — cùng đơn vị với `alpha` của ③, khác đơn vị với
+# thứ nó được quét ra. Phân bố điểm nền đổi hẳn, nên phải QUÉT LẠI trước khi tin.
+# Quét lại cần một lượt Modal; đến lúc đó `0,25` chỉ là giá trị mang sang, không phải
+# giá trị đã đo trong kiến trúc hiện tại.
 RERANK_WEIGHTS = {"fused4": 1.0, "crop": 0.0, "vlm": 0.25}
 
 # ⑤c chấm top-K của rổ. [ĐO] trên bộ GIỮ KÍN 110 câu (chưa dùng để chọn gì), bắt cặp
@@ -530,7 +589,8 @@ def make_crops(refs, ids) -> list[str]:
 @app.local_entrypoint()
 def main(dir: str = "queries", out: str = "submission", index: str = "data/embed",
          top_k: int = 100, rerank: bool = True, light: bool = False, dim: int = 512,
-         vlm_top_k: int = VLM_TOP_K, crop_w: float = -1.0):
+         vlm_top_k: int = VLM_TOP_K, crop_w: float = -1.0,
+         expansions: str = "expansions"):
     import numpy as np
 
     from src.ingestion.jina_encoder import truncate_and_normalize
@@ -538,12 +598,12 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     from src.retrieval.pool import union_pool
     from src.retrieval.probe import build_probes, declarativize
     from src.retrieval.rerank import collect_crops, crop_scores, vlm_scores
-    from src.retrieval.score_matrix import DEFAULT_WEIGHTS, fuse
+    from src.retrieval.score_matrix import hierarchical_rrf
     from src.submission.kbest import k_best_alignments
     from src.ingestion.vector_index import load_flat_index
     from src.retrieval.sources import (
         AsrSource, SourceScores, TextSource, VisualSource, load_asr_segments,
-        load_frame_ms, load_object_text, load_ocr_text,
+        load_frame_ms, load_ocr_text,
     )
 
     # Ghi đè trọng số bậc 1 từ dòng lệnh. Có cờ này vì phép đo trước tôi làm bằng cách
@@ -585,9 +645,70 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
             cache[key_of(i)] = v
         save_cache(cache)
     else:
-        print(f"toàn bộ đã có trong cache — không tốn GPU")
+        print("toàn bộ đã có trong cache — không tốn GPU")
     QV = {t: truncate_and_normalize(np.asarray([cache[key_of(t)]], np.float32), dim)[0]
           for q in queries for t in q["probes"]}
+
+    # ① MỞ RỘNG TRUY VẤN — đọc từ file, KHÔNG gọi LLM lúc thi.
+    #
+    # Sinh expansion cần một lượt gọi LLM mỗi truy vấn. Trong 2h30 không có lần hai, và
+    # proxy đã sập HAI LẦN chỉ trong một buổi làm việc — mỗi lần hơn mười phút, mọi model
+    # đều timeout. Nên đường chạy thi chỉ ĐỌC file đã sinh sẵn; sinh là việc làm trước,
+    # bằng `scripts/research/generate_expansions.py`.
+    #
+    # Thiếu file, hoặc thiếu một truy vấn trong file, thì lùi về CÂU GỐC và báo ra. Lùi
+    # không trung tính — nhánh expansion khi đó trùng nhánh gốc — nên nó phải nhìn thấy
+    # được, không được im lặng.
+    # Chấp nhận CẢ HAI dạng, vì chúng phục vụ hai việc khác nhau:
+    #   · THƯ MỤC `<id>.<modality><n>.txt` — sửa bằng tay được, grep được, diff được,
+    #     đúng cách `queries/` đang làm. Đây là mặc định.
+    #   · file JSON — đầu ra thô của `generate_expansions.py`, tiện cho nhánh nghiên cứu.
+    # Lấy TẤT CẢ nhánh, không chỉ nhánh đầu: [ĐO] hai expansion của cùng modality có
+    # Jaccard token chỉ 0,148 (OCR) và 0,155 (ASR), 0/24 trùng chuỗi — chúng là hai GÓC
+    # NHÌN khác nhau, nên bỏ cái thứ hai là vứt đúng phần đa dạng vừa trả tiền để có.
+    EXP: dict[str, dict[str, list[str]]] = {}
+    exp_path = Path(expansions)
+    by_id: dict[str, dict[str, list[str]]] = {}
+    if exp_path.is_dir():
+        for f in sorted(exp_path.glob("*.txt")):
+            # `<query_id>.<modality><n>.txt`; `query_id` có thể chứa dấu chấm nên tách
+            # từ PHẢI sang, đúng một lần.
+            stem, _, tag = f.stem.rpartition(".")
+            mod = tag.rstrip("0123456789")
+            if not stem or mod not in ("ocr", "asr"):
+                continue
+            text = f.read_text(encoding="utf-8").strip()
+            if text:
+                by_id.setdefault(stem, {}).setdefault(mod, []).append(text)
+    elif exp_path.is_file():
+        raw = json.loads(exp_path.read_text(encoding="utf-8"))
+        items = raw.get("queries", raw) if isinstance(raw, dict) else raw
+        for r in items:
+            e = r.get("expansions", r)
+            got: dict[str, list[str]] = {}
+            for name in ("ocr", "asr"):
+                val = e.get(name)
+                xs = [val] if isinstance(val, str) else list(val or [])
+                xs = [x for x in xs if isinstance(x, str) and x.strip()]
+                if xs:
+                    got[name] = xs
+            if got:
+                by_id[r.get("id") or r.get("query_id")] = got
+
+    for q in queries:
+        got = by_id.get(q["id"])
+        if not got:
+            continue
+        for t in q["probes"]:
+            EXP.setdefault(t, {}).update(got)
+    n_probe = sum(len(q["probes"]) for q in queries)
+    if by_id:
+        n_o = max((len(v.get("ocr", [])) for v in EXP.values()), default=0)
+        n_a = max((len(v.get("asr", [])) for v in EXP.values()), default=0)
+        print(f"① mở rộng: {len(EXP)}/{n_probe} probe · {n_o} nhánh OCR + {n_a} nhánh ASR "
+              f"· nguồn {exp_path}")
+    else:
+        print(f"① mở rộng: KHÔNG đọc được {exp_path} — mọi nhánh dùng câu gốc")
 
     # ②③ nạp nguồn
     t0 = time.time()
@@ -596,11 +717,17 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     tsrc = []
     if not light:
         tsrc = [TextSource("ocr", idx.ids, load_ocr_text("data/OCR/ocr.jsonl")),
-                TextSource("object", idx.ids, load_object_text("data/objects-full")),
                 AsrSource(idx.ids, load_frame_ms(), load_asr_segments("data/ASR"))]
-    W = dict(DEFAULT_WEIGHTS) if not light else {"visual": 1.0}
-    fms = load_frame_ms()
-    times = np.array([fms.get(k, 0.0) for k in idx.ids], dtype=np.float64)
+    # `DEFAULT_WEIGHTS` (z-norm) KHÔNG còn dung hợp gì — ③ nay là `hierarchical_rrf`.
+    # Không giữ lại một biến `W` để in và ghi báo cáo: một bản ghi nêu cấu hình mà đường
+    # chạy không dùng còn tệ hơn không ghi gì, vì nó làm mọi phép so sau này sai gốc.
+    fms = load_frame_ms()          # ⑥ dùng để gắn lời nói quanh khung cho đầu đọc QA
+    # Ở đây từng có thêm `times = [frame_ms cho từng khung]` — một vòng lặp qua 173.426
+    # khung nữa. Nó phục vụ
+    # `dante(times_ms=…)`. Sau khi ⑦ hợp nhất về `k_best_alignments`, hàm đó KHÔNG nhận
+    # trục thời gian nữa — nó ràng buộc thứ tự bằng chỉ số ứng viên và `min_gap`.
+    # Mất trục thời gian không đổi kết quả CHỈ VÌ `DEFAULT_LAMBDA = 0`: λ là người tiêu thụ
+    # duy nhất của trục ấy. Bật λ > 0 trở lại thì phải dựng lại `times` VÀ đổi sang `dante()`.
     # `FI[row]` = số khung THẬT của keyframe. ⑦ nộp đúng giá trị này, nên đây là toàn bộ
     # thông tin thời gian mà tầng nộp cần.
     #
@@ -623,20 +750,47 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
         print(f"    ⏱ {name}: {T[name]:.0f}s", flush=True)
 
     print(f"nạp {time.time() - t0:.0f}s · {idx.n_frames:,} khung · {idx.dim} chiều "
-          f"· trọng số {W}")
+          f"· ③ RRF phân cấp k={RRF_K:g} · alpha {ALPHA}")
 
-    # ②③ chấm điểm — GIỮ LẠI điểm từng nguồn, không hợp rồi vứt.
+    # ②③ chấm điểm — GIỮ LẠI điểm từng RUN, không hợp rồi vứt.
     # Điểm hợp `q["S"]` vẫn cần: ④ DANTE chạy trên nó, và nó là điểm nền phá hoà trong
-    # rổ. Nhưng việc CHỌN AI VÀO VÒNG TRONG thì do từng nguồn tự đề cử.
+    # rổ. Nhưng việc CHỌN AI VÀO VÒNG TRONG thì do từng run tự đề cử.
+    #
+    # Mỗi modality văn bản chấm HAI lần: câu gốc và câu mở rộng. Rổ ⑤a nhận cả 5 run
+    # (1 thị giác + 2 OCR + 2 ASR) làm 5 nguồn đề cử độc lập — một expansion là một GÓC
+    # NHÌN khác trên cùng modality, nên nó xứng đáng có suất riêng, đúng lý lẽ đã cho
+    # `+0,0153` khi mỗi nguồn được suất riêng.
+    n_fallback = 0
     for q in queries:
         rows, per_probe = [], []
         for t in q["probes"]:
-            ss = [vis.score(QV[t])] + [s.score(t) for s in tsrc]
-            per_probe.append(ss)
-            rows.append(fuse(ss, W))
+            v = vis.score(QV[t])
+            runs: dict[str, list] = {"visual": [v]}
+            flat = [v]
+            for src in tsrc:
+                texts = EXP.get(t, {}).get(src.name) or []
+                if not texts:
+                    n_fallback += 1
+                group = [src.score(t)] + [src.score(x) for x in texts]
+                runs[src.name] = group
+                flat += group
+            per_probe.append(flat)
+            # alpha CHỈ trên các modality thật sự có mặt, rồi chuẩn hoá lại. `--light`
+            # bỏ hết nguồn văn bản, nên nếu bê nguyên ALPHA ba khoá thì Visual nhận 1/3
+            # và tổng không còn bằng 1 — không đổi thứ hạng khi chỉ có một modality,
+            # nhưng nó làm bản ghi nói sai cấu hình đã chạy.
+            present = {m: ALPHA[m] for m in runs}
+            tot = sum(present.values())
+            alpha = {m: w / tot for m, w in present.items()}
+            beta = {m: _beta_for(len(r)) for m, r in runs.items()}
+            rows.append(hierarchical_rrf(runs, alpha=alpha, beta=beta, k=RRF_K))
         q["S"] = np.vstack(rows).astype(np.float32)
         q["sources"] = per_probe
-    lap("②③ chấm 4 nguồn")
+    if n_fallback:
+        # Lùi về câu gốc KHÔNG trung tính: nhánh expansion khi đó TRÙNG nhánh gốc, nên
+        # modality ấy tự nhân đôi quyền vote của câu gốc. Báo ra thay vì giấu.
+        print(f"⚠ {n_fallback} nhánh expansion lùi về câu gốc (thiếu trong file mở rộng)")
+    lap("②③ chấm 3 nguồn × 5 run")
 
     # ⑤a RỔ ỨNG VIÊN — hợp top riêng của từng nguồn, gộp qua mọi probe của truy vấn
     #
@@ -719,17 +873,35 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
     # ── HỢP ĐIỂM SAU RERANK ─────────────────────────────────────────────────
     # Một chỗ duy nhất dựng `q["S"]` cuối. Gọi hai lần: sau bậc 1 để bậc 2 biết chấm
     # khung nào, rồi sau bậc 2 để ra điểm cuối. Hợp một lần từ nguồn gốc chứ không hợp
-    # chồng lên điểm đã hợp — chuẩn hoá z hai lượt là sai thang.
+    # chồng lên điểm đã hợp — hợp hai lượt là sai thang.
+    #
+    # RRF ở đây nữa, KHÔNG chuẩn hoá z. Đây là TẦNG THỨ BA của cùng một cấu trúc: ③ hợp
+    # expansion trong modality rồi hợp modality; ⑤ hợp *giai đoạn* — điểm nền với điểm
+    # VLM. Dùng z ở riêng tầng này thì đường chạy có hai hệ thang khác nhau, và trọng số
+    # của tầng nào cũng không đọc được cùng đơn vị với tầng kia.
+    #
+    # Nó cũng giải đúng chỗ mà z sinh ra để giải: `fused4` là điểm RRF cỡ 0–0,016 còn
+    # `vlm` là xác suất 0–1, cộng thẳng thì VLM nuốt trọn. Xếp hạng cả hai rồi mới cộng
+    # làm hai thang gặp nhau mà không cần biết biên độ của bên nào.
     def combine(q: dict) -> np.ndarray:
         rows = []
         for i in range(len(q["probes"])):
-            parts = [SourceScores("fused4", q["S0"][i],
-                                  np.ones(idx.n_frames, dtype=bool))]
+            parts = {"fused4": [SourceScores("fused4", q["S0"][i],
+                                             np.ones(idx.n_frames, dtype=bool))]}
             if "crop" in q:
-                parts.append(q["crop"][i])
+                parts["crop"] = [q["crop"][i]]
             if "vlm" in q and i == 0:
-                parts.append(q["vlm"])
-            s = fuse(parts, RW)
+                parts["vlm"] = [q["vlm"]]
+            # Chỉ giữ trọng số của giai đoạn CÓ MẶT rồi chuẩn hoá lại, để `_report.json`
+            # ghi đúng cấu hình đã chạy thay vì cấu hình đã khai báo.
+            present = {k: RW[k] for k in parts if RW.get(k, 0.0) > 0.0}
+            if not present:
+                present = {"fused4": 1.0}
+                parts = {"fused4": parts["fused4"]}
+            tot = sum(present.values())
+            s = hierarchical_rrf({k: parts[k] for k in present},
+                                 alpha={k: v / tot for k, v in present.items()},
+                                 k=RRF_K)
             # Rổ là bộ lọc CỨNG. Biên giữ nguyên thứ tự nội bộ hai phía nên DANTE vẫn
             # chạy được trên ma trận dày.
             s[q["pool"]] += POOL_MARGIN
@@ -962,7 +1134,22 @@ def main(dir: str = "queries", out: str = "submission", index: str = "data/embed
               f"({(odir / '_rerank_scores.npz').stat().st_size / 1e6:.1f} MB)")
 
     (odir / "_report.json").write_text(
-        json.dumps({"weights": W, "dim": idx.dim, "rerank": bool(rerank),
+        json.dumps({"fusion": {
+                        "method": "hierarchical_rrf",
+                        "rrf_k": RRF_K,
+                        "alpha": ALPHA,
+                        "beta_rule": "ĐỀU — mọi nhánh trong một modality bằng nhau, kể cả câu gốc",
+                        "runs_per_modality": {
+                            "visual": 1,
+                            "ocr": 1 + max((len(v.get("ocr", [])) for v in EXP.values()),
+                                           default=0),
+                            "asr": 1 + max((len(v.get("asr", [])) for v in EXP.values()),
+                                           default=0),
+                        },
+                        "expansion_source": str(exp_path),
+                        "probes_with_expansion": len(EXP),
+                    },
+                    "dim": idx.dim, "rerank": bool(rerank),
                     "pool_per_source": POOL_PER_SOURCE, "pool_cap": POOL_CAP,
                     "rerank_weights": RW,
                     "vlm_top_k": vlm_top_k if rerank else 0,

@@ -302,3 +302,74 @@ def test_dau_vao_sai_thi_NO_chu_khong_mac_dinh_0():
         hierarchical_rrf({"v": [v, v]}, beta={"v": [1.0]})
     with _pytest.raises(ValueError, match="lệch số khung"):
         hierarchical_rrf({"v": [v, _ss("v2", [1.0, 2.0])]})
+
+
+# ============================================================
+# CHỐT CHẶN ĐƯỜNG CHẠY THI — đọc `scripts/run.py` ở mức cú pháp
+# ============================================================
+#
+# Hai điều dưới đây là QUYẾT ĐỊNH KIẾN TRÚC, không phải tham số:
+#   · ③ và ⑤ hợp bằng HẠNG, không có chuẩn hoá z ở bất kỳ tầng nào
+#   · β chia ĐỀU — mỗi bản mở rộng đóng góp ngang bản gốc
+#
+# Cả hai từng bị đặt ngược trong chính kho này (⑤ hợp bằng `fuse(..., "z")`; β từng là
+# `(0,5 · 0,25 · 0,25)` ưu ái bản gốc, lấy từ hạt giống playbook chứ không từ phép đo).
+# Không có chốt thì lần sau chúng quay lại trong im lặng — điểm vẫn ra số, thứ hạng vẫn
+# sắp được. Đọc bằng `ast` để KHÔNG phải import `run.py` (nó nạp torch).
+
+import ast as _ast
+import pathlib as _pl
+
+_RUN_PY = _pl.Path(__file__).resolve().parents[1] / "scripts" / "run.py"
+_RUN_AST = _ast.parse(_RUN_PY.read_text(encoding="utf-8"))
+
+
+def test_duong_chay_thi_KHONG_con_chuan_hoa_z_o_bat_ky_tang_nao():
+    """Mọi lời gọi `fuse`/`fuse_matrix` đều đã thay bằng `hierarchical_rrf`."""
+    goi = [
+        n.func.id
+        for n in _ast.walk(_RUN_AST)
+        if isinstance(n, _ast.Call) and isinstance(n.func, _ast.Name)
+    ]
+    assert "fuse" not in goi and "fuse_matrix" not in goi, (
+        "run.py gọi lại `fuse` — ③/⑤ phải hợp bằng `hierarchical_rrf`"
+    )
+    assert "hierarchical_rrf" in goi
+    # và không còn chuỗi "z" nào nằm ở vị trí tham số chuẩn hoá
+    chuoi_z = [
+        n
+        for n in _ast.walk(_RUN_AST)
+        if isinstance(n, _ast.Constant) and n.value == "z"
+    ]
+    assert not chuoi_z, f'còn hằng chuỗi "z" ở dòng {[n.lineno for n in chuoi_z]}'
+
+
+def test_beta_chia_DEU_va_tong_bang_1():
+    """`_beta_for(n)` = (1/n,)·n với mọi n — không ưu ái bản gốc."""
+    ns = {}
+    for node in _RUN_AST.body:
+        if isinstance(node, _ast.FunctionDef) and node.name == "_beta_for":
+            exec(compile(_ast.Module([node], []), "<_beta_for>", "exec"), ns)
+    assert "_beta_for" in ns, "run.py không còn `_beta_for`"
+    beta_for = ns["_beta_for"]
+    for n in range(1, 8):
+        b = beta_for(n)
+        assert len(b) == n
+        assert len(set(b)) == 1, f"β lệch ở n={n}: {b}"
+        assert abs(sum(b) - 1.0) < 1e-9
+    # ba nguồn (gốc + 2 bản mở rộng) ⟹ 1/3, KHÔNG phải 50-50
+    assert beta_for(3) == (1 / 3, 1 / 3, 1 / 3)
+
+
+def test_pool_cap_khong_duoc_cat_ro_that():
+    """`POOL_CAP` phải ≥ 7 run × `POOL_PER_SOURCE`, nếu không nó cắt mọi truy vấn."""
+    hang = {
+        t.id: node.value.value
+        for node in _RUN_AST.body
+        if isinstance(node, _ast.Assign) and isinstance(node.value, _ast.Constant)
+        for t in node.targets
+        if isinstance(t, _ast.Name)
+    }
+    assert hang["POOL_CAP"] >= 7 * hang["POOL_PER_SOURCE"], (
+        f"POOL_CAP={hang['POOL_CAP']} cắt rổ thật (7 run × {hang['POOL_PER_SOURCE']})"
+    )

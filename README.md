@@ -8,12 +8,21 @@ Vận hành ngày thi: [`RUNBOOK.md`](RUNBOOK.md) · Kế hoạch tối ưu: [`O
 ```
 ⓪ mã hoá offline   173.426 khung → lưu 1024 chiều, tra ở 512
        │
-đề → ① probe → ② bốn nguồn ─┬─→ ③ dung hợp có trọng số ─────┐
-                            │                               ├→ ⑤c VLM → ④ kbest → ⑦ nộp
-                            └─→ ⑤a RỔ: top RIÊNG mỗi nguồn ─┘
+đề → ① PROBE + mở rộng ──→ ② 7 run chấm điểm ──→ ③ DUNG HỢP  RRF hai tầng
+     tách mốc E1/E2          1 thị giác              beta: expansion trong modality
+     đọc expansions/         3 OCR (gốc+2)           alpha: modality với nhau
+                             3 ASR (gốc+2)                    │
+                                    │                         │
+                             ⑤a RỔ ─┘                         │
+                             top RIÊNG mỗi run ───────────────┤
+                                                              ▼
+                                    ⑦ nộp ←── ④ DANTE ←── ⑤c RERANK
+                                    1 khung/mốc    k-best     VLM, RRF tầng ba
 ```
 
-**Rổ chọn ai vào vòng trong; dung hợp + VLM quyết thứ hạng.**
+**Rổ chọn ai vào vòng trong; RRF hai tầng quyết thứ hạng; DANTE ràng buộc thứ tự thời gian.**
+
+Toàn bộ đường chạy xếp theo **HẠNG**, không có chuẩn hoá z ở bất kỳ tầng nào.
 
 ---
 
@@ -23,12 +32,12 @@ Vận hành ngày thi: [`RUNBOOK.md`](RUNBOOK.md) · Kế hoạch tối ưu: [`O
 |---|---|---|
 | ⓪ | **jina-clip-v2** (0,9B, 89 ngôn ngữ) | nhúng chung ảnh–chữ; Matryoshka lưu 1024, tra 512 |
 | ① | tách mốc `E1:`/`E2:`, rút trích dẫn | một truy vấn → N probe. Q&A: câu hỏi → câu **mô tả** |
-| ② | jina-clip · **BM25** ×3 | thị giác · OCR · vật thể · lời nói, mỗi nguồn chấm độc lập |
-| ③ | chuẩn hoá **z trên tập có dữ liệu** | hợp 4 nguồn; khung không phủ nhận đúng kỳ vọng, không nhận 0 |
-| ③′ | **`hierarchical_rrf`** (nhánh QAFuse) | RRF hai tầng: gộp expansion TRONG modality trước, rồi giữa modality |
-| ⑤a | **rổ ứng viên** (`pool.py`) | mỗi nguồn đề cử top 40 riêng → rổ 158 khung, **bộ lọc cứng** |
+| ① | mở rộng truy vấn | đọc `expansions/` — 2 bản OCR + 2 bản ASR mỗi đề, **không gọi LLM lúc thi** |
+| ② | jina-clip · **BM25** ×2 | thị giác · OCR · lời nói. Mỗi modality văn bản chấm 3 lần: gốc + 2 mở rộng |
+| ③ | **`hierarchical_rrf`** | RRF hai tầng — `beta` gộp expansion TRONG modality, `alpha` gộp modality |
+| ⑤a | **rổ ứng viên** (`pool.py`) | mỗi RUN đề cử top 40 riêng → rổ 266–269 khung, **bộ lọc cứng** |
 | ⑤b | mảnh cắt vật thể + jina-clip | **BỎ** — trống cả ở nhóm ≥2 màu, tốn 655s + $0,77 |
-| ⑤c | **Qwen2.5-VL-7B** | `P(khung khớp)` = softmax trên đúng hai token `1`/`0` |
+| ⑤c | **Qwen2.5-VL-7B** | `P(khung khớp)` = softmax trên hai token `1`/`0`; hợp vào nền bằng **RRF tầng ba** |
 | ④ | **DANTE** k-best (`kbest.py`) | DP thứ tự thời gian `O(N·T)`; **KIS = TRAKE với N=1** |
 | ⑥ | Qwen2.5-VL | chỉ đề Q&A: đọc khung + OCR + lời nói → sinh `answer` |
 | ⑦ | một khung mỗi mốc, 100 mốc | rải đã XOÁ — chờ keyframe dày hơn; xoá rải mất 0,3129 ở mật độ hiện tại |
@@ -69,14 +78,16 @@ Tháp chữ huấn luyện trên **caption**, mà câu nghi vấn hỏi về th�
 *"…cầm ly màu gì?"*, cụm "màu gì" là chỗ trống, không mô tả khung nào. ⑥ vẫn nhận câu hỏi
 gốc vì nó cần biết đang được hỏi gì. *(Ý lấy từ NII-UIT @ VBS2025 mục 2.7.)*
 
-### ② Bốn nguồn điểm
+### ② Ba nguồn điểm, BẢY lượt chấm
 
-| nguồn | công nghệ | dữ liệu | phủ |
-|---|---|---|---|
-| thị giác | jina-clip-v2, cosine | vector 512 chiều | 100% |
-| OCR | **BM25** (`k1=0,6 · b=0,9`) | chữ hiện trên màn | 98% |
-| vật thể | **BM25** (mặc định) | nhãn vật thể đã phát hiện | 99% |
-| lời nói | **BM25** (`k1=1,5 · b=0,0`) | ASR trong cửa sổ **±5 giây** quanh khung | 97% |
+| nguồn | công nghệ | dữ liệu | phủ | số lượt |
+|---|---|---|---|---|
+| thị giác | jina-clip-v2, cosine | vector 512 chiều | 100% | 1 (probe) |
+| OCR | **BM25** (`k1=0,6 · b=0,9`) | chữ hiện trên màn | 98% | 3 (gốc + `qo` ×2) |
+| lời nói | **BM25** (`k1=1,5 · b=0,0`) | ASR trong cửa sổ **±5 giây** quanh khung | 97% | 3 (gốc + `qa` ×2) |
+
+Mỗi **lượt** là một danh sách hạng độc lập đi vào ③ — tầng `beta` cộng ba lượt trong cùng
+một nguồn, tầng `alpha` cộng ba nguồn. Nguồn **vật thể đã gỡ** (xem mục Trọng số).
 
 BM25 **cố tình không tự bỏ dấu** — bỏ dấu sinh đụng độ thật: `đồng`(Nai)/`động`(vật),
 `cán`/`căn`/`cân`. Mỗi nguồn trả `SourceScores(scores, covered)`, trong đó `covered` nói
@@ -98,29 +109,72 @@ chuẩn hoá theo độ dài chỉ thêm nhiễu.
 ⚠️ Đầu-cuối chỉ **+0,005 với KTC chứa 0** (16/110 câu đổi). Giữ vì lý do **cơ chế** —
 `b=0` cho ASR suy ra từ thiết kế nguồn, đúng bất kể bộ eval — chứ không vì con số.
 
-⚠️ Nguồn **vật thể có MRR 0,0003**, hạng đáp án cỡ 3.000. Chỉnh tham số cho nó là vô
-nghĩa; vấn đề ở chất lượng nhãn.
+⚠️ Nguồn **vật thể có MRR 0,0003**, hạng đáp án cỡ 3.000 — đó là lý do nó bị gỡ, chứ
+không phải vì chỉnh sai tham số.
 
-### ③ Ma trận S — dung hợp
+### ③ Dung hợp — RRF hai tầng
+
+    Score(d) = Σ_m alpha_m · ( Σ_j beta_mj / (k + rank_mj(d)) )
+    ràng buộc: Σ alpha_m = 1  ·  Σ_j beta_mj = 1 cho TỪNG modality
 
 | | |
 |---|---|
-| phép chuẩn hoá | **z trên riêng tập `covered`** ⟹ `E[z \| covered] = 0` |
-| trọng số | `visual 1,0 · object 0,0891 · ocr 0,1322 · asr 0,2128` |
-| cách rút | bootstrap 200 lần + kiểm chéo lồng 5 lớp |
-| đã bác bỏ | RRF (−0,2927) · chuẩn hoá `rank` (0,035 so với 0,460) |
+| hàm | `score_matrix.hierarchical_rrf` |
+| `k` | 60 |
+| `alpha` | **đều** — `visual 1/3 · ocr 1/3 · asr 1/3` |
+| `beta` | **đều** trong từng modality — 3 run ⟹ `1/3` mỗi nhánh |
+| số run | 7 = 1 thị giác + 3 OCR + 3 ASR |
 
-Đây là chỗ RRF chết. Nguồn phủ một phần, nên nếu coi khung không có dữ liệu là **điểm 0**
-thì *việc được chấm* tự thành lợi thế bất kể liên quan. Chuẩn hoá z trên riêng tập được phủ
-khiến khung không phủ nhận đúng **kỳ vọng**. `rank` hỏng vì trải đều thứ hạng phá mất sức
-phân biệt của nguồn thị giác vốn dày đặc.
+Trọng số áp vào **đóng góp RRF**, không áp vào raw score — cosine và BM25 không bao giờ
+được cộng trực tiếp với nhau.
+
+**Vì sao hai tầng, không phẳng.** Ném cả 7 run vào một phép RRF phẳng thì modality nào
+nhiều expansion hơn tự có nhiều quyền vote hơn: Visual một run bị OCR ba run lấn át chỉ
+vì đếm run. Chuẩn hoá `beta` trong từng modality chặn đúng điều đó. [ĐO] trên bench_kis:
+
+| cấu hình | MRR | R@100 |
+|---|---|---|
+| không expansion | 0,4751 | 0,91 |
+| bỏ bản gốc, chỉ QE | 0,4867 | 0,93 |
+| QE chỉ OCR | 0,4989 | 0,92 |
+| QE chỉ ASR | 0,4874 | 0,92 |
+| **phân cấp, QE cả hai** ★ | **0,5281** | **0,93** |
+| **PHẲNG, cùng 5 run** | 0,4427 | 0,89 |
+
+Phân cấp hơn phẳng **0,085 MRR** — khoản lớn nhất bảng. Và giữ bản gốc bên cạnh
+expansion hơn bỏ nó 0,041: expansion **bổ sung**, không thay thế.
+
+**Vì sao cả hai trọng số đều ĐỀU.** Không phải vì chưa thử. E4 quét trọng số toàn cục hai
+tầng trên 210 câu tuning, báo trên 100 câu held-out chưa đụng tới:
+
+```
+alpha* tìm được = (0,30 · 0,35 · 0,35)  ≈ đều
+held-out: đều 0,5281  →  có trọng số 0,4884
+ΔMRR bắt cặp −0,0398 · KTC95 [−0,0783, −0,0056] · thắng 10 / thua 18
+```
+
+Khoảng tin cậy nằm **trọn dưới 0**: trọng số toàn cục **kém hơn có ý nghĩa**. Lệch khỏi
+đều phải đo trên tập giữ kín trước, không phải đặt theo trực giác.
+
+🔴 **Đánh đổi đã biết khi chọn RRF.** A/B với kiến trúc z-norm cũ trên 210 câu:
+`ΔMRR −0,0375` KTC95 `[−0,0707, −0,0057]` (RRF **kém hơn** về MRR, có ý nghĩa) nhưng
+`ΔR@100 +0,0095` và RRF thắng rõ ở `R@20`–`R@50` (holdout 0,409 → 0,509). RRF chỉ nhìn
+**hạng** nên kéo được ứng viên từ sâu lên, nhưng vứt mất **biên độ** — mà biên độ chính
+là thứ tách hạng 1 khỏi hạng 3. Chọn RRF là chấp nhận đổi `R@1` lấy `R@20`–`R@100`.
+
+⚠️ **`k = 60` chưa có căn cứ trong chế độ đang chạy.** RRF nguyên bản định nghĩa trên
+danh sách **đã cắt top-K**; `rrf_normalize` xếp hạng cả tập được phủ (173.426). Hệ quả:
+tỉ lệ đóng góp hạng-1 so với hạng-cuối là **2844×** thay vì **2,6×** như khi cắt top-100.
+[ĐO] không cắt vẫn tốt hơn cắt (MRR 0,2862 so với 0,2782 ở top-100, đơn điệu, bão hoà
+quanh top-5000) — nên **không** cắt. Nhưng `k` kế thừa từ E3 và chưa từng được quét trong
+chế độ này.
 
 ### ⑤a Rổ ứng viên — `src/retrieval/pool.py`
 
 | | |
 |---|---|
-| cách chọn | mỗi nguồn đề cử **top 40 của riêng nó**, hợp lại |
-| kích thước | trung vị **158**, max **160** = 4×40 (`POOL_CAP = 200` không bao giờ chạm) |
+| cách chọn | mỗi RUN đề cử **top 40 của riêng nó**, hợp lại |
+| kích thước | **266–269** khung = 7 run × 40 sau khử trùng (`POOL_CAP = 300`) |
 | vai trò | **bộ lọc CỨNG** — chỉ khung trong rổ mới được nộp |
 | chốt 1 | `score > 0` — khung có chữ nhưng không khớp từ nào thì không được đề cử |
 | chốt 2 | **10 khung/video/nguồn** — chặn nguồn cho điểm phẳng cả video |
@@ -149,8 +203,15 @@ Hai hệ quả, cả hai đều là **lý lẽ cơ chế cho kết quả đã đ
   hình**, chứ không phải "được ưu tiên thấp";
 - dùng `agree` **làm điểm** thì hại `0,0208` — vì nó gần như hằng số 1, nên chỉ mang nhiễu.
 
-Và: rổ trung vị **158**, max **đúng 160 = 4×40** ⟹ `POOL_CAP = 200` **không bao giờ chạm**.
-Muốn rổ to hơn thì bậc `POOL_PER_SOURCE`, đừng bậc `POOL_CAP`.
+🔴 **`POOL_CAP` đã từng âm thầm cắt mất 25% rổ.** Khi ③ còn 4 nguồn, rổ tối đa là
+`4×40 = 160` nên `POOL_CAP = 200` không bao giờ chạm — README cũ ghi đúng như vậy. ③
+chuyển sang RRF phân cấp thì mỗi truy vấn có **7 run**, rổ thô lên **266–269** [ĐO trên
+gtv2], và 200 bắt đầu cắt ở **mọi** truy vấn. Phép cắt ấy xếp theo điểm **nền**, nên nó
+xoá đúng phần mà suất riêng mỗi run sinh ra để bảo vệ — khoản `+0,0153`. Nâng lên **300**
+(> 7×40 = 280) để chốt trở lại đúng vai trò chốt an toàn.
+
+⚠️ Thêm expansion thứ ba mỗi modality (9 run = 360) thì phải nâng tiếp, nếu không lỗi này
+quay lại y nguyên **và vẫn im lặng**.
 
 ### ⑤b Bậc 1 — mảnh cắt vật thể ⚠️ TẮT
 
@@ -458,14 +519,24 @@ sớm hơn. **Tiền còn lại nằm ở khâu xếp hạng, không ở khâu t
 ### Trọng số
 
 ```
-dung hợp 4 nguồn   visual 1,0 · object 0,0891 · ocr 0,1322 · asr 0,2128
-sau rerank         fused4 1,0 · crop 0,0     · vlm 0,25
+③ modality (alpha)   visual 1/3 · ocr 1/3 · asr 1/3          ← ĐỀU
+③ expansion (beta)   đều trong từng modality, 3 run ⟹ 1/3
+⑤ giai đoạn          fused4 1,0 · crop 0,0 · vlm 0,25
 ```
 
-Chỉ **tỉ lệ** có nghĩa — cả ba đi qua cùng phép chuẩn hoá z nên trọng số chỉ diễn đạt
+Chỉ **tỉ lệ** có nghĩa — cả ba tầng đều cộng **đóng góp RRF**, nên trọng số diễn đạt
 **mức tin cậy**, không sửa thang. Mặt mục tiêu **phẳng**: mỗi trọng số chỉ xác định được
 trong khoảng rộng ~2,5 lần. Đừng chỉnh chữ số thứ ba; hãy mở rộng bộ eval.
 
+🔴 **`vlm = 0,25` hết hiệu lực về căn cứ.** Nó quét ra khi ⑤ hợp bằng chuẩn hoá z, nơi
+`fused4` và `vlm` cùng được đưa về `E=0, sd=1` trước khi cộng. Nay ⑤ hợp bằng RRF, nên
+`0,25` là trọng số **tầng ba của RRF** — cùng đơn vị với `alpha` của ③, khác đơn vị với
+thứ nó được đo. Đến khi quét lại, nó chỉ là **giá trị mang sang**.
+
+Bảng trọng số 4 nguồn cũ (`visual 1,0 · object 0,0891 · ocr 0,1322 · asr 0,2128`) đã bỏ
+cùng chuẩn hoá z. Nguồn `object` cũng đã gỡ khỏi đường chạy: [ĐO] bắt cặp trên 210 câu,
+`ΔMRR +0,0064` KTC95 `[−0,0067, +0,0205]`, **151/210 câu không đổi gì** — bỏ là quyết
+định về chi phí (1,3 GB `objects-full`), không phải về điểm.
 ⚠️ δ ASR đổi ×2 **không vì tinh chỉnh kỹ hơn** mà vì **hỗn hợp eval sai**: bộ cũ fit trên
 326 câu gộp, trong đó 226 câu có **0%** cần ASR còn 100 câu có **81%**. Điểm hoà vốn là
 `p > 61%`, với `p` = tỉ lệ đề thật cần OCR/ASR.
@@ -604,9 +675,15 @@ shot. AIC sơ tuyển **nộp tự động**. Phần lớn thiết kế của h�
 | Hợp nhiều tháp nhúng (BEiT-3 · OpenCLIP · InternVL-G) | **chưa** — khoảng cách thật |
 | Keyframe mỗi khung thứ 10 | ta khe 48 → trần 23,5%; ×4 dày lên 73,5% *(nhưng ở tiền xử lý)* |
 | Xếp hạng theo shot | đã đo, **−0,0841** |
-| Query expansion bằng LLM | đã đo **xấu hơn** — ở VBS *người* chọn bản diễn giải |
+| Query expansion bằng LLM | **ĐÃ ÁP DỤNG, nhưng khác chỗ đặt** — xem ghi chú dưới |
 | Temporal search **hai chiều** | **sai luật AIC** — TRAKE quy định chuỗi có thứ tự |
-| Vật thể làm **bộ lọc cứng** | rủi ro — nguồn vật thể của ta yếu nhất |
+| Vật thể làm **bộ lọc cứng** | không còn bàn — nguồn vật thể đã gỡ khỏi đường chạy |
+
+🔁 **Query expansion đã đảo kết luận, và chỗ đặt là lý do.** Bản đo cũ *thay* truy vấn
+gốc bằng bản diễn giải rồi chấm một danh sách — mất bản gốc thì mất luôn phần nó đúng, và
+ở VBS chính *người dùng* bù chỗ đó bằng cách chọn bản nào dùng. Nay bản mở rộng **không
+thay** gì cả: mỗi bản là một lượt chấm riêng, bản gốc vẫn là một lượt, và tầng `beta` của
+③ cộng chúng lại theo HẠNG. Không có ai chọn giúp, nên ta cộng đều thay vì chọn.
 
 Họ **không có OCR và ASR**. Kho AIC là tin tức tiếng Việt — chữ dưới màn, tên kênh, lời
 dẫn — nên hai nguồn đó là **lợi thế riêng của bài toán ta**.
@@ -730,8 +807,7 @@ src/
   retrieval/probe.py           ①  tách mốc; Q&A → câu mô tả
   retrieval/sources.py         ②  bốn nguồn + `covered`
   retrieval/bm25.py                BM25, cố tình KHÔNG tự bỏ dấu
-  retrieval/score_matrix.py    ③  chuẩn hoá z trong tập có dữ liệu
-                               ③′ hierarchical_rrf — RRF hai tầng (QAFuse)
+  retrieval/score_matrix.py    ③⑤ hierarchical_rrf — RRF hai tầng (alpha, beta)
   retrieval/pool.py            ⑤a rổ ứng viên: hợp top RIÊNG mỗi nguồn
   retrieval/dante.py           ④  DP O(N·T), trục mili-giây
   retrieval/rerank.py          ⑤bc mảnh cắt + VLM

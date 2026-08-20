@@ -175,7 +175,18 @@ from src.retrieval.sources import SourceScores
 #
 # Chênh giữa các cách CHỌN trọng số: 1,4 điểm. Chênh giữa CÓ và KHÔNG hợp nhất: 7,7.
 # Nếu còn thời gian, đổ vào mở rộng bộ eval chứ đừng đổ vào ba con số này.
-DEFAULT_WEIGHTS = {"visual": 1.0, "object": 0.0891, "ocr": 0.1322, "asr": 0.2128}
+# Nguồn `object` ĐÃ BỎ. Nó phủ 99,5% khung nên không phải vấn đề dữ liệu thiếu — nhưng
+# MRR đứng riêng là 0,0003 (hạng đáp án cỡ 3.000), và bỏ nó khỏi dung hợp đo được trên
+# 210 câu (gtv2 + holdout), bắt cặp, bootstrap 4000:
+#
+#     ΔMRR   +0,0064   KTC95 [−0,0067, +0,0205]   thắng 39 / thua 20 / HOÀ 151
+#     ΔR@100 +0,0095   KTC95 [−0,0095, +0,0286]   thắng  3 / thua  1 / HOÀ 206
+#
+# Cả hai khoảng tin cậy chứa 0, và 151/210 câu KHÔNG ĐỔI GÌ. Nên đây là quyết định về chi
+# phí chứ không phải về điểm: nguồn này bắt nạp 1,3 GB `data/objects-full` và thêm một
+# nhánh vào mọi phép đo, để đổi lấy một hiệu ứng không đo được. Ước lượng điểm còn hơi
+# DƯƠNG về phía bỏ, nên không có bằng chứng nào nói nó giúp.
+DEFAULT_WEIGHTS = {"visual": 1.0, "ocr": 0.1322, "asr": 0.2128}
 
 
 def z_normalize(scores: np.ndarray, covered: np.ndarray, eps: float = 1e-9) -> np.ndarray:

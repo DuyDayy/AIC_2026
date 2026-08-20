@@ -1,0 +1,266 @@
+[
+ {
+  "query_id": "query-p1-1-kis",
+  "ocr": [
+   "tàu vũ trụ tư nhân; 4 phi hành gia; áo đen; ánh sáng cực quang; vùng cực",
+   "phi hành đoàn tư nhân; nhiệm vụ nghiên cứu cực quang; sứ mệnh vùng cực; giới thiệu chuyến bay thương mại"
+  ],
+  "asr": [
+   "phóng tàu vũ trụ tư nhân; bốn phi hành gia mặc áo đen; nhiệm vụ nghiên cứu ánh sáng cực quang ở vùng cực",
+   "giới thiệu sứ mệnh không gian tư nhân; nghiên cứu hiện tượng cực quang từ quỹ đạo; bay qua khu vực cực; khám phá khoa học trên tàu thương mại"
+  ]
+ },
+ {
+  "query_id": "query-p1-10-kis",
+  "ocr": [
+   "handpan; nhạc cụ handpan; biểu diễn nhạc cụ",
+   "Biểu diễn nghệ thuật; Tài năng âm nhạc; Không gian thư viện; Chương trình âm nhạc"
+  ],
+  "asr": [
+   "ba người chơi nhạc cụ kim loại tròn; hai phụ nữ và một nam giới chơi handpan; người mặc áo trắng ngồi giữa hai người mặc áo đen; gõ tay lên nhạc cụ có vết lõm",
+   "âm thanh handpan du dương; giai điệu thư giãn chữa lành; mời quý vị cùng lắng nghe; màn hòa tấu handpan độc đáo; không gian âm nhạc ấm cúng"
+  ]
+ },
+ {
+  "query_id": "query-p1-11-kis",
+  "ocr": [
+   "shadow art; shadow portrait; nghệ thuật bóng đổ",
+   "tác phẩm nghệ thuật ánh sáng; nghệ sĩ trẻ; nghệ thuật sắp đặt; sáng tạo từ bìa carton"
+  ],
+  "asr": [
+   "chàng trai đội mũ lưỡi trai đen mặc áo thun trắng có chữ tiếng Anh; ngồi cạnh chiếc hộp sắp xếp mảnh bìa cắt rời; ánh sáng chiếu đổ bóng lên tường tạo thành chân dung người đàn ông tóc vuốt gọn mặc vest",
+   "nghệ thuật bóng đổ độc đáo; tác phẩm chân dung từ ánh sáng và bóng tối; ý tưởng sáng tạo từ những mảnh bìa đơn giản; hiệu ứng thị giác ấn tượng"
+  ]
+ },
+ {
+  "query_id": "query-p1-12-kis",
+  "ocr": [
+   "bánh rán; bánh donut; chocolate; chuối; dâu tây",
+   "hướng dẫn làm bánh; công thức món tráng miệng; dạy nấu ăn; mẹo trang trí bánh"
+  ],
+  "asr": [
+   "trang trí bánh rán; đặt hai chiếc bánh rán lên đĩa sứ; rưới chocolate lên mặt bánh; đặt lát chuối lên một chiếc bánh, đặt lát dâu tây lên chiếc còn lại",
+   "bây giờ chúng ta sẽ bắt đầu trang trí nhé; các bạn chuẩn bị sẵn nguyên liệu trên khay gỗ; rưới đều chocolate cho đẹp mắt; xếp trái cây lên trên cho hấp dẫn"
+  ]
+ },
+ {
+  "query_id": "query-p1-13-kis",
+  "ocr": [
+   "vệ sinh máy ảnh; vệ sinh ống kính; lens; tăm bông",
+   "hướng dẫn vệ sinh máy ảnh tại nhà; bảo quản ống kính đúng cách; kỹ thuật viên máy ảnh"
+  ],
+  "asr": [
+   "đang vệ sinh máy ảnh; tháo rời máy ảnh; tháo ống kính đặt ngay ngắn trên khăn màu tím hồng; vệ sinh ống kính bằng tăm bông",
+   "bây giờ mình sẽ tháo lens ra khỏi thân máy; nhớ đặt lens lên khăn sạch để tránh bụi và trầy xước; dùng tăm bông lau nhẹ bề mặt kính thật cẩn thận"
+  ]
+ },
+ {
+  "query_id": "query-p1-14-kis",
+  "ocr": [
+   "Lễ hội điêu khắc trên cát; Lễ hội điêu khắc cát; điêu khắc cát",
+   "Festival điêu khắc cát quốc tế; Triển lãm nghệ thuật cát; Lễ hội cát; Nghệ nhân điêu khắc cát"
+  ],
+  "asr": [
+   "tác phẩm điêu khắc cát hoành tráng tại lễ hội điêu khắc trên cát; ba thanh niên chơi thể thao đường phố; một người trượt patin hai người trượt ván; họa tiết vòm cong có khắc chữ",
+   "xin chào mừng quý vị đến với lễ hội điêu khắc cát; các nghệ nhân đã tạo nên những tác phẩm tuyệt đẹp trên cát; không khí lễ hội rất nhộn nhịp thu hút đông đảo du khách; mời quý vị cùng chiêm ngưỡng"
+  ]
+ },
+ {
+  "query_id": "query-p1-15-qa",
+  "ocr": [
+   "FANA; CLB FANA; Khánh Hòa; trao quà; từ thiện",
+   "Chương trình thiện nguyện; Câu lạc bộ FANA; UBND xã; Huyện ... tỉnh Khánh Hòa; Trao quà cho hộ nghèo"
+  ],
+  "asr": [
+   "câu lạc bộ FANA; chương trình từ thiện của CLB FANA; đi trao quà tại xã thuộc tỉnh Khánh Hòa",
+   "đoàn thiện nguyện đến thăm và tặng quà cho bà con nhân dân; chia sẻ khó khăn với người dân địa phương; hành trình thiện nguyện tại Khánh Hòa"
+  ]
+ },
+ {
+  "query_id": "query-p1-16-trake",
+  "ocr": [
+   "múa lân; lân vàng đen trắng; cột số 4; 2 chân trước; 4 chân chạm đất; ban giám khảo; múa rồng",
+   "Liên hoan Lân Sư Rồng; Giải Múa Lân; Chung Kết; Ban Giám Khảo; Bảng Điểm; Trực Tiếp; Nhà Thi Đấu"
+  ],
+  "asr": [
+   "múa lân một con màu vàng đen trắng; lân quay vòng trên cột số 4 bằng hai chân trước rồi tiếp đất; khoảnh khắc bắt đầu xoay vòng; bốn chân hoàn toàn chạm đất; hai người biểu diễn cúi chào ban giám khảo; lân tiến lại chào rồng; rồng cử động đầu",
+   "tiết mục múa lân sư rồng; động tác khó trên trụ cao; xoay vòng rất nguy hiểm; tiếp đất an toàn; kết thúc bài thi xin chào ban giám khảo; màn giao lưu giữa lân và rồng; tiếng trống múa lân nổi lên"
+  ]
+ },
+ {
+  "query_id": "query-p1-17-kis",
+  "ocr": [
+   "Chương trình: Trao kinh phí hỗ trợ cho trẻ em mồ côi do dịch COVID-19; Xuân 2024; COVID-19; trẻ em mồ côi",
+   "Bệnh viện; Lễ trao quà từ thiện; Xuân Giáp Thìn 2024; Ban Tổ chức; Chúc Mừng Năm Mới; Chương trình Xuân yêu thương"
+  ],
+  "asr": [
+   "trao kinh phí hỗ trợ cho trẻ em mồ côi do dịch COVID-19; trao quà từ thiện tại bệnh viện dịp Xuân 2024; trao bảng tượng trưng hỗ trợ trẻ mồ côi",
+   "kính thưa quý vị đại biểu; chung tay chăm lo cho các cháu có hoàn cảnh khó khăn; chương trình ý nghĩa nhân dịp đón xuân mới; xin chúc các cháu năm mới mạnh khỏe"
+  ]
+ },
+ {
+  "query_id": "query-p1-18-trake",
+  "ocr": [
+   "nấm; củ năng; đậu hủ; sơ chế",
+   "Vào bếp; Món ngon mỗi ngày; Sơ chế nguyên liệu; Hướng dẫn nấu ăn"
+  ],
+  "asr": [
+   "cắt nấm; cắt củ năng; cắt đậu hủ; đặt chảo lên bếp; mở lửa; lửa bắt đầu xuất hiện",
+   "bây giờ chúng ta sơ chế nguyên liệu; chuẩn bị nấm với củ năng và đậu hủ; bắc chảo lên bếp cho nóng; bật bếp lên để xào"
+  ]
+ },
+ {
+  "query_id": "query-p1-19-qa",
+  "ocr": [
+   "Nguyễn Trung Trực; đình thần Nguyễn Trung Trực; Kiên Giang; hai câu thơ",
+   "Di tích Đình thần Nguyễn Trung Trực; TP. Rạch Giá - Kiên Giang; Anh hùng dân tộc Nguyễn Trung Trực; Di tích lịch sử văn hóa"
+  ],
+  "asr": [
+   "hai câu thơ ca ngợi anh hùng Nguyễn Trung Trực; thơ ca ngợi Nguyễn Trung Trực trong đình thần Nguyễn Trung Trực Kiên Giang; hai câu thơ trong đình Nguyễn Trung Trực",
+   "Hỏa hồng Nhựt Tảo oanh thiên địa; Kiếm bạt Kiên Giang khấp quỷ thần; nhà thơ Huỳnh Mẫn Đạt ca ngợi anh hùng Nguyễn Trung Trực; đền thờ anh hùng dân tộc"
+  ]
+ },
+ {
+  "query_id": "query-p1-2-kis",
+  "ocr": [
+   "đàn hổ; 3-6 hổ con; hổ quý hiếm; giống hổ quý hiếm; miền Nam",
+   "Bản tin; Tin tức 24h; Vườn thú; Khu bảo tồn; Vườn quốc gia; Thảo Cầm Viên"
+  ],
+  "asr": [
+   "đàn hổ vừa có thêm 3 đến 6 hổ con; giống hổ quý hiếm ở địa phương miền Nam; đàn hổ sinh sản",
+   "tin vui trong công tác bảo tồn; các cá thể hổ con mới chào đời; nhân viên đang chăm sóc hổ con; nỗ lực bảo tồn loài hổ quý hiếm"
+  ]
+ },
+ {
+  "query_id": "query-p1-20-kis",
+  "ocr": [
+   "panna cotta",
+   "món tráng miệng; hướng dẫn làm panna cotta; dạy nấu ăn; món ngon mỗi ngày"
+  ],
+  "asr": [
+   "trên đĩa tròn màu trắng có một ly panna cotta; bàn tay đặt thêm hai ly panna cotta nữa vào đĩa; panna cotta kem trắng ngà trang trí nho đỏ và lá bạc hà xanh; hai bông hoa ăn được màu đỏ và vàng trên đĩa",
+   "bây giờ mình sẽ xếp ba ly panna cotta ra đĩa cho đẹp mắt; món panna cotta mềm mịn mát lạnh rất dễ làm tại nhà; trang trí thêm nho và hoa ăn được cho bắt mắt"
+  ]
+ },
+ {
+  "query_id": "query-p1-21-kis",
+  "ocr": [
+   "Lausanne; EPFL; Dai hoc Lausanne; robot; bo canh cung; co che bay",
+   "Dai hoc Bach khoa Lien bang Lausanne; Thuy Si; Phong thi nghiem Robot hoc; Ban tin Khoa hoc Cong nghe; Nghien cuu sinh hoc"
+  ],
+  "asr": [
+   "nghien cuu co che bay cua bo; che tao robot bat chuoc con trung; nghien cuu tai dai hoc o Lausanne",
+   "nhom nghien cuu Thuy Si cho biet; lay cam hung tu loai bo trong tu nhien; ung dung cho robot bay co nho; cac nha khoa hoc tai Lausanne chia se"
+  ]
+ },
+ {
+  "query_id": "query-p1-22-qa",
+  "ocr": [
+   "200g thịt nạc xay; 200g thịt xay; nguyên liệu; công thức",
+   "dạy nấu ăn; lớp học nấu ăn; hướng dẫn nấu ăn; món ngon mỗi ngày; dạy nấu ăn cho người mới bắt đầu"
+  ],
+  "asr": [
+   "dạy nấu ăn cho những người khác; đang cầm công thức món ăn; nguyên liệu chính là 200 gam thịt nạc xay; 200g thịt nạc xay",
+   "hôm nay chúng ta sẽ học làm món này; nguyên liệu cần chuẩn bị gồm; cho thịt nạc xay vào; bây giờ chúng ta bắt đầu chế biến nhé"
+  ]
+ },
+ {
+  "query_id": "query-p1-23-kis",
+  "ocr": [
+   "Steven Spielberg; 1975; JAWS; cá mập; động vật biển nguy hiểm",
+   "thị trấn ven biển; điểm du lịch hiếu kỳ; cảnh báo cá mập; du lịch biển"
+  ],
+  "asr": [
+   "thị trấn ven biển thu hút du khách hiếu kỳ; loài động vật biển nguy hiểm; bộ phim nổi tiếng của đạo diễn Steven Spielberg sản xuất năm 1975",
+   "du khách đổ về xem cá mập; cá mập trắng lớn; phim Jaws hàm cá mập; hiện tượng du lịch kỳ lạ ven biển"
+  ]
+ },
+ {
+  "query_id": "query-p1-24-kis",
+  "ocr": [
+   "đua xe đạp; tường thuật đua xe đạp",
+   "trực tiếp; VTV Thể thao; Giải xe đạp; bảng xếp hạng; cự ly; km"
+  ],
+  "asr": [
+   "tường thuật cuộc đua xe đạp; ba tay đua cùng một đội đạp thành một đường thẳng; đồng phục áo trắng quần vàng xanh; tay đua nón trắng nón đỏ nón đen",
+   "đang bám đuổi nhau trên đường đua; giữ đội hình chiến thuật; tăng tốc tách tốp; khoảng cách giữa các tay đua; chặng đua hôm nay"
+  ]
+ },
+ {
+  "query_id": "query-p1-25-kis",
+  "ocr": [
+   "đua xe đạp; vượt lên dẫn đầu; tốp đầu",
+   "Giải xe đạp; Trực tiếp; Bảng xếp hạng; Km còn lại; Về đích"
+  ],
+  "asr": [
+   "vượt ba vận động viên để vươn lên dẫn đầu; tay đua áo xanh dương trắng vượt lên; đã chiếm vị trí dẫn đầu đoàn đua",
+   "pha bứt phá ngoạn mục vừa rồi; đã tách tốp và một mình băng về đích; duy trì vị trí số một cho đến hết chặng đua"
+  ]
+ },
+ {
+  "query_id": "query-p1-4-trake",
+  "ocr": [
+   "măng tây; miến măng tây; bột",
+   "măng tây chiên giòn; công thức nấu ăn; hướng dẫn vào bếp; món chiên"
+  ],
+  "asr": [
+   "bỏ bột vào tô măng tây; miến măng tây vừa chạm dầu trong chảo; vớt miếng măng tây ra khỏi chảo dầu; miếng cuối cùng đã nằm trên dĩa",
+   "dầu đã nóng già rồi; cho vào chiên đến khi vàng giòn; nhớ lật đều tay; vớt ra để ráo dầu rồi bày ra đĩa"
+  ]
+ },
+ {
+  "query_id": "query-p1-5-kis",
+  "ocr": [
+   "cho dê ăn; chuồng dê; trang trại dê",
+   "mô hình chăn nuôi dê; trang trại nông nghiệp; kinh tế nông thôn; khởi nghiệp chăn nuôi"
+  ],
+  "asr": [
+   "hai người phụ nữ cho dê ăn; đang cho dê ăn; cho đàn dê ăn; dê nuôi nhốt trong chuồng",
+   "mô hình nuôi dê hiệu quả; thu nhập từ chăn nuôi dê; kinh nghiệm chăm sóc đàn dê; cuộc sống làm nông ở trang trại"
+  ]
+ },
+ {
+  "query_id": "query-p1-6-kis",
+  "ocr": [
+   "gỏi cuốn chay; đậu hũ; bánh tráng; hoa pansy",
+   "món chay thanh đạm; vào bếp cùng đầu bếp; công thức món chay; ẩm thực chay"
+  ],
+  "asr": [
+   "gỏi cuốn chay; rau xanh cuộn tròn với đậu hũ; gói trong bánh tráng màu vàng và tím; đĩa trang trí lá xanh và hoa pansy tím vàng",
+   "món ăn thanh mát và tinh tế; cách cuốn và bày trí cho đẹp mắt; bí quyết để cuốn chặt tay không bị rách"
+  ]
+ },
+ {
+  "query_id": "query-p1-7-kis",
+  "ocr": [
+   "Nam Bộ; Việt Nam",
+   "Thế giới động vật; Khám phá thiên nhiên; Rừng Nam Bộ; Vườn quốc gia; Động vật hoang dã Việt Nam"
+  ],
+  "asr": [
+   "con chim lông đen ánh xanh đầu và thân trên cánh lưng nâu đỏ mắt đỏ rực; chim dưới gốc cây to lá khô phủ đầy mặt đất trong rừng; loài chim thường thấy ở vùng Nam Bộ Việt Nam",
+   "giới thiệu các loài chim rừng Việt Nam; môi trường sống trong rừng rậm dưới tán cây; đặc điểm nhận dạng qua màu lông và đôi mắt; hệ sinh thái rừng ở miền Nam"
+  ]
+ },
+ {
+  "query_id": "query-p1-8-kis",
+  "ocr": [
+   "lễ hội ẩm thực Nhật Bản; lớn nhất thế giới",
+   "lễ hội ẩm thực đường phố; ẩm thực Nhật Bản; khám phá văn hóa Nhật Bản; lễ hội mùa hè"
+  ],
+  "asr": [
+   "lễ hội ẩm thực Nhật Bản lớn nhất thế giới; cô bé đeo con bạch tuộc con mực màu đỏ trước ngực; trên tay cầm túi giấy",
+   "chào mừng đến với lễ hội ẩm thực; không khí lễ hội rất đông vui náo nhiệt; các gian hàng món ăn Nhật Bản rất hấp dẫn; du khách đang trải nghiệm ẩm thực đường phố"
+  ]
+ },
+ {
+  "query_id": "query-p1-9-kis",
+  "ocr": [
+   "thu hoạch dứa; miền Tây; giỏ dứa",
+   "Đồng bằng sông Cửu Long; Mùa thu hoạch; Nông sản miền Tây; Chuyện nhà nông"
+  ],
+  "asr": [
+   "thu hoạch dứa ở miền Tây; bà cụ ngồi bên giỏ dứa trò chuyện với cô gái áo hồng quàng khăn rằn; xung quanh chất đầy dứa; người phụ nữ đội nón lá cầm trái dứa; chiếc ghe xanh đậu cạnh bờ",
+   "mùa dứa chín rộ ở miền Tây; cuộc sống sông nước mộc mạc yên bình; ghe chở dứa cập bờ; bà con nông dân được mùa; không khí nông thôn miền Tây"
+  ]
+ }
+]

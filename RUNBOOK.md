@@ -188,8 +188,11 @@ dung nên lượt hai không tốn GPU.
 | tham số | giá trị | vì sao |
 |---|---|---|
 | `dim` | 512 | 1024 không hơn (Δ=−0,002, KTC chứa 0) mà tốn gấp đôi RAM |
-| trọng số 4 nguồn | `1 / 0,0891 / 0,1322 / 0,2128` | δ ASR ×2 sau kiểm chéo |
-| `POOL_PER_SOURCE` | 40 | mỗi nguồn tự đề cử, rổ 158 khung. `POOL_CAP=200` không bao giờ chạm |
+| `alpha` (③ modality) | `visual 1/3 · ocr 1/3 · asr 1/3` | ĐỀU. Nguồn `object` đã gỡ; chuẩn hoá z đã bỏ, ③ hợp bằng RRF |
+| `beta` (③ expansion) | đều trong từng modality — 3 run ⟹ `1/3` | mỗi bản mở rộng đóng góp ngang bản gốc |
+| `RRF_K` | 60 | **chưa quét lại** trong chế độ không cắt danh sách |
+| `POOL_PER_SOURCE` | 40 | mỗi **RUN** tự đề cử (7 run, không phải 4 nguồn) ⟹ rổ 266–269 khung |
+| `POOL_CAP` | **300** | ở 200 nó cắt MỌI truy vấn và đổi `top1` của 2/3 câu đo thử |
 | `POOL_PER_VIDEO` | 10 | chốt an toàn chặn nguồn phẳng |
 | `RERANK_WEIGHTS` | `fused4 1,0 · crop 0,0 · vlm 0,25` | crop trống cả ở nhóm ≥2 màu, tốn 655s |
 | `VLM_TOP_K` | **160** (cả rổ) | bỏ VLM mất 13% điểm tương đối; K=30→160 mua thêm 0,017 |
