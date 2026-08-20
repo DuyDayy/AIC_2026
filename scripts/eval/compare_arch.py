@@ -7,7 +7,7 @@ So KIẾN TRÚC MỚI (rổ ứng viên + rerank 2 bậc) với kiến trúc cũ
 
 Chấm bằng `src/scoring/rscore.py` — nguyên văn thể lệ. Báo theo **mô hình mốc lệch
 ngẫu nhiên**, vì hai mô hình kia ôm keyframe ground truth nên tự thưởng cho việc nộp lại
-chính cái nhãn của mình (xem README, *Bài học đo lường*).
+chính cái nhãn của mình (bộ chấm cũ và `score_submission.py` từng dùng hai mô hình cửa sổ khác nhau).
 
 Có `_rerank_scores.npz` thì quét lại **trọng số rerank mà không chạy lại GPU**: bản lưu
 giữ rổ + điểm nền + điểm mảnh cắt + điểm VLM cho từng truy vấn.

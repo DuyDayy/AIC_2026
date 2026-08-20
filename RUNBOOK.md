@@ -55,7 +55,7 @@ modal run scripts/run.py --dir queries_thi --out nop_thi
 
 🟢 **Không có tham số `--spread`, và đó là thiết kế.** ⑦ nộp một khung mỗi mốc, 100 mốc.
 Đừng đi tìm cờ để bật rải — không có, và ba test trong `tests/test_coverage.py` chặn việc
-thêm lại. Lý lẽ ở README mục ⑦; đánh đổi ở mật độ hiện tại là −75% trên GT v2.
+thêm lại. Lý lẽ ở `tests/test_coverage.py`; đánh đổi ở mật độ hiện tại là −75% trên GT v2.
 
 Chạy nền và ghi log ra file để đọc được tiến trình:
 
