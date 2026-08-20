@@ -420,6 +420,31 @@ def load_frame_idx(meta_glob: str = "data/Framme/*/metadata/*.csv") -> dict[Fram
         for r in csv.DictReader(lines[i:]):
             if r.get("frame_idx"):
                 out[(p.stem, int(r["n"]))] = int(r["frame_idx"])
+    if out:
+        return out
+
+    # ── LÙI VỀ `ocr.jsonl` ───────────────────────────────────────────────────
+    # Cùng lý lẽ và cùng đường lùi với `load_frame_ms` ngay dưới. Thêm ở đây vì bộ khung
+    # đổi: khi thay chỉ mục, đám CSV metadata thuộc bộ CŨ thành rác — chúng khoá theo
+    # `(video, n)` của bộ cũ, mà `n` được đánh lại từ 1 ở mỗi bộ, nên chúng vẫn "khớp"
+    # về mặt kiểu và trỏ sai khung. Bỏ chúng đi thì hàm này trả rỗng, và ba test chốt
+    # chống nhầm `n`/`frame_idx` trong `tests/test_sources.py` chuyển sang SKIP — tức
+    # cái chốt biến mất mà bộ test vẫn xanh. `ocr.jsonl` luôn đi kèm chỉ mục đang dùng.
+    ocr = Path("data/OCR/ocr.jsonl")
+    if ocr.is_file():
+        with open(ocr, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line:
+                    continue
+                d = json.loads(line)
+                if d.get("frame_idx") is not None:
+                    out[(d["video_id"], int(d["n"]))] = int(d["frame_idx"])
+    if not out:
+        raise FileNotFoundError(
+            f"không có nguồn frame_idx nào: {meta_glob!r} rỗng và {ocr} không có. "
+            f"Trả rỗng ở đây làm mọi đường ra bài nộp nộp `n` thay `frame_idx`."
+        )
     return out
 
 
