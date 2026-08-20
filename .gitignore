@@ -131,6 +131,10 @@ benchmark_ground_truth_final_v2/*
 scripts/research/*
 !scripts/research/run_e1_e4_recheck.py
 !scripts/research/run_e4_wrrf.py
+# Bộ eval 299 đề sinh sẵn (KIS 199 · QA 50 · TRAKE 50) trên chỉ mục 609.476 khung.
+# Mã hoá truy vấn TẠI MÁY có ghim revision, không cần Modal — nên chạy lại được
+# ở bản clone mới mà không tốn GPU thuê.
+!scripts/research/eval_query_sets.py
 
 # KẾT QUẢ nghiên cứu thì GIỮ — chúng là bằng chứng, không dựng lại được miễn phí.
 !data/research/
