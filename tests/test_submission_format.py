@@ -229,3 +229,51 @@ def test_thieu_hoac_thua_file_so_voi_goi_de_thi_NO(tmp_path):
 def test_thu_muc_rong_thi_NO_chu_khong_ra_zip_rong(tmp_path):
     with pytest.raises(SubmissionError, match="rỗng"):
         pack_submission_zip(tmp_path, tmp_path / "c.zip")
+
+
+# ============================================================
+# 🔴 CỔNG TẦNG 0 — lệch quy ước frame_id là lỗi CÂM tuyệt đối
+# ============================================================
+#
+# Định lý 5: lệch một hằng số kéo `final` 1,00 → 0,50 trong khi `best` vẫn 1,0 —
+# không chỉ số nội bộ nào báo động, và bài nộp vẫn qua sạch mọi phép kiểm khác.
+#
+# Cổng này TỪNG BỊ BỎ SÓT ở `write_task_csv`: khi BTC công bố mẫu CSV, hàm mới được
+# viết mà không mang theo cổng. Vô hại đúng lúc đó vì δ = 0 — tức đúng kiểu bỏ sót
+# chỉ lộ ra khi δ ≠ 0, lúc không sửa lại được nữa.
+
+
+def _calib(tmp_path, delta):
+    import json as _json
+    (tmp_path / "frame_index_calibration.json").write_text(
+        _json.dumps({"delta": delta, "method": "test", "n_samples": 1, "agreement": 1.0}),
+        encoding="utf-8")
+    return tmp_path
+
+
+def test_delta_khac_0_thi_duoc_CONG_vao_moi_frame_id(tmp_path):
+    d = _calib(tmp_path, 7)
+    p, _ = write_task_csv(_kis(("L00_V000", 100), ("L00_V001", 200)),
+                          tmp_path / "out", calibration_dir=d)
+    assert p.read_text(encoding="utf-8") == "L00_V000,107\nL00_V001,207\n"
+
+
+def test_delta_ap_cho_MOI_moc_cua_TRAKE(tmp_path):
+    d = _calib(tmp_path, -3)
+    sub = TaskSubmission("query-4-trake", "trake",
+                         (("L10_V001", (10, 20, 30), None),), n_moments=3)
+    p, _ = write_task_csv(sub, tmp_path / "out", calibration_dir=d)
+    assert p.read_text(encoding="utf-8") == "L10_V001,7,17,27\n"
+
+
+def test_thieu_hieu_chinh_thi_NEM_chu_khong_ghi_bua(tmp_path):
+    """Không có bằng chứng δ thì KHÔNG được đoán δ = 0."""
+    with pytest.raises(Exception):
+        write_task_csv(_kis(("L00_V000", 1)), tmp_path / "out",
+                       calibration_dir=tmp_path / "trong-rong")
+
+
+def test_delta_0_thi_khong_doi_gi(tmp_path):
+    d = _calib(tmp_path, 0)
+    p, _ = write_task_csv(_kis(("L00_V000", 1234)), tmp_path / "out", calibration_dir=d)
+    assert p.read_text(encoding="utf-8") == "L00_V000,1234\n"

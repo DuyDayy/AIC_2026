@@ -487,14 +487,44 @@ def parse_task_csv(text: str, task_type: TaskType, n_moments: int) -> list[list[
 
 
 def write_task_csv(submission: TaskSubmission, out_dir: str | Path,
-                   *, budget: int = MAX_ANSWERS) -> tuple[Path, list[str]]:
+                   *, budget: int = MAX_ANSWERS,
+                   calibration_dir: str | Path | None = "data") -> tuple[Path, list[str]]:
     """
     Ghi `<out_dir>/<task_id>.csv` theo thể lệ, rồi ĐỌC LẠI để tự kiểm.
 
     Tên file lấy thẳng `task_id`, vốn là `stem` của file đề (`query-1-kis.txt` ⟹
     `query-1-kis.csv`). Thể lệ: "Tên file khớp với tên truy vấn".
+
+    CỔNG TẦNG 0 — cùng cổng mà `write_submission` dùng, và vì cùng một lý do.
+    Lệch quy ước `frame_id` một hằng số làm MỌI câu trả lời sai trong khi bài nộp
+    vẫn đúng định dạng và qua sạch mọi phép kiểm khác; Định lý 5 đo được `final`
+    tụt 1,00 → 0,50 mà `best` vẫn 1,0, tức không chỉ số nội bộ nào báo động.
+
+    Cổng này TỪNG BỊ BỎ SÓT ở đây: khi BTC công bố mẫu CSV, hàm mới được viết mà
+    không mang theo cổng, nên `write_submission` giữ cổng còn đường đang chạy thật
+    thì không. Vô hại đúng vào lúc đó vì δ = 0 — và đó chính là kiểu bỏ sót chỉ lộ
+    ra khi δ ≠ 0, tức lúc không sửa lại được nữa.
+
+    Đặt `calibration_dir=None` để bỏ cổng — CHỈ dùng trong test.
     """
     validate_task(submission, budget=budget)
+
+    if calibration_dir is not None:
+        from src.ingestion.frame_index import require_calibration
+
+        calib = require_calibration(calibration_dir)
+        if calib.delta != 0:
+            logger.warning(
+                "Quy ước frame_id lệch δ=%+d (nguồn: %s, %d mẫu) — đang bù trừ.",
+                calib.delta, calib.method, calib.n_samples,
+            )
+            submission = replace(
+                submission,
+                answers=tuple(
+                    (vid, tuple(calib.apply(f) for f in frames), ans)
+                    for vid, frames, ans in submission.answers
+                ),
+            )
     text, notes = format_task_csv(submission)
     parse_task_csv(text, submission.task_type, submission.n_moments)   # tự kiểm
     d = Path(out_dir)
