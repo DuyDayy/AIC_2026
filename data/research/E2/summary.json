@@ -1,0 +1,69 @@
+{
+ "experiment": "E2: Query Expansion (Visual, OCR, ASR)",
+ "objective": "Đánh giá hiệu quả của việc dùng LLM để tối ưu hóa truy vấn cho từng nhánh cụ thể (Dịch sang tiếng Anh/Gọt giũa tiếng Việt cho Visual, trích keyword cho OCR, chuyển thành văn nói cho ASR). Đánh giá cả việc kết hợp (Interleaved Fusion).",
+ "insights": [
+  "1. [VISUAL] Việc dịch truy vấn sang tiếng Anh bằng LLM (qv1, qv2) làm GIẢM độ bao phủ từ 78% (gốc) xuống 68%. Nguyên nhân là do Jina CLIP v2 xử lý tiếng Việt nguyên bản rất tốt, việc dịch qua tiếng Anh làm mất mát thông tin ngữ nghĩa.",
+  "2. [VISUAL] Thậm chí khi dùng LLM để gọt giũa và paraphrase hoàn toàn bằng Tiếng Việt (qv1_vi, qv2_vi), kết quả cao nhất đạt 77%, VẪN THẤP HƠN câu thô nguyên bản (78%). Điều này chốt lại kết luận: Jina CLIP v2 rất robust với câu hỏi tự nhiên, KHÔNG CẦN Query Expansion cho nhánh Visual.",
+  "3. [OCR] Ngược lại với Visual, nhánh Text dùng BM25 lại hưởng lợi cực lớn từ Query Expansion. Tập 'qo' (chỉ trích xuất danh từ riêng, keyword, số) đã giúp R@100 tăng từ 46% (câu thô) lên 51%.",
+  "4. [ASR] Tập 'qa' (văn phong nói) vẫn trả về 0%. Vấn đề của ASR nằm ở chỗ khác (có thể là Indexing sai hoặc bản dịch ASR quá nhiễu) chứ không phải do câu truy vấn.",
+  "5. [FUSION SOTA] Khi trộn Interleave Top 50 giữa Visual (câu tiếng Việt thô) và OCR (tập 'qo' đã được LLM gọt giũa), hệ thống đạt Kỷ lục mới: R@100 = 82%! (Đánh bại con số 81% của vòng E1)."
+ ],
+ "metrics": {
+  "visual_native_vi (E1)": {
+   "r_100": 0.78
+  },
+  "visual_qv1_eng_translation": {
+   "r_100": 0.68
+  },
+  "visual_qv1_vi_description": {
+   "r_100": 0.77
+  },
+  "ocr_native_vi (E1)": {
+   "r_100": 0.46
+  },
+  "ocr_qo_keyword_extraction": {
+   "r_100": 0.51
+  },
+  "asr_native_vi (E1)": {
+   "r_100": 0.0
+  },
+  "asr_qa_spoken_style": {
+   "r_100": 0.0
+  },
+  "fusion_visual_raw_ocr_qo_interleaved": {
+   "r_100": 0.82
+  }
+ },
+ "status": "ĐÃ SỬA. Bản cũ ở summary_ASR_DEAD.json.",
+ "critical_correction": {
+  "bug": "AsrSource phủ 0/173.426 khung vì load_frame_ms() đọc data/Framme/*/metadata/*.csv đã bị xoá và trả về {}. ASR ghi 0 điểm cho MỌI truy vấn. Đã vá bằng cách lùi về data/OCR/ocr.jsonl (phủ 173.426/173.426, pts_time khớp frame_idx/fps 500/500 mẫu); sau vá ASR phủ 96,9%.",
+  "retracted_insight": "Tập 'qa' (văn phong nói) vẫn trả về 0%. Vấn đề của ASR nằm ở chỗ khác (có thể là Indexing sai).",
+  "why_it_was_wrong": "Không câu chữ nào — gốc hay mở rộng — khớp được với một nguồn phủ 0 khung. Đây là lỗi đường ống dữ liệu, không phải tính chất của ASR hay của câu truy vấn."
+ },
+ "metrics_corrected_bench100": {
+  "ocr_qo": {
+   "MRR": 0.2102304585394636,
+   "R@1": 0.11,
+   "R@5": 0.35,
+   "R@20": 0.42,
+   "R@50": 0.48,
+   "R@100": 0.51
+  },
+  "asr_qa": {
+   "MRR": 0.3127070639066436,
+   "R@1": 0.19,
+   "R@5": 0.5,
+   "R@20": 0.59,
+   "R@50": 0.59,
+   "R@100": 0.62
+  },
+  "asr_native": {
+   "MRR": 0.205811764533357,
+   "R@1": 0.1,
+   "R@5": 0.35,
+   "R@20": 0.52,
+   "R@50": 0.56,
+   "R@100": 0.58
+  }
+ }
+}

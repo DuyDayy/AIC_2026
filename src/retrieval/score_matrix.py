@@ -244,7 +244,166 @@ def rank_normalize(scores: np.ndarray, covered: np.ndarray) -> np.ndarray:
     return out
 
 
-NORMALIZERS = {"z": z_normalize, "rank": rank_normalize}
+def rrf_normalize(scores: np.ndarray, covered: np.ndarray, k: float = 60.0) -> np.ndarray:
+    """
+    Reciprocal Rank Fusion.
+    Chỉ tính trên tập có dữ liệu (covered). Điểm = 1 / (k + hạng).
+    Xếp hạng giảm dần theo điểm số ban đầu.
+    """
+    out = np.zeros_like(scores, dtype=np.float32)
+    n = int(covered.sum())
+    if n == 0:
+        return out
+    v = scores[covered]
+    
+    # Sắp xếp giảm dần theo điểm (chú ý -v)
+    order = np.argsort(-v, kind="stable")
+    
+    # Tạo mảng hạng bắt đầu từ 1
+    ranks = np.empty(n, dtype=np.float32)
+    ranks[order] = np.arange(1, n + 1, dtype=np.float32)
+    
+    out[covered] = 1.0 / (k + ranks)
+    return out
+
+
+def minmax_normalize(scores: np.ndarray, covered: np.ndarray) -> np.ndarray:
+    """
+    Min-Max normalization trên tập có dữ liệu, đưa về [0, 1].
+    Ngoài tập trả về 0.
+    """
+    out = np.zeros_like(scores, dtype=np.float32)
+    n = int(covered.sum())
+    if n == 0:
+        return out
+    v = scores[covered]
+    v_min = float(v.min())
+    v_max = float(v.max())
+    if v_max - v_min < 1e-9:
+        return out
+    out[covered] = ((v - v_min) / (v_max - v_min)).astype(np.float32)
+    return out
+
+
+NORMALIZERS = {"z": z_normalize, "rank": rank_normalize,
+               "rrf": rrf_normalize, "minmax": minmax_normalize}
+
+# Phép chuẩn hoá nào ĐẢM BẢO `E[·|covered] = 0` — bất biến trung tâm của module.
+#
+# Chỉ `z` và `rank` có tính chất đó. `rrf` và `minmax` cho điểm DƯƠNG cho mọi khung được
+# phủ, nên "có dữ liệu" tự nó thành lợi thế: khung mà OCR chấm hạng bét vẫn hơn khung OCR
+# không có chữ. Đây đúng là cơ chế từng làm RRF hỏng nặng ở kiến trúc hợp điểm có trọng số.
+#
+# Hai cái sau VẪN nằm trong `NORMALIZERS` vì chúng có ích thật — `hierarchical_rrf` đo được
+# MRR 0,5281 trên bench_kis, cao nhất trong mọi cấu hình đã thử. Lý do chúng không hỏng ở
+# đó là TÍNH CHẤT CỦA KHO, không phải của phép chuẩn hoá: OCR phủ 81–100% khung mỗi video
+# và ASR phủ 96,9%, nên gần như không có khung nào "không được phủ" để hưởng lợi.
+#
+# ⚠️ Nghĩa là: dùng `rrf`/`minmax` với một nguồn phủ THƯA thì thiên lệch quay lại ngay.
+ZERO_MEAN_NORMALIZERS = ("z", "rank")
+
+
+def hierarchical_rrf(
+    modalities: Mapping[str, Sequence[SourceScores]],
+    alpha: Mapping[str, float] | None = None,
+    beta: Mapping[str, Sequence[float]] | None = None,
+    k: float = 60.0,
+) -> np.ndarray:
+    """RRF hai tầng: gộp expansion TRONG modality trước, rồi mới gộp giữa các modality.
+
+        Score(d) = Σ_m alpha_m · ( Σ_j beta_mj / (k + rank_mj(d)) )
+        ràng buộc: Σ_m alpha_m = 1  ·  Σ_j beta_mj = 1 cho từng m
+
+    `modalities` là `{tên: [run gốc, run mở rộng, …]}`. Run đầu tiên của mỗi modality nên
+    là câu GỐC — thứ tự đó là thứ `beta` mặc định giả định khi ai đó truyền beta lệch.
+
+    =========================================================================
+    VÌ SAO PHÂN CẤP, KHÔNG PHẲNG
+    =========================================================================
+
+    Ném cả năm run vào MỘT phép RRF phẳng thì modality nào có nhiều expansion hơn tự
+    nhiên có nhiều quyền vote hơn — Visual một run bị OCR hai run lấn át chỉ vì đếm run.
+    Chuẩn hoá beta trong từng modality chặn đúng điều đó.
+
+    [ĐO] bench_kis 100 câu, k=60, so cùng một bộ run:
+
+        cấu hình                                                MRR     R@100
+        V + O_gốc + A_gốc                (không expansion)    0,4751     0,91
+        V + O_qo + A_qa                  (bỏ bản gốc)         0,4867     0,93
+        V + (O_gốc+O_qo)/2 + A_gốc       (QE chỉ OCR)         0,4989     0,92
+        V + O_gốc + (A_gốc+A_qa)/2       (QE chỉ ASR)         0,4874     0,92
+        V + (O_gốc+O_qo)/2 + (A_gốc+A_qa)/2   ← MẶC ĐỊNH     0,5281     0,93
+        V + O_gốc + O_qo + A_gốc + A_qa  (PHẲNG)              0,4427     0,89
+
+    Ba điều rút ra, và cả ba đều nằm trong mặc định của hàm này:
+      · phân cấp hơn phẳng 0,085 MRR — khoản lớn nhất trong bảng;
+      · giữ bản GỐC bên cạnh expansion hơn bỏ nó 0,041 — expansion bổ sung, không thay thế;
+      · QE cho CẢ HAI nhánh văn bản mới đạt đỉnh, cao hơn tổng hai phần riêng lẻ.
+
+    =========================================================================
+    VÌ SAO `alpha` MẶC ĐỊNH LÀ ĐỀU
+    =========================================================================
+
+    Không phải vì chưa thử. E4 quét trọng số toàn cục hai tầng trên 210 câu tuning
+    (gtv2 + holdout), rồi báo trên 100 câu held-out chưa đụng tới:
+
+        alpha* tìm được = (0,30 · 0,35 · 0,35)   ≈ đều
+        beta*  tìm được = (0,5 · 0,5) cho CẢ OCR lẫn ASR  ≈ đúng mặc định ở đây
+        held-out: E3 đều MRR 0,5281  →  E4 có trọng số 0,4884
+        ΔMRR bắt cặp −0,0398 · KTC95 [−0,0783, −0,0056] · thắng 10 / thua 18
+
+    Khoảng tin cậy nằm TRỌN dưới 0: trọng số toàn cục **kém hơn có ý nghĩa**, không phải
+    "không phân biệt được". Nên `alpha` đều là kết quả đo, không phải chỗ chưa tối ưu.
+
+    ⚠️ Điều đó KHÔNG nói trọng số là vô ích, chỉ nói trọng số TOÀN CỤC là vô ích. Cùng
+    bộ số ấy cho thấy alpha* hại nhóm `vision` (−0,0696 MRR) trong khi giúp
+    `vision+ocr+asr` (+0,0266) — một hằng số không phục vụ được mọi loại đề.
+
+    Raises:
+        ValueError: modality rỗng · lệch số khung · beta lệch số run · trọng số âm.
+    """
+    if not modalities:
+        raise ValueError("hierarchical_rrf cần ít nhất một modality")
+    n = None
+    for name, runs in modalities.items():
+        if not runs:
+            raise ValueError(f"modality {name!r} không có run nào")
+        for r in runs:
+            if n is None:
+                n = r.scores.shape[0]
+            elif r.scores.shape[0] != n:
+                raise ValueError("các run lệch số khung — nguy cơ ghép nhầm vị trí")
+
+    names = list(modalities)
+    a = {m: 1.0 / len(names) for m in names} if alpha is None else dict(alpha)
+    missing = [m for m in names if m not in a]
+    if missing:
+        # Thiếu trọng số phải là LỖI chứ không mặc định 0: thêm modality mới rồi quên nối
+        # là im lặng mất nguồn, đúng lỗi mà `fuse` cũng chặn.
+        raise ValueError(f"thiếu alpha cho {missing}")
+    if any(a[m] < 0 for m in names):
+        raise ValueError("alpha không được âm")
+
+    out = np.zeros(n, dtype=np.float32)
+    for m in names:
+        runs = modalities[m]
+        b = list(beta[m]) if beta and m in beta else [1.0 / len(runs)] * len(runs)
+        if len(b) != len(runs):
+            raise ValueError(f"beta[{m!r}] có {len(b)} phần tử cho {len(runs)} run")
+        if any(x < 0 for x in b):
+            raise ValueError(f"beta[{m!r}] không được âm")
+        total = float(sum(b))
+        if total <= 0:
+            raise ValueError(f"beta[{m!r}] cộng lại bằng 0")
+        inner = np.zeros(n, dtype=np.float32)
+        for w, r in zip(b, runs):
+            # Chuẩn hoá beta TẠI ĐÂY, không tin bên gọi đã chuẩn hoá: bất biến
+            # "Σ beta = 1 trong từng modality" chính là thứ giữ cho modality nhiều
+            # expansion không tự có thêm quyền vote.
+            if w:
+                inner += (w / total) * rrf_normalize(r.scores, r.covered, k)
+        out += float(a[m]) * inner
+    return out
 
 
 def fuse(sources: Sequence[SourceScores], weights: Mapping[str, float],

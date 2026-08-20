@@ -443,4 +443,29 @@ def load_frame_ms(meta_glob: str = "data/Framme/*/metadata/*.csv") -> dict[Frame
         for r in csv.DictReader(lines[i:]):
             if r.get("frame_idx") and r.get("fps"):
                 out[(p.stem, int(r["n"]))] = int(r["frame_idx"]) / float(r["fps"]) * 1000.0
+    if out:
+        return out
+
+    # ── LÙI VỀ `ocr.jsonl` ───────────────────────────────────────────────────
+    # Trả về rỗng ở đây KHÔNG vô hại: `AsrSource` dùng bản đồ này để gắn segment vào
+    # khung, nên bản đồ rỗng làm `covered` toàn False và ASR ghi 0 điểm cho MỌI truy vấn.
+    # Đó không giống một nguồn yếu — nó giống một nguồn đã được đo và kết luận là vô
+    # dụng. Đã xảy ra thật: `data/Framme/` bị xoá, và E1–E4 kết luận "ASR chết" trong khi
+    # thực ra ASR chưa từng được nối vào.
+    #
+    # `ocr.jsonl` mang `video_id`, `n`, `pts_time` cho ĐÚNG cùng bộ keyframe của chỉ mục —
+    # [ĐO] 173.426/173.426 khoá trùng khớp, và `pts_time` khớp `frame_idx/fps` ở 500/500
+    # mẫu. Nên đây là nguồn tương đương, không phải xấp xỉ.
+    fallback = Path("data/OCR/ocr.jsonl")
+    if not fallback.is_file():
+        raise RuntimeError(
+            f"load_frame_ms: không có metadata khớp {meta_glob!r} và cũng không có "
+            f"{fallback}. Trả về rỗng sẽ làm ASR im lặng ghi 0 điểm cho mọi truy vấn, "
+            f"nên dừng ở đây thay vì để phép đo sau đó vô nghĩa."
+        )
+    with open(fallback, encoding="utf-8") as fh:
+        for line in fh:
+            d = json.loads(line)
+            if d.get("pts_time") is not None:
+                out[(d["video_id"], int(d["n"]))] = float(d["pts_time"]) * 1000.0
     return out

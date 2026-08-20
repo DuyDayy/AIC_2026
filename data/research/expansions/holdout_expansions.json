@@ -1,0 +1,884 @@
+[
+  {
+    "query_id": "h_L22_V011_78",
+    "ocr": [
+      "Mai Lê Duy Quang; Thành phố Thủ Đức; TP.HCM"
+    ],
+    "asr": [
+      "đảm bảo thu nhập cho gia đình trong quá trình học tập và công tác; tinh thần yêu nước; chia sẻ của anh Mai Lê Duy Quang người dân Thành phố Thủ Đức"
+    ]
+  },
+  {
+    "query_id": "h_L26_V315_105",
+    "ocr": [
+      "lá me non; rau; ăn rất ngon"
+    ],
+    "asr": [
+      "lá me này giống như rau; lá me non ăn rất ngon; lá me giống như rau nên ăn rất ngon"
+    ]
+  },
+  {
+    "query_id": "h_L25_V053_120",
+    "ocr": [
+      "2024; hội nhập toàn cầu; tập đoàn quốc tế; doanh nghiệp quốc tế; cơ hội học tập"
+    ],
+    "asr": [
+      "cơ hội học tập; tham gia tập đoàn doanh nghiệp quốc tế; nâng cao khả năng hội nhập toàn cầu; hội nhập toàn cầu năm 2024"
+    ]
+  },
+  {
+    "query_id": "h_L21_V019_232",
+    "ocr": [
+      "Thới Bình; Cà Mau; tai nạn xe máy nghiêm trọng"
+    ],
+    "asr": [
+      "tai nạn xe máy nghiêm trọng ở Thới Bình; vụ tai nạn xe máy ở Thới Bình Cà Mau; tai nạn nghiêm trọng ở Cà Mau"
+    ]
+  },
+  {
+    "query_id": "h_L22_V023_120",
+    "ocr": [
+      "Hào Khí Thăng Long; kiến trúc triều đại; biểu trưng Hà Nội; tượng đài cảm tử"
+    ],
+    "asr": [
+      "giới thiệu khu vực Hào Khí Thăng Long; nét nghệ thuật đặc biệt tập trung vào kiến trúc triều đại; biểu trưng Hà Nội và tượng đài cảm tử được tái hiện trong không gian khác"
+    ]
+  },
+  {
+    "query_id": "h_L22_V028_243",
+    "ocr": [
+      "Brenno Marques; salon tango; vô địch thế giới"
+    ],
+    "asr": [
+      "Brenno Marques chia sẻ cảm xúc về chiến thắng; cảm xúc trào dâng khi đạt được ước mơ; vô địch thế giới salon tango"
+    ]
+  },
+  {
+    "query_id": "h_L26_V436_89",
+    "ocr": [
+      "vỏ chanh mài; giữ mùi thơm; hướng dẫn làm bánh"
+    ],
+    "asr": [
+      "thêm vỏ chanh mài để giữ mùi thơm cho bánh; hướng dẫn cách làm bánh; cho vỏ chanh mài vào để bánh thơm hơn"
+    ]
+  },
+  {
+    "query_id": "h_L25_V013_7",
+    "ocr": [
+      "Chuyên đề 9; Hệ thống nhóm chức; Hóa học hữu cơ; ThS Phạm Lê Thanh; nhóm chức đặc trưng"
+    ],
+    "asr": [
+      "chuyên đề 9 hệ thống nhóm chức; hệ thống nhóm chức trong hóa học hữu cơ; hệ thống lại kiến thức về các nhóm chức đặc trưng; giải quyết các câu hỏi một cách chính xác; ThS Phạm Lê Thanh"
+    ]
+  },
+  {
+    "query_id": "h_L21_V029_222",
+    "ocr": [
+      "HTV9; Bình Thuận; dịch tả châu Phi; trại heo; khám xét"
+    ],
+    "asr": [
+      "khám xét trại heo nghi nhiễm dịch tả châu Phi tại Bình Thuận; cảnh sát khám xét trại heo; vụ việc tại Bình Thuận"
+    ]
+  },
+  {
+    "query_id": "h_L26_V364_124",
+    "ocr": [
+      "lẩu Thái; cá lẩu Thái; gia vị nêm sẵn; gói gia vị"
+    ],
+    "asr": [
+      "cách nấu cá lẩu Thái; mùi thơm của cá khi nấu; sử dụng gói gia vị nêm sẵn; cho gói gia vị vào"
+    ]
+  },
+  {
+    "query_id": "h_L26_V091_66",
+    "ocr": [
+      "Món Ngon Mỗi Ngày; nghệ; thịt bê"
+    ],
+    "asr": [
+      "lợi ích của nghệ; kết hợp thịt bê và nghệ; món ăn với thịt bê và nghệ"
+    ]
+  },
+  {
+    "query_id": "h_L21_V023_242",
+    "ocr": [
+      "Phú Thọ; sân bay quốc tế; nghỉ lễ; hoạt động đặc sắc; sản phẩm hấp dẫn"
+    ],
+    "asr": [
+      "xe màu đỏ di chuyển qua sân bay quốc tế; hoạt động đặc sắc tại Phú Thọ dịp nghỉ lễ; sản phẩm hấp dẫn tại Phú Thọ"
+    ]
+  },
+  {
+    "query_id": "h_L22_V017_324",
+    "ocr": [
+      "HTV7 HD; 18:40:50; Hà Nội; tình hình kinh tế"
+    ],
+    "asr": [
+      "tình hình kinh tế tại Hà Nội; người phụ nữ đang làm việc với máy may công nghiệp"
+    ]
+  },
+  {
+    "query_id": "h_L26_V455_21",
+    "ocr": [
+      "Eat Well Live Well; Ajinomoto"
+    ],
+    "asr": [
+      "trò chuyện trong chương trình nấu ăn; chia sẻ công thức nấu ăn; bí quyết nấu ăn ngon"
+    ]
+  },
+  {
+    "query_id": "h_L26_V454_29",
+    "ocr": [
+      "nguyên liệu; buổi nấu hôm sau; hoàn thành nhiệm vụ"
+    ],
+    "asr": [
+      "giới thiệu nguyên liệu; nguyên liệu cho buổi nấu ngày mai; đã hoàn thành nhiệm vụ giới thiệu"
+    ]
+  },
+  {
+    "query_id": "h_L26_V229_108",
+    "ocr": [
+      "Nước cốt cam 2M; Nước cốt cam; 2M"
+    ],
+    "asr": [
+      "cách chế biến nước cốt cam; hướng dẫn pha nước cốt cam; đổ nước cốt cam vào cốc"
+    ]
+  },
+  {
+    "query_id": "h_L26_V319_88",
+    "ocr": [
+      "Cho ít nhân thôi nhé!"
+    ],
+    "asr": [
+      "cho ít nhân thôi nhé; gói bánh bao ít nhân thôi"
+    ]
+  },
+  {
+    "query_id": "h_L25_V039_187",
+    "ocr": [
+      "IACBE; Trường Đại học Quốc tế Sài Gòn; Saigon International University; SIU; Chứng nhận IACBE; Chương trình kinh doanh"
+    ],
+    "asr": [
+      "chứng nhận IACBE được trao cho Trường Đại học Quốc tế Sài Gòn; chương trình kinh doanh đạt chuẩn IACBE; cam kết chất lượng giáo dục quốc tế; môi trường học tập tiên phong"
+    ]
+  },
+  {
+    "query_id": "h_L22_V018_663",
+    "ocr": [
+      "Reuters; hơn 30 người; 18 người nhập viện; cảnh sát; vụ cháy; trực thăng"
+    ],
+    "asr": [
+      "đám đông đông đúc; cảnh sát báo cáo hơn 30 người bị ảnh hưởng sức khỏe do vụ cháy; Reuters thông tin 18 người nhập viện; cảnh sát điều động trực thăng"
+    ]
+  },
+  {
+    "query_id": "h_L26_V393_46",
+    "ocr": [
+      "sơ chế cá; ướp cá; các bước; hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "hướng dẫn sơ chế cá; cách ướp cá; các bước ướp cá; hướng dẫn làm cá"
+    ]
+  },
+  {
+    "query_id": "h_L26_V364_48",
+    "ocr": [
+      "rau thơm; rau ném; rau nêm; rau răm; lá lốt; món Huế"
+    ],
+    "asr": [
+      "cắt rau thơm thành rau nêm; rau răm và lá lốt; rau này dùng cho món Huế; món ăn Huế"
+    ]
+  },
+  {
+    "query_id": "h_L22_V028_222",
+    "ocr": [
+      "Tango Buenos Aires; Ban Tổ chức; đêm chung kết; cặp đôi xuất sắc"
+    ],
+    "asr": [
+      "biểu diễn Tango Buenos Aires; Ban Tổ chức chọn các cặp đôi xuất sắc vào đêm chung kết; sau nhiều vòng thi ấn tượng"
+    ]
+  },
+  {
+    "query_id": "h_L26_V059_89",
+    "ocr": [
+      "htv online; blendy; m; neon; molngay"
+    ],
+    "asr": [
+      "món ăn dễ làm trong dịp lễ; món ăn đơn giản cho ngày lễ; cách làm món dễ làm dịp lễ"
+    ]
+  },
+  {
+    "query_id": "h_L26_V295_59",
+    "ocr": [
+      "cánh gà công nghiệp; cánh gà; nhiều thịt; mềm ngon"
+    ],
+    "asr": [
+      "chọn cánh gà công nghiệp; cánh gà mềm hơn nhiều thịt hơn ngon hơn; cách chọn cánh gà ngon cho món ăn hôm nay"
+    ]
+  },
+  {
+    "query_id": "h_L26_V097_56",
+    "ocr": [
+      "Eat Well, Live Well"
+    ],
+    "asr": [
+      "thêm gừng băm vào nhân tôm; nhân tôm cho mùi thơm; cách làm nhân tôm với gừng băm"
+    ]
+  },
+  {
+    "query_id": "h_L26_V324_170",
+    "ocr": [
+      "súp cua nấm tuyết; súp cua chua ngọt; súp cua cay nhẹ"
+    ],
+    "asr": [
+      "súp cua nấm tuyết chua ngọt; súp cua cay nhẹ; món súp đẹp mắt ngon miệng"
+    ]
+  },
+  {
+    "query_id": "h_L30_V033_36",
+    "ocr": [
+      "dòng suối; nằm trên đá; giúp đỡ"
+    ],
+    "asr": [
+      "người phụ nữ nằm trên đá giữa dòng suối; hai người đang giúp đỡ; cứu người ở suối"
+    ]
+  },
+  {
+    "query_id": "h_L30_V026_41",
+    "ocr": [
+      "niềm tự hào dân tộc; giá trị cốt lõi; xây dựng sự kiện"
+    ],
+    "asr": [
+      "xây dựng sự kiện khơi dậy niềm tự hào dân tộc; giá trị cốt lõi thông qua môn học; khơi dậy niềm tự hào dân tộc qua môn học"
+    ]
+  },
+  {
+    "query_id": "h_L26_V041_48",
+    "ocr": [
+      "túi RP; RP; cây cán"
+    ],
+    "asr": [
+      "dùng túi RP để ép và tạo hình; dùng cây cán để cán mỏng dày đều; chuẩn bị dùng túi RP ép tạo hình"
+    ]
+  },
+  {
+    "query_id": "h_L26_V195_82",
+    "ocr": [
+      "phi thơm hành tím; chảo nhỏ; hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "phi thơm hành tím trước khi nấu; hướng dẫn cách sử dụng chảo nhỏ; hai người chuẩn bị nấu ăn; nhớ phi thơm hành tím"
+    ]
+  },
+  {
+    "query_id": "h_L21_V014_97",
+    "ocr": [
+      "kế hoạch khai thác bay; dịp lễ 2/9; 2/9"
+    ],
+    "asr": [
+      "ghi nhận và phân tích hình ảnh; kế hoạch khai thác bay dịp lễ 2/9"
+    ]
+  },
+  {
+    "query_id": "h_L24_V019_56",
+    "ocr": [
+      "lễ hội du lịch Bình Thuận; Bình Thuận; Quán Sứ; Cholon; Hiv He Thao"
+    ],
+    "asr": [
+      "diễn giải về lễ hội du lịch Bình Thuận; giới thiệu lễ hội du lịch Bình Thuận; thuyết minh về lễ hội du lịch Bình Thuận"
+    ]
+  },
+  {
+    "query_id": "h_L26_V344_157",
+    "ocr": [
+      "món ăn Hàn Quốc; hướng dẫn cách làm; YouTube"
+    ],
+    "asr": [
+      "món ăn Hàn Quốc; hướng dẫn cách làm món Hàn Quốc; cách nấu món ăn Hàn Quốc; hướng dẫn trên YouTube"
+    ]
+  },
+  {
+    "query_id": "h_L25_V030_16",
+    "ocr": [
+      "SIU; Trường Đại học Quốc tế Siu; Trường Đại học Quốc tế Sài Gòn"
+    ],
+    "asr": [
+      "thảo luận về môi trường học tập tiên phong; môi trường học tập tại Trường Đại học Quốc tế Siu; học tập tiên phong tại SIU"
+    ]
+  },
+  {
+    "query_id": "h_L24_V008_57",
+    "ocr": [
+      "Lân Lên Mai Hoa Thung; HTV Thể Thao; 13/01/2020; 13 tháng 1 năm 2020; Lễ hội Lân; múa lân"
+    ],
+    "asr": [
+      "lễ hội Lân Lên Mai Hoa Thung; được tổ chức tại HTV Thể Thao ngày 13 tháng 1 năm 2020; màn biểu diễn múa lân sôi động"
+    ]
+  },
+  {
+    "query_id": "h_L26_V256_166",
+    "ocr": [
+      "vịt xào lá mắc mật; cách làm vịt xào lá mắc mật"
+    ],
+    "asr": [
+      "cách làm vịt xào lá mắc mật; hướng dẫn làm món vịt xào lá mắc mật; vịt xào lá mắc mật thơm hấp dẫn"
+    ]
+  },
+  {
+    "query_id": "h_L26_V147_115",
+    "ocr": [
+      "Aji; Ajinomoto; hạt nêm; nước tương"
+    ],
+    "asr": [
+      "cho hạt nêm Aji vào chén nước lạnh; thêm đường và muối; cho nước tương vào; pha hỗn hợp gia vị"
+    ]
+  },
+  {
+    "query_id": "h_L26_V242_115",
+    "ocr": [
+      "omega3; vitamin A; chất chống oxy hóa"
+    ],
+    "asr": [
+      "bốn viên thịt viên trên đĩa; lợi ích dinh dưỡng của món ăn; hàm lượng omega3; vitamin A; chất chống oxy hóa; vừa ngon miệng vừa bổ dưỡng"
+    ]
+  },
+  {
+    "query_id": "h_L25_V029_44",
+    "ocr": [
+      "học bổng Chủ tịch; Tiếp Bước Hành Trình"
+    ],
+    "asr": [
+      "thông tin về học bổng Chủ tịch; học bổng Tiếp Bước Hành Trình; cảm thấy rất hứng thú"
+    ]
+  },
+  {
+    "query_id": "h_L26_V150_87",
+    "ocr": [
+      "bánh flan; hình vuông; thức uống"
+    ],
+    "asr": [
+      "đang chuẩn bị làm bánh flan; cắt thành hình vuông; tạo vị béo thơm cho thức uống"
+    ]
+  },
+  {
+    "query_id": "h_L25_V076_84",
+    "ocr": [
+      "Trường Quốc tế Á Châu; Asian International School; AIS"
+    ],
+    "asr": [
+      "sinh viên Trường Quốc tế Á Châu có cơ hội thách thức bản thân; phản biện các vấn đề để tự học hỏi; trưởng thành độc lập"
+    ]
+  },
+  {
+    "query_id": "h_L25_V010_72",
+    "ocr": [
+      "giáo dục; học thuật; nghệ thuật thể thao"
+    ],
+    "asr": [
+      "tầm quan trọng của việc kết hợp giữa học thuật và nghệ thuật thể thao; kết hợp học thuật và thể thao trong giáo dục; giáo dục toàn diện giữa học thuật và nghệ thuật thể thao"
+    ]
+  },
+  {
+    "query_id": "h_L25_V009_89",
+    "ocr": [
+      "cầu thang; niềm tự hào; quyết tâm; tương lai"
+    ],
+    "asr": [
+      "đi lên cầu thang; niềm tự hào và quyết tâm; bước tiếp vào tương lai"
+    ]
+  },
+  {
+    "query_id": "h_L30_V062_72",
+    "ocr": [
+      "mèo Việt Nam; vẽ mèo; đôi mắt; tác phẩm có hồn"
+    ],
+    "asr": [
+      "cách vẽ mèo Việt Nam; chú trọng vào đôi mắt; vẽ mắt để tác phẩm có hồn; bí quyết vẽ mèo"
+    ]
+  },
+  {
+    "query_id": "h_L24_V028_27",
+    "ocr": [
+      "quiss chulon; htv he thao"
+    ],
+    "asr": [
+      "múa lân rồng vàng rực rỡ; lễ hội sôi động; biểu diễn múa lân"
+    ]
+  },
+  {
+    "query_id": "h_L30_V029_150",
+    "ocr": [
+      "Sinh viên với Ý tưởng Khởi nghiệp Sáng tạo; Chung kết 2023; Gia Hùng; giải khuyến khích; 2 triệu đồng; chuyển đổi số; khởi nghiệp sáng tạo mở"
+    ],
+    "asr": [
+      "vòng chung kết cuộc thi Sinh viên với Ý tưởng Khởi nghiệp Sáng tạo năm 2023; tác giả Gia Hùng nhận giải khuyến khích hai triệu đồng; dự án về chuyển đổi số và khởi nghiệp sáng tạo mở"
+    ]
+  },
+  {
+    "query_id": "h_L26_V127_145",
+    "ocr": [
+      "bánh mì; bún; đậu phộng rang; đậu phộng xay; rau ôm; ngò ôm"
+    ],
+    "asr": [
+      "có thể ăn kèm với bún; thêm đậu phộng rang xay; đậu phộng giã nhuyễn; điểm lên cọng rau ôm; khi ăn sẽ cho lên trên"
+    ]
+  },
+  {
+    "query_id": "h_L30_V052_131",
+    "ocr": [
+      "phục chế sách; gìn giữ văn hóa; Việt Nam"
+    ],
+    "asr": [
+      "người trẻ phục chế sách; giữ gìn nét văn hóa quý giá của Việt Nam; tự hào về người trẻ giữ gìn văn hóa"
+    ]
+  },
+  {
+    "query_id": "h_L27_V011_218",
+    "ocr": [
+      "dâu Hạ Châu; Hạ Châu; trái nghịch mùa; Hậu Vàng; du lịch"
+    ],
+    "asr": [
+      "tháng sáu còn dâu Hạ Châu; dâu Hạ Châu trái nghịch mùa; điểm đến hấp dẫn du khách; tạo điểm nhấn phát triển du lịch Hậu Vàng"
+    ]
+  },
+  {
+    "query_id": "h_L25_V054_56",
+    "ocr": [
+      "giáo dục toàn diện; kết hợp học thuật và nghệ thuật"
+    ],
+    "asr": [
+      "tầm quan trọng của việc kết hợp học thuật và nghệ thuật; chương trình giáo dục toàn diện; kết hợp giữa học thuật và nghệ thuật trong giáo dục"
+    ]
+  },
+  {
+    "query_id": "h_L26_V191_75",
+    "ocr": [
+      "Phương; chảo chống dính; khăn ẩm; giảm nhiệt độ; màu sắc đẹp"
+    ],
+    "asr": [
+      "Phương hướng dẫn làm cháo bằng chảo chống dính; đặt chảo lên khăn ẩm để giảm nhiệt độ; cách tạo màu sắc đẹp cho bánh"
+    ]
+  },
+  {
+    "query_id": "h_L30_V053_71",
+    "ocr": [
+      "vé số; quán cơm Thanh niên; cấm bán vé số"
+    ],
+    "asr": [
+      "kể về quá khứ khó khăn; bị nhiều quán ăn cấm bán vé số; đến quán cơm Thanh niên thì bị chửi mắng"
+    ]
+  },
+  {
+    "query_id": "h_L27_V015_93",
+    "ocr": [
+      "miền Tây Nam Bộ; miền Tây Nam; du lịch miền Tây"
+    ],
+    "asr": [
+      "địa điểm tuyệt vời mát mẻ trong lành; giữ nét mộc mạc quê hương miền Tây Nam Bộ; không khí mát mẻ trong lành miền Tây"
+    ]
+  },
+  {
+    "query_id": "h_L25_V081_24",
+    "ocr": [
+      "Đại học Quốc tế Sài Gòn; SIU; Saigon International University"
+    ],
+    "asr": [
+      "lợi ích của trường Đại học Quốc tế Sài Gòn; những lợi ích khi học tại Đại học Quốc tế Sài Gòn; giới thiệu về Đại học Quốc tế Sài Gòn"
+    ]
+  },
+  {
+    "query_id": "h_L30_V060_86",
+    "ocr": [
+      "vườn xương rồng; lobivia; xương rồng lobivia"
+    ],
+    "asr": [
+      "vườn xương rồng hoa nở rộ suốt cả năm; đặc tính xương rồng lobivia; phù hợp điều kiện thời tiết và thổ nhưỡng"
+    ]
+  },
+  {
+    "query_id": "h_L24_V036_43",
+    "ocr": [
+      "chương trình thể thao; múa rồng; thể thao"
+    ],
+    "asr": [
+      "biểu diễn múa rồng; chương trình thể thao; màn hình hiển thị thông tin thể thao"
+    ]
+  },
+  {
+    "query_id": "h_L26_V189_89",
+    "ocr": [
+      "thuốc bắc; hạt sen khô; táo Tàu"
+    ],
+    "asr": [
+      "chia đều gia vị thuốc bắc vào cốc; cho hạt sen khô và táo Tàu vào"
+    ]
+  },
+  {
+    "query_id": "h_L26_V475_76",
+    "ocr": [
+      "1/3 chén; dầu ăn; phân thẻ lá; quả cà"
+    ],
+    "asr": [
+      "đặt quả cà lên chảo; đổ khoảng một phần ba chén dầu ăn; cho phân thẻ lá vào nấu"
+    ]
+  },
+  {
+    "query_id": "h_L24_V037_33",
+    "ocr": [
+      "Chợ Lớn; Cholon; đêm hội"
+    ],
+    "asr": [
+      "đêm hội Chợ Lớn; rồng vàng rực rỡ được nâng cao trên sân khấu; ánh đèn rực rỡ; khán giả hào hứng"
+    ]
+  },
+  {
+    "query_id": "h_L26_V242_52",
+    "ocr": [
+      "chả cá thác lác; lòng trắng trứng gà"
+    ],
+    "asr": [
+      "cắt miếng thịt nhỏ cho vào chảo; cho lòng trắng trứng gà vào; làm chả cá thác lác"
+    ]
+  },
+  {
+    "query_id": "h_L24_V026_91",
+    "ocr": [
+      "HTV; HTV Thể Thao; chương trình thể thao"
+    ],
+    "asr": [
+      "biểu diễn múa lân sư rồng; tiết mục sư rồng vàng trên sân khấu; múa rồng vàng biểu diễn với đèn lồng đỏ"
+    ]
+  },
+  {
+    "query_id": "h_L24_V037_37",
+    "ocr": [
+      "HTV Thể Thao"
+    ],
+    "asr": [
+      "biểu diễn rồng vàng trên sân khấu; đêm diễn rồng vàng rực rỡ; tiết mục rồng vàng dưới ánh đèn sân khấu"
+    ]
+  },
+  {
+    "query_id": "h_L24_V015_81",
+    "ocr": [
+      "HTV HỂ THAO"
+    ],
+    "asr": [
+      "biểu diễn múa lân sư tử; tiết mục múa lân trên sân khấu; màn biểu diễn sư tử múa"
+    ]
+  },
+  {
+    "query_id": "h_L24_V009_91",
+    "ocr": [
+      "HTV; HTV Thể Thao; múa rồng"
+    ],
+    "asr": [
+      "múa rồng màu vàng rực rỡ; tiết mục múa rồng; biểu diễn thể thao trên HTV"
+    ]
+  },
+  {
+    "query_id": "h_L24_V014_29",
+    "ocr": [
+      "Cholon; Chợ Lớn; múa rồng"
+    ],
+    "asr": [
+      "biểu diễn múa rồng tại khu Chợ Lớn; múa rồng ở Cholon; người dân vỗ tay cổ vũ"
+    ]
+  },
+  {
+    "query_id": "h_L26_V131_139",
+    "ocr": [
+      "bánh ngọt; đường phèn; mật ong"
+    ],
+    "asr": [
+      "bánh ngọt trang trí trái cây tươi và đường phèn; đặt trên đĩa xanh lá cây trên khay gỗ; bên cạnh khăn trắng và cốc mật ong"
+    ]
+  },
+  {
+    "query_id": "h_L28_V010_496",
+    "ocr": [
+      "sản xuất phim; đạo diễn; biên kịch; nhà sản xuất; ê-kíp thực hiện; danh sách thành viên"
+    ],
+    "asr": [
+      "chùm quả đen mọng trên cành cây; danh sách thành viên tham gia sản xuất phim; ê kíp đoàn làm phim"
+    ]
+  },
+  {
+    "query_id": "h_L24_V035_51",
+    "ocr": [
+      "Cholon; Đêm hội Cholon; Chợ Lớn"
+    ],
+    "asr": [
+      "đêm hội Cholon; rồng vàng rực rỡ biểu diễn trên sân khấu; tiết mục rồng vàng thu hút khán giả"
+    ]
+  },
+  {
+    "query_id": "h_L29_V014_41",
+    "ocr": [
+      "Đôi Mắt Mekong; ĐÔI MẮT MEKONG; Trailer"
+    ],
+    "asr": [
+      "trailer phim Đôi Mắt Mekong; cảnh thuyền trên sông; hai cây dừa"
+    ]
+  },
+  {
+    "query_id": "h_L26_V123_15",
+    "ocr": [
+      "bạch tuộc; rau xanh tươi"
+    ],
+    "asr": [
+      "bạch tuộc mọng nước; đĩa rau xanh tươi; bạch tuộc bên cạnh đĩa rau"
+    ]
+  },
+  {
+    "query_id": "h_L26_V102_136",
+    "ocr": [
+      "bánh kem; làm bánh"
+    ],
+    "asr": [
+      "đeo găng trắng đặt trứng lên lớp kem trên bánh; đặt quả trứng lên bánh kem"
+    ]
+  },
+  {
+    "query_id": "h_L26_V102_59",
+    "ocr": [
+      "#NấuChuẩnĂnLành; Nấu Chuẩn Ăn Lành"
+    ],
+    "asr": [
+      "nấu chuẩn ăn lành; hai người mặc đồng phục trắng; đang chuẩn bị thực phẩm"
+    ]
+  },
+  {
+    "query_id": "h_L26_V271_180",
+    "ocr": [
+      "gà; lá lốt; nước mắm; dầu hành; nếp cái hoa vàng; bột nghệ; dưa xanh; nước tương Phú Sĩ; hành tím phi; hạt nêm Aji-nagon gà; Ajinomoto Việt Nam"
+    ],
+    "asr": [
+      "nguyên liệu gồm gà lá lốt; nước mắm dầu hành nếp cái hoa vàng; bột nghệ dưa xanh; nước tương Phú Sĩ hành tím phi; hạt nêm Aji-nagon gà; Ajinomoto Việt Nam"
+    ]
+  },
+  {
+    "query_id": "h_L25_V070_1",
+    "ocr": [
+      "áo sơ mi trắng; bức tường trắng"
+    ],
+    "asr": [
+      "người đàn ông mặc áo sơ mi trắng đi qua bức tường; bức tường trắng mờ ảo"
+    ]
+  },
+  {
+    "query_id": "h_L24_V032_129",
+    "ocr": [
+      "Chalon"
+    ],
+    "asr": [
+      "biểu diễn rồng vàng trên sân khấu; biểu diễn nghệ thuật tại Chalon; rồng vàng biểu diễn cho khán giả xem"
+    ]
+  },
+  {
+    "query_id": "h_L26_V190_15",
+    "ocr": [
+      "canh gà; cánh gà; sả; ớt; lá chanh; nước dừa; đường phèn; bột canh"
+    ],
+    "asr": [
+      "hướng dẫn nấu canh gà; cách nấu canh gà với cánh gà; cho sả ớt lá chanh vào nồi; thêm nước dừa đường phèn bột canh"
+    ]
+  },
+  {
+    "query_id": "h_L24_V039_32",
+    "ocr": [
+      "quinish; htv; tulling; hethao"
+    ],
+    "asr": [
+      "con mèo sư tử màu trắng; chi tiết màu vàng và đỏ"
+    ]
+  },
+  {
+    "query_id": "h_L24_V032_157",
+    "ocr": [
+      "HTV Thể Thao; quils cholon hiv the thao"
+    ],
+    "asr": [
+      "đêm diễn rồng vàng trên sân khấu; sân khấu rực rỡ ánh đèn; rồng vàng nổi bật trên sân khấu"
+    ]
+  },
+  {
+    "query_id": "h_L30_V017_75",
+    "ocr": [
+      "sách; kệ sách"
+    ],
+    "asr": [
+      "người đàn ông mặc áo đen; đang nhìn xuống; trước kệ sách đầy màu sắc"
+    ]
+  },
+  {
+    "query_id": "h_L24_V036_62",
+    "ocr": [
+      "HTV Thể Thao"
+    ],
+    "asr": [
+      "múa rồng trên sân khấu; tiết mục múa rồng; biểu diễn múa rồng"
+    ]
+  },
+  {
+    "query_id": "h_L24_V030_142",
+    "ocr": [
+      "Cholon; Chợ Lớn; múa lân; múa rồng; sư tử múa rồng"
+    ],
+    "asr": [
+      "biểu diễn múa lân sư rồng tại Chợ Lớn Cholon; tiết mục sư tử múa rồng trên sân khấu ánh sáng rực rỡ; thu hút sự chú ý của khán giả"
+    ]
+  },
+  {
+    "query_id": "h_L26_V237_163",
+    "ocr": [
+      "HTV Online; nguyên liệu; công thức; trứng cút; hành lá; rau răm; hành tím; hành tim; gia vị"
+    ],
+    "asr": [
+      "cách nấu món trứng cút; cho hành lá rau răm hành tím vào; nêm gia vị; công thức nấu trứng cút"
+    ]
+  },
+  {
+    "query_id": "h_L30_V037_7",
+    "ocr": [
+      "lan tỏa năng lượng tích cực; 2024; cuộc thi; vượt qua khó khăn; sức mạnh tích cực"
+    ],
+    "asr": [
+      "cuộc thi lan tỏa năng lượng tích cực 2024; vượt qua khó khăn để lan tỏa sức mạnh tích cực; lan tỏa năng lượng tích cực"
+    ]
+  },
+  {
+    "query_id": "h_L24_V039_98",
+    "ocr": [
+      "Cholon; Chợ Lớn; đêm diễn"
+    ],
+    "asr": [
+      "đêm diễn tại Cholon; mèo bông trắng nhảy qua các cột; màn trình diễn ấn tượng trước khán giả"
+    ]
+  },
+  {
+    "query_id": "h_L30_V029_79",
+    "ocr": [
+      "tuoitre TV; HS-3001"
+    ],
+    "asr": [
+      "người khoác áo trắng điều chỉnh thiết bị hóa học; đang điều chỉnh thiết bị hóa học"
+    ]
+  },
+  {
+    "query_id": "h_L25_V005_2",
+    "ocr": [
+      "trắng sáng; ánh sáng mờ ảo; tĩnh lặng"
+    ],
+    "asr": [
+      "bức ảnh trắng sáng; ánh sáng mờ ảo; cảm giác tĩnh lặng và đơn giản"
+    ]
+  },
+  {
+    "query_id": "h_L30_V039_28",
+    "ocr": [
+      "trẻ em; ghế xanh dương"
+    ],
+    "asr": [
+      "trẻ em ngồi trên ghế xanh dương; nhìn sang bên trái; ánh mắt tò mò"
+    ]
+  },
+  {
+    "query_id": "h_L30_V039_26",
+    "ocr": [
+      "sách vở; viết bài; lớp học"
+    ],
+    "asr": [
+      "học sinh nữ ngồi viết bài; tập trung chăm chú viết bài; trong lớp học bàn ghế màu đỏ"
+    ]
+  },
+  {
+    "query_id": "h_L26_V432_5",
+    "ocr": [
+      "cá hồi; cà chua cherry; hạt tiêu"
+    ],
+    "asr": [
+      "rắc hạt tiêu lên miếng cá hồi tươi; cá hồi với rau thơm và cà chua cherry trên bàn gỗ"
+    ]
+  },
+  {
+    "query_id": "h_L28_V003_47",
+    "ocr": [
+      "sông nước; ven sông"
+    ],
+    "asr": [
+      "mặt nước rộng mênh mông; cây cỏ nổi lềnh bềnh trên mặt nước; bầu trời mờ ảo; bờ sông có nhà cửa thấp thoáng"
+    ]
+  },
+  {
+    "query_id": "h_L26_V491_109",
+    "ocr": [
+      "hạt; tô xanh"
+    ],
+    "asr": [
+      "bàn tay nắm chặt hạt; nắm một nắm hạt trong tô xanh nhỏ; tô xanh nhỏ trên bề mặt trắng"
+    ]
+  },
+  {
+    "query_id": "h_L25_V024_99",
+    "ocr": [
+      "bánh ngọt; tiệm bánh"
+    ],
+    "asr": [
+      "cô gái mặc áo đỏ trắng đang ăn bánh; ăn miếng bánh nhỏ; ăn bánh với vẻ mặt vui vẻ"
+    ]
+  },
+  {
+    "query_id": "h_L26_V131_143",
+    "ocr": [
+      "bánh sandwich; kem đen; dưa chua; đường bột; mâm xôi; dưa hấu cắt lát"
+    ],
+    "asr": [
+      "bánh sandwich kem đen nhân dưa chua; trang trí với đường bột, quả mâm xôi và miếng dưa hấu cắt lát"
+    ]
+  },
+  {
+    "query_id": "h_L26_V077_1",
+    "ocr": [
+      "trái cây; rau xanh"
+    ],
+    "asr": [
+      "trái cây và rau xanh xếp thành hình hoa; rau củ xếp thành hình bông hoa trên nền trắng"
+    ]
+  },
+  {
+    "query_id": "h_L25_V049_97",
+    "ocr": [
+      "bánh; đồng phục đỏ trắng"
+    ],
+    "asr": [
+      "cô gái trẻ ăn bánh; ăn một miếng bánh nhỏ; cười vui vẻ; người mặc đồng phục đỏ trắng"
+    ]
+  },
+  {
+    "query_id": "h_L26_V196_1",
+    "ocr": [
+      "broccoli; cà chua; ớt đỏ; ớt vàng"
+    ],
+    "asr": [
+      "vòng tròn rau củ quả màu sắc sặc sỡ; có bông cải xanh broccoli, cà chua, ớt đỏ và ớt vàng xếp trên nền trắng"
+    ]
+  },
+  {
+    "query_id": "h_L25_V080_77",
+    "ocr": [
+      "bánh; ăn bánh"
+    ],
+    "asr": [
+      "cô gái ăn bánh; cầm bánh bằng hai tay; đang ăn miếng bánh"
+    ]
+  },
+  {
+    "query_id": "h_L29_V014_120",
+    "ocr": [
+      "cắt dây"
+    ],
+    "asr": [
+      "người phụ nữ áo xanh đang cắt dây; cắt dây bằng dao nhỏ; trong căn phòng sáng"
+    ]
+  }
+]

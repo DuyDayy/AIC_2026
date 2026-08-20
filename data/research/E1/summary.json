@@ -1,0 +1,101 @@
+{
+ "experiment": "E1: Baseline (Nguyên bản - Chưa có Query Expansion)",
+ "objective": "Đo lường sức mạnh của từng nhánh đơn lẻ (Visual, OCR, ASR) khi dùng chung 1 câu query nguyên bản, và kết quả khi kết hợp lại bằng thuật toán RRF.",
+ "insights": [
+  "Nhánh Visual đang gánh team (Recall@100 = 78%).",
+  "Nhánh OCR tuy yếu (Recall@100 = 46%) nhưng bắt được những video chứa text trên màn hình mà Visual không nhìn ra, giúp bù đắp đáng kể.",
+  "Nhánh ASR chết hoàn toàn (Recall@100 = 0%). Lý do: Câu truy vấn gốc thường có cụm 'Tìm video quay cảnh...' nên BM25 không thể khớp với hội thoại thực tế được nói trong video. Cần phải có Query Expansion (E2) để sinh câu hội thoại giả lập."
+ ],
+ "metrics": {
+  "individual_baselines_top100": {
+   "visual_only": {
+    "final_score": 0.524,
+    "mrr": 0.2874,
+    "r_100": 0.78
+   },
+   "ocr_only": {
+    "final_score": 0.358,
+    "mrr": 0.2144,
+    "r_100": 0.46
+   },
+   "asr_only": {
+    "final_score": 0.0,
+    "mrr": 0.0,
+    "r_100": 0.0
+   }
+  },
+  "fusion_baselines": {
+   "visual_ocr_rrf": {
+    "final_score": 0.601,
+    "mrr": 0.3541,
+    "r_100": 0.79
+   },
+   "visual_asr_rrf": {
+    "final_score": 0.463,
+    "mrr": 0.2588,
+    "r_100": 0.65
+   },
+   "fusion_all_rrf": {
+    "final_score": 0.551,
+    "mrr": 0.309,
+    "r_100": 0.73
+   }
+  }
+ },
+ "status": "ĐÃ SỬA. Bản cũ ở summary_ASR_DEAD.json.",
+ "critical_correction": {
+  "bug": "AsrSource phủ 0/173.426 khung vì load_frame_ms() đọc data/Framme/*/metadata/*.csv đã bị xoá và trả về {}. ASR ghi 0 điểm cho MỌI truy vấn. Đã vá bằng cách lùi về data/OCR/ocr.jsonl (phủ 173.426/173.426, pts_time khớp frame_idx/fps 500/500 mẫu); sau vá ASR phủ 96,9%.",
+  "retracted_insight": "Nhánh ASR chết hoàn toàn (Recall@100 = 0%). Lý do: câu truy vấn có cụm 'Tìm video quay cảnh...' nên BM25 không khớp.",
+  "why_it_was_wrong": "Không câu chữ nào — gốc hay mở rộng — khớp được với một nguồn phủ 0 khung. Đây là lỗi đường ống dữ liệu, không phải tính chất của ASR hay của câu truy vấn."
+ },
+ "metrics_corrected_bench100": {
+  "visual_only": {
+   "MRR": 0.287378105430787,
+   "R@1": 0.17,
+   "R@5": 0.44,
+   "R@20": 0.57,
+   "R@50": 0.66,
+   "R@100": 0.78
+  },
+  "ocr_only": {
+   "MRR": 0.2144413493984389,
+   "R@1": 0.12,
+   "R@5": 0.34,
+   "R@20": 0.42,
+   "R@50": 0.45,
+   "R@100": 0.46
+  },
+  "asr_only": {
+   "MRR": 0.205811764533357,
+   "R@1": 0.1,
+   "R@5": 0.35,
+   "R@20": 0.52,
+   "R@50": 0.56,
+   "R@100": 0.58
+  },
+  "visual_ocr_rrf": {
+   "MRR": 0.3590844654726201,
+   "R@1": 0.25,
+   "R@5": 0.48,
+   "R@20": 0.71,
+   "R@50": 0.76,
+   "R@100": 0.82
+  },
+  "visual_asr_rrf": {
+   "MRR": 0.4596231981110517,
+   "R@1": 0.33,
+   "R@5": 0.63,
+   "R@20": 0.74,
+   "R@50": 0.8,
+   "R@100": 0.85
+  },
+  "fusion_all_rrf": {
+   "MRR": 0.4751207061029818,
+   "R@1": 0.31,
+   "R@5": 0.68,
+   "R@20": 0.84,
+   "R@50": 0.88,
+   "R@100": 0.91
+  }
+ }
+}

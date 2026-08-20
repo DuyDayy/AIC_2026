@@ -1,0 +1,120 @@
+{
+ "experiment": "E3 — Late Rank Fusion (RRF) và cấu trúc phân cấp cho Query Expansion",
+ "status": "ĐÃ CHẠY LẠI sau khi sửa lỗi ASR. Bản cũ lưu ở summary_ASR_DEAD.json.",
+ "critical_correction": {
+  "bug": "AsrSource phủ 0/173.426 khung. load_frame_ms() đọc data/Framme/*/metadata/*.csv; thư mục đó bị xoá nên hàm trả {} và AsrSource không gắn được segment vào khung nào.",
+  "effect": "ASR ghi 0 điểm cho MỌI truy vấn ở E1, E2, E3 và lần chạy E4 đầu tiên.",
+  "wrong_conclusion_in_E1": "E1 quy ASR = 0% cho việc câu truy vấn có cụm 'Tìm video quay cảnh…' nên BM25 không khớp. Không thể đúng: không câu chữ nào khớp được với nguồn phủ 0 khung.",
+  "wrong_conclusion_in_E2": "E2 kết luận expansion 'qa' vẫn 0% nên vấn đề không nằm ở câu truy vấn. Cùng một nguyên nhân.",
+  "fix": "load_frame_ms() lùi về data/OCR/ocr.jsonl khi không có metadata: 173.426/173.426 khoá trùng chỉ mục, pts_time khớp frame_idx/fps ở 500/500 mẫu.",
+  "after_fix": "ASR phủ 168.061/173.426 khung (96,9%), 20/20 truy vấn có điểm."
+ },
+ "asr_is_not_dead": {
+  "asr_only_before": {
+   "MRR": 0.0,
+   "R@100": 0.0
+  },
+  "asr_only_after": {
+   "MRR": 0.205811764533357,
+   "R@1": 0.1,
+   "R@5": 0.35,
+   "R@20": 0.52,
+   "R@50": 0.56,
+   "R@100": 0.58
+  },
+  "asr_qa_after": {
+   "MRR": 0.3127070639066436,
+   "R@1": 0.19,
+   "R@5": 0.5,
+   "R@20": 0.59,
+   "R@50": 0.59,
+   "R@100": 0.62
+  },
+  "note": "ASR là nguồn ĐƠN mạnh thứ hai theo R@100 (0,58 so với OCR 0,46). Expansion 'qa' nâng MRR 0,2058 → 0,3127."
+ },
+ "hierarchy_matrix_bench_100": [
+  {
+   "config": "① V + O_gốc + A_gốc                    (equal RRF, không QE)",
+   "MRR": 0.4751207061029818,
+   "R@1": 0.31,
+   "R@5": 0.68,
+   "R@20": 0.84,
+   "R@50": 0.88,
+   "R@100": 0.91
+  },
+  {
+   "config": "② V + O_qo + A_qa                      (chỉ QE, BỎ gốc)",
+   "MRR": 0.4867194146398594,
+   "R@1": 0.31,
+   "R@5": 0.73,
+   "R@20": 0.83,
+   "R@50": 0.9,
+   "R@100": 0.93
+  },
+  {
+   "config": "③ V + (O_gốc+O_qo)/2 + A_gốc           (QE chỉ OCR)",
+   "MRR": 0.4988750306841948,
+   "R@1": 0.33,
+   "R@5": 0.72,
+   "R@20": 0.84,
+   "R@50": 0.88,
+   "R@100": 0.92
+  },
+  {
+   "config": "④ V + O_gốc + (A_gốc+A_qa)/2           (QE chỉ ASR)",
+   "MRR": 0.4874075317819726,
+   "R@1": 0.31,
+   "R@5": 0.72,
+   "R@20": 0.85,
+   "R@50": 0.89,
+   "R@100": 0.92
+  },
+  {
+   "config": "⑤ V + (O_gốc+O_qo)/2 + (A_gốc+A_qa)/2  (QE cả hai) ★",
+   "MRR": 0.5281337086882865,
+   "R@1": 0.37,
+   "R@5": 0.73,
+   "R@20": 0.86,
+   "R@50": 0.89,
+   "R@100": 0.93
+  },
+  {
+   "config": "⑥ V + O_gốc + O_qo + A_gốc + A_qa      (PHẲNG, không phân cấp)",
+   "MRR": 0.4426915640789252,
+   "R@1": 0.28,
+   "R@5": 0.66,
+   "R@20": 0.76,
+   "R@50": 0.79,
+   "R@100": 0.89
+  }
+ ],
+ "best": {
+  "config": "V nguyên bản + (OCR gốc + OCR qo)/2 + (ASR gốc + ASR qa)/2",
+  "MRR": 0.5281337086882865,
+  "R@1": 0.37,
+  "R@5": 0.73,
+  "R@20": 0.86,
+  "R@50": 0.89,
+  "R@100": 0.93
+ },
+ "requested_variant": {
+  "config": "V nguyên bản + OCR qo + ASR qa (BỎ bản gốc của OCR/ASR)",
+  "MRR": 0.4867194146398594,
+  "R@1": 0.31,
+  "R@5": 0.73,
+  "R@20": 0.83,
+  "R@50": 0.9,
+  "R@100": 0.93
+ },
+ "insights": [
+  "1. Phân cấp THẮNG phẳng rõ rệt: gộp trung bình bản gốc với bản mở rộng TRONG từng modality cho MRR 0,5281, còn ném cả 5 nhánh vào một RRF phẳng chỉ được 0,4427. Nhánh phẳng cho modality nhiều expansion hơn nhiều quyền vote hơn — đúng thứ chuẩn hoá beta sinh ra để chặn.",
+  "2. Giữ bản GỐC bên cạnh expansion là đáng: bỏ gốc (V+O_qo+A_qa) được 0,4867, giữ cả hai được 0,5281. Expansion bổ sung cho bản gốc chứ không thay thế nó.",
+  "3. QE cho CẢ HAI nhánh văn bản mới đạt đỉnh. Chỉ OCR: 0,4989. Chỉ ASR: 0,4874. Cả hai: 0,5281 — cao hơn tổng phần riêng lẻ.",
+  "4. Kết luận cũ 'Equal Weighting là vấn đề, phải sang E4' KHÔNG được số liệu ủng hộ sau khi sửa ASR: E4 tune trọng số toàn cục ra alpha* = (0,30, 0,35, 0,35) ≈ equal, và trên held-out nó KÉM HƠN equal có ý nghĩa (ΔMRR −0,0398, KTC95 [−0,0783, −0,0056])."
+ ],
+ "conclusions": [
+  "- Cấu trúc tốt nhất là Hierarchical RRF với QE ở cả OCR lẫn ASR, giữ nguyên bản gốc: MRR 0,5281 · R@100 0,93.",
+  "- Trọng số toàn cục (E4) không thêm giá trị; equal weighting đã gần tối ưu.",
+  "- Động lực sang E5 KHÔNG phải 'Visual bị Equal RRF trừng phạt' mà là: một bộ trọng số toàn cục làm hại nhóm 'vision' (−0,0696 MRR trên tuning) trong khi giúp 'vision+ocr+asr' (+0,0266)."
+ ]
+}

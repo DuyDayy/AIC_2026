@@ -1,0 +1,404 @@
+{
+  "queries": [
+    {
+      "id": "q_83460859b8c31f2b",
+      "query": "năm 2024 xảy ra 24 vụ sạt lở bờ sông tại Cần Thơ; sạt lở tại nhiều quận huyện; thiệt hại hơn 14,5 tỷ đồng"
+    },
+    {
+      "id": "q_e2e1217874535d0c",
+      "query": "lễ khởi công dự án cải tạo đền thờ Nguyễn Hữu Cảnh; cán bộ dự lễ khởi công"
+    },
+    {
+      "id": "q_372b5c1dc20c62e3",
+      "query": "vận động viên xe đạp đang chạy; cuộc đua xe đạp HTV; Non sông liền một dải"
+    },
+    {
+      "id": "q_f484e2b01a6f5c56",
+      "query": "bảng điểm của Đoàn LSR; chủ đề mãi mãi xứng danh bộ đội cụ Hồ"
+    },
+    {
+      "id": "q_2c4f14bc3f0e6007",
+      "query": "thầy Đức Anh sửa bài; chữa bài chiếc thuyền ngoài xa; tác phẩm Nguyễn Minh Châu"
+    },
+    {
+      "id": "q_bec22b7b07834e5a",
+      "query": "nữ đầu bếp; quảng cáo Ajinomoto; nhãn hàng Ajinomoto; trên kênh HTV"
+    },
+    {
+      "id": "q_8d9f0e1d4c2b65ec",
+      "query": "quán bún cá thu Hùng Hào; ăn bún cá thu; bún cá thu Hùng Hào"
+    },
+    {
+      "id": "q_3840fff75adacf30",
+      "query": "bản đồ cũ cửa sông Mê Kông; tư liệu Mê Kông Ký Sự; bản đồ sông Mê Kông trên HTV"
+    },
+    {
+      "id": "q_08973bc3b4ff14b3",
+      "query": "khó khăn của mô hình khởi nghiệp; thách thức khi khởi nghiệp; khởi nghiệp gặp nhiều khó khăn"
+    },
+    {
+      "id": "q_7f5e33ad5173e00e",
+      "query": "bạn nam Nguyễn Đăng Bảo; lớp 9T; trường THCS Ban Mai Hà Đông Hà Nội"
+    },
+    {
+      "id": "q_a580648e97befebe",
+      "query": "hợp đồng ủy quyền là sai phạm của Phạm Văn Học; Phạm Văn Học bị công an tỉnh Tây Ninh bắt; bị bắt khi đang lẩn trốn ở quán trọ"
+    },
+    {
+      "id": "q_393bbbb9e8eca8b9",
+      "query": "lễ khởi công dự án cải tạo sửa chữa đền thờ Nguyễn Hữu Cảnh; các cán bộ xúc cát khởi công; nghi thức khởi công đền thờ Nguyễn Hữu Cảnh"
+    },
+    {
+      "id": "q_330b6bfd1e3cff24",
+      "query": "đoàn đua xe đạp đang về đích; các tay đua sắp cán vạch đích; cuộc đua xe đạp về đích"
+    },
+    {
+      "id": "q_d5b0d340abfa38f5",
+      "query": "chiến sĩ bộ đội múa rồng; biểu diễn múa rồng của bộ đội; trên kênh HTV thể thao"
+    },
+    {
+      "id": "q_93d663614a884b6e",
+      "query": "hợp tác quốc tế với các trường đại học, viện nghiên cứu và tập đoàn; giúp sinh viên hội nhập thế giới; hợp tác quốc tế giúp sinh viên hội nhập"
+    },
+    {
+      "id": "q_a11e25cec459ce15",
+      "query": "hướng dẫn làm món đùi ếch chiên giòn rụm; cách làm đùi ếch chiên giòn rụm; cách chiên đùi ếch cho giòn rụm"
+    },
+    {
+      "id": "q_0b92f2f348722ea7",
+      "query": "Như Bình; Việt Nam đi là ghiền; chào mừng quý vị đến với chương trình Việt Nam đi là ghiền"
+    },
+    {
+      "id": "q_13626d117cd5935e",
+      "query": "nhà văn Trương Chí Hùng; sáu tập tản văn bút ký; đậm văn hóa Tây Nam Bộ; đồng chà chất san sát nhau; cuộc sống miền Tây"
+    },
+    {
+      "id": "q_f09d21b45a1f8b55",
+      "query": "hai cô gái đang đứng trao đổi; trên bàn là những hộp có nắp màu bạc; đằng sau các cô gái là các hộp giấy"
+    },
+    {
+      "id": "q_04971273d2ccdda8",
+      "query": "học sinh phát biểu; phát biểu trong lễ khai giảng; lễ khai giảng năm học 2023-2024"
+    },
+    {
+      "id": "q_5d906a7bc2c3ab81",
+      "query": "hỗ trợ khẩn cấp các gia đình bị thiệt hại do mưa lũ tại Sơn La và Điện Biên; hỗ trợ các gia đình bị ảnh hưởng mưa lũ ở Sơn La Điện Biên"
+    },
+    {
+      "id": "q_c71ec04bf492cc2e",
+      "query": "bác sĩ trao đổi với TS Hoàng Văn Cường Giám đốc; vụ đá lở vào nhà khiến hai cháu bé thương vong; đảm bảo giao thông tại Cao Bằng"
+    },
+    {
+      "id": "q_43ed8e7ff4221291",
+      "query": "khán giả mặc áo đỏ cổ vũ bên đường; vẫy cờ Việt Nam; các tay đua chạy ngang qua; chặng 5"
+    },
+    {
+      "id": "q_e66be07839a79cac",
+      "query": "múa lân đầu trắng; Cúp Chợ Lớn HTV; Ấn tượng Lân lên Mai Hoa Thung; Thể Thao 365"
+    },
+    {
+      "id": "q_fb833c53c2d05554",
+      "query": "mực nước đầu nguồn Đồng bằng sông Cửu Long tăng nhẹ; sốt xuất huyết xuất hiện tại 15 trên 15 huyện thị xã thành phố; tốc độ gia tăng nhanh vào mùa mưa"
+    },
+    {
+      "id": "q_3ab3face18e79179",
+      "query": "phóng viên Diệu Bình dẫn hiện trường; không khí Tết Trung thu; phố lồng đèn Lương Nhữ Học; khu phố bán lồng đèn Trung thu nhiều màu sắc"
+    },
+    {
+      "id": "q_ef335f7c99e6dffc",
+      "query": "trao bằng khen; trao giấy chứng nhận; tặng hoa chúc mừng; lễ trao giấy khen"
+    },
+    {
+      "id": "q_8b4535090b17f6e2",
+      "query": "TP.HCM đồng bộ giải pháp quản lý thị trường vàng; thiết bị POTENZA trưng bày tại triển lãm"
+    },
+    {
+      "id": "q_76d63fde5a2ae819",
+      "query": "quán ăn đông kín khách; nhiều người ngồi sát nhau ở bàn inox; phụ nữ mặc áo vàng đội mũ rộng vành; quán mở ra đường phố nhiều xe máy"
+    },
+    {
+      "id": "q_4c83d3381520523e",
+      "query": "cổng Trường Tiểu học Phú Thuận A1 điểm đình số 12; chào mừng năm học mới 2024 2025; cuộc thi lan tỏa năng lượng tích cực 2024; cùng nhau lan tỏa yêu thương"
+    },
+    {
+      "id": "q_beab805a23f43834",
+      "query": "Phật tử quỳ ngồi chắp tay cầu nguyện trong chùa; người mặc áo trắng ngồi phía trước, nhà sư mặc áo cam ngồi phía sau; trong chùa có nhiều cột màu vàng"
+    },
+    {
+      "id": "q_bd5c55c036943129",
+      "query": "múa lân trắng biểu diễn trên cột cao; múa lân ngoài trời; khán giả đứng xem múa lân; sân khấu khung kim loại"
+    },
+    {
+      "id": "q_f63b2f6faccc2693",
+      "query": "giảm giá sách giáo khoa tái bản từ lớp 1 đến lớp 11; một số nhà sách đã hết sách; đảm bảo đủ sách giáo khoa phục vụ năm học mới"
+    },
+    {
+      "id": "q_e52142cb92b58d74",
+      "query": "chặng đua xe đạp trên đường phố; đang tiến về cổng đích màu đỏ; vận động viên và xe mô tô về đích; khán giả đứng hai bên đường cổ vũ; dưới hàng cây xanh"
+    },
+    {
+      "id": "q_4a2bdbb146be8a0b",
+      "query": "điều tra vụ cô gái người nước ngoài rơi chung cư tử vong; cô gái nước ngoài rơi chung cư; nghiên cứu trồng rêu trên mái nhà để giảm nhiệt độ thành phố; trồng rêu trên mái nhà giảm nhiệt"
+    },
+    {
+      "id": "q_c78e038f835addaf",
+      "query": "khu phố đông người; xe máy qua lại tấp nập; hai bên đường nhiều cửa hàng biển hiệu; dây điện chằng chịt; công trình tôn giáo mái tháp nhiều màu phía xa"
+    },
+    {
+      "id": "q_a998b9d5dcfa840c",
+      "query": "xây tường cao gần 2 m; đào hồ điều hòa; lắp trạm bơm nước; Huyện Chương Mỹ vẫn còn 16 thôn xóm đang bị ngập"
+    },
+    {
+      "id": "q_8a965496eaf2b7cf",
+      "query": "bệ đá sa thạch ở đỉnh Núi Sam; nơi ngự của tượng Bà Chúa Xứ ngày xưa; bia đá ở khu đền chùa trên núi"
+    },
+    {
+      "id": "q_cc8960fc90175a21",
+      "query": "tiếp tục thí điểm xe buýt điện tại TP.HCM; tiếp tục thí điểm vận tải hành khách công cộng bằng xe buýt điện; chủ trương thí điểm xe buýt điện trên địa bàn thành phố"
+    },
+    {
+      "id": "q_3232beb9a65d9540",
+      "query": "cửa hàng đặc sản; trao đổi mua bán; khay sả; nhiều gói thực phẩm; Bún bò Dưa kiệu Cá kho đường; Mắm mòng gà Mực trứng Tôm chua; thanh toán VNPT"
+    },
+    {
+      "id": "q_af41019bc369cb18",
+      "query": "chương trình học trực tuyến môn Hóa học của báo Thanh Niên; phương pháp điều chế kim loại Ca từ CaCl2; điện phân CaCl2 nóng chảy"
+    },
+    {
+      "id": "q_e53426e3c35abee1",
+      "query": "năm 1735; Mạc Thiên Tích kế nghiệp cha; được nhà Nguyễn phong làm Tổng binh Đại đô đốc cai quản trấn Hà Tiên"
+    },
+    {
+      "id": "q_f613c903c758eccc",
+      "query": "trả lời phỏng vấn dự án cầu Tăng Long; mở rộng phần đường; di dời hệ thống điện; phấn đấu hoàn thành toàn bộ vào ngày 15 tháng 8"
+    },
+    {
+      "id": "q_36cf7dd072f72d4d",
+      "query": "trồng chanh gần bờ sông; trồng chanh ven sông để thuận tiện vận chuyển bằng ghe; vận chuyển bằng ghe sau khi thu hoạch"
+    },
+    {
+      "id": "q_5ae4729648cd6455",
+      "query": "vùng Bắc Trung Bộ; điều kiện tự nhiên của Bắc Trung Bộ; sông Mã sông Cả; khoáng sản và tài nguyên du lịch; bãi tắm Cửa Lò Thiên Cầm Lăng Cô; di sản thiên nhiên Phong Nha Kẻ Bàng"
+    },
+    {
+      "id": "q_f861ce707cb2a3b7",
+      "query": "mức tăng mạnh ở các lĩnh vực khoa học giáo dục và đào tạo giáo viên; học sinh quan tâm đến ngành sư phạm; chính sách hỗ trợ sinh hoạt phí và học phí"
+    },
+    {
+      "id": "q_707eb304d7c0798b",
+      "query": "vất vả của người dân khi làm món ăn; làm cá khô rất vất vả; làm cá khô để đưa ra thị trường"
+    },
+    {
+      "id": "q_d8c23ddbe8f7a42f",
+      "query": "hai người đàn ông mặc áo trắng đứng cạnh nhau; một người đội khăn trắng trên đầu; đứng giữa nhóm đông người mặc áo đỏ; đang được phỏng vấn ngoài trời"
+    },
+    {
+      "id": "q_8564465943efc30c",
+      "query": "đặc sản vùng biển Cà Mau; sản phẩm đặc trưng của khu vực; tham quan sản phẩm đặc trưng"
+    },
+    {
+      "id": "q_221e7a2d54ae944f",
+      "query": "Ông Nam Hải tại thị trấn Sông Đốc; Lễ hội Nghinh Ông; khát vọng bình yên trong cuộc sống; những chuyến ra khơi thu hoạch thuận lợi"
+    },
+    {
+      "id": "q_58744222841b482c",
+      "query": "tuyến Vành đai 2 TP.HCM đoạn cầu Phú Hữu đến Võ Nguyên Giáp; dự án nhận được sự đồng thuận của nhiều người dân; phải rời nơi ở đã gắn bó hơn 20 năm"
+    },
+    {
+      "id": "q_0a1a7b395b0e24ba",
+      "query": "chia 9 học sinh thành 3 tổ mỗi tổ có đúng 1 nữ; kết thúc ví dụ số 5; tổng kết các bài tập về xác suất trong chuyên đề; bài toán xác suất"
+    },
+    {
+      "id": "q_ed442a10864450f9",
+      "query": "Trung tâm Báo tin động đất và Cảnh báo sóng thần; các chuyên gia địa vật lý tiếp tục theo dõi các trận động đất; lại xuất hiện 4 trận động đất liên tiếp ở Kon Tum"
+    },
+    {
+      "id": "q_3cac42d635c73c00",
+      "query": "nhóm người ngồi trên xe ba bánh; mở cửa quán cà phê; chuẩn bị cho một ngày mưu sinh mới; tại Đồng Nai"
+    },
+    {
+      "id": "q_b94574d444272c04",
+      "query": "tay đua Nguyễn Hòa; vị trí thứ năm; cạnh tranh trong chặng đua; Cúp Truyền hình TP.HCM"
+    },
+    {
+      "id": "q_730d34c063ce8670",
+      "query": "lễ khai giảng năm học 2024-2025; trao quà cho các em; tặng tập bút sách vở và gấu bông; các em có hoàn cảnh khó khăn"
+    },
+    {
+      "id": "q_daf9fe8716ae10a0",
+      "query": "người trong độ tuổi lao động chưa có việc làm ổn định; định hướng nghề; giới thiệu việc làm; gắn với lợi thế sản xuất tại địa phương"
+    },
+    {
+      "id": "q_dc737e4159325db5",
+      "query": "động viên tinh thần; tạo điều kiện cho thiếu nhi có một mùa Trung thu ý nghĩa; mùa Trung thu ý nghĩa cho các em thiếu nhi; câu lạc bộ sân khấu XDrama phối hợp với các mạnh thường quân"
+    },
+    {
+      "id": "q_f6809540ca19cfb2",
+      "query": "Nguyễn Hữu Cảnh khai phá và trấn giữ vùng đất mới phía Nam Tổ quốc; nay là Cù lao Ông Chưởng thuộc huyện Chợ Mới tỉnh An Giang; sau khi ông mất người dân đổi tên thành Cù lao Ông Chưởng để tưởng nhớ công đức"
+    },
+    {
+      "id": "q_61dc5aa352667bea",
+      "query": "khu vực đối diện bãi bên núi có máng xe trượt; máng xe trượt đưa du khách lên núi Tà Pạ; khu vui chơi xe trượt núi"
+    },
+    {
+      "id": "q_57a03c45c3fcc1a4",
+      "query": "hợp tác xã nông nghiệp cá khô bổi Tư Hùng; thương hiệu cá khô bổi U Minh; ấp 3 xã Trần Hợi huyện Trần Văn Thời tỉnh Cà Mau"
+    },
+    {
+      "id": "q_fe70103f21632d4a",
+      "query": "cuộc cạnh tranh nước rút; Lê Nguyệt Minh tận dụng cơ hội; có vị trí thuận lợi; đang lao về cổng đích"
+    },
+    {
+      "id": "q_f0485a2009013993",
+      "query": "chương trình đào tạo thực hành tại bệnh viện; kết hợp thực hành ở trạm y tế; giúp các bác sĩ trẻ có thêm những trải nghiệm cần thiết"
+    },
+    {
+      "id": "q_1388bd26f11afc4e",
+      "query": "phấn đấu làm công tác thiện nguyện xã hội; hoạt động học bổng; hoạt động vừa diễn ra tại Nhà hát Quân đội; số 40 đường Cộng Hòa"
+    },
+    {
+      "id": "q_5f877b4399169c61",
+      "query": "nhiệt liệt chào mừng 94 năm ngày thành lập Đảng Cộng sản Việt Nam; Chủ tịch Hồ Chí Minh vĩ đại sống mãi trong sự nghiệp của chúng ta; lễ kỷ niệm 94 năm thành lập Đảng"
+    },
+    {
+      "id": "q_4cf358979df60f9b",
+      "query": "Cúp Chợ Lớn 2024; sân đấu lần đầu tiên tại Việt Nam được nâng cao khoảng 1 mét; sân đấu nâng cao một mét"
+    },
+    {
+      "id": "q_5b547cc4097c4d8a",
+      "query": "Giải Lân Sư Rồng mở rộng năm 2024; Cúp Chợ Lớn HTV; sự kiện Quận 5 Chợ Lớn; giải lân sư rồng Chợ Lớn mở rộng"
+    },
+    {
+      "id": "q_7efeeb84caf96d85",
+      "query": "vị trí chiến lược của vùng Châu Đốc; thế tiền tam giang hậu thất lĩnh; kênh đào Vĩnh Tế nối sông Hậu đến biển Hà Tiên; xây dựng nhiều công trình quân sự dân sự từ thời nhà Nguyễn"
+    },
+    {
+      "id": "q_d054b0bc481e6b5e",
+      "query": "xác định trách nhiệm của các tổ chức, cá nhân liên quan; sự cố cây xanh gãy đổ gây thiệt hại về tính mạng và sức khỏe người dân"
+    },
+    {
+      "id": "q_2bf8758ffd694537",
+      "query": "bé Lê Ngô học sinh lớp 1B Trường Tiểu học Phú Thuận A1 huyện Hồng Ngự Đồng Tháp; những đau thương do bão lũ sạt lở gây ra"
+    },
+    {
+      "id": "q_d2dc1b0b2918cadd",
+      "query": "nhiều anh em đồng chí đồng đội đã đến đây; gia đình xin chủ trương lập một ngôi miếu; làm nơi thờ cúng"
+    },
+    {
+      "id": "q_d3f2fb68471e9cbb",
+      "query": "được sự ủng hộ của đồng đội cả nước; mạnh dạn xuất bản sách; dùng tiền nhuận bút trả nợ 4 triệu đồng"
+    },
+    {
+      "id": "q_9018c34d53a935b0",
+      "query": "chính sách khai hoang của nhà Nguyễn; đào Kênh Thoại Hà; khai phá vùng đất giữa Long Xuyên và Rạch Giá"
+    },
+    {
+      "id": "q_2502a3fd7d5ae6e9",
+      "query": "ô nhiễm không khí khá khô khan; lồng ghép nhạc kịch; nội dung dễ tiếp cận hơn với giới trẻ; sinh viên năm 2 khoa Quan hệ công chúng và Truyền thông Đại học Văn Lang"
+    },
+    {
+      "id": "q_351b1b467391301c",
+      "query": "thông báo trước 6 tiếng; công văn bảo đảm an toàn hạ du; gửi đến Công ty Cổ phần Thủy điện Thác Bà; gửi đến UBND các tỉnh Yên Bái và Phú Thọ"
+    },
+    {
+      "id": "q_55e7beebeeb01a99",
+      "query": "đình chùa dọc sông Mekong; sự tinh mỹ của các công trình; gìn giữ những giá trị văn hóa; hoành phi liễn câu đối chữ Hán; cột chạm khắc sơn son thếp vàng"
+    },
+    {
+      "id": "q_ea54f8953b8b632a",
+      "query": "nhóm thanh niên đứng ngoài trời gần khu vực mái che; người mặc áo xanh nhạt đưa tay lên mặt; nam thanh niên mặc áo xám và phụ nữ mặc áo khoác jean đang trò chuyện"
+    },
+    {
+      "id": "q_92f8f49ddef0adcd",
+      "query": "trọng tài cho điểm tám phẩy năm; tám phẩy năm điểm; ban giám khảo chấm tám phẩy năm điểm"
+    },
+    {
+      "id": "q_6f918c702204d542",
+      "query": "ghé thăm vườn trầu; vườn trầu của gia đình chú Bảy Đời; gia đình cùng nhau xuống trầu; thăm vườn trầu ấp 5 xã Vị Thủy Hậu Giang"
+    },
+    {
+      "id": "q_bcd30b4216d7ca74",
+      "query": "tận dụng lợi thế đất đai; đẩy mạnh cơ giới hóa; ứng dụng khoa học kỹ thuật trong canh tác lúa; giảm chi phí tăng thu nhập; phát triển sản xuất gạo hữu cơ an toàn"
+    },
+    {
+      "id": "q_4d4eac1c7a21fa61",
+      "query": "cảm ơn sự cố gắng của mọi người; đặc biệt là lãnh đạo thành phố; huy động sức mạnh tổng hợp để triển khai dự án"
+    },
+    {
+      "id": "q_a1aa09f704b4c83d",
+      "query": "chỉ nên chặt lấy phần non phía trên; giữ lại phần già bên dưới; để cây tiếp tục mọc măng mới; cách chặt tre lấy măng"
+    },
+    {
+      "id": "q_0df6e57b33e56326",
+      "query": "tấm bia đá khắc chữ Khmer viền chạm hoa văn cầu kỳ; ngôi chùa tiêu biểu cho kiến trúc chùa tháp Khmer Nam Bộ; nổi bật với hình tượng rắn thần Naga; các bảo tháp cao vút"
+    },
+    {
+      "id": "q_bac2afad58b66404",
+      "query": "Câu lạc bộ Phụ nữ khuyết tật xã Tân Bằng; Hội Bảo trợ người khuyết tật trẻ mồ côi huyện Thới Bình tỉnh Cà Mau; dạy nghề sản xuất kinh doanh sản phẩm thủ công mỹ nghệ và mặt hàng thủy sản"
+    },
+    {
+      "id": "q_0206c453f9f279c8",
+      "query": "phương trình mặt phẳng trong không gian Oxyz; viết phương trình mặt phẳng P đi qua điểm A ba hai âm năm; vuông góc với đường thẳng d; vectơ chỉ phương hai một không; phương trình mặt phẳng là hai x cộng y trừ tám bằng không"
+    },
+    {
+      "id": "q_6a5fc5938801ab91",
+      "query": "thiết kế giáo án riêng cho học viên lớn tuổi; truyền đạt kiến thức âm nhạc theo cách đơn giản; dễ nắm bắt; dễ hiểu"
+    },
+    {
+      "id": "q_553ee264eded6868",
+      "query": "sự đa dạng của thiên nhiên và con người nơi đây; mời khán giả tiếp tục theo dõi chương trình; mời quý vị đón xem chương trình"
+    },
+    {
+      "id": "q_194c1d20e3aca350",
+      "query": "thị trường bất ngờ chững lại trong tháng 7 năm 2024; tình trạng đầu cơ trục lợi; Nhà nước cần tăng cường quản lý; hạn chế người mua chỉ để bán lại kiếm lời"
+    },
+    {
+      "id": "q_806d650b572067a2",
+      "query": "đường đô thị đông xe máy; chở thùng carton lớn buộc phía sau xe; hàng rào chắn bên đường; biển chỉ dẫn giao thông màu xanh"
+    },
+    {
+      "id": "q_0b59fdf43d6d1cc9",
+      "query": "quầy bán hải sản khô trong chợ; bán tôm khô màu cam và cá khô; người bán đang ngồi đóng gói hàng"
+    },
+    {
+      "id": "q_ad1631fc8a794d71",
+      "query": "Tao Đàn Chiêu Anh Các do Mạc Thiên Tích sáng lập; bài thơ Đông Hồ Ấn Nguyệt được lưu truyền; đặt nền móng cho sự phát triển văn hóa ở Kiên Giang"
+    },
+    {
+      "id": "q_6e171ab8f410e8c8",
+      "query": "cổng cưới bằng lá dừa; cổng cưới miền Tây; nét đẹp văn hóa Đồng bằng sông Cửu Long; cổng cưới lá dừa nét đẹp văn hóa miền Tây"
+    },
+    {
+      "id": "q_9fe0761a2e18ada0",
+      "query": "phòng trưng bày; ảnh tư liệu và thư pháp treo tường; tài liệu đóng khung trên tường; tủ kính trưng bày hiện vật"
+    },
+    {
+      "id": "q_1e5cb90a9ceb301a",
+      "query": "hai bàn tay đang gõ bàn phím laptop; bàn phím có đèn nền màu xanh; các phím phát sáng trong không gian tối"
+    },
+    {
+      "id": "q_66b2eb0e1e5373c5",
+      "query": "đoàn đua xe đạp đang chạy trên đường phố; các vận động viên đua xe đạp mặc áo nhiều màu đội mũ bảo hiểm; hai bên đường có nhà dân và cửa hàng treo nhiều cờ Việt Nam"
+    },
+    {
+      "id": "q_3a2d02d06262260c",
+      "query": "nữ MC mặc áo dài tím nhạt; người đàn ông lớn tuổi trong phòng tưởng niệm; tượng bán thân Chủ tịch Hồ Chí Minh; cờ đỏ sao vàng và bàn thờ; ảnh tư liệu treo trên tường"
+    },
+    {
+      "id": "q_a4124c467be6166e",
+      "query": "đoàn đua xe đạp đang di chuyển thành hàng dài trên đường phố; hai bên đường là nhà cửa và cửa hàng; giữa đường có dải phân cách trồng cây xanh"
+    },
+    {
+      "id": "q_832e762554990112",
+      "query": "đông khán giả ngồi xem sự kiện ngoài trời; nhiều người đeo khẩu trang; người phụ nữ mặc áo xanh đang cúi chăm sóc em nhỏ mặc áo vàng"
+    },
+    {
+      "id": "q_644991e673c937e5",
+      "query": "nhóm công nhân mặc áo cam đỏ đang sửa vỉa hè; đang hoàn thiện vỉa hè; tuyến đường đông xe máy; có xe tải và hàng cây lớn bên đường"
+    },
+    {
+      "id": "q_94c9005f07f60629",
+      "query": "người phụ nữ đứng quay lưng trước bàn thờ; không gian đình miếu cổ; xung quanh có đồ thờ cúng hoa nến họa tiết trang trí màu đỏ vàng"
+    }
+  ]
+}

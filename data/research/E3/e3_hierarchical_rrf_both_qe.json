@@ -1,0 +1,23 @@
+{
+ "experiment": "E3 bổ sung — Hierarchical RRF với CẢ HAI expansion (OCR qo + ASR qa)",
+ "context": "Chạy lại sau khi phát hiện AsrSource phủ 0/173.426 khung do load_frame_ms() trả rỗng khi data/Framme bị xoá. Mọi số ASR trong E1-E3 cũ là hệ quả của lỗi này.",
+ "metrics": {
+  "hier_ocr_qo_only": {
+   "MRR": 0.4988750306841948,
+   "R@1": 0.33,
+   "R@5": 0.72,
+   "R@20": 0.84,
+   "R@50": 0.88,
+   "R@100": 0.92
+  },
+  "hier_ocr_qo_plus_asr_qa": {
+   "MRR": 0.5281337086882865,
+   "R@1": 0.37,
+   "R@5": 0.73,
+   "R@20": 0.86,
+   "R@50": 0.89,
+   "R@100": 0.93
+  }
+ },
+ "delta_mrr": 0.029258678004091654
+}

@@ -1,0 +1,29 @@
+{
+    "experiment": "E3: Đánh giá Tích hợp (Late Score Fusion) và Chuẩn hoá (Normalization)",
+    "objective": "Kiểm chứng sức mạnh của hàm `fuse()` bằng các phương pháp Rank-based (RRF) so với thuật toán ghép xen kẽ Top 50 (Round-Robin Interleave) ở E1/E2.",
+    "context": "Chạy E3 baseline với 3 tín hiệu gốc (Visual, OCR, ASR) và tín hiệu mở rộng (qo) để thiết lập hệ quy chiếu.",
+    "insights": [
+        "1. [RRF CHUẨN] Reciprocal Rank Fusion nguyên bản (không trọng số: Visual + OCR + ASR) đạt 82%, ngang ngửa với thuật toán Interleave. RRF loại bỏ biên độ điểm số và thiên vị các nhánh có độ phủ lớn nhưng độ chính xác thấp.",
+        "2. [HIERARCHICAL RRF TỎA SÁNG] Khi tính RRF phân cấp (gộp trung bình RRF của OCR_gốc và OCR_qo, rồi mới RRF với Visual và ASR), sức mạnh của Rank-based Fusion đột phá mạnh mẽ lên 89%! Bằng cách này, Query Expansion (qo) không phá hỏng hệ thống mà còn củng cố độ tự tin của nhánh OCR.",
+        "3. [VẤN ĐỀ CỦA EQUAL WEIGHTING] Phân tích 'Degraded Queries' chỉ ra rủi ro chí mạng: Các query cực kỳ thiên về thị giác (vd: 'người phụ nữ mặc áo đỏ đứng cạnh xe máy') được Visual tìm thấy ở Rank rất cao (Top 5). Tuy nhiên, vì OCR/ASR trả về nhiễu ngẫu nhiên, Equal RRF (trộn đồng đều) đã trừng phạt điểm của Visual, đẩy Ground Truth tụt xuống Rank 15-20. Điều này tạo động lực tuyệt đối cho E4: Cần phải dùng Weighted Fusion (w_V > w_O, w_A) để bảo vệ Visual."
+    ],
+    "conclusions": [
+        "- Thuật toán Interleave (ghép xen kẽ) bị dính bẫy 'chia đều': Nó ép nhánh tìm toàn rác (như ASR) cũng chiếm một slot ngang bằng với nhánh Visual, dẫn tới đẩy các kết quả tốt ra khỏi Top 100.",
+        "- Hierarchical RRF (89%) là cấu trúc tối ưu nhất để tích hợp Query Expansion mà không làm loãng trọng số của Modality.",
+        "- E3 khép lại với kết luận: Không thể chia đều quyền lực (Equal Weighting). Bước sang E4, bắt buộc phải tối ưu hóa bộ trọng số (Weights) để bảo vệ ưu thế tuyệt đối của Visual."
+    ],
+    "metrics": {
+        "interleave_baseline_e1": {
+            "r_100": 0.81,
+            "final_score": "N/A"
+        },
+        "late_fusion_mode_rrf_unweighted": {
+            "r_100": 0.82,
+            "final_score": 0.604
+        },
+        "hierarchical_rrf": {
+            "r_100": 0.89,
+            "final_score": 0.646
+        }
+    }
+}

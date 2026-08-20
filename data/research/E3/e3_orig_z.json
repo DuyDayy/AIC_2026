@@ -1,0 +1,1821 @@
+{
+  "run_name": "e3_orig_z",
+  "n_queries": 100,
+  "final_score": 0.68,
+  "per_k": {
+    "1": 0.31,
+    "5": 0.56,
+    "20": 0.76,
+    "50": 0.84,
+    "100": 0.93
+  },
+  "mean_mrr": 0.4250480084234631,
+  "mean_best": 0.93,
+  "mean_ranking_loss": 0.25,
+  "coverage": 0.93,
+  "median_best_rank": 4,
+  "median_latency_ms": 122.03847950149793,
+  "config": {},
+  "per_query": [
+    {
+      "query_id": "q_83460859b8c31f2b",
+      "video_id": "L21_V001",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 892.6
+    },
+    {
+      "query_id": "q_e2e1217874535d0c",
+      "video_id": "L22_V001",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 295.73
+    },
+    {
+      "query_id": "q_372b5c1dc20c62e3",
+      "video_id": "L23_V003",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 924.18
+    },
+    {
+      "query_id": "q_f484e2b01a6f5c56",
+      "video_id": "L24_V002",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.07692307692307693,
+      "best": 1.0,
+      "best_rank": 13,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 101.32
+    },
+    {
+      "query_id": "q_2c4f14bc3f0e6007",
+      "video_id": "L25_V001",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 60.4
+    },
+    {
+      "query_id": "q_bec22b7b07834e5a",
+      "video_id": "L26_V001",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 259.9
+    },
+    {
+      "query_id": "q_8d9f0e1d4c2b65ec",
+      "video_id": "L27_V009",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.015151515151515152,
+      "best": 1.0,
+      "best_rank": 66,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 80.99
+    },
+    {
+      "query_id": "q_3840fff75adacf30",
+      "video_id": "L28_V001",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.012195121951219513,
+      "best": 1.0,
+      "best_rank": 82,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 221.79
+    },
+    {
+      "query_id": "q_08973bc3b4ff14b3",
+      "video_id": "L29_V006",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 63.5
+    },
+    {
+      "query_id": "q_7f5e33ad5173e00e",
+      "video_id": "L30_V003",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 65.22
+    },
+    {
+      "query_id": "q_a580648e97befebe",
+      "video_id": "L21_V001",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.08333333333333333,
+      "best": 1.0,
+      "best_rank": 12,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 123.02
+    },
+    {
+      "query_id": "q_393bbbb9e8eca8b9",
+      "video_id": "L22_V001",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.125,
+      "best": 1.0,
+      "best_rank": 8,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 171.65
+    },
+    {
+      "query_id": "q_330b6bfd1e3cff24",
+      "video_id": "L23_V004",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.02631578947368421,
+      "best": 1.0,
+      "best_rank": 38,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 101.69
+    },
+    {
+      "query_id": "q_d5b0d340abfa38f5",
+      "video_id": "L24_V002",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.01639344262295082,
+      "best": 1.0,
+      "best_rank": 61,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 186.48
+    },
+    {
+      "query_id": "q_93d663614a884b6e",
+      "video_id": "L25_V001",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.02702702702702703,
+      "best": 1.0,
+      "best_rank": 37,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 90.01
+    },
+    {
+      "query_id": "q_a11e25cec459ce15",
+      "video_id": "L26_V001",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 157.9
+    },
+    {
+      "query_id": "q_0b92f2f348722ea7",
+      "video_id": "L27_V010",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.125,
+      "best": 1.0,
+      "best_rank": 8,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 73.08
+    },
+    {
+      "query_id": "q_13626d117cd5935e",
+      "video_id": "L28_V001",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 95.47
+    },
+    {
+      "query_id": "q_f09d21b45a1f8b55",
+      "video_id": "L29_V006",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.014492753623188406,
+      "best": 1.0,
+      "best_rank": 69,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 70.11
+    },
+    {
+      "query_id": "q_04971273d2ccdda8",
+      "video_id": "L30_V003",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 173.79
+    },
+    {
+      "query_id": "q_5d906a7bc2c3ab81",
+      "video_id": "L21_V002",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 112.96
+    },
+    {
+      "query_id": "q_c71ec04bf492cc2e",
+      "video_id": "L22_V002",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 106.49
+    },
+    {
+      "query_id": "q_43ed8e7ff4221291",
+      "video_id": "L23_V005",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 225.83
+    },
+    {
+      "query_id": "q_e66be07839a79cac",
+      "video_id": "L24_V017",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 222.43
+    },
+    {
+      "query_id": "q_fb833c53c2d05554",
+      "video_id": "L21_V011",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 119.73
+    },
+    {
+      "query_id": "q_3ab3face18e79179",
+      "video_id": "L22_V014",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 193.55
+    },
+    {
+      "query_id": "q_ef335f7c99e6dffc",
+      "video_id": "L30_V004",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 152.99
+    },
+    {
+      "query_id": "q_8b4535090b17f6e2",
+      "video_id": "L21_V002",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 136.29
+    },
+    {
+      "query_id": "q_76d63fde5a2ae819",
+      "video_id": "L30_V064",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "best": 1.0,
+      "best_rank": 3,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 174.0
+    },
+    {
+      "query_id": "q_4c83d3381520523e",
+      "video_id": "L30_V016",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 101.07
+    },
+    {
+      "query_id": "q_beab805a23f43834",
+      "video_id": "L27_V010",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 81.95
+    },
+    {
+      "query_id": "q_bd5c55c036943129",
+      "video_id": "L24_V011",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 149.38
+    },
+    {
+      "query_id": "q_f63b2f6faccc2693",
+      "video_id": "L22_V015",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.14285714285714285,
+      "best": 1.0,
+      "best_rank": 7,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 129.83
+    },
+    {
+      "query_id": "q_e52142cb92b58d74",
+      "video_id": "L23_V005",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.030303030303030304,
+      "best": 1.0,
+      "best_rank": 33,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 174.57
+    },
+    {
+      "query_id": "q_4a2bdbb146be8a0b",
+      "video_id": "L22_V004",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 103.25
+    },
+    {
+      "query_id": "q_c78e038f835addaf",
+      "video_id": "L28_V006",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 95.56
+    },
+    {
+      "query_id": "q_a998b9d5dcfa840c",
+      "video_id": "L21_V003",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 207.46
+    },
+    {
+      "query_id": "q_8a965496eaf2b7cf",
+      "video_id": "L27_V001",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 106.23
+    },
+    {
+      "query_id": "q_cc8960fc90175a21",
+      "video_id": "L22_V003",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 186.72
+    },
+    {
+      "query_id": "q_3232beb9a65d9540",
+      "video_id": "L29_V010",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.1111111111111111,
+      "best": 1.0,
+      "best_rank": 9,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 102.17
+    },
+    {
+      "query_id": "q_af41019bc369cb18",
+      "video_id": "L25_V004",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.16666666666666666,
+      "best": 1.0,
+      "best_rank": 6,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 100.18
+    },
+    {
+      "query_id": "q_e53426e3c35abee1",
+      "video_id": "L27_V007",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.06666666666666667,
+      "best": 1.0,
+      "best_rank": 15,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 170.23
+    },
+    {
+      "query_id": "q_f613c903c758eccc",
+      "video_id": "L22_V004",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.07142857142857142,
+      "best": 1.0,
+      "best_rank": 14,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 153.06
+    },
+    {
+      "query_id": "q_36cf7dd072f72d4d",
+      "video_id": "L28_V004",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 182.83
+    },
+    {
+      "query_id": "q_5ae4729648cd6455",
+      "video_id": "L25_V016",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.038461538461538464,
+      "best": 1.0,
+      "best_rank": 26,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 116.32
+    },
+    {
+      "query_id": "q_f861ce707cb2a3b7",
+      "video_id": "L22_V006",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.045454545454545456,
+      "best": 1.0,
+      "best_rank": 22,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 110.27
+    },
+    {
+      "query_id": "q_707eb304d7c0798b",
+      "video_id": "L29_V019",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.2,
+      "best": 1.0,
+      "best_rank": 5,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 218.93
+    },
+    {
+      "query_id": "q_d8c23ddbe8f7a42f",
+      "video_id": "L24_V012",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.030303030303030304,
+      "best": 1.0,
+      "best_rank": 33,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 86.12
+    },
+    {
+      "query_id": "q_8564465943efc30c",
+      "video_id": "L29_V019",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.01098901098901099,
+      "best": 1.0,
+      "best_rank": 91,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 88.67
+    },
+    {
+      "query_id": "q_221e7a2d54ae944f",
+      "video_id": "L29_V005",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 177.05
+    },
+    {
+      "query_id": "q_58744222841b482c",
+      "video_id": "L22_V005",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 129.57
+    },
+    {
+      "query_id": "q_0a1a7b395b0e24ba",
+      "video_id": "L25_V008",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 215.02
+    },
+    {
+      "query_id": "q_ed442a10864450f9",
+      "video_id": "L21_V006",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.2,
+      "best": 1.0,
+      "best_rank": 5,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 107.88
+    },
+    {
+      "query_id": "q_3cac42d635c73c00",
+      "video_id": "L30_V044",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 202.24
+    },
+    {
+      "query_id": "q_b94574d444272c04",
+      "video_id": "L23_V017",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 106.49
+    },
+    {
+      "query_id": "q_730d34c063ce8670",
+      "video_id": "L30_V034",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 92.25
+    },
+    {
+      "query_id": "q_daf9fe8716ae10a0",
+      "video_id": "L21_V005",
+      "final": 0.0,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0
+      },
+      "mrr": 0.0,
+      "best": 0.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 230.55
+    },
+    {
+      "query_id": "q_dc737e4159325db5",
+      "video_id": "L30_V022",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 121.06
+    },
+    {
+      "query_id": "q_f6809540ca19cfb2",
+      "video_id": "L28_V004",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 200.45
+    },
+    {
+      "query_id": "q_61dc5aa352667bea",
+      "video_id": "L27_V005",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "best": 1.0,
+      "best_rank": 3,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 78.01
+    },
+    {
+      "query_id": "q_57a03c45c3fcc1a4",
+      "video_id": "L27_V016",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 87.0
+    },
+    {
+      "query_id": "q_fe70103f21632d4a",
+      "video_id": "L23_V016",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.016129032258064516,
+      "best": 1.0,
+      "best_rank": 62,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 197.95
+    },
+    {
+      "query_id": "q_f0485a2009013993",
+      "video_id": "L22_V002",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 101.19
+    },
+    {
+      "query_id": "q_1388bd26f11afc4e",
+      "video_id": "L30_V012",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 103.91
+    },
+    {
+      "query_id": "q_5f877b4399169c61",
+      "video_id": "L24_V004",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 205.53
+    },
+    {
+      "query_id": "q_4cf358979df60f9b",
+      "video_id": "L24_V017",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 116.05
+    },
+    {
+      "query_id": "q_5b547cc4097c4d8a",
+      "video_id": "L24_V012",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.05,
+      "best": 1.0,
+      "best_rank": 20,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 236.93
+    },
+    {
+      "query_id": "q_7efeeb84caf96d85",
+      "video_id": "L28_V007",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 117.87
+    },
+    {
+      "query_id": "q_d054b0bc481e6b5e",
+      "video_id": "L21_V012",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.07142857142857142,
+      "best": 1.0,
+      "best_rank": 14,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 196.58
+    },
+    {
+      "query_id": "q_2bf8758ffd694537",
+      "video_id": "L30_V016",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "best": 1.0,
+      "best_rank": 3,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 91.48
+    },
+    {
+      "query_id": "q_d2dc1b0b2918cadd",
+      "video_id": "L29_V023",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.16666666666666666,
+      "best": 1.0,
+      "best_rank": 6,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 101.26
+    },
+    {
+      "query_id": "q_d3f2fb68471e9cbb",
+      "video_id": "L30_V027",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 201.74
+    },
+    {
+      "query_id": "q_9018c34d53a935b0",
+      "video_id": "L28_V021",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 140.45
+    },
+    {
+      "query_id": "q_2502a3fd7d5ae6e9",
+      "video_id": "L21_V006",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.1111111111111111,
+      "best": 1.0,
+      "best_rank": 9,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 275.22
+    },
+    {
+      "query_id": "q_351b1b467391301c",
+      "video_id": "L21_V007",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.125,
+      "best": 1.0,
+      "best_rank": 8,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 118.84
+    },
+    {
+      "query_id": "q_55e7beebeeb01a99",
+      "video_id": "L28_V007",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 190.18
+    },
+    {
+      "query_id": "q_ea54f8953b8b632a",
+      "video_id": "L30_V046",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 88.63
+    },
+    {
+      "query_id": "q_92f8f49ddef0adcd",
+      "video_id": "L24_V003",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.08333333333333333,
+      "best": 1.0,
+      "best_rank": 12,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 98.69
+    },
+    {
+      "query_id": "q_6f918c702204d542",
+      "video_id": "L27_V012",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 184.31
+    },
+    {
+      "query_id": "q_bcd30b4216d7ca74",
+      "video_id": "L28_V018",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 128.86
+    },
+    {
+      "query_id": "q_4d4eac1c7a21fa61",
+      "video_id": "L22_V010",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.016129032258064516,
+      "best": 1.0,
+      "best_rank": 62,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 133.61
+    },
+    {
+      "query_id": "q_a1aa09f704b4c83d",
+      "video_id": "L27_V002",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 184.7
+    },
+    {
+      "query_id": "q_0df6e57b33e56326",
+      "video_id": "L28_V009",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.023255813953488372,
+      "best": 1.0,
+      "best_rank": 43,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 101.08
+    },
+    {
+      "query_id": "q_bac2afad58b66404",
+      "video_id": "L29_V001",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.5,
+      "best": 1.0,
+      "best_rank": 2,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 187.32
+    },
+    {
+      "query_id": "q_0206c453f9f279c8",
+      "video_id": "L25_V025",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.125,
+      "best": 1.0,
+      "best_rank": 8,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 108.81
+    },
+    {
+      "query_id": "q_6a5fc5938801ab91",
+      "video_id": "L30_V070",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 105.46
+    },
+    {
+      "query_id": "q_553ee264eded6868",
+      "video_id": "L29_V007",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.06666666666666667,
+      "best": 1.0,
+      "best_rank": 15,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 214.86
+    },
+    {
+      "query_id": "q_194c1d20e3aca350",
+      "video_id": "L21_V015",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "best": 1.0,
+      "best_rank": 3,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 146.13
+    },
+    {
+      "query_id": "q_806d650b572067a2",
+      "video_id": "L22_V009",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 99.73
+    },
+    {
+      "query_id": "q_0b59fdf43d6d1cc9",
+      "video_id": "L28_V017",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 172.02
+    },
+    {
+      "query_id": "q_ad1631fc8a794d71",
+      "video_id": "L28_V016",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.14285714285714285,
+      "best": 1.0,
+      "best_rank": 7,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 98.87
+    },
+    {
+      "query_id": "q_6e171ab8f410e8c8",
+      "video_id": "L29_V012",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.14285714285714285,
+      "best": 1.0,
+      "best_rank": 7,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 173.7
+    },
+    {
+      "query_id": "q_9fe0761a2e18ada0",
+      "video_id": "L27_V007",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.25,
+      "best": 1.0,
+      "best_rank": 4,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 80.64
+    },
+    {
+      "query_id": "q_1e5cb90a9ceb301a",
+      "video_id": "L30_V032",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.3333333333333333,
+      "best": 1.0,
+      "best_rank": 3,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 59.9
+    },
+    {
+      "query_id": "q_66b2eb0e1e5373c5",
+      "video_id": "L23_V021",
+      "final": 0.6,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.05263157894736842,
+      "best": 1.0,
+      "best_rank": 19,
+      "ranking_loss": 0.4,
+      "n_answers": 100,
+      "elapsed_ms": 90.38
+    },
+    {
+      "query_id": "q_3a2d02d06262260c",
+      "video_id": "L29_V007",
+      "final": 0.4,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.02857142857142857,
+      "best": 1.0,
+      "best_rank": 35,
+      "ranking_loss": 0.6,
+      "n_answers": 100,
+      "elapsed_ms": 178.72
+    },
+    {
+      "query_id": "q_a4124c467be6166e",
+      "video_id": "L23_V023",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.011904761904761904,
+      "best": 1.0,
+      "best_rank": 84,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 95.02
+    },
+    {
+      "query_id": "q_832e762554990112",
+      "video_id": "L24_V011",
+      "final": 1.0,
+      "per_k": {
+        "1": 1.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 1.0,
+      "best": 1.0,
+      "best_rank": 1,
+      "ranking_loss": 0.0,
+      "n_answers": 100,
+      "elapsed_ms": 74.99
+    },
+    {
+      "query_id": "q_644991e673c937e5",
+      "video_id": "L22_V009",
+      "final": 0.2,
+      "per_k": {
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0,
+        "50": 0.0,
+        "100": 1.0
+      },
+      "mrr": 0.018518518518518517,
+      "best": 1.0,
+      "best_rank": 54,
+      "ranking_loss": 0.8,
+      "n_answers": 100,
+      "elapsed_ms": 156.04
+    },
+    {
+      "query_id": "q_94c9005f07f60629",
+      "video_id": "L27_V008",
+      "final": 0.8,
+      "per_k": {
+        "1": 0.0,
+        "5": 1.0,
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0
+      },
+      "mrr": 0.2,
+      "best": 1.0,
+      "best_rank": 5,
+      "ranking_loss": 0.19999999999999996,
+      "n_answers": 100,
+      "elapsed_ms": 75.87
+    }
+  ]
+}

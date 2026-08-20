@@ -1,0 +1,55 @@
+{
+ "alpha": [
+  0.3,
+  0.35,
+  0.35
+ ],
+ "beta_ocr": [
+  0.5,
+  0.5
+ ],
+ "beta_asr": [
+  0.5,
+  0.5
+ ],
+ "rrf_k": 60.0,
+ "tuning_n": 210,
+ "heldout_n": 100,
+ "qo_fell_back": 4,
+ "heldout": {
+  "E3_equal": {
+   "MRR": 0.5281337086882865,
+   "R@1": 0.37,
+   "R@5": 0.73,
+   "R@20": 0.86,
+   "R@50": 0.89,
+   "R@100": 0.93
+  },
+  "E4_wrrf": {
+   "MRR": 0.48836607606320454,
+   "R@1": 0.32,
+   "R@5": 0.71,
+   "R@20": 0.85,
+   "R@50": 0.88,
+   "R@100": 0.93
+  },
+  "delta_mrr_paired": -0.03976763262508185,
+  "ci95": [
+   -0.07828567248080409,
+   -0.005572301792693999
+  ],
+  "win": 10,
+  "loss": 18
+ },
+ "experiment": "E4 — Global Weighted RRF, tune hai tầng (beta expansion → alpha modality)",
+ "verdict": "NO-GO",
+ "verdict_reason": "Trên held-out, E4 KÉM HƠN E3 equal có ý nghĩa thống kê: ΔMRR = -0.0398, KTC95 [-0.0783, -0.0056] nằm TRỌN dưới 0, thắng 10 / thua 18. Playbook đặt ngưỡng GO là +1 điểm % trên held-out; đây là -4 điểm %.",
+ "why": [
+  "alpha* = (0.30, 0.35, 0.35) gần như bằng equal (1/3,1/3,1/3) — đúng 'Trường hợp A' của playbook mục 23: Equal RRF vốn đã gần optimal, không có gì để weighting giành thêm.",
+  "beta* = (0.5,0.5) cho CẢ OCR lẫn ASR — trùng đúng giá trị E3 đã dùng. Tầng expansion cũng không có gì để tune.",
+  "Độ lệch nhỏ khỏi equal mà tuning tìm được lại KHÔNG chuyển được sang held-out, và nó làm hại: đó là overfit, 'Trường hợp B' của playbook.",
+  "Tập tuning (gtv2+holdout) khó hơn hẳn held-out (bench): MRR 0.28 so với 0.53, R@100 0.70 so với 0.93. Hai tập lệch nhau nhiều nên trọng số khó chuyển."
+ ],
+ "per_type_signal": "Trên tuning, alpha* làm HẠI nhóm 'vision' (-0.0696 MRR) trong khi giúp 'vision+ocr+asr' (+0.0266). Một bộ trọng số toàn cục không phục vụ được mọi loại đề — đây là bằng chứng trực tiếp cho E5 Query-Adaptive WRRF.",
+ "asr_bug": "Lần chạy E4 đầu tiên (summary_ASR_DEAD.json) vô hiệu: AsrSource phủ 0/173.426 khung vì load_frame_ms() đọc data/Framme/*/metadata/*.csv đã bị xoá và trả về {}. Sau khi vá (lùi về data/OCR/ocr.jsonl, phủ 173.426/173.426, pts_time khớp frame_idx/fps ở 500/500 mẫu), ASR phủ 96.9%."
+}

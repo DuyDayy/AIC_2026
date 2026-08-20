@@ -24,10 +24,16 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+import numpy as _np
+import pytest as _pytest
+
 from src.retrieval.score_matrix import (
     NORMALIZERS,
+    ZERO_MEAN_NORMALIZERS,
     fuse,
+    hierarchical_rrf,
     rank_normalize,
+    rrf_normalize,
     score_matrix,
     z_normalize,
 )
@@ -44,12 +50,14 @@ class TestCoverageBiasIsRemoved(unittest.TestCase):
     """Bất biến trung tâm — xem docstring module."""
 
     def test_expectation_over_covered_is_zero(self):
-        for f in NORMALIZERS.values():
+        for name in ZERO_MEAN_NORMALIZERS:
+            f = NORMALIZERS[name]
             s = np.array([1.0, 5.0, 9.0, 100.0, 0.0], dtype=np.float32)
             c = np.array([1, 1, 1, 1, 0], dtype=bool)
             self.assertAlmostEqual(float(f(s, c)[c].mean()), 0.0, places=5, msg=f.__name__)
 
     def test_uncovered_gets_exactly_zero(self):
+        # Cái này thì MỌI normalizer phải giữ, kể cả rrf/minmax.
         for f in NORMALIZERS.values():
             out = f(np.array([1.0, 2.0, 3.0], np.float32), np.array([1, 0, 1], bool))
             self.assertEqual(out[1], 0.0, f.__name__)
@@ -64,10 +72,26 @@ class TestCoverageBiasIsRemoved(unittest.TestCase):
         c = np.zeros(1000, dtype=bool)
         c[:500] = True
         s[:500] = rng.normal(3.0, 1.0, 500)     # điểm dương hết, như BM25
-        for mode in NORMALIZERS:
+        for mode in ZERO_MEAN_NORMALIZERS:
             out = fuse([src("ocr", s, c)], {"ocr": 1.0}, mode)
             self.assertAlmostEqual(float(out[:500].mean()), float(out[500:].mean()),
                                    places=4, msg=mode)
+
+    def test_rrf_va_minmax_CO_thien_lech_phu_va_dieu_do_duoc_ghi_nhan(self):
+        """Ghim mặt trái, để không ai tưởng mọi normalizer đều an toàn với nguồn thưa.
+
+        `rrf` và `minmax` cố ý nằm ngoài `ZERO_MEAN_NORMALIZERS`. Test này ĐỎ nếu ai đó
+        thêm chúng vào đó — vì lúc ấy bất biến của module thành lời nói suông.
+        """
+        rng = np.random.default_rng(0)
+        s = np.zeros(1000, dtype=np.float32)
+        c = np.zeros(1000, dtype=bool)
+        c[:500] = True
+        s[:500] = rng.normal(3.0, 1.0, 500)
+        for mode in ("rrf", "minmax"):
+            self.assertNotIn(mode, ZERO_MEAN_NORMALIZERS, mode)
+            out = fuse([src("ocr", s, c)], {"ocr": 1.0}, mode)
+            self.assertGreater(float(out[:500].mean()), float(out[500:].mean()), mode)
 
 
 class TestZNormalize(unittest.TestCase):
@@ -213,3 +237,68 @@ class TestScoreMatrix(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+# ---------------------------------------------------------------------------
+# hierarchical_rrf — gộp expansion trong modality trước, rồi mới giữa modality
+#
+# Bất biến chịu lực là "Σ beta = 1 trong từng modality". Mất nó thì modality có
+# nhiều expansion hơn tự có nhiều quyền vote hơn, và [ĐO] cấu hình phẳng tụt từ
+# MRR 0,5281 xuống 0,4427 trên bench_kis đúng vì lý do đó.
+# ---------------------------------------------------------------------------
+
+
+def _ss(name, vals):
+    a = _np.asarray(vals, dtype=_np.float32)
+    return SourceScores(name, a, a > 0)
+
+
+def test_hierarchical_bang_rrf_thuong_khi_moi_modality_mot_run():
+    """Một run mỗi modality thì phân cấp phải suy biến về RRF đều thông thường."""
+    v, o = _ss("v", [3.0, 2.0, 1.0]), _ss("o", [1.0, 3.0, 2.0])
+    got = hierarchical_rrf({"v": [v], "o": [o]})
+    want = (rrf_normalize(v.scores, v.covered) + rrf_normalize(o.scores, o.covered)) / 2
+    _np.testing.assert_allclose(got, want, rtol=1e-6)
+
+
+def test_them_expansion_KHONG_tang_quyen_vote_cua_modality():
+    """Đây là toàn bộ lý do có tầng beta.
+
+    Nhân đôi một run của Visual (hai bản y hệt) KHÔNG được làm Visual nặng hơn. Ở RRF
+    phẳng thì có; ở phân cấp thì không.
+    """
+    v, o = _ss("v", [3.0, 2.0, 1.0]), _ss("o", [1.0, 3.0, 2.0])
+    one = hierarchical_rrf({"v": [v], "o": [o]})
+    dup = hierarchical_rrf({"v": [v, v], "o": [o]})
+    _np.testing.assert_allclose(one, dup, rtol=1e-6)
+    # còn cộng phẳng thì lệch — đối chứng cho thấy phép kiểm trên không tầm thường
+    flat = (2 * rrf_normalize(v.scores, v.covered) + rrf_normalize(o.scores, o.covered)) / 3
+    assert not _np.allclose(one, flat)
+
+
+def test_beta_duoc_chuan_hoa_du_ben_goi_khong_chuan_hoa():
+    v, o = _ss("v", [3.0, 2.0, 1.0]), _ss("o", [1.0, 3.0, 2.0])
+    a = hierarchical_rrf({"v": [v, v], "o": [o]}, beta={"v": [3.0, 1.0]})
+    b = hierarchical_rrf({"v": [v, v], "o": [o]}, beta={"v": [0.75, 0.25]})
+    _np.testing.assert_allclose(a, b, rtol=1e-6)
+
+
+def test_alpha_lech_thi_ket_qua_lech_theo():
+    v, o = _ss("v", [3.0, 2.0, 1.0]), _ss("o", [1.0, 3.0, 2.0])
+    eq = hierarchical_rrf({"v": [v], "o": [o]})
+    hv = hierarchical_rrf({"v": [v], "o": [o]}, alpha={"v": 0.9, "o": 0.1})
+    assert int(_np.argmax(eq)) != int(_np.argmax(hv)) or hv[0] > eq[0]
+
+
+def test_dau_vao_sai_thi_NO_chu_khong_mac_dinh_0():
+    v = _ss("v", [3.0, 2.0, 1.0])
+    with _pytest.raises(ValueError, match="ít nhất một modality"):
+        hierarchical_rrf({})
+    with _pytest.raises(ValueError, match="không có run nào"):
+        hierarchical_rrf({"v": []})
+    with _pytest.raises(ValueError, match="thiếu alpha"):
+        hierarchical_rrf({"v": [v], "o": [v]}, alpha={"v": 1.0})
+    with _pytest.raises(ValueError, match="beta"):
+        hierarchical_rrf({"v": [v, v]}, beta={"v": [1.0]})
+    with _pytest.raises(ValueError, match="lệch số khung"):
+        hierarchical_rrf({"v": [v, _ss("v2", [1.0, 2.0])]})

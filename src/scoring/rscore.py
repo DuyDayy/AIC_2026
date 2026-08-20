@@ -224,6 +224,7 @@ class ScoreReport:
     final: float
     per_k: Mapping[int, float]
     r_scores: tuple[float, ...]
+    mrr: float
 
     @property
     def best(self) -> float:
@@ -282,7 +283,14 @@ def final_score(
     scores = tuple(r_score(a, gt, answer_match=answer_match) for a in answers)
     per_k = {k: r_at_k(scores, k) for k in k_thresholds}
     final = sum(per_k.values()) / len(per_k)
-    return ScoreReport(final=final, per_k=per_k, r_scores=scores)
+    
+    mrr = 0.0
+    for i, score in enumerate(scores):
+        if score > 0:
+            mrr = 1.0 / (i + 1)
+            break
+            
+    return ScoreReport(final=final, per_k=per_k, r_scores=scores, mrr=mrr)
 
 
 def slot_weight(rank: int, k_thresholds: Sequence[int] = K_THRESHOLDS) -> float:

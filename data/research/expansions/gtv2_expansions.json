@@ -1,0 +1,785 @@
+[
+  {
+    "query_id": "q_8403867d2b04aa70",
+    "ocr": [
+      "khăn caro; quạt đứng; đồng hồ tròn; cửa phòng"
+    ],
+    "asr": [
+      "căn hộ có bàn ăn phủ khăn caro đặt cạnh bếp; quạt đứng màu trắng ở giữa phòng; đồng hồ tròn treo trên tường; phía sau các cửa phòng đang mở"
+    ]
+  },
+  {
+    "query_id": "q_738ce9de05b3f335",
+    "ocr": [
+      "ĐÍCH; FINISH; vạch đích"
+    ],
+    "asr": [
+      "các tay đua đang cố gắng tăng tốc; hỗ trợ chân rút chủ lực; tăng tốc để hỗ trợ sprinter chính"
+    ]
+  },
+  {
+    "query_id": "q_378d56d08e68f98f",
+    "ocr": [
+      "HTV Thể Thao; Tản Viên; Kim Linh Châu; múa lân"
+    ],
+    "asr": [
+      "tiết mục múa lân trên sân khấu nhiều màu sắc; hành trình lên núi Tản Viên tìm Kim Linh Châu; xua tan dịch bệnh thiên tai; mang lại cuộc sống ấm no cho người dân"
+    ]
+  },
+  {
+    "query_id": "q_7d1b8b0a148c4cbe",
+    "ocr": [
+      "Độc lạ; mắm ong; U Minh Hạ; rừng U Minh"
+    ],
+    "asr": [
+      "mắm ong U Minh Hạ; tàng ong có ong non; tận dụng tàng ong chế biến món ăn; người dân U Minh Hạ làm mắm ong"
+    ]
+  },
+  {
+    "query_id": "q_30b6237262d8d093",
+    "ocr": [
+      "Món Ngon Mỗi Ngày; Ajinomoto; bánh áp chảo; bữa sáng; quét mã QR; lưu công thức"
+    ],
+    "asr": [
+      "món bánh áp chảo thích hợp cho bữa sáng; quét mã QR trên màn hình để lưu lại công thức; chương trình Món Ngon Mỗi Ngày của Ajinomoto"
+    ]
+  },
+  {
+    "query_id": "q_3a96a5bf55e5e3a8",
+    "ocr": [
+      "HTV Thể Thao; Mang Thít; lò gạch; gạch ngói; làng nghề"
+    ],
+    "asr": [
+      "làng nghề Mang Thít; lò gạch Mang Thít; làm gạch ngói phục vụ xây dựng; dãy lò gạch tạo nên cảnh quan đặc trưng; câu chuyện làng nghề gạch ngói Mang Thít"
+    ]
+  },
+  {
+    "query_id": "q_b74484d4b958b855",
+    "ocr": [
+      "danh sách đơn vị; mã QR; quản lý; bảo hiểm; BHXH"
+    ],
+    "asr": [
+      "vướng mắc giai đoạn chuyển tiếp; kết nối hệ thống giữa các cơ quan bảo hiểm; khó khăn khi liên thông hệ thống bảo hiểm"
+    ]
+  },
+  {
+    "query_id": "q_cb515bd2f644082b",
+    "ocr": [
+      "sơ đồ tròn; biểu đồ tròn; timeline; dòng thời gian"
+    ],
+    "asr": [
+      "bài giảng; như các em thấy trên màn hình; sơ đồ tròn nhiều màu ở giữa; bảng timeline bên phải"
+    ]
+  },
+  {
+    "query_id": "q_434c2511a0e0365f",
+    "ocr": [
+      "Món Ngon Mỗi Ngày; Ajinomoto; HTV Online; Bánh Rán"
+    ],
+    "asr": [
+      "Món Ngon Mỗi Ngày của Ajinomoto; hướng dẫn làm bánh rán; vào bếp cùng đầu bếp và MC"
+    ]
+  },
+  {
+    "query_id": "q_64e37f03d3e13b43",
+    "ocr": [
+      "sữa dê; goat milk; sản phẩm từ sữa dê"
+    ],
+    "asr": [
+      "sữa dê; nguồn sữa dùng để làm sản phẩm; sữa được lấy trực tiếp từ cơ sở sản xuất; sữa tươi ngay tại trang trại"
+    ]
+  },
+  {
+    "query_id": "q_05e7828622293855",
+    "ocr": [
+      "HTV Online; Vàm Nao; Trở về dòng sông tuổi thơ; Hoàng Hiệp"
+    ],
+    "asr": [
+      "những trang viết về Vàm Nao; cảm xúc nghẹn lại khi hoàn thành phần cuối; tình cờ nghe bài Trở về dòng sông tuổi thơ; nhạc sĩ Hoàng Hiệp"
+    ]
+  },
+  {
+    "query_id": "q_f0b379f340188d91",
+    "ocr": [
+      "cửa hàng; hũ sản phẩm; hộp hàng màu xanh"
+    ],
+    "asr": [
+      "hai người phụ nữ đứng trò chuyện trong cửa hàng; rất nhiều hũ sản phẩm nhỏ xếp kín trên bàn; nhiều hộp hàng màu xanh xếp thành từng dãy phía sau"
+    ]
+  },
+  {
+    "query_id": "q_1221aca9f11638f1",
+    "ocr": [
+      "Hát để sẻ chia; Singing for Sharing; TP.HCM"
+    ],
+    "asr": [
+      "chương trình Hát để sẻ chia Singing for Sharing; hoạt động thiện nguyện phi lợi nhuận gây quỹ hỗ trợ bệnh nhi có hoàn cảnh khó khăn tại TP.HCM"
+    ]
+  },
+  {
+    "query_id": "q_3a4eb222ccd33686",
+    "ocr": [
+      "về đích; FINISH; vạch đích"
+    ],
+    "asr": [
+      "đoàn đua xe đạp về đích; chạy qua cổng đỏ về đích; khán giả đội mũ cam đứng hai bên đường cổ vũ"
+    ]
+  },
+  {
+    "query_id": "q_7ac5d1a2b1335301",
+    "ocr": [
+      "nói chuyện; ngoài trời; khuôn viên"
+    ],
+    "asr": [
+      "người phụ nữ đang nói chuyện; nói chuyện ngoài trời vào buổi tối; trò chuyện trong khuôn viên có cây xanh"
+    ]
+  },
+  {
+    "query_id": "q_7281585e9b1d26d4",
+    "ocr": [
+      "Vàm Nao; cá bông lau; sông Vàm Nao"
+    ],
+    "asr": [
+      "cá bông lau trên sông Vàm Nao; giờ chỉ còn được nhắc lại trong những câu chuyện xưa; câu chuyện xưa về cá bông lau"
+    ]
+  },
+  {
+    "query_id": "q_f30ee5fb3b49b0ec",
+    "ocr": [
+      "Tập đọc; Học văn"
+    ],
+    "asr": [
+      "kệ đầy sách giáo khoa cũ; hai cuốn Tập đọc ở hai bên và một cuốn Học văn ở giữa; những cuốn sách từng học ngày xưa; sau nhiều năm mới tìm thấy"
+    ]
+  },
+  {
+    "query_id": "q_9af7c707ac576375",
+    "ocr": [
+      "thủ tục; hồ sơ; quầy"
+    ],
+    "asr": [
+      "làm thủ tục; ngồi ở quầy làm thủ tục; cầm giấy tờ hồ sơ"
+    ]
+  },
+  {
+    "query_id": "q_9422b51e8302a5d4",
+    "ocr": [
+      "Xuôi dòng Vĩnh Tế; kênh Vĩnh Tế; Vĩnh Tế; miền biên viễn Tây Nam; lam sơn chướng khí"
+    ],
+    "asr": [
+      "miền biên viễn Tây Nam lam sơn chướng khí; thú dữ; dân công binh lính dãi nắng dầm mưa đào kênh; đào kênh Vĩnh Tế suốt nhiều năm thương vong"
+    ]
+  },
+  {
+    "query_id": "q_c928290cb49ef763",
+    "ocr": [
+      "bắt đối tượng giết người; tạo hiện trường giả; dựng hiện trường giả"
+    ],
+    "asr": [
+      "bắt đối tượng giết người; tạo hiện trường giả; dựng hiện trường giả; bắt giữ đối tượng giết người rồi tạo hiện trường giả"
+    ]
+  },
+  {
+    "query_id": "q_29609e288afe1ab0",
+    "ocr": [
+      "27; số 27; FINISH; VỀ ĐÍCH"
+    ],
+    "asr": [
+      "tay đua số 27 chen lên hàng trên; tìm kiếm chiến thắng thứ bảy; tay đua số hai mươi bảy vươn lên dẫn đầu"
+    ]
+  },
+  {
+    "query_id": "q_b2a8e69a97a9eed1",
+    "ocr": [
+      "bổ máu; vitamin C; trái cây vitamin C; món ăn hỗ trợ bổ máu"
+    ],
+    "asr": [
+      "món ăn hỗ trợ bổ máu; nên ăn thêm trái cây có vitamin C trong bữa ăn; ăn trái cây chứa vitamin C"
+    ]
+  },
+  {
+    "query_id": "q_618f2b030d8fc5ff",
+    "ocr": [
+      "biển hiệu"
+    ],
+    "asr": [
+      "biển hiệu hình chữ nhật nền xanh chữ đỏ trắng; phía trên có nhiều lá cờ màu; phía sau có tán dừa"
+    ]
+  },
+  {
+    "query_id": "q_fc037fd63f780c3f",
+    "ocr": [
+      "CAHIER"
+    ],
+    "asr": [
+      "nhiều cuốn vở cũ ngả màu; xếp thành hai hàng trên mặt bàn; vở có bìa in chữ CAHIER"
+    ]
+  },
+  {
+    "query_id": "q_3d804ad362363a24",
+    "ocr": [
+      "phòng lây nhiễm; triệu chứng; đưa trẻ đi khám"
+    ],
+    "asr": [
+      "phòng lây nhiễm; nhận biết sớm triệu chứng; đưa trẻ đi khám kịp thời"
+    ]
+  },
+  {
+    "query_id": "q_582f344f4527c223",
+    "ocr": [
+      "Israel gấp rút trữ máu, chuẩn bị hầm trú ẩn; số điện thoại"
+    ],
+    "asr": [
+      "số điện thoại cố định bị dùng để quảng cáo và lừa đảo; cảnh báo số cố định quảng cáo lừa đảo"
+    ]
+  },
+  {
+    "query_id": "q_3383fd34f115d9d2",
+    "ocr": [
+      "VỀ ĐÍCH; FINISH; ĐÍCH ĐẾN"
+    ],
+    "asr": [
+      "đoàn xe đạp đang nước rút; sắp về đích rồi; khán giả đứng kín hai bên đường"
+    ]
+  },
+  {
+    "query_id": "q_78ba6bfb31459588",
+    "ocr": [
+      "HTV THỂ THAO"
+    ],
+    "asr": [
+      "sân khấu thi đấu ban đêm; múa lân vàng; vượt chướng ngại vật bao tải"
+    ]
+  },
+  {
+    "query_id": "q_536098e764223ef6",
+    "ocr": [
+      "mặt cầu; tâm A; Oxyz; không gian Oxyz; Ví dụ"
+    ],
+    "asr": [
+      "bắt đầu ví dụ; xét mặt cầu có tâm A; trong không gian Oxyz; ví dụ về mặt cầu tâm A"
+    ]
+  },
+  {
+    "query_id": "q_518630f11e16040a",
+    "ocr": [
+      "nên trụng nấm để giảm mùi hăng của nấm"
+    ],
+    "asr": [
+      "nên trụng nấm để giảm mùi hăng của nấm; sẽ trụng hai loại nấm rồi đem xào; trụng nấm rồi xào"
+    ]
+  },
+  {
+    "query_id": "q_0ba386b1df7ef80c",
+    "ocr": [
+      "phỏng vấn; trả lời phỏng vấn"
+    ],
+    "asr": [
+      "trả lời phỏng vấn; trả lời câu hỏi của phóng viên; chia sẻ trong buổi phỏng vấn"
+    ]
+  },
+  {
+    "query_id": "q_7a18d7bc4653fc2e",
+    "ocr": [
+      "Quốc lộ"
+    ],
+    "asr": [
+      "quốc lộ; tuyến màu đỏ chạy ngang trên bản đồ; bản đồ bán trong suốt phủ trên đường nông thôn"
+    ]
+  },
+  {
+    "query_id": "q_38e7cae732a0ad65",
+    "ocr": [
+      "ASC; chứng nhận ASC; sơ đồ mặt cắt; khu nuôi; mặt cắt khu nuôi"
+    ],
+    "asr": [
+      "không phun thuốc cỏ; không phun hóa chất; không dùng hóa chất; tôm được chứng nhận ASC; tôm đạt chứng nhận ASC"
+    ]
+  },
+  {
+    "query_id": "q_ebaafb3590185e19",
+    "ocr": [
+      "Vanadinite; Crocoite; Fluorite"
+    ],
+    "asr": [
+      "hóa chất có thể tạo ra tinh thể; phân bón có thể tạo ra tinh thể; tinh thể với nhiều hình dạng"
+    ]
+  },
+  {
+    "query_id": "q_688a8b09ad1a8203",
+    "ocr": [
+      "nổi ban; quả địa cầu; virus; ống tiêm"
+    ],
+    "asr": [
+      "trẻ em nổi ban; virus lây lan toàn cầu; tiêm vắc xin bằng ống tiêm"
+    ]
+  },
+  {
+    "query_id": "q_6b453c0ef6c3f02e",
+    "ocr": [
+      "Châu Thế Vĩnh Long; Vĩnh Long; áo xanh; vua nước rút; hạng nhì; về đích"
+    ],
+    "asr": [
+      "Châu Thế Vĩnh Long không còn cơ hội tranh danh hiệu vua nước rút; chỉ có thể giữ hạng nhì áo xanh; không còn cơ hội tranh áo xanh"
+    ]
+  },
+  {
+    "query_id": "q_9b48798fed5b7efc",
+    "ocr": [
+      "QUÉT MÃ QR ĐỂ XEM CÔNG THỨC; QR"
+    ],
+    "asr": [
+      "quét mã QR để xem công thức; quét mã QR trên màn hình để xem công thức nấu ăn"
+    ]
+  },
+  {
+    "query_id": "q_3cd0916551175cc4",
+    "ocr": [
+      "Những dòng suối ngược; Trương Chí Hùng"
+    ],
+    "asr": [
+      "rễ cây xuyên qua đất đá cằn để đưa nước lên ngọn; nuôi sống đồng bào vùng Bảy Núi"
+    ]
+  },
+  {
+    "query_id": "q_9973bca34e7c9d24",
+    "ocr": [
+      "Nhân bánh cuốn; Cách xào nhân"
+    ],
+    "asr": [
+      "cách xào nhân bánh cuốn; hướng dẫn làm nhân bánh cuốn"
+    ]
+  },
+  {
+    "query_id": "q_9828aa6f64ceeda9",
+    "ocr": [
+      "ủy ban xã; rà soát tàu cá; tổ xuống thôn"
+    ],
+    "asr": [
+      "ủy ban xã đã lập tổ xuống các thôn để rà soát tàu cá; rà soát tàu cá ở các thôn; ủy ban xã lập tổ kiểm tra tàu cá"
+    ]
+  },
+  {
+    "query_id": "q_e52f2a1597a667d3",
+    "ocr": [
+      "Sâu đầu đen tàn phá hàng trăm hecta dừa ở Tiền Giang; Sâu đầu đen; hàng trăm hecta; Tiền Giang; Xuân Đông; Chợ Gạo"
+    ],
+    "asr": [
+      "sâu đầu đen tàn phá hàng trăm hecta dừa ở Tiền Giang; xã Xuân Đông huyện Chợ Gạo là tâm điểm của đợt sâu bùng phát; tâm điểm sâu bùng phát ở Chợ Gạo Tiền Giang"
+    ]
+  },
+  {
+    "query_id": "q_0284e65d1814066b",
+    "ocr": [
+      "ĐÍCH; VỀ ĐÍCH; FINISH; GIẢI ĐUA XE ĐẠP"
+    ],
+    "asr": [
+      "đoàn đua xe đạp về đích; đoàn vận động viên tiến qua cổng đích; khán giả hai bên đường vẫy cờ Việt Nam cổ vũ"
+    ]
+  },
+  {
+    "query_id": "q_294f8643ac5eb88a",
+    "ocr": [
+      "HTV Thể thao; HTV"
+    ],
+    "asr": [
+      "con lân trắng; dãy cột thi đấu được đánh số; thi múa lân trên cột"
+    ]
+  },
+  {
+    "query_id": "q_ae55001d8280bddf",
+    "ocr": [
+      "Đông Nam Á; châu Phi; châu Mỹ La Tinh; phong trào giải phóng dân tộc; so sánh"
+    ],
+    "asr": [
+      "so sánh phong trào giải phóng dân tộc ở Đông Nam Á, châu Phi và châu Mỹ La Tinh; phong trào giải phóng dân tộc ở ba khu vực"
+    ]
+  },
+  {
+    "query_id": "q_774cd1735343e32d",
+    "ocr": [
+      "Món ngon mỗi ngày; hỗ trợ xây dựng khối cơ - xương; khối cơ; xương"
+    ],
+    "asr": [
+      "món chiên giòn cuốn bánh tráng rất dễ làm; món ăn hỗ trợ xây dựng khối cơ xương; món chiên giòn cuốn bánh tráng"
+    ]
+  },
+  {
+    "query_id": "q_f1a5b3ff80f37350",
+    "ocr": [
+      "xe nâng người; khung mái thép; công trình"
+    ],
+    "asr": [
+      "bên trong công trình; hệ khung mái thép trắng dày đặc; xe nâng người màu xanh nằm giữa các dầm"
+    ]
+  },
+  {
+    "query_id": "q_a22a6c0895b8a1f5",
+    "ocr": [
+      "Lăng Chủ tịch Hồ Chí Minh; mở cửa trở lại từ hôm nay 13/8; 13/8; Bản tin 60 giây"
+    ],
+    "asr": [
+      "Lăng Chủ tịch Hồ Chí Minh mở cửa trở lại; Lăng mở cửa từ hôm nay 13 tháng 8; bản tin 60 giây"
+    ]
+  },
+  {
+    "query_id": "q_3e487262abea698b",
+    "ocr": [
+      "Sầm Sơn; Hà Nội; ĐÍCH; FINISH"
+    ],
+    "asr": [
+      "chặng đua từ Hà Nội về thành phố biển Sầm Sơn; chặng đua Hà Nội Sầm Sơn diễn ra trong thời tiết mưa kéo dài; trời mưa kéo dài suốt chặng đua"
+    ]
+  },
+  {
+    "query_id": "q_8b1e429ba55a4100",
+    "ocr": [
+      "HTV Thể thao; HTV The thao"
+    ],
+    "asr": [
+      "múa lân trắng; biểu diễn lân trên cột cao; tiếng nhạc múa lân; tiếng vỗ tay"
+    ]
+  },
+  {
+    "query_id": "q_c409410dd68413d0",
+    "ocr": [
+      "hóa học; sơ đồ hóa học; công thức hóa học"
+    ],
+    "asr": [
+      "thầy giáo giảng bài hóa học; sơ đồ hóa học; bài giảng trên máy tính xách tay"
+    ]
+  },
+  {
+    "query_id": "q_d990b8e02c813bc2",
+    "ocr": [
+      "Món ngon mỗi ngày; Giúp món ăn hỗ trợ phát triển khối cơ - xương"
+    ],
+    "asr": [
+      "món ngon mỗi ngày; giúp món ăn hỗ trợ phát triển khối cơ xương; món ăn hỗ trợ phát triển cơ xương"
+    ]
+  },
+  {
+    "query_id": "q_d07cd1077526f9ff",
+    "ocr": [
+      "cánh đồng thốt nốt; suối Thanh Long; đỉnh Bồ Hồ; cung trekking"
+    ],
+    "asr": [
+      "cung trekking băng qua cánh đồng thốt nốt; lên suối Thanh Long; chinh phục đỉnh Bồ Hồ; hai người trò chuyện trên bãi cỏ"
+    ]
+  },
+  {
+    "query_id": "q_cbef9885768f40d9",
+    "ocr": [
+      "Tàn sát toàn tuyến biên giới: 4.158 người; Làm bị thương: 774 người; 4.158; 774"
+    ],
+    "asr": [
+      "quân Pôn Pốt đã giết 3.157 người vô tội tại Ba Chúc; 12 ngày chiếm đóng Ba Chúc; Pôn Pốt tàn sát toàn tuyến biên giới"
+    ]
+  },
+  {
+    "query_id": "q_2baf8e30d87b9582",
+    "ocr": [
+      "nhà gỗ mộc mạc"
+    ],
+    "asr": [
+      "cô gái trẻ áo hồng đang trò chuyện; tóc dài buộc gọn nói chuyện trong nhà gỗ mộc mạc"
+    ]
+  },
+  {
+    "query_id": "q_36c365fa21f7c757",
+    "ocr": [
+      "chung tay đóng góp; lương thực; thực phẩm; kêu gọi đóng góp"
+    ],
+    "asr": [
+      "chung tay đóng góp lương thực thực phẩm; tình nguyện viên đeo khẩu trang chuẩn bị thức ăn; chuẩn bị nhiều tô thức ăn"
+    ]
+  },
+  {
+    "query_id": "q_2d351f663a418bc0",
+    "ocr": [
+      "Quận 1; bán hàng rong"
+    ],
+    "asr": [
+      "bà cụ bán hàng rong ở quận 1; bà cụ ngủ quên để khách tự lấy hàng và trả tiền; khách tự phục vụ lấy hàng trả tiền"
+    ]
+  },
+  {
+    "query_id": "q_d0db7095c3964ead",
+    "ocr": [
+      "may và mặc áo dài Huế; lễ hội bơi chải làng Tiếu Mai"
+    ],
+    "asr": [
+      "thành phố chỉ có một ca bệnh sởi; tỷ lệ trẻ tiêm đủ hai mũi; trẻ tiêm đủ hai mũi vắc xin sởi"
+    ]
+  },
+  {
+    "query_id": "q_53787c533450cbf3",
+    "ocr": [
+      "Việt Nam; áo vàng; đua xe đạp"
+    ],
+    "asr": [
+      "tay đua áo vàng đang chạy trên đại lộ; đoàn mô tô hộ tống phía trước và xung quanh; khán giả giơ cờ Việt Nam ở tiền cảnh; cuộc đua xe đạp"
+    ]
+  },
+  {
+    "query_id": "q_2f105bad76f9611b",
+    "ocr": [
+      "polymer; sơ đồ tròn; màu xanh đậm; không tan trong nước; dung môi thường; xăng; benzen; nhiệt độ nóng chảy không xác định; không bay hơi"
+    ],
+    "asr": [
+      "polymer không tan trong nước; không tan trong dung môi thường; chỉ tan trong xăng và benzen; nhiệt độ nóng chảy không xác định; không bay hơi"
+    ]
+  },
+  {
+    "query_id": "q_72bd58e05f4fca09",
+    "ocr": [
+      "Quét mã QR để xem công thức; mã QR"
+    ],
+    "asr": [
+      "dùng điện thoại quét mã trên màn hình để lưu công thức; quét mã QR để xem công thức món ăn; quét mã trên màn hình để lưu công thức"
+    ]
+  },
+  {
+    "query_id": "q_00f95070ab902cae",
+    "ocr": [
+      "quầy hàng; sạp hàng"
+    ],
+    "asr": [
+      "bà cụ đeo kính gọng đen nói chuyện; bà mặc áo hoa tối màu; trò chuyện tại quầy hàng"
+    ]
+  },
+  {
+    "query_id": "q_77285127b41fa8c9",
+    "ocr": [
+      "THOẠI SƠN; THOAI SON"
+    ],
+    "asr": [
+      "bia đá Thoại Sơn; bia đá lớn chạm hoa văn ngoài trời; bia có tên Thoại Sơn"
+    ]
+  },
+  {
+    "query_id": "q_89dce3e1d3ea2ee2",
+    "ocr": [
+      "trại nấm; khu trồng nấm"
+    ],
+    "asr": [
+      "người dân địa phương là khách hàng thân thiết; chính quyền xã hỗ trợ đầu ra cho trại nấm"
+    ]
+  },
+  {
+    "query_id": "q_9552f16527f26fb5",
+    "ocr": [
+      "THOMAS HARRIS"
+    ],
+    "asr": [
+      "nhâm nhi một quyển sách hay tại nơi đây; nhâm nhi một cuốn sách hay ở đây"
+    ]
+  },
+  {
+    "query_id": "q_1a014eaadcbb690c",
+    "ocr": [
+      "VỀ ĐÍCH; FINISH; ĐÍCH ĐẾN; GIẢI ĐUA XE ĐẠP"
+    ],
+    "asr": [
+      "đoàn đua xe đạp tách thành nhiều tốp; lần lượt lao qua cổng về đích; khán giả đứng dọc hai bên đường; cuộc đua xe đạp về đích"
+    ]
+  },
+  {
+    "query_id": "q_a89ec2c88bdb49e1",
+    "ocr": [
+      "HTV Thể thao; HTV Sports"
+    ],
+    "asr": [
+      "múa lân màu vàng; biểu diễn vượt qua dãy trụ; tiết mục múa lân trên sân khấu; HTV Thể thao"
+    ]
+  },
+  {
+    "query_id": "q_dbf3c052c3d00f54",
+    "ocr": [
+      "Đồng bằng sông Cửu Long; hạn mặn; mùa khô sâu sắc; biến đổi khí hậu; thủy điện thượng nguồn"
+    ],
+    "asr": [
+      "hạn mặn nghiêm trọng ở Đồng bằng sông Cửu Long; mùa khô sâu sắc; biến đổi khí hậu; thủy điện thượng nguồn"
+    ]
+  },
+  {
+    "query_id": "q_104bcc17e555a2fe",
+    "ocr": [
+      "MÓN ĂN HỖ TRỢ TRÍ NÃO LÀM VIỆC HIỆU QUẢ"
+    ],
+    "asr": [
+      "theo chuyên gia dinh dưỡng; món ăn hôm nay giúp trí não làm việc hiệu quả; món ăn hỗ trợ trí não làm việc hiệu quả"
+    ]
+  },
+  {
+    "query_id": "q_94f8eb8efaf39d8e",
+    "ocr": [
+      "văn hóa Ốc Eo; Khu di tích Ốc Eo - Ba Thê; hàng trăm công trình khoa học; trong và ngoài nước"
+    ],
+    "asr": [
+      "tủ trưng bày bảo tàng có ảnh tư liệu và hiện vật; bảng giới thiệu hàng trăm công trình khoa học trong và ngoài nước; nghiên cứu về văn hóa Ốc Eo; Khu di tích Ốc Eo Ba Thê"
+    ]
+  },
+  {
+    "query_id": "q_24efff864e210f8a",
+    "ocr": [
+      "tôm sú; ao nuôi; hai vụ; 2 vụ/năm"
+    ],
+    "asr": [
+      "mỗi năm có hai vụ tôm sú; một năm hai vụ tôm sú; nuôi tôm sú hai vụ một năm"
+    ]
+  },
+  {
+    "query_id": "q_c97b330035625dd0",
+    "ocr": [
+      "Nguyễn Phúc Tân; Khoa Công nghệ Ứng dụng; Trường Đại học Văn Lang; Đại học Văn Lang"
+    ],
+    "asr": [
+      "chưa vững công nghệ chế biến vật liệu; thiếu kiến thức thương mại hóa sản phẩm; khó khăn là chưa vững công nghệ chế biến; khó khăn là thiếu kiến thức thương mại hóa"
+    ]
+  },
+  {
+    "query_id": "q_8b38d771bb2afb60",
+    "ocr": [
+      "FINISH; ĐÍCH; vạch đích; cổng đích"
+    ],
+    "asr": [
+      "tay đua một mình về đích; băng qua cổng cuối chặng; đoàn mô tô hộ tống phía sau; khán giả đứng kín hai bên đường reo hò"
+    ]
+  },
+  {
+    "query_id": "q_fcb6e2eafa337d09",
+    "ocr": [
+      "HTV Thể thao; HTV"
+    ],
+    "asr": [
+      "con lân trắng đỏ; lá cờ đỏ; chương trình HTV Thể thao"
+    ]
+  },
+  {
+    "query_id": "q_b3bf88ef1c0e962a",
+    "ocr": [
+      "QUÉT MÃ QR ĐỂ XEM CÔNG THỨC; QR"
+    ],
+    "asr": [
+      "nhờ Phước Hưng mà Kim Thảo có thêm bí quyết làm món mì Ý hấp dẫn hơn; bí quyết làm mì Ý hấp dẫn hơn; Phước Hưng; Kim Thảo"
+    ]
+  },
+  {
+    "query_id": "q_323ac8d63449fcf2",
+    "ocr": [
+      "triển lãm; ảnh tư liệu"
+    ],
+    "asr": [
+      "phòng triển lãm vắng người; ảnh tư liệu treo thành dãy trên tường; bàn ghế gỗ cổ"
+    ]
+  },
+  {
+    "query_id": "q_ec28bf8ae01978ee",
+    "ocr": [
+      "Anh Hồng Chí Linh; Hợp tác xã chồn hương Chí Tâm; Huyện Ngọc Hiển; Tỉnh Cà Mau"
+    ],
+    "asr": [
+      "trả lời phỏng vấn; Anh Hồng Chí Linh; Hợp tác xã chồn hương Chí Tâm; Huyện Ngọc Hiển Tỉnh Cà Mau; nuôi chồn hương"
+    ]
+  },
+  {
+    "query_id": "q_bb0b9bee5079be81",
+    "ocr": [
+      "sách thiếu nhi; kệ sách"
+    ],
+    "asr": [
+      "một nỗi trăn trở vẫn hiện hữu; bản thân chưa thực sự đạt được điều mong muốn; chưa đạt được điều mình mong muốn"
+    ]
+  },
+  {
+    "query_id": "q_4b7ffb3dda167f92",
+    "ocr": [
+      "KỶ NIỆM 49 NĂM NGÀY GIẢI PHÓNG MIỀN NAM, THỐNG NHẤT ĐẤT NƯỚC; Cúp Truyền hình Thành phố Hồ Chí Minh; 49 NĂM"
+    ],
+    "asr": [
+      "niềm vui của các tay đua; chiến thắng tại Cúp Truyền hình Thành phố Hồ Chí Minh năm nay; về đích chặng cuối"
+    ]
+  },
+  {
+    "query_id": "q_def3ec0b5cbb2812",
+    "ocr": [
+      "múa lân; lân trắng; biểu diễn lân"
+    ],
+    "asr": [
+      "múa lân trắng biểu diễn ban đêm; lân nhảy trên trụ kim loại cao; tượng lân nhỏ nhiều màu xung quanh"
+    ]
+  },
+  {
+    "query_id": "q_623984e09ad0c3e5",
+    "ocr": [
+      "gian bếp; đầu bếp; món Âu"
+    ],
+    "asr": [
+      "anh muốn một món trẻ trung; mang hơi hướng châu Âu; dễ làm cho các bạn trẻ"
+    ]
+  },
+  {
+    "query_id": "q_aa85a190e7a30449",
+    "ocr": [
+      "Từ Tây quê em đẹp nơi đầu sóng; ngọn hải đăng sừng sững; dẫn lối những con tàu"
+    ],
+    "asr": [
+      "Từ Tây quê em đẹp nơi đầu sóng; ngọn hải đăng sừng sững dẫn lối những con tàu; các em nhỏ đi dưới hàng cây"
+    ]
+  },
+  {
+    "query_id": "q_7c8044db295b255c",
+    "ocr": [
+      "12 triệu; làm keo; mua gạo"
+    ],
+    "asr": [
+      "con lớn đi làm keo ở nơi khác; gửi về 12 triệu để mua gạo; con lớn đi làm xa gửi tiền về mua gạo"
+    ]
+  },
+  {
+    "query_id": "q_aac3d9d9c008775e",
+    "ocr": [
+      "múa lân; lân trắng"
+    ],
+    "asr": [
+      "biểu diễn múa lân trắng; hai người mặc đồ đen nâng và điều khiển lân; lân trắng nhảy qua trụ nhỏ"
+    ]
+  },
+  {
+    "query_id": "q_e4b66e6ca8f9f37e",
+    "ocr": [
+      "Cúp Truyền hình; Lê Nguyệt Minh; Peter; vị trí thứ ba; hạng 3"
+    ],
+    "asr": [
+      "đang xác định vị trí thứ ba giữa Lê Nguyệt Minh và Peter; tranh chấp vị trí thứ ba; cảm giác hồi hộp vẫn chưa dừng; dù chặng đua đã kết thúc"
+    ]
+  },
+  {
+    "query_id": "q_2bc5353d210c78ca",
+    "ocr": [
+      "bổ máu; trà đặc; trái cây vị chát; ngăn cản hấp thu vi khoáng; món ăn hỗ trợ bổ máu"
+    ],
+    "asr": [
+      "món ăn bổ máu không nên dùng chung với nước trà đặc; tránh ăn cùng trái cây có vị chát; vì chúng ngăn cản hấp thu vi khoáng; lưu ý khi dùng thực phẩm bổ máu"
+    ]
+  },
+  {
+    "query_id": "q_f28787cae11ba69a",
+    "ocr": [
+      "MÓN ĂN HỖ TRỢ XÂY DỰNG KHỐI CƠ - XƯƠNG; Minh Phương; lẩu kim chi phô mai"
+    ],
+    "asr": [
+      "Minh Phương làm món lẩu kim chi phô mai chuẩn Hàn Quốc; theo chuyên gia dinh dưỡng món ăn này hỗ trợ xây dựng khối cơ xương; món ăn hỗ trợ xây dựng khối cơ xương"
+    ]
+  },
+  {
+    "query_id": "q_56655b7b3bb55d22",
+    "ocr": [
+      "Món ngon mỗi ngày; Món ăn hỗ trợ sức khỏe tim và mạch máu"
+    ],
+    "asr": [
+      "món ngon mỗi ngày; món ăn hỗ trợ sức khỏe tim và mạch máu; món ăn tốt cho tim mạch"
+    ]
+  }
+]

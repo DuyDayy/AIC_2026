@@ -25,6 +25,7 @@ Vận hành ngày thi: [`RUNBOOK.md`](RUNBOOK.md) · Kế hoạch tối ưu: [`O
 | ① | tách mốc `E1:`/`E2:`, rút trích dẫn | một truy vấn → N probe. Q&A: câu hỏi → câu **mô tả** |
 | ② | jina-clip · **BM25** ×3 | thị giác · OCR · vật thể · lời nói, mỗi nguồn chấm độc lập |
 | ③ | chuẩn hoá **z trên tập có dữ liệu** | hợp 4 nguồn; khung không phủ nhận đúng kỳ vọng, không nhận 0 |
+| ③′ | **`hierarchical_rrf`** (nhánh QAFuse) | RRF hai tầng: gộp expansion TRONG modality trước, rồi giữa modality |
 | ⑤a | **rổ ứng viên** (`pool.py`) | mỗi nguồn đề cử top 40 riêng → rổ 158 khung, **bộ lọc cứng** |
 | ⑤b | mảnh cắt vật thể + jina-clip | **BỎ** — trống cả ở nhóm ≥2 màu, tốn 655s + $0,77 |
 | ⑤c | **Qwen2.5-VL-7B** | `P(khung khớp)` = softmax trên đúng hai token `1`/`0` |
@@ -495,6 +496,103 @@ trong khoảng rộng ~2,5 lần. Đừng chỉnh chữ số thứ ba; hãy mở
 
 ---
 
+## QAFuse — nghiên cứu dung hợp hạng (E0–E4)
+
+Nhánh nghiên cứu riêng, chấm trên `data/eval/bench_kis_gt.json` (100 câu) bằng **MRR** —
+**không so ngang** với các bảng `Final` ở trên, vốn chấm theo luật BTC trên GT v2.
+Kết quả ở `data/research/`, script ở `scripts/research/`.
+
+### 🔴 Một file thiếu đã làm hỏng gần hết thang nghiên cứu
+
+`load_frame_ms()` đọc `data/Framme/*/metadata/*.csv`. Thư mục đó bị xoá, hàm trả `{}`, và
+`AsrSource` dùng bản đồ rỗng ấy để gắn segment vào khung — nên **ASR phủ 0/173.426 khung
+và ghi 0 điểm cho MỌI truy vấn**. Không nổ, không cảnh báo; nó trông y hệt một nguồn đã
+được đo và kết luận là vô dụng.
+
+E1 quy điều đó cho câu truy vấn (*"có cụm 'Tìm video quay cảnh…' nên BM25 không khớp"*).
+Lời giải thích ấy **không thể đúng** — không câu chữ nào khớp được với nguồn phủ 0 khung.
+
+Đã vá: `load_frame_ms()` lùi về `data/OCR/ocr.jsonl`, phủ **173.426/173.426** khoá và
+`pts_time` khớp `frame_idx/fps` ở **500/500** mẫu. Sau vá ASR phủ **96,9%**.
+
+| | R@100 cũ | R@100 mới | MRR mới |
+|---|---|---|---|
+| asr only | 0,00 | **0,58** | 0,2058 |
+| asr + `qa` | 0,00 | **0,62** | 0,3127 |
+| visual+asr | 0,65 | **0,85** | 0,4596 |
+| fusion all | 0,73 | **0,91** | 0,4751 |
+
+**ASR là nguồn đơn mạnh thứ hai** theo R@100 (0,58 so với OCR 0,46), và expansion `qa`
+nâng MRR **0,206 → 0,313**. Bản báo cáo cũ giữ ở `summary_ASR_DEAD.json` mỗi thư mục.
+
+### E3 — ma trận cấu trúc phân cấp
+
+| cấu hình | MRR | R@100 |
+|---|---|---|
+| V + O gốc + A gốc *(không QE)* | 0,4751 | 0,91 |
+| V + O `qo` + A `qa` *(bỏ bản gốc)* | 0,4867 | 0,93 |
+| V + (O gốc+`qo`)/2 + A gốc | 0,4989 | 0,92 |
+| V + O gốc + (A gốc+`qa`)/2 | 0,4874 | 0,92 |
+| **V + (O gốc+`qo`)/2 + (A gốc+`qa`)/2** ★ | **0,5281** | **0,93** |
+| V + O gốc + O `qo` + A gốc + A `qa` *(PHẲNG)* | 0,4427 | 0,89 |
+
+Ba kết luận, cả ba nằm trong mặc định của `hierarchical_rrf`:
+
+- **phân cấp hơn phẳng 0,085 MRR** — khoản lớn nhất bảng. RRF phẳng cho modality nhiều
+  expansion hơn nhiều quyền vote hơn chỉ vì đếm run;
+- **giữ bản gốc bên cạnh expansion hơn bỏ nó 0,041** — expansion bổ sung, không thay thế;
+- **QE cho cả hai nhánh văn bản** mới đạt đỉnh, cao hơn tổng hai phần riêng lẻ.
+
+### E4 — Global Weighted RRF: **NO-GO**
+
+Tune hai tầng (beta expansion → alpha modality) trên 210 câu tuning (gtv2 + holdout), báo
+trên 100 câu held-out chưa đụng tới:
+
+```
+alpha* = (0,30 · 0,35 · 0,35)   ≈ đều
+beta*  = (0,5 · 0,5) cho CẢ OCR lẫn ASR   ≈ đúng giá trị E3 đang dùng
+
+held-out:  E3 đều MRR 0,5281  →  E4 có trọng số 0,4884
+           ΔMRR bắt cặp −0,0398 · KTC95 [−0,0783, −0,0056] · thắng 10 / thua 18
+```
+
+Khoảng tin cậy nằm **trọn dưới 0**: trọng số toàn cục **kém hơn có ý nghĩa**, không phải
+"không phân biệt được". Ngưỡng GO của playbook là +1 điểm %; đây là −4 điểm %.
+
+⚠️ `queries_smoke` bị loại khỏi tập tuning: nó là **3 câu con của gtv2**, cùng `id`.
+
+### Vì sao E4 hỏng lại là lý lẽ cho E5
+
+Không phải "Equal RRF trừng phạt Visual" như E3 từng viết — mà là **một hằng số không
+phục vụ được mọi loại đề**:
+
+| loại đề | n | E3 | E4 | Δ |
+|---|---|---|---|---|
+| vision | 45 | 0,0966 | 0,0270 | **−0,0696** |
+| vision+asr | 55 | 0,2576 | 0,2664 | +0,0088 |
+| vision+ocr | 55 | 0,3519 | 0,3520 | +0,0001 |
+| vision+ocr+asr | 55 | 0,4043 | 0,4310 | **+0,0266** |
+
+Và cùng tín hiệu đó xuất hiện theo **kênh phát**, đo trên 310 câu có nhãn — modality
+thắng cuộc đổi theo kênh, Visual đi từ **0,3919** (Báo Tuổi Trẻ) xuống **0,0126** (Báo
+Thanh Niên), tức **31 lần**. Kênh lấy từ `data/media-info-aic25-b1.zip`, phủ 873/873 video.
+Vì kho cố định, `alpha(kênh)` tính được **offline một lần**, không thêm gì vào ngân sách
+2h30 — khác `alpha(truy vấn)` vốn cần phân loại mỗi câu lúc thi.
+
+⚠️ Hai giả thuyết này **chưa tách được nhau**: nếu đề viết cho video ViVU tình cờ thiên
+lời nói thì `alpha(kênh)` chỉ đang đo lại `alpha(loại đề)` qua một biến trung gian.
+
+### Ý tưởng đã đo và BÁC BỎ ở nhánh này
+
+| ý tưởng | kết quả |
+|---|---|
+| Query expansion cho **Visual** | dịch sang tiếng Anh hạ R@100 0,78 → 0,68; paraphrase tiếng Việt → 0,77. Jina-CLIP-v2 xử lý tiếng Việt gốc tốt hơn mọi bản viết lại |
+| **Trọng số toàn cục** (E4) | −0,0398 MRR trên held-out, KTC trọn dưới 0 |
+| **RRF phẳng** thay phân cấp | −0,085 MRR |
+| **Title/metadata** làm nguồn xếp hạng | đứng riêng: video đúng vào top-10 chỉ **26/100**, MRR 0,0056. Thêm vào phân cấp với trọng số **đều thì HẠI** −0,0188; chỉ ×0,25 mới có lợi +0,0070 — dưới ngưỡng GO, và trọng số ấy lại chọn trên chính held-out nên là rò rỉ |
+
+---
+
 ## Đối chiếu NII-UIT @ VBS2025
 
 ⚠️ VBS là hệ **có người trong vòng lặp** — người dùng chọn paraphrase, kéo trọng số, duyệt
@@ -633,10 +731,15 @@ src/
   retrieval/sources.py         ②  bốn nguồn + `covered`
   retrieval/bm25.py                BM25, cố tình KHÔNG tự bỏ dấu
   retrieval/score_matrix.py    ③  chuẩn hoá z trong tập có dữ liệu
+                               ③′ hierarchical_rrf — RRF hai tầng (QAFuse)
   retrieval/pool.py            ⑤a rổ ứng viên: hợp top RIÊNG mỗi nguồn
   retrieval/dante.py           ④  DP O(N·T), trục mili-giây
   retrieval/rerank.py          ⑤bc mảnh cắt + VLM
   submission/kbest.py          ④⑦ k-best của cùng DP — KIS là N=1
   submission/coverage.py       ⑦  rải khung vào khe
   scoring/rscore.py                R-Score và Final, nguyên văn thể lệ
+scripts/research/              QAFuse E0–E4 — công cụ THÍ NGHIỆM, ngoài đường chạy thi
+  run_e1_e4_recheck.py         chạy lại thang E1–E3 sau khi sửa lỗi ASR
+  run_e4_wrrf.py               tune hai tầng beta→alpha, kết luận NO-GO
+data/research/                 kết quả E0–E4, kèm summary_ASR_DEAD.json (bản trước khi sửa)
 ```

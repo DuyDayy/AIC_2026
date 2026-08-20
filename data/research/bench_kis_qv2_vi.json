@@ -1,0 +1,336 @@
+{
+  "queries": [
+    {
+      "id": "q_83460859b8c31f2b",
+      "query": "bản đồ hiển thị các điểm sạt lở bờ sông trên địa bàn thành phố Cần Thơ"
+    },
+    {
+      "id": "q_e2e1217874535d0c",
+      "query": "nhóm cán bộ tham dự buổi lễ khởi công cải tạo đền thờ Nguyễn Hữu Cảnh"
+    },
+    {
+      "id": "q_372b5c1dc20c62e3",
+      "query": "cảnh một vận động viên đua xe đạp đang đạp xe thi đấu trên đường với các tấm biển hiệu HTV, NON SÔNG LIỀN MỘT ở phía sau"
+    },
+    {
+      "id": "q_f484e2b01a6f5c56",
+      "query": "cận cảnh bảng chấm điểm Đoàn LSR ghi chủ đề mãi mãi xứng danh bộ đội cụ Hồ"
+    },
+    {
+      "id": "q_2c4f14bc3f0e6007",
+      "query": "cảnh thầy giáo Đức Anh đang chấm và chữa bài văn tác phẩm Chiếc thuyền ngoài xa của tác giả Nguyễn Minh Châu"
+    },
+    {
+      "id": "q_bec22b7b07834e5a",
+      "query": "cảnh một đầu bếp nữ đang giới thiệu sản phẩm Ajinomoto trên sóng truyền hình HTV"
+    },
+    {
+      "id": "q_8d9f0e1d4c2b65ec",
+      "query": "thực khách đang ngồi ăn bún cá thu tại quán Hùng Hào"
+    },
+    {
+      "id": "q_08973bc3b4ff14b3",
+      "query": "cảnh quay hai cô gái trẻ đang ngồi trò chuyện thảo luận cùng nhau"
+    },
+    {
+      "id": "q_7f5e33ad5173e00e",
+      "query": "học sinh nam Nguyễn Đăng Bảo học lớp 9T trường trung học cơ sở Ban Mai ở quận Hà Đông thành phố Hà Nội"
+    },
+    {
+      "id": "q_393bbbb9e8eca8b9",
+      "query": "cảnh quay các cán bộ thực hiện nghi thức xúc cát khởi công trong dự án trùng tu đền thờ Nguyễn Hữu Cảnh"
+    },
+    {
+      "id": "q_330b6bfd1e3cff24",
+      "query": "đoàn vận động viên xe đạp đang nước rút về đích trong cuộc đua"
+    },
+    {
+      "id": "q_d5b0d340abfa38f5",
+      "query": "nhóm chiến sĩ bộ đội biểu diễn tiết mục múa rồng"
+    },
+    {
+      "id": "q_93d663614a884b6e",
+      "query": "cảnh lễ ký kết có người đàn ông ký tài liệu cạnh một người phụ nữ"
+    },
+    {
+      "id": "q_a11e25cec459ce15",
+      "query": "cảnh hai người gồm một nữ đầu bếp và một nam giới đứng trong bếp đang hướng dẫn chế biến món đùi ếch chiên giòn rụm"
+    },
+    {
+      "id": "q_0b92f2f348722ea7",
+      "query": "nữ dẫn chương trình du lịch Như Bình đang dẫn dắt chương trình Việt Nam đi là ghiền"
+    },
+    {
+      "id": "q_f09d21b45a1f8b55",
+      "query": "cảnh hai cô gái đứng nói chuyện bên bàn bày nhiều hộp nắp bạc, phía sau lưng họ là các thùng hộp giấy xếp chồng"
+    },
+    {
+      "id": "q_04971273d2ccdda8",
+      "query": "cảnh nam học sinh đứng phát biểu trước micro trong buổi lễ khai giảng năm học 2023-2024"
+    },
+    {
+      "id": "q_5d906a7bc2c3ab81",
+      "query": "cảnh một nam và một nữ đang trò chuyện trong gian hàng triển lãm thiết bị y tế với tấm biển tên công ty ở phía sau"
+    },
+    {
+      "id": "q_43ed8e7ff4221291",
+      "query": "đám đông người hâm mộ mặc áo màu đỏ phất cờ đỏ sao vàng cổ vũ ven đường khi đoàn tay đua xe đạp lướt qua, phía sau là băng rôn chữ NON SÔNG LIỀN MỘT DẢI và màn hình HTV Thể Thao đang chiếu Chặng 5"
+    },
+    {
+      "id": "q_e66be07839a79cac",
+      "query": "cảnh tiết mục múa lân trên sân khấu với con lân đầu trắng đang biểu diễn"
+    },
+    {
+      "id": "q_fb833c53c2d05554",
+      "query": "cảnh phòng bệnh viện với bệnh nhân đang nằm trên giường bệnh, bên cạnh là bác sĩ và các máy móc thiết bị y tế theo dõi"
+    },
+    {
+      "id": "q_3ab3face18e79179",
+      "query": "nữ phóng viên áo vàng đứng tác nghiệp giữa khu phố lồng đèn rực rỡ sắc màu tại Lương Nhữ Học dịp Tết Trung thu"
+    },
+    {
+      "id": "q_8b4535090b17f6e2",
+      "query": "khung cảnh triển lãm trưng bày nhiều máy móc thiết bị y tế màu trắng với màn hình cảm ứng, thân máy in chữ POTENZA, bên dưới hiển thị dòng chữ chạy TP.HCM: Đồng bộ giải pháp quản lý thị trường vàng"
+    },
+    {
+      "id": "q_76d63fde5a2ae819",
+      "query": "cảnh quán ăn vỉa hè chật kín người ngồi chen chúc quanh các bàn inox, nổi bật phía trước là người phụ nữ đội nón rộng vành mặc áo màu vàng, quán không có tường bao nhìn thẳng ra đường phố đỗ nhiều xe máy"
+    },
+    {
+      "id": "q_4c83d3381520523e",
+      "query": "cảnh cổng trường tiểu học Phú Thuận A1 điểm đình số 12 với bảng hiệu tên trường ở phía trên và băng rôn chào mừng năm học mới 2024-2025 treo phía dưới, hiển thị dòng chữ Cuộc thi Lan tỏa năng lượng tích cực 2024 Cùng nhau lan tỏa yêu thương"
+    },
+    {
+      "id": "q_beab805a23f43834",
+      "query": "cảnh bên trong ngôi chùa với nhiều người quỳ trên chiếu chắp tay cầu nguyện, hàng trước mặc áo trắng hàng sau là các sư thầy mặc áo cà sa màu cam, xung quanh có nhiều cột màu vàng trang trí"
+    },
+    {
+      "id": "q_bd5c55c036943129",
+      "query": "cảnh lân trắng đang múa trên dàn cột cao ở ngoài trời, bên dưới đông người đứng xem, khu vực sân khấu có khung sắt kim loại bao quanh"
+    },
+    {
+      "id": "q_e52142cb92b58d74",
+      "query": "cảnh đua xe đạp trên đường phố với cổng về đích lớn màu đỏ chắn ngang đường ở phía trước, đoàn vận động viên và xe mô tô đang di chuyển về phía đích, khán giả đông đúc đứng hai bên đường dưới tán cây xanh reo hò cổ vũ"
+    },
+    {
+      "id": "q_4a2bdbb146be8a0b",
+      "query": "cảnh tòa nhà chung cư bị phong tỏa bằng dây căng, phía dưới có xe cảnh sát đang đỗ"
+    },
+    {
+      "id": "q_c78e038f835addaf",
+      "query": "cảnh đường phố nhộn nhịp người và xe máy di chuyển, hai bên là dãy cửa hàng với biển hiệu và dây điện giăng chằng chịt, phía xa nổi bật kiến trúc tôn giáo có mái và tháp nhiều màu sắc"
+    },
+    {
+      "id": "q_a998b9d5dcfa840c",
+      "query": "cảnh công trường với hố đất sâu ngập nước bên dưới và máy xúc đang hoạt động ở phía trên bờ hố"
+    },
+    {
+      "id": "q_8a965496eaf2b7cf",
+      "query": "cảnh bia đá ở đền chùa trên đỉnh núi được bao quanh bởi lan can và vật phẩm thờ cúng, mặt bia khắc dòng chữ “Bệ đá sa thạch ở đỉnh Núi Sam này là nơi ngự của tượng Bà Chúa Xứ ngày xưa”"
+    },
+    {
+      "id": "q_cc8960fc90175a21",
+      "query": "khung cảnh bên trong xe buýt điện có nhân viên cùng hành khách đang đeo khẩu trang, màn hình hiển thị nội dung Tiếp tục thí điểm xe buýt điện tại TP.HCM"
+    },
+    {
+      "id": "q_3232beb9a65d9540",
+      "query": "cảnh trong tiệm đặc sản có một nam và một nữ đang nói chuyện với nhau, trên quầy giữa hai người đặt khay sả và nhiều gói thực phẩm, phía sau lưng là các bảng hiệu Bún bò, Dưa kiệu, Cá kho đường, Mắm mòng gà, Mực trứng, Tôm chua và biển báo VNPT chấp nhận thanh toán"
+    },
+    {
+      "id": "q_af41019bc369cb18",
+      "query": "cảnh thầy giáo nam thắt cà vạt tím mặc áo sơ mi trắng đang dạy môn Hóa học trước màn hình chiếu dòng chữ Bài tập áp dụng, nội dung trên màn hình hỏi cách điều chế Ca từ CaCl2 với đáp án là điện phân nóng chảy CaCl2"
+    },
+    {
+      "id": "q_e53426e3c35abee1",
+      "query": "cảnh một người phụ nữ đang ngắm nhìn thư pháp và tranh cổ treo bên trong đền miếu cổ kính"
+    },
+    {
+      "id": "q_f613c903c758eccc",
+      "query": "cảnh một người đàn ông trả lời phỏng vấn ở công trường thi công cầu Tăng Long, sau lưng là bảng thông tin tiến độ dự án"
+    },
+    {
+      "id": "q_36cf7dd072f72d4d",
+      "query": "cảnh đường phố trong khu dân cư với xe máy và ô tô đang di chuyển, hai bên là dãy nhà ở và các cửa hàng"
+    },
+    {
+      "id": "q_5ae4729648cd6455",
+      "query": "cảnh thầy giáo Trần Ngọc Anh dạy môn Địa lí vùng Bắc Trung Bộ, phía sau là màn hình chiếu hiển thị các dòng chữ điều kiện tự nhiên, sông Mã, sông Cả, khoáng sản, tài nguyên du lịch"
+    },
+    {
+      "id": "q_f861ce707cb2a3b7",
+      "query": "cảnh hai người dẫn chương trình một nam một nữ ngồi dẫn bản tin trong trường quay, phía sau là phông nền thành phố tông màu cam"
+    },
+    {
+      "id": "q_707eb304d7c0798b",
+      "query": "cảnh hai người một nam một nữ ngồi trò chuyện bên trong xưởng chế biến thực phẩm, xung quanh là nhiều túi hàng đã đóng gói và các máy móc sản xuất"
+    },
+    {
+      "id": "q_d8c23ddbe8f7a42f",
+      "query": "cảnh ngoài trời hai người đàn ông áo trắng đứng sát nhau ở giữa nhóm đông người áo đỏ, một người quấn khăn trắng trên đầu đang trả lời phỏng vấn"
+    },
+    {
+      "id": "q_58744222841b482c",
+      "query": "bản đồ mô phỏng tuyến đường Vành đai 2 Thành phố Hồ Chí Minh đoạn nối giữa cầu Phú Hữu và đường Võ Nguyên Giáp hiển thị vị trí rạch Chiếc, đường Võ Chí Công cùng trạm biến áp 220kV Khu Công nghệ cao"
+    },
+    {
+      "id": "q_0a1a7b395b0e24ba",
+      "query": "cảnh thầy giáo Lê Minh Huy dạy Toán trường THPT Nguyễn Hiền đứng giảng cạnh máy tính xách tay, màn hình chiếu đề bài xác suất chia 9 học sinh vào 3 tổ yêu cầu mỗi tổ có một học sinh nữ"
+    },
+    {
+      "id": "q_3cac42d635c73c00",
+      "query": "cảnh buổi tối trước quán cà phê với bảng hiệu ghi COFFEE KHUYẾT Kính chào quý khách, phía trước cửa đậu nhiều xe máy cùng một chiếc xe ba bánh"
+    },
+    {
+      "id": "q_730d34c063ce8670",
+      "query": "cảnh lớp học trong lễ khai giảng năm học 2024-2025 với cổng bóng bay màu đỏ trắng, nhiều em nhỏ xếp hàng đứng bên dưới và người lớn phía trước đang tặng tập vở, bút, sách và gấu bông cho các em"
+    },
+    {
+      "id": "q_daf9fe8716ae10a0",
+      "query": "cánh đồng trồng hành lá xanh mướt với các luống hành mọc dày đặc tươi tốt"
+    },
+    {
+      "id": "q_f6809540ca19cfb2",
+      "query": "cảnh bia đá tưởng niệm Nguyễn Hữu Cảnh đặt trong khuôn viên di tích, mặt bia khắc chữ ghi công khai phá và trấn giữ vùng đất Cù lao Ông Chưởng huyện Chợ Mới An Giang"
+    },
+    {
+      "id": "q_61dc5aa352667bea",
+      "query": "nữ dẫn chương trình mặc áo màu vàng đứng ở khu vui chơi có bảng hiệu Học sinh được giảm 20K/vé, phía đối diện là khu máng trượt đưa du khách lên núi Tà Pạ"
+    },
+    {
+      "id": "q_fe70103f21632d4a",
+      "query": "cảnh đoàn đông vận động viên đua xe đạp đang nước rút về cổng về đích màu đỏ giữa đường phố, hai bên đường khán giả và phóng viên tụ tập đông đúc"
+    },
+    {
+      "id": "q_f0485a2009013993",
+      "query": "cảnh chụp ảnh tập thể các cán bộ y tế ở khuôn viên bệnh viện, nữ bác sĩ áo trắng ôm bó hoa đứng cùng mọi người"
+    },
+    {
+      "id": "q_5f877b4399169c61",
+      "query": "cảnh các thanh niên nam mặc quân phục rằn ri màu xanh đứng thành hàng cạnh nhau trên sân khấu, phía sau là phông nền đỏ treo cờ Đảng và cờ đỏ sao vàng Việt Nam ghi khẩu hiệu chào mừng 94 năm thành lập Đảng Cộng sản Việt Nam và câu Chủ tịch Hồ Chí Minh vĩ đại sống mãi trong sự nghiệp của chúng ta"
+    },
+    {
+      "id": "q_4cf358979df60f9b",
+      "query": "cảnh một nam giới mặc áo màu đen đang phỏng vấn trước hậu cảnh tháp gạch, hiển thị dòng chữ Phan Quốc Dương Trưởng đoàn Lân Sư Rồng Tân Dương Vĩnh Long"
+    },
+    {
+      "id": "q_5b547cc4097c4d8a",
+      "query": "sân khấu sự kiện ngoài trời trưng bày mô hình đầu lân và biểu tượng Quận 5 Chợ Lớn, phía sau là dãy bảng triển lãm, màn hình lớn hiển thị chữ Giải Lân Sư Rồng mở rộng năm 2024 Cúp Chợ Lớn HTV"
+    },
+    {
+      "id": "q_7efeeb84caf96d85",
+      "query": "khung cảnh đồng lúa xanh bát ngát phía xa là dãy núi, màn hình hiển thị dòng chữ giới thiệu Châu Đốc với thế \"tiền tam giang, hậu thất lĩnh\" và kênh Vĩnh Tế nối sông Hậu ra biển Hà Tiên"
+    },
+    {
+      "id": "q_d054b0bc481e6b5e",
+      "query": "nhóm công nhân của Công ty Công viên Cây xanh làm việc bên cạnh gốc cây to và chiếc xe tải chuyên dụng có in dòng chữ Công ty Công viên Cây xanh"
+    },
+    {
+      "id": "q_2bf8758ffd694537",
+      "query": "cảnh trong lớp học một bé gái ngồi cạnh hai người lớn quanh chiếc bàn tròn sặc sỡ nhiều màu sắc"
+    },
+    {
+      "id": "q_d2dc1b0b2918cadd",
+      "query": "cảnh bàn thờ trong miếu thờ với bài vị, lư hương, bình hoa và các vật phẩm thờ cúng"
+    },
+    {
+      "id": "q_d3f2fb68471e9cbb",
+      "query": "cận cảnh hai bàn tay mở cuốn sách ra và dùng ngón tay trỏ chỉ lên trang sách đang mở"
+    },
+    {
+      "id": "q_9018c34d53a935b0",
+      "query": "bản đồ miền Tây Nam Bộ thể hiện kênh Thoại Hà nối liền Long Xuyên với Rạch Giá, xung quanh hiển thị tên các địa điểm Châu Đốc, Hà Tiên, Cần Thơ và Sa Đéc"
+    },
+    {
+      "id": "q_2502a3fd7d5ae6e9",
+      "query": "cảnh phỏng vấn Trần Thái Định đứng trước nền xanh dương đang trả lời"
+    },
+    {
+      "id": "q_351b1b467391301c",
+      "query": "cảnh nhóm người dân di chuyển cùng các chiến sĩ bộ đội mặc quân phục đội mũ bảo hộ ở khu dân cư"
+    },
+    {
+      "id": "q_55e7beebeeb01a99",
+      "query": "không gian nội thất đình chùa cổ kính với hoành phi liễn đối chữ Hán và cột gỗ chạm trổ sơn son thếp vàng rực rỡ"
+    },
+    {
+      "id": "q_ea54f8953b8b632a",
+      "query": "cảnh ngoài trời cạnh mái che có nhóm người trẻ đang đứng, người phía trước mặc áo màu xanh nhạt đưa tay chạm lên mặt, phía sau một nam mặc áo xám và một nữ mặc áo khoác jean đang nói chuyện với nhau"
+    },
+    {
+      "id": "q_92f8f49ddef0adcd",
+      "query": "trọng tài nam áo xanh vàng ngồi tại bàn chấm điểm giơ bảng điểm 8,5 lên cao, phía sau là sân khấu thi đấu buổi tối với đông đảo khán giả vây quanh"
+    },
+    {
+      "id": "q_6f918c702204d542",
+      "query": "cổng vào vườn trầu tại làng quê có treo biển hiệu Nghề truyền thống Vườn trầu ấp 5 xã Vị Thủy huyện Vị Thủy Hậu Giang, các thành viên trong gia đình đang cùng nhau thu hoạch lá trầu"
+    },
+    {
+      "id": "q_bcd30b4216d7ca74",
+      "query": "cảnh nhiều công nhân khuân vác các bao phân bón từ trong kho hàng lên thùng xe tải nhỏ"
+    },
+    {
+      "id": "q_4d4eac1c7a21fa61",
+      "query": "cảnh lễ khánh thành với các đại biểu nam nữ đứng thành hàng, nhiều phụ nữ mặc áo dài màu đỏ, phía trước là những bục được phủ khăn đỏ"
+    },
+    {
+      "id": "q_a1aa09f704b4c83d",
+      "query": "cảnh một người đàn ông ngồi giữa bụi tre đang dùng tay chỉ vào những thân tre non"
+    },
+    {
+      "id": "q_bac2afad58b66404",
+      "query": "cận cảnh tấm biển hiệu của Câu lạc bộ Phụ nữ khuyết tật xã Tân Bằng do Hội Bảo trợ người khuyết tật trẻ mồ côi huyện Thới Bình tỉnh Cà Mau treo, hiển thị nội dung dạy nghề sản xuất kinh doanh sản phẩm thủ công mỹ nghệ và thủy sản"
+    },
+    {
+      "id": "q_0206c453f9f279c8",
+      "query": "hình ảnh bảng bài toán viết phương trình mặt phẳng (P) qua A(3;2;-5) vuông góc với đường thẳng d vectơ chỉ phương (2;1;0) trong hệ tọa độ Oxyz, lời giải ghi phương trình 2x + y - 8 = 0"
+    },
+    {
+      "id": "q_6a5fc5938801ab91",
+      "query": "cận cảnh bàn tay chỉ vào trang sách nhạc đang mở hiển thị nốt nhạc và hợp âm"
+    },
+    {
+      "id": "q_553ee264eded6868",
+      "query": "cảnh một nữ dẫn chương trình mặc áo dài ngồi nói chuyện cùng cụ ông trước phủ thờ Chủ tịch Hồ Chí Minh, mặt tiền công trình hiển thị dòng chữ ngày sinh 19/5/1890 và ngày mất 2/9/1969"
+    },
+    {
+      "id": "q_194c1d20e3aca350",
+      "query": "cảnh chuyên gia kinh tế Tiến sĩ Đinh Thế Hiển đang ngồi trả lời phỏng vấn ở trong phòng"
+    },
+    {
+      "id": "q_806d650b572067a2",
+      "query": "cảnh tuyến đường trong thành phố đông xe máy đang di chuyển, một xe máy chở thùng carton to cồng kềnh buộc phía sau yên xe, bên trái là dải rào chắn, bên phải là dãy cây xanh, phía xa xa có biển báo chỉ đường màu xanh"
+    },
+    {
+      "id": "q_0b59fdf43d6d1cc9",
+      "query": "cảnh một sạp hải sản khô ở chợ với nhiều túi tôm khô màu cam và cá khô bày trên bàn ở phía trước, người bán hàng ngồi gói hàng, phía sau là dãy sạp và biển hiệu chợ"
+    },
+    {
+      "id": "q_ad1631fc8a794d71",
+      "query": "tấm bia đá to khắc thơ Đông Hồ Ấn Nguyệt đặt giữa khuôn viên rợp bóng cây xanh"
+    },
+    {
+      "id": "q_6e171ab8f410e8c8",
+      "query": "cổng hoa đám cưới ở miền Tây kết bằng lá dừa, điểm xuyết hoa vàng và xanh, bên trên treo dòng chữ Lễ Đính Hôn"
+    },
+    {
+      "id": "q_9fe0761a2e18ada0",
+      "query": "người phụ nữ đứng giữa phòng triển lãm với tường treo kín ảnh tư liệu và tranh thư pháp đóng khung, trước mặt là tủ kính chứa hiện vật trưng bày"
+    },
+    {
+      "id": "q_1e5cb90a9ceb301a",
+      "query": "góc cận hai bàn tay gõ phím trên bàn phím máy tính xách tay phát sáng ánh xanh nổi bật trong bóng tối"
+    },
+    {
+      "id": "q_66b2eb0e1e5373c5",
+      "query": "cảnh cuộc đua xe đạp đông người trên đường phố, các vận động viên mặc áo đua sặc sỡ đội mũ bảo hiểm đang đạp xe, hai bên đường là dãy nhà dân và cửa hàng treo cờ đỏ sao vàng Việt Nam dọc tuyến"
+    },
+    {
+      "id": "q_644991e673c937e5",
+      "query": "cảnh nhóm công nhân mặc áo màu cam đỏ đang thi công vỉa hè dọc tuyến đường nhiều xe máy qua lại, bên cạnh có xe tải và hàng cây lớn"
+    },
+    {
+      "id": "q_94c9005f07f60629",
+      "query": "cảnh nhìn từ phía sau một người phụ nữ đứng trước bàn thờ ở đình miếu cổ kính, xung quanh bày biện đồ thờ cúng, hoa, nến và họa tiết trang trí sắc đỏ vàng"
+    }
+  ]
+}

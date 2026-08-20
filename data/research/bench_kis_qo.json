@@ -1,0 +1,404 @@
+{
+  "queries": [
+    {
+      "id": "q_83460859b8c31f2b",
+      "query": "Cần Thơ; bản đồ sạt lở; sạt lở bờ sông; 2024; 24 vụ; 14,5 tỷ đồng; quận huyện"
+    },
+    {
+      "id": "q_e2e1217874535d0c",
+      "query": "lễ khởi công; dự án cải tạo; đền thờ Nguyễn Hữu Cảnh; NGUYỄN HỮU CẢNH"
+    },
+    {
+      "id": "q_372b5c1dc20c62e3",
+      "query": "HTV; NON SÔNG LIỀN MỘT"
+    },
+    {
+      "id": "q_f484e2b01a6f5c56",
+      "query": "Đoàn LSR; bảng điểm; mãi mãi xứng danh bộ đội cụ Hồ"
+    },
+    {
+      "id": "q_2c4f14bc3f0e6007",
+      "query": "Thầy Đức Anh; Chiếc thuyền ngoài xa; Nguyễn Minh Châu"
+    },
+    {
+      "id": "q_bec22b7b07834e5a",
+      "query": "HTV; Ajinomoto; AJINOMOTO"
+    },
+    {
+      "id": "q_8d9f0e1d4c2b65ec",
+      "query": "HÙNG HÀO; Hùng Hào; bún cá thu; BÚN CÁ THU"
+    },
+    {
+      "id": "q_3840fff75adacf30",
+      "query": "bản đồ; cửa sông Mê Kông; sông Mê Kông; HTV; Mê Kông Ký Sự; tư liệu"
+    },
+    {
+      "id": "q_08973bc3b4ff14b3",
+      "query": "khởi nghiệp; mô hình khởi nghiệp; startup"
+    },
+    {
+      "id": "q_7f5e33ad5173e00e",
+      "query": "Nguyễn Đăng Bảo; 9T; THCS Ban Mai; Hà Đông; Hà Nội"
+    },
+    {
+      "id": "q_a580648e97befebe",
+      "query": "Hợp đồng ủy quyền; Phạm Văn Học; Công an tỉnh Tây Ninh; quán trọ; giấy tờ; sai phạm"
+    },
+    {
+      "id": "q_393bbbb9e8eca8b9",
+      "query": "Lễ khởi công; Dự án cải tạo sửa chữa đền thờ Nguyễn Hữu Cảnh; Đền thờ Nguyễn Hữu Cảnh"
+    },
+    {
+      "id": "q_330b6bfd1e3cff24",
+      "query": "HTV; vạch đích; về đích; đua xe đạp"
+    },
+    {
+      "id": "q_d5b0d340abfa38f5",
+      "query": "HTV Thể Thao; HTV Sports; múa rồng"
+    },
+    {
+      "id": "q_93d663614a884b6e",
+      "query": "lễ ký kết; hợp tác quốc tế; biên bản ghi nhớ; trường đại học; viện nghiên cứu; tập đoàn"
+    },
+    {
+      "id": "q_a11e25cec459ce15",
+      "query": "đùi ếch chiên giòn rụm; đùi ếch chiên giòn; hướng dẫn nấu ăn"
+    },
+    {
+      "id": "q_0b92f2f348722ea7",
+      "query": "Như Bình; Việt Nam đi là ghiền"
+    },
+    {
+      "id": "q_13626d117cd5935e",
+      "query": "Trương Chí Hùng; đồng chà chất san sát nhau; Tây Nam Bộ; tản văn; bút ký; sáu tập"
+    },
+    {
+      "id": "q_f09d21b45a1f8b55",
+      "query": "hộp nắp bạc; nắp màu bạc; hộp giấy"
+    },
+    {
+      "id": "q_04971273d2ccdda8",
+      "query": "Lễ khai giảng; Năm học 2023-2024; 2023-2024"
+    },
+    {
+      "id": "q_5d906a7bc2c3ab81",
+      "query": "SHENYANG PUSM MEDICAL DEVICE CO., LTD; Sơn La; Điện Biên; hỗ trợ khẩn cấp; mưa lũ; thiệt hại"
+    },
+    {
+      "id": "q_c71ec04bf492cc2e",
+      "query": "TS. Hoàng Văn Cường; Giám đốc; đá lở vào nhà; hai cháu bé thương vong; đảm bảo giao thông; Cao Bằng"
+    },
+    {
+      "id": "q_43ed8e7ff4221291",
+      "query": "NON SÔNG LIỀN MỘT DẢI; HTV Thể Thao; Chặng 5"
+    },
+    {
+      "id": "q_e66be07839a79cac",
+      "query": "Cúp Chợ Lớn; HTV; Ấn tượng Lân lên Mai Hoa Thung; HTV Thể Thao; Thể Thao 365"
+    },
+    {
+      "id": "q_fb833c53c2d05554",
+      "query": "HTV9; Đồng bằng sông Cửu Long; mực nước đầu nguồn; sốt xuất huyết; 15/15 huyện thị xã thành phố"
+    },
+    {
+      "id": "q_3ab3face18e79179",
+      "query": "Diệu Bình; Lương Nhữ Học; tập kết chất thải rắn sai quy định; thu giữ hơn 11 tấn mỡ bò không rõ nguồn gốc; phố lồng đèn; Tết Trung thu"
+    },
+    {
+      "id": "q_ef335f7c99e6dffc",
+      "query": "bằng khen; chứng nhận; giấy khen; giấy chứng nhận"
+    },
+    {
+      "id": "q_8b4535090b17f6e2",
+      "query": "POTENZA; TP.HCM: Đồng bộ giải pháp quản lý thị trường vàng"
+    },
+    {
+      "id": "q_76d63fde5a2ae819",
+      "query": "quán ăn; thực đơn; biển hiệu quán"
+    },
+    {
+      "id": "q_4c83d3381520523e",
+      "query": "Trường Tiểu học Phú Thuận A1; điểm đình số 12; Chào mừng năm học mới 2024–2025; Cuộc thi Lan tỏa năng lượng tích cực 2024; Cùng nhau lan tỏa yêu thương"
+    },
+    {
+      "id": "q_beab805a23f43834",
+      "query": "chùa; Phật tử; cầu nguyện"
+    },
+    {
+      "id": "q_bd5c55c036943129",
+      "query": "múa lân; lân trắng; biểu diễn lân"
+    },
+    {
+      "id": "q_f63b2f6faccc2693",
+      "query": "Đảm bảo đủ sách giáo khoa phục vụ năm học mới"
+    },
+    {
+      "id": "q_e52142cb92b58d74",
+      "query": "ĐÍCH; VỀ ĐÍCH; FINISH; ĐUA XE ĐẠP"
+    },
+    {
+      "id": "q_4a2bdbb146be8a0b",
+      "query": "Điều tra vụ cô gái người nước ngoài rơi chung cư tử vong; rơi chung cư tử vong; cô gái người nước ngoài"
+    },
+    {
+      "id": "q_c78e038f835addaf",
+      "query": "biển hiệu; tên cửa hàng; biển quảng cáo; dây điện"
+    },
+    {
+      "id": "q_a998b9d5dcfa840c",
+      "query": "Hà Nội: Huyện Chương Mỹ vẫn còn 16 thôn, xóm đang bị ngập; Hà Nội; Huyện Chương Mỹ; 16 thôn"
+    },
+    {
+      "id": "q_8a965496eaf2b7cf",
+      "query": "Bệ đá sa thạch ở đỉnh Núi Sam này là nơi ngự của tượng Bà Chúa Xứ ngày xưa; Bệ đá sa thạch; Núi Sam; Bà Chúa Xứ"
+    },
+    {
+      "id": "q_cc8960fc90175a21",
+      "query": "Tiếp tục thí điểm xe buýt điện tại TP.HCM; xe buýt điện; TP.HCM"
+    },
+    {
+      "id": "q_3232beb9a65d9540",
+      "query": "Bún bò; Dưa kiệu; Cá kho đường; Mắm mòng gà; Mực trứng; Tôm chua; VNPT; chấp nhận thanh toán"
+    },
+    {
+      "id": "q_af41019bc369cb18",
+      "query": "Bài tập áp dụng; điều chế kim loại Ca; CaCl2; điện phân CaCl2 nóng chảy"
+    },
+    {
+      "id": "q_e53426e3c35abee1",
+      "query": "1735; Mạc Thiên Tích; Tổng binh Đại đô đốc; trấn Hà Tiên; nhà Nguyễn"
+    },
+    {
+      "id": "q_f613c903c758eccc",
+      "query": "Vũ Hoàng Anh; Phó ban điều hành dự án đường bộ 2; Ban QLDA đầu tư xây dựng các công trình giao thông TP.HCM; Cầu Tăng Long; Bảng tiến độ công trình; 15 tháng 8"
+    },
+    {
+      "id": "q_36cf7dd072f72d4d",
+      "query": "khu dân cư; cửa hàng; nhà dân"
+    },
+    {
+      "id": "q_5ae4729648cd6455",
+      "query": "Trần Ngọc Anh; Địa lí; Bắc Trung Bộ; ôn thi THPT 2024; điều kiện tự nhiên; sông Mã; sông Cả; khoáng sản; tài nguyên du lịch"
+    },
+    {
+      "id": "q_f861ce707cb2a3b7",
+      "query": "khoa học; giáo dục; đào tạo giáo viên; sư phạm; sinh hoạt phí; học phí; bản tin"
+    },
+    {
+      "id": "q_707eb304d7c0798b",
+      "query": "cá khô; thực phẩm; sản phẩm đóng gói; cơ sở sản xuất"
+    },
+    {
+      "id": "q_d8c23ddbe8f7a42f",
+      "query": "phỏng vấn; ngoài trời"
+    },
+    {
+      "id": "q_8564465943efc30c",
+      "query": "đặc sản; Cà Mau; đặc sản Cà Mau; cửa hàng đặc sản"
+    },
+    {
+      "id": "q_221e7a2d54ae944f",
+      "query": "Thủy sản Quốc Đạt; Lễ hội Nghinh Ông"
+    },
+    {
+      "id": "q_58744222841b482c",
+      "query": "Vành đai 2; TP.HCM; cầu Phú Hữu; Võ Nguyên Giáp; rạch Chiếc; Võ Chí Công; trạm biến áp 220kV Công nghệ cao"
+    },
+    {
+      "id": "q_0a1a7b395b0e24ba",
+      "query": "Lê Minh Huy; THPT Nguyễn Hiền; Toán; xác suất; chia 9 học sinh thành 3 tổ; mỗi tổ có đúng 1 nữ; Ví dụ 5; chuyên đề"
+    },
+    {
+      "id": "q_ed442a10864450f9",
+      "query": "Lại xuất hiện 4 trận động đất liên tiếp ở Kon Tum; Kon Tum; 4 trận động đất; Biển Đông; miền Trung"
+    },
+    {
+      "id": "q_3cac42d635c73c00",
+      "query": "COFFEE KHUYẾT; Kính chào quý khách"
+    },
+    {
+      "id": "q_b94574d444272c04",
+      "query": "Nguyễn Hòa; thứ 5; thứ năm; Cúp Truyền hình TP.HCM; Cúp Truyền Hình"
+    },
+    {
+      "id": "q_730d34c063ce8670",
+      "query": "Lễ khai giảng; Năm học 2024-2025; 2024-2025"
+    },
+    {
+      "id": "q_daf9fe8716ae10a0",
+      "query": "hành lá; ruộng hành lá; luống hành"
+    },
+    {
+      "id": "q_dc737e4159325db5",
+      "query": "Cuộc thi Lan tỏa năng lượng tích cực 2024: Trung thu ý nghĩa; Lan tỏa năng lượng tích cực; Trung thu ý nghĩa; 2024; XDrama"
+    },
+    {
+      "id": "q_f6809540ca19cfb2",
+      "query": "Nguyễn Hữu Cảnh; bia tưởng niệm; khai phá; trấn giữ; Cù lao Ông Chưởng; Chợ Mới; An Giang"
+    },
+    {
+      "id": "q_61dc5aa352667bea",
+      "query": "Học sinh được giảm 20K/vé; 20K/vé; Tà Pạ; xe trượt núi"
+    },
+    {
+      "id": "q_57a03c45c3fcc1a4",
+      "query": "HTX NN Cá Khô Bổi Tư Hùng; Thương hiệu cá khô bổi U Minh; ấp 3; xã Trần Hợi; huyện Trần Văn Thời; tỉnh Cà Mau"
+    },
+    {
+      "id": "q_fe70103f21632d4a",
+      "query": "Lê Nguyệt Minh; ĐÍCH; FINISH; cổng đích"
+    },
+    {
+      "id": "q_f0485a2009013993",
+      "query": "bệnh viện; trạm y tế; đào tạo thực hành; bác sĩ trẻ"
+    },
+    {
+      "id": "q_1388bd26f11afc4e",
+      "query": "bằng khen; ảnh lưu niệm; học bổng; bảng thông tin; Nhà hát Quân đội; 40 đường Cộng Hòa"
+    },
+    {
+      "id": "q_5f877b4399169c61",
+      "query": "Nhiệt liệt chào mừng 94 năm ngày thành lập Đảng Cộng sản Việt Nam; Chủ tịch Hồ Chí Minh vĩ đại sống mãi trong sự nghiệp của chúng ta; 94 năm"
+    },
+    {
+      "id": "q_4cf358979df60f9b",
+      "query": "Phan Quốc Dương; Trưởng đoàn Lân Sư Rồng Tân Dương; Vĩnh Long"
+    },
+    {
+      "id": "q_5b547cc4097c4d8a",
+      "query": "Quận 5 – Chợ Lớn; Giải Lân Sư Rồng mở rộng năm 2024; Cúp Chợ Lớn – HTV; HTV; 2024"
+    },
+    {
+      "id": "q_7efeeb84caf96d85",
+      "query": "Châu Đốc; tiền tam giang, hậu thất lĩnh; kênh đào Vĩnh Tế; sông Hậu; biển Hà Tiên"
+    },
+    {
+      "id": "q_d054b0bc481e6b5e",
+      "query": "Công ty Công viên Cây xanh"
+    },
+    {
+      "id": "q_2bf8758ffd694537",
+      "query": "Lê Ngô; lớp 1B; Trường Tiểu học Phú Thuận A1; huyện Hồng Ngự; Đồng Tháp"
+    },
+    {
+      "id": "q_d2dc1b0b2918cadd",
+      "query": "bàn thờ tưởng niệm; bài vị; bát hương; miếu thờ"
+    },
+    {
+      "id": "q_d3f2fb68471e9cbb",
+      "query": "4 triệu đồng; nhuận bút; xuất bản sách"
+    },
+    {
+      "id": "q_9018c34d53a935b0",
+      "query": "Kênh Thoại Hà; Rạch Giá; Long Xuyên; Châu Đốc; Hà Tiên; Cần Thơ; Sa Đéc; miền Tây Nam Bộ"
+    },
+    {
+      "id": "q_2502a3fd7d5ae6e9",
+      "query": "Trần Thái Định; Đại học Văn Lang; Khoa Quan hệ công chúng và Truyền thông; sinh viên năm 2; VLU"
+    },
+    {
+      "id": "q_351b1b467391301c",
+      "query": "Công ty Cổ phần Thủy điện Thác Bà; Thủy điện Thác Bà; UBND tỉnh Yên Bái; UBND tỉnh Phú Thọ; 6 tiếng; an toàn hạ du"
+    },
+    {
+      "id": "q_55e7beebeeb01a99",
+      "query": "hoành phi; câu đối; liễn; chữ Hán; sơn son thếp vàng; đình; miếu; sông Mekong"
+    },
+    {
+      "id": "q_ea54f8953b8b632a",
+      "query": "ngoài trời; mái che; áo xanh nhạt"
+    },
+    {
+      "id": "q_92f8f49ddef0adcd",
+      "query": "8,5; 8.5; bảng điểm; điểm số"
+    },
+    {
+      "id": "q_6f918c702204d542",
+      "query": "Nghề truyền thống Vườn trầu ấp 5; xã Vị Thủy; huyện Vị Thủy; Hậu Giang"
+    },
+    {
+      "id": "q_bcd30b4216d7ca74",
+      "query": "phân bón; gạo hữu cơ; gạo an toàn"
+    },
+    {
+      "id": "q_4d4eac1c7a21fa61",
+      "query": "lễ khánh thành; khánh thành dự án; đại biểu"
+    },
+    {
+      "id": "q_a1aa09f704b4c83d",
+      "query": "bụi tre; thân tre non; măng tre"
+    },
+    {
+      "id": "q_0df6e57b33e56326",
+      "query": "bia đá; chữ Khmer; chùa tháp Khmer Nam Bộ; rắn thần Naga; bảo tháp"
+    },
+    {
+      "id": "q_bac2afad58b66404",
+      "query": "Câu lạc bộ Phụ nữ khuyết tật xã Tân Bằng; Hội Bảo trợ người khuyết tật, trẻ mồ côi huyện Thới Bình; tỉnh Cà Mau; dạy nghề; sản xuất kinh doanh; sản phẩm thủ công mỹ nghệ; thủy sản"
+    },
+    {
+      "id": "q_0206c453f9f279c8",
+      "query": "phương trình mặt phẳng; Oxyz; mặt phẳng (P); A(3;2;-5); đường thẳng d; vectơ chỉ phương (2;1;0); vuông góc; 2x + y - 8 = 0"
+    },
+    {
+      "id": "q_6a5fc5938801ab91",
+      "query": "nốt nhạc; hợp âm; bản nhạc"
+    },
+    {
+      "id": "q_553ee264eded6868",
+      "query": "Phủ thờ Chủ tịch Hồ Chí Minh; 19/5/1890; 2/9/1969"
+    },
+    {
+      "id": "q_194c1d20e3aca350",
+      "query": "Tiến sĩ Đinh Thế Hiển; chuyên gia kinh tế; thị trường chững lại; tháng 7/2024"
+    },
+    {
+      "id": "q_806d650b572067a2",
+      "query": "biển chỉ dẫn; biển báo xanh; biển chỉ dẫn giao thông"
+    },
+    {
+      "id": "q_0b59fdf43d6d1cc9",
+      "query": "hải sản khô; tôm khô; cá khô; biển hiệu"
+    },
+    {
+      "id": "q_ad1631fc8a794d71",
+      "query": "Đông Hồ Ấn Nguyệt; Tao Đàn Chiêu Anh Các; Mạc Thiên Tích; Kiên Giang"
+    },
+    {
+      "id": "q_6e171ab8f410e8c8",
+      "query": "Lễ Đính Hôn; cổng cưới lá dừa"
+    },
+    {
+      "id": "q_9fe0761a2e18ada0",
+      "query": "phòng trưng bày; ảnh tư liệu; thư pháp; tài liệu; hiện vật"
+    },
+    {
+      "id": "q_1e5cb90a9ceb301a",
+      "query": "bàn phím laptop; đèn nền"
+    },
+    {
+      "id": "q_66b2eb0e1e5373c5",
+      "query": "đua xe đạp; Việt Nam; cờ đỏ sao vàng; cửa hàng"
+    },
+    {
+      "id": "q_3a2d02d06262260c",
+      "query": "Chủ tịch Hồ Chí Minh; phòng tưởng niệm; cờ đỏ sao vàng; bàn thờ; ảnh tư liệu"
+    },
+    {
+      "id": "q_a4124c467be6166e",
+      "query": "đua xe đạp; biển hiệu cửa hàng; tên đường"
+    },
+    {
+      "id": "q_832e762554990112",
+      "query": "khán giả; sự kiện ngoài trời; khẩu trang"
+    },
+    {
+      "id": "q_644991e673c937e5",
+      "query": "thi công vỉa hè; sửa chữa vỉa hè; công trình đang thi công"
+    },
+    {
+      "id": "q_94c9005f07f60629",
+      "query": "bàn thờ; đình; miếu cổ; đồ thờ cúng"
+    }
+  ]
+}

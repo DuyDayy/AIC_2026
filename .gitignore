@@ -119,3 +119,21 @@ benchmark_ground_truth_final_v2/*
 !benchmark_ground_truth_final_v2/README.md
 !benchmark_ground_truth_final_v2/ground_truth_final.jsonl
 !benchmark_ground_truth_final_v2/_gt_frame.json
+
+# ───────── QAFuse: nghiên cứu dung hợp (E0–E4) ─────────
+# `scripts/research/*` là công cụ THÍ NGHIỆM, không nằm trên đường chạy thi. Nhận đúng
+# hai file mà README dẫn số: `run_e1_e4_recheck.py` (bảng E1–E3 sau khi sửa lỗi ASR) và
+# `run_e4_wrrf.py` (tune hai tầng, kết luận NO-GO). Thiếu chúng thì không kiểm lại được
+# bất kỳ con số nào trong mục QAFuse của README.
+scripts/research/*
+!scripts/research/run_e1_e4_recheck.py
+!scripts/research/run_e4_wrrf.py
+
+# KẾT QUẢ nghiên cứu thì GIỮ — chúng là bằng chứng, không dựng lại được miễn phí.
+!data/research/
+!data/research/**
+
+# dữ liệu extraction tải về từ Modal (2,6 GB): candidates + vectors, tốn tiền để dựng lại
+export_for_fusion/
+.env
+*.docx

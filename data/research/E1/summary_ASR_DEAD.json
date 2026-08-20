@@ -1,0 +1,45 @@
+{
+  "experiment": "E1: Baseline (Nguyên bản - Chưa có Query Expansion)",
+  "objective": "Đo lường sức mạnh của từng nhánh đơn lẻ (Visual, OCR, ASR) khi dùng chung 1 câu query nguyên bản, và kết quả khi kết hợp lại bằng thuật toán RRF.",
+  "insights": [
+    "Nhánh Visual đang gánh team (Recall@100 = 78%).",
+    "Nhánh OCR tuy yếu (Recall@100 = 46%) nhưng bắt được những video chứa text trên màn hình mà Visual không nhìn ra, giúp bù đắp đáng kể.",
+    "Nhánh ASR chết hoàn toàn (Recall@100 = 0%). Lý do: Câu truy vấn gốc thường có cụm 'Tìm video quay cảnh...' nên BM25 không thể khớp với hội thoại thực tế được nói trong video. Cần phải có Query Expansion (E2) để sinh câu hội thoại giả lập."
+  ],
+  "metrics": {
+    "individual_baselines_top100": {
+      "visual_only": {
+        "final_score": 0.5240,
+        "mrr": 0.2874,
+        "r_100": 0.7800
+      },
+      "ocr_only": {
+        "final_score": 0.3580,
+        "mrr": 0.2144,
+        "r_100": 0.4600
+      },
+      "asr_only": {
+        "final_score": 0.0000,
+        "mrr": 0.0000,
+        "r_100": 0.0000
+      }
+    },
+    "fusion_baselines": {
+      "visual_ocr_rrf": {
+        "final_score": 0.6010,
+        "mrr": 0.3541,
+        "r_100": 0.7900
+      },
+      "visual_asr_rrf": {
+        "final_score": 0.4630,
+        "mrr": 0.2588,
+        "r_100": 0.6500
+      },
+      "fusion_all_rrf": {
+        "final_score": 0.5510,
+        "mrr": 0.3090,
+        "r_100": 0.7300
+      }
+    }
+  }
+}

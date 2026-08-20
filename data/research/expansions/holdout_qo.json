@@ -1,0 +1,432 @@
+{
+  "queries": [
+    {
+      "id": "h_L22_V011_78",
+      "query": "Mai Lê Duy Quang; Thành phố Thủ Đức; TP.HCM"
+    },
+    {
+      "id": "h_L26_V315_105",
+      "query": "lá me non; rau; ăn rất ngon"
+    },
+    {
+      "id": "h_L25_V053_120",
+      "query": "2024; hội nhập toàn cầu; tập đoàn quốc tế; doanh nghiệp quốc tế; cơ hội học tập"
+    },
+    {
+      "id": "h_L21_V019_232",
+      "query": "Thới Bình; Cà Mau; tai nạn xe máy nghiêm trọng"
+    },
+    {
+      "id": "h_L22_V023_120",
+      "query": "Hào Khí Thăng Long; kiến trúc triều đại; biểu trưng Hà Nội; tượng đài cảm tử"
+    },
+    {
+      "id": "h_L22_V028_243",
+      "query": "Brenno Marques; salon tango; vô địch thế giới"
+    },
+    {
+      "id": "h_L26_V436_89",
+      "query": "vỏ chanh mài; giữ mùi thơm; hướng dẫn làm bánh"
+    },
+    {
+      "id": "h_L25_V013_7",
+      "query": "Chuyên đề 9; Hệ thống nhóm chức; Hóa học hữu cơ; ThS Phạm Lê Thanh; nhóm chức đặc trưng"
+    },
+    {
+      "id": "h_L21_V029_222",
+      "query": "HTV9; Bình Thuận; dịch tả châu Phi; trại heo; khám xét"
+    },
+    {
+      "id": "h_L26_V364_124",
+      "query": "lẩu Thái; cá lẩu Thái; gia vị nêm sẵn; gói gia vị"
+    },
+    {
+      "id": "h_L26_V091_66",
+      "query": "Món Ngon Mỗi Ngày; nghệ; thịt bê"
+    },
+    {
+      "id": "h_L21_V023_242",
+      "query": "Phú Thọ; sân bay quốc tế; nghỉ lễ; hoạt động đặc sắc; sản phẩm hấp dẫn"
+    },
+    {
+      "id": "h_L22_V017_324",
+      "query": "HTV7 HD; 18:40:50; Hà Nội; tình hình kinh tế"
+    },
+    {
+      "id": "h_L26_V455_21",
+      "query": "Eat Well Live Well; Ajinomoto"
+    },
+    {
+      "id": "h_L26_V454_29",
+      "query": "nguyên liệu; buổi nấu hôm sau; hoàn thành nhiệm vụ"
+    },
+    {
+      "id": "h_L26_V229_108",
+      "query": "Nước cốt cam 2M; Nước cốt cam; 2M"
+    },
+    {
+      "id": "h_L26_V319_88",
+      "query": "Cho ít nhân thôi nhé!"
+    },
+    {
+      "id": "h_L25_V039_187",
+      "query": "IACBE; Trường Đại học Quốc tế Sài Gòn; Saigon International University; SIU; Chứng nhận IACBE; Chương trình kinh doanh"
+    },
+    {
+      "id": "h_L22_V018_663",
+      "query": "Reuters; hơn 30 người; 18 người nhập viện; cảnh sát; vụ cháy; trực thăng"
+    },
+    {
+      "id": "h_L26_V393_46",
+      "query": "sơ chế cá; ướp cá; các bước; hướng dẫn nấu ăn"
+    },
+    {
+      "id": "h_L26_V364_48",
+      "query": "rau thơm; rau ném; rau nêm; rau răm; lá lốt; món Huế"
+    },
+    {
+      "id": "h_L22_V028_222",
+      "query": "Tango Buenos Aires; Ban Tổ chức; đêm chung kết; cặp đôi xuất sắc"
+    },
+    {
+      "id": "h_L26_V059_89",
+      "query": "htv online; blendy; m; neon; molngay"
+    },
+    {
+      "id": "h_L26_V295_59",
+      "query": "cánh gà công nghiệp; cánh gà; nhiều thịt; mềm ngon"
+    },
+    {
+      "id": "h_L26_V097_56",
+      "query": "Eat Well, Live Well"
+    },
+    {
+      "id": "h_L26_V324_170",
+      "query": "súp cua nấm tuyết; súp cua chua ngọt; súp cua cay nhẹ"
+    },
+    {
+      "id": "h_L30_V033_36",
+      "query": "dòng suối; nằm trên đá; giúp đỡ"
+    },
+    {
+      "id": "h_L30_V026_41",
+      "query": "niềm tự hào dân tộc; giá trị cốt lõi; xây dựng sự kiện"
+    },
+    {
+      "id": "h_L26_V041_48",
+      "query": "túi RP; RP; cây cán"
+    },
+    {
+      "id": "h_L26_V195_82",
+      "query": "phi thơm hành tím; chảo nhỏ; hướng dẫn nấu ăn"
+    },
+    {
+      "id": "h_L21_V014_97",
+      "query": "kế hoạch khai thác bay; dịp lễ 2/9; 2/9"
+    },
+    {
+      "id": "h_L24_V019_56",
+      "query": "lễ hội du lịch Bình Thuận; Bình Thuận; Quán Sứ; Cholon; Hiv He Thao"
+    },
+    {
+      "id": "h_L26_V344_157",
+      "query": "món ăn Hàn Quốc; hướng dẫn cách làm; YouTube"
+    },
+    {
+      "id": "h_L25_V030_16",
+      "query": "SIU; Trường Đại học Quốc tế Siu; Trường Đại học Quốc tế Sài Gòn"
+    },
+    {
+      "id": "h_L24_V008_57",
+      "query": "Lân Lên Mai Hoa Thung; HTV Thể Thao; 13/01/2020; 13 tháng 1 năm 2020; Lễ hội Lân; múa lân"
+    },
+    {
+      "id": "h_L26_V256_166",
+      "query": "vịt xào lá mắc mật; cách làm vịt xào lá mắc mật"
+    },
+    {
+      "id": "h_L26_V147_115",
+      "query": "Aji; Ajinomoto; hạt nêm; nước tương"
+    },
+    {
+      "id": "h_L26_V242_115",
+      "query": "omega3; vitamin A; chất chống oxy hóa"
+    },
+    {
+      "id": "h_L25_V029_44",
+      "query": "học bổng Chủ tịch; Tiếp Bước Hành Trình"
+    },
+    {
+      "id": "h_L26_V150_87",
+      "query": "bánh flan; hình vuông; thức uống"
+    },
+    {
+      "id": "h_L25_V076_84",
+      "query": "Trường Quốc tế Á Châu; Asian International School; AIS"
+    },
+    {
+      "id": "h_L25_V010_72",
+      "query": "giáo dục; học thuật; nghệ thuật thể thao"
+    },
+    {
+      "id": "h_L25_V009_89",
+      "query": "cầu thang; niềm tự hào; quyết tâm; tương lai"
+    },
+    {
+      "id": "h_L30_V062_72",
+      "query": "mèo Việt Nam; vẽ mèo; đôi mắt; tác phẩm có hồn"
+    },
+    {
+      "id": "h_L24_V028_27",
+      "query": "quiss chulon; htv he thao"
+    },
+    {
+      "id": "h_L30_V029_150",
+      "query": "Sinh viên với Ý tưởng Khởi nghiệp Sáng tạo; Chung kết 2023; Gia Hùng; giải khuyến khích; 2 triệu đồng; chuyển đổi số; khởi nghiệp sáng tạo mở"
+    },
+    {
+      "id": "h_L26_V127_145",
+      "query": "bánh mì; bún; đậu phộng rang; đậu phộng xay; rau ôm; ngò ôm"
+    },
+    {
+      "id": "h_L30_V052_131",
+      "query": "phục chế sách; gìn giữ văn hóa; Việt Nam"
+    },
+    {
+      "id": "h_L27_V011_218",
+      "query": "dâu Hạ Châu; Hạ Châu; trái nghịch mùa; Hậu Vàng; du lịch"
+    },
+    {
+      "id": "h_L25_V054_56",
+      "query": "giáo dục toàn diện; kết hợp học thuật và nghệ thuật"
+    },
+    {
+      "id": "h_L26_V191_75",
+      "query": "Phương; chảo chống dính; khăn ẩm; giảm nhiệt độ; màu sắc đẹp"
+    },
+    {
+      "id": "h_L30_V053_71",
+      "query": "vé số; quán cơm Thanh niên; cấm bán vé số"
+    },
+    {
+      "id": "h_L27_V015_93",
+      "query": "miền Tây Nam Bộ; miền Tây Nam; du lịch miền Tây"
+    },
+    {
+      "id": "h_L25_V081_24",
+      "query": "Đại học Quốc tế Sài Gòn; SIU; Saigon International University"
+    },
+    {
+      "id": "h_L30_V060_86",
+      "query": "vườn xương rồng; lobivia; xương rồng lobivia"
+    },
+    {
+      "id": "h_L24_V036_43",
+      "query": "chương trình thể thao; múa rồng; thể thao"
+    },
+    {
+      "id": "h_L26_V189_89",
+      "query": "thuốc bắc; hạt sen khô; táo Tàu"
+    },
+    {
+      "id": "h_L26_V475_76",
+      "query": "1/3 chén; dầu ăn; phân thẻ lá; quả cà"
+    },
+    {
+      "id": "h_L24_V037_33",
+      "query": "Chợ Lớn; Cholon; đêm hội"
+    },
+    {
+      "id": "h_L26_V242_52",
+      "query": "chả cá thác lác; lòng trắng trứng gà"
+    },
+    {
+      "id": "h_L24_V026_91",
+      "query": "HTV; HTV Thể Thao; chương trình thể thao"
+    },
+    {
+      "id": "h_L24_V037_37",
+      "query": "HTV Thể Thao"
+    },
+    {
+      "id": "h_L24_V015_81",
+      "query": "HTV HỂ THAO"
+    },
+    {
+      "id": "h_L24_V009_91",
+      "query": "HTV; HTV Thể Thao; múa rồng"
+    },
+    {
+      "id": "h_L24_V014_29",
+      "query": "Cholon; Chợ Lớn; múa rồng"
+    },
+    {
+      "id": "h_L26_V131_139",
+      "query": "bánh ngọt; đường phèn; mật ong"
+    },
+    {
+      "id": "h_L28_V010_496",
+      "query": "sản xuất phim; đạo diễn; biên kịch; nhà sản xuất; ê-kíp thực hiện; danh sách thành viên"
+    },
+    {
+      "id": "h_L24_V035_51",
+      "query": "Cholon; Đêm hội Cholon; Chợ Lớn"
+    },
+    {
+      "id": "h_L29_V014_41",
+      "query": "Đôi Mắt Mekong; ĐÔI MẮT MEKONG; Trailer"
+    },
+    {
+      "id": "h_L26_V123_15",
+      "query": "bạch tuộc; rau xanh tươi"
+    },
+    {
+      "id": "h_L26_V102_136",
+      "query": "bánh kem; làm bánh"
+    },
+    {
+      "id": "h_L26_V102_59",
+      "query": "#NấuChuẩnĂnLành; Nấu Chuẩn Ăn Lành"
+    },
+    {
+      "id": "h_L26_V271_180",
+      "query": "gà; lá lốt; nước mắm; dầu hành; nếp cái hoa vàng; bột nghệ; dưa xanh; nước tương Phú Sĩ; hành tím phi; hạt nêm Aji-nagon gà; Ajinomoto Việt Nam"
+    },
+    {
+      "id": "h_L25_V070_1",
+      "query": "áo sơ mi trắng; bức tường trắng"
+    },
+    {
+      "id": "h_L24_V032_129",
+      "query": "Chalon"
+    },
+    {
+      "id": "h_L26_V190_15",
+      "query": "canh gà; cánh gà; sả; ớt; lá chanh; nước dừa; đường phèn; bột canh"
+    },
+    {
+      "id": "h_L24_V039_32",
+      "query": "quinish; htv; tulling; hethao"
+    },
+    {
+      "id": "h_L24_V032_157",
+      "query": "HTV Thể Thao; quils cholon hiv the thao"
+    },
+    {
+      "id": "h_L30_V017_75",
+      "query": "sách; kệ sách"
+    },
+    {
+      "id": "h_L24_V036_62",
+      "query": "HTV Thể Thao"
+    },
+    {
+      "id": "h_L24_V030_142",
+      "query": "Cholon; Chợ Lớn; múa lân; múa rồng; sư tử múa rồng"
+    },
+    {
+      "id": "h_L26_V237_163",
+      "query": "HTV Online; nguyên liệu; công thức; trứng cút; hành lá; rau răm; hành tím; hành tim; gia vị"
+    },
+    {
+      "id": "h_L30_V037_7",
+      "query": "lan tỏa năng lượng tích cực; 2024; cuộc thi; vượt qua khó khăn; sức mạnh tích cực"
+    },
+    {
+      "id": "h_L24_V039_98",
+      "query": "Cholon; Chợ Lớn; đêm diễn"
+    },
+    {
+      "id": "h_L30_V029_79",
+      "query": "tuoitre TV; HS-3001"
+    },
+    {
+      "id": "h_L25_V005_2",
+      "query": "trắng sáng; ánh sáng mờ ảo; tĩnh lặng"
+    },
+    {
+      "id": "h_L30_V039_28",
+      "query": "trẻ em; ghế xanh dương"
+    },
+    {
+      "id": "h_L30_V039_26",
+      "query": "sách vở; viết bài; lớp học"
+    },
+    {
+      "id": "h_L26_V432_5",
+      "query": "cá hồi; cà chua cherry; hạt tiêu"
+    },
+    {
+      "id": "h_L28_V003_47",
+      "query": "sông nước; ven sông"
+    },
+    {
+      "id": "h_L26_V491_109",
+      "query": "hạt; tô xanh"
+    },
+    {
+      "id": "h_L25_V024_99",
+      "query": "bánh ngọt; tiệm bánh"
+    },
+    {
+      "id": "h_L26_V131_143",
+      "query": "bánh sandwich; kem đen; dưa chua; đường bột; mâm xôi; dưa hấu cắt lát"
+    },
+    {
+      "id": "h_L26_V077_1",
+      "query": "trái cây; rau xanh"
+    },
+    {
+      "id": "h_L25_V049_97",
+      "query": "bánh; đồng phục đỏ trắng"
+    },
+    {
+      "id": "h_L26_V196_1",
+      "query": "broccoli; cà chua; ớt đỏ; ớt vàng"
+    },
+    {
+      "id": "h_L25_V080_77",
+      "query": "bánh; ăn bánh"
+    },
+    {
+      "id": "h_L29_V014_120",
+      "query": "cắt dây"
+    },
+    {
+      "id": "h_L26_V280_19",
+      "query": "hộp cơm trưa; cơm hộp mang đi làm; luyện tập tiếng nói; món ăn"
+    },
+    {
+      "id": "h_L26_V360_126",
+      "query": "MON NGON choingay; MON NGON"
+    },
+    {
+      "id": "h_L25_V050_42",
+      "query": "học bổng chủ tịch SIU; 20 suất; 100 suất; học bổng tiếp bước hành trình; quỹ tài năng trẻ; học phí giảm 40% đến 100%; SIU"
+    },
+    {
+      "id": "h_L21_V018_526",
+      "query": "dự án chậm tiến độ; Đồng Nai; thông tin dự án"
+    },
+    {
+      "id": "h_L26_V123_26",
+      "query": "bạch tuộc"
+    },
+    {
+      "id": "h_L28_V008_38",
+      "query": "HTV Online; kênh huyền thoại"
+    },
+    {
+      "id": "h_L24_V014_22",
+      "query": "quins millolan hiv he hao"
+    },
+    {
+      "id": "h_L24_V027_35",
+      "query": "HTV Thể Thao; Quán Sứ Rồng Cholon"
+    },
+    {
+      "id": "h_L24_V041_16",
+      "query": "xiếc mèo; sân khấu biểu diễn"
+    }
+  ]
+}
