@@ -130,13 +130,21 @@ class JinaEncoder:
     khởi động xong container.
     """
 
+    #: Cặp sha mà vector KHUNG đã dùng — `artifacts/embed/embed/manifest.json`, và
+    #: `PipelineConfig` của `frame_extracting` dùng đúng cặp này.
+    MODEL_SHA = "e10d47f5691d0454a0fb5d13f46f2199b74cb436"
+    CODE_SHA = "39e6a55ae971b59bea6e44675d237c99762e7ee2"
+
     def __init__(self, model_name: str = MODEL_NAME, dim: int = DEFAULT_DIM,
-                 device: str | None = None) -> None:
+                 device: str | None = None, revision: str | None = None,
+                 code_revision: str | None = None) -> None:
         if dim > FULL_DIM:
             raise ValueError(f"dim {dim} vượt {FULL_DIM} chiều model nhả ra")
         self.model_name = model_name
         self.dim = dim
         self.device = device
+        self.revision = revision or self.MODEL_SHA
+        self.code_revision = code_revision or self.CODE_SHA
         self._model = None
 
     @property
@@ -146,7 +154,12 @@ class JinaEncoder:
             from transformers import AutoModel
 
             logger.info(f"nạp {self.model_name} (lần đầu, có thể mất vài phút)")
-            self._model = AutoModel.from_pretrained(self.model_name, trust_remote_code=True)
+            # GHIM REVISION — xem khối bình luận ở `MODEL_SHA` trong `scripts/run.py`.
+            # Không ghim thì truy vấn và khung có thể đến từ hai bản mô hình khác nhau,
+            # và sai lệch đó KHÔNG có triệu chứng nào.
+            self._model = AutoModel.from_pretrained(
+                self.model_name, trust_remote_code=True,
+                revision=self.revision, code_revision=self.code_revision)
             if self.device:
                 self._model = self._model.to(self.device)
             self._model.eval()

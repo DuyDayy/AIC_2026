@@ -1,0 +1,3291 @@
+[
+  {
+    "query_id": "query-kis-0001",
+    "ocr": [
+      "sạt lở bờ kè; sạt lở bờ sông; bờ kè bị sạt lở",
+      "Bản tin Thời sự; Hiện trường sạt lở; Đoàn kiểm tra hiện trường; Khắc phục sạt lở bờ sông"
+    ],
+    "asr": [
+      "đoàn cán bộ khảo sát bờ kè bị sạt lở; bờ kè sông sạt lở nghiêm trọng; cây cối đổ nghiêng xuống dòng nước đục",
+      "tình trạng sạt lở diễn biến phức tạp; nguy cơ tiếp tục sạt lở; khẩn trương khắc phục hậu quả; đảm bảo an toàn cho người dân ven sông"
+    ]
+  },
+  {
+    "query_id": "query-kis-0002",
+    "ocr": [
+      "lừa đảo chiếm đoạt tài sản; 10 tỷ đồng; bắt đối tượng",
+      "Công an; Bản tin An ninh trật tự; Khởi tố bị can; Chiếm đoạt tài sản"
+    ],
+    "asr": [
+      "bắt giữ đối tượng lừa đảo chiếm đoạt trên mười tỷ đồng; khởi tố vụ án lừa đảo chiếm đoạt tài sản",
+      "cơ quan công an đã tiến hành bắt giữ; thủ đoạn lừa đảo chiếm đoạt số tiền lớn; đề nghị người dân nâng cao cảnh giác"
+    ]
+  },
+  {
+    "query_id": "query-kis-0003",
+    "ocr": [
+      "phỏng vấn",
+      "Người dẫn chương trình; MC; Thế giới đại dương; Khám phá đại dương; Trực tiếp"
+    ],
+    "asr": [
+      "đang phỏng vấn; buổi phỏng vấn hôm nay; người dẫn chương trình nữ mặc áo hoa trắng",
+      "thưa quý vị khán giả; mời quý vị cùng theo dõi; đàn cá đang bơi dưới nước; hình ảnh quay dưới đáy biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0004",
+    "ocr": [
+      "đáy biển; cá lớn",
+      "Thế giới động vật; Khám phá đại dương; VTV2; Khám phá thế giới"
+    ],
+    "asr": [
+      "cảnh quay dưới đáy biển trong xanh; một con cá lớn màu nâu đang bơi; cá bơi giữa khung hình",
+      "sinh vật sống dưới đáy biển; hệ sinh thái đại dương; các loài cá biển; môi trường nước biển trong xanh"
+    ]
+  },
+  {
+    "query_id": "query-kis-0005",
+    "ocr": [
+      "tuong chong ngap; thi cong; cao toc",
+      "Cong truong dang thi cong; Du an cao toc; Ban quan ly du an"
+    ],
+    "asr": [
+      "thi cong tuong chong ngap doc cao toc; cong nhan dang lam viec ven duong cao toc trai nhua; xe co dang thi cong tren cong truong",
+      "ghi nhan tai cong truong cao toc; du an phong chong ngap dang duoc trien khai; day nhanh tien do thi cong dam bao giao thong"
+    ]
+  },
+  {
+    "query_id": "query-kis-0006",
+    "ocr": [
+      "triệt xóa sới bạc; triệt phá sới bạc; sới bạc; đánh bạc",
+      "Bản tin 113; An ninh trật tự; Công an tỉnh; Hiện trường vụ việc; Quốc lộ"
+    ],
+    "asr": [
+      "triệt xóa sới bạc; công an triệt phá sới bạc ven quốc lộ; tụ điểm đánh bạc bị triệt xóa",
+      "lực lượng chức năng ập vào bắt quả tang; các đối tượng đang sát phạt; thu giữ tang vật tiền mặt và dụng cụ đánh bạc"
+    ]
+  },
+  {
+    "query_id": "query-kis-0007",
+    "ocr": [
+      "ngập nước; ngập lụt; kênh ngập",
+      "tin thế giới; Châu Âu; ngập lụt tại Châu Âu; thời tiết cực đoan"
+    ],
+    "asr": [
+      "hàng trăm chiếc xe đạp nối đuôi nhau lội qua kênh ngập nước; hai bên là các tòa nhà kiểu châu Âu",
+      "nước ngập sâu; giao thông tê liệt do ngập; người dân dắt xe qua chỗ ngập; triều cường dâng cao"
+    ]
+  },
+  {
+    "query_id": "query-kis-0008",
+    "ocr": [
+      "xích đu bay; thành phố châu Âu",
+      "thử thách mạo hiểm trên không; kỷ lục xích đu độ cao; toàn cảnh thành phố từ trên cao"
+    ],
+    "asr": [
+      "người đàn ông ngồi trên xích đu bay giữa không trung; ở độ cao lớn; phía dưới là toàn cảnh thành phố châu Âu nhìn từ trên cao",
+      "màn trình diễn mạo hiểm lơ lửng trên không; độ cao hàng trăm mét so với mặt đất; khung cảnh thành phố nhìn từ trên cao tuyệt đẹp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0009",
+    "ocr": [
+      "vụ nổ; vụ cháy; khu dân cư; hiện trường",
+      "thời sự; tin nóng hiện trường; khu dân cư bị ảnh hưởng; cập nhật thiệt hại"
+    ],
+    "asr": [
+      "hai người đàn ông ôm nhau ngoài trời; một người mặc áo đỏ; khu dân cư bị ảnh hưởng bởi vụ nổ; vụ cháy gây thiệt hại",
+      "hậu quả vụ nổ làm hư hại nhà dân; người dân ôm nhau an ủi động viên; chia sẻ mất mát sau vụ cháy; lực lượng cứu hộ có mặt tại hiện trường"
+    ]
+  },
+  {
+    "query_id": "query-kis-0010",
+    "ocr": [
+      "camera an ninh; xe đầu kéo màu trắng; đường dây lừa đảo; công nghệ cao",
+      "Công an; triệt phá đường dây lừa đảo; lừa đảo chiếm đoạt tài sản; Bản tin an ninh; ANTV"
+    ],
+    "asr": [
+      "camera an ninh ghi lại; xe đầu kéo màu trắng đang lưu thông trên đường; đường dây lừa đảo dùng công nghệ cao",
+      "cơ quan công an cho biết; các đối tượng sử dụng công nghệ cao để lừa đảo; trích xuất camera an ninh để truy vết; phương tiện liên quan vụ án"
+    ]
+  },
+  {
+    "query_id": "query-kis-0011",
+    "ocr": [
+      "Thác Bà; thủy điện Thác Bà; xả lũ; ngập nhà dân",
+      "Yên Bái; Hiện trường xả lũ; Nhà máy thủy điện Thác Bà; Tin lũ lụt; Thời sự VTV"
+    ],
+    "asr": [
+      "xả lũ thủy điện Thác Bà; ngập nhà dân; hai người đứng trên bờ chỉ tay ra dòng nước",
+      "mực nước dâng cao sau xả lũ; người dân bị ngập nhà; thiệt hại do thủy điện xả nước; chính quyền địa phương lên tiếng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0012",
+    "ocr": [
+      "Campuchia; nhập cảnh trái phép; nông sản; bao tải",
+      "Biên giới Tây Nam; Cửa khẩu; Bộ đội Biên phòng; Tang vật thu giữ; Buôn lậu qua biên giới"
+    ],
+    "asr": [
+      "nhập cảnh trái phép từ Campuchia; vận chuyển nông sản lậu; những bao tải hàng nông sản được xếp chồng",
+      "lực lượng biên phòng phát hiện bắt giữ; vận chuyển trái phép qua đường biên; thu giữ tang vật số lượng lớn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0013",
+    "ocr": [
+      "chợ trái cây; chuối vàng; sạp trái cây",
+      "bản tin thị trường; giá nông sản hôm nay; chợ truyền thống"
+    ],
+    "asr": [
+      "chợ trái cây; những nải chuối vàng; bày bán chất đống trên sạp",
+      "giá chuối hôm nay bao nhiêu; chuối chín vàng tươi ngon; mời bà con ghé mua; trái cây mới nhập về chợ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0014",
+    "ocr": [
+      "POLICE",
+      "tin quốc tế; lực lượng cảnh sát; an ninh trật tự"
+    ],
+    "asr": [
+      "đoàn cảnh sát mặc đồng phục đen; đứng dàn hàng ngang trên đường phố nước ngoài; áo có chữ POLICE in lớn",
+      "lực lượng cảnh sát được triển khai; đảm bảo an ninh trật tự; ghi nhận trên đường phố nước ngoài"
+    ]
+  },
+  {
+    "query_id": "query-kis-0015",
+    "ocr": [
+      "CSGT; cảnh sát giao thông; xe máy chở hàng",
+      "vi phạm giao thông; an toàn giao thông; xử lý vi phạm; Đội CSGT đường bộ"
+    ],
+    "asr": [
+      "cảnh sát giao thông kiểm tra xe máy chở hàng; dừng xe kiểm tra ven đường; kiểm tra giấy tờ xe",
+      "chở hàng cồng kềnh quá tải; vi phạm quy định giao thông; nhắc nhở chấp hành luật giao thông; đảm bảo trật tự an toàn giao thông"
+    ]
+  },
+  {
+    "query_id": "query-kis-0016",
+    "ocr": [
+      "CÔNG AN; CẢNH SÁT; NGHI PHẠM",
+      "AN NINH TRẬT TỰ; BẢN TIN 113; HIỆN TRƯỜNG VỤ VIỆC; CƠ QUAN CÔNG AN"
+    ],
+    "asr": [
+      "cảnh sát mặc quân phục xanh khống chế nghi phạm; công an khống chế đối tượng; khuôn mặt được làm mờ che danh tính",
+      "lực lượng chức năng tiến hành bắt giữ đối tượng; nghi phạm đã bị khống chế và áp giải; cơ quan điều tra đang làm rõ vụ việc"
+    ]
+  },
+  {
+    "query_id": "query-kis-0017",
+    "ocr": [
+      "130 triệu đồng; tang vật; đánh bạc; tạm giữ; đột kích",
+      "Công an đột kích; Triệt phá tụ điểm đánh bạc; Thu giữ tang vật; An ninh trật tự; Hiện trường vụ việc"
+    ],
+    "asr": [
+      "cảnh sát đột kích căn nhà; tạm giữ tang vật; tụ điểm đánh bạc gần 130 triệu đồng",
+      "lực lượng công an triệt phá sới bạc; thu giữ tiền mặt và vật chứng; đánh bạc trái phép tại nhà dân; cơ quan điều tra đang làm rõ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0018",
+    "ocr": [
+      "trao giải; nhận giải thưởng; trao đổi",
+      "lễ vinh danh; lễ trao thưởng; khách mời danh dự; ban tổ chức"
+    ],
+    "asr": [
+      "hai bác trao đổi trò chuyện; nhận giải thưởng; buổi trao giải trang trọng",
+      "xin chúc mừng; rất vinh dự được nhận; cảm ơn ban tổ chức; phần vinh danh trang trọng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0019",
+    "ocr": [
+      "cắt băng khánh thành; khánh thành; hầm chui",
+      "lễ khánh thành hầm chui; thông xe hầm chui; công trình giao thông; lễ khánh thành đưa vào sử dụng"
+    ],
+    "asr": [
+      "cắt băng khánh thành; khánh thành hầm chui giao thông; nghi thức cắt băng khánh thành trước cửa hầm",
+      "hầm chui chính thức được khánh thành và đưa vào sử dụng; công trình hoàn thành và thông xe; các đồng chí lãnh đạo thực hiện nghi thức khánh thành"
+    ]
+  },
+  {
+    "query_id": "query-kis-0020",
+    "ocr": [
+      "thẩm vấn; phỏng vấn; hỏi cung",
+      "cơ quan điều tra; đối tượng khai nhận; buổi làm việc; ANTV; hỏi cung bị can"
+    ],
+    "asr": [
+      "đang bị thẩm vấn; đang được phỏng vấn; trả lời hỏi cung; khai báo trong phòng",
+      "đối tượng khai nhận; cơ quan công an làm việc; theo lời khai ban đầu; quá trình điều tra cho thấy"
+    ]
+  },
+  {
+    "query_id": "query-kis-0021",
+    "ocr": [
+      "nghệ thuật đường phố; tác phẩm nghệ thuật; trưng bày ngoài trời",
+      "triển lãm nghệ thuật sắp đặt; lễ hội nghệ thuật công cộng; không gian trưng bày ngoài trời"
+    ],
+    "asr": [
+      "tác phẩm nghệ thuật đường phố kỳ lạ; trưng bày ngoài trời; tác phẩm treo lơ lửng trên không như đang bay",
+      "triển lãm ngoài trời thu hút đông đảo du khách; ý tưởng nghệ thuật độc đáo và sáng tạo; mọi người trầm trồ trước tác phẩm lơ lửng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0022",
+    "ocr": [
+      "ngập lụt; ngập nước; lũ lụt",
+      "Tin lũ khẩn cấp; Thời sự; Khu dân cư ngập sâu; Cảnh báo thiên tai; Hiện trường ngập lụt"
+    ],
+    "asr": [
+      "toàn cảnh khu dân cư ngập nước lũ; nhiều mái nhà nhô lên giữa biển nước; quay từ trên cao vùng ngập lụt",
+      "nước lũ dâng cao nhấn chìm nhà cửa; mưa lớn gây ngập lụt diện rộng; nhiều hộ dân bị cô lập; thiệt hại do lũ lụt"
+    ]
+  },
+  {
+    "query_id": "query-kis-0023",
+    "ocr": [
+      "Thứ trưởng Bộ Nông nghiệp; Thứ trưởng",
+      "Bộ Nông nghiệp và Phát triển nông thôn; Họp báo; Hội nghị trực tiếp"
+    ],
+    "asr": [
+      "phát biểu của Thứ trưởng Bộ Nông nghiệp; tôi xin phát biểu ý kiến",
+      "kính thưa hội nghị; trân trọng kính mời Thứ trưởng phát biểu; sau đây là ý kiến chỉ đạo của lãnh đạo Bộ Nông nghiệp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0024",
+    "ocr": [
+      "về đích; vạch đích; đua xe đạp; England",
+      "Tour of Britain; Giải đua xe đạp nước Anh; Trực tiếp đua xe đạp; FINISH"
+    ],
+    "asr": [
+      "đua xe đạp về đích; các tay đua mặc áo đua bám sát nhau; đường đua ở nước Anh",
+      "chặng cuối sắp về đích; đang nước rút rất quyết liệt; đoàn đua bám sát nhau; cuộc đua tại Anh"
+    ]
+  },
+  {
+    "query_id": "query-kis-0025",
+    "ocr": [
+      "cá tươi; hải sản; rổ nhựa",
+      "chợ ven đường; mưu sinh vỉa hè; chợ tự phát; làng chài"
+    ],
+    "asr": [
+      "đang sơ chế cá để bán; ngồi xổm làm cá bên vệ đường; hai người bán cá ven đường",
+      "cuộc sống mưu sinh vất vả; buôn gánh bán bưng kiếm sống; thu nhập bấp bênh ven đường; chợ cóc tự phát"
+    ]
+  },
+  {
+    "query_id": "query-kis-0026",
+    "ocr": [
+      "Tour de France Femmes; chặng 4; Stage 4",
+      "Trực tiếp; Đua xe đạp nữ; Thể thao quốc tế; Bản tin thể thao"
+    ],
+    "asr": [
+      "đoàn đua xe đạp nữ bám sát nhau; chặng 4 Tour de France dành cho nữ; các vận động viên mặc áo đấu nhiều màu đang đạp xe",
+      "đoàn đua đang tăng tốc rất quyết liệt; cuộc cạnh tranh trong tốp đầu; bình luận viên tường thuật diễn biến chặng đua; không khí cổ vũ hai bên đường đua"
+    ]
+  },
+  {
+    "query_id": "query-kis-0027",
+    "ocr": [
+      "Alpe d'Huez; logo tài trợ",
+      "Tour de France; Chặng Alpe d'Huez; Trực tiếp chặng đua; Bảng xếp hạng leo núi"
+    ],
+    "asr": [
+      "vận động viên xe đạp leo dốc núi Alpe d'Huez; mặc áo đấu có logo nhà tài trợ; đường đua có hàng rào vàng cam hai bên",
+      "chặng leo núi khắc nghiệt nhất của Tour de France; tay đua đang chinh phục đỉnh Alpe d'Huez; khán giả đứng chật hai bên đường cổ vũ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0028",
+    "ocr": [
+      "Sơn Trà; núi Sơn Trà; đàn khỉ giật đồ ăn",
+      "Bán đảo Sơn Trà - Đà Nẵng; Cảnh báo khỉ hoang tràn xuống đường; Khuyến cáo du khách"
+    ],
+    "asr": [
+      "đàn khỉ tràn xuống mặt đường nhựa; đàn khỉ trên núi Sơn Trà giật đồ ăn của người đi đường",
+      "khỉ dạn người chặn đường xin ăn; du khách bị khỉ giật đồ; khuyến cáo không cho khỉ ăn, không trêu chọc khỉ hoang"
+    ]
+  },
+  {
+    "query_id": "query-kis-0029",
+    "ocr": [
+      "tai nạn giao thông; hiện trường; cứu hộ",
+      "Tin tức 24h; An toàn giao thông; Hiện trường vụ tai nạn; Đội cứu hộ giao thông"
+    ],
+    "asr": [
+      "hai xe máy nằm đổ trên mặt đường sau vụ tai nạn ban đêm; đèn xe cứu hộ chiếu sáng hiện trường",
+      "vụ tai nạn xảy ra vào ban đêm; lực lượng cứu hộ đã có mặt tại hiện trường; hiện trường đang được phong tỏa để xử lý"
+    ]
+  },
+  {
+    "query_id": "query-kis-0030",
+    "ocr": [
+      "bản đồ khí tượng; dự báo thời tiết; nhiệt độ",
+      "BTV; Người dẫn chương trình; Bản tin Thời tiết; Trung tâm Dự báo Khí tượng Thủy văn Quốc gia"
+    ],
+    "asr": [
+      "người dẫn chương trình nữ mặc áo trắng; đứng bên bản đồ khí tượng; phía sau là biển và mây",
+      "sau đây là bản tin dự báo thời tiết; thưa quý vị; theo trung tâm dự báo; nhiệt độ các khu vực; trên biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0031",
+    "ocr": [
+      "xe buýt 2 tầng; bãi đỗ xe; bến xe",
+      "vận tải công cộng; giao thông đô thị; bãi đỗ xe buýt"
+    ],
+    "asr": [
+      "hàng chục chiếc xe buýt hai tầng màu đỏ đậu san sát nhau; bãi đỗ lớn đậu kín xe buýt hai tầng",
+      "toàn cảnh bãi đỗ xe từ trên cao; số lượng lớn phương tiện giao thông công cộng; những chiếc xe buýt màu đỏ xếp thành hàng dài"
+    ]
+  },
+  {
+    "query_id": "query-kis-0032",
+    "ocr": [
+      "phi công; nhân viên hàng không; máy bay chiến đấu",
+      "Không quân Nhân dân Việt Nam; Phi đội không quân; Đơn vị sẵn sàng chiến đấu"
+    ],
+    "asr": [
+      "nhóm phi công chụp ảnh chung; đứng trước hai chiếc máy bay chiến đấu; mặc đồ bay màu xanh",
+      "các đồng chí phi công; lực lượng không quân; sẵn sàng nhận nhiệm vụ bảo vệ vùng trời"
+    ]
+  },
+  {
+    "query_id": "query-kis-0033",
+    "ocr": [
+      "nhãn chai nước; nước tinh khiết; nước đóng chai",
+      "quảng cáo nước uống; sản phẩm giải khát; tinh khiết từ thiên nhiên"
+    ],
+    "asr": [
+      "cận cảnh chai nhựa đựng nước; giọt nước đọng trên thân chai; phía sau mờ là cây xanh",
+      "nước tinh khiết mát lạnh sảng khoái; giữ trọn vị tươi mát; chai nước giữa thiên nhiên xanh mát"
+    ]
+  },
+  {
+    "query_id": "query-kis-0034",
+    "ocr": [
+      "bó hoa vàng; hoa cuộn",
+      "chợ hoa tươi; cửa hàng hoa; làng hoa; giá hoa"
+    ],
+    "asr": [
+      "bó hoa màu vàng cuộn tròn; bó gọn gàng; đặt sát nhau thành từng cuộn",
+      "hoa vàng rất đẹp; cách bó hoa khéo léo; chuẩn bị hoa cho sự kiện; hoa tươi trang trí"
+    ]
+  },
+  {
+    "query_id": "query-kis-0035",
+    "ocr": [
+      "CÔNG AN; BIÊN BẢN; LẤY LỜI KHAI",
+      "CƠ QUAN CẢNH SÁT ĐIỀU TRA; CÁN BỘ ĐIỀU TRA; TRỤ SỞ CÔNG AN"
+    ],
+    "asr": [
+      "lập biên bản; lấy lời khai; làm việc với cán bộ công an",
+      "cơ quan công an đang làm việc với đối tượng; đối tượng khai nhận tại cơ quan điều tra; theo thông tin từ lực lượng công an"
+    ]
+  },
+  {
+    "query_id": "query-kis-0036",
+    "ocr": [
+      "đội hình danh dự; quân đội; buổi lễ",
+      "lễ đón chính thức; nghi lễ nhà nước; đội nghi lễ quân đội; trực tiếp"
+    ],
+    "asr": [
+      "đội hình danh dự quân đội; mặc quân phục xanh đứng nghiêm trang; xếp thành hàng ngang trong buổi lễ",
+      "nghi thức chào cờ; cử hành quốc thiều; chào mừng đoàn đại biểu; không khí trang nghiêm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0037",
+    "ocr": [
+      "cứu hộ; cứu nạn",
+      "hiện trường vụ sập đổ; công tác cứu hộ cứu nạn; dọn dẹp hiện trường"
+    ],
+    "asr": [
+      "đang dọn dẹp đống đổ nát; dọn đống đổ nát bên tường gạch đổ; xe cứu hộ đậu gần đó",
+      "lực lượng cứu hộ đang khắc phục hậu quả; nỗ lực dọn dẹp sau sự cố sập đổ; công tác cứu nạn tại hiện trường"
+    ]
+  },
+  {
+    "query_id": "query-kis-0038",
+    "ocr": [
+      "trái cây; hoa quả; tạp hóa; cửa hàng tạp hóa",
+      "chợ truyền thống; sạp trái cây; giá nông sản hôm nay; chợ dân sinh"
+    ],
+    "asr": [
+      "sạp hàng trái cây; nhiều loại quả đỏ và quả cam được bày bán; phía sau là cửa hàng tạp hóa nhỏ",
+      "trái cây tươi ngon; giá cả thị trường hôm nay; mua bán ở chợ; hoa quả theo mùa"
+    ]
+  },
+  {
+    "query_id": "query-kis-0039",
+    "ocr": [
+      "xe tải trắng; đêm mưa",
+      "Camera hành trình; Giao thông đêm mưa; Cảnh báo đường trơn"
+    ],
+    "asr": [
+      "xe tải trắng lưu thông trên đường trong đêm mưa; mặt đường ướt phản chiếu ánh đèn xe",
+      "trời mưa lớn tầm nhìn hạn chế; đường trơn trượt nguy hiểm; tài xế chú ý quan sát khi lái xe ban đêm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0040",
+    "ocr": [
+      "đàn trâu chết; bẫy thú; chết trong rừng",
+      "Bản tin thời sự; Hiện trường; Kiểm lâm; Cảnh báo bẫy thú"
+    ],
+    "asr": [
+      "đàn trâu chết trong rừng do bẫy thú; trâu vướng bẫy thú chết trong rừng; bẫy thú khiến trâu chết",
+      "phát hiện xác trâu trong rừng; lực lượng kiểm lâm kiểm tra hiện trường; người dân đặt bẫy thú trái phép; tháo gỡ bẫy thú tự chế"
+    ]
+  },
+  {
+    "query_id": "query-kis-0041",
+    "ocr": [
+      "mui xe; nóc xe; xưởng lắp ráp",
+      "dây chuyền sản xuất; nhà máy ô tô; công nhân kỹ thuật"
+    ],
+    "asr": [
+      "đang lắp ráp mui xe; kiểm tra nóc xe ô tô màu trắng; trong xưởng",
+      "quy trình lắp ráp ô tô; công đoạn hoàn thiện thân vỏ xe; kiểm tra chất lượng tại xưởng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0042",
+    "ocr": [
+      "Health Organization; WHO; World Health Organization",
+      "Phỏng vấn trực tuyến; Chuyên gia quốc tế; Tổ chức Y tế Thế giới; Kết nối trực tuyến"
+    ],
+    "asr": [
+      "trả lời phỏng vấn qua video call; phỏng vấn trực tuyến qua màn hình; trả lời phỏng vấn từ xa",
+      "xin kết nối với chuyên gia nước ngoài; cảm ơn ông đã tham gia phỏng vấn; chúng tôi đang kết nối trực tuyến; xin ông cho biết ý kiến"
+    ]
+  },
+  {
+    "query_id": "query-kis-0043",
+    "ocr": [
+      "chợ; bến xe",
+      "bản tin thời sự; trực tiếp hiện trường đêm; chợ đêm; bến xe khách"
+    ],
+    "asr": [
+      "đám đông đội mũ bảo hiểm đeo khẩu trang đứng chen chúc ban đêm; đang chờ đợi ở khu chợ bến xe",
+      "người dân tập trung rất đông trong đêm; mọi người vẫn đang chờ đợi ở đây; ghi nhận tình hình chen lấn tại chợ và bến xe"
+    ]
+  },
+  {
+    "query_id": "query-kis-0044",
+    "ocr": [
+      "lễ hội sầu riêng; sầu riêng; hội chợ trái cây",
+      "ngày hội nông sản; bản tin nông nghiệp; lễ hội trái cây Việt Nam"
+    ],
+    "asr": [
+      "lễ hội sầu riêng; đang cầm quả sầu riêng lớn giới thiệu; trái sầu riêng rất to",
+      "kính thưa bà con; đặc sản địa phương; giống sầu riêng ngon; mời quý vị cùng chiêm ngưỡng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0045",
+    "ocr": [
+      "sầu riêng",
+      "Đại đức; Thượng tọa; Nhà chùa; Đặc sản trái cây; Nông sản"
+    ],
+    "asr": [
+      "thầy cầm quả sầu riêng; giới thiệu quả sầu riêng lớn; quả sầu riêng này",
+      "kính thưa quý vị; hôm nay xin giới thiệu; mời mọi người cùng xem; trái cây đặc sản"
+    ]
+  },
+  {
+    "query_id": "query-kis-0046",
+    "ocr": [
+      "áo mưa; xe máy; trời mưa; ban đêm",
+      "dự báo thời tiết; bản tin giao thông; cảnh báo mưa đêm"
+    ],
+    "asr": [
+      "nhóm người mặc áo mưa ngồi trên xe máy; trời mưa vào ban đêm; đang đi xe dưới mưa",
+      "mưa lớn kéo dài; đường trơn trượt đi lại khó khăn; mọi người cần chú ý an toàn giao thông"
+    ]
+  },
+  {
+    "query_id": "query-kis-0047",
+    "ocr": [
+      "khúc sông; núi đá; đường mòn; bờ sông",
+      "Toàn cảnh flycam; Thiên nhiên hùng vĩ; Khám phá Việt Nam; Du lịch sinh thái"
+    ],
+    "asr": [
+      "khúc sông giữa vùng núi đá; đường mòn chạy dọc bờ sông; cảnh quay từ trên cao nhìn xuống",
+      "dòng sông uốn lượn giữa núi đá; nhìn từ trên cao toàn cảnh thiên nhiên; con đường mòn ven sông quanh co"
+    ]
+  },
+  {
+    "query_id": "query-kis-0048",
+    "ocr": [
+      "trạm kiểm soát; rào chắn",
+      "chốt kiểm soát; kiểm tra phương tiện; khu vực kiểm soát; dừng xe kiểm tra"
+    ],
+    "asr": [
+      "xe tải nhỏ màu trắng dừng ở trạm kiểm soát; khu vực có rào chắn màu vàng",
+      "yêu cầu dừng phương tiện để kiểm tra; xuất trình giấy tờ; đang làm nhiệm vụ tại chốt kiểm soát"
+    ]
+  },
+  {
+    "query_id": "query-kis-0049",
+    "ocr": [
+      "tuyển dụng; ngày hội việc làm; gian hàng tuyển dụng",
+      "Trung tâm Dịch vụ việc làm; Ngày hội tư vấn hướng nghiệp; Kết nối cung cầu lao động"
+    ],
+    "asr": [
+      "ngày hội việc làm; gian hàng tuyển dụng treo băng rôn; ứng viên ngồi trao đổi tại bàn",
+      "nhà tuyển dụng tư vấn trực tiếp cho ứng viên; cơ hội tìm kiếm việc làm cho sinh viên; mời các bạn đến tham quan các gian hàng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0050",
+    "ocr": [
+      "hồ bơi; phao bơi; khu vui chơi trẻ em",
+      "lớp học bơi cho trẻ em; hoạt động hè thiếu nhi; phòng chống đuối nước"
+    ],
+    "asr": [
+      "trẻ em đang bơi; vui chơi trong hồ bơi; nhiều phao màu sắc",
+      "các bé rất vui vẻ hào hứng; không khí sôi động ở hồ bơi; cho trẻ làm quen với nước"
+    ]
+  },
+  {
+    "query_id": "query-kis-0051",
+    "ocr": [
+      "chụp cắt lớp; CT Scanner; thiết bị y tế",
+      "Khoa Chẩn đoán hình ảnh; Bệnh viện; Thiết bị y tế hiện đại; Công nghệ y học"
+    ],
+    "asr": [
+      "máy chụp cắt lớp hình trụ lớn màu bạc; thiết bị y tế chụp CT; phòng có ánh sáng hồng",
+      "trang thiết bị y tế hiện đại; công nghệ chẩn đoán hình ảnh tiên tiến; phục vụ khám chữa bệnh; đầu tư máy móc mới cho bệnh viện"
+    ]
+  },
+  {
+    "query_id": "query-kis-0052",
+    "ocr": [
+      "phòng thờ; ảnh treo tường",
+      "khu di tích; nhà tưởng niệm; phòng thờ Bác Hồ"
+    ],
+    "asr": [
+      "vài phụ nữ mặc áo dài trắng đứng trong phòng thờ; căn phòng có nhiều ảnh treo tường",
+      "dâng hương tưởng niệm; tham quan di tích; đến thăm phòng thờ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0053",
+    "ocr": [
+      "IELTS Test Report Form",
+      "British Council; IDP; TRF; Phiếu báo điểm"
+    ],
+    "asr": [
+      "tờ đơn đăng ký IELTS Test Report Form; giấy báo điểm IELTS đặt trên bàn",
+      "kết quả thi IELTS; điểm thi IELTS; chứng chỉ IELTS"
+    ]
+  },
+  {
+    "query_id": "query-kis-0054",
+    "ocr": [
+      "phiên tòa; xét xử; bị cáo",
+      "Tòa án nhân dân; Hội đồng xét xử; Viện kiểm sát nhân dân; Xét xử sơ thẩm"
+    ],
+    "asr": [
+      "phiên tòa xét xử; bị cáo đứng giữa bục; cán bộ mặc quân phục xanh đứng nghiêm",
+      "kính thưa hội đồng xét xử; đại diện viện kiểm sát luận tội; bị cáo nói lời sau cùng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0055",
+    "ocr": [
+      "công trường xây dựng; khung thép; bê tông cốt thép",
+      "công trình đang thi công; tiến độ thi công; an toàn lao động; dự án xây dựng"
+    ],
+    "asr": [
+      "công trường xây dựng; khung thép và cốt bê tông đang thi công dở dang; công nhân đang làm việc",
+      "tiến độ thi công công trình; công nhân thi công tại công trường; đẩy nhanh tiến độ xây dựng; đảm bảo an toàn lao động"
+    ]
+  },
+  {
+    "query_id": "query-kis-0056",
+    "ocr": [
+      "triển lãm; khu công nghiệp; KCN; khu chế xuất",
+      "Ban quản lý KCN; Cổng KCN; Triển lãm quốc tế; Khu công nghiệp Việt Nam"
+    ],
+    "asr": [
+      "khu nhà xưởng có hàng rào xanh; phía trước có bảng hiệu triển lãm; bảng hiệu khu công nghiệp",
+      "đây là hình ảnh khu nhà xưởng; phía trước cổng khu công nghiệp; khu vực tổ chức triển lãm; giới thiệu về khu công nghiệp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0057",
+    "ocr": [
+      "trao quà; thăm hỏi; tặng quà; chụp ảnh lưu niệm",
+      "Hội Người cao tuổi; Mặt trận Tổ quốc; UBND; chương trình thiện nguyện; hoạt động an sinh xã hội"
+    ],
+    "asr": [
+      "chụp ảnh lưu niệm cùng nhau; buổi trao quà cho người lớn tuổi; thăm hỏi người cao tuổi",
+      "chăm lo đời sống người cao tuổi; kính chúc các cụ sức khỏe; hoạt động tri ân ý nghĩa; quan tâm người già neo đơn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0058",
+    "ocr": [
+      "pixel art; nghệ thuật đường phố",
+      "tranh tường nghệ thuật; không gian đô thị; tác phẩm đường phố"
+    ],
+    "asr": [
+      "bức tường gạch có khối màu xám xanh; mảng vuông xếp kiểu pixel; nghệ thuật đường phố kiểu pixel",
+      "tác phẩm tranh tường độc đáo; họa tiết hình khối trên tường gạch; phong cách nghệ thuật đô thị"
+    ]
+  },
+  {
+    "query_id": "query-kis-0059",
+    "ocr": [
+      "pixel; 8-bit; tranh tường gạch",
+      "nghệ thuật đường phố; tác phẩm graffiti; không gian đô thị"
+    ],
+    "asr": [
+      "tranh pixel trên tường gạch; nhân vật game cổ điển phong cách 8-bit; nghệ thuật đường phố pixel art",
+      "giới thiệu tác phẩm đường phố độc đáo; lấy cảm hứng từ trò chơi điện tử cổ điển; sáng tạo nghệ thuật trên tường gạch"
+    ]
+  },
+  {
+    "query_id": "query-kis-0060",
+    "ocr": [
+      "rau xanh; luống rau; rau sạch",
+      "mô hình rau an toàn; kỹ thuật trồng rau; HTX nông nghiệp; khuyến nông"
+    ],
+    "asr": [
+      "luống rau xanh mướt; trồng thành hàng; cận cảnh lá rau còn đọng nước",
+      "rau phát triển xanh tốt; chăm sóc và tưới nước cho rau; mô hình trồng rau sạch cho năng suất cao"
+    ]
+  },
+  {
+    "query_id": "query-kis-0061",
+    "ocr": [
+      "biển báo giao thông; biển số xe; tên đường",
+      "Bản tin giao thông; An toàn giao thông; Nhịp sống đô thị"
+    ],
+    "asr": [
+      "vài chiếc xe máy đang chạy trên đường; con đường có hàng cây xanh rợp bóng mát hai bên",
+      "tình hình giao thông trên đường; lưu thông bằng xe máy dưới hàng cây xanh; tuyến đường rợp bóng mát"
+    ]
+  },
+  {
+    "query_id": "query-kis-0062",
+    "ocr": [
+      "cháy nhà kho; công nhân tháo chạy; lực lượng cứu hộ; xe cứu hỏa",
+      "hiện trường vụ cháy; cảnh sát PCCC và CNCH; tin nóng; thời sự"
+    ],
+    "asr": [
+      "khói lửa bốc lên mù mịt trên khu đất trống; lực lượng cứu hộ và xe cứu hỏa đứng gần đó; vụ cháy nhà kho khiến công nhân tháo chạy",
+      "đám cháy bùng phát dữ dội; công nhân hoảng loạn bỏ chạy khỏi hiện trường; lực lượng chức năng đang khống chế ngọn lửa; khói bao trùm cả khu vực"
+    ]
+  },
+  {
+    "query_id": "query-kis-0063",
+    "ocr": [
+      "ngập nước; đường ngập; nước ngập ngang bánh xe",
+      "bản tin thời sự; tin ngập lụt đô thị; cảnh báo triều cường; mưa lớn gây ngập"
+    ],
+    "asr": [
+      "đoạn đường bị ngập nước; đi xe máy lội qua nước ngập; nước ngập ngang bánh xe",
+      "mưa lớn gây ngập úng; nhiều tuyến đường ngập sâu; đi lại khó khăn do ngập; giao thông ùn tắc vì nước ngập"
+    ]
+  },
+  {
+    "query_id": "query-kis-0064",
+    "ocr": [
+      "ngập lụt; khu đô thị ngập nước; ngập nước",
+      "Thời sự; Tin lũ lụt; Cảnh báo thiên tai; Khu dân cư ngập sâu"
+    ],
+    "asr": [
+      "toàn cảnh khu đô thị bị ngập nước nhìn từ trên cao; mái nhà nhô lên giữa biển nước mênh mông",
+      "nước lũ dâng cao nhấn chìm nhà cửa; mưa lớn gây ngập diện rộng; thiệt hại do ngập lụt; mực nước vẫn đang dâng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0065",
+    "ocr": [
+      "bãi rác; rác thải; bãi chôn lấp",
+      "ô nhiễm môi trường; vấn đề rác thải; phóng sự môi trường"
+    ],
+    "asr": [
+      "bãi rác khổng lồ chất cao như núi; chim bay lượn phía trên bãi rác",
+      "bãi rác quá tải gây ô nhiễm; rác thải ùn ứ chất đống; ảnh hưởng môi trường sống xung quanh"
+    ]
+  },
+  {
+    "query_id": "query-kis-0066",
+    "ocr": [
+      "cứu hộ; diễn tập; quân sự",
+      "Quân đội nhân dân Việt Nam; Bộ Quốc phòng; diễn tập cứu hộ cứu nạn; diễn tập phòng chống thiên tai"
+    ],
+    "asr": [
+      "đoàn xe quân sự màu xanh lá; binh sĩ đứng cạnh xe; đang tham gia cứu hộ diễn tập",
+      "lực lượng quân đội tham gia hỗ trợ; công tác cứu hộ cứu nạn; sẵn sàng ứng phó sự cố thiên tai; triển khai phương án diễn tập"
+    ]
+  },
+  {
+    "query_id": "query-kis-0067",
+    "ocr": [
+      "ngập nước; ngập lụt; đường ngập",
+      "tin thời sự; cảnh báo ngập lụt; giao thông tê liệt; hiện trường ngập sâu"
+    ],
+    "asr": [
+      "đường ngập nước; nhiều ô tô ngập chỉ còn nhô nóc; nước ngập sâu",
+      "mưa lớn gây ngập nặng; nước dâng cao làm ngập đường; giao thông ùn tắc do ngập; người dân khó khăn di chuyển trong nước lũ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0068",
+    "ocr": [
+      "cứu hộ; cứu nạn; đồ bảo hộ",
+      "Hiện trường cứu hộ; Lực lượng cứu nạn cứu hộ; Tin tức thời sự"
+    ],
+    "asr": [
+      "lực lượng cứu hộ khiêng túi đựng thi thể màu trắng; mặc đồ bảo hộ khiêng thi thể",
+      "đã tìm thấy thi thể nạn nhân; đang đưa thi thể ra khỏi hiện trường; công tác cứu hộ đang được triển khai"
+    ]
+  },
+  {
+    "query_id": "query-kis-0069",
+    "ocr": [
+      "vật tư y tế; phỏng vấn",
+      "Họ và tên; Chức danh; Bệnh viện; Sở Y tế; Bản tin Y tế"
+    ],
+    "asr": [
+      "trả lời phỏng vấn; chia sẻ về vật tư y tế; trong văn phòng có kệ vật tư phía sau",
+      "thưa chị có thể cho biết thêm; tình hình cung ứng vật tư hiện nay; công tác chuẩn bị trang thiết bị y tế; ghi nhận tại đơn vị"
+    ]
+  },
+  {
+    "query_id": "query-kis-0070",
+    "ocr": [
+      "CẤM VÀO; KHU VỰC PHONG TỎA; KHU VỰC CÁCH LY; CHỐT KIỂM SOÁT; KHÔNG PHẬN SỰ MIỄN VÀO",
+      "khu vực phong tỏa tạm thời; chốt kiểm soát y tế; cách ly y tế; UBND phường; bản tin thời sự"
+    ],
+    "asr": [
+      "khu vực phong tỏa; chốt kiểm soát; căng dây chắn lối vào; biển cấm màu vàng không cho vào",
+      "con phố bị phong tỏa; người dân không được ra vào; lực lượng chức năng lập chốt chặn; yêu cầu ở yên trong nhà"
+    ]
+  },
+  {
+    "query_id": "query-kis-0071",
+    "ocr": [
+      "ngập lụt; nước lũ; ngập sâu",
+      "Thời sự; Tin lũ khẩn cấp; Hiện trường ngập lụt; Cảnh báo thiên tai"
+    ],
+    "asr": [
+      "khu phố ngập trong nước lũ; nhiều nhà chỉ còn thấy mái; nước lũ ngập đến nóc nhà",
+      "mực nước dâng cao; người dân phải sơ tán; thiệt hại do mưa lũ; ngập nặng nhiều ngày qua"
+    ]
+  },
+  {
+    "query_id": "query-kis-0072",
+    "ocr": [
+      "tàu chở hàng; cảng",
+      "Cảng biển; Vận tải hàng hải; Bản tin kinh tế - logistics"
+    ],
+    "asr": [
+      "tàu chở hàng lớn màu xanh đang neo đậu gần cảng; mặt nước phẳng lặng",
+      "hình ảnh tại cảng biển; tàu hàng neo đậu chờ bốc dỡ; hoạt động vận tải đường biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0073",
+    "ocr": [
+      "hiện trường đổ nát; gạch vụn; đồ đạc vương vãi",
+      "hiện trường vụ việc; thiệt hại sau sự cố; khu vực phong tỏa; tin nóng hiện trường"
+    ],
+    "asr": [
+      "hiện trường đổ nát; gạch vụn vương vãi trên mặt đường; đồ đạc ngổn ngang sau vụ việc",
+      "chúng tôi đang có mặt tại hiện trường; ghi nhận mức độ thiệt hại; lực lượng chức năng phong tỏa khu vực; người dân kể lại diễn biến vụ việc"
+    ]
+  },
+  {
+    "query_id": "query-kis-0074",
+    "ocr": [
+      "mặt biển; sóng trắng xóa; đại dương",
+      "Dự báo thời tiết biển; Thời tiết biển đảo; Hình ảnh flycam"
+    ],
+    "asr": [
+      "mặt biển nhìn từ trên cao; những đợt sóng trắng xóa nối tiếp nhau",
+      "sóng biển cuồn cuộn; biển động sóng lớn; quan sát từ trên cao bằng flycam"
+    ]
+  },
+  {
+    "query_id": "query-kis-0075",
+    "ocr": [
+      "55%; 55 percent",
+      "tỷ lệ thu gom rác thải; thống kê xử lý rác; vệ sinh môi trường đô thị; bản tin môi trường"
+    ],
+    "asr": [
+      "xe tải màu xanh chở rác đang hoạt động trên đường; xe thu gom rác màu xanh đang chạy trên đường",
+      "tỷ lệ thu gom đạt năm mươi lăm phần trăm; công tác xử lý rác thải đô thị; hiệu quả vệ sinh môi trường"
+    ]
+  },
+  {
+    "query_id": "query-kis-0076",
+    "ocr": [
+      "chợ; bảng giá; bán sỉ lẻ; tạp hóa; biển hiệu sạp hàng",
+      "chợ truyền thống; bản tin thị trường; phóng sự đời sống; khu chợ dân sinh"
+    ],
+    "asr": [
+      "khu chợ đông đúc; nhiều xe máy đậu san sát nhau; hàng hóa bày bán hai bên đường hẹp",
+      "bà con đi chợ tấp nập; buôn bán nhộn nhịp; chen chúc kẹt xe trong chợ; đời sống chợ truyền thống"
+    ]
+  },
+  {
+    "query_id": "query-kis-0077",
+    "ocr": [
+      "đường ống; dây cáp; đáy biển; cáp ngầm",
+      "Cáp quang biển; Công trình dưới đáy biển; Khám phá đại dương"
+    ],
+    "asr": [
+      "đường ống chằng chịt dưới đáy biển; dây cáp chằng chịt dưới đáy biển; hình ảnh dưới nước ở đáy biển",
+      "hệ thống cáp quang biển; thi công lắp đặt dưới biển; tuyến cáp ngầm dưới đại dương"
+    ]
+  },
+  {
+    "query_id": "query-kis-0078",
+    "ocr": [
+      "bóng bay; trẻ em; vui chơi ngoài trời",
+      "Ngày hội Thiếu nhi; Hoạt động ngoài trời; Chương trình thiếu nhi"
+    ],
+    "asr": [
+      "nhóm trẻ em cầm bóng bay; bóng bay nhiều màu sắc; vui đùa ngoài trời",
+      "tuổi thơ hồn nhiên; tiếng cười trẻ thơ; niềm vui của các bé"
+    ]
+  },
+  {
+    "query_id": "query-kis-0079",
+    "ocr": [
+      "chuồng heo; trang trại chăn nuôi",
+      "mô hình chăn nuôi; trang trại chăn nuôi heo; nông nghiệp nông thôn"
+    ],
+    "asr": [
+      "nhiều con heo đứng trong chuồng; chuồng trại lót nền xi măng; trang trại chăn nuôi heo",
+      "quy mô chăn nuôi; kỹ thuật nuôi heo; vệ sinh chuồng trại; hiệu quả kinh tế từ chăn nuôi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0080",
+    "ocr": [
+      "nhà hư hại; tường bong tróc; cây mọc trong nhà",
+      "nhà bỏ hoang; hiện trạng xuống cấp; công trình hư hại; thiên nhiên xâm lấn"
+    ],
+    "asr": [
+      "bên trong căn nhà bị hư hại; cây xanh mọc lấn vào nhà; tường bong tróc",
+      "ngôi nhà bỏ hoang lâu năm; cây cối mọc um tùm xâm chiếm bên trong; công trình xuống cấp nghiêm trọng; tường nhà bong tróc hư hỏng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0081",
+    "ocr": [
+      "lâu đài cổ; lâu đài châu Âu",
+      "Di tích lịch sử; Kiến trúc châu Âu; Du lịch khám phá"
+    ],
+    "asr": [
+      "tòa lâu đài cổ kiểu châu Âu; lâu đài có tháp nhọn; xây bằng đá xám",
+      "kiến trúc cổ điển châu Âu; lâu đài đá trung cổ; công trình lịch sử châu Âu"
+    ]
+  },
+  {
+    "query_id": "query-kis-0082",
+    "ocr": [
+      "khám nghiệm hiện trường; cảnh sát; hiện trường vụ cháy",
+      "CÔNG AN; AN NINH 24H; BẢN TIN 113; PHONG TỎA HIỆN TRƯỜNG"
+    ],
+    "asr": [
+      "xe cháy trơ khung sắt; xe bị cháy chỉ còn khung; cảnh sát khám nghiệm hiện trường",
+      "lực lượng chức năng phong tỏa hiện trường; nguyên nhân vụ cháy đang được điều tra; cơ quan công an đang làm rõ vụ việc"
+    ]
+  },
+  {
+    "query_id": "query-kis-0083",
+    "ocr": [
+      "công trường cầu; thi công cầu; trụ bê tông",
+      "Công trình trọng điểm; Dự án cầu vượt sông; Ban quản lý dự án; Tiến độ thi công"
+    ],
+    "asr": [
+      "công trường xây cầu bắc qua sông; cần cẩu lớn đang thi công; trụ bê tông đang thi công",
+      "tiến độ thi công cây cầu; dự án kết nối giao thông hai bờ sông; đơn vị thi công đang khẩn trương làm việc; đẩy nhanh tiến độ hoàn thành"
+    ]
+  },
+  {
+    "query_id": "query-kis-0084",
+    "ocr": [
+      "ruộng đồng; thửa đất; vân sóng",
+      "toàn cảnh từ trên cao; flycam nông nghiệp; chuyên mục nông nghiệp xanh"
+    ],
+    "asr": [
+      "ruộng đồng nhìn từ trên cao; các thửa đất trồng cây xếp thành hình vân sóng màu xanh",
+      "toàn cảnh cánh đồng xanh mướt trải dài; những luống cây uốn lượn như gợn sóng nhìn từ flycam; khung cảnh ruộng đồng được quy hoạch đẹp mắt"
+    ]
+  },
+  {
+    "query_id": "query-kis-0085",
+    "ocr": [
+      "phòng học; lớp học",
+      "giáo dục; cơ sở vật chất; trường học; năm học mới"
+    ],
+    "asr": [
+      "phòng học trống; dãy bàn ghế xếp ngay ngắn; không có học sinh",
+      "lớp học vắng học sinh; trường lớp chuẩn bị đón năm học mới; phòng học được sắp xếp gọn gàng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0086",
+    "ocr": [
+      "đổ vỡ; ngổn ngang; hiện trường",
+      "thời sự; hiện trường vụ việc; thiệt hại tài sản; khu vực xảy ra sự cố"
+    ],
+    "asr": [
+      "đồ đạc đổ vỡ ngổn ngang; ghế và vật dụng nằm lăn lóc trên sàn; sau sự cố trong nhà",
+      "hiện trường tan hoang; thiệt hại nặng về tài sản; ghi nhận tại hiện trường; mức độ hư hại bên trong căn nhà"
+    ]
+  },
+  {
+    "query_id": "query-kis-0087",
+    "ocr": [
+      "ngập nước; đường ngập",
+      "Thời sự; Tin tức 24h; Cảnh báo ngập lụt; Giao thông"
+    ],
+    "asr": [
+      "đường bị ngập nước vào ban đêm; xe tải đang chạy tạo vệt sóng nước lớn hai bên",
+      "mưa lớn gây ngập úng; nước ngập sâu khiến giao thông khó khăn; phương tiện di chuyển trong đêm mưa ngập"
+    ]
+  },
+  {
+    "query_id": "query-kis-0088",
+    "ocr": [
+      "sà lan; chở hàng; vận tải đường sông",
+      "Toàn cảnh từ trên cao; Giao thông đường thủy; Vận tải thủy nội địa"
+    ],
+    "asr": [
+      "nhìn từ trên cao dòng sông có nhiều sà lan chở hàng đang di chuyển; nhiều sà lan chở hàng đang chạy trên sông",
+      "vận tải hàng hóa bằng đường thủy; giao thông đường sông tấp nập; những đoàn sà lan nối đuôi nhau trên sông"
+    ]
+  },
+  {
+    "query_id": "query-kis-0089",
+    "ocr": [
+      "thời trang; gian hàng; sự kiện",
+      "triển lãm thời trang; gian hàng trưng bày; khu vực triển lãm; lễ hội thời trang"
+    ],
+    "asr": [
+      "hai người phụ nữ mặc trang phục thời trang; đứng tại gian hàng sự kiện; một người đội mũ đen",
+      "tham quan triển lãm; giới thiệu gian hàng; bộ sưu tập thời trang mới; không khí tại khu vực sự kiện"
+    ]
+  },
+  {
+    "query_id": "query-kis-0090",
+    "ocr": [
+      "ngập nước; ruộng nước; cánh đồng ngập",
+      "bản tin thời sự; tin lũ lụt; cảnh báo ngập úng; phóng sự nông nghiệp"
+    ],
+    "asr": [
+      "cánh đồng ngập nước; đang lội giữa ruộng nước mênh mông; lội giữa đồng nước",
+      "nước dâng cao ngập trắng đồng; ruộng đồng chìm trong nước; đi lại khó khăn do ngập; mưa lớn gây ngập úng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0091",
+    "ocr": [
+      "làm mờ khuôn mặt; bảo mật danh tính; che mặt",
+      "nhân vật ẩn danh; phỏng vấn giấu mặt; bảo vệ danh tính nhân chứng; danh tính đã được thay đổi"
+    ],
+    "asr": [
+      "hai người ngồi cạnh nhau; khuôn mặt được làm mờ; bảo mật danh tính; che mặt để bảo vệ",
+      "vì lý do bảo mật chúng tôi đã làm mờ khuôn mặt; danh tính nhân vật được giữ kín; xin phép giấu tên nhân vật; để bảo vệ an toàn cho người được phỏng vấn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0092",
+    "ocr": [
+      "kẹt xe; ùn tắc giao thông; ùn tắc trên cầu",
+      "Bản tin giao thông; Giao thông giờ cao điểm; Truyền hình giao thông; Cầu lớn nhìn từ trên cao"
+    ],
+    "asr": [
+      "kẹt xe kéo dài; hàng dài ô tô nối đuôi nhau; ùn tắc trên cây cầu lớn nhìn từ trên cao",
+      "giao thông ùn tắc nghiêm trọng; các phương tiện di chuyển rất chậm; mật độ xe đông đúc trên cầu; giờ cao điểm kẹt cứng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0093",
+    "ocr": [
+      "phòng khám; khoa nhi; y tế",
+      "bác sĩ nhi khoa; khám sức khỏe trẻ em; bệnh viện; chăm sóc y tế"
+    ],
+    "asr": [
+      "đang khám cho bé gái; khám bệnh cho cháu bé; nhân viên y tế đang khám",
+      "tình trạng sức khỏe của cháu bé; theo dõi sức khỏe trẻ em; công tác chăm sóc y tế tại phòng khám"
+    ]
+  },
+  {
+    "query_id": "query-kis-0094",
+    "ocr": [
+      "hố sụt; sụt lún; ống nước",
+      "cảnh báo nguy hiểm; cấm đường; hiện trường sụt lún; an toàn giao thông"
+    ],
+    "asr": [
+      "hố sụt lớn trên mặt đường nhựa; lộ ra đất đá và ống nước bên dưới",
+      "mặt đường bị sụt lún nghiêm trọng; nguy cơ mất an toàn cho người đi đường; cơ quan chức năng phong tỏa hiện trường; đang khắc phục sự cố"
+    ]
+  },
+  {
+    "query_id": "query-kis-0095",
+    "ocr": [
+      "đua xe đạp; vạch sơn xanh; đại lộ",
+      "Truyền hình trực tiếp; Góc quay flycam; Thể thao; Giải đua xe đạp"
+    ],
+    "asr": [
+      "đoàn đua xe đạp thể thao; quay từ flycam trên cao; chạy trên đại lộ có vạch sơn xanh giữa đường",
+      "đoàn đua đang tăng tốc bám sát nhau; cuộc đua diễn ra trên đại lộ rộng; hình ảnh ghi lại từ trên cao rất ấn tượng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0096",
+    "ocr": [
+      "tốc độ; km/h; vòng đua; LAP; SPEED",
+      "Giải đua xe đạp; Cúp Truyền hình; Trực tiếp; Chặng đua; Bảng tổng sắp"
+    ],
+    "asr": [
+      "đoàn đua xe đạp đang chạy giữa hai hàng cây xanh; góc quay flycam từ trên cao; bảng thông số tốc độ và vòng đua",
+      "tốc độ trung bình của đoàn đua; vòng đua hiện tại; các tay đua đang tăng tốc bám đuổi; khoảng cách với tốp đầu"
+    ]
+  },
+  {
+    "query_id": "query-kis-0097",
+    "ocr": [
+      "CSGT; Cảnh sát giao thông; đua xe đạp",
+      "Truyền hình trực tiếp; Giải đua xe đạp; Bảo đảm an ninh trật tự; An toàn giao thông"
+    ],
+    "asr": [
+      "cảnh sát giao thông hộ tống dẫn đoàn bằng mô tô; đoàn đua xe đạp di chuyển trên đường lớn; nhìn từ trên cao",
+      "đoàn đua đang được dẫn đường đảm bảo an toàn; lực lượng chức năng phân luồng giao thông cho cuộc đua; các vận động viên đang bám theo xe dẫn đoàn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0098",
+    "ocr": [
+      "đua xe đạp; cầu hồng; đổ dốc",
+      "Truyền hình trực tiếp; Chặng đua; Toàn cảnh flycam; Giải xe đạp"
+    ],
+    "asr": [
+      "đoàn đua xe đạp đang đổ dốc; đang chạy trên cây cầu màu hồng; góc quay từ flycam trên cao",
+      "các tay đua đang tăng tốc khi xuống dốc; đoàn đông bám sát nhau thành hàng dài; tốc độ rất cao; hình ảnh toàn cảnh nhìn từ trên cao rất đẹp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0099",
+    "ocr": [
+      "đua xe đạp; chợ",
+      "Giải xe đạp Cúp Truyền hình; Trực tiếp; VTV Thể thao; Chặng đua"
+    ],
+    "asr": [
+      "đoàn đua xe đạp chạy ngang qua chợ; đoàn đua đi qua khu chợ có mái che sặc sỡ hai bên đường",
+      "đoàn đua đang tiến vào khu dân cư đông đúc; bà con đứng hai bên đường cổ vũ; hình ảnh được ghi từ flycam trên cao"
+    ]
+  },
+  {
+    "query_id": "query-kis-0100",
+    "ocr": [
+      "đua xe đạp; đoàn đua xe đạp",
+      "Truyền hình trực tiếp; Giải xe đạp; chặng đua thành phố"
+    ],
+    "asr": [
+      "đoàn đua xe đạp đông đảo chạy sát nhau; đoàn đua trên đại lộ rộng giữa các tòa nhà cao tầng; nhìn từ trên cao",
+      "cuộc đua đang diễn ra quyết liệt; các tay đua đang bám sát nhau tăng tốc; đoàn đông đang di chuyển qua khu trung tâm thành phố; bình luận viên tường thuật diễn biến chặng đua"
+    ]
+  },
+  {
+    "query_id": "query-kis-0101",
+    "ocr": [
+      "đua xe đạp; xe đạp đua",
+      "Giải đua xe đạp; Trực tiếp; Cúp Truyền hình; Chặng đua"
+    ],
+    "asr": [
+      "hàng dài tay đua xe đạp nối đuôi nhau; đoàn xe đạp chạy trên đường vắng có hàng cây hai bên",
+      "đoàn đua đang di chuyển; các vận động viên bám sát nhau; cuộc đua đang diễn ra rất quyết liệt"
+    ]
+  },
+  {
+    "query_id": "query-kis-0102",
+    "ocr": [
+      "giải đua xe đạp; đua xe đạp",
+      "trực tiếp; toàn cảnh flycam; chặng đua; góc nhìn từ trên cao"
+    ],
+    "asr": [
+      "toàn cảnh khu phố đông đúc nhìn từ trên cao; ngày diễn ra giải đua xe đạp",
+      "bà con tập trung đông kín hai bên đường cổ vũ; không khí lễ hội rất náo nhiệt; đoàn đua đang đi qua khu phố; rất đông khán giả đổ ra đường"
+    ]
+  },
+  {
+    "query_id": "query-kis-0103",
+    "ocr": [
+      "băng rôn; cờ; khẩu hiệu cổ vũ",
+      "Trực tiếp đường đua; Giải đua xe; Cổ vũ giải đấu; Lễ hội thể thao"
+    ],
+    "asr": [
+      "đám đông cầm cờ và băng rôn; cổ vũ hai bên đường đua; khán giả reo hò hai bên đường",
+      "không khí sôi động trên đường đua; khán giả đứng chật kín hai bên đường; đoàn đua sắp đi qua"
+    ]
+  },
+  {
+    "query_id": "query-kis-0104",
+    "ocr": [
+      "Phương pháp điện phân",
+      "Bài giảng Hóa học; Hóa học 12; Minh họa thí nghiệm; Phòng thí nghiệm"
+    ],
+    "asr": [
+      "phương pháp điện phân; cốc thủy tinh đặt trên cân điện tử trong phòng thí nghiệm",
+      "bây giờ chúng ta sẽ tìm hiểu về điện phân; quan sát hình ảnh minh họa thí nghiệm; cân khối lượng dung dịch trước và sau phản ứng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0105",
+    "ocr": [
+      "Nhóm chất thuộc loại",
+      "Câu hỏi trắc nghiệm; Môn Hóa học; Bài giảng; Giáo viên; Đáp án A; Đáp án B; Đáp án C; Đáp án D"
+    ],
+    "asr": [
+      "Nhóm chất thuộc loại; câu hỏi trắc nghiệm; bảng câu hỏi nhiều màu sắc kiểu trò chơi truyền hình",
+      "các em hãy nhìn lên slide; chúng ta cùng đến với câu hỏi tiếp theo; các em chọn đáp án đúng; thời gian suy nghĩ bắt đầu"
+    ]
+  },
+  {
+    "query_id": "query-kis-0106",
+    "ocr": [
+      "GELATINE 2g + NƯỚC 10g; GELATINE; NƯỚC 10g; 2g",
+      "Nguyên liệu; Công thức; Hướng dẫn làm bánh; Định lượng nguyên liệu"
+    ],
+    "asr": [
+      "rót nước vào bột gelatin màu trắng; gelatin 2 gam cộng nước 10 gam; cho 10 gam nước vào 2 gam gelatin",
+      "ngâm gelatin cho nở; để gelatin ngậm nước vài phút; khuấy đều cho gelatin tan"
+    ]
+  },
+  {
+    "query_id": "query-kis-0107",
+    "ocr": [
+      "KEM BÉO; 200g",
+      "hướng dẫn làm bánh; công thức kem béo; nguyên liệu làm bánh"
+    ],
+    "asr": [
+      "đang khuấy kem béo; khuấy đều hỗn hợp kem trắng trong khuôn tròn kim loại",
+      "khuấy đều tay cho kem mịn; trộn đều hỗn hợp; bây giờ đổ vào khuôn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0108",
+    "ocr": [
+      "gia vị",
+      "hướng dẫn nấu ăn; món ngon mỗi ngày; cách ướp cá; ẩm thực Việt Nam"
+    ],
+    "asr": [
+      "cầm con cá tươi trên tay; gói gia vị màu xanh lá bên cạnh; bàn tay cầm cá tươi",
+      "cách ướp cá cho thấm gia vị; chuẩn bị nguyên liệu nấu ăn; nêm nếm vừa ăn; sơ chế cá tươi trước khi nấu"
+    ]
+  },
+  {
+    "query_id": "query-kis-0109",
+    "ocr": [
+      "mực sữa; đậu Hà Lan; ớt sừng; khối lượng; g; gram; kg",
+      "nguyên liệu; định lượng nguyên liệu; công thức; hướng dẫn chế biến; món ngon"
+    ],
+    "asr": [
+      "nguyên liệu gồm mực sữa, đậu Hà Lan và ớt sừng; khối lượng từng loại; chuẩn bị nguyên liệu nấu ăn",
+      "hôm nay chúng ta sẽ vào bếp; các bạn chuẩn bị giúp mình; chúng ta cần chuẩn bị những gì; bây giờ mình sẽ hướng dẫn cách làm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0110",
+    "ocr": [
+      "bột ngọt; gia vị",
+      "vào bếp; hướng dẫn nấu ăn; mẹo nấu ăn ngon"
+    ],
+    "asr": [
+      "múc bột ngọt cho vào bát; cho một thìa bột ngọt vào bát; thêm bột ngọt",
+      "nêm nếm cho vừa ăn; nêm gia vị; cho thêm một chút nữa"
+    ]
+  },
+  {
+    "query_id": "query-kis-0111",
+    "ocr": [
+      "NƯỚC NÓNG 240ml; NƯỚC NÓNG; 240ml",
+      "hướng dẫn pha trà sữa; công thức pha chế; trà sữa hòa tan"
+    ],
+    "asr": [
+      "rót nước nóng vào ly; đổ 240ml nước nóng vào bột trà sữa; cho nước nóng vào ly nhựa",
+      "bây giờ cho nước sôi vào khuấy đều; hòa tan bột trà sữa với nước nóng; khuấy cho tan hết bột"
+    ]
+  },
+  {
+    "query_id": "query-kis-0112",
+    "ocr": [
+      "xoài; sinh tố xoài; máy xay sinh tố",
+      "Cách làm sinh tố xoài; Món ngon mỗi ngày; Hướng dẫn pha chế"
+    ],
+    "asr": [
+      "cho xoài vào cối xay sinh tố; cho những miếng xoài vàng vào cối thủy tinh",
+      "bây giờ cho xoài đã cắt miếng vào máy xay; chuẩn bị xay nhuyễn xoài; chúng ta sẽ làm sinh tố xoài"
+    ]
+  },
+  {
+    "query_id": "query-kis-0113",
+    "ocr": [
+      "RƯỢU SA-KÊ; 150ml; RƯỢU SA-KÊ 150ml",
+      "Vào bếp; Công thức nấu ăn; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "cho rượu sa-kê 150ml vào chảo; thêm rượu sake vào nước sốt; sốt đang sủi bọt",
+      "bây giờ chúng ta cho rượu vào cho thơm; đun lửa nhỏ cho sốt sánh lại; đảo đều cho thấm gia vị"
+    ]
+  },
+  {
+    "query_id": "query-kis-0114",
+    "ocr": [
+      "bánh nướng; găng tay chống nóng",
+      "vào bếp; dạy làm bánh; hướng dẫn nướng bánh; mẹo nhà bếp"
+    ],
+    "asr": [
+      "khay bánh nướng hình tròn màu vàng nâu vừa lấy ra khỏi lò; đặt cạnh găng tay chống nóng kẻ sọc",
+      "bánh vừa nướng xong còn nóng hổi; phải dùng găng tay chống nóng để lấy khay ra; cẩn thận bỏng tay"
+    ]
+  },
+  {
+    "query_id": "query-kis-0115",
+    "ocr": [
+      "Noel; Giáng sinh; trang trí Noel",
+      "Vào bếp đón Noel; Góc bếp Giáng sinh; MC dẫn chương trình"
+    ],
+    "asr": [
+      "trên quầy bếp có cây thông Noel giả nhỏ; đồ trang trí màu đỏ trên quầy bếp; hai người dẫn chương trình đứng phía sau",
+      "không khí Giáng sinh trong căn bếp; trang trí đón Noel ấm cúng; chuẩn bị cho mùa lễ hội cuối năm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0116",
+    "ocr": [
+      "NƯỚC TƯƠNG",
+      "gia vị; công thức nấu ăn; hướng dẫn nấu ăn; vào bếp cùng bạn"
+    ],
+    "asr": [
+      "rưới nước tương vào chảo; cho nước tương vào chảo",
+      "cho thêm một chút nước tương cho đậm đà; nêm nếm vừa ăn; đảo đều cho thấm gia vị"
+    ]
+  },
+  {
+    "query_id": "query-kis-0117",
+    "ocr": [
+      "ỚT SỪNG BĂM",
+      "nguyên liệu; hướng dẫn nấu ăn; cách làm tương ớt; món ngon mỗi ngày"
+    ],
+    "asr": [
+      "đổ ớt sừng băm vào chén thủy tinh; cho ớt sừng băm đỏ vào chén",
+      "tiếp theo chúng ta cho ớt vào; chuẩn bị nguyên liệu; bây giờ cho phần ớt đã băm nhuyễn vào"
+    ]
+  },
+  {
+    "query_id": "query-kis-0118",
+    "ocr": [
+      "NƯỚC 1.6 lít; 1.6 lít; NƯỚC",
+      "Công thức nước dùng; Hướng dẫn nấu ăn; Định lượng nguyên liệu"
+    ],
+    "asr": [
+      "rót nước vào nồi lớn; cho 1.6 lít nước vào nồi để nấu nước dùng",
+      "bây giờ chúng ta cho nước vào nồi; đổ nước vào để chuẩn bị nước dùng; bắt đầu nấu nước dùng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0119",
+    "ocr": [
+      "bột bánh rán; vị sô-cô-la; chocolate; 200g",
+      "hướng dẫn sử dụng; cách pha bột; định lượng nước; vào bếp"
+    ],
+    "asr": [
+      "bột bánh rán vị sô cô la 200 gam; pha bột với nước theo hướng dẫn trên bao bì",
+      "cho nước vào bột rồi khuấy đều; đổ bột ra tô và trộn với nước; bây giờ mình sẽ pha bột theo hướng dẫn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0120",
+    "ocr": [
+      "Ajinomoto; bột canh",
+      "Ajinomoto Việt Nam; hướng dẫn nấu ăn; bí quyết nêm nếm"
+    ],
+    "asr": [
+      "cho bột canh Ajinomoto vào món ăn; đang cho bột canh vào; nêm bột canh Ajinomoto",
+      "nêm nếm cho vừa ăn; thêm gia vị cho đậm đà; cho một chút bột canh vào nhé"
+    ]
+  },
+  {
+    "query_id": "query-kis-0121",
+    "ocr": [
+      "nghiêng dao 45 độ; 45 độ; 45°; bao tử heo; cách nghiêng dao",
+      "hướng dẫn sơ chế; kỹ thuật cắt; mẹo nhà bếp; dạy nấu ăn"
+    ],
+    "asr": [
+      "nghiêng dao 45 độ; cắt bao tử heo theo góc nghiêng; nghiêng lưỡi dao 45 độ để cắt",
+      "bây giờ mình cắt xéo miếng bao tử; các bạn để dao nghiêng như thế này; cắt vậy miếng sẽ mỏng và giòn hơn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0122",
+    "ocr": [
+      "nước tương; xì dầu",
+      "hướng dẫn nấu ăn; vào bếp; món ngon mỗi ngày; dạy nấu ăn"
+    ],
+    "asr": [
+      "rót nước tương từ chai vào chảo đen; cho nước tương vào chảo đang đặt trên bếp",
+      "cho thêm một ít nước tương cho vừa ăn; nêm gia vị; đảo đều cho thấm; thêm xì dầu vào chảo"
+    ]
+  },
+  {
+    "query_id": "query-kis-0123",
+    "ocr": [
+      "ml; 100ml; 250ml; 500ml; vạch chia",
+      "công thức pha cacao sữa; hướng dẫn pha chế; nguyên liệu"
+    ],
+    "asr": [
+      "ca đong nhựa có vạch chia; chất lỏng màu nâu sẫm; bột cacao pha với sữa",
+      "đổ sữa vào ca đong; khuấy đều cho cacao tan hết; pha cacao với sữa tươi; chuẩn bị thức uống"
+    ]
+  },
+  {
+    "query_id": "query-kis-0124",
+    "ocr": [
+      "NƯỚC DỪA; 1 chén",
+      "Nguyên liệu; Công thức nấu ăn; Hướng dẫn chế biến; Món ngon mỗi ngày"
+    ],
+    "asr": [
+      "đậy nắp nồi trắng lại; nước dừa một chén",
+      "cho một chén nước dừa vào nồi; bây giờ đậy nắp lại; đun cho đến khi sôi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0125",
+    "ocr": [
+      "NƯỚC LÁ CẨM TÍM; NƯỚC LÁ CẨM TÍM 100ml; 100ml",
+      "nguyên liệu; công thức; hướng dẫn làm bánh; vào bếp"
+    ],
+    "asr": [
+      "rót nước lá cẩm tím vào bột; cho 100ml nước lá cẩm tím vào",
+      "bây giờ mình cho nước lá cẩm vào từ từ; khuấy đều cho bột lên màu tím; trộn bột cho hòa quyện"
+    ]
+  },
+  {
+    "query_id": "query-kis-0126",
+    "ocr": [
+      "NƯỚC 150ml; 150ml; NƯỚC",
+      "nguyên liệu; công thức; hướng dẫn làm bánh; cách pha bột"
+    ],
+    "asr": [
+      "rót thêm nước vào bột; cho 150ml nước vào tô thủy tinh đựng bột",
+      "bây giờ cho nước từ từ vào; khuấy đều hỗn hợp bột; trộn đến khi mịn; tiếp tục thêm nước và khuấy"
+    ]
+  },
+  {
+    "query_id": "query-kis-0127",
+    "ocr": [
+      "kem trắng; đánh bông; phới lồng",
+      "hướng dẫn làm bánh; công thức làm kem; mẹo làm bếp"
+    ],
+    "asr": [
+      "đang đánh bông kem trắng bằng phới lồng; đánh kem cho bông lên",
+      "đánh đến khi kem bông mịn tạo chóp; tiếp tục đánh đều tay cho kem bông cứng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0128",
+    "ocr": [
+      "nước sốt; sốt vàng óng",
+      "hướng dẫn nấu ăn; vào bếp; công thức nước sốt"
+    ],
+    "asr": [
+      "khuấy đều nước sốt; đang khuấy nồi sốt vàng óng trên bếp",
+      "khuấy liên tục cho sốt sánh mịn; để lửa nhỏ khuấy đều tay; sốt sệt lại rồi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0129",
+    "ocr": [
+      "NƯỚC TƯƠNG",
+      "cách pha nước chấm; hướng dẫn nấu ăn; bí quyết bếp núc; món ngon mỗi ngày"
+    ],
+    "asr": [
+      "dùng đũa khuấy nước tương trong chai thủy tinh; khuấy đều nước tương bằng đũa",
+      "bây giờ khuấy đều lên cho hòa quyện; cho vào rồi khuấy cho tan đều; các bạn nhớ khuấy nhẹ tay thôi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0130",
+    "ocr": [
+      "GIẤM GẠO; GIẤM GẠO 1M; 1M",
+      "CÔNG THỨC NẤU ĂN; NGUYÊN LIỆU; HƯỚNG DẪN VÀO BẾP; MẸO NHÀ BẾP"
+    ],
+    "asr": [
+      "rót giấm gạo vào thìa đong nhỏ; cho một thìa giấm gạo",
+      "thêm giấm để tạo vị chua dịu; cho một muỗng nhỏ giấm gạo vào; tiếp theo là nguyên liệu giấm gạo"
+    ]
+  },
+  {
+    "query_id": "query-kis-0131",
+    "ocr": [
+      "túi bột; bột đóng gói",
+      "hướng dẫn pha chế; cách pha bột; định lượng nước"
+    ],
+    "asr": [
+      "rót nước vào túi bột; đổ nước vào bịch bột trong suốt",
+      "bây giờ cho nước vào; khuấy đều cho bột tan; pha bột với nước theo tỉ lệ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0132",
+    "ocr": [
+      "WHIPPING CREAM; 100ml; 100 ml",
+      "nguyên liệu; công thức; hướng dẫn pha chế; cách làm"
+    ],
+    "asr": [
+      "rót whipping cream vào ly; cho 100ml whipping cream vào ly",
+      "cho kem tươi vào ly; bây giờ đổ kem vào; chuẩn bị nguyên liệu làm bánh"
+    ]
+  },
+  {
+    "query_id": "query-kis-0133",
+    "ocr": [
+      "NƯỚC TƯƠNG 1M; NƯỚC TƯƠNG; 1M",
+      "công thức ướp thịt; nguyên liệu; hướng dẫn nấu ăn; món ngon mỗi ngày"
+    ],
+    "asr": [
+      "ướp thịt với nước tương; cho tỏi băm và dầu hào vào tô; thịt ướp trong tô",
+      "cho một muỗng nước tương; thêm dầu hào cho đậm vị; trộn đều cho thịt thấm gia vị; để ướp cho ngấm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0134",
+    "ocr": [
+      "NƯỚC DỪA; NƯỚC DỪA 700ml; 700ml",
+      "nguyên liệu; công thức món kho; hướng dẫn nấu ăn; bí quyết nấu ngon"
+    ],
+    "asr": [
+      "rót nước dừa vào nồi đang xào; cho 700ml nước dừa vào nồi; đổ nước dừa vào xào chung",
+      "bây giờ cho nước dừa vào ngập nguyên liệu; để lửa nhỏ kho cho thấm gia vị; rim đến khi nước dừa cạn và sệt lại"
+    ]
+  },
+  {
+    "query_id": "query-kis-0135",
+    "ocr": [
+      "200°C; 200 độ C; 200 độ; nhiệt độ",
+      "lò nướng; hướng dẫn nấu ăn; món nướng; nhiệt độ nướng"
+    ],
+    "asr": [
+      "cửa lò nướng mở ra; khay thức ăn bên trong; nhiệt độ khoảng 200 độ C",
+      "cho khay vào lò nướng; nướng ở 200 độ C; làm nóng lò trước; nướng trong bao nhiêu phút"
+    ]
+  },
+  {
+    "query_id": "query-kis-0136",
+    "ocr": [
+      "trái cây; thái hạt lựu",
+      "hướng dẫn nấu ăn; công thức món tráng miệng; vào bếp"
+    ],
+    "asr": [
+      "trái cây vàng thái hạt lựu; những miếng trái cây cắt nhỏ để trong chảo; để trong âu lớn",
+      "chuẩn bị nguyên liệu; cắt trái cây thành hạt lựu; cho vào âu trộn đều; ướp đường"
+    ]
+  },
+  {
+    "query_id": "query-kis-0137",
+    "ocr": [
+      "DẦU ĂN 2M",
+      "Công thức; Hướng dẫn nấu ăn; Vào bếp; Nguyên liệu"
+    ],
+    "asr": [
+      "rót dầu ăn vào tô hỗn hợp; cho dầu ăn vào hỗn hợp; thêm hai muỗng dầu ăn",
+      "bây giờ khuấy đều lên; trộn đều hỗn hợp; khuấy cho hòa quyện"
+    ]
+  },
+  {
+    "query_id": "query-kis-0138",
+    "ocr": [
+      "NƯỚC SÔI; 30g",
+      "Hướng dẫn pha chế; Cách pha chuẩn; Định lượng; Bột hòa tan"
+    ],
+    "asr": [
+      "rót nước sôi vào ly bột pha sẵn; đổ 30 gam nước sôi vào ly; pha bột với nước sôi",
+      "bây giờ chúng ta tiến hành pha; khuấy đều cho tan hết; hướng dẫn cách pha đúng chuẩn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0139",
+    "ocr": [
+      "tạm biệt; hẹn gặp lại; tạm biệt quý vị khán giả",
+      "Người dẫn chương trình; MC; VTV; Chương trình ngoài trời"
+    ],
+    "asr": [
+      "xin chào tạm biệt quý vị khán giả; tạm biệt và hẹn gặp lại quý vị",
+      "cảm ơn quý vị đã quan tâm theo dõi; chương trình đến đây là kết thúc; xin kính chào tạm biệt và hẹn gặp lại"
+    ]
+  },
+  {
+    "query_id": "query-kis-0140",
+    "ocr": [
+      "xuồng; mặt nước; vẫy chào",
+      "du lịch sông nước; trải nghiệm miền Tây; khám phá trên xuồng"
+    ],
+    "asr": [
+      "ngồi trên xuồng vẫy chào; đang ngồi trên xuồng giơ tay vẫy",
+      "xin chào mọi người; đang đi trên sông; trải nghiệm ngồi xuồng trên mặt nước"
+    ]
+  },
+  {
+    "query_id": "query-kis-0141",
+    "ocr": [
+      "140.000; 140 ngàn; 140k; giá vé; vé người lớn",
+      "khu vui chơi ngoài trời; khu du lịch; đường trượt gỗ; review du lịch; trải nghiệm"
+    ],
+    "asr": [
+      "giá vé khoảng một trăm bốn mươi ngàn đồng; vé người lớn một trăm bốn mươi nghìn; khu vui chơi ngoài trời có đường trượt bằng gỗ uốn lượn qua cây xanh",
+      "hôm nay mình đang ở đây; trải nghiệm trượt rất thú vị; mọi người nên đến thử; cảm giác như thế nào"
+    ]
+  },
+  {
+    "query_id": "query-kis-0142",
+    "ocr": [
+      "HỦ TIẾU NAM VANG",
+      "quán ngon; ẩm thực đường phố; khám phá ẩm thực"
+    ],
+    "asr": [
+      "biển hiệu hủ tiếu Nam Vang; quán hủ tiếu Nam Vang; đây là quán hủ tiếu Nam Vang",
+      "quán này đông khách lắm; nước lèo rất ngon; mời quý vị đến thưởng thức"
+    ]
+  },
+  {
+    "query_id": "query-kis-0143",
+    "ocr": [
+      "1735; di tích 1735",
+      "Di tích lịch sử; Đền cổ; Di tích quốc gia; Công trình xây dựng năm 1735"
+    ],
+    "asr": [
+      "cổng đền cổ màu đỏ treo nhiều đèn lồng hai bên; phía trên có chữ Hán; di tích xây từ năm 1735",
+      "ngôi đền có lịch sử gần ba trăm năm; được xây dựng từ thế kỷ 18; di tích cổ được bảo tồn đến nay"
+    ]
+  },
+  {
+    "query_id": "query-kis-0144",
+    "ocr": [
+      "chánh điện; hoành phi; chữ Hán",
+      "di tích lịch sử; kiến trúc đền cổ; di sản văn hóa"
+    ],
+    "asr": [
+      "bên trong chánh điện; ngôi đền cổ; bức hoành phi lớn; cột gỗ chạm khắc màu đỏ vàng",
+      "kiến trúc gỗ truyền thống; giá trị lịch sử văn hóa lâu đời; nghệ thuật chạm khắc đình đền"
+    ]
+  },
+  {
+    "query_id": "query-kis-0145",
+    "ocr": [
+      "nghĩa trang cổ; mộ đá; ô vuông",
+      "toàn cảnh flycam; di tích lịch sử; khu nghĩa trang cổ"
+    ],
+    "asr": [
+      "nghĩa trang cổ; hàng dài ngôi mộ đá xây thành ô vuông đều nhau; nhìn từ trên cao",
+      "khu nghĩa trang có từ lâu đời; kiến trúc mộ đá xếp ngay ngắn thành hàng; toàn cảnh quay từ trên cao"
+    ]
+  },
+  {
+    "query_id": "query-kis-0146",
+    "ocr": [
+      "chợ hải sản; hải sản tươi sống; thùng hải sản",
+      "chợ đầu mối thủy sản; giá hải sản hôm nay; bản tin thị trường"
+    ],
+    "asr": [
+      "chợ hải sản tấp nập; người mua người bán đông đúc; thùng hải sản bày trước cửa hàng",
+      "không khí nhộn nhịp buổi sáng tại chợ; ghi nhận lượng khách đông; nguồn cung hải sản dồi dào"
+    ]
+  },
+  {
+    "query_id": "query-kis-0147",
+    "ocr": [
+      "cảng cá; bến cá; tàu cá",
+      "làng chài ven biển; cảng cá Việt Nam; tin tức ngư dân; kinh tế biển"
+    ],
+    "asr": [
+      "hàng chục chiếc thuyền đánh cá đủ màu sắc; đậu san sát nhau tại cảng cá; tàu cá neo đậu san sát",
+      "tàu thuyền tấp nập neo đậu; ngư dân chuẩn bị ra khơi; không khí nhộn nhịp ở cảng cá; bến cảng đông đúc tàu thuyền"
+    ]
+  },
+  {
+    "query_id": "query-kis-0148",
+    "ocr": [
+      "1838; 1868; 1838 - 1868; năm sinh 1838; năm mất 1868",
+      "đền thờ; di tích lịch sử; khu di tích; chân dung danh nhân"
+    ],
+    "asr": [
+      "bức chân dung danh nhân trong đền thờ; sinh năm 1838 mất năm 1868; cận cảnh bức chân dung trong đền",
+      "tiểu sử và cuộc đời danh nhân; đền thờ tưởng niệm anh hùng dân tộc; di tích lịch sử văn hóa; thuyết minh về thân thế sự nghiệp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0149",
+    "ocr": [
+      "230km; 230 km; Thành phố Hồ Chí Minh; TP.HCM; khu đô thị ven biển",
+      "Toàn cảnh dự án; Vị trí dự án; Bản đồ kết nối giao thông; Quy hoạch khu đô thị ven biển"
+    ],
+    "asr": [
+      "toàn cảnh khu đô thị ven biển nhìn từ trên cao; cách Thành phố Hồ Chí Minh khoảng 230km; khoảng 230 cây số đến TP.HCM",
+      "vị trí ven biển đắc địa; kết nối thuận tiện với Thành phố Hồ Chí Minh; chỉ vài giờ di chuyển bằng cao tốc; tiềm năng phát triển du lịch nghỉ dưỡng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0150",
+    "ocr": [
+      "người dẫn chương trình; cầu cao; biển",
+      "Người dẫn chương trình; Du lịch - Khám phá; Cầu vượt biển"
+    ],
+    "asr": [
+      "người dẫn chương trình nữ mặc áo trắng đứng trên cầu cao nhìn ra biển; tóc bay trong gió",
+      "xin chào quý vị khán giả; chúng ta đang đứng trên cây cầu cao; gió biển thổi rất mạnh; khung cảnh biển nhìn từ trên cầu rất đẹp"
+    ]
+  },
+  {
+    "query_id": "query-kis-0151",
+    "ocr": [
+      "thị trấn ven biển; toàn cảnh",
+      "Du lịch khám phá; Góc nhìn trên cao; Thị trấn ven biển"
+    ],
+    "asr": [
+      "toàn cảnh thị trấn ven biển nhìn từ trên cao; nhìn qua khung cửa sổ; nhìn qua lan can cầu",
+      "khung cảnh tuyệt đẹp của thị trấn bên bờ biển; góc nhìn bao quát từ trên cao; vẻ đẹp yên bình nơi ven biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0152",
+    "ocr": [
+      "rừng ngập mặn",
+      "Hệ sinh thái rừng ngập mặn; Bảo vệ rừng phòng hộ; Khám phá thiên nhiên"
+    ],
+    "asr": [
+      "rừng ngập mặn rậm rạp; lối đi mòn xuyên qua giữa các thân cây; con đường mòn trong rừng ngập mặn",
+      "hệ sinh thái ven biển; vai trò chắn sóng giữ đất của rừng ngập mặn; bảo tồn rừng ngập mặn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0153",
+    "ocr": [
+      "cánh đồng lúa; áo dài hồng",
+      "Người dẫn chương trình; Trực tiếp; Bản tin nông nghiệp; Khám phá đồng lúa"
+    ],
+    "asr": [
+      "người dẫn chương trình mặc áo dài hồng; đứng giữa cánh đồng lúa xanh mướt; đưa tay vẫy chào",
+      "xin chào quý vị khán giả; chúng tôi đang có mặt tại cánh đồng lúa; xin mời cùng theo dõi chương trình"
+    ]
+  },
+  {
+    "query_id": "query-kis-0154",
+    "ocr": [
+      "30 lít; 30L; sữa",
+      "trang trại bò sữa; hợp tác xã chăn nuôi; nông nghiệp nông thôn; người chăn nuôi"
+    ],
+    "asr": [
+      "người phụ nữ đội nón lá đứng cạnh chai sữa; thu hoạch khoảng 30 lít sữa một ngày; mỗi ngày 30 lít sữa",
+      "nuôi bò lấy sữa; năng suất sữa mỗi ngày; thu nhập từ bán sữa; mô hình chăn nuôi bò sữa"
+    ]
+  },
+  {
+    "query_id": "query-kis-0155",
+    "ocr": [
+      "thuyền gỗ; bờ kênh; dừa nước",
+      "Miền Tây sông nước; Du lịch sinh thái; Đồng bằng sông Cửu Long"
+    ],
+    "asr": [
+      "thuyền gỗ nhỏ neo đậu bên bờ kênh; phía sau là dừa nước rậm rạp",
+      "khung cảnh sông nước miền Tây; cuộc sống ven kênh rạch; miền quê yên bình"
+    ]
+  },
+  {
+    "query_id": "query-kis-0156",
+    "ocr": [
+      "cá khô; mực khô; phơi khô",
+      "làng nghề phơi cá; đặc sản mực khô; làng chài ven biển"
+    ],
+    "asr": [
+      "nhiều xâu cá khô treo phơi; mực khô treo thành hàng dài; phơi cá mực trên giàn tre",
+      "nghề làm cá khô truyền thống; bà con ngư dân phơi hải sản; đặc sản khô mực miền biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0157",
+    "ocr": [
+      "hơn 2,8 triệu mét khối; 2,8 triệu m3; 5 năm; mét khối đất được đào",
+      "Phim tài liệu; Công trình thủy lợi; Đào kênh; Kênh thẳng tắp giữa cánh đồng"
+    ],
+    "asr": [
+      "hơn hai phẩy tám triệu mét khối đất được đào; đào trong năm năm; hơn 2,8 triệu mét khối đất",
+      "con kênh thẳng tắp giữa cánh đồng; nhìn từ trên cao bằng flycam; cánh đồng lúa hai bên bờ kênh; công trình đào kênh"
+    ]
+  },
+  {
+    "query_id": "query-kis-0158",
+    "ocr": [
+      "chiến tranh biên giới Tây Nam; thống kê thiệt hại; nhà cửa bị tàn phá; trường học bị tàn phá",
+      "Bảo tàng Chứng tích Chiến tranh; Triển lãm tư liệu lịch sử; Khu trưng bày; Bảng số liệu thiệt hại"
+    ],
+    "asr": [
+      "thống kê thiệt hại chiến tranh biên giới Tây Nam; số liệu nhà cửa bị tàn phá; số liệu trường học bị tàn phá",
+      "hậu quả nặng nề của cuộc chiến tranh biên giới; tội ác của quân Pol Pot Khmer Đỏ; người dân vùng biên chịu nhiều mất mát; tư liệu lịch sử được lưu giữ tại bảo tàng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0159",
+    "ocr": [
+      "phỏng vấn; trò chuyện",
+      "Tọa đàm; Nhân vật và câu chuyện; Không gian mái ngói; Phóng sự phỏng vấn"
+    ],
+    "asr": [
+      "hai người đàn ông ngồi đối diện trò chuyện; cuộc trò chuyện phỏng vấn; trao đổi tại bàn tròn",
+      "thưa quý vị khán giả; hôm nay chúng ta cùng trò chuyện; anh có thể chia sẻ thêm; câu chuyện của mình"
+    ]
+  },
+  {
+    "query_id": "query-kis-0160",
+    "ocr": [
+      "rau củ; rau sạch; bảng giá",
+      "chợ dân sinh; giá cả thị trường; bản tin nông sản"
+    ],
+    "asr": [
+      "khu chợ đông đúc; nhiều người và xe máy qua lại; sạp hàng rau củ hai bên đường hẹp",
+      "buôn bán tấp nập; giá rau củ hôm nay; người dân đi chợ buổi sáng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0161",
+    "ocr": [
+      "nhà sàn; biển",
+      "Nhà sàn truyền thống; Làng chài ven biển; Du lịch biển đảo"
+    ],
+    "asr": [
+      "người phụ nữ đứng cạnh khung cửa gỗ; căn nhà sàn cũ; phía xa nhìn thấy biển",
+      "ngôi nhà sàn gỗ hướng ra biển; cuộc sống ven biển; khung cảnh nhìn từ nhà sàn ra biển"
+    ]
+  },
+  {
+    "query_id": "query-kis-0162",
+    "ocr": [
+      "lò đất nung; lò gạch; lò than thủ công",
+      "làng nghề truyền thống; nghề nung gạch thủ công; nghệ nhân lớn tuổi"
+    ],
+    "asr": [
+      "ông cụ đội mũ vải ngồi cạnh lò đất nung màu nâu đỏ; lò gạch hoặc lò than thủ công",
+      "nghề làm gạch thủ công truyền thống; kỹ thuật nung lò đất; cuộc sống người thợ lò lâu năm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0163",
+    "ocr": [
+      "múa lân sư rồng; lễ hội truyền thống; 3 ngày; cổng chào",
+      "Khai mạc lễ hội truyền thống; Lễ hội 3 ngày; Trực tiếp lễ hội; Ban tổ chức lễ hội"
+    ],
+    "asr": [
+      "đoàn múa lân sư rồng diễu hành; rực rỡ sắc màu vàng đỏ; cổng chào trang trí phía trước; lễ hội truyền thống diễn ra trong ba ngày",
+      "không khí lễ hội rất sôi động náo nhiệt; bà con nhân dân tập trung đông đúc hai bên đường; tiếng trống múa lân rộn ràng vang lên"
+    ]
+  },
+  {
+    "query_id": "query-kis-0164",
+    "ocr": [
+      "CẢNH SÁT; CSGT; POLICE; CỔNG CHÀO",
+      "LỄ ĐÓN ĐOÀN; ĐOÀN HỘ TỐNG; AN NINH TRẬT TỰ; TRỰC TIẾP"
+    ],
+    "asr": [
+      "cổng chào treo cờ Tổ quốc lớn giữa đường phố; xe cảnh sát hộ tống đậu phía trước",
+      "đoàn xe đang tiến vào khu vực trung tâm; lực lượng cảnh sát dẫn đoàn làm nhiệm vụ; công tác bảo đảm an ninh trật tự"
+    ]
+  },
+  {
+    "query_id": "query-kis-0165",
+    "ocr": [
+      "giới thiệu sản phẩm; thực phẩm; hũ đựng",
+      "gian hàng triển lãm; hội chợ sản phẩm; quầy giới thiệu"
+    ],
+    "asr": [
+      "phụ nữ mặc áo dài hồng đứng sau quầy; giới thiệu sản phẩm; nhiều hũ đựng thực phẩm xếp hàng",
+      "kính mời quý khách tham quan gian hàng; sản phẩm trưng bày tại hội chợ; mời dùng thử sản phẩm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0166",
+    "ocr": [
+      "Chủ tịch Hồ Chí Minh; Hồ Chí Minh; Bác Hồ; cây vú sữa",
+      "Kỷ vật cây vú sữa; Gửi ra Bắc; Câu chuyện về Bác Hồ; Kỷ vật kháng chiến"
+    ],
+    "asr": [
+      "cận cảnh chân dung Chủ tịch Hồ Chí Minh treo trong phòng; kỷ vật cây vú sữa gửi ra Bắc",
+      "đồng bào miền Nam gửi tặng Bác cây vú sữa; tình cảm miền Nam hướng về Bác Hồ; món quà miền Nam gửi ra Bắc cho Bác"
+    ]
+  },
+  {
+    "query_id": "query-kis-0167",
+    "ocr": [
+      "cổng tam quan",
+      "di tích kiến trúc; điểm tham quan; giới thiệu địa danh"
+    ],
+    "asr": [
+      "cổng tam quan màu hồng phấn; mái ngói cong có hai cột trụ lớn hai bên; khuôn viên có nhiều cây xanh",
+      "kiến trúc cổng truyền thống; màu sắc nổi bật của công trình; không gian khuôn viên xanh mát"
+    ]
+  },
+  {
+    "query_id": "query-kis-0168",
+    "ocr": [
+      "tàu cá; bến cảng; tàu đánh cá",
+      "cảng cá; bản tin thời sự; cảng biển đêm; ngư dân bám biển"
+    ],
+    "asr": [
+      "tàu cá lớn đậu tại bến ban đêm; ánh đèn vàng chiếu sáng cả con tàu",
+      "tàu neo đậu tại cảng chuẩn bị ra khơi; ngư dân nghỉ đêm trên tàu; ánh đèn tàu cá trong đêm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0169",
+    "ocr": [
+      "200.000 đồng; 200.000đ; 200k; nấm trắng; giá bán",
+      "Giá nấm trắng; Giá cả thị trường; Nông sản hôm nay; Thị trường nông sản"
+    ],
+    "asr": [
+      "nấm trắng mọc thành chùm; giá bán khoảng hai trăm nghìn đồng; hai trăm ngàn một ký nấm trắng",
+      "giá nấm hiện nay trên thị trường; bà con trồng nấm chia sẻ; thu hoạch nấm trắng; đầu ra và tiêu thụ nấm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0170",
+    "ocr": [
+      "quầy trưng bày; sản phẩm",
+      "gian hàng triển lãm; hội chợ giới thiệu sản phẩm; quầy tư vấn"
+    ],
+    "asr": [
+      "hai người phụ nữ mặc áo cam; ngồi đối diện nhau; quầy trưng bày sản phẩm nhiều màu sắc",
+      "giới thiệu sản phẩm; tư vấn sản phẩm; tham quan gian hàng triển lãm"
+    ]
+  },
+  {
+    "query_id": "query-kis-0171",
+    "ocr": [
+      "120",
+      "chuồng số 120; khu A chuồng 120; trung tâm cứu hộ động vật; nhận nuôi chó mèo"
+    ],
+    "asr": [
+      "con vật nhỏ nằm trong lồng; chó con nằm trong lồng; mèo con nằm trong chuồng; chuồng số 120",
+      "bé còn rất nhỏ cần được chăm sóc; tìm người nhận nuôi bé; liên hệ trung tâm cứu hộ để nhận nuôi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0172",
+    "ocr": [
+      "thú cưng; lồng lưới kim loại; lồng sắt",
+      "bác sĩ thú y; phòng khám thú y; kiểm tra sức khỏe vật nuôi"
+    ],
+    "asr": [
+      "người đàn ông áo đỏ đang kiểm tra con vật nuôi trong lồng lưới kim loại; đang kiểm tra thú cưng trong lồng sắt",
+      "tình trạng sức khỏe của con vật thế nào; mang vật nuôi đi kiểm tra; con vật được nhốt trong lồng để theo dõi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0173",
+    "ocr": [
+      "KIỀU NƯƠNG 2; VỰA MỰC KHÔ",
+      "VỰA HẢI SẢN; ĐẶC SẢN MỰC KHÔ; CÂU MỰC BAN ĐÊM; 18H - 3H SÁNG"
+    ],
+    "asr": [
+      "câu mực ban đêm; câu mực từ 6 giờ tối đến 3 giờ sáng; câu mực diễn ra từ 18 giờ đến 3 giờ sáng",
+      "nghề câu mực đêm; ngư dân ra khơi buổi tối; đi biển câu mực; vựa thu mua mực khô"
+    ]
+  },
+  {
+    "query_id": "query-kis-0174",
+    "ocr": [
+      "VỰA MỰC KHÔ KIỀU NƯƠNG; VỰA MỰC KHÔ; KIỀU NƯƠNG",
+      "cơ sở hải sản khô; đặc sản mực khô; phơi mực khô; làng nghề hải sản"
+    ],
+    "asr": [
+      "nhiều xâu mực khô lớn treo phơi trên giàn; mực khô xâu phơi nắng; vựa mực khô Kiều Nương",
+      "nghề làm mực khô; đặc sản hải sản khô; phơi hải sản ngoài nắng; cơ sở chế biến mực khô"
+    ]
+  },
+  {
+    "query_id": "query-kis-0175",
+    "ocr": [
+      "nặn bột; bột trắng; mẹt tre",
+      "hướng dẫn làm bánh; cách nặn bột; ẩm thực truyền thống; dạy nấu ăn"
+    ],
+    "asr": [
+      "đeo găng nhựa nặn bột; đang nặn khối bột trắng tròn; nặn bột trên mẹt tre",
+      "nhào bột cho dẻo và mịn; nặn thành viên tròn đều; chuẩn bị bột làm bánh; bột đã được nhào kỹ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0176",
+    "ocr": [
+      "cán mỏng; độ dày; trước khi hấp; miếng bột",
+      "hướng dẫn làm bánh; dạy nấu ăn; cách làm bánh hấp; bí quyết làm bánh"
+    ],
+    "asr": [
+      "cán mỏng miếng bột trắng; cán bột cho mỏng đều; độ dày của bánh trước khi hấp",
+      "bây giờ mình cán đều tay nhé; cán mỏng vừa phải thôi; như thế này là đạt rồi đem đi hấp; bánh hấp sẽ mềm và ngon hơn"
+    ]
+  },
+  {
+    "query_id": "query-kis-0177",
+    "ocr": [
+      "Liệt sĩ; Sinh năm 1945; 1945; Tổ quốc ghi công; Hy sinh",
+      "Nghĩa trang liệt sĩ; Tri ân anh hùng liệt sĩ; Anh hùng liệt sĩ sinh năm 1945; Chiến đấu năm 1972"
+    ],
+    "asr": [
+      "bia mộ liệt sĩ ghi sinh năm 1945; liệt sĩ sinh năm 1945 từng đánh trận năm 1972; tham gia trận đánh năm 1972",
+      "đồng chí sinh năm 1945 đã anh dũng hy sinh năm 1972; tưởng nhớ người lính chiến đấu năm 1972; tri ân các anh hùng liệt sĩ đã ngã xuống"
+    ]
+  },
+  {
+    "query_id": "query-kis-0178",
+    "ocr": [
+      "viết tay; con số; ghi chú",
+      "sổ tay cá nhân; ghi chép; tư liệu viết tay"
+    ],
+    "asr": [
+      "quyển sổ tay viết tay để mở; các con số và ghi chú nguệch ngoạc; cuốn sổ ghi chép viết tay",
+      "trong cuốn sổ này ghi lại; những dòng chữ viết vội; nhìn vào các con số trong sổ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0179",
+    "ocr": [
+      "TẠI ĐÂY CÓ CHO THUÊ TRUYỆN",
+      "thư viện tư nhân; hoạt động hơn 14 năm; hơn 4000 đầu sách; tủ sách cộng đồng"
+    ],
+    "asr": [
+      "tại đây có cho thuê truyện; thư viện hoạt động hơn 14 năm; hơn 4000 đầu sách",
+      "tủ sách nhỏ ven đường; chủ thư viện chia sẻ; phục vụ bạn đọc nhiều năm qua; sưu tầm hàng nghìn cuốn truyện cho thuê"
+    ]
+  },
+  {
+    "query_id": "query-kis-0180",
+    "ocr": [
+      "300 triệu đồng; gần 300 triệu; cải tạo ruộng thành ao; ao nuôi cá",
+      "mô hình nuôi cá hiệu quả; khởi nghiệp nông nghiệp; nông dân làm giàu; chuyển đổi đất ruộng"
+    ],
+    "asr": [
+      "đầu tư gần 300 triệu đồng cải tạo ruộng thành ao nuôi cá; người đàn ông cầm cây sào đứng giữa ao bèo",
+      "chia sẻ kinh nghiệm làm ao nuôi cá; hiệu quả kinh tế từ mô hình này; thu nhập sau khi chuyển đổi ruộng lúa; vay vốn để đầu tư nuôi trồng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0181",
+    "ocr": [
+      "kệ sách; tủ sách; thư viện",
+      "Thư viện tại gia; Không gian đọc sách; Góc sưu tầm sách"
+    ],
+    "asr": [
+      "căn phòng nhỏ chứa đầy sách; kệ sách xếp kín từ sàn đến trần; phòng đầy sách",
+      "thư viện nhỏ ở nhà; sưu tầm hàng nghìn cuốn sách; không gian dành cho người yêu sách"
+    ]
+  },
+  {
+    "query_id": "query-kis-0182",
+    "ocr": [
+      "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM; NGHÌN ĐỒNG; 1000; 2000; 5000; 10000",
+      "kiểm đếm tiền mặt; thu ngân; quầy thu tiền; kiểm quỹ cuối ngày"
+    ],
+    "asr": [
+      "đếm xấp tiền giấy; đếm tiền mệnh giá nhỏ bằng tay; đếm tiền trên mặt bàn màu cam",
+      "kiểm lại tiền lẻ; đếm đủ chưa; chuẩn bị tiền thối; tiền mặt mệnh giá nhỏ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0183",
+    "ocr": [
+      "Bệnh viện; suất ăn; hành lang; Phòng bệnh",
+      "Nhân viên y tế; Bệnh nhân lớn tuổi; Trao suất ăn; Bệnh viện"
+    ],
+    "asr": [
+      "nhân viên y tế trao suất ăn tận tay cho bệnh nhân; phát suất ăn cho bệnh nhân lớn tuổi trong hành lang bệnh viện",
+      "chăm sóc người bệnh lớn tuổi; hoạt động thiện nguyện phát cơm tại bệnh viện; hỗ trợ suất ăn cho bệnh nhân"
+    ]
+  },
+  {
+    "query_id": "query-kis-0184",
+    "ocr": [
+      "bánh tét; bao nếp; gói bánh",
+      "Gói bánh tét đón Tết; Tết Nguyên Đán; Xuân Ất Tỵ; Không khí chuẩn bị Tết"
+    ],
+    "asr": [
+      "quây quần gói bánh tét; đang gói bánh tét; chuẩn bị nếp và nguyên liệu gói bánh",
+      "không khí rộn ràng chuẩn bị đón Tết; giữ gìn truyền thống gói bánh ngày Tết; sum vầy gia đình ngày Tết; hương vị Tết cổ truyền"
+    ]
+  },
+  {
+    "query_id": "query-kis-0185",
+    "ocr": [
+      "sách; tài liệu; đọc sách",
+      "Thư viện; Câu lạc bộ người cao tuổi; Góc đọc sách; Tuổi già vui khỏe"
+    ],
+    "asr": [
+      "bà cụ đeo kính đang đọc sách; đang ngồi đọc tài liệu; chăm chú nhìn xuống trang giấy",
+      "thói quen đọc sách mỗi ngày; tuổi già vẫn ham đọc sách; niềm vui bên trang sách"
+    ]
+  },
+  {
+    "query_id": "query-kis-0186",
+    "ocr": [
+      "cứu trợ; hàng cứu trợ; thùng hàng cứu trợ",
+      "tập kết hàng cứu trợ; điểm tập kết; vận chuyển hàng cứu trợ; quảng trường"
+    ],
+    "asr": [
+      "nhiều bao tải và thùng hàng cứu trợ được xếp chồng; chuẩn bị vận chuyển tại quảng trường",
+      "hàng cứu trợ đã được tập kết; chuẩn bị vận chuyển đến vùng bị thiên tai; người dân chung tay hỗ trợ đồng bào"
+    ]
+  },
+  {
+    "query_id": "query-kis-0187",
+    "ocr": [
+      "bệnh nhi; điều trị",
+      "Bệnh viện Nhi Trung ương; Khoa Nhi; Khoa Ung bướu; Chương trình thiện nguyện"
+    ],
+    "asr": [
+      "vài em nhỏ đội mũ khăn ngồi thành hàng; các bệnh nhi đang điều trị",
+      "các cháu đang điều trị dài ngày tại bệnh viện; hoàn cảnh khó khăn của các bệnh nhi; cần sự chung tay giúp đỡ các em nhỏ"
+    ]
+  },
+  {
+    "query_id": "query-kis-0188",
+    "ocr": [
+      "áo thể thao; sân xi măng",
+      "bạo lực học đường; kỹ năng sống; phóng sự trẻ em"
+    ],
+    "asr": [
+      "hai cậu bé xô đẩy nhau; hai đứa trẻ đẩy nhau ngoài trời trên sân xi măng",
+      "trẻ con đùa giỡn xô xát; phụ huynh cần giám sát; hành vi bạo lực trẻ em ngoài sân chơi"
+    ]
+  },
+  {
+    "query_id": "query-kis-0189",
+    "ocr": [
+      "chợ; khu chợ",
+      "Đời sống dân sinh; Chợ truyền thống; Câu chuyện mưu sinh"
+    ],
+    "asr": [
+      "cụ bà đội khăn trùm đầu; đứng giữa khu chợ; chợ nhiều màu sắc phía sau; khuôn mặt khắc khổ",
+      "cuộc sống mưu sinh vất vả; tuổi già lam lũ; hoàn cảnh khó khăn phải buôn bán ở chợ; gánh nặng cuộc sống"
+    ]
+  },
+  {
+    "query_id": "query-kis-0190",
+    "ocr": [
+      "mâm hoa; hoa đỏ; hoa vàng; hình trái tim",
+      "trang trí hoa; nghệ thuật cắm hoa; lễ cưới; ngày lễ tình nhân"
+    ],
+    "asr": [
+      "mâm hoa màu đỏ và vàng xếp thành hình trái tim; hoa xếp hình trái tim đỏ vàng",
+      "cách cắm hoa trang trí; ý nghĩa hoa hồng đỏ; chuẩn bị hoa cho ngày lễ; món quà hình trái tim"
+    ]
+  },
+  {
+    "query_id": "query-kis-0191",
+    "ocr": [
+      "điện tâm đồ; ECG; máy đo",
+      "thiết bị y tế; phòng khám; khoa tim mạch; kiểm tra sức khỏe"
+    ],
+    "asr": [
+      "cận cảnh máy đo điện tâm đồ màu trắng; máy điện tâm đồ đặt trên bàn trong phòng khám",
+      "kiểm tra nhịp tim; đo điện tim cho bệnh nhân; theo dõi tim mạch; thiết bị y tế hiện đại"
+    ]
+  },
+  {
+    "query_id": "query-kis-0192",
+    "ocr": [
+      "sổ lưu bút; sách cũ; lưu bút",
+      "kỷ vật học trò; góc ký ức; lưu giữ kỷ niệm"
+    ],
+    "asr": [
+      "nhiều cuốn sổ lưu bút và sách cũ xếp chồng trên bàn; chồng sổ lưu bút với sách cũ để trên bàn",
+      "những trang lưu bút học trò ngày xưa; kỷ niệm thời học sinh; những cuốn sách cũ gắn với năm tháng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0193",
+    "ocr": [
+      "sách giáo khoa cũ; bộ sưu tập; 15 năm; 7000 cuốn; 8000 cuốn; 7-8000",
+      "nhà sưu tập sách; sưu tầm sách giáo khoa; bộ sưu tập sách cũ; thư viện tư nhân; hành trình sưu tập"
+    ],
+    "asr": [
+      "bộ sưu tập gần 15 năm; khoảng bảy đến tám nghìn cuốn; bảy tám nghìn cuốn sách giáo khoa; nhiều chồng sách giáo khoa cũ xếp cao trên kệ",
+      "mười lăm năm sưu tầm; đam mê sưu tập sách cũ; lưu giữ sách giáo khoa xưa; sưu tập được hàng nghìn cuốn sách; kỷ niệm với sách giáo khoa"
+    ]
+  },
+  {
+    "query_id": "query-kis-0194",
+    "ocr": [
+      "thiện nguyện; tình nguyện; từ thiện",
+      "Đội thanh niên tình nguyện; Hành trình thiện nguyện; Chương trình hỗ trợ cộng đồng"
+    ],
+    "asr": [
+      "nhóm áo xanh đang cúi xuống chuẩn bị đồ đạc; hoạt động thiện nguyện ngoài trời buổi tối; đang sắp xếp đồ đạc",
+      "chuẩn bị quà từ thiện cho bà con; chuyến đi tình nguyện buổi tối; cùng nhau hỗ trợ cộng đồng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0195",
+    "ocr": [
+      "BẰNG KHEN; GIẤY KHEN",
+      "Cộng hòa Xã hội Chủ nghĩa Việt Nam; Độc lập - Tự do - Hạnh phúc; Quyết định khen thưởng; Tặng"
+    ],
+    "asr": [
+      "tấm bằng khen; có đóng dấu đỏ; đặt trên bàn",
+      "trao tặng bằng khen; vinh danh thành tích; ghi nhận đóng góp; phần thưởng"
+    ]
+  },
+  {
+    "query_id": "query-kis-0196",
+    "ocr": [
+      "hai cha con; ngoài đường; ban đêm",
+      "phóng sự đêm; hiện trường đường phố; câu chuyện gia đình"
+    ],
+    "asr": [
+      "hai cha con đứng cạnh nhau ngoài đường ban đêm; một người đội mũ lưỡi trai",
+      "phỏng vấn ngoài đường buổi tối; chia sẻ về cuộc sống gia đình; tình cảm cha con"
+    ]
+  },
+  {
+    "query_id": "query-kis-0197",
+    "ocr": [
+      "túi quà; chụp ảnh lưu niệm",
+      "trao quà từ thiện; hoạt động cộng đồng; chương trình tặng quà"
+    ],
+    "asr": [
+      "cùng nhau chụp ảnh lưu niệm; cầm túi quà trên tay; đứng chụp hình chung với nhau",
+      "buổi trao quà cho phụ nữ và các cháu; cùng lưu lại tấm hình kỷ niệm; không khí vui vẻ trong chương trình tặng quà"
+    ]
+  },
+  {
+    "query_id": "query-kis-0198",
+    "ocr": [
+      "trao quà; tặng quà; thiếu nhi; trẻ em",
+      "Lễ trao quà cho trẻ em; Chương trình thiện nguyện; Tết Trung thu; Ngày hội thiếu nhi"
+    ],
+    "asr": [
+      "các em xếp hàng nhận quà; trao quà cho thiếu nhi trên sân khấu; các cháu lên sân khấu nhận quà",
+      "chương trình tặng quà cho các em nhỏ có hoàn cảnh khó khăn; chúc các cháu chăm ngoan học giỏi; cảm ơn các nhà tài trợ đã đồng hành"
+    ]
+  },
+  {
+    "query_id": "query-kis-0199",
+    "ocr": [
+      "tổng giá trị giải thưởng 100 triệu đồng; giải nhất 20 triệu đồng; cuộc thi",
+      "cơ cấu giải thưởng; ban tổ chức; thể lệ cuộc thi; thông tin chi tiết liên hệ"
+    ],
+    "asr": [
+      "tổng giá trị giải thưởng một trăm triệu đồng; giải nhất hai mươi triệu đồng; cuộc thi có tổng giải thưởng là một trăm triệu",
+      "ban tổ chức công bố cơ cấu giải thưởng; mời thí sinh đăng ký tham gia cuộc thi; giải thưởng hấp dẫn đang chờ đón các bạn"
+    ]
+  },
+  {
+    "query_id": "query-qa-01",
+    "ocr": [
+      "sạt lở bờ sông; sạt lở bờ kè; miền Tây; thiệt hại",
+      "Thời sự; Tin tức ĐBSCL; Hiện trường sạt lở; UBND tỉnh; Sở Nông nghiệp và PTNT"
+    ],
+    "asr": [
+      "sạt lở bờ sông ở miền Tây; đoàn cán bộ khảo sát bờ kè bị sạt; cây cối đổ ngổn ngang xuống dòng nước đục; đoàn cúi xem bản đồ khu vực trên bàn ngoài trời",
+      "thiệt hại ước tính khoảng bao nhiêu tiền; sạt lở gây thiệt hại nặng; nguy cơ sạt lở tiếp tục; phương án khắc phục bờ kè; di dời người dân vùng sạt lở"
+    ]
+  },
+  {
+    "query_id": "query-qa-02",
+    "ocr": [
+      "tiền giả; lừa bán tiền giả; công an phá đường dây; tang vật tiền giả",
+      "Bản tin thời sự; Thời sự 19h; Triệt phá đường dây lừa đảo; Tang vật vụ án; Công an nhân dân"
+    ],
+    "asr": [
+      "công an triệt phá đường dây lừa bán tiền giả; những xấp tiền giả được đóng gói trong hộp giấy nhỏ màu vàng nâu xếp thành nhiều chồng trên bàn",
+      "chiếm đoạt số tiền khoảng bao nhiêu; số tiền các đối tượng đã chiếm đoạt của nạn nhân; thủ đoạn rao bán tiền giả trên mạng; nạn nhân chuyển tiền đặt cọc mua tiền giả"
+    ]
+  },
+  {
+    "query_id": "query-qa-03",
+    "ocr": [
+      "Thác Bà; Yên Bái; xả lũ hồ thủy điện; nhà xưởng gỗ; ngập nước",
+      "Bản tin Thời sự; Yên Bái 24h; Bộ đội Biên phòng tỉnh Yên Bái; UBND tỉnh Yên Bái; Hồ thủy điện Thác Bà"
+    ],
+    "asr": [
+      "xả lũ hồ thủy điện Thác Bà gây ngập nhà xưởng gỗ ở Yên Bái; bộ đội biên phòng mặc quân phục xanh cùng người dân khiêng gỗ; di chuyển đồ đạc ra khỏi khu xưởng bị ngập nước",
+      "chính quyền địa phương huy động lực lượng hỗ trợ người dân; bà con di dời tài sản đến nơi an toàn; lực lượng vũ trang giúp dân khắc phục hậu quả mưa lũ; đã huy động khoảng bao nhiêu cán bộ chiến sĩ"
+    ]
+  },
+  {
+    "query_id": "query-qa-04",
+    "ocr": [
+      "Loại xe; Đề xuất; Hiện hành; nồng độ cồn; xe mô tô, xe gắn máy; mức phạt; bảng so sánh",
+      "Bản tin thời sự; Thời sự 19h; Đề xuất hạ mức phạt vi phạm nồng độ cồn; CSGT; Bộ Công an; VTV"
+    ],
+    "asr": [
+      "đề xuất hạ mức phạt vi phạm nồng độ cồn khi lái xe; mức phạt đề xuất mới cho xe mô tô xe gắn máy; so sánh mức phạt hiện hành và mức phạt đề xuất",
+      "theo dự thảo đề xuất mới; khung tiền phạt sẽ được điều chỉnh giảm; lực lượng cảnh sát giao thông kiểm tra nồng độ cồn vào ban đêm; xin mời xem bảng so sánh chi tiết trên màn hình"
+    ]
+  },
+  {
+    "query_id": "query-qa-05",
+    "ocr": [
+      "Đồng Tháp; mùa nước lũ; mùa nước nổi; nuôi gia cầm chạy đồng; tổng đàn",
+      "THĐT; Thời sự Đồng Tháp; Đài PT-TH Đồng Tháp; Nông nghiệp Đồng Tháp; Chăn nuôi mùa nước nổi"
+    ],
+    "asr": [
+      "mùa nước lũ ở Đồng Tháp; đàn chim màu hồng rất đông bay là là trên cánh đồng lúa mới gặt; nghề nuôi gia cầm chạy đồng nhộn nhịp trở lại mùa nước nổi",
+      "tổng đàn vật nuôi toàn tỉnh khoảng bao nhiêu con; thống kê chăn nuôi chạy đồng; bà con nông dân Đồng Tháp; kinh tế mùa nước nổi năm nay"
+    ]
+  },
+  {
+    "query_id": "query-qa-06",
+    "ocr": [
+      "nắng nóng kỷ lục; châu Âu; nhiệt độ kỷ lục; độ C; °C",
+      "Bản tin thời sự quốc tế; Thời sự quốc tế; Nhiệt độ vượt kỷ lục; Châu Âu nắng nóng"
+    ],
+    "asr": [
+      "đợt nắng nóng kỷ lục ở châu Âu; nhiệt độ vượt mức kỷ lục; đạt bao nhiêu độ C; bãi biển đông đúc",
+      "theo ghi nhận tại thành phố này; nhiệt độ đã đạt mức cao nhất từ trước tới nay; người dân và du khách đổ ra bãi biển tránh nóng; cơ quan khí tượng cảnh báo nắng nóng kéo dài"
+    ]
+  },
+  {
+    "query_id": "query-qa-07",
+    "ocr": [
+      "HỒI SỨC CẤP CỨU (ICU); HỒI SỨC CẤP CỨU; ICU",
+      "Bản tin thời sự; Thời sự; Cấp cứu; Khoa Hồi sức Cấp cứu; Bệnh viện"
+    ],
+    "asr": [
+      "tai nạn giao thông; thai phụ được đưa vào cấp cứu; nguy cơ tử vong lên đến bao nhiêu phần trăm",
+      "tình trạng nguy kịch; đang được các bác sĩ cấp cứu; sản phụ mang thai; nạn nhân vụ tai nạn; tiên lượng rất nặng"
+    ]
+  },
+  {
+    "query_id": "query-qa-08",
+    "ocr": [
+      "Sở Giáo dục và Đào tạo TP.HCM; đặt hàng đào tạo; nguồn nhân lực giáo viên; sinh viên tốt nghiệp xuất sắc; xét tuyển giáo viên",
+      "Bản tin Thời sự; Thời sự TP.HCM; UBND TP.HCM; Sở GD&ĐT TP.HCM; Đào tạo nguồn nhân lực"
+    ],
+    "asr": [
+      "Sở Giáo dục và Đào tạo Thành phố Hồ Chí Minh đặt hàng đào tạo nguồn nhân lực giáo viên; tiếp nhận danh sách sinh viên tốt nghiệp xuất sắc; xét tuyển làm giáo viên các cấp học",
+      "thưa quý vị; theo thông tin từ Sở Giáo dục và Đào tạo; chính sách thu hút nhân tài ngành sư phạm; bổ sung đội ngũ giáo viên cho thành phố; nâng cao chất lượng giáo dục và đào tạo"
+    ]
+  },
+  {
+    "query_id": "query-qa-09",
+    "ocr": [
+      "Nút giao An Sương; Cầu vượt Gò Dưa; Ngã ba An Lạc; Cầu Phú Mỹ; đường vành đai; TP.HCM; sơ đồ tuyến",
+      "Bản tin Thời sự; Tiến độ dự án Vành đai 2 TP.HCM; Khép kín đường vành đai; Tổng chiều dài toàn tuyến; Đã hoàn thành; km"
+    ],
+    "asr": [
+      "tiến độ dự án đường vành đai ở TP.HCM; dự án khép kín tuyến đường vành đai; hiện mới hoàn thành được bao nhiêu km trên tổng chiều dài toàn tuyến",
+      "thưa quý vị và các bạn; theo ghi nhận của phóng viên; áp lực giao thông container; tình trạng ùn tắc trên cao tốc; cần đẩy nhanh giải phóng mặt bằng; sớm đưa dự án vào khai thác"
+    ]
+  },
+  {
+    "query_id": "query-qa-10",
+    "ocr": [
+      "GIẢM GIÁ SỐC",
+      "Bản tin thời sự; Hội chợ kết nối cung cầu; Kết nối cung cầu giữa các tỉnh; Hội chợ xúc tiến thương mại"
+    ],
+    "asr": [
+      "hội chợ kết nối cung cầu giữa các tỉnh; gian hàng bày bán nước giặt dầu gội; sản phẩm tiêu dùng; biển giảm giá sốc",
+      "hội chợ thu hút đông đảo người dân tham quan mua sắm; các doanh nghiệp giới thiệu sản phẩm; kích cầu tiêu dùng nội địa; nhiều chương trình khuyến mãi ưu đãi"
+    ]
+  },
+  {
+    "query_id": "query-qa-11",
+    "ocr": [
+      "HTV THỂ THAO",
+      "TRỰC TIẾP; Cúp Truyền hình TP.HCM; Đua xe đạp; Còn cách đích; km"
+    ],
+    "asr": [
+      "đoàn đua còn cách đích bao nhiêu km; còn cách vạch đích; nhóm đua đang cách đích",
+      "quý vị đang theo dõi trực tiếp chặng đua xe đạp; tốc độ của đoàn đông; các cua rơ đang bám đuổi nhau; diễn biến chặng đua hôm nay"
+    ]
+  },
+  {
+    "query_id": "query-qa-12",
+    "ocr": [
+      "VinaXa TP. Hồ Chí Minh; TRỰC TIẾP; Vòng đua; Tốc độ; km/h",
+      "Cúp Truyền hình TP.HCM; HTV Thể Thao; Trực tiếp chặng đua; Bảng tổng sắp; Liên đoàn Xe đạp - Mô tô Việt Nam"
+    ],
+    "asr": [
+      "nhóm dẫn đầu đang đẩy tốc độ lên trên bao nhiêu km/h; tốc độ của tốp đầu đang là bao nhiêu; vận tốc hiện tại trên km/h",
+      "thưa quý vị và các bạn đang theo dõi trực tiếp; cuộc đua đang diễn ra rất quyết liệt; các tay đua đang tăng tốc bứt phá; đoàn đông đang bám sát nhau"
+    ]
+  },
+  {
+    "query_id": "query-qa-13",
+    "ocr": [
+      "TRỰC TIẾP; đua xe đạp; km; đích",
+      "Còn cách đích; Khoảng cách đến đích; Giải đua xe đạp; Chặng đua"
+    ],
+    "asr": [
+      "chặng đua còn cách đích bao nhiêu km; chỉ còn bao nhiêu km nữa là về đích; khoảng cách đến đích còn bao nhiêu",
+      "đoàn đua đang bám sát nhau thành từng tốp; tốp đầu đang tăng tốc; các cua-rơ đang nỗ lực; cuộc đua đang diễn ra rất quyết liệt trên đường phố"
+    ]
+  },
+  {
+    "query_id": "query-qa-14",
+    "ocr": [
+      "Trực tiếp; Đua xe đạp; LIVE; km/h",
+      "Bình luận trực tiếp; Giải đua xe đạp; Chặng đua; Tốc độ trung bình; Bản đồ chặng đua"
+    ],
+    "asr": [
+      "cạnh tranh ở giai đoạn này; phải vượt qua tốc độ bao nhiêu km/h; tốc độ bao nhiêu km trên giờ; chắc chắn phải vượt qua tốc độ",
+      "đoàn đua đang trải dài trên đại lộ; tốc độ trung bình của đoàn đua; các tay đua đang tăng tốc bám đuổi; mô tô hộ tống dẫn đoàn; cuộc đua đang diễn ra rất quyết liệt"
+    ]
+  },
+  {
+    "query_id": "query-qa-15",
+    "ocr": [
+      "TRỰC TIẾP; đua xe đạp; cách đích; km",
+      "Giải đua xe đạp; Trực tiếp chặng đua; Còn cách đích ... km; Đường đua"
+    ],
+    "asr": [
+      "đoàn đua chỉ còn cách đích bao nhiêu km; còn cách vạch đích bao nhiêu cây số; sắp về đến đích",
+      "thưa quý vị chúng ta đang theo dõi chặng đua xe đạp; tốc độ của đoàn đua lúc này; khán giả hai bên đường đang cổ vũ; cuộc đua đang diễn ra rất hấp dẫn"
+    ]
+  },
+  {
+    "query_id": "query-qa-16",
+    "ocr": [
+      "bảng điểm; tổng điểm; tổng hợp điểm; điểm số",
+      "Chung kết Lân Sư Rồng; Đêm chung kết; Trọng tài; Tổng điểm; Ban Giám Khảo"
+    ],
+    "asr": [
+      "đêm chung kết giải lân sư rồng; trọng tài mặc áo xanh phối vàng giơ bảng điểm; chấm điểm cho đội biểu diễn; bảng tổng hợp điểm của các trọng tài",
+      "và tổng điểm của đội là; kết quả cuối cùng của đội thi; số điểm ban giám khảo dành cho đội vừa biểu diễn; chúng ta hãy cùng xem điểm số trên màn hình lớn"
+    ]
+  },
+  {
+    "query_id": "query-qa-17",
+    "ocr": [
+      "chung kết lân sư rồng; bảng điểm; điểm số",
+      "Giải Lân Sư Rồng; Đêm Chung Kết; Ban Giám Khảo; Trọng Tài; Bảng Điểm"
+    ],
+    "asr": [
+      "đêm chung kết giải lân sư rồng; đội mặc quân phục rằn ri xanh biểu diễn với con rồng vàng và cờ đỏ sao vàng; trọng tài giơ cao bảng điểm sau phần thi",
+      "sau đây là kết quả điểm số của đội vừa thi đấu; xin mời tổ trọng tài cho điểm; số điểm rất cao cho phần biểu diễn vừa rồi"
+    ]
+  },
+  {
+    "query_id": "query-qa-18",
+    "ocr": [
+      "múa lân; mai hoa thung; leo cột; múa lân leo cột",
+      "TRỰC TIẾP; ĐÊM CHUNG KẾT; GIẢI VÔ ĐỊCH MÚA LÂN; LỄ HỘI MÚA LÂN SƯ RỒNG"
+    ],
+    "asr": [
+      "múa lân leo cột mai hoa thung; con lân trắng nhảy giữa các cột cao; giàn cột nâng cao thêm bao nhiêu mét so với thông thường",
+      "độ cao giàn cột năm nay; cao hơn mọi năm; tăng độ khó; sàn đấu được nâng lên thêm; kỷ lục độ cao"
+    ]
+  },
+  {
+    "query_id": "query-qa-19",
+    "ocr": [
+      "múa lân sư rồng; đêm thi múa lân sư rồng; rồng vàng",
+      "TRỰC TIẾP; CHUNG KẾT MÚA LÂN SƯ RỒNG; LIÊN HOAN LÂN SƯ RỒNG TOÀN QUỐC; NHÀ THI ĐẤU"
+    ],
+    "asr": [
+      "đêm thi múa lân sư rồng; con rồng vàng dài uốn lượn khắp sân; cả đội xếp thành hàng ngang chào khán giả khi phần thi kết thúc",
+      "xin một tràng pháo tay cho đội vừa biểu diễn; phần trình diễn rồng vàng rất ấn tượng; thưa quý vị khán giả; ban giám khảo chuẩn bị cho điểm"
+    ]
+  },
+  {
+    "query_id": "query-qa-20",
+    "ocr": [
+      "làng nghề truyền thống; đất sét nung; gạch gốm; đồng bằng sông Cửu Long; miền Tây Nam Bộ",
+      "Làng gạch Mang Thít; Làng gốm Vĩnh Long; Phóng sự làng nghề miền Tây; Nghề thủ công ven sông"
+    ],
+    "asr": [
+      "làng nghề truyền thống miền Tây Nam Bộ; nghề thủ công đất sét nung; vùng đất ven sông làm gạch gốm; tỉnh sớm phát triển nghề làm gạch gốm nhất đồng bằng sông Cửu Long",
+      "ở miền Tây sông nước này; nghề đã có từ rất lâu đời; cái nôi của nghề gạch gốm; hình thành sớm nhất ở đồng bằng; truyền thống cha truyền con nối"
+    ]
+  },
+  {
+    "query_id": "query-qa-21",
+    "ocr": [
+      "Thanh Niên; Địa lí vùng kinh tế Việt Nam; ôn thi THPT; Địa lý; đồng bằng sông Hồng; ĐBSH",
+      "Bài giảng ôn thi THPT Quốc gia; Giáo viên Địa lý; Vùng Đồng bằng sông Hồng; gồm ... tỉnh thành; Vùng kinh tế trọng điểm"
+    ],
+    "asr": [
+      "vùng đồng bằng sông Hồng gồm bao nhiêu tỉnh thành; đồng bằng sông Hồng có mấy tỉnh; giới thiệu về vùng đồng bằng sông Hồng ĐBSH",
+      "các em nhìn sang slide bên phải; như trên bản đồ chúng ta có thể thấy; bây giờ thầy sẽ giới thiệu về vùng kinh tế đồng bằng sông Hồng; đây là vùng có vai trò quan trọng ở phía Bắc"
+    ]
+  },
+  {
+    "query_id": "query-qa-22",
+    "ocr": [
+      "Thanh Niên; Bắc Trung Bộ; Địa lý; Ôn thi THPT; nông - lâm - ngư; vùng núi; vùng đồi chuyển tiếp; đồng bằng ven biển",
+      "Ôn thi tốt nghiệp THPT; Bài giảng Địa lý; Lát cắt địa hình Tây - Đông; Cơ cấu kinh tế nông lâm ngư nghiệp; Vùng Bắc Trung Bộ; Kênh Thanh Niên"
+    ],
+    "asr": [
+      "bài giảng ôn thi THPT môn Địa lý; vùng Bắc Trung Bộ; sơ đồ cơ cấu nông lâm ngư; vùng núi vùng đồi chuyển tiếp và đồng bằng ven biển",
+      "chiều ngang từ Tây sang Đông khoảng bao nhiêu km; bề ngang lãnh thổ được minh họa trên sơ đồ; dải lãnh thổ hẹp ngang; quan sát lát cắt địa hình Bắc Trung Bộ"
+    ]
+  },
+  {
+    "query_id": "query-qa-23",
+    "ocr": [
+      "Thanh Niên; Ôn thi THPT; Lịch sử; Các tổ chức quốc tế; ASEAN; Hiệp hội các quốc gia Đông Nam Á",
+      "Bài giảng ôn thi THPT Quốc gia; Chuyên đề Các tổ chức quốc tế; Thầy giáo Lịch sử; Sơ đồ tổ chức khu vực; Đông Nam Á"
+    ],
+    "asr": [
+      "Hiệp hội các quốc gia Đông Nam Á được thành lập vào ngày tháng năm nào; ASEAN được thành lập khi nào; ngày thành lập ASEAN là khi nào",
+      "Tuyên bố Băng Cốc năm 1967; năm nước sáng lập ASEAN; tổ chức hợp tác khu vực Đông Nam Á ra đời ngày 8 tháng 8; lịch sử hình thành ASEAN"
+    ]
+  },
+  {
+    "query_id": "query-qa-24",
+    "ocr": [
+      "Ôn lại Ancol - Phenol; Ôn thi THPT; Hóa học; bảng so sánh tính chất; Ancol; Phenol",
+      "Bài giảng Hóa 12; Luyện thi THPT Quốc gia; Ancol etylic C2H5OH; Phenol C6H5OH; H2SO4 đặc; 170 độ C"
+    ],
+    "asr": [
+      "ôn lại ancol phenol; bảng so sánh tính chất của các loại ancol và phenol; ancol etylic tách nước với xúc tác H2SO4 đặc",
+      "ở bao nhiêu độ C thì thu được anken; tách nước tạo thành etilen; đun nóng 170 độ thu được anken; xúc tác axit sunfuric đặc ở nhiệt độ cao"
+    ]
+  },
+  {
+    "query_id": "query-qa-25",
+    "ocr": [
+      "lễ tốt nghiệp; đại học quốc tế; tân cử nhân; lập trình; học bổng; logo mặt trời xanh",
+      "Bản tin Giáo dục; Lễ Tốt nghiệp; Trường Đại học Quốc tế; Giảng viên Lập trình; Tài trợ học bổng; Doanh nghiệp tài trợ"
+    ],
+    "asr": [
+      "lễ tốt nghiệp tại trường đại học quốc tế; tân cử nhân tung mũ tốt nghiệp lên trời; thầy giáo mặc áo sơ mi giảng bài lập trình trước máy tính xách tay; doanh nghiệp tài trợ học bổng bao nhiêu phần trăm học phí toàn khóa",
+      "nhà trường tổ chức lễ tốt nghiệp cho sinh viên; doanh nghiệp đồng hành cùng trường đại học; trao học bổng cho học sinh xuất sắc; hỗ trợ học phí toàn khóa; hợp tác đào tạo quốc tế"
+    ]
+  },
+  {
+    "query_id": "query-qa-26",
+    "ocr": [
+      "gà nguyên con; gà hấp; gừng; đầu hành; lá chanh thái sợi; nồi hấp",
+      "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Công thức gà hấp gừng sả"
+    ],
+    "asr": [
+      "con gà nặng khoảng bao nhiêu kg; hấp trong bao lâu; gà buộc dây cho vào nồi hấp lớn; gừng đầu hành lá chanh thái sợi",
+      "bây giờ chúng ta cho gà vào nồi hấp; hấp khoảng bao nhiêu phút thì chín; bí quyết để gà ngọt thịt không bị khô; các bạn nhớ để lửa vừa"
+    ]
+  },
+  {
+    "query_id": "query-qa-27",
+    "ocr": [
+      "đùi dê; sốt nâu; lò nướng; Giáng sinh; dạy nấu ăn",
+      "đầu bếp; MC dẫn chương trình; món ngon Giáng sinh; công thức đùi dê nướng; hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "đùi dê phết sốt nâu bóng; đặt đùi dê vào lò nướng; nướng ở nhiệt độ bao nhiêu độ; nướng trong thời gian bao lâu",
+      "bây giờ chúng ta cho vào lò; chỉnh nhiệt độ lò nướng; hẹn giờ nướng; chờ cho thịt chín vàng thơm; món đùi dê nướng Giáng sinh"
+    ]
+  },
+  {
+    "query_id": "query-qa-28",
+    "ocr": [
+      "Món Ngon Mỗi Ngày; cua rang me; sốt me; mè rang",
+      "Đầu bếp; Hướng dẫn nấu ăn; Nguyên liệu - Cách làm; Ajinomoto"
+    ],
+    "asr": [
+      "chương trình Món Ngon Mỗi Ngày với hai đầu bếp nam mặc áo trắng; cua rang me ướp trong tô thủy tinh với sốt me và mè rang; cua xếp trong đĩa thủy tinh tay cầm hình lá",
+      "hàm lượng protein trong tôm cao hơn thịt heo khoảng bao nhiêu phần trăm; giá trị dinh dưỡng của tôm so với thịt heo; tôm giàu protein hơn thịt heo"
+    ]
+  },
+  {
+    "query_id": "query-qa-29",
+    "ocr": [
+      "dạy nấu ăn; đùi gà nướng mật ong; sốt mật ong; vỉ nướng; lò nướng",
+      "đầu bếp; MC; món ngon mỗi ngày; hướng dẫn chế biến; bí quyết món nướng"
+    ],
+    "asr": [
+      "làm nóng lò trước khi nướng; nhiệt độ nướng đùi gà; phết sốt mật ong lên đùi gà; xếp đùi gà lên vỉ nướng rồi cho vào lò; đùi gà nướng vàng óng",
+      "bây giờ chúng ta sẽ nướng; quý vị nhớ bật lò trước; để gà trong lò khoảng; khi gà chín vàng thì lấy ra; mời quý vị cùng thưởng thức"
+    ]
+  },
+  {
+    "query_id": "query-qa-30",
+    "ocr": [
+      "cánh gà; sốt đỏ; protein; % protein",
+      "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; Giá trị dinh dưỡng; Thành phần dinh dưỡng"
+    ],
+    "asr": [
+      "cánh gà cung cấp bao nhiêu phần trăm protein; hàm lượng protein trong cánh gà là bao nhiêu phần trăm; phần trăm đạm của cánh gà",
+      "giá trị dinh dưỡng của món ăn; cách ướp cánh gà với sốt đỏ; cho cánh gà vào tô thủy tinh trộn đều; ướp bao lâu cho thấm gia vị"
+    ]
+  },
+  {
+    "query_id": "query-qa-31",
+    "ocr": [
+      "An Giang; miếu linh thiêng; chính điện",
+      "Du lịch tâm linh An Giang; Di tích lịch sử văn hóa; Phóng sự An Giang; Châu Đốc - An Giang"
+    ],
+    "asr": [
+      "miếu linh thiêng ở An Giang; mỗi năm đón khoảng bao nhiêu lượt khách tham quan; ngôi miếu này đón bao nhiêu du khách một năm",
+      "điểm đến tâm linh nổi tiếng ở An Giang; thu hút hàng triệu lượt khách mỗi năm; du khách thập phương về chiêm bái; du lịch tâm linh miền Tây"
+    ]
+  },
+  {
+    "query_id": "query-qa-32",
+    "ocr": [
+      "An Giang; suối; chiều dài; km; thông số",
+      "Du lịch An Giang; Phóng sự du lịch; Khám phá An Giang; Tên suối; Địa danh An Giang"
+    ],
+    "asr": [
+      "phóng sự du lịch về con suối ở An Giang; hai chàng trai mặc áo đỏ lội qua tảng đá dưới thác nước nhỏ; giữa rừng cây xanh",
+      "con suối này có chiều dài bao nhiêu km; chiều dài con suối là; điểm du lịch sinh thái ở An Giang; mời quý vị cùng khám phá"
+    ]
+  },
+  {
+    "query_id": "query-qa-33",
+    "ocr": [
+      "Việt Nam - Đi Là Mê; Việt Nam Đi Là Mê",
+      "Du lịch Kiên Giang; Thị trấn ven biển; Cầu vượt cửa sông; Phóng sự khám phá"
+    ],
+    "asr": [
+      "thị trấn ven biển nhiều nhà san sát; cây cầu dài bắc qua cửa sông; cách thành phố Rạch Giá khoảng bao nhiêu km",
+      "từ trung tâm Rạch Giá đến đây khoảng cách bao xa; quãng đường di chuyển từ Rạch Giá; hành trình du lịch Kiên Giang; điểm đến miền Tây Nam Bộ"
+    ]
+  },
+  {
+    "query_id": "query-qa-34",
+    "ocr": [
+      "lẩu cua ghẹ; cách TP.HCM; Thành phố Hồ Chí Minh; km; khoảng cách",
+      "Phóng sự ẩm thực - du lịch; Toàn cảnh flycam; Thành phố ven biển; Khoảng cách địa lý"
+    ],
+    "asr": [
+      "đang chế biến món lẩu cua ghẹ trong chảo lớn; flycam toàn cảnh thành phố ven biển; thành phố này cách Thành phố Hồ Chí Minh bao nhiêu km",
+      "giới thiệu đặc sản hải sản tươi sống miền biển; mời quý vị khám phá điểm đến du lịch biển; nhìn từ trên cao bao quát thành phố; quãng đường di chuyển từ Sài Gòn"
+    ]
+  },
+  {
+    "query_id": "query-qa-35",
+    "ocr": [
+      "Rau cát lồi; Núi Cấm; An Giang",
+      "Phóng sự đặc sản; Rau rừng Núi Cấm; Thu hái rau rừng; Du lịch An Giang"
+    ],
+    "asr": [
+      "hái rau rừng ở núi Cấm An Giang; rau cát lồi; hai chú cháu đi bộ trong rừng rậm; chú đội nón hái lá rừng",
+      "giá bao nhiêu tiền một ký; bán bao nhiêu một kg; hiện nay bán với giá; mỗi ký rau cát lồi giá bao nhiêu"
+    ]
+  },
+  {
+    "query_id": "query-qa-36",
+    "ocr": [
+      "kênh Rạch Giá - Hà Tiên; biển Tây; hệ thống kênh đào; miền Tây Nam Bộ; gốm cổ khai quật",
+      "Phóng sự: Kênh đào miền Tây; Đồng bằng sông Cửu Long; Di chỉ khảo cổ ven kênh; Tư liệu flycam xóm ven kênh"
+    ],
+    "asr": [
+      "hệ thống kênh đào miền Tây Nam Bộ; kênh Rạch Giá - Hà Tiên chia nguồn nước cho kênh nào; trước khi đổ ra biển Tây",
+      "đây là hệ thống thủy lợi quan trọng của miền Tây; những mảnh gốm cổ cho thấy lịch sử khai phá vùng đất này; nhìn từ flycam xóm nhà ven kênh trù phú giữa cánh đồng xanh"
+    ]
+  },
+  {
+    "query_id": "query-qa-37",
+    "ocr": [
+      "Hà Tiên; sông; nhà sàn; trường tiểu học; ghe",
+      "Phóng sự Hà Tiên - Kiên Giang; Trường Tiểu học; UBND Thị xã Hà Tiên; Du lịch Hà Tiên"
+    ],
+    "asr": [
+      "dòng sông ở Hà Tiên; vẻ đẹp của dòng sông này; được nhắc đến qua bài thơ nào; bài thơ nói về dòng sông Hà Tiên",
+      "thưa quý vị và các bạn; con sông gắn bó với đời sống người dân; vẻ đẹp thơ mộng trữ tình; mời quý vị cùng theo dõi phóng sự"
+    ]
+  },
+  {
+    "query_id": "query-qa-38",
+    "ocr": [
+      "kênh đào; miền Tây; Cửu Đỉnh; Hoàng thành Huế; 1835; ca dao",
+      "Ký sự miền Tây; Lịch sử kênh đào Nam Bộ; Đồng bằng sông Cửu Long; Di sản Cửu Đỉnh triều Nguyễn"
+    ],
+    "asr": [
+      "thuyết minh lịch sử kênh đào ở miền Tây; hình ảnh flycam con kênh thẳng tắp xuyên qua cánh đồng lúa xanh; phụ đề câu ca dao về con kênh",
+      "con kênh được chạm khắc lên Cửu Đỉnh; Hoàng thành Huế năm 1835; vị vua nhà Nguyễn cho đúc Cửu Đỉnh; hình tượng kênh đào được khắc trên đỉnh đồng"
+    ]
+  },
+  {
+    "query_id": "query-qa-39",
+    "ocr": [
+      "An Giang; kênh Vĩnh Tế; sông Hậu; nhà văn",
+      "Nhà văn; Phóng sự An Giang; Hệ thống kênh đào; Đồng bằng sông Cửu Long; Kênh Vĩnh Tế - An Giang"
+    ],
+    "asr": [
+      "hệ thống kênh đào ở An Giang; kênh Vĩnh Tế nối sông Hậu với con sông nào; kênh Vĩnh Tế nối sông Hậu với",
+      "con kênh chảy qua ruộng lúa nhìn từ flycam; hàng thốt nốt ven đường; vai trò thủy lợi của kênh đào; lịch sử hình thành kênh Vĩnh Tế; đời sống người dân vùng kênh đào An Giang"
+    ]
+  },
+  {
+    "query_id": "query-qa-40",
+    "ocr": [
+      "Hà Tiên; mắm; hải sản đặc trưng; đầm",
+      "Đặc sản Hà Tiên - Kiên Giang; Làng nghề làm mắm truyền thống; Phóng sự ẩm thực; Cơ sở chế biến thủy sản"
+    ],
+    "asr": [
+      "nghề làm mắm từ hải sản đặc trưng vùng Hà Tiên; công nhân đội mũ đeo găng tay xanh phân loại nguyên liệu màu xanh lục trong cơ sở chế biến",
+      "loại hải sản này được tìm thấy nhiều nhất ở đầm nào; phân bố nhiều ở đầm; ngư dân khai thác ở đầm Hà Tiên; đặc sản nổi tiếng vùng Hà Tiên"
+    ]
+  },
+  {
+    "query_id": "query-qa-41",
+    "ocr": [
+      "Cà Mau; khô cá; lạt tre; bó lạt",
+      "Làng nghề Cà Mau; Phóng sự làng nghề; Làng nghề làm khô; Nghệ nhân đan lạt tre"
+    ],
+    "asr": [
+      "nghề làm khô cá ở Cà Mau; đan lạt tre; bó lạt tre thành từng bó lớn",
+      "mỗi bó lạt tre nặng khoảng bao nhiêu kg; một bó nặng mấy ký; lạt tre dùng để phơi cá khô; nghề làm khô cá truyền thống"
+    ]
+  },
+  {
+    "query_id": "query-qa-42",
+    "ocr": [
+      "Vườn Cò; Khu Vườn Cò; Cà Mau; Du lịch sinh thái",
+      "Du lịch Cà Mau; Đất Mũi Cà Mau; Điểm đến sinh thái miền Tây; Khám phá vườn chim"
+    ],
+    "asr": [
+      "phóng sự du lịch sinh thái ở Cà Mau; khu vườn cò; tấm biển gỗ có hai lá cờ nhỏ hai bên ghi tên vườn cò; đàn cò trắng bay lượn trên tán cây",
+      "điểm đến du lịch miền Tây; hệ sinh thái rừng ngập mặn Cà Mau; bảo tồn đàn cò trắng; mời quý vị cùng khám phá vẻ đẹp thiên nhiên Đất Mũi"
+    ]
+  },
+  {
+    "query_id": "query-qa-43",
+    "ocr": [
+      "Cà Mau; đánh bắt hải sản; ghe gỗ; tàu cá; kg",
+      "Phóng sự; Nghề biển Cà Mau; Ngư dân Cà Mau; Xóm nhà sàn ven sông; Thu mua hải sản"
+    ],
+    "asr": [
+      "nghề đánh bắt hải sản ở Cà Mau; hai người trò chuyện trên ghe gỗ; chiếc ghe nhỏ thu mua được bao nhiêu kg hải sản mỗi chuyến; cần cẩu kéo lưới lên khoang tàu cá",
+      "cuộc sống ngư dân bám biển mưu sinh; mỗi chuyến biển được bao nhiêu; sản lượng thu mua chuyến này; kinh nghiệm đi biển thu nhập thế nào"
+    ]
+  },
+  {
+    "query_id": "query-qa-44",
+    "ocr": [
+      "khu du lịch sinh thái; Giám đốc khu du lịch; rừng tràm; bông súng",
+      "Phóng sự Du lịch sinh thái; Bà - Giám đốc Khu du lịch; Khu du lịch sinh thái rừng tràm; Du lịch miền Tây"
+    ],
+    "asr": [
+      "nữ giám đốc khu du lịch trả lời phỏng vấn; phóng sự du lịch sinh thái rừng tràm; xuồng nhỏ chạy trên rạch bông súng nở",
+      "khu du lịch chính thức đi vào hoạt động từ ngày; khai trương đưa vào hoạt động; xin giới thiệu tiềm năng du lịch sinh thái; mời quý vị trải nghiệm đi xuồng trên rạch"
+    ]
+  },
+  {
+    "query_id": "query-qa-45",
+    "ocr": [
+      "nấm bào ngư; mô hình trồng nấm bào ngư; bịch phôi nấm",
+      "phóng sự nông nghiệp; mô hình kinh tế nông thôn; khởi nghiệp từ nấm; HTX nông nghiệp"
+    ],
+    "asr": [
+      "mô hình trồng nấm bào ngư; trồng nấm bào ngư; bịch phôi nấm treo thành hàng; nấm màu nâu xám mọc thành chùm",
+      "hiệu quả kinh tế từ mô hình trồng nấm; thu nhập từ trồng nấm bào ngư; chính thức bắt đầu từ tháng; chia sẻ của người trồng nấm"
+    ]
+  },
+  {
+    "query_id": "query-qa-46",
+    "ocr": [
+      "sửa xe đạp miễn phí; sửa xe 0 đồng; giúp người nghèo",
+      "Gương người tốt việc tốt; Việc tử tế; Phóng sự nhân ái; Nhân vật nhân ái"
+    ],
+    "asr": [
+      "thanh niên đầu cạo trọc sửa xe đạp miễn phí; chàng trai áo thun xanh navy sửa xe giúp người nghèo trong con hẻm nhỏ; sửa xe không lấy tiền",
+      "tấm lòng nhân ái giúp đỡ người khó khăn; câu chuyện truyền cảm hứng lan tỏa yêu thương; làm việc thiện nguyện không công; giúp bà con nghèo có xe đi lại"
+    ]
+  },
+  {
+    "query_id": "query-qa-47",
+    "ocr": [
+      "lớp học tình thương; ước mơ gieo con chữ cho người nghèo",
+      "Phóng sự; Lớp học tình thương ngoài trời; Cô giáo lớp học vỉa hè; Dạy chữ miễn phí"
+    ],
+    "asr": [
+      "lớp học tình thương ngoài trời; ước mơ gieo con chữ cho người nghèo; cụ bà áo hoa dạy học trên vỉa hè cho trẻ nhỏ và người lớn",
+      "cô giáo lớn tuổi tên là gì bao nhiêu tuổi; dạy học miễn phí cho người nghèo; lớp học trên vỉa hè; hành trình gieo chữ"
+    ]
+  },
+  {
+    "query_id": "query-qa-48",
+    "ocr": [
+      "làm giàu từ đám ruộng khô cằn thành ao nuôi cá tiền tỷ; Sài Gòn; ao nuôi cá tiền tỷ",
+      "Phóng sự nông nghiệp; Gương nông dân làm giàu; TP.HCM; Mô hình nuôi cá; Khởi nghiệp từ nông nghiệp"
+    ],
+    "asr": [
+      "làm giàu từ đám ruộng khô cằn thành ao nuôi cá tiền tỷ ở Sài Gòn; cải tạo ruộng khô cằn thành ao nuôi cá; ao nuôi cá tiền tỷ",
+      "đầu tư bao nhiêu tiền để cải tạo ruộng thành ao; chi phí cải tạo ao cá; vốn đầu tư ban đầu bao nhiêu; thu nhập tiền tỷ từ nuôi cá; hiệu quả mô hình nuôi cá"
+    ]
+  },
+  {
+    "query_id": "query-qa-49",
+    "ocr": [
+      "tiệm sách miễn phí; 3 không; Sài Gòn; tiệm sách 3 không",
+      "phóng sự; TP.HCM; chủ tiệm sách; cho mượn miễn phí; không phí không cọc không thế chấp; tuổi"
+    ],
+    "asr": [
+      "tiệm sách miễn phí 3 không ở Sài Gòn; cụ ông đeo kính mặc áo sơ mi cúi đọc sách; kệ sách cũ xếp chật kín trong tiệm",
+      "chủ tiệm sách chia sẻ lý do mở tiệm miễn phí; người dân đến mượn sách đọc sách; câu chuyện tiệm sách ở Sài Gòn; phỏng vấn chủ tiệm"
+    ]
+  },
+  {
+    "query_id": "query-qa-50",
+    "ocr": [
+      "thiếu nhi miền Bắc; tiền tiết kiệm; ủng hộ",
+      "phóng sự; gương người tốt việc tốt; quỹ vì trẻ em; heo đất tiết kiệm; ủng hộ đồng bào miền Bắc"
+    ],
+    "asr": [
+      "bé gái mặc đồng phục học sinh ủng hộ thiếu nhi miền Bắc; số tiền tiết kiệm ủng hộ là bao nhiêu; tiền mệnh giá nhỏ xếp trên bàn",
+      "tấm lòng nhỏ của ít lòng nhiều; đập heo đất dành dụm; gửi tặng các bạn nhỏ vùng lũ; tinh thần tương thân tương ái; cháu dành tiền ăn sáng để ủng hộ"
+    ]
+  },
+  {
+    "query_id": "query-trake-01",
+    "ocr": [
+      "nấm rơm; củ cải trắng tỉa hoa; hành lá; rau răm; nồi thủy tinh; bếp gas",
+      "Chương trình dạy nấu ăn; Gian bếp trắng; Hướng dẫn món canh; Đầu bếp; Món ngon mỗi ngày"
+    ],
+    "asr": [
+      "khứa nấm rơm hình chữ thập; cắt khoanh củ cải trắng tỉa hoa; thái hành lá và rau răm trên thớt; vặn núm bếp gas lửa xanh bùng lên; thả nguyên liệu vào nồi thủy tinh đang đun",
+      "bây giờ chúng ta sơ chế nguyên liệu; các bạn khứa nhẹ đầu nấm cho đẹp; bật bếp gas lên nào; nước sôi rồi cho nấm và củ cải vào nồi; món canh này rất thanh mát"
+    ]
+  },
+  {
+    "query_id": "query-trake-02",
+    "ocr": [
+      "dạy nấu ăn; cá nhỏ; bột chiên giòn; nước cốt tắc; tô thủy tinh",
+      "Vào bếp; Món ngon mỗi ngày; Hướng dẫn chế biến; Đầu bếp; Công thức món chiên"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn; nữ đầu bếp áo trắng và người phụ nữ áo vàng; cá nhỏ dài màu nâu bạc ướp trong tô thủy tinh; vắt nước cốt tắc; áo bột chiên giòn",
+      "bây giờ mình sẽ ướp cá cho thấm gia vị; vắt tắc qua rây để lấy nước cốt và bỏ hạt; cho nước tắc vào khử mùi tanh; trộn đều rồi áo qua bột chiên giòn; chuẩn bị đem đi chiên vàng giòn"
+    ]
+  },
+  {
+    "query_id": "query-trake-03",
+    "ocr": [
+      "gỏi cá hồi; cá hồi xông khói; dưa đỏ; bơ; xoài; đĩa gỏi",
+      "hướng dẫn nấu ăn; món khai vị; kỹ thuật trang trí món ăn; công thức gỏi cá hồi"
+    ],
+    "asr": [
+      "xếp lát cá hồi xông khói thành vòng tròn quanh miệng đĩa sứ trắng; đặt miếng dưa đỏ hình chữ nhật lên vòng cá hồi; dùng đũa gắp rau xanh đặt vào giữa đĩa; rải khối bơ và xoài kín phần giữa đĩa",
+      "hôm nay chúng ta sẽ trang trí đĩa gỏi cá hồi; các bạn xếp đều tay cho vòng cá hồi được tròn đẹp nhé; bây giờ cho rau và trái cây vào giữa cho hài hòa màu sắc; như vậy món gỏi của chúng ta đã hoàn thành"
+    ]
+  },
+  {
+    "query_id": "query-trake-04",
+    "ocr": [
+      "làng nghề gốm; gốm thủ công; lu đất; nồi đất chưa nung",
+      "phóng sự làng nghề truyền thống; nghệ nhân gốm; HTX gốm sứ; làng nghề Việt Nam"
+    ],
+    "asr": [
+      "phóng sự làng nghề gốm thủ công; nặn gốm hoàn toàn bằng tay; đi vòng quanh sản phẩm thay vì dùng bàn xoay; hàng chục chiếc lu và nồi đất chưa nung; nhà xưởng mái tôn nền đất",
+      "nghề gốm truyền thống cha truyền con nối; kỹ thuật nặn gốm thủ công không cần bàn xoay; bí quyết làm gốm bằng tay; giữ gìn làng nghề; đời sống nghệ nhân làm gốm"
+    ]
+  },
+  {
+    "query_id": "query-trake-05",
+    "ocr": [
+      "nghề làm khô cá; làng biển; khô cá",
+      "Phóng sự: Làng nghề ven biển; Làng chài - Nghề truyền thống; Nghệ nhân làm khô cá; Đặc sản làng biển"
+    ],
+    "asr": [
+      "phóng sự nghề làm khô cá ở làng biển; lò củi cháy đỏ nồi nước sôi sùng sục với cá bạc; bà cụ tóc búi mặc áo hoa xanh đứng trông nồi; thả nắm cá vào nồi nước đang sôi trắng xóa; chiếc vá lớn khuấy giữa nồi cá đang sôi",
+      "mời quý vị về thăm làng chài ven biển; nghề truyền thống cha truyền con nối bao đời nay; bí quyết luộc cá trước khi đem phơi nắng; cuộc sống mưu sinh của người dân miền biển; hoàng hôn trên bãi biển những chiếc thuyền trở về"
+    ]
+  },
+  {
+    "query_id": "query-trake-06",
+    "ocr": [
+      "mỹ nghệ thủ công; nghệ nhân; men màu; phôi vuông",
+      "Phóng sự: Nghề thủ công mỹ nghệ; Nghệ nhân thủ công; Làng nghề truyền thống; Sản phẩm thủ công tại nhà"
+    ],
+    "asr": [
+      "phóng sự nghệ nhân làm đồ mỹ nghệ thủ công tại nhà; uốn sợi kim loại nhỏ trên thảm cắt; dùng thanh dụng cụ ấn lên miếng phôi vuông; cọ chấm men màu vào ô hoa văn",
+      "quy trình chế tác thủ công tỉ mỉ; từng công đoạn làm bằng tay rất công phu; giữ gìn nghề truyền thống; làm đồ mỹ nghệ đòi hỏi sự khéo léo; sản phẩm thủ công tinh xảo"
+    ]
+  },
+  {
+    "query_id": "query-trake-07",
+    "ocr": [
+      "thịt bằm; tỏi phi; hạt nêm; rau nêm; ớt",
+      "dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến; đầu bếp; MC dẫn chương trình"
+    ],
+    "asr": [
+      "thịt bằm cho tỏi phi; rắc hạt nêm vào thịt; cho ớt vào ướp; trộn đều bằng tay; thái rau nêm trên thớt gỗ; cắt lát ớt đỏ",
+      "xin chào quý vị khán giả; hôm nay chúng ta sẽ làm món thịt bằm; ướp gia vị cho thấm đều; bây giờ chuẩn bị phần rau nêm; các bạn nhớ nêm nếm cho vừa ăn nhé"
+    ]
+  },
+  {
+    "query_id": "query-trake-08",
+    "ocr": [
+      "múa lân leo cột; mai hoa thung; cuộc thi múa lân; giàn cột",
+      "Liên hoan Múa lân Sư Rồng; Đêm Chung kết; Trực tiếp; Lễ hội Văn hóa Thể thao; Ban Tổ chức; Nhà thi đấu"
+    ],
+    "asr": [
+      "múa lân leo cột mai hoa thung; thi múa lân trên giàn cột sắt mặt cột màu xanh; con lân vàng đỏ đứng trên cột cao; con lân trắng nhảy từ cột này sang cột khác; lân trắng đang bay lơ lửng giữa không trung",
+      "kính thưa quý vị khán giả; tiết mục biểu diễn múa lân vô cùng mạo hiểm; tiếng trống múa lân rộn rã; khán giả vỗ tay reo hò cổ vũ rất đông; ánh đèn sân khấu buổi tối rất rực rỡ"
+    ]
+  },
+  {
+    "query_id": "query-trake-09",
+    "ocr": [
+      "phòng chống đuối nước; dạy trẻ em; hồ bơi; ép tim; hình nộm; chai nhựa",
+      "phóng sự quốc tế; lớp học an toàn dưới nước; kỹ năng sống; hướng dẫn sơ cấp cứu; thực hành CPR; cứu hộ đuối nước"
+    ],
+    "asr": [
+      "dạy trẻ phòng chống đuối nước; tập nằm ngửa nổi trên mặt nước; đặt chai nhựa lên bụng khi tập nổi; vào phòng tường đỏ tập ép tim trên hình nộm; dùng sào dài kéo bạn vào bờ",
+      "kỹ năng tự nổi giúp trẻ sống sót khi rơi xuống nước; phải bình tĩnh nằm ngửa để nổi; cách sơ cứu người bị đuối nước; ép tim ngoài lồng ngực và hô hấp nhân tạo; không nhảy xuống nước mà dùng sào để cứu bạn"
+    ]
+  },
+  {
+    "query_id": "query-trake-10",
+    "ocr": [
+      "sạt lở đất; sạt lở; vùi lấp; cứu hộ; đất đỏ; máy xúc",
+      "Bản tin thời sự; Tin hiện trường; Cứu hộ cứu nạn; Hiện trường sạt lở; Lực lượng vũ trang; UBND xã; Ban chỉ huy PCTT & TKCN"
+    ],
+    "asr": [
+      "sạt lở đất vùi lấp người; lực lượng cứu hộ mặc áo lính và người dân chen chúc đào bới trên đống đất đỏ; máy xúc màu vàng gạt đất phía trên; khiêng nạn nhân bằng cáng ra khỏi hiện trường",
+      "nỗ lực tìm kiếm người mất tích dưới lớp đất đá; huy động máy xúc hỗ trợ đào bới; hiện trường rất đông người dân tập trung; đã đưa được nạn nhân ra ngoài đi cấp cứu; đất đá sạt xuống vùi lấp"
+    ]
+  },
+  {
+    "query_id": "query-trake-11",
+    "ocr": [
+      "hẹ cắt khúc; giá; lạp xưởng cắt lát xéo; hai quả trứng đánh tan; chảo trắng; nước tương",
+      "Vào bếp cùng đầu bếp; Hướng dẫn nấu ăn; Công thức món xào; Nguyên liệu chế biến; Món ngon mỗi ngày"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn; nam đầu bếp áo trắng viền đỏ và nữ dẫn chương trình tạp dề xanh; hẹ cắt khúc; giá và lạp xưởng cắt lát xéo; đánh tan hai quả trứng; xào trong chảo trắng; rưới nước tương màu đen lên chảo",
+      "bây giờ chúng ta sẽ cùng vào bếp; các bạn cho nguyên liệu vào xào đều tay; cắt như thế này cho đẹp mắt; nêm nếm gia vị cho vừa ăn; đảo nhanh tay để món không bị nát; món này làm rất đơn giản tại nhà"
+    ]
+  },
+  {
+    "query_id": "query-trake-12",
+    "ocr": [
+      "dạy nấu ăn; món xào; đầu bếp",
+      "Chương trình Dạy nấu ăn; Đầu bếp hướng dẫn; Món xào thập cẩm"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn; hai đầu bếp nam áo trắng; món xào; thơm tỉa hoa; đậu que; ớt chuông đỏ và vàng; cho thịt đã xào vào",
+      "hôm nay chúng tôi sẽ hướng dẫn món xào; các bạn cho rau củ vào trước; đảo đều tay rồi mới cho thịt vào sau cùng"
+    ]
+  },
+  {
+    "query_id": "query-trake-13",
+    "ocr": [
+      "cánh gà chiên; tỏi cắt múi cau; hành tây cắt lát; chảo dầu; đĩa trắng",
+      "Chương trình dạy nấu ăn; Vào bếp; Đầu bếp; MC dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "cánh gà chiên; tỏi cắt múi cau; hành tây cắt lát; cho tỏi và hành tây vào chiên trước trong chảo dầu; thả cánh gà vào chiên vàng rồi vớt ra đĩa trắng",
+      "bây giờ dầu đã nóng chúng ta cho tỏi vào trước; phi thơm hành tây; cho cánh gà vào chiên giòn; chiên đến khi vàng đều; vớt ra để ráo dầu và bày ra đĩa; mời quý vị thưởng thức"
+    ]
+  },
+  {
+    "query_id": "query-trake-14",
+    "ocr": [
+      "lẩu vịt; khoai môn cắt khối; lá tía tô; hắc xì dầu; thịt vịt ướp; chảo dầu",
+      "Chương trình dạy nấu ăn; Dạy nấu ăn - Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Công thức lẩu vịt khoai môn; Nguyên liệu & Cách chế biến"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn lẩu vịt; khoai môn cắt khối trên thớt gỗ; lá tía tô thái nhỏ; thịt vịt ướp hắc xì dầu trong tô thủy tinh; khoai môn chiên trong chảo dầu sôi",
+      "bây giờ chúng ta sẽ sơ chế khoai môn; ướp thịt vịt cho thấm đều hắc xì dầu rồi trộn đều lên; cho khoai môn vào chảo dầu đang sôi chiên vàng; các bạn nhớ đảo đều tay; món lẩu vịt khoai môn rất thơm ngon bổ dưỡng"
+    ]
+  },
+  {
+    "query_id": "query-trake-15",
+    "ocr": [
+      "mực hấp; mực hấp gừng hành; hành lá; gừng thái lát; đĩa màu hồng; xửng hấp inox",
+      "chương trình dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến mực hấp; đầu bếp; kỹ thuật hấp cách thủy"
+    ],
+    "asr": [
+      "mực hấp gừng hành; rải hành lá và gừng thái lát lên đĩa mực; đặt đĩa màu hồng vào xửng hấp inox; nhấc đĩa mực đã hấp chín ra khỏi xửng bằng kẹp; trút nước hấp từ đĩa xuống chảo nóng",
+      "bây giờ chúng ta cho hành lá và gừng lên trên đĩa mực; đặt vào xửng hấp và hấp chín; đừng bỏ nước hấp đi rất ngọt; cho nước hấp vào chảo nóng để làm nước sốt"
+    ]
+  },
+  {
+    "query_id": "query-trake-16",
+    "ocr": [
+      "nước tương; dầu điều; hành tây; ớt chuông; ớt sừng; thịt ướp",
+      "Chương trình dạy nấu ăn; Đầu bếp; Người dẫn chương trình - MC; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "ướp thịt trong tô thủy tinh với nước tương và dầu điều màu đỏ cam; rót nước tương vào chén nhỏ cạnh tô thịt; rưới dầu điều đỏ cam từ trên cao xuống tô thịt; dùng phới trộn đều thịt ướp màu vàng cam; cắt hành tây hình thoi trên thớt gỗ; rạch dọc quả ớt sừng đỏ",
+      "bây giờ chúng ta sẽ cho gia vị vào ướp cho thấm đều nhé; các bạn nhớ cắt hình thoi cho đẹp mắt và xếp ra đĩa trắng; để thịt ngấm gia vị một lúc cho ngon hơn; sau đây đầu bếp sẽ hướng dẫn cách sơ chế rau củ; mời quý vị cùng theo dõi"
+    ]
+  },
+  {
+    "query_id": "query-trake-17",
+    "ocr": [
+      "mì căn; dạy nấu ăn; bột trắng sánh",
+      "Hướng dẫn nấu ăn; Công thức mì căn chiên; Món chay; Dạy nấu món chay"
+    ],
+    "asr": [
+      "khuấy nồi bột trắng sánh; cắt miếng mì căn trên thớt gỗ; xếp mì căn ra đĩa hồng; rót dầu vào chảo; chiên mì căn vàng trong chảo dầu",
+      "bây giờ chúng ta cho dầu vào chảo; để lửa vừa chiên cho vàng đều hai mặt; món này làm rất đơn giản tại nhà; các bạn nhớ vớt ra khi đã vàng giòn"
+    ]
+  },
+  {
+    "query_id": "query-trake-18",
+    "ocr": [
+      "giò sống; thịt bằm; gốc ngò rí băm; cà rốt băm; trứng luộc; rổ inox",
+      "Dạy nấu ăn; Món ngon mỗi ngày; Công thức chế biến; Đầu bếp; MC dẫn chương trình; Hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "cho giò sống vào tô trắng; thêm thịt bằm vào trộn; rắc gốc ngò rí băm lên thịt; đổ cà rốt băm màu cam vào; dùng hai tay bóp trộn đều khối thịt; nhấc rổ inox đựng trứng luộc lên khỏi thau nước",
+      "quý vị khán giả thân mến; hôm nay chúng ta sẽ vào bếp làm món mới; các bạn nêm nếm gia vị cho vừa ăn; trộn thật đều tay để thịt dẻo và thấm; bí quyết để món ăn thơm ngon hơn; bây giờ chúng ta chuẩn bị phần trứng luộc"
+    ]
+  },
+  {
+    "query_id": "query-trake-19",
+    "ocr": [
+      "dạy nấu ăn; tôm hạt lựu; tôm viên; sấu xanh",
+      "Vào bếp; Món ngon mỗi ngày; Công thức chế biến; Hướng dẫn nấu ăn; Bí quyết của đầu bếp"
+    ],
+    "asr": [
+      "cắt tôm hạt lựu trên thớt gỗ; quết tôm thành hỗn hợp; trộn hỗn hợp tôm trong tô thủy tinh; nặn viên tròn gắn con tôm đỏ lên trên đầu; thả viên tôm vào tô nước; khứa chữ thập quả sấu xanh",
+      "bây giờ chúng ta sẽ sơ chế tôm; các bạn quết thật nhuyễn và đều tay nhé; nặn viên vừa ăn cho đẹp mắt; ngâm viên vào nước để định hình; sấu khứa như vậy sẽ ngấm gia vị và bớt chát"
+    ]
+  },
+  {
+    "query_id": "query-trake-20",
+    "ocr": [
+      "gia vị lẩu thái; lẩu thái; gói gia vị lẩu thái",
+      "chương trình dạy nấu ăn; hướng dẫn nấu lẩu; món lẩu thái; đầu bếp; dạy nấu ăn"
+    ],
+    "asr": [
+      "nấu lẩu thái trong nồi thủy tinh màu hổ phách; cho cà chua và ớt vào nồi; đổ nước sốt đỏ vào nồi lẩu; gói gia vị lẩu thái; trút chả cá vào nồi đang sôi",
+      "bây giờ chúng ta sẽ cho nguyên liệu vào nồi; nồi lẩu đang sôi trên bếp lửa xanh; nêm gia vị cho đậm đà; mực và chả cá rất nhanh chín; các bạn nhớ để lửa vừa cho nước dùng sôi đều"
+    ]
+  },
+  {
+    "query_id": "query-trake-21",
+    "ocr": [
+      "súp tôm; đầu tôm; vỏ tôm; gói gia vị; đường; đậu que cắt hạt lựu; nước bột năng; dạy nấu ăn",
+      "Chương trình dạy nấu ăn; Món ngon mỗi ngày; Công thức súp tôm; Đầu bếp; MC dẫn chương trình; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "nấu món súp tôm; đầu và vỏ tôm cho vào nồi đỏ nấu sôi bùng; cho gói gia vị vào nồi thủy tinh; cho đường vào nêm; cho đậu que cắt hạt lựu vào nồi; cho nước bột năng vào khuấy đều",
+      "nước dùng bây giờ đã sôi rồi; chúng ta nêm nếm cho vừa khẩu vị; các bạn nhớ khuấy đều tay để súp sánh mịn; món súp này rất thơm ngon bổ dưỡng; mời quý vị cùng làm theo"
+    ]
+  },
+  {
+    "query_id": "query-trake-22",
+    "ocr": [
+      "cà chua cắt múi cau; ớt hiểm đập dập; sả đập dập cắt đôi; tôm; rây lọc; nồi thủy tinh màu hổ phách",
+      "Chương trình dạy nấu ăn; Đầu bếp hướng dẫn; Món tôm nấu chua cay; Công thức chế biến; Nguyên liệu - Cách làm"
+    ],
+    "asr": [
+      "cà chua cắt múi cau; ớt hiểm đập dập; sả đập dập cắt đôi; tôm; lọc nước dùng qua rây; rót nước màu đỏ vào nồi thủy tinh màu hổ phách; chương trình dạy nấu ăn hai đầu bếp nam áo thun đỏ",
+      "bây giờ chúng ta sẽ cho nguyên liệu vào nồi; nước dùng đang sôi các bạn nhé; đập dập cho thơm rồi cắt đôi; nêm nếm cho vừa khẩu vị; món này làm rất đơn giản tại nhà"
+    ]
+  },
+  {
+    "query_id": "query-trake-23",
+    "ocr": [
+      "dạy nấu ăn; nước tương; rượu trắng; gừng băm; nước xốt màu đen; nấm kim châm bọc thịt; chén sứ xanh",
+      "Đầu bếp; MC dẫn chương trình; Vào bếp cùng chuyên gia; Công thức nước xốt; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "cho nước tương vào chảo đang nóng; đổ rượu trắng từ chén trắng vào chảo nước xốt; cho thìa gừng băm vào chảo; nghiêng chảo rót nước xốt đen ra chén sứ xanh; nấm kim châm bọc thịt; đổ bột trắng từ hộp giấy xuống tô",
+      "bây giờ chúng ta sẽ đun nóng chảo; đảo đều cho dậy mùi thơm; nêm nếm cho vừa ăn; quý vị khán giả cùng theo dõi nhé; mời quý vị thưởng thức món ăn; chúc quý vị thành công"
+    ]
+  },
+  {
+    "query_id": "query-trake-24",
+    "ocr": [
+      "dạy nấu ăn; canh măng; măng vàng; nước tương; đậu hũ trắng; muối",
+      "Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Nguyên liệu: măng, đậu hũ; Hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "phi tỏi cho thơm; cho măng vàng vào nồi; nêm nước tương; chế nước vào nồi; nêm muối vừa ăn; đậu hũ trắng để bên cạnh",
+      "hôm nay chúng ta sẽ nấu món canh măng đậu hũ; các bạn đảo đều tay cho thấm gia vị; nêm nếm lại cho vừa khẩu vị gia đình nhé; món canh này rất thanh đạm dễ làm tại nhà; mời quý vị cùng theo dõi"
+    ]
+  },
+  {
+    "query_id": "query-trake-25",
+    "ocr": [
+      "tôm càng hấp; tôm càng xanh; xoài hạt lựu; hành tỏi; tiêu; ớt đỏ; xửng hấp inox; đĩa thủy tinh",
+      "dạy nấu ăn; vào bếp cùng đầu bếp; đầu bếp; MC; người dẫn chương trình; món ngon mỗi ngày; hướng dẫn chế biến"
+    ],
+    "asr": [
+      "tôm càng hấp xoài; xoài cắt hạt lựu; cắt má xoài thành thanh dài rồi cắt hạt lựu; phết hỗn hợp hành tỏi lên tôm càng xanh nguyên con; rắc tiêu và ớt đỏ lên đĩa tôm; đậy nắp xửng hấp inox",
+      "bây giờ chúng ta sẽ hấp tôm; ướp tôm với hành tỏi như thế này; cho tôm vào xửng hấp khoảng vài phút là chín; món ăn rất thơm ngon hấp dẫn; quý vị hãy theo dõi và làm theo nhé"
+    ]
+  },
+  {
+    "query_id": "query-trake-26",
+    "ocr": [
+      "khô cá đồng; miền Tây; làng nghề làm khô",
+      "Phóng sự làng nghề; Đặc sản miền Tây; Nghề truyền thống; HTX khô cá đồng"
+    ],
+    "asr": [
+      "nghề làm khô cá đồng ở miền Tây; kéo lưới cá từ ao lên; phụ nữ đội nón lá ngồi làm cá bên rổ nhựa màu hồng và đỏ; xếp cá thành hàng dày đặc trên vỉ phơi ngoài nắng",
+      "bà con miền Tây mưu sinh mùa nước nổi; cá đồng tươi vừa kéo lên còn quẫy mạnh; làm sạch cá rồi đem phơi nắng tự nhiên; phơi mấy nắng là thành khô để bán"
+    ]
+  },
+  {
+    "query_id": "query-trake-27",
+    "ocr": [
+      "măng; bẹ măng; bào măng; măng thái sợi",
+      "phóng sự ẩm thực; đặc sản măng; món ngon từ măng; ẩm thực làng quê; chế biến măng tươi"
+    ],
+    "asr": [
+      "bóc bẹ măng; bào măng thành lát mỏng; củ măng trắng đặt lên ván bào; lát măng trắng bung ra; tô lớn đựng đầy măng thái sợi vàng",
+      "cách sơ chế măng tươi; măng vừa thu hoạch về; thái măng để chuẩn bị chế biến; mời bà con thưởng thức món măng; hương vị đặc sản măng rừng"
+    ]
+  },
+  {
+    "query_id": "query-trake-28",
+    "ocr": [
+      "tượng mèo; gốm mèo; xưởng gốm; đất sét xám; mẹt tre",
+      "phóng sự; nghệ nhân trẻ; làng nghề gốm; khởi nghiệp gốm thủ công; chuyện nghề"
+    ],
+    "asr": [
+      "bạn trẻ làm gốm hình mèo trong xưởng gốm; chàng trai áo thun trắng ngồi giữa kệ chậu gốm; xếp mẩu đất sét xám lên mẹt tre; tô vẽ tượng mèo trắng nhỏ; đưa tượng mèo đến cho mèo thật ngửi",
+      "đam mê gốm sứ và tình yêu với mèo; ý tưởng khởi nghiệp từ những chú mèo; nặn thủ công từng chi tiết; giữ gìn nghề gốm truyền thống; mỗi tượng mèo mang một câu chuyện"
+    ]
+  },
+  {
+    "query_id": "query-trake-29",
+    "ocr": [
+      "khóm; dứa; miền Tây; vùng trồng khóm",
+      "Phóng sự miền Tây; Chuyện nhà nông; Vựa khóm miền Tây; Nông nghiệp nông thôn; Đặc sản miền Tây"
+    ],
+    "asr": [
+      "phóng sự vùng trồng khóm miền Tây; trồng dứa ở miền Tây; ngồi nếm khóm bên rổ nhựa vàng; nông dân hái khóm trên luống; xuồng chở đầy khóm chạy trên kênh; gọt và tách miếng khóm",
+      "mời bà con nếm thử miếng khóm; bà con đang vào mùa thu hoạch; cuộc sống sông nước miền Tây; năng suất vụ khóm năm nay; thương lái đến thu mua; mời quý vị theo chúng tôi ra thăm ruộng khóm"
+    ]
+  },
+  {
+    "query_id": "query-trake-30",
+    "ocr": [
+      "bánh khọt",
+      "phóng sự ẩm thực; món ngon dân dã; ẩm thực miền Tây; đặc sản miền quê"
+    ],
+    "asr": [
+      "đổ bánh khọt ngoài vườn; khuôn gang nhiều lỗ đặt trên bếp gas; người đàn ông áo bà ba nâu và người phụ nữ áo xanh đội nón lá; buồng chuối xanh phía sau; đổ bánh khọt trên khuôn gang",
+      "bây giờ mình rót bột vàng vào khuôn; múc nhân cho vào từng lỗ; lấy dụng cụ gạt nhẹ quanh mép bánh cho giòn; bánh khọt chín vàng thơm ngon; cách đổ bánh khọt truyền thống"
+    ]
+  },
+  {
+    "query_id": "query-trake-31",
+    "ocr": [
+      "8.60; 8.65; 8,63; 8.63; Tổng điểm; Điểm",
+      "Giải Lân Sư Rồng; Nhà Thi Đấu; Ban Giám Khảo; Trọng Tài; Bảng Điểm; Trực Tiếp"
+    ],
+    "asr": [
+      "giải thi đấu lân sư rồng; biểu diễn múa rồng vàng; trọng tài giơ bảng điểm; tám phẩy sáu mươi; tám phẩy sáu lăm; tổng điểm tám phẩy sáu ba",
+      "sau đây là phần dự thi múa rồng của đội; xin mời ban giám khảo cho điểm; điểm số của các trọng tài như sau; và kết quả chung cuộc là; chúc mừng đội thi"
+    ]
+  },
+  {
+    "query_id": "query-trake-32",
+    "ocr": [
+      "múa lân sư rồng; quả cầu ngũ sắc; rồng vàng; thảm xanh dương",
+      "liên hoan lân sư rồng; đêm thi chung kết; ban tổ chức; nhà thi đấu; trực tiếp"
+    ],
+    "asr": [
+      "đêm thi múa lân sư rồng trên thảm xanh dương; người mặc áo xanh cầm hai lá cờ đỏ trước quả cầu ngũ sắc; con rồng vàng dài uốn lượn khắp sân; cả đội mặc đồ vàng đen xếp hàng trên thảm",
+      "sau đây là phần dự thi của đội múa rồng; xin quý vị khán giả cho một tràng pháo tay; màn trình diễn rất đặc sắc và công phu; đội thi đã hoàn thành xuất sắc phần thi của mình"
+    ]
+  },
+  {
+    "query_id": "query-trake-33",
+    "ocr": [
+      "lương y; thuốc nam; đông y; thuốc gia truyền",
+      "phóng sự sức khỏe đời sống; lương y cao tuổi; đông y gia truyền; nghề thuốc nam"
+    ],
+    "asr": [
+      "lương y thuốc nam cao tuổi; phân loại thuốc trên bàn phủ giấy trắng; bốc thuốc từ tủ nhiều ngăn hũ thủy tinh; sao thuốc trong chảo lớn ngoài sân",
+      "bài thuốc gia truyền nhiều đời; mấy chục năm làm nghề bốc thuốc cứu người; kinh nghiệm sao tẩm thuốc nam; chữa bệnh bằng y học cổ truyền"
+    ]
+  },
+  {
+    "query_id": "query-trake-34",
+    "ocr": [
+      "bã cà phê; đĩa cốc từ bã cà phê; tái chế bã cà phê",
+      "Phóng sự: Khởi nghiệp xanh; Sản phẩm tái chế; Mô hình kinh tế tuần hoàn; Người thợ tái chế"
+    ],
+    "asr": [
+      "làm sản phẩm từ bã cà phê; dùng khuôn ép bã cà phê thành đĩa và cốc; tái chế bã cà phê",
+      "tận dụng bã cà phê bỏ đi để bảo vệ môi trường; ý tưởng khởi nghiệp từ rác thải cà phê; sản phẩm thân thiện với môi trường"
+    ]
+  },
+  {
+    "query_id": "query-trake-35",
+    "ocr": [
+      "lá dừa nước; khai thác lá dừa; rừng dừa nước; tàu lá",
+      "phóng sự; nghề truyền thống; mưu sinh sông nước; làng nghề miền Tây"
+    ],
+    "asr": [
+      "khai thác lá dừa nước; chặt tàu lá dừa nước bằng dao; kéo tàu lá dài; chất lá lên xuồng nhỏ trên kênh",
+      "cuộc sống vùng sông nước; nghề truyền thống vất vả; thu nhập từ cây dừa nước; giữ nghề cha ông"
+    ]
+  },
+  {
+    "query_id": "query-trake-36",
+    "ocr": [
+      "dạy nấu ăn; nồi lẩu; bếp từ; cà chua; viên thả lẩu; mâm rau; đĩa bún",
+      "Chương trình dạy nấu ăn; Đầu bếp; MC dẫn chương trình; Món lẩu cá cà chua; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn; nấu nồi lẩu trên bếp từ; cho cà chua vào nồi; thả viên thả lẩu; thả cá vào nồi lẩu; mâm rau và đĩa bún ăn kèm",
+      "nước lẩu đang sôi trào; cho nguyên liệu vào nồi màu vàng đồng; thả cá nhẹ tay kẻo nát; nhúng rau khi lẩu sôi; mời quý vị thưởng thức món lẩu"
+    ]
+  },
+  {
+    "query_id": "query-trake-37",
+    "ocr": [
+      "dạy nấu ăn; hạt nêm; ớt băm; cà chua múi cau; trái thơm rẻ quạt",
+      "Vào bếp cùng đầu bếp; MC dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn nấu ăn; Đầu bếp áo trắng"
+    ],
+    "asr": [
+      "gắp cá vào tô thủy tinh; ướp cá với hạt nêm và ớt băm; cắt cà chua múi cau trên thớt gỗ; cắt trái thơm rẻ quạt",
+      "bây giờ chúng ta sẽ ướp cá cho thấm gia vị; cho một thìa hạt nêm vào; rắc ớt băm lên trên; tiếp theo chuẩn bị cà chua và thơm; cắt thơm và cà chua để nấu cá"
+    ]
+  },
+  {
+    "query_id": "query-trake-38",
+    "ocr": [
+      "lẩu thái; cá dứa; gia vị lẩu thái; gói gia vị màu cam; bạc hà; thơm",
+      "Chương trình dạy nấu ăn; Đầu bếp; MC dẫn chương trình; Món lẩu Thái cá dứa; Hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "dạy nấu ăn món lẩu thái; cá dứa cắt miếng cắt khúc; rắc gói gia vị lẩu thái màu cam lên cá; bạc hà cắt xéo; thơm cắt miếng",
+      "xin chào quý vị khán giả; hôm nay chúng ta vào bếp với đầu bếp; ướp cá cho thấm đều gia vị; nhớ cắt bạc hà xéo xéo cho đỡ ngứa; cho thơm vào để nước lẩu ngọt thanh"
+    ]
+  },
+  {
+    "query_id": "query-trake-39",
+    "ocr": [
+      "bắp bò hoa; củ riềng; thái mỏng; thái chỉ; thớt gỗ",
+      "Dạy nấu ăn; Vào bếp cùng đầu bếp; Đầu bếp; MC - Người dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    ],
+    "asr": [
+      "chương trình dạy nấu ăn; nam đầu bếp áo trắng; nữ dẫn chương trình mặc tạp dề hoa nhiều màu; bắp bò hoa thái mỏng xếp trên đĩa; củ riềng thái lát rồi thái chỉ trên thớt gỗ",
+      "bây giờ chúng ta thái thịt thật mỏng nhé; các bạn nhớ lật miếng thịt và xếp đều ra đĩa; tiếp theo thái riềng thành lát rồi thái sợi; ướp cho thấm gia vị; món này rất thơm ngon; mời quý vị cùng vào bếp làm theo"
+    ]
+  },
+  {
+    "query_id": "query-trake-40",
+    "ocr": [
+      "lẩu thái; khăn lông bò; gân bò; tô thủy tinh; gói gia vị nêm sẵn lẩu thái",
+      "chương trình dạy nấu ăn; món lẩu thái; đầu bếp; MC dẫn chương trình; hướng dẫn chế biến; nguyên liệu và gia vị"
+    ],
+    "asr": [
+      "khăn lông bò cắt miếng; gân bò cắt mỏng; trút thịt từ thớt vào tô thủy tinh; ướp thịt với gói gia vị nêm sẵn lẩu thái; đổ gia vị màu cam vào tô thịt",
+      "hôm nay chúng ta sẽ nấu món lẩu thái; nguyên liệu chính là khăn lông bò và gân bò; các bạn cắt mỏng để thịt mềm và nhanh thấm; bây giờ mình sẽ ướp cho thịt ngấm đều gia vị; để khoảng mười lăm phút trước khi nấu"
+    ]
+  },
+  {
+    "query_id": "query-trake-41",
+    "ocr": [
+      "cá hồi; măng tây; khoanh thơm tỉa hoa; chảo vỉ vuông; bột canh; nước cốt tắc; ớt sừng băm",
+      "dạy nấu ăn; đầu bếp; MC dẫn chương trình; món cá hồi nướng; công thức nước chấm; hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "cá hồi và măng tây nướng trên chảo vỉ vuông; khoanh thơm tỉa hoa nướng; pha nước chấm trong chén trắng; cho bột canh vào chén; rót nước cốt tắc; cho ớt sừng băm vào",
+      "bây giờ chúng ta sẽ nướng cá hồi cho xém vàng; gắp cá ra khỏi chảo; gắp miếng thơm đặt lên đĩa; nêm nếm nước chấm chua cay mặn ngọt; khuấy đều cho tan gia vị"
+    ]
+  },
+  {
+    "query_id": "query-trake-42",
+    "ocr": [
+      "đua xe đạp; vạch đích; về đích; FINISH; chặng đua",
+      "Trực tiếp; Tường thuật chặng đua; Bảng thông tin chặng đua; Cúp Truyền Hình; HTV Thể Thao; Km còn lại"
+    ],
+    "asr": [
+      "tường thuật chặng đua xe đạp trên đường phố; nhóm tay đua dẫn đầu bám sát nhau; đang nước rút về đích; có xe ô tô và mô tô hộ tống chạy kèm",
+      "đoàn đua sắp cán đích; tốc độ đang được đẩy lên rất cao; khán giả đứng chật hai bên đường sau hàng rào màu cam; đoàn mô tô dẫn đường; chặng đua sắp kết thúc"
+    ]
+  },
+  {
+    "query_id": "query-trake-43",
+    "ocr": [
+      "861; Lân Sư Rồng; Chung kết; Bảng điểm",
+      "Đêm Chung Kết Lân Sư Rồng; Biểu diễn Rồng Vàng; Ban Giám Khảo; Cho điểm; Liên đoàn Lân Sư Rồng Việt Nam"
+    ],
+    "asr": [
+      "đêm chung kết giải lân sư rồng; đội mặc quân phục rằn ri xanh biểu diễn con rồng vàng cuộn tròn trên sân khấu; mang theo lá cờ đỏ sao vàng; trọng tài mặc áo xanh vàng giơ bảng điểm tám sáu một",
+      "màn biểu diễn rồng vàng vừa rồi rất ấn tượng; xin mời ban giám khảo cho điểm; số điểm tám trăm sáu mươi mốt; chúc mừng đội đã hoàn thành phần thi; không khí đêm chung kết rất sôi động"
+    ]
+  },
+  {
+    "query_id": "query-trake-44",
+    "ocr": [
+      "thuốc bảo vệ thực vật giả; thuốc BVTV giả; cơ sở sản xuất thuốc giả; kho xưởng sản xuất hàng giả",
+      "Công an kiểm tra kho xưởng; Triệt phá xưởng thuốc giả; Bản tin Thời sự; Tang vật thu giữ; Xưởng sản xuất trái phép"
+    ],
+    "asr": [
+      "kiểm tra kho xưởng sản xuất thuốc bảo vệ thực vật giả; công an mặc sắc phục xanh kiểm tra thùng carton và can nhựa trong nhà xưởng tường vàng; người phụ nữ áo hồng đeo khẩu trang chiết chất lỏng vào chai; hàng chai nhựa đỏ nắp xanh xếp trên bàn",
+      "phát hiện cơ sở làm giả thuốc trừ sâu; thu giữ tang vật là thùng carton và can nhựa chứa hóa chất; cơ quan chức năng kiểm tra đột xuất; xử lý vi phạm sản xuất hàng giả; cảnh báo tác hại thuốc giả đối với cây trồng"
+    ]
+  },
+  {
+    "query_id": "query-trake-45",
+    "ocr": [
+      "trộm xe máy; biển số xe; tang vật; chìa khóa; điện thoại; giấy tờ",
+      "An ninh trật tự; Bản tin 113; Công an; Hiện trường vụ việc; Thu giữ tang vật"
+    ],
+    "asr": [
+      "bắt hai đối tượng trộm xe máy trong đêm; đối tượng cởi trần bị khống chế nằm sấp trên mặt đường; xe máy nằm đổ bên lề đường; kiểm tra biển số và tang vật gồm chìa khóa điện thoại giấy tờ",
+      "lực lượng tuần tra phát hiện nghi vấn; đã khống chế bắt giữ tại chỗ; đưa đối tượng về trụ sở để làm việc; tang vật được niêm phong để điều tra; người dân báo mất trộm xe máy"
+    ]
+  },
+  {
+    "query_id": "query-trake-46",
+    "ocr": [
+      "hạt nêm; tiêu; ớt chuông đỏ; ớt chuông vàng; hành tây; tỏi; cá cắt khối; tô sứ trắng; hũ sứ trắng",
+      "Dạy nấu ăn; Vào bếp cùng đầu bếp; Món ngon mỗi ngày; Sơ chế nguyên liệu; Đầu bếp; Hướng dẫn nấu ăn"
+    ],
+    "asr": [
+      "cá cắt khối ướp trong tô sứ trắng với hạt nêm và tiêu; ớt chuông đỏ và ớt chuông vàng cắt miếng vuông; hành tây cắt khối vuông; tỏi đập dập; thìa múc hạt nêm từ hũ sứ trắng; trộn đều cá trong tô",
+      "hôm nay chúng ta sẽ hướng dẫn món cá ướp gia vị; các bạn cho hạt nêm và tiêu vào ướp cho thấm đều; bây giờ chúng ta sơ chế rau củ; chuẩn bị thớt gỗ để cắt ớt chuông và hành tây; nhớ đập dập tỏi trước khi nấu"
+    ]
+  },
+  {
+    "query_id": "query-trake-47",
+    "ocr": [
+      "lẩu thái; gói gia vị lẩu thái; giò sống; nồi thủy tinh",
+      "đầu bếp; MC dẫn chương trình; dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến lẩu thái"
+    ],
+    "asr": [
+      "nấu lẩu thái trong nồi thủy tinh màu hổ phách; phi đầu tôm; chế nước lọc vào nồi; cho gói gia vị lẩu thái; thả viên giò sống và nấm vào nồi",
+      "bây giờ chúng ta cho dầu ăn vào nồi; đảo đều đầu tôm cho thơm và lên màu; khi nước sôi thì cho gia vị vào khuấy đều; các bạn thả nhẹ giò sống và nấm vào nhé; cùng theo dõi món lẩu thái hôm nay"
+    ]
+  },
+  {
+    "query_id": "query-trake-48",
+    "ocr": [
+      "Gà hấp hành răm; gừng cắt lát đập dập thái chỉ; đầu hành; lá chanh cắt chỉ; xửng hấp inox nhiều tầng",
+      "Chương trình Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC - Người dẫn chương trình; Công thức: Gà hấp hành răm; Sơ chế nguyên liệu; Bếp gia đình"
+    ],
+    "asr": [
+      "món gà hấp hành răm; gừng cắt lát rồi đập dập và thái chỉ; đầu hành đập dập; lá chanh cắt chỉ; đặt xửng hấp inox nhiều tầng lên bếp; chương trình dạy nấu ăn với nam đầu bếp áo trắng và nữ dẫn chương trình tạp dề đỏ",
+      "bây giờ chúng ta sẽ sơ chế gừng nhé; đập dập cho dậy mùi thơm; thái sợi thật mỏng; đầu hành đập nhẹ thôi; lá chanh thái chỉ; xếp rau hành vào tô thủy tinh; chuẩn bị nồi hấp và cho lên bếp hấp cách thủy"
+    ]
+  },
+  {
+    "query_id": "query-trake-49",
+    "ocr": [
+      "thịt bằm; muối; bột ngọt; tiêu; tô sứ trắng",
+      "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Hướng dẫn ướp thịt; Gian bếp Việt"
+    ],
+    "asr": [
+      "cho thịt bằm vào tô sứ trắng; nêm muối vào thịt; cho bột ngọt vào; rắc tiêu lên mặt thịt; ướp thịt bằm với gia vị",
+      "hôm nay chúng ta sẽ làm món thịt bằm; các bạn nêm gia vị vừa ăn nhé; cho một chút muối thôi; thêm một muỗng bột ngọt; cuối cùng cho tiêu xay rồi trộn đều cho thấm"
+    ]
+  },
+  {
+    "query_id": "query-trake-50",
+    "ocr": [
+      "RACE 2; 00:00; RACE; km/h; kts; Ý",
+      "bản tin thể thao; đua thuyền buồm; chặng đua; bảng chặng đua; tốc độ; trực tiếp"
+    ],
+    "asr": [
+      "giải đua thuyền buồm trên biển trước đường chân trời thành phố; thuyền buồm hai thân bay trên mặt nước nhờ cánh ngầm; đồng hồ đếm ngược hiển thị 00:00; tốc độ của từng thuyền; bảng chặng đua RACE 2; thuyền chạy ngang lá cờ Ý cắm trên phao",
+      "bản tin thể thao hôm nay; chặng hai của giải đua thuyền buồm; các thuyền đang chuẩn bị xuất phát; thân thuyền đã nhấc khỏi mặt nước; cuộc đua diễn ra trên biển trước thành phố; chúng ta cùng theo dõi diễn biến chặng đua"
+    ]
+  }
+]

@@ -363,6 +363,29 @@ import zipfile as _zipfile
 #: Thể lệ: "Answer (Q&A) có độ dài tối đa 100 ký tự".
 MAX_ANSWER_CHARS: int = 100
 
+#: Chuỗi nối giữa hai cột. Thể lệ TỰ MÂU THUẪN ở điểm này: phần "Format" và mọi ví dụ
+#: trong mục 1–3 viết `L00_V000, 1234` CÓ dấu cách, còn mục "Ví dụ CSV chuẩn cho từng
+#: loại" lại viết `L00_V000,1234` KHÔNG có. Đội chọn dạng có dấu cách.
+#:
+#: ⚠️ RỦI RO ĐÃ BIẾT, chỉ ở cột đáp án Q&A. Thể lệ nói hai điều cạnh nhau: "Khoảng
+#: trắng đầu/cuối: Được giữ nguyên, không tự động trim" và "Answer sẽ được so sánh dưới
+#: dạng chuỗi CHÍNH XÁC". Ghép lại thì `, Năm người` cho bộ chấm chuỗi `" Năm người"`
+#: — khác `"Năm người"`. Hai cột đầu không dính vì frame_id "so sánh dưới dạng SỐ
+#: NGUYÊN", mà mọi bộ đọc số đều bỏ khoảng trắng đầu.
+#: Đổi về `","` bằng `--khong-cach` nếu muốn bỏ rủi ro đó.
+FIELD_SEP: str = ", "
+
+#: Bọc ngoặc kép cột đáp án Q&A. Thể lệ mục 2 nêu `Format: <video>, <Frame Idx>, <Answer>`
+#: và mọi ví dụ đều viết `L01_V028, 3450, "5"` — tức CÓ dấu cách VÀ có ngoặc kép. Mục
+#: "An toàn nhất" nói thẳng: "có thể luôn đặt dấu ngoặc kép cho tất cả answer".
+#:
+#: ⚠️ Hai thứ này chỉ cùng tồn tại được nếu bộ chấm bỏ khoảng trắng đầu ô
+#: (`skipinitialspace`). Nếu không, ` "x"` đọc ra literal `"x"` KÈM ngoặc. Ta không kiểm
+#: được điều đó, nhưng chính ví dụ của BTC viết như vậy nên đây là dạng họ nhận.
+#: Phòng thủ: `clean_answer` vẫn bỏ dấu phẩy/ngoặc khỏi đáp án, nên ô luôn là một token
+#: an toàn dù bộ chấm xử lý ngoặc kiểu nào.
+QUOTE_ANSWER: bool = True
+
 #: Thư mục BẮT BUỘC nằm trong file zip. Thể lệ in đậm: "PHẢI có thư mục submission
 #: bên trong file zip · KHÔNG nén trực tiếp các file CSV".
 SUBMISSION_DIRNAME: str = "submission"
@@ -414,6 +437,23 @@ def clean_answer(answer: str) -> tuple[str, list[str]]:
     out = " ".join(answer.split())
     if out != answer:
         notes.append("đã bỏ khoảng trắng thừa/xuống dòng (bộ chấm KHÔNG tự trim)")
+
+    # Bỏ dấu phẩy/ngoặc khỏi đáp án CHỈ KHI không bọc ngoặc kép.
+    #
+    # 🔴 VÌ SAO CÓ ĐIỀU KIỆN `not QUOTE_ANSWER`, và đây là một lỗi ĐÃ XẢY RA: tiếng
+    # Việt dùng dấu PHẨY làm dấu thập phân. Bỏ dấu phẩy vô điều kiện biến đáp án
+    # `"hơn 14,5 tỷ đồng"` thành `"hơn 14 -5 tỷ đồng"` — sai hẳn, mà thể lệ so khớp
+    # đáp án theo NGỮ NGHĨA nên câu đó mất trắng. Đúng loại đáp án bộ đề này hay hỏi.
+    #
+    # Khi CÓ bọc ngoặc kép thì dấu phẩy nằm trong ngoặc là hợp lệ theo RFC4180, nên
+    # phép bỏ vừa thừa vừa hại. Khi KHÔNG bọc thì nó vẫn cần, vì `a, x, y` tách thành
+    # bốn cột. Điều kiện này giữ đúng một cách hiểu cho mỗi cấu hình.
+    if FIELD_SEP.strip(",") and not QUOTE_ANSWER:
+        thay = out.replace(",", " -").replace('"', "'")
+        if thay != out:
+            notes.append('đã đổi , → " -" và " → \' vì FIELD_SEP có dấu cách '
+                         "(ngoặc kép không dùng được ở dạng này)")
+            out = " ".join(thay.split())
     if len(out) > MAX_ANSWER_CHARS:
         notes.append(f"đáp án {len(out)} ký tự > {MAX_ANSWER_CHARS} — ĐÃ CẮT")
         out = out[:MAX_ANSWER_CHARS]
@@ -435,8 +475,14 @@ def format_task_csv(submission: TaskSubmission) -> tuple[str, list[str]]:
     "File CSV bắt đầu trực tiếp bằng dữ liệu".
     """
     notes: list[str] = []
-    buf = _io.StringIO()
-    w = _csv.writer(buf, lineterminator="\n")   # QUOTE_MINIMAL là mặc định
+    dong: list[str] = []
+
+    def _o(val: object) -> str:
+        """Một ô đã escape đúng RFC4180 — bọc ngoặc kép CHỈ KHI cần."""
+        b = _io.StringIO()
+        _csv.writer(b, lineterminator="").writerow([val])
+        return b.getvalue()
+
     for rank, (video_id, frames, answer) in enumerate(submission.answers, start=1):
         if video_id.lower().endswith(".mp4"):
             raise SubmissionError(
@@ -452,9 +498,15 @@ def format_task_csv(submission: TaskSubmission) -> tuple[str, list[str]]:
                     f"[{submission.task_id}] câu #{rank}: đáp án Q&A rỗng sau khi "
                     f"chuẩn hoá — nộp thiếu cột answer là 0 điểm"
                 )
-            row.append(a)
-        w.writerow(row)
-    return buf.getvalue(), notes
+            # Nhân đôi ngoặc kép BÊN TRONG, đúng RFC4180 và đúng ví dụ của thể lệ:
+            # `"Anh ấy nói ""Xin chào"""`. Bọc trần `f'"{a}"'` làm ngoặc trong kết
+            # thúc ô sớm, và đáp án bị cụt trong im lặng.
+            row.append(('"' + a.replace('"', '""') + '"') if QUOTE_ANSWER else a)
+        dong.append(FIELD_SEP.join(
+            v if (submission.task_type == "qa" and QUOTE_ANSWER and i == len(row) - 1)
+            else _o(v)
+            for i, v in enumerate(row)))
+    return "\n".join(dong) + "\n" if dong else "", notes
 
 
 def parse_task_csv(text: str, task_type: TaskType, n_moments: int) -> list[list[str]]:
@@ -466,7 +518,9 @@ def parse_task_csv(text: str, task_type: TaskType, n_moments: int) -> list[list[
     chạy trên cấu trúc trong bộ nhớ; kiểm này chạy trên chuỗi byte sẽ nộp đi.
     """
     want = 1 + n_moments + (1 if task_type == "qa" else 0)
-    rows = [r for r in _csv.reader(_io.StringIO(text)) if r]
+    rows = [r for r in _csv.reader(_io.StringIO(text),
+                                   skipinitialspace=bool(FIELD_SEP.strip(",")))
+            if r]
     for i, r in enumerate(rows, start=1):
         if len(r) != want:
             raise SubmissionError(
@@ -481,6 +535,12 @@ def parse_task_csv(text: str, task_type: TaskType, n_moments: int) -> list[list[
                     f"dòng {i}: frame_id {c!r} không phải số nguyên thuần — "
                     f"thể lệ: 'Frame ID sẽ được so sánh dưới dạng số nguyên'"
                 )
+        if task_type == "qa" and QUOTE_ANSWER and len(r) >= 2:
+            # `csv.reader` với `skipinitialspace` đã gỡ ngoặc ngoài và gộp ngoặc đôi.
+            # Chỉ gỡ thêm khi nó CÒN nguyên cặp ngoài (bộ đọc không skipinitialspace).
+            v = r[-1]
+            if len(v) >= 2 and v[0] == '"' and v[-1] == '"':
+                r[-1] = v[1:-1].replace('""', '"')
         if task_type == "qa" and len(r[-1]) > MAX_ANSWER_CHARS:
             raise SubmissionError(f"dòng {i}: đáp án {len(r[-1])} ký tự > {MAX_ANSWER_CHARS}")
     return rows

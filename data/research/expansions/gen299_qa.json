@@ -1,0 +1,1200 @@
+{
+  "queries": [
+    {
+      "id": "query-kis-0001",
+      "query": "đoàn cán bộ khảo sát bờ kè bị sạt lở; bờ kè sông sạt lở nghiêm trọng; cây cối đổ nghiêng xuống dòng nước đục"
+    },
+    {
+      "id": "query-kis-0002",
+      "query": "bắt giữ đối tượng lừa đảo chiếm đoạt trên mười tỷ đồng; khởi tố vụ án lừa đảo chiếm đoạt tài sản"
+    },
+    {
+      "id": "query-kis-0003",
+      "query": "đang phỏng vấn; buổi phỏng vấn hôm nay; người dẫn chương trình nữ mặc áo hoa trắng"
+    },
+    {
+      "id": "query-kis-0004",
+      "query": "cảnh quay dưới đáy biển trong xanh; một con cá lớn màu nâu đang bơi; cá bơi giữa khung hình"
+    },
+    {
+      "id": "query-kis-0005",
+      "query": "thi cong tuong chong ngap doc cao toc; cong nhan dang lam viec ven duong cao toc trai nhua; xe co dang thi cong tren cong truong"
+    },
+    {
+      "id": "query-kis-0006",
+      "query": "triệt xóa sới bạc; công an triệt phá sới bạc ven quốc lộ; tụ điểm đánh bạc bị triệt xóa"
+    },
+    {
+      "id": "query-kis-0007",
+      "query": "hàng trăm chiếc xe đạp nối đuôi nhau lội qua kênh ngập nước; hai bên là các tòa nhà kiểu châu Âu"
+    },
+    {
+      "id": "query-kis-0008",
+      "query": "người đàn ông ngồi trên xích đu bay giữa không trung; ở độ cao lớn; phía dưới là toàn cảnh thành phố châu Âu nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0009",
+      "query": "hai người đàn ông ôm nhau ngoài trời; một người mặc áo đỏ; khu dân cư bị ảnh hưởng bởi vụ nổ; vụ cháy gây thiệt hại"
+    },
+    {
+      "id": "query-kis-0010",
+      "query": "camera an ninh ghi lại; xe đầu kéo màu trắng đang lưu thông trên đường; đường dây lừa đảo dùng công nghệ cao"
+    },
+    {
+      "id": "query-kis-0011",
+      "query": "xả lũ thủy điện Thác Bà; ngập nhà dân; hai người đứng trên bờ chỉ tay ra dòng nước"
+    },
+    {
+      "id": "query-kis-0012",
+      "query": "nhập cảnh trái phép từ Campuchia; vận chuyển nông sản lậu; những bao tải hàng nông sản được xếp chồng"
+    },
+    {
+      "id": "query-kis-0013",
+      "query": "chợ trái cây; những nải chuối vàng; bày bán chất đống trên sạp"
+    },
+    {
+      "id": "query-kis-0014",
+      "query": "đoàn cảnh sát mặc đồng phục đen; đứng dàn hàng ngang trên đường phố nước ngoài; áo có chữ POLICE in lớn"
+    },
+    {
+      "id": "query-kis-0015",
+      "query": "cảnh sát giao thông kiểm tra xe máy chở hàng; dừng xe kiểm tra ven đường; kiểm tra giấy tờ xe"
+    },
+    {
+      "id": "query-kis-0016",
+      "query": "cảnh sát mặc quân phục xanh khống chế nghi phạm; công an khống chế đối tượng; khuôn mặt được làm mờ che danh tính"
+    },
+    {
+      "id": "query-kis-0017",
+      "query": "cảnh sát đột kích căn nhà; tạm giữ tang vật; tụ điểm đánh bạc gần 130 triệu đồng"
+    },
+    {
+      "id": "query-kis-0018",
+      "query": "hai bác trao đổi trò chuyện; nhận giải thưởng; buổi trao giải trang trọng"
+    },
+    {
+      "id": "query-kis-0019",
+      "query": "cắt băng khánh thành; khánh thành hầm chui giao thông; nghi thức cắt băng khánh thành trước cửa hầm"
+    },
+    {
+      "id": "query-kis-0020",
+      "query": "đang bị thẩm vấn; đang được phỏng vấn; trả lời hỏi cung; khai báo trong phòng"
+    },
+    {
+      "id": "query-kis-0021",
+      "query": "tác phẩm nghệ thuật đường phố kỳ lạ; trưng bày ngoài trời; tác phẩm treo lơ lửng trên không như đang bay"
+    },
+    {
+      "id": "query-kis-0022",
+      "query": "toàn cảnh khu dân cư ngập nước lũ; nhiều mái nhà nhô lên giữa biển nước; quay từ trên cao vùng ngập lụt"
+    },
+    {
+      "id": "query-kis-0023",
+      "query": "phát biểu của Thứ trưởng Bộ Nông nghiệp; tôi xin phát biểu ý kiến"
+    },
+    {
+      "id": "query-kis-0024",
+      "query": "đua xe đạp về đích; các tay đua mặc áo đua bám sát nhau; đường đua ở nước Anh"
+    },
+    {
+      "id": "query-kis-0025",
+      "query": "đang sơ chế cá để bán; ngồi xổm làm cá bên vệ đường; hai người bán cá ven đường"
+    },
+    {
+      "id": "query-kis-0026",
+      "query": "đoàn đua xe đạp nữ bám sát nhau; chặng 4 Tour de France dành cho nữ; các vận động viên mặc áo đấu nhiều màu đang đạp xe"
+    },
+    {
+      "id": "query-kis-0027",
+      "query": "vận động viên xe đạp leo dốc núi Alpe d'Huez; mặc áo đấu có logo nhà tài trợ; đường đua có hàng rào vàng cam hai bên"
+    },
+    {
+      "id": "query-kis-0028",
+      "query": "đàn khỉ tràn xuống mặt đường nhựa; đàn khỉ trên núi Sơn Trà giật đồ ăn của người đi đường"
+    },
+    {
+      "id": "query-kis-0029",
+      "query": "hai xe máy nằm đổ trên mặt đường sau vụ tai nạn ban đêm; đèn xe cứu hộ chiếu sáng hiện trường"
+    },
+    {
+      "id": "query-kis-0030",
+      "query": "người dẫn chương trình nữ mặc áo trắng; đứng bên bản đồ khí tượng; phía sau là biển và mây"
+    },
+    {
+      "id": "query-kis-0031",
+      "query": "hàng chục chiếc xe buýt hai tầng màu đỏ đậu san sát nhau; bãi đỗ lớn đậu kín xe buýt hai tầng"
+    },
+    {
+      "id": "query-kis-0032",
+      "query": "nhóm phi công chụp ảnh chung; đứng trước hai chiếc máy bay chiến đấu; mặc đồ bay màu xanh"
+    },
+    {
+      "id": "query-kis-0033",
+      "query": "cận cảnh chai nhựa đựng nước; giọt nước đọng trên thân chai; phía sau mờ là cây xanh"
+    },
+    {
+      "id": "query-kis-0034",
+      "query": "bó hoa màu vàng cuộn tròn; bó gọn gàng; đặt sát nhau thành từng cuộn"
+    },
+    {
+      "id": "query-kis-0035",
+      "query": "lập biên bản; lấy lời khai; làm việc với cán bộ công an"
+    },
+    {
+      "id": "query-kis-0036",
+      "query": "đội hình danh dự quân đội; mặc quân phục xanh đứng nghiêm trang; xếp thành hàng ngang trong buổi lễ"
+    },
+    {
+      "id": "query-kis-0037",
+      "query": "đang dọn dẹp đống đổ nát; dọn đống đổ nát bên tường gạch đổ; xe cứu hộ đậu gần đó"
+    },
+    {
+      "id": "query-kis-0038",
+      "query": "sạp hàng trái cây; nhiều loại quả đỏ và quả cam được bày bán; phía sau là cửa hàng tạp hóa nhỏ"
+    },
+    {
+      "id": "query-kis-0039",
+      "query": "xe tải trắng lưu thông trên đường trong đêm mưa; mặt đường ướt phản chiếu ánh đèn xe"
+    },
+    {
+      "id": "query-kis-0040",
+      "query": "đàn trâu chết trong rừng do bẫy thú; trâu vướng bẫy thú chết trong rừng; bẫy thú khiến trâu chết"
+    },
+    {
+      "id": "query-kis-0041",
+      "query": "đang lắp ráp mui xe; kiểm tra nóc xe ô tô màu trắng; trong xưởng"
+    },
+    {
+      "id": "query-kis-0042",
+      "query": "trả lời phỏng vấn qua video call; phỏng vấn trực tuyến qua màn hình; trả lời phỏng vấn từ xa"
+    },
+    {
+      "id": "query-kis-0043",
+      "query": "đám đông đội mũ bảo hiểm đeo khẩu trang đứng chen chúc ban đêm; đang chờ đợi ở khu chợ bến xe"
+    },
+    {
+      "id": "query-kis-0044",
+      "query": "lễ hội sầu riêng; đang cầm quả sầu riêng lớn giới thiệu; trái sầu riêng rất to"
+    },
+    {
+      "id": "query-kis-0045",
+      "query": "thầy cầm quả sầu riêng; giới thiệu quả sầu riêng lớn; quả sầu riêng này"
+    },
+    {
+      "id": "query-kis-0046",
+      "query": "nhóm người mặc áo mưa ngồi trên xe máy; trời mưa vào ban đêm; đang đi xe dưới mưa"
+    },
+    {
+      "id": "query-kis-0047",
+      "query": "khúc sông giữa vùng núi đá; đường mòn chạy dọc bờ sông; cảnh quay từ trên cao nhìn xuống"
+    },
+    {
+      "id": "query-kis-0048",
+      "query": "xe tải nhỏ màu trắng dừng ở trạm kiểm soát; khu vực có rào chắn màu vàng"
+    },
+    {
+      "id": "query-kis-0049",
+      "query": "ngày hội việc làm; gian hàng tuyển dụng treo băng rôn; ứng viên ngồi trao đổi tại bàn"
+    },
+    {
+      "id": "query-kis-0050",
+      "query": "trẻ em đang bơi; vui chơi trong hồ bơi; nhiều phao màu sắc"
+    },
+    {
+      "id": "query-kis-0051",
+      "query": "máy chụp cắt lớp hình trụ lớn màu bạc; thiết bị y tế chụp CT; phòng có ánh sáng hồng"
+    },
+    {
+      "id": "query-kis-0052",
+      "query": "vài phụ nữ mặc áo dài trắng đứng trong phòng thờ; căn phòng có nhiều ảnh treo tường"
+    },
+    {
+      "id": "query-kis-0053",
+      "query": "tờ đơn đăng ký IELTS Test Report Form; giấy báo điểm IELTS đặt trên bàn"
+    },
+    {
+      "id": "query-kis-0054",
+      "query": "phiên tòa xét xử; bị cáo đứng giữa bục; cán bộ mặc quân phục xanh đứng nghiêm"
+    },
+    {
+      "id": "query-kis-0055",
+      "query": "công trường xây dựng; khung thép và cốt bê tông đang thi công dở dang; công nhân đang làm việc"
+    },
+    {
+      "id": "query-kis-0056",
+      "query": "khu nhà xưởng có hàng rào xanh; phía trước có bảng hiệu triển lãm; bảng hiệu khu công nghiệp"
+    },
+    {
+      "id": "query-kis-0057",
+      "query": "chụp ảnh lưu niệm cùng nhau; buổi trao quà cho người lớn tuổi; thăm hỏi người cao tuổi"
+    },
+    {
+      "id": "query-kis-0058",
+      "query": "bức tường gạch có khối màu xám xanh; mảng vuông xếp kiểu pixel; nghệ thuật đường phố kiểu pixel"
+    },
+    {
+      "id": "query-kis-0059",
+      "query": "tranh pixel trên tường gạch; nhân vật game cổ điển phong cách 8-bit; nghệ thuật đường phố pixel art"
+    },
+    {
+      "id": "query-kis-0060",
+      "query": "luống rau xanh mướt; trồng thành hàng; cận cảnh lá rau còn đọng nước"
+    },
+    {
+      "id": "query-kis-0061",
+      "query": "vài chiếc xe máy đang chạy trên đường; con đường có hàng cây xanh rợp bóng mát hai bên"
+    },
+    {
+      "id": "query-kis-0062",
+      "query": "khói lửa bốc lên mù mịt trên khu đất trống; lực lượng cứu hộ và xe cứu hỏa đứng gần đó; vụ cháy nhà kho khiến công nhân tháo chạy"
+    },
+    {
+      "id": "query-kis-0063",
+      "query": "đoạn đường bị ngập nước; đi xe máy lội qua nước ngập; nước ngập ngang bánh xe"
+    },
+    {
+      "id": "query-kis-0064",
+      "query": "toàn cảnh khu đô thị bị ngập nước nhìn từ trên cao; mái nhà nhô lên giữa biển nước mênh mông"
+    },
+    {
+      "id": "query-kis-0065",
+      "query": "bãi rác khổng lồ chất cao như núi; chim bay lượn phía trên bãi rác"
+    },
+    {
+      "id": "query-kis-0066",
+      "query": "đoàn xe quân sự màu xanh lá; binh sĩ đứng cạnh xe; đang tham gia cứu hộ diễn tập"
+    },
+    {
+      "id": "query-kis-0067",
+      "query": "đường ngập nước; nhiều ô tô ngập chỉ còn nhô nóc; nước ngập sâu"
+    },
+    {
+      "id": "query-kis-0068",
+      "query": "lực lượng cứu hộ khiêng túi đựng thi thể màu trắng; mặc đồ bảo hộ khiêng thi thể"
+    },
+    {
+      "id": "query-kis-0069",
+      "query": "trả lời phỏng vấn; chia sẻ về vật tư y tế; trong văn phòng có kệ vật tư phía sau"
+    },
+    {
+      "id": "query-kis-0070",
+      "query": "khu vực phong tỏa; chốt kiểm soát; căng dây chắn lối vào; biển cấm màu vàng không cho vào"
+    },
+    {
+      "id": "query-kis-0071",
+      "query": "khu phố ngập trong nước lũ; nhiều nhà chỉ còn thấy mái; nước lũ ngập đến nóc nhà"
+    },
+    {
+      "id": "query-kis-0072",
+      "query": "tàu chở hàng lớn màu xanh đang neo đậu gần cảng; mặt nước phẳng lặng"
+    },
+    {
+      "id": "query-kis-0073",
+      "query": "hiện trường đổ nát; gạch vụn vương vãi trên mặt đường; đồ đạc ngổn ngang sau vụ việc"
+    },
+    {
+      "id": "query-kis-0074",
+      "query": "mặt biển nhìn từ trên cao; những đợt sóng trắng xóa nối tiếp nhau"
+    },
+    {
+      "id": "query-kis-0075",
+      "query": "xe tải màu xanh chở rác đang hoạt động trên đường; xe thu gom rác màu xanh đang chạy trên đường"
+    },
+    {
+      "id": "query-kis-0076",
+      "query": "khu chợ đông đúc; nhiều xe máy đậu san sát nhau; hàng hóa bày bán hai bên đường hẹp"
+    },
+    {
+      "id": "query-kis-0077",
+      "query": "đường ống chằng chịt dưới đáy biển; dây cáp chằng chịt dưới đáy biển; hình ảnh dưới nước ở đáy biển"
+    },
+    {
+      "id": "query-kis-0078",
+      "query": "nhóm trẻ em cầm bóng bay; bóng bay nhiều màu sắc; vui đùa ngoài trời"
+    },
+    {
+      "id": "query-kis-0079",
+      "query": "nhiều con heo đứng trong chuồng; chuồng trại lót nền xi măng; trang trại chăn nuôi heo"
+    },
+    {
+      "id": "query-kis-0080",
+      "query": "bên trong căn nhà bị hư hại; cây xanh mọc lấn vào nhà; tường bong tróc"
+    },
+    {
+      "id": "query-kis-0081",
+      "query": "tòa lâu đài cổ kiểu châu Âu; lâu đài có tháp nhọn; xây bằng đá xám"
+    },
+    {
+      "id": "query-kis-0082",
+      "query": "xe cháy trơ khung sắt; xe bị cháy chỉ còn khung; cảnh sát khám nghiệm hiện trường"
+    },
+    {
+      "id": "query-kis-0083",
+      "query": "công trường xây cầu bắc qua sông; cần cẩu lớn đang thi công; trụ bê tông đang thi công"
+    },
+    {
+      "id": "query-kis-0084",
+      "query": "ruộng đồng nhìn từ trên cao; các thửa đất trồng cây xếp thành hình vân sóng màu xanh"
+    },
+    {
+      "id": "query-kis-0085",
+      "query": "phòng học trống; dãy bàn ghế xếp ngay ngắn; không có học sinh"
+    },
+    {
+      "id": "query-kis-0086",
+      "query": "đồ đạc đổ vỡ ngổn ngang; ghế và vật dụng nằm lăn lóc trên sàn; sau sự cố trong nhà"
+    },
+    {
+      "id": "query-kis-0087",
+      "query": "đường bị ngập nước vào ban đêm; xe tải đang chạy tạo vệt sóng nước lớn hai bên"
+    },
+    {
+      "id": "query-kis-0088",
+      "query": "nhìn từ trên cao dòng sông có nhiều sà lan chở hàng đang di chuyển; nhiều sà lan chở hàng đang chạy trên sông"
+    },
+    {
+      "id": "query-kis-0089",
+      "query": "hai người phụ nữ mặc trang phục thời trang; đứng tại gian hàng sự kiện; một người đội mũ đen"
+    },
+    {
+      "id": "query-kis-0090",
+      "query": "cánh đồng ngập nước; đang lội giữa ruộng nước mênh mông; lội giữa đồng nước"
+    },
+    {
+      "id": "query-kis-0091",
+      "query": "hai người ngồi cạnh nhau; khuôn mặt được làm mờ; bảo mật danh tính; che mặt để bảo vệ"
+    },
+    {
+      "id": "query-kis-0092",
+      "query": "kẹt xe kéo dài; hàng dài ô tô nối đuôi nhau; ùn tắc trên cây cầu lớn nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0093",
+      "query": "đang khám cho bé gái; khám bệnh cho cháu bé; nhân viên y tế đang khám"
+    },
+    {
+      "id": "query-kis-0094",
+      "query": "hố sụt lớn trên mặt đường nhựa; lộ ra đất đá và ống nước bên dưới"
+    },
+    {
+      "id": "query-kis-0095",
+      "query": "đoàn đua xe đạp thể thao; quay từ flycam trên cao; chạy trên đại lộ có vạch sơn xanh giữa đường"
+    },
+    {
+      "id": "query-kis-0096",
+      "query": "đoàn đua xe đạp đang chạy giữa hai hàng cây xanh; góc quay flycam từ trên cao; bảng thông số tốc độ và vòng đua"
+    },
+    {
+      "id": "query-kis-0097",
+      "query": "cảnh sát giao thông hộ tống dẫn đoàn bằng mô tô; đoàn đua xe đạp di chuyển trên đường lớn; nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0098",
+      "query": "đoàn đua xe đạp đang đổ dốc; đang chạy trên cây cầu màu hồng; góc quay từ flycam trên cao"
+    },
+    {
+      "id": "query-kis-0099",
+      "query": "đoàn đua xe đạp chạy ngang qua chợ; đoàn đua đi qua khu chợ có mái che sặc sỡ hai bên đường"
+    },
+    {
+      "id": "query-kis-0100",
+      "query": "đoàn đua xe đạp đông đảo chạy sát nhau; đoàn đua trên đại lộ rộng giữa các tòa nhà cao tầng; nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0101",
+      "query": "hàng dài tay đua xe đạp nối đuôi nhau; đoàn xe đạp chạy trên đường vắng có hàng cây hai bên"
+    },
+    {
+      "id": "query-kis-0102",
+      "query": "toàn cảnh khu phố đông đúc nhìn từ trên cao; ngày diễn ra giải đua xe đạp"
+    },
+    {
+      "id": "query-kis-0103",
+      "query": "đám đông cầm cờ và băng rôn; cổ vũ hai bên đường đua; khán giả reo hò hai bên đường"
+    },
+    {
+      "id": "query-kis-0104",
+      "query": "phương pháp điện phân; cốc thủy tinh đặt trên cân điện tử trong phòng thí nghiệm"
+    },
+    {
+      "id": "query-kis-0105",
+      "query": "Nhóm chất thuộc loại; câu hỏi trắc nghiệm; bảng câu hỏi nhiều màu sắc kiểu trò chơi truyền hình"
+    },
+    {
+      "id": "query-kis-0106",
+      "query": "rót nước vào bột gelatin màu trắng; gelatin 2 gam cộng nước 10 gam; cho 10 gam nước vào 2 gam gelatin"
+    },
+    {
+      "id": "query-kis-0107",
+      "query": "đang khuấy kem béo; khuấy đều hỗn hợp kem trắng trong khuôn tròn kim loại"
+    },
+    {
+      "id": "query-kis-0108",
+      "query": "cầm con cá tươi trên tay; gói gia vị màu xanh lá bên cạnh; bàn tay cầm cá tươi"
+    },
+    {
+      "id": "query-kis-0109",
+      "query": "nguyên liệu gồm mực sữa, đậu Hà Lan và ớt sừng; khối lượng từng loại; chuẩn bị nguyên liệu nấu ăn"
+    },
+    {
+      "id": "query-kis-0110",
+      "query": "múc bột ngọt cho vào bát; cho một thìa bột ngọt vào bát; thêm bột ngọt"
+    },
+    {
+      "id": "query-kis-0111",
+      "query": "rót nước nóng vào ly; đổ 240ml nước nóng vào bột trà sữa; cho nước nóng vào ly nhựa"
+    },
+    {
+      "id": "query-kis-0112",
+      "query": "cho xoài vào cối xay sinh tố; cho những miếng xoài vàng vào cối thủy tinh"
+    },
+    {
+      "id": "query-kis-0113",
+      "query": "cho rượu sa-kê 150ml vào chảo; thêm rượu sake vào nước sốt; sốt đang sủi bọt"
+    },
+    {
+      "id": "query-kis-0114",
+      "query": "khay bánh nướng hình tròn màu vàng nâu vừa lấy ra khỏi lò; đặt cạnh găng tay chống nóng kẻ sọc"
+    },
+    {
+      "id": "query-kis-0115",
+      "query": "trên quầy bếp có cây thông Noel giả nhỏ; đồ trang trí màu đỏ trên quầy bếp; hai người dẫn chương trình đứng phía sau"
+    },
+    {
+      "id": "query-kis-0116",
+      "query": "rưới nước tương vào chảo; cho nước tương vào chảo"
+    },
+    {
+      "id": "query-kis-0117",
+      "query": "đổ ớt sừng băm vào chén thủy tinh; cho ớt sừng băm đỏ vào chén"
+    },
+    {
+      "id": "query-kis-0118",
+      "query": "rót nước vào nồi lớn; cho 1.6 lít nước vào nồi để nấu nước dùng"
+    },
+    {
+      "id": "query-kis-0119",
+      "query": "bột bánh rán vị sô cô la 200 gam; pha bột với nước theo hướng dẫn trên bao bì"
+    },
+    {
+      "id": "query-kis-0120",
+      "query": "cho bột canh Ajinomoto vào món ăn; đang cho bột canh vào; nêm bột canh Ajinomoto"
+    },
+    {
+      "id": "query-kis-0121",
+      "query": "nghiêng dao 45 độ; cắt bao tử heo theo góc nghiêng; nghiêng lưỡi dao 45 độ để cắt"
+    },
+    {
+      "id": "query-kis-0122",
+      "query": "rót nước tương từ chai vào chảo đen; cho nước tương vào chảo đang đặt trên bếp"
+    },
+    {
+      "id": "query-kis-0123",
+      "query": "ca đong nhựa có vạch chia; chất lỏng màu nâu sẫm; bột cacao pha với sữa"
+    },
+    {
+      "id": "query-kis-0124",
+      "query": "đậy nắp nồi trắng lại; nước dừa một chén"
+    },
+    {
+      "id": "query-kis-0125",
+      "query": "rót nước lá cẩm tím vào bột; cho 100ml nước lá cẩm tím vào"
+    },
+    {
+      "id": "query-kis-0126",
+      "query": "rót thêm nước vào bột; cho 150ml nước vào tô thủy tinh đựng bột"
+    },
+    {
+      "id": "query-kis-0127",
+      "query": "đang đánh bông kem trắng bằng phới lồng; đánh kem cho bông lên"
+    },
+    {
+      "id": "query-kis-0128",
+      "query": "khuấy đều nước sốt; đang khuấy nồi sốt vàng óng trên bếp"
+    },
+    {
+      "id": "query-kis-0129",
+      "query": "dùng đũa khuấy nước tương trong chai thủy tinh; khuấy đều nước tương bằng đũa"
+    },
+    {
+      "id": "query-kis-0130",
+      "query": "rót giấm gạo vào thìa đong nhỏ; cho một thìa giấm gạo"
+    },
+    {
+      "id": "query-kis-0131",
+      "query": "rót nước vào túi bột; đổ nước vào bịch bột trong suốt"
+    },
+    {
+      "id": "query-kis-0132",
+      "query": "rót whipping cream vào ly; cho 100ml whipping cream vào ly"
+    },
+    {
+      "id": "query-kis-0133",
+      "query": "ướp thịt với nước tương; cho tỏi băm và dầu hào vào tô; thịt ướp trong tô"
+    },
+    {
+      "id": "query-kis-0134",
+      "query": "rót nước dừa vào nồi đang xào; cho 700ml nước dừa vào nồi; đổ nước dừa vào xào chung"
+    },
+    {
+      "id": "query-kis-0135",
+      "query": "cửa lò nướng mở ra; khay thức ăn bên trong; nhiệt độ khoảng 200 độ C"
+    },
+    {
+      "id": "query-kis-0136",
+      "query": "trái cây vàng thái hạt lựu; những miếng trái cây cắt nhỏ để trong chảo; để trong âu lớn"
+    },
+    {
+      "id": "query-kis-0137",
+      "query": "rót dầu ăn vào tô hỗn hợp; cho dầu ăn vào hỗn hợp; thêm hai muỗng dầu ăn"
+    },
+    {
+      "id": "query-kis-0138",
+      "query": "rót nước sôi vào ly bột pha sẵn; đổ 30 gam nước sôi vào ly; pha bột với nước sôi"
+    },
+    {
+      "id": "query-kis-0139",
+      "query": "xin chào tạm biệt quý vị khán giả; tạm biệt và hẹn gặp lại quý vị"
+    },
+    {
+      "id": "query-kis-0140",
+      "query": "ngồi trên xuồng vẫy chào; đang ngồi trên xuồng giơ tay vẫy"
+    },
+    {
+      "id": "query-kis-0141",
+      "query": "giá vé khoảng một trăm bốn mươi ngàn đồng; vé người lớn một trăm bốn mươi nghìn; khu vui chơi ngoài trời có đường trượt bằng gỗ uốn lượn qua cây xanh"
+    },
+    {
+      "id": "query-kis-0142",
+      "query": "biển hiệu hủ tiếu Nam Vang; quán hủ tiếu Nam Vang; đây là quán hủ tiếu Nam Vang"
+    },
+    {
+      "id": "query-kis-0143",
+      "query": "cổng đền cổ màu đỏ treo nhiều đèn lồng hai bên; phía trên có chữ Hán; di tích xây từ năm 1735"
+    },
+    {
+      "id": "query-kis-0144",
+      "query": "bên trong chánh điện; ngôi đền cổ; bức hoành phi lớn; cột gỗ chạm khắc màu đỏ vàng"
+    },
+    {
+      "id": "query-kis-0145",
+      "query": "nghĩa trang cổ; hàng dài ngôi mộ đá xây thành ô vuông đều nhau; nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0146",
+      "query": "chợ hải sản tấp nập; người mua người bán đông đúc; thùng hải sản bày trước cửa hàng"
+    },
+    {
+      "id": "query-kis-0147",
+      "query": "hàng chục chiếc thuyền đánh cá đủ màu sắc; đậu san sát nhau tại cảng cá; tàu cá neo đậu san sát"
+    },
+    {
+      "id": "query-kis-0148",
+      "query": "bức chân dung danh nhân trong đền thờ; sinh năm 1838 mất năm 1868; cận cảnh bức chân dung trong đền"
+    },
+    {
+      "id": "query-kis-0149",
+      "query": "toàn cảnh khu đô thị ven biển nhìn từ trên cao; cách Thành phố Hồ Chí Minh khoảng 230km; khoảng 230 cây số đến TP.HCM"
+    },
+    {
+      "id": "query-kis-0150",
+      "query": "người dẫn chương trình nữ mặc áo trắng đứng trên cầu cao nhìn ra biển; tóc bay trong gió"
+    },
+    {
+      "id": "query-kis-0151",
+      "query": "toàn cảnh thị trấn ven biển nhìn từ trên cao; nhìn qua khung cửa sổ; nhìn qua lan can cầu"
+    },
+    {
+      "id": "query-kis-0152",
+      "query": "rừng ngập mặn rậm rạp; lối đi mòn xuyên qua giữa các thân cây; con đường mòn trong rừng ngập mặn"
+    },
+    {
+      "id": "query-kis-0153",
+      "query": "người dẫn chương trình mặc áo dài hồng; đứng giữa cánh đồng lúa xanh mướt; đưa tay vẫy chào"
+    },
+    {
+      "id": "query-kis-0154",
+      "query": "người phụ nữ đội nón lá đứng cạnh chai sữa; thu hoạch khoảng 30 lít sữa một ngày; mỗi ngày 30 lít sữa"
+    },
+    {
+      "id": "query-kis-0155",
+      "query": "thuyền gỗ nhỏ neo đậu bên bờ kênh; phía sau là dừa nước rậm rạp"
+    },
+    {
+      "id": "query-kis-0156",
+      "query": "nhiều xâu cá khô treo phơi; mực khô treo thành hàng dài; phơi cá mực trên giàn tre"
+    },
+    {
+      "id": "query-kis-0157",
+      "query": "hơn hai phẩy tám triệu mét khối đất được đào; đào trong năm năm; hơn 2,8 triệu mét khối đất"
+    },
+    {
+      "id": "query-kis-0158",
+      "query": "thống kê thiệt hại chiến tranh biên giới Tây Nam; số liệu nhà cửa bị tàn phá; số liệu trường học bị tàn phá"
+    },
+    {
+      "id": "query-kis-0159",
+      "query": "hai người đàn ông ngồi đối diện trò chuyện; cuộc trò chuyện phỏng vấn; trao đổi tại bàn tròn"
+    },
+    {
+      "id": "query-kis-0160",
+      "query": "khu chợ đông đúc; nhiều người và xe máy qua lại; sạp hàng rau củ hai bên đường hẹp"
+    },
+    {
+      "id": "query-kis-0161",
+      "query": "người phụ nữ đứng cạnh khung cửa gỗ; căn nhà sàn cũ; phía xa nhìn thấy biển"
+    },
+    {
+      "id": "query-kis-0162",
+      "query": "ông cụ đội mũ vải ngồi cạnh lò đất nung màu nâu đỏ; lò gạch hoặc lò than thủ công"
+    },
+    {
+      "id": "query-kis-0163",
+      "query": "đoàn múa lân sư rồng diễu hành; rực rỡ sắc màu vàng đỏ; cổng chào trang trí phía trước; lễ hội truyền thống diễn ra trong ba ngày"
+    },
+    {
+      "id": "query-kis-0164",
+      "query": "cổng chào treo cờ Tổ quốc lớn giữa đường phố; xe cảnh sát hộ tống đậu phía trước"
+    },
+    {
+      "id": "query-kis-0165",
+      "query": "phụ nữ mặc áo dài hồng đứng sau quầy; giới thiệu sản phẩm; nhiều hũ đựng thực phẩm xếp hàng"
+    },
+    {
+      "id": "query-kis-0166",
+      "query": "cận cảnh chân dung Chủ tịch Hồ Chí Minh treo trong phòng; kỷ vật cây vú sữa gửi ra Bắc"
+    },
+    {
+      "id": "query-kis-0167",
+      "query": "cổng tam quan màu hồng phấn; mái ngói cong có hai cột trụ lớn hai bên; khuôn viên có nhiều cây xanh"
+    },
+    {
+      "id": "query-kis-0168",
+      "query": "tàu cá lớn đậu tại bến ban đêm; ánh đèn vàng chiếu sáng cả con tàu"
+    },
+    {
+      "id": "query-kis-0169",
+      "query": "nấm trắng mọc thành chùm; giá bán khoảng hai trăm nghìn đồng; hai trăm ngàn một ký nấm trắng"
+    },
+    {
+      "id": "query-kis-0170",
+      "query": "hai người phụ nữ mặc áo cam; ngồi đối diện nhau; quầy trưng bày sản phẩm nhiều màu sắc"
+    },
+    {
+      "id": "query-kis-0171",
+      "query": "con vật nhỏ nằm trong lồng; chó con nằm trong lồng; mèo con nằm trong chuồng; chuồng số 120"
+    },
+    {
+      "id": "query-kis-0172",
+      "query": "người đàn ông áo đỏ đang kiểm tra con vật nuôi trong lồng lưới kim loại; đang kiểm tra thú cưng trong lồng sắt"
+    },
+    {
+      "id": "query-kis-0173",
+      "query": "câu mực ban đêm; câu mực từ 6 giờ tối đến 3 giờ sáng; câu mực diễn ra từ 18 giờ đến 3 giờ sáng"
+    },
+    {
+      "id": "query-kis-0174",
+      "query": "nhiều xâu mực khô lớn treo phơi trên giàn; mực khô xâu phơi nắng; vựa mực khô Kiều Nương"
+    },
+    {
+      "id": "query-kis-0175",
+      "query": "đeo găng nhựa nặn bột; đang nặn khối bột trắng tròn; nặn bột trên mẹt tre"
+    },
+    {
+      "id": "query-kis-0176",
+      "query": "cán mỏng miếng bột trắng; cán bột cho mỏng đều; độ dày của bánh trước khi hấp"
+    },
+    {
+      "id": "query-kis-0177",
+      "query": "bia mộ liệt sĩ ghi sinh năm 1945; liệt sĩ sinh năm 1945 từng đánh trận năm 1972; tham gia trận đánh năm 1972"
+    },
+    {
+      "id": "query-kis-0178",
+      "query": "quyển sổ tay viết tay để mở; các con số và ghi chú nguệch ngoạc; cuốn sổ ghi chép viết tay"
+    },
+    {
+      "id": "query-kis-0179",
+      "query": "tại đây có cho thuê truyện; thư viện hoạt động hơn 14 năm; hơn 4000 đầu sách"
+    },
+    {
+      "id": "query-kis-0180",
+      "query": "đầu tư gần 300 triệu đồng cải tạo ruộng thành ao nuôi cá; người đàn ông cầm cây sào đứng giữa ao bèo"
+    },
+    {
+      "id": "query-kis-0181",
+      "query": "căn phòng nhỏ chứa đầy sách; kệ sách xếp kín từ sàn đến trần; phòng đầy sách"
+    },
+    {
+      "id": "query-kis-0182",
+      "query": "đếm xấp tiền giấy; đếm tiền mệnh giá nhỏ bằng tay; đếm tiền trên mặt bàn màu cam"
+    },
+    {
+      "id": "query-kis-0183",
+      "query": "nhân viên y tế trao suất ăn tận tay cho bệnh nhân; phát suất ăn cho bệnh nhân lớn tuổi trong hành lang bệnh viện"
+    },
+    {
+      "id": "query-kis-0184",
+      "query": "quây quần gói bánh tét; đang gói bánh tét; chuẩn bị nếp và nguyên liệu gói bánh"
+    },
+    {
+      "id": "query-kis-0185",
+      "query": "bà cụ đeo kính đang đọc sách; đang ngồi đọc tài liệu; chăm chú nhìn xuống trang giấy"
+    },
+    {
+      "id": "query-kis-0186",
+      "query": "nhiều bao tải và thùng hàng cứu trợ được xếp chồng; chuẩn bị vận chuyển tại quảng trường"
+    },
+    {
+      "id": "query-kis-0187",
+      "query": "vài em nhỏ đội mũ khăn ngồi thành hàng; các bệnh nhi đang điều trị"
+    },
+    {
+      "id": "query-kis-0188",
+      "query": "hai cậu bé xô đẩy nhau; hai đứa trẻ đẩy nhau ngoài trời trên sân xi măng"
+    },
+    {
+      "id": "query-kis-0189",
+      "query": "cụ bà đội khăn trùm đầu; đứng giữa khu chợ; chợ nhiều màu sắc phía sau; khuôn mặt khắc khổ"
+    },
+    {
+      "id": "query-kis-0190",
+      "query": "mâm hoa màu đỏ và vàng xếp thành hình trái tim; hoa xếp hình trái tim đỏ vàng"
+    },
+    {
+      "id": "query-kis-0191",
+      "query": "cận cảnh máy đo điện tâm đồ màu trắng; máy điện tâm đồ đặt trên bàn trong phòng khám"
+    },
+    {
+      "id": "query-kis-0192",
+      "query": "nhiều cuốn sổ lưu bút và sách cũ xếp chồng trên bàn; chồng sổ lưu bút với sách cũ để trên bàn"
+    },
+    {
+      "id": "query-kis-0193",
+      "query": "bộ sưu tập gần 15 năm; khoảng bảy đến tám nghìn cuốn; bảy tám nghìn cuốn sách giáo khoa; nhiều chồng sách giáo khoa cũ xếp cao trên kệ"
+    },
+    {
+      "id": "query-kis-0194",
+      "query": "nhóm áo xanh đang cúi xuống chuẩn bị đồ đạc; hoạt động thiện nguyện ngoài trời buổi tối; đang sắp xếp đồ đạc"
+    },
+    {
+      "id": "query-kis-0195",
+      "query": "tấm bằng khen; có đóng dấu đỏ; đặt trên bàn"
+    },
+    {
+      "id": "query-kis-0196",
+      "query": "hai cha con đứng cạnh nhau ngoài đường ban đêm; một người đội mũ lưỡi trai"
+    },
+    {
+      "id": "query-kis-0197",
+      "query": "cùng nhau chụp ảnh lưu niệm; cầm túi quà trên tay; đứng chụp hình chung với nhau"
+    },
+    {
+      "id": "query-kis-0198",
+      "query": "các em xếp hàng nhận quà; trao quà cho thiếu nhi trên sân khấu; các cháu lên sân khấu nhận quà"
+    },
+    {
+      "id": "query-kis-0199",
+      "query": "tổng giá trị giải thưởng một trăm triệu đồng; giải nhất hai mươi triệu đồng; cuộc thi có tổng giải thưởng là một trăm triệu"
+    },
+    {
+      "id": "query-qa-01",
+      "query": "sạt lở bờ sông ở miền Tây; đoàn cán bộ khảo sát bờ kè bị sạt; cây cối đổ ngổn ngang xuống dòng nước đục; đoàn cúi xem bản đồ khu vực trên bàn ngoài trời"
+    },
+    {
+      "id": "query-qa-02",
+      "query": "công an triệt phá đường dây lừa bán tiền giả; những xấp tiền giả được đóng gói trong hộp giấy nhỏ màu vàng nâu xếp thành nhiều chồng trên bàn"
+    },
+    {
+      "id": "query-qa-03",
+      "query": "xả lũ hồ thủy điện Thác Bà gây ngập nhà xưởng gỗ ở Yên Bái; bộ đội biên phòng mặc quân phục xanh cùng người dân khiêng gỗ; di chuyển đồ đạc ra khỏi khu xưởng bị ngập nước"
+    },
+    {
+      "id": "query-qa-04",
+      "query": "đề xuất hạ mức phạt vi phạm nồng độ cồn khi lái xe; mức phạt đề xuất mới cho xe mô tô xe gắn máy; so sánh mức phạt hiện hành và mức phạt đề xuất"
+    },
+    {
+      "id": "query-qa-05",
+      "query": "mùa nước lũ ở Đồng Tháp; đàn chim màu hồng rất đông bay là là trên cánh đồng lúa mới gặt; nghề nuôi gia cầm chạy đồng nhộn nhịp trở lại mùa nước nổi"
+    },
+    {
+      "id": "query-qa-06",
+      "query": "đợt nắng nóng kỷ lục ở châu Âu; nhiệt độ vượt mức kỷ lục; đạt bao nhiêu độ C; bãi biển đông đúc"
+    },
+    {
+      "id": "query-qa-07",
+      "query": "tai nạn giao thông; thai phụ được đưa vào cấp cứu; nguy cơ tử vong lên đến bao nhiêu phần trăm"
+    },
+    {
+      "id": "query-qa-08",
+      "query": "Sở Giáo dục và Đào tạo Thành phố Hồ Chí Minh đặt hàng đào tạo nguồn nhân lực giáo viên; tiếp nhận danh sách sinh viên tốt nghiệp xuất sắc; xét tuyển làm giáo viên các cấp học"
+    },
+    {
+      "id": "query-qa-09",
+      "query": "tiến độ dự án đường vành đai ở TP.HCM; dự án khép kín tuyến đường vành đai; hiện mới hoàn thành được bao nhiêu km trên tổng chiều dài toàn tuyến"
+    },
+    {
+      "id": "query-qa-10",
+      "query": "hội chợ kết nối cung cầu giữa các tỉnh; gian hàng bày bán nước giặt dầu gội; sản phẩm tiêu dùng; biển giảm giá sốc"
+    },
+    {
+      "id": "query-qa-11",
+      "query": "đoàn đua còn cách đích bao nhiêu km; còn cách vạch đích; nhóm đua đang cách đích"
+    },
+    {
+      "id": "query-qa-12",
+      "query": "nhóm dẫn đầu đang đẩy tốc độ lên trên bao nhiêu km/h; tốc độ của tốp đầu đang là bao nhiêu; vận tốc hiện tại trên km/h"
+    },
+    {
+      "id": "query-qa-13",
+      "query": "chặng đua còn cách đích bao nhiêu km; chỉ còn bao nhiêu km nữa là về đích; khoảng cách đến đích còn bao nhiêu"
+    },
+    {
+      "id": "query-qa-14",
+      "query": "cạnh tranh ở giai đoạn này; phải vượt qua tốc độ bao nhiêu km/h; tốc độ bao nhiêu km trên giờ; chắc chắn phải vượt qua tốc độ"
+    },
+    {
+      "id": "query-qa-15",
+      "query": "đoàn đua chỉ còn cách đích bao nhiêu km; còn cách vạch đích bao nhiêu cây số; sắp về đến đích"
+    },
+    {
+      "id": "query-qa-16",
+      "query": "đêm chung kết giải lân sư rồng; trọng tài mặc áo xanh phối vàng giơ bảng điểm; chấm điểm cho đội biểu diễn; bảng tổng hợp điểm của các trọng tài"
+    },
+    {
+      "id": "query-qa-17",
+      "query": "đêm chung kết giải lân sư rồng; đội mặc quân phục rằn ri xanh biểu diễn với con rồng vàng và cờ đỏ sao vàng; trọng tài giơ cao bảng điểm sau phần thi"
+    },
+    {
+      "id": "query-qa-18",
+      "query": "múa lân leo cột mai hoa thung; con lân trắng nhảy giữa các cột cao; giàn cột nâng cao thêm bao nhiêu mét so với thông thường"
+    },
+    {
+      "id": "query-qa-19",
+      "query": "đêm thi múa lân sư rồng; con rồng vàng dài uốn lượn khắp sân; cả đội xếp thành hàng ngang chào khán giả khi phần thi kết thúc"
+    },
+    {
+      "id": "query-qa-20",
+      "query": "làng nghề truyền thống miền Tây Nam Bộ; nghề thủ công đất sét nung; vùng đất ven sông làm gạch gốm; tỉnh sớm phát triển nghề làm gạch gốm nhất đồng bằng sông Cửu Long"
+    },
+    {
+      "id": "query-qa-21",
+      "query": "vùng đồng bằng sông Hồng gồm bao nhiêu tỉnh thành; đồng bằng sông Hồng có mấy tỉnh; giới thiệu về vùng đồng bằng sông Hồng ĐBSH"
+    },
+    {
+      "id": "query-qa-22",
+      "query": "bài giảng ôn thi THPT môn Địa lý; vùng Bắc Trung Bộ; sơ đồ cơ cấu nông lâm ngư; vùng núi vùng đồi chuyển tiếp và đồng bằng ven biển"
+    },
+    {
+      "id": "query-qa-23",
+      "query": "Hiệp hội các quốc gia Đông Nam Á được thành lập vào ngày tháng năm nào; ASEAN được thành lập khi nào; ngày thành lập ASEAN là khi nào"
+    },
+    {
+      "id": "query-qa-24",
+      "query": "ôn lại ancol phenol; bảng so sánh tính chất của các loại ancol và phenol; ancol etylic tách nước với xúc tác H2SO4 đặc"
+    },
+    {
+      "id": "query-qa-25",
+      "query": "lễ tốt nghiệp tại trường đại học quốc tế; tân cử nhân tung mũ tốt nghiệp lên trời; thầy giáo mặc áo sơ mi giảng bài lập trình trước máy tính xách tay; doanh nghiệp tài trợ học bổng bao nhiêu phần trăm học phí toàn khóa"
+    },
+    {
+      "id": "query-qa-26",
+      "query": "con gà nặng khoảng bao nhiêu kg; hấp trong bao lâu; gà buộc dây cho vào nồi hấp lớn; gừng đầu hành lá chanh thái sợi"
+    },
+    {
+      "id": "query-qa-27",
+      "query": "đùi dê phết sốt nâu bóng; đặt đùi dê vào lò nướng; nướng ở nhiệt độ bao nhiêu độ; nướng trong thời gian bao lâu"
+    },
+    {
+      "id": "query-qa-28",
+      "query": "chương trình Món Ngon Mỗi Ngày với hai đầu bếp nam mặc áo trắng; cua rang me ướp trong tô thủy tinh với sốt me và mè rang; cua xếp trong đĩa thủy tinh tay cầm hình lá"
+    },
+    {
+      "id": "query-qa-29",
+      "query": "làm nóng lò trước khi nướng; nhiệt độ nướng đùi gà; phết sốt mật ong lên đùi gà; xếp đùi gà lên vỉ nướng rồi cho vào lò; đùi gà nướng vàng óng"
+    },
+    {
+      "id": "query-qa-30",
+      "query": "cánh gà cung cấp bao nhiêu phần trăm protein; hàm lượng protein trong cánh gà là bao nhiêu phần trăm; phần trăm đạm của cánh gà"
+    },
+    {
+      "id": "query-qa-31",
+      "query": "miếu linh thiêng ở An Giang; mỗi năm đón khoảng bao nhiêu lượt khách tham quan; ngôi miếu này đón bao nhiêu du khách một năm"
+    },
+    {
+      "id": "query-qa-32",
+      "query": "phóng sự du lịch về con suối ở An Giang; hai chàng trai mặc áo đỏ lội qua tảng đá dưới thác nước nhỏ; giữa rừng cây xanh"
+    },
+    {
+      "id": "query-qa-33",
+      "query": "thị trấn ven biển nhiều nhà san sát; cây cầu dài bắc qua cửa sông; cách thành phố Rạch Giá khoảng bao nhiêu km"
+    },
+    {
+      "id": "query-qa-34",
+      "query": "đang chế biến món lẩu cua ghẹ trong chảo lớn; flycam toàn cảnh thành phố ven biển; thành phố này cách Thành phố Hồ Chí Minh bao nhiêu km"
+    },
+    {
+      "id": "query-qa-35",
+      "query": "hái rau rừng ở núi Cấm An Giang; rau cát lồi; hai chú cháu đi bộ trong rừng rậm; chú đội nón hái lá rừng"
+    },
+    {
+      "id": "query-qa-36",
+      "query": "hệ thống kênh đào miền Tây Nam Bộ; kênh Rạch Giá - Hà Tiên chia nguồn nước cho kênh nào; trước khi đổ ra biển Tây"
+    },
+    {
+      "id": "query-qa-37",
+      "query": "dòng sông ở Hà Tiên; vẻ đẹp của dòng sông này; được nhắc đến qua bài thơ nào; bài thơ nói về dòng sông Hà Tiên"
+    },
+    {
+      "id": "query-qa-38",
+      "query": "thuyết minh lịch sử kênh đào ở miền Tây; hình ảnh flycam con kênh thẳng tắp xuyên qua cánh đồng lúa xanh; phụ đề câu ca dao về con kênh"
+    },
+    {
+      "id": "query-qa-39",
+      "query": "hệ thống kênh đào ở An Giang; kênh Vĩnh Tế nối sông Hậu với con sông nào; kênh Vĩnh Tế nối sông Hậu với"
+    },
+    {
+      "id": "query-qa-40",
+      "query": "nghề làm mắm từ hải sản đặc trưng vùng Hà Tiên; công nhân đội mũ đeo găng tay xanh phân loại nguyên liệu màu xanh lục trong cơ sở chế biến"
+    },
+    {
+      "id": "query-qa-41",
+      "query": "nghề làm khô cá ở Cà Mau; đan lạt tre; bó lạt tre thành từng bó lớn"
+    },
+    {
+      "id": "query-qa-42",
+      "query": "phóng sự du lịch sinh thái ở Cà Mau; khu vườn cò; tấm biển gỗ có hai lá cờ nhỏ hai bên ghi tên vườn cò; đàn cò trắng bay lượn trên tán cây"
+    },
+    {
+      "id": "query-qa-43",
+      "query": "nghề đánh bắt hải sản ở Cà Mau; hai người trò chuyện trên ghe gỗ; chiếc ghe nhỏ thu mua được bao nhiêu kg hải sản mỗi chuyến; cần cẩu kéo lưới lên khoang tàu cá"
+    },
+    {
+      "id": "query-qa-44",
+      "query": "nữ giám đốc khu du lịch trả lời phỏng vấn; phóng sự du lịch sinh thái rừng tràm; xuồng nhỏ chạy trên rạch bông súng nở"
+    },
+    {
+      "id": "query-qa-45",
+      "query": "mô hình trồng nấm bào ngư; trồng nấm bào ngư; bịch phôi nấm treo thành hàng; nấm màu nâu xám mọc thành chùm"
+    },
+    {
+      "id": "query-qa-46",
+      "query": "thanh niên đầu cạo trọc sửa xe đạp miễn phí; chàng trai áo thun xanh navy sửa xe giúp người nghèo trong con hẻm nhỏ; sửa xe không lấy tiền"
+    },
+    {
+      "id": "query-qa-47",
+      "query": "lớp học tình thương ngoài trời; ước mơ gieo con chữ cho người nghèo; cụ bà áo hoa dạy học trên vỉa hè cho trẻ nhỏ và người lớn"
+    },
+    {
+      "id": "query-qa-48",
+      "query": "làm giàu từ đám ruộng khô cằn thành ao nuôi cá tiền tỷ ở Sài Gòn; cải tạo ruộng khô cằn thành ao nuôi cá; ao nuôi cá tiền tỷ"
+    },
+    {
+      "id": "query-qa-49",
+      "query": "tiệm sách miễn phí 3 không ở Sài Gòn; cụ ông đeo kính mặc áo sơ mi cúi đọc sách; kệ sách cũ xếp chật kín trong tiệm"
+    },
+    {
+      "id": "query-qa-50",
+      "query": "bé gái mặc đồng phục học sinh ủng hộ thiếu nhi miền Bắc; số tiền tiết kiệm ủng hộ là bao nhiêu; tiền mệnh giá nhỏ xếp trên bàn"
+    },
+    {
+      "id": "query-trake-01",
+      "query": "khứa nấm rơm hình chữ thập; cắt khoanh củ cải trắng tỉa hoa; thái hành lá và rau răm trên thớt; vặn núm bếp gas lửa xanh bùng lên; thả nguyên liệu vào nồi thủy tinh đang đun"
+    },
+    {
+      "id": "query-trake-02",
+      "query": "chương trình dạy nấu ăn; nữ đầu bếp áo trắng và người phụ nữ áo vàng; cá nhỏ dài màu nâu bạc ướp trong tô thủy tinh; vắt nước cốt tắc; áo bột chiên giòn"
+    },
+    {
+      "id": "query-trake-03",
+      "query": "xếp lát cá hồi xông khói thành vòng tròn quanh miệng đĩa sứ trắng; đặt miếng dưa đỏ hình chữ nhật lên vòng cá hồi; dùng đũa gắp rau xanh đặt vào giữa đĩa; rải khối bơ và xoài kín phần giữa đĩa"
+    },
+    {
+      "id": "query-trake-04",
+      "query": "phóng sự làng nghề gốm thủ công; nặn gốm hoàn toàn bằng tay; đi vòng quanh sản phẩm thay vì dùng bàn xoay; hàng chục chiếc lu và nồi đất chưa nung; nhà xưởng mái tôn nền đất"
+    },
+    {
+      "id": "query-trake-05",
+      "query": "phóng sự nghề làm khô cá ở làng biển; lò củi cháy đỏ nồi nước sôi sùng sục với cá bạc; bà cụ tóc búi mặc áo hoa xanh đứng trông nồi; thả nắm cá vào nồi nước đang sôi trắng xóa; chiếc vá lớn khuấy giữa nồi cá đang sôi"
+    },
+    {
+      "id": "query-trake-06",
+      "query": "phóng sự nghệ nhân làm đồ mỹ nghệ thủ công tại nhà; uốn sợi kim loại nhỏ trên thảm cắt; dùng thanh dụng cụ ấn lên miếng phôi vuông; cọ chấm men màu vào ô hoa văn"
+    },
+    {
+      "id": "query-trake-07",
+      "query": "thịt bằm cho tỏi phi; rắc hạt nêm vào thịt; cho ớt vào ướp; trộn đều bằng tay; thái rau nêm trên thớt gỗ; cắt lát ớt đỏ"
+    },
+    {
+      "id": "query-trake-08",
+      "query": "múa lân leo cột mai hoa thung; thi múa lân trên giàn cột sắt mặt cột màu xanh; con lân vàng đỏ đứng trên cột cao; con lân trắng nhảy từ cột này sang cột khác; lân trắng đang bay lơ lửng giữa không trung"
+    },
+    {
+      "id": "query-trake-09",
+      "query": "dạy trẻ phòng chống đuối nước; tập nằm ngửa nổi trên mặt nước; đặt chai nhựa lên bụng khi tập nổi; vào phòng tường đỏ tập ép tim trên hình nộm; dùng sào dài kéo bạn vào bờ"
+    },
+    {
+      "id": "query-trake-10",
+      "query": "sạt lở đất vùi lấp người; lực lượng cứu hộ mặc áo lính và người dân chen chúc đào bới trên đống đất đỏ; máy xúc màu vàng gạt đất phía trên; khiêng nạn nhân bằng cáng ra khỏi hiện trường"
+    },
+    {
+      "id": "query-trake-11",
+      "query": "chương trình dạy nấu ăn; nam đầu bếp áo trắng viền đỏ và nữ dẫn chương trình tạp dề xanh; hẹ cắt khúc; giá và lạp xưởng cắt lát xéo; đánh tan hai quả trứng; xào trong chảo trắng; rưới nước tương màu đen lên chảo"
+    },
+    {
+      "id": "query-trake-12",
+      "query": "chương trình dạy nấu ăn; hai đầu bếp nam áo trắng; món xào; thơm tỉa hoa; đậu que; ớt chuông đỏ và vàng; cho thịt đã xào vào"
+    },
+    {
+      "id": "query-trake-13",
+      "query": "cánh gà chiên; tỏi cắt múi cau; hành tây cắt lát; cho tỏi và hành tây vào chiên trước trong chảo dầu; thả cánh gà vào chiên vàng rồi vớt ra đĩa trắng"
+    },
+    {
+      "id": "query-trake-14",
+      "query": "chương trình dạy nấu ăn lẩu vịt; khoai môn cắt khối trên thớt gỗ; lá tía tô thái nhỏ; thịt vịt ướp hắc xì dầu trong tô thủy tinh; khoai môn chiên trong chảo dầu sôi"
+    },
+    {
+      "id": "query-trake-15",
+      "query": "mực hấp gừng hành; rải hành lá và gừng thái lát lên đĩa mực; đặt đĩa màu hồng vào xửng hấp inox; nhấc đĩa mực đã hấp chín ra khỏi xửng bằng kẹp; trút nước hấp từ đĩa xuống chảo nóng"
+    },
+    {
+      "id": "query-trake-16",
+      "query": "ướp thịt trong tô thủy tinh với nước tương và dầu điều màu đỏ cam; rót nước tương vào chén nhỏ cạnh tô thịt; rưới dầu điều đỏ cam từ trên cao xuống tô thịt; dùng phới trộn đều thịt ướp màu vàng cam; cắt hành tây hình thoi trên thớt gỗ; rạch dọc quả ớt sừng đỏ"
+    },
+    {
+      "id": "query-trake-17",
+      "query": "khuấy nồi bột trắng sánh; cắt miếng mì căn trên thớt gỗ; xếp mì căn ra đĩa hồng; rót dầu vào chảo; chiên mì căn vàng trong chảo dầu"
+    },
+    {
+      "id": "query-trake-18",
+      "query": "cho giò sống vào tô trắng; thêm thịt bằm vào trộn; rắc gốc ngò rí băm lên thịt; đổ cà rốt băm màu cam vào; dùng hai tay bóp trộn đều khối thịt; nhấc rổ inox đựng trứng luộc lên khỏi thau nước"
+    },
+    {
+      "id": "query-trake-19",
+      "query": "cắt tôm hạt lựu trên thớt gỗ; quết tôm thành hỗn hợp; trộn hỗn hợp tôm trong tô thủy tinh; nặn viên tròn gắn con tôm đỏ lên trên đầu; thả viên tôm vào tô nước; khứa chữ thập quả sấu xanh"
+    },
+    {
+      "id": "query-trake-20",
+      "query": "nấu lẩu thái trong nồi thủy tinh màu hổ phách; cho cà chua và ớt vào nồi; đổ nước sốt đỏ vào nồi lẩu; gói gia vị lẩu thái; trút chả cá vào nồi đang sôi"
+    },
+    {
+      "id": "query-trake-21",
+      "query": "nấu món súp tôm; đầu và vỏ tôm cho vào nồi đỏ nấu sôi bùng; cho gói gia vị vào nồi thủy tinh; cho đường vào nêm; cho đậu que cắt hạt lựu vào nồi; cho nước bột năng vào khuấy đều"
+    },
+    {
+      "id": "query-trake-22",
+      "query": "cà chua cắt múi cau; ớt hiểm đập dập; sả đập dập cắt đôi; tôm; lọc nước dùng qua rây; rót nước màu đỏ vào nồi thủy tinh màu hổ phách; chương trình dạy nấu ăn hai đầu bếp nam áo thun đỏ"
+    },
+    {
+      "id": "query-trake-23",
+      "query": "cho nước tương vào chảo đang nóng; đổ rượu trắng từ chén trắng vào chảo nước xốt; cho thìa gừng băm vào chảo; nghiêng chảo rót nước xốt đen ra chén sứ xanh; nấm kim châm bọc thịt; đổ bột trắng từ hộp giấy xuống tô"
+    },
+    {
+      "id": "query-trake-24",
+      "query": "phi tỏi cho thơm; cho măng vàng vào nồi; nêm nước tương; chế nước vào nồi; nêm muối vừa ăn; đậu hũ trắng để bên cạnh"
+    },
+    {
+      "id": "query-trake-25",
+      "query": "tôm càng hấp xoài; xoài cắt hạt lựu; cắt má xoài thành thanh dài rồi cắt hạt lựu; phết hỗn hợp hành tỏi lên tôm càng xanh nguyên con; rắc tiêu và ớt đỏ lên đĩa tôm; đậy nắp xửng hấp inox"
+    },
+    {
+      "id": "query-trake-26",
+      "query": "nghề làm khô cá đồng ở miền Tây; kéo lưới cá từ ao lên; phụ nữ đội nón lá ngồi làm cá bên rổ nhựa màu hồng và đỏ; xếp cá thành hàng dày đặc trên vỉ phơi ngoài nắng"
+    },
+    {
+      "id": "query-trake-27",
+      "query": "bóc bẹ măng; bào măng thành lát mỏng; củ măng trắng đặt lên ván bào; lát măng trắng bung ra; tô lớn đựng đầy măng thái sợi vàng"
+    },
+    {
+      "id": "query-trake-28",
+      "query": "bạn trẻ làm gốm hình mèo trong xưởng gốm; chàng trai áo thun trắng ngồi giữa kệ chậu gốm; xếp mẩu đất sét xám lên mẹt tre; tô vẽ tượng mèo trắng nhỏ; đưa tượng mèo đến cho mèo thật ngửi"
+    },
+    {
+      "id": "query-trake-29",
+      "query": "phóng sự vùng trồng khóm miền Tây; trồng dứa ở miền Tây; ngồi nếm khóm bên rổ nhựa vàng; nông dân hái khóm trên luống; xuồng chở đầy khóm chạy trên kênh; gọt và tách miếng khóm"
+    },
+    {
+      "id": "query-trake-30",
+      "query": "đổ bánh khọt ngoài vườn; khuôn gang nhiều lỗ đặt trên bếp gas; người đàn ông áo bà ba nâu và người phụ nữ áo xanh đội nón lá; buồng chuối xanh phía sau; đổ bánh khọt trên khuôn gang"
+    },
+    {
+      "id": "query-trake-31",
+      "query": "giải thi đấu lân sư rồng; biểu diễn múa rồng vàng; trọng tài giơ bảng điểm; tám phẩy sáu mươi; tám phẩy sáu lăm; tổng điểm tám phẩy sáu ba"
+    },
+    {
+      "id": "query-trake-32",
+      "query": "đêm thi múa lân sư rồng trên thảm xanh dương; người mặc áo xanh cầm hai lá cờ đỏ trước quả cầu ngũ sắc; con rồng vàng dài uốn lượn khắp sân; cả đội mặc đồ vàng đen xếp hàng trên thảm"
+    },
+    {
+      "id": "query-trake-33",
+      "query": "lương y thuốc nam cao tuổi; phân loại thuốc trên bàn phủ giấy trắng; bốc thuốc từ tủ nhiều ngăn hũ thủy tinh; sao thuốc trong chảo lớn ngoài sân"
+    },
+    {
+      "id": "query-trake-34",
+      "query": "làm sản phẩm từ bã cà phê; dùng khuôn ép bã cà phê thành đĩa và cốc; tái chế bã cà phê"
+    },
+    {
+      "id": "query-trake-35",
+      "query": "khai thác lá dừa nước; chặt tàu lá dừa nước bằng dao; kéo tàu lá dài; chất lá lên xuồng nhỏ trên kênh"
+    },
+    {
+      "id": "query-trake-36",
+      "query": "chương trình dạy nấu ăn; nấu nồi lẩu trên bếp từ; cho cà chua vào nồi; thả viên thả lẩu; thả cá vào nồi lẩu; mâm rau và đĩa bún ăn kèm"
+    },
+    {
+      "id": "query-trake-37",
+      "query": "gắp cá vào tô thủy tinh; ướp cá với hạt nêm và ớt băm; cắt cà chua múi cau trên thớt gỗ; cắt trái thơm rẻ quạt"
+    },
+    {
+      "id": "query-trake-38",
+      "query": "dạy nấu ăn món lẩu thái; cá dứa cắt miếng cắt khúc; rắc gói gia vị lẩu thái màu cam lên cá; bạc hà cắt xéo; thơm cắt miếng"
+    },
+    {
+      "id": "query-trake-39",
+      "query": "chương trình dạy nấu ăn; nam đầu bếp áo trắng; nữ dẫn chương trình mặc tạp dề hoa nhiều màu; bắp bò hoa thái mỏng xếp trên đĩa; củ riềng thái lát rồi thái chỉ trên thớt gỗ"
+    },
+    {
+      "id": "query-trake-40",
+      "query": "khăn lông bò cắt miếng; gân bò cắt mỏng; trút thịt từ thớt vào tô thủy tinh; ướp thịt với gói gia vị nêm sẵn lẩu thái; đổ gia vị màu cam vào tô thịt"
+    },
+    {
+      "id": "query-trake-41",
+      "query": "cá hồi và măng tây nướng trên chảo vỉ vuông; khoanh thơm tỉa hoa nướng; pha nước chấm trong chén trắng; cho bột canh vào chén; rót nước cốt tắc; cho ớt sừng băm vào"
+    },
+    {
+      "id": "query-trake-42",
+      "query": "tường thuật chặng đua xe đạp trên đường phố; nhóm tay đua dẫn đầu bám sát nhau; đang nước rút về đích; có xe ô tô và mô tô hộ tống chạy kèm"
+    },
+    {
+      "id": "query-trake-43",
+      "query": "đêm chung kết giải lân sư rồng; đội mặc quân phục rằn ri xanh biểu diễn con rồng vàng cuộn tròn trên sân khấu; mang theo lá cờ đỏ sao vàng; trọng tài mặc áo xanh vàng giơ bảng điểm tám sáu một"
+    },
+    {
+      "id": "query-trake-44",
+      "query": "kiểm tra kho xưởng sản xuất thuốc bảo vệ thực vật giả; công an mặc sắc phục xanh kiểm tra thùng carton và can nhựa trong nhà xưởng tường vàng; người phụ nữ áo hồng đeo khẩu trang chiết chất lỏng vào chai; hàng chai nhựa đỏ nắp xanh xếp trên bàn"
+    },
+    {
+      "id": "query-trake-45",
+      "query": "bắt hai đối tượng trộm xe máy trong đêm; đối tượng cởi trần bị khống chế nằm sấp trên mặt đường; xe máy nằm đổ bên lề đường; kiểm tra biển số và tang vật gồm chìa khóa điện thoại giấy tờ"
+    },
+    {
+      "id": "query-trake-46",
+      "query": "cá cắt khối ướp trong tô sứ trắng với hạt nêm và tiêu; ớt chuông đỏ và ớt chuông vàng cắt miếng vuông; hành tây cắt khối vuông; tỏi đập dập; thìa múc hạt nêm từ hũ sứ trắng; trộn đều cá trong tô"
+    },
+    {
+      "id": "query-trake-47",
+      "query": "nấu lẩu thái trong nồi thủy tinh màu hổ phách; phi đầu tôm; chế nước lọc vào nồi; cho gói gia vị lẩu thái; thả viên giò sống và nấm vào nồi"
+    },
+    {
+      "id": "query-trake-48",
+      "query": "món gà hấp hành răm; gừng cắt lát rồi đập dập và thái chỉ; đầu hành đập dập; lá chanh cắt chỉ; đặt xửng hấp inox nhiều tầng lên bếp; chương trình dạy nấu ăn với nam đầu bếp áo trắng và nữ dẫn chương trình tạp dề đỏ"
+    },
+    {
+      "id": "query-trake-49",
+      "query": "cho thịt bằm vào tô sứ trắng; nêm muối vào thịt; cho bột ngọt vào; rắc tiêu lên mặt thịt; ướp thịt bằm với gia vị"
+    },
+    {
+      "id": "query-trake-50",
+      "query": "giải đua thuyền buồm trên biển trước đường chân trời thành phố; thuyền buồm hai thân bay trên mặt nước nhờ cánh ngầm; đồng hồ đếm ngược hiển thị 00:00; tốc độ của từng thuyền; bảng chặng đua RACE 2; thuyền chạy ngang lá cờ Ý cắm trên phao"
+    }
+  ]
+}

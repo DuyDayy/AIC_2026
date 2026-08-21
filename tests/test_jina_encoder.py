@@ -171,3 +171,56 @@ class TestEncoderIsLazy(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+# ============================================================
+# 🔴 GHIM REVISION — lệch bản mô hình là lỗi CÂM tuyệt đối
+# ============================================================
+#
+# `from_pretrained` không ghim sẽ kéo bản MỚI NHẤT trên HuggingFace. Vector KHUNG mã
+# hoá bằng `e10d47f5…` + mã `39e6a55a…`; truy vấn mã hoá bằng bản khác thì hai bên
+# nằm ở hai không gian hơi lệch — cosine vẫn ra số, thứ hạng vẫn sắp được, và không
+# có chỉ số nào báo động.
+#
+# Đã QUAN SÁT thật: một lần gọi không ghim đã tự tải bản mã remote mới về.
+# `scripts/run.py` — đường chạy thi GỐC — thiếu ghim này cho tới khi quét lại toàn bộ.
+
+import ast as _ast
+import pathlib as _pl
+
+
+def test_encoder_ghim_dung_cap_sha_cua_vector_khung():
+    from src.ingestion.jina_encoder import JinaEncoder
+
+    e = JinaEncoder()
+    assert e.revision == "e10d47f5691d0454a0fb5d13f46f2199b74cb436"
+    assert e.code_revision == "39e6a55ae971b59bea6e44675d237c99762e7ee2"
+
+
+def test_moi_loi_goi_from_pretrained_cua_jina_deu_co_revision():
+    """Quét MÃ NGUỒN: mọi chỗ nạp jina-clip phải truyền `revision`.
+
+    Kiểm bằng `ast` nên không phải nạp mô hình, và không bỏ sót chỗ nào vì quên đọc.
+    """
+    goc = _pl.Path(__file__).resolve().parents[1]
+    for p in (goc / "src/ingestion/jina_encoder.py", goc / "scripts/run.py",
+              goc / "scripts/rf_prepare.py", goc / "scripts/rf_server.py",
+              goc / "scripts/modal_query.py"):
+        if not p.is_file():
+            continue
+        src = p.read_text(encoding="utf-8")
+        if "jina-clip" not in src and "MODEL_NAME" not in src:
+            continue
+        for n in _ast.walk(_ast.parse(src)):
+            if not (isinstance(n, _ast.Call)
+                    and isinstance(n.func, _ast.Attribute)
+                    and n.func.attr == "from_pretrained"):
+                continue
+            # chỉ xét lời gọi có `trust_remote_code` — đó là dấu của jina-clip;
+            # Qwen-VL nạp bằng lớp khác và không dùng cặp sha này.
+            kw = {k.arg for k in n.keywords}
+            if "trust_remote_code" not in kw:
+                continue
+            assert "revision" in kw, (
+                f"{p.name}:{n.lineno} nạp jina-clip KHÔNG ghim revision — "
+                f"truy vấn và khung có thể đến từ hai bản mô hình khác nhau")

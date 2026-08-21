@@ -62,7 +62,21 @@ tests/*
 # Định dạng nộp bài CHÍNH THỨC — mọi lỗi ở tầng này đều CÂM, và thể lệ chỉ cho
 # 3 lượt nộp mỗi gói (nộp sai định dạng vẫn tính là một lượt).
 !tests/test_submission_format.py
+# ⑧ Rocchio RF — lõi toán, phiên, lưu phiên, kho ảnh. Thiếu chúng thì bản clone
+# mới không chạy được công cụ click, mà đó là cơ chế DUY NHẤT đã chứng minh được
+# (ΔMRR +0,2557, KTC95 [+0,1680, +0,3446] trên 64 câu click được).
+!tests/test_rocchio.py
+!tests/test_session.py
+!tests/test_store.py
+!tests/test_thumbs.py
 !tests/test_vector_index.py
+# ⑧ Rocchio RF + đường chạy trên Modal — thuộc đường VẬN HÀNH, không phải nghiên cứu.
+!scripts/rf_prepare.py
+!scripts/rf_server.py
+!scripts/run_thunghiem.py
+!scripts/run_thunghiem_modal.py
+!scripts/modal_query.py
+!scripts/finalize_submission.py
 scripts/search.py
 scripts/asr/
 scripts/ocr/
@@ -139,8 +153,34 @@ scripts/research/*
 # KẾT QUẢ nghiên cứu thì GIỮ — chúng là bằng chứng, không dựng lại được miễn phí.
 !data/research/
 !data/research/**
+# …NHƯNG không giữ BẢN ĐỆM. `!data/research/**` từng kéo `trake_S.npz` 467 MB vào
+# kho. Nó là ma trận điểm lưu lại để quét λ chạy trong vài giây thay vì 25 phút —
+# dựng lại được miễn phí bằng `sweep_lambda_trake.py`, nên nó là bộ đệm chứ không
+# phải bằng chứng.
+data/research/*.npz
+data/research/**/*.npz
+# Bài nộp SINH RA khi eval: 299 CSV + zip, dựng lại miễn phí bằng chính script eval.
+# Giữ `metrics.json` — đó mới là bằng chứng.
+data/research/**/submission/
+data/research/**/submission.zip
 
 # dữ liệu extraction tải về từ Modal (2,6 GB): candidates + vectors, tốn tiền để dựng lại
 export_for_fusion/
 .env
 *.docx
+
+# ───────── ⑧ Rocchio RF: dữ liệu chạy, KHÔNG lên kho ─────────
+# Phiên: mỗi phiên mang `text_rrf` dài 609.476 (4,9 MB) — dựng lại bằng
+# `scripts/rf_prepare.py`, và nó chứa tiến độ click của một buổi cụ thể.
+/data/rf_sessions/
+# Kho ảnh keyframe: 29 GB, ba file .zip do đội tự cắt.
+/data/keyframes/
+# Bộ đệm ảnh của đường lùi ffmpeg.
+/data/thumbs/
+# Bản mở rộng truy vấn — sinh bằng LLM, giữ lại vì tốn tiền để sinh lại.
+!/expansions/
+!/expansions/**
+# `expansions_gen299/` là 1.196 file .txt DẪN XUẤT từ `data/research/expansions/
+# gen299_q{o,a,v1,v2}.json` (đã theo dõi). Dựng lại bằng vài dòng Python, xem README.
+# Giữ nguồn JSON vì sinh nó tốn tiền API; không giữ bản dẫn xuất vì nó miễn phí.
+/expansions_gen299/

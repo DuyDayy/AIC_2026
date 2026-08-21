@@ -1,0 +1,1200 @@
+{
+  "queries": [
+    {
+      "id": "query-kis-0001",
+      "query": "sạt lở bờ kè; sạt lở bờ sông; bờ kè bị sạt lở"
+    },
+    {
+      "id": "query-kis-0002",
+      "query": "lừa đảo chiếm đoạt tài sản; 10 tỷ đồng; bắt đối tượng"
+    },
+    {
+      "id": "query-kis-0003",
+      "query": "phỏng vấn"
+    },
+    {
+      "id": "query-kis-0004",
+      "query": "đáy biển; cá lớn"
+    },
+    {
+      "id": "query-kis-0005",
+      "query": "tuong chong ngap; thi cong; cao toc"
+    },
+    {
+      "id": "query-kis-0006",
+      "query": "triệt xóa sới bạc; triệt phá sới bạc; sới bạc; đánh bạc"
+    },
+    {
+      "id": "query-kis-0007",
+      "query": "ngập nước; ngập lụt; kênh ngập"
+    },
+    {
+      "id": "query-kis-0008",
+      "query": "xích đu bay; thành phố châu Âu"
+    },
+    {
+      "id": "query-kis-0009",
+      "query": "vụ nổ; vụ cháy; khu dân cư; hiện trường"
+    },
+    {
+      "id": "query-kis-0010",
+      "query": "camera an ninh; xe đầu kéo màu trắng; đường dây lừa đảo; công nghệ cao"
+    },
+    {
+      "id": "query-kis-0011",
+      "query": "Thác Bà; thủy điện Thác Bà; xả lũ; ngập nhà dân"
+    },
+    {
+      "id": "query-kis-0012",
+      "query": "Campuchia; nhập cảnh trái phép; nông sản; bao tải"
+    },
+    {
+      "id": "query-kis-0013",
+      "query": "chợ trái cây; chuối vàng; sạp trái cây"
+    },
+    {
+      "id": "query-kis-0014",
+      "query": "POLICE"
+    },
+    {
+      "id": "query-kis-0015",
+      "query": "CSGT; cảnh sát giao thông; xe máy chở hàng"
+    },
+    {
+      "id": "query-kis-0016",
+      "query": "CÔNG AN; CẢNH SÁT; NGHI PHẠM"
+    },
+    {
+      "id": "query-kis-0017",
+      "query": "130 triệu đồng; tang vật; đánh bạc; tạm giữ; đột kích"
+    },
+    {
+      "id": "query-kis-0018",
+      "query": "trao giải; nhận giải thưởng; trao đổi"
+    },
+    {
+      "id": "query-kis-0019",
+      "query": "cắt băng khánh thành; khánh thành; hầm chui"
+    },
+    {
+      "id": "query-kis-0020",
+      "query": "thẩm vấn; phỏng vấn; hỏi cung"
+    },
+    {
+      "id": "query-kis-0021",
+      "query": "nghệ thuật đường phố; tác phẩm nghệ thuật; trưng bày ngoài trời"
+    },
+    {
+      "id": "query-kis-0022",
+      "query": "ngập lụt; ngập nước; lũ lụt"
+    },
+    {
+      "id": "query-kis-0023",
+      "query": "Thứ trưởng Bộ Nông nghiệp; Thứ trưởng"
+    },
+    {
+      "id": "query-kis-0024",
+      "query": "về đích; vạch đích; đua xe đạp; England"
+    },
+    {
+      "id": "query-kis-0025",
+      "query": "cá tươi; hải sản; rổ nhựa"
+    },
+    {
+      "id": "query-kis-0026",
+      "query": "Tour de France Femmes; chặng 4; Stage 4"
+    },
+    {
+      "id": "query-kis-0027",
+      "query": "Alpe d'Huez; logo tài trợ"
+    },
+    {
+      "id": "query-kis-0028",
+      "query": "Sơn Trà; núi Sơn Trà; đàn khỉ giật đồ ăn"
+    },
+    {
+      "id": "query-kis-0029",
+      "query": "tai nạn giao thông; hiện trường; cứu hộ"
+    },
+    {
+      "id": "query-kis-0030",
+      "query": "bản đồ khí tượng; dự báo thời tiết; nhiệt độ"
+    },
+    {
+      "id": "query-kis-0031",
+      "query": "xe buýt 2 tầng; bãi đỗ xe; bến xe"
+    },
+    {
+      "id": "query-kis-0032",
+      "query": "phi công; nhân viên hàng không; máy bay chiến đấu"
+    },
+    {
+      "id": "query-kis-0033",
+      "query": "nhãn chai nước; nước tinh khiết; nước đóng chai"
+    },
+    {
+      "id": "query-kis-0034",
+      "query": "bó hoa vàng; hoa cuộn"
+    },
+    {
+      "id": "query-kis-0035",
+      "query": "CÔNG AN; BIÊN BẢN; LẤY LỜI KHAI"
+    },
+    {
+      "id": "query-kis-0036",
+      "query": "đội hình danh dự; quân đội; buổi lễ"
+    },
+    {
+      "id": "query-kis-0037",
+      "query": "cứu hộ; cứu nạn"
+    },
+    {
+      "id": "query-kis-0038",
+      "query": "trái cây; hoa quả; tạp hóa; cửa hàng tạp hóa"
+    },
+    {
+      "id": "query-kis-0039",
+      "query": "xe tải trắng; đêm mưa"
+    },
+    {
+      "id": "query-kis-0040",
+      "query": "đàn trâu chết; bẫy thú; chết trong rừng"
+    },
+    {
+      "id": "query-kis-0041",
+      "query": "mui xe; nóc xe; xưởng lắp ráp"
+    },
+    {
+      "id": "query-kis-0042",
+      "query": "Health Organization; WHO; World Health Organization"
+    },
+    {
+      "id": "query-kis-0043",
+      "query": "chợ; bến xe"
+    },
+    {
+      "id": "query-kis-0044",
+      "query": "lễ hội sầu riêng; sầu riêng; hội chợ trái cây"
+    },
+    {
+      "id": "query-kis-0045",
+      "query": "sầu riêng"
+    },
+    {
+      "id": "query-kis-0046",
+      "query": "áo mưa; xe máy; trời mưa; ban đêm"
+    },
+    {
+      "id": "query-kis-0047",
+      "query": "khúc sông; núi đá; đường mòn; bờ sông"
+    },
+    {
+      "id": "query-kis-0048",
+      "query": "trạm kiểm soát; rào chắn"
+    },
+    {
+      "id": "query-kis-0049",
+      "query": "tuyển dụng; ngày hội việc làm; gian hàng tuyển dụng"
+    },
+    {
+      "id": "query-kis-0050",
+      "query": "hồ bơi; phao bơi; khu vui chơi trẻ em"
+    },
+    {
+      "id": "query-kis-0051",
+      "query": "chụp cắt lớp; CT Scanner; thiết bị y tế"
+    },
+    {
+      "id": "query-kis-0052",
+      "query": "phòng thờ; ảnh treo tường"
+    },
+    {
+      "id": "query-kis-0053",
+      "query": "IELTS Test Report Form"
+    },
+    {
+      "id": "query-kis-0054",
+      "query": "phiên tòa; xét xử; bị cáo"
+    },
+    {
+      "id": "query-kis-0055",
+      "query": "công trường xây dựng; khung thép; bê tông cốt thép"
+    },
+    {
+      "id": "query-kis-0056",
+      "query": "triển lãm; khu công nghiệp; KCN; khu chế xuất"
+    },
+    {
+      "id": "query-kis-0057",
+      "query": "trao quà; thăm hỏi; tặng quà; chụp ảnh lưu niệm"
+    },
+    {
+      "id": "query-kis-0058",
+      "query": "pixel art; nghệ thuật đường phố"
+    },
+    {
+      "id": "query-kis-0059",
+      "query": "pixel; 8-bit; tranh tường gạch"
+    },
+    {
+      "id": "query-kis-0060",
+      "query": "rau xanh; luống rau; rau sạch"
+    },
+    {
+      "id": "query-kis-0061",
+      "query": "biển báo giao thông; biển số xe; tên đường"
+    },
+    {
+      "id": "query-kis-0062",
+      "query": "cháy nhà kho; công nhân tháo chạy; lực lượng cứu hộ; xe cứu hỏa"
+    },
+    {
+      "id": "query-kis-0063",
+      "query": "ngập nước; đường ngập; nước ngập ngang bánh xe"
+    },
+    {
+      "id": "query-kis-0064",
+      "query": "ngập lụt; khu đô thị ngập nước; ngập nước"
+    },
+    {
+      "id": "query-kis-0065",
+      "query": "bãi rác; rác thải; bãi chôn lấp"
+    },
+    {
+      "id": "query-kis-0066",
+      "query": "cứu hộ; diễn tập; quân sự"
+    },
+    {
+      "id": "query-kis-0067",
+      "query": "ngập nước; ngập lụt; đường ngập"
+    },
+    {
+      "id": "query-kis-0068",
+      "query": "cứu hộ; cứu nạn; đồ bảo hộ"
+    },
+    {
+      "id": "query-kis-0069",
+      "query": "vật tư y tế; phỏng vấn"
+    },
+    {
+      "id": "query-kis-0070",
+      "query": "CẤM VÀO; KHU VỰC PHONG TỎA; KHU VỰC CÁCH LY; CHỐT KIỂM SOÁT; KHÔNG PHẬN SỰ MIỄN VÀO"
+    },
+    {
+      "id": "query-kis-0071",
+      "query": "ngập lụt; nước lũ; ngập sâu"
+    },
+    {
+      "id": "query-kis-0072",
+      "query": "tàu chở hàng; cảng"
+    },
+    {
+      "id": "query-kis-0073",
+      "query": "hiện trường đổ nát; gạch vụn; đồ đạc vương vãi"
+    },
+    {
+      "id": "query-kis-0074",
+      "query": "mặt biển; sóng trắng xóa; đại dương"
+    },
+    {
+      "id": "query-kis-0075",
+      "query": "55%; 55 percent"
+    },
+    {
+      "id": "query-kis-0076",
+      "query": "chợ; bảng giá; bán sỉ lẻ; tạp hóa; biển hiệu sạp hàng"
+    },
+    {
+      "id": "query-kis-0077",
+      "query": "đường ống; dây cáp; đáy biển; cáp ngầm"
+    },
+    {
+      "id": "query-kis-0078",
+      "query": "bóng bay; trẻ em; vui chơi ngoài trời"
+    },
+    {
+      "id": "query-kis-0079",
+      "query": "chuồng heo; trang trại chăn nuôi"
+    },
+    {
+      "id": "query-kis-0080",
+      "query": "nhà hư hại; tường bong tróc; cây mọc trong nhà"
+    },
+    {
+      "id": "query-kis-0081",
+      "query": "lâu đài cổ; lâu đài châu Âu"
+    },
+    {
+      "id": "query-kis-0082",
+      "query": "khám nghiệm hiện trường; cảnh sát; hiện trường vụ cháy"
+    },
+    {
+      "id": "query-kis-0083",
+      "query": "công trường cầu; thi công cầu; trụ bê tông"
+    },
+    {
+      "id": "query-kis-0084",
+      "query": "ruộng đồng; thửa đất; vân sóng"
+    },
+    {
+      "id": "query-kis-0085",
+      "query": "phòng học; lớp học"
+    },
+    {
+      "id": "query-kis-0086",
+      "query": "đổ vỡ; ngổn ngang; hiện trường"
+    },
+    {
+      "id": "query-kis-0087",
+      "query": "ngập nước; đường ngập"
+    },
+    {
+      "id": "query-kis-0088",
+      "query": "sà lan; chở hàng; vận tải đường sông"
+    },
+    {
+      "id": "query-kis-0089",
+      "query": "thời trang; gian hàng; sự kiện"
+    },
+    {
+      "id": "query-kis-0090",
+      "query": "ngập nước; ruộng nước; cánh đồng ngập"
+    },
+    {
+      "id": "query-kis-0091",
+      "query": "làm mờ khuôn mặt; bảo mật danh tính; che mặt"
+    },
+    {
+      "id": "query-kis-0092",
+      "query": "kẹt xe; ùn tắc giao thông; ùn tắc trên cầu"
+    },
+    {
+      "id": "query-kis-0093",
+      "query": "phòng khám; khoa nhi; y tế"
+    },
+    {
+      "id": "query-kis-0094",
+      "query": "hố sụt; sụt lún; ống nước"
+    },
+    {
+      "id": "query-kis-0095",
+      "query": "đua xe đạp; vạch sơn xanh; đại lộ"
+    },
+    {
+      "id": "query-kis-0096",
+      "query": "tốc độ; km/h; vòng đua; LAP; SPEED"
+    },
+    {
+      "id": "query-kis-0097",
+      "query": "CSGT; Cảnh sát giao thông; đua xe đạp"
+    },
+    {
+      "id": "query-kis-0098",
+      "query": "đua xe đạp; cầu hồng; đổ dốc"
+    },
+    {
+      "id": "query-kis-0099",
+      "query": "đua xe đạp; chợ"
+    },
+    {
+      "id": "query-kis-0100",
+      "query": "đua xe đạp; đoàn đua xe đạp"
+    },
+    {
+      "id": "query-kis-0101",
+      "query": "đua xe đạp; xe đạp đua"
+    },
+    {
+      "id": "query-kis-0102",
+      "query": "giải đua xe đạp; đua xe đạp"
+    },
+    {
+      "id": "query-kis-0103",
+      "query": "băng rôn; cờ; khẩu hiệu cổ vũ"
+    },
+    {
+      "id": "query-kis-0104",
+      "query": "Phương pháp điện phân"
+    },
+    {
+      "id": "query-kis-0105",
+      "query": "Nhóm chất thuộc loại"
+    },
+    {
+      "id": "query-kis-0106",
+      "query": "GELATINE 2g + NƯỚC 10g; GELATINE; NƯỚC 10g; 2g"
+    },
+    {
+      "id": "query-kis-0107",
+      "query": "KEM BÉO; 200g"
+    },
+    {
+      "id": "query-kis-0108",
+      "query": "gia vị"
+    },
+    {
+      "id": "query-kis-0109",
+      "query": "mực sữa; đậu Hà Lan; ớt sừng; khối lượng; g; gram; kg"
+    },
+    {
+      "id": "query-kis-0110",
+      "query": "bột ngọt; gia vị"
+    },
+    {
+      "id": "query-kis-0111",
+      "query": "NƯỚC NÓNG 240ml; NƯỚC NÓNG; 240ml"
+    },
+    {
+      "id": "query-kis-0112",
+      "query": "xoài; sinh tố xoài; máy xay sinh tố"
+    },
+    {
+      "id": "query-kis-0113",
+      "query": "RƯỢU SA-KÊ; 150ml; RƯỢU SA-KÊ 150ml"
+    },
+    {
+      "id": "query-kis-0114",
+      "query": "bánh nướng; găng tay chống nóng"
+    },
+    {
+      "id": "query-kis-0115",
+      "query": "Noel; Giáng sinh; trang trí Noel"
+    },
+    {
+      "id": "query-kis-0116",
+      "query": "NƯỚC TƯƠNG"
+    },
+    {
+      "id": "query-kis-0117",
+      "query": "ỚT SỪNG BĂM"
+    },
+    {
+      "id": "query-kis-0118",
+      "query": "NƯỚC 1.6 lít; 1.6 lít; NƯỚC"
+    },
+    {
+      "id": "query-kis-0119",
+      "query": "bột bánh rán; vị sô-cô-la; chocolate; 200g"
+    },
+    {
+      "id": "query-kis-0120",
+      "query": "Ajinomoto; bột canh"
+    },
+    {
+      "id": "query-kis-0121",
+      "query": "nghiêng dao 45 độ; 45 độ; 45°; bao tử heo; cách nghiêng dao"
+    },
+    {
+      "id": "query-kis-0122",
+      "query": "nước tương; xì dầu"
+    },
+    {
+      "id": "query-kis-0123",
+      "query": "ml; 100ml; 250ml; 500ml; vạch chia"
+    },
+    {
+      "id": "query-kis-0124",
+      "query": "NƯỚC DỪA; 1 chén"
+    },
+    {
+      "id": "query-kis-0125",
+      "query": "NƯỚC LÁ CẨM TÍM; NƯỚC LÁ CẨM TÍM 100ml; 100ml"
+    },
+    {
+      "id": "query-kis-0126",
+      "query": "NƯỚC 150ml; 150ml; NƯỚC"
+    },
+    {
+      "id": "query-kis-0127",
+      "query": "kem trắng; đánh bông; phới lồng"
+    },
+    {
+      "id": "query-kis-0128",
+      "query": "nước sốt; sốt vàng óng"
+    },
+    {
+      "id": "query-kis-0129",
+      "query": "NƯỚC TƯƠNG"
+    },
+    {
+      "id": "query-kis-0130",
+      "query": "GIẤM GẠO; GIẤM GẠO 1M; 1M"
+    },
+    {
+      "id": "query-kis-0131",
+      "query": "túi bột; bột đóng gói"
+    },
+    {
+      "id": "query-kis-0132",
+      "query": "WHIPPING CREAM; 100ml; 100 ml"
+    },
+    {
+      "id": "query-kis-0133",
+      "query": "NƯỚC TƯƠNG 1M; NƯỚC TƯƠNG; 1M"
+    },
+    {
+      "id": "query-kis-0134",
+      "query": "NƯỚC DỪA; NƯỚC DỪA 700ml; 700ml"
+    },
+    {
+      "id": "query-kis-0135",
+      "query": "200°C; 200 độ C; 200 độ; nhiệt độ"
+    },
+    {
+      "id": "query-kis-0136",
+      "query": "trái cây; thái hạt lựu"
+    },
+    {
+      "id": "query-kis-0137",
+      "query": "DẦU ĂN 2M"
+    },
+    {
+      "id": "query-kis-0138",
+      "query": "NƯỚC SÔI; 30g"
+    },
+    {
+      "id": "query-kis-0139",
+      "query": "tạm biệt; hẹn gặp lại; tạm biệt quý vị khán giả"
+    },
+    {
+      "id": "query-kis-0140",
+      "query": "xuồng; mặt nước; vẫy chào"
+    },
+    {
+      "id": "query-kis-0141",
+      "query": "140.000; 140 ngàn; 140k; giá vé; vé người lớn"
+    },
+    {
+      "id": "query-kis-0142",
+      "query": "HỦ TIẾU NAM VANG"
+    },
+    {
+      "id": "query-kis-0143",
+      "query": "1735; di tích 1735"
+    },
+    {
+      "id": "query-kis-0144",
+      "query": "chánh điện; hoành phi; chữ Hán"
+    },
+    {
+      "id": "query-kis-0145",
+      "query": "nghĩa trang cổ; mộ đá; ô vuông"
+    },
+    {
+      "id": "query-kis-0146",
+      "query": "chợ hải sản; hải sản tươi sống; thùng hải sản"
+    },
+    {
+      "id": "query-kis-0147",
+      "query": "cảng cá; bến cá; tàu cá"
+    },
+    {
+      "id": "query-kis-0148",
+      "query": "1838; 1868; 1838 - 1868; năm sinh 1838; năm mất 1868"
+    },
+    {
+      "id": "query-kis-0149",
+      "query": "230km; 230 km; Thành phố Hồ Chí Minh; TP.HCM; khu đô thị ven biển"
+    },
+    {
+      "id": "query-kis-0150",
+      "query": "người dẫn chương trình; cầu cao; biển"
+    },
+    {
+      "id": "query-kis-0151",
+      "query": "thị trấn ven biển; toàn cảnh"
+    },
+    {
+      "id": "query-kis-0152",
+      "query": "rừng ngập mặn"
+    },
+    {
+      "id": "query-kis-0153",
+      "query": "cánh đồng lúa; áo dài hồng"
+    },
+    {
+      "id": "query-kis-0154",
+      "query": "30 lít; 30L; sữa"
+    },
+    {
+      "id": "query-kis-0155",
+      "query": "thuyền gỗ; bờ kênh; dừa nước"
+    },
+    {
+      "id": "query-kis-0156",
+      "query": "cá khô; mực khô; phơi khô"
+    },
+    {
+      "id": "query-kis-0157",
+      "query": "hơn 2,8 triệu mét khối; 2,8 triệu m3; 5 năm; mét khối đất được đào"
+    },
+    {
+      "id": "query-kis-0158",
+      "query": "chiến tranh biên giới Tây Nam; thống kê thiệt hại; nhà cửa bị tàn phá; trường học bị tàn phá"
+    },
+    {
+      "id": "query-kis-0159",
+      "query": "phỏng vấn; trò chuyện"
+    },
+    {
+      "id": "query-kis-0160",
+      "query": "rau củ; rau sạch; bảng giá"
+    },
+    {
+      "id": "query-kis-0161",
+      "query": "nhà sàn; biển"
+    },
+    {
+      "id": "query-kis-0162",
+      "query": "lò đất nung; lò gạch; lò than thủ công"
+    },
+    {
+      "id": "query-kis-0163",
+      "query": "múa lân sư rồng; lễ hội truyền thống; 3 ngày; cổng chào"
+    },
+    {
+      "id": "query-kis-0164",
+      "query": "CẢNH SÁT; CSGT; POLICE; CỔNG CHÀO"
+    },
+    {
+      "id": "query-kis-0165",
+      "query": "giới thiệu sản phẩm; thực phẩm; hũ đựng"
+    },
+    {
+      "id": "query-kis-0166",
+      "query": "Chủ tịch Hồ Chí Minh; Hồ Chí Minh; Bác Hồ; cây vú sữa"
+    },
+    {
+      "id": "query-kis-0167",
+      "query": "cổng tam quan"
+    },
+    {
+      "id": "query-kis-0168",
+      "query": "tàu cá; bến cảng; tàu đánh cá"
+    },
+    {
+      "id": "query-kis-0169",
+      "query": "200.000 đồng; 200.000đ; 200k; nấm trắng; giá bán"
+    },
+    {
+      "id": "query-kis-0170",
+      "query": "quầy trưng bày; sản phẩm"
+    },
+    {
+      "id": "query-kis-0171",
+      "query": "120"
+    },
+    {
+      "id": "query-kis-0172",
+      "query": "thú cưng; lồng lưới kim loại; lồng sắt"
+    },
+    {
+      "id": "query-kis-0173",
+      "query": "KIỀU NƯƠNG 2; VỰA MỰC KHÔ"
+    },
+    {
+      "id": "query-kis-0174",
+      "query": "VỰA MỰC KHÔ KIỀU NƯƠNG; VỰA MỰC KHÔ; KIỀU NƯƠNG"
+    },
+    {
+      "id": "query-kis-0175",
+      "query": "nặn bột; bột trắng; mẹt tre"
+    },
+    {
+      "id": "query-kis-0176",
+      "query": "cán mỏng; độ dày; trước khi hấp; miếng bột"
+    },
+    {
+      "id": "query-kis-0177",
+      "query": "Liệt sĩ; Sinh năm 1945; 1945; Tổ quốc ghi công; Hy sinh"
+    },
+    {
+      "id": "query-kis-0178",
+      "query": "viết tay; con số; ghi chú"
+    },
+    {
+      "id": "query-kis-0179",
+      "query": "TẠI ĐÂY CÓ CHO THUÊ TRUYỆN"
+    },
+    {
+      "id": "query-kis-0180",
+      "query": "300 triệu đồng; gần 300 triệu; cải tạo ruộng thành ao; ao nuôi cá"
+    },
+    {
+      "id": "query-kis-0181",
+      "query": "kệ sách; tủ sách; thư viện"
+    },
+    {
+      "id": "query-kis-0182",
+      "query": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM; NGHÌN ĐỒNG; 1000; 2000; 5000; 10000"
+    },
+    {
+      "id": "query-kis-0183",
+      "query": "Bệnh viện; suất ăn; hành lang; Phòng bệnh"
+    },
+    {
+      "id": "query-kis-0184",
+      "query": "bánh tét; bao nếp; gói bánh"
+    },
+    {
+      "id": "query-kis-0185",
+      "query": "sách; tài liệu; đọc sách"
+    },
+    {
+      "id": "query-kis-0186",
+      "query": "cứu trợ; hàng cứu trợ; thùng hàng cứu trợ"
+    },
+    {
+      "id": "query-kis-0187",
+      "query": "bệnh nhi; điều trị"
+    },
+    {
+      "id": "query-kis-0188",
+      "query": "áo thể thao; sân xi măng"
+    },
+    {
+      "id": "query-kis-0189",
+      "query": "chợ; khu chợ"
+    },
+    {
+      "id": "query-kis-0190",
+      "query": "mâm hoa; hoa đỏ; hoa vàng; hình trái tim"
+    },
+    {
+      "id": "query-kis-0191",
+      "query": "điện tâm đồ; ECG; máy đo"
+    },
+    {
+      "id": "query-kis-0192",
+      "query": "sổ lưu bút; sách cũ; lưu bút"
+    },
+    {
+      "id": "query-kis-0193",
+      "query": "sách giáo khoa cũ; bộ sưu tập; 15 năm; 7000 cuốn; 8000 cuốn; 7-8000"
+    },
+    {
+      "id": "query-kis-0194",
+      "query": "thiện nguyện; tình nguyện; từ thiện"
+    },
+    {
+      "id": "query-kis-0195",
+      "query": "BẰNG KHEN; GIẤY KHEN"
+    },
+    {
+      "id": "query-kis-0196",
+      "query": "hai cha con; ngoài đường; ban đêm"
+    },
+    {
+      "id": "query-kis-0197",
+      "query": "túi quà; chụp ảnh lưu niệm"
+    },
+    {
+      "id": "query-kis-0198",
+      "query": "trao quà; tặng quà; thiếu nhi; trẻ em"
+    },
+    {
+      "id": "query-kis-0199",
+      "query": "tổng giá trị giải thưởng 100 triệu đồng; giải nhất 20 triệu đồng; cuộc thi"
+    },
+    {
+      "id": "query-qa-01",
+      "query": "sạt lở bờ sông; sạt lở bờ kè; miền Tây; thiệt hại"
+    },
+    {
+      "id": "query-qa-02",
+      "query": "tiền giả; lừa bán tiền giả; công an phá đường dây; tang vật tiền giả"
+    },
+    {
+      "id": "query-qa-03",
+      "query": "Thác Bà; Yên Bái; xả lũ hồ thủy điện; nhà xưởng gỗ; ngập nước"
+    },
+    {
+      "id": "query-qa-04",
+      "query": "Loại xe; Đề xuất; Hiện hành; nồng độ cồn; xe mô tô, xe gắn máy; mức phạt; bảng so sánh"
+    },
+    {
+      "id": "query-qa-05",
+      "query": "Đồng Tháp; mùa nước lũ; mùa nước nổi; nuôi gia cầm chạy đồng; tổng đàn"
+    },
+    {
+      "id": "query-qa-06",
+      "query": "nắng nóng kỷ lục; châu Âu; nhiệt độ kỷ lục; độ C; °C"
+    },
+    {
+      "id": "query-qa-07",
+      "query": "HỒI SỨC CẤP CỨU (ICU); HỒI SỨC CẤP CỨU; ICU"
+    },
+    {
+      "id": "query-qa-08",
+      "query": "Sở Giáo dục và Đào tạo TP.HCM; đặt hàng đào tạo; nguồn nhân lực giáo viên; sinh viên tốt nghiệp xuất sắc; xét tuyển giáo viên"
+    },
+    {
+      "id": "query-qa-09",
+      "query": "Nút giao An Sương; Cầu vượt Gò Dưa; Ngã ba An Lạc; Cầu Phú Mỹ; đường vành đai; TP.HCM; sơ đồ tuyến"
+    },
+    {
+      "id": "query-qa-10",
+      "query": "GIẢM GIÁ SỐC"
+    },
+    {
+      "id": "query-qa-11",
+      "query": "HTV THỂ THAO"
+    },
+    {
+      "id": "query-qa-12",
+      "query": "VinaXa TP. Hồ Chí Minh; TRỰC TIẾP; Vòng đua; Tốc độ; km/h"
+    },
+    {
+      "id": "query-qa-13",
+      "query": "TRỰC TIẾP; đua xe đạp; km; đích"
+    },
+    {
+      "id": "query-qa-14",
+      "query": "Trực tiếp; Đua xe đạp; LIVE; km/h"
+    },
+    {
+      "id": "query-qa-15",
+      "query": "TRỰC TIẾP; đua xe đạp; cách đích; km"
+    },
+    {
+      "id": "query-qa-16",
+      "query": "bảng điểm; tổng điểm; tổng hợp điểm; điểm số"
+    },
+    {
+      "id": "query-qa-17",
+      "query": "chung kết lân sư rồng; bảng điểm; điểm số"
+    },
+    {
+      "id": "query-qa-18",
+      "query": "múa lân; mai hoa thung; leo cột; múa lân leo cột"
+    },
+    {
+      "id": "query-qa-19",
+      "query": "múa lân sư rồng; đêm thi múa lân sư rồng; rồng vàng"
+    },
+    {
+      "id": "query-qa-20",
+      "query": "làng nghề truyền thống; đất sét nung; gạch gốm; đồng bằng sông Cửu Long; miền Tây Nam Bộ"
+    },
+    {
+      "id": "query-qa-21",
+      "query": "Thanh Niên; Địa lí vùng kinh tế Việt Nam; ôn thi THPT; Địa lý; đồng bằng sông Hồng; ĐBSH"
+    },
+    {
+      "id": "query-qa-22",
+      "query": "Thanh Niên; Bắc Trung Bộ; Địa lý; Ôn thi THPT; nông - lâm - ngư; vùng núi; vùng đồi chuyển tiếp; đồng bằng ven biển"
+    },
+    {
+      "id": "query-qa-23",
+      "query": "Thanh Niên; Ôn thi THPT; Lịch sử; Các tổ chức quốc tế; ASEAN; Hiệp hội các quốc gia Đông Nam Á"
+    },
+    {
+      "id": "query-qa-24",
+      "query": "Ôn lại Ancol - Phenol; Ôn thi THPT; Hóa học; bảng so sánh tính chất; Ancol; Phenol"
+    },
+    {
+      "id": "query-qa-25",
+      "query": "lễ tốt nghiệp; đại học quốc tế; tân cử nhân; lập trình; học bổng; logo mặt trời xanh"
+    },
+    {
+      "id": "query-qa-26",
+      "query": "gà nguyên con; gà hấp; gừng; đầu hành; lá chanh thái sợi; nồi hấp"
+    },
+    {
+      "id": "query-qa-27",
+      "query": "đùi dê; sốt nâu; lò nướng; Giáng sinh; dạy nấu ăn"
+    },
+    {
+      "id": "query-qa-28",
+      "query": "Món Ngon Mỗi Ngày; cua rang me; sốt me; mè rang"
+    },
+    {
+      "id": "query-qa-29",
+      "query": "dạy nấu ăn; đùi gà nướng mật ong; sốt mật ong; vỉ nướng; lò nướng"
+    },
+    {
+      "id": "query-qa-30",
+      "query": "cánh gà; sốt đỏ; protein; % protein"
+    },
+    {
+      "id": "query-qa-31",
+      "query": "An Giang; miếu linh thiêng; chính điện"
+    },
+    {
+      "id": "query-qa-32",
+      "query": "An Giang; suối; chiều dài; km; thông số"
+    },
+    {
+      "id": "query-qa-33",
+      "query": "Việt Nam - Đi Là Mê; Việt Nam Đi Là Mê"
+    },
+    {
+      "id": "query-qa-34",
+      "query": "lẩu cua ghẹ; cách TP.HCM; Thành phố Hồ Chí Minh; km; khoảng cách"
+    },
+    {
+      "id": "query-qa-35",
+      "query": "Rau cát lồi; Núi Cấm; An Giang"
+    },
+    {
+      "id": "query-qa-36",
+      "query": "kênh Rạch Giá - Hà Tiên; biển Tây; hệ thống kênh đào; miền Tây Nam Bộ; gốm cổ khai quật"
+    },
+    {
+      "id": "query-qa-37",
+      "query": "Hà Tiên; sông; nhà sàn; trường tiểu học; ghe"
+    },
+    {
+      "id": "query-qa-38",
+      "query": "kênh đào; miền Tây; Cửu Đỉnh; Hoàng thành Huế; 1835; ca dao"
+    },
+    {
+      "id": "query-qa-39",
+      "query": "An Giang; kênh Vĩnh Tế; sông Hậu; nhà văn"
+    },
+    {
+      "id": "query-qa-40",
+      "query": "Hà Tiên; mắm; hải sản đặc trưng; đầm"
+    },
+    {
+      "id": "query-qa-41",
+      "query": "Cà Mau; khô cá; lạt tre; bó lạt"
+    },
+    {
+      "id": "query-qa-42",
+      "query": "Vườn Cò; Khu Vườn Cò; Cà Mau; Du lịch sinh thái"
+    },
+    {
+      "id": "query-qa-43",
+      "query": "Cà Mau; đánh bắt hải sản; ghe gỗ; tàu cá; kg"
+    },
+    {
+      "id": "query-qa-44",
+      "query": "khu du lịch sinh thái; Giám đốc khu du lịch; rừng tràm; bông súng"
+    },
+    {
+      "id": "query-qa-45",
+      "query": "nấm bào ngư; mô hình trồng nấm bào ngư; bịch phôi nấm"
+    },
+    {
+      "id": "query-qa-46",
+      "query": "sửa xe đạp miễn phí; sửa xe 0 đồng; giúp người nghèo"
+    },
+    {
+      "id": "query-qa-47",
+      "query": "lớp học tình thương; ước mơ gieo con chữ cho người nghèo"
+    },
+    {
+      "id": "query-qa-48",
+      "query": "làm giàu từ đám ruộng khô cằn thành ao nuôi cá tiền tỷ; Sài Gòn; ao nuôi cá tiền tỷ"
+    },
+    {
+      "id": "query-qa-49",
+      "query": "tiệm sách miễn phí; 3 không; Sài Gòn; tiệm sách 3 không"
+    },
+    {
+      "id": "query-qa-50",
+      "query": "thiếu nhi miền Bắc; tiền tiết kiệm; ủng hộ"
+    },
+    {
+      "id": "query-trake-01",
+      "query": "nấm rơm; củ cải trắng tỉa hoa; hành lá; rau răm; nồi thủy tinh; bếp gas"
+    },
+    {
+      "id": "query-trake-02",
+      "query": "dạy nấu ăn; cá nhỏ; bột chiên giòn; nước cốt tắc; tô thủy tinh"
+    },
+    {
+      "id": "query-trake-03",
+      "query": "gỏi cá hồi; cá hồi xông khói; dưa đỏ; bơ; xoài; đĩa gỏi"
+    },
+    {
+      "id": "query-trake-04",
+      "query": "làng nghề gốm; gốm thủ công; lu đất; nồi đất chưa nung"
+    },
+    {
+      "id": "query-trake-05",
+      "query": "nghề làm khô cá; làng biển; khô cá"
+    },
+    {
+      "id": "query-trake-06",
+      "query": "mỹ nghệ thủ công; nghệ nhân; men màu; phôi vuông"
+    },
+    {
+      "id": "query-trake-07",
+      "query": "thịt bằm; tỏi phi; hạt nêm; rau nêm; ớt"
+    },
+    {
+      "id": "query-trake-08",
+      "query": "múa lân leo cột; mai hoa thung; cuộc thi múa lân; giàn cột"
+    },
+    {
+      "id": "query-trake-09",
+      "query": "phòng chống đuối nước; dạy trẻ em; hồ bơi; ép tim; hình nộm; chai nhựa"
+    },
+    {
+      "id": "query-trake-10",
+      "query": "sạt lở đất; sạt lở; vùi lấp; cứu hộ; đất đỏ; máy xúc"
+    },
+    {
+      "id": "query-trake-11",
+      "query": "hẹ cắt khúc; giá; lạp xưởng cắt lát xéo; hai quả trứng đánh tan; chảo trắng; nước tương"
+    },
+    {
+      "id": "query-trake-12",
+      "query": "dạy nấu ăn; món xào; đầu bếp"
+    },
+    {
+      "id": "query-trake-13",
+      "query": "cánh gà chiên; tỏi cắt múi cau; hành tây cắt lát; chảo dầu; đĩa trắng"
+    },
+    {
+      "id": "query-trake-14",
+      "query": "lẩu vịt; khoai môn cắt khối; lá tía tô; hắc xì dầu; thịt vịt ướp; chảo dầu"
+    },
+    {
+      "id": "query-trake-15",
+      "query": "mực hấp; mực hấp gừng hành; hành lá; gừng thái lát; đĩa màu hồng; xửng hấp inox"
+    },
+    {
+      "id": "query-trake-16",
+      "query": "nước tương; dầu điều; hành tây; ớt chuông; ớt sừng; thịt ướp"
+    },
+    {
+      "id": "query-trake-17",
+      "query": "mì căn; dạy nấu ăn; bột trắng sánh"
+    },
+    {
+      "id": "query-trake-18",
+      "query": "giò sống; thịt bằm; gốc ngò rí băm; cà rốt băm; trứng luộc; rổ inox"
+    },
+    {
+      "id": "query-trake-19",
+      "query": "dạy nấu ăn; tôm hạt lựu; tôm viên; sấu xanh"
+    },
+    {
+      "id": "query-trake-20",
+      "query": "gia vị lẩu thái; lẩu thái; gói gia vị lẩu thái"
+    },
+    {
+      "id": "query-trake-21",
+      "query": "súp tôm; đầu tôm; vỏ tôm; gói gia vị; đường; đậu que cắt hạt lựu; nước bột năng; dạy nấu ăn"
+    },
+    {
+      "id": "query-trake-22",
+      "query": "cà chua cắt múi cau; ớt hiểm đập dập; sả đập dập cắt đôi; tôm; rây lọc; nồi thủy tinh màu hổ phách"
+    },
+    {
+      "id": "query-trake-23",
+      "query": "dạy nấu ăn; nước tương; rượu trắng; gừng băm; nước xốt màu đen; nấm kim châm bọc thịt; chén sứ xanh"
+    },
+    {
+      "id": "query-trake-24",
+      "query": "dạy nấu ăn; canh măng; măng vàng; nước tương; đậu hũ trắng; muối"
+    },
+    {
+      "id": "query-trake-25",
+      "query": "tôm càng hấp; tôm càng xanh; xoài hạt lựu; hành tỏi; tiêu; ớt đỏ; xửng hấp inox; đĩa thủy tinh"
+    },
+    {
+      "id": "query-trake-26",
+      "query": "khô cá đồng; miền Tây; làng nghề làm khô"
+    },
+    {
+      "id": "query-trake-27",
+      "query": "măng; bẹ măng; bào măng; măng thái sợi"
+    },
+    {
+      "id": "query-trake-28",
+      "query": "tượng mèo; gốm mèo; xưởng gốm; đất sét xám; mẹt tre"
+    },
+    {
+      "id": "query-trake-29",
+      "query": "khóm; dứa; miền Tây; vùng trồng khóm"
+    },
+    {
+      "id": "query-trake-30",
+      "query": "bánh khọt"
+    },
+    {
+      "id": "query-trake-31",
+      "query": "8.60; 8.65; 8,63; 8.63; Tổng điểm; Điểm"
+    },
+    {
+      "id": "query-trake-32",
+      "query": "múa lân sư rồng; quả cầu ngũ sắc; rồng vàng; thảm xanh dương"
+    },
+    {
+      "id": "query-trake-33",
+      "query": "lương y; thuốc nam; đông y; thuốc gia truyền"
+    },
+    {
+      "id": "query-trake-34",
+      "query": "bã cà phê; đĩa cốc từ bã cà phê; tái chế bã cà phê"
+    },
+    {
+      "id": "query-trake-35",
+      "query": "lá dừa nước; khai thác lá dừa; rừng dừa nước; tàu lá"
+    },
+    {
+      "id": "query-trake-36",
+      "query": "dạy nấu ăn; nồi lẩu; bếp từ; cà chua; viên thả lẩu; mâm rau; đĩa bún"
+    },
+    {
+      "id": "query-trake-37",
+      "query": "dạy nấu ăn; hạt nêm; ớt băm; cà chua múi cau; trái thơm rẻ quạt"
+    },
+    {
+      "id": "query-trake-38",
+      "query": "lẩu thái; cá dứa; gia vị lẩu thái; gói gia vị màu cam; bạc hà; thơm"
+    },
+    {
+      "id": "query-trake-39",
+      "query": "bắp bò hoa; củ riềng; thái mỏng; thái chỉ; thớt gỗ"
+    },
+    {
+      "id": "query-trake-40",
+      "query": "lẩu thái; khăn lông bò; gân bò; tô thủy tinh; gói gia vị nêm sẵn lẩu thái"
+    },
+    {
+      "id": "query-trake-41",
+      "query": "cá hồi; măng tây; khoanh thơm tỉa hoa; chảo vỉ vuông; bột canh; nước cốt tắc; ớt sừng băm"
+    },
+    {
+      "id": "query-trake-42",
+      "query": "đua xe đạp; vạch đích; về đích; FINISH; chặng đua"
+    },
+    {
+      "id": "query-trake-43",
+      "query": "861; Lân Sư Rồng; Chung kết; Bảng điểm"
+    },
+    {
+      "id": "query-trake-44",
+      "query": "thuốc bảo vệ thực vật giả; thuốc BVTV giả; cơ sở sản xuất thuốc giả; kho xưởng sản xuất hàng giả"
+    },
+    {
+      "id": "query-trake-45",
+      "query": "trộm xe máy; biển số xe; tang vật; chìa khóa; điện thoại; giấy tờ"
+    },
+    {
+      "id": "query-trake-46",
+      "query": "hạt nêm; tiêu; ớt chuông đỏ; ớt chuông vàng; hành tây; tỏi; cá cắt khối; tô sứ trắng; hũ sứ trắng"
+    },
+    {
+      "id": "query-trake-47",
+      "query": "lẩu thái; gói gia vị lẩu thái; giò sống; nồi thủy tinh"
+    },
+    {
+      "id": "query-trake-48",
+      "query": "Gà hấp hành răm; gừng cắt lát đập dập thái chỉ; đầu hành; lá chanh cắt chỉ; xửng hấp inox nhiều tầng"
+    },
+    {
+      "id": "query-trake-49",
+      "query": "thịt bằm; muối; bột ngọt; tiêu; tô sứ trắng"
+    },
+    {
+      "id": "query-trake-50",
+      "query": "RACE 2; 00:00; RACE; km/h; kts; Ý"
+    }
+  ]
+}

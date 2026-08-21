@@ -1,0 +1,1200 @@
+{
+  "queries": [
+    {
+      "id": "query-kis-0001",
+      "query": "Bản tin Thời sự; Hiện trường sạt lở; Đoàn kiểm tra hiện trường; Khắc phục sạt lở bờ sông"
+    },
+    {
+      "id": "query-kis-0002",
+      "query": "Công an; Bản tin An ninh trật tự; Khởi tố bị can; Chiếm đoạt tài sản"
+    },
+    {
+      "id": "query-kis-0003",
+      "query": "Người dẫn chương trình; MC; Thế giới đại dương; Khám phá đại dương; Trực tiếp"
+    },
+    {
+      "id": "query-kis-0004",
+      "query": "Thế giới động vật; Khám phá đại dương; VTV2; Khám phá thế giới"
+    },
+    {
+      "id": "query-kis-0005",
+      "query": "Cong truong dang thi cong; Du an cao toc; Ban quan ly du an"
+    },
+    {
+      "id": "query-kis-0006",
+      "query": "Bản tin 113; An ninh trật tự; Công an tỉnh; Hiện trường vụ việc; Quốc lộ"
+    },
+    {
+      "id": "query-kis-0007",
+      "query": "tin thế giới; Châu Âu; ngập lụt tại Châu Âu; thời tiết cực đoan"
+    },
+    {
+      "id": "query-kis-0008",
+      "query": "thử thách mạo hiểm trên không; kỷ lục xích đu độ cao; toàn cảnh thành phố từ trên cao"
+    },
+    {
+      "id": "query-kis-0009",
+      "query": "thời sự; tin nóng hiện trường; khu dân cư bị ảnh hưởng; cập nhật thiệt hại"
+    },
+    {
+      "id": "query-kis-0010",
+      "query": "Công an; triệt phá đường dây lừa đảo; lừa đảo chiếm đoạt tài sản; Bản tin an ninh; ANTV"
+    },
+    {
+      "id": "query-kis-0011",
+      "query": "Yên Bái; Hiện trường xả lũ; Nhà máy thủy điện Thác Bà; Tin lũ lụt; Thời sự VTV"
+    },
+    {
+      "id": "query-kis-0012",
+      "query": "Biên giới Tây Nam; Cửa khẩu; Bộ đội Biên phòng; Tang vật thu giữ; Buôn lậu qua biên giới"
+    },
+    {
+      "id": "query-kis-0013",
+      "query": "bản tin thị trường; giá nông sản hôm nay; chợ truyền thống"
+    },
+    {
+      "id": "query-kis-0014",
+      "query": "tin quốc tế; lực lượng cảnh sát; an ninh trật tự"
+    },
+    {
+      "id": "query-kis-0015",
+      "query": "vi phạm giao thông; an toàn giao thông; xử lý vi phạm; Đội CSGT đường bộ"
+    },
+    {
+      "id": "query-kis-0016",
+      "query": "AN NINH TRẬT TỰ; BẢN TIN 113; HIỆN TRƯỜNG VỤ VIỆC; CƠ QUAN CÔNG AN"
+    },
+    {
+      "id": "query-kis-0017",
+      "query": "Công an đột kích; Triệt phá tụ điểm đánh bạc; Thu giữ tang vật; An ninh trật tự; Hiện trường vụ việc"
+    },
+    {
+      "id": "query-kis-0018",
+      "query": "lễ vinh danh; lễ trao thưởng; khách mời danh dự; ban tổ chức"
+    },
+    {
+      "id": "query-kis-0019",
+      "query": "lễ khánh thành hầm chui; thông xe hầm chui; công trình giao thông; lễ khánh thành đưa vào sử dụng"
+    },
+    {
+      "id": "query-kis-0020",
+      "query": "cơ quan điều tra; đối tượng khai nhận; buổi làm việc; ANTV; hỏi cung bị can"
+    },
+    {
+      "id": "query-kis-0021",
+      "query": "triển lãm nghệ thuật sắp đặt; lễ hội nghệ thuật công cộng; không gian trưng bày ngoài trời"
+    },
+    {
+      "id": "query-kis-0022",
+      "query": "Tin lũ khẩn cấp; Thời sự; Khu dân cư ngập sâu; Cảnh báo thiên tai; Hiện trường ngập lụt"
+    },
+    {
+      "id": "query-kis-0023",
+      "query": "Bộ Nông nghiệp và Phát triển nông thôn; Họp báo; Hội nghị trực tiếp"
+    },
+    {
+      "id": "query-kis-0024",
+      "query": "Tour of Britain; Giải đua xe đạp nước Anh; Trực tiếp đua xe đạp; FINISH"
+    },
+    {
+      "id": "query-kis-0025",
+      "query": "chợ ven đường; mưu sinh vỉa hè; chợ tự phát; làng chài"
+    },
+    {
+      "id": "query-kis-0026",
+      "query": "Trực tiếp; Đua xe đạp nữ; Thể thao quốc tế; Bản tin thể thao"
+    },
+    {
+      "id": "query-kis-0027",
+      "query": "Tour de France; Chặng Alpe d'Huez; Trực tiếp chặng đua; Bảng xếp hạng leo núi"
+    },
+    {
+      "id": "query-kis-0028",
+      "query": "Bán đảo Sơn Trà - Đà Nẵng; Cảnh báo khỉ hoang tràn xuống đường; Khuyến cáo du khách"
+    },
+    {
+      "id": "query-kis-0029",
+      "query": "Tin tức 24h; An toàn giao thông; Hiện trường vụ tai nạn; Đội cứu hộ giao thông"
+    },
+    {
+      "id": "query-kis-0030",
+      "query": "BTV; Người dẫn chương trình; Bản tin Thời tiết; Trung tâm Dự báo Khí tượng Thủy văn Quốc gia"
+    },
+    {
+      "id": "query-kis-0031",
+      "query": "vận tải công cộng; giao thông đô thị; bãi đỗ xe buýt"
+    },
+    {
+      "id": "query-kis-0032",
+      "query": "Không quân Nhân dân Việt Nam; Phi đội không quân; Đơn vị sẵn sàng chiến đấu"
+    },
+    {
+      "id": "query-kis-0033",
+      "query": "quảng cáo nước uống; sản phẩm giải khát; tinh khiết từ thiên nhiên"
+    },
+    {
+      "id": "query-kis-0034",
+      "query": "chợ hoa tươi; cửa hàng hoa; làng hoa; giá hoa"
+    },
+    {
+      "id": "query-kis-0035",
+      "query": "CƠ QUAN CẢNH SÁT ĐIỀU TRA; CÁN BỘ ĐIỀU TRA; TRỤ SỞ CÔNG AN"
+    },
+    {
+      "id": "query-kis-0036",
+      "query": "lễ đón chính thức; nghi lễ nhà nước; đội nghi lễ quân đội; trực tiếp"
+    },
+    {
+      "id": "query-kis-0037",
+      "query": "hiện trường vụ sập đổ; công tác cứu hộ cứu nạn; dọn dẹp hiện trường"
+    },
+    {
+      "id": "query-kis-0038",
+      "query": "chợ truyền thống; sạp trái cây; giá nông sản hôm nay; chợ dân sinh"
+    },
+    {
+      "id": "query-kis-0039",
+      "query": "Camera hành trình; Giao thông đêm mưa; Cảnh báo đường trơn"
+    },
+    {
+      "id": "query-kis-0040",
+      "query": "Bản tin thời sự; Hiện trường; Kiểm lâm; Cảnh báo bẫy thú"
+    },
+    {
+      "id": "query-kis-0041",
+      "query": "dây chuyền sản xuất; nhà máy ô tô; công nhân kỹ thuật"
+    },
+    {
+      "id": "query-kis-0042",
+      "query": "Phỏng vấn trực tuyến; Chuyên gia quốc tế; Tổ chức Y tế Thế giới; Kết nối trực tuyến"
+    },
+    {
+      "id": "query-kis-0043",
+      "query": "bản tin thời sự; trực tiếp hiện trường đêm; chợ đêm; bến xe khách"
+    },
+    {
+      "id": "query-kis-0044",
+      "query": "ngày hội nông sản; bản tin nông nghiệp; lễ hội trái cây Việt Nam"
+    },
+    {
+      "id": "query-kis-0045",
+      "query": "Đại đức; Thượng tọa; Nhà chùa; Đặc sản trái cây; Nông sản"
+    },
+    {
+      "id": "query-kis-0046",
+      "query": "dự báo thời tiết; bản tin giao thông; cảnh báo mưa đêm"
+    },
+    {
+      "id": "query-kis-0047",
+      "query": "Toàn cảnh flycam; Thiên nhiên hùng vĩ; Khám phá Việt Nam; Du lịch sinh thái"
+    },
+    {
+      "id": "query-kis-0048",
+      "query": "chốt kiểm soát; kiểm tra phương tiện; khu vực kiểm soát; dừng xe kiểm tra"
+    },
+    {
+      "id": "query-kis-0049",
+      "query": "Trung tâm Dịch vụ việc làm; Ngày hội tư vấn hướng nghiệp; Kết nối cung cầu lao động"
+    },
+    {
+      "id": "query-kis-0050",
+      "query": "lớp học bơi cho trẻ em; hoạt động hè thiếu nhi; phòng chống đuối nước"
+    },
+    {
+      "id": "query-kis-0051",
+      "query": "Khoa Chẩn đoán hình ảnh; Bệnh viện; Thiết bị y tế hiện đại; Công nghệ y học"
+    },
+    {
+      "id": "query-kis-0052",
+      "query": "khu di tích; nhà tưởng niệm; phòng thờ Bác Hồ"
+    },
+    {
+      "id": "query-kis-0053",
+      "query": "British Council; IDP; TRF; Phiếu báo điểm"
+    },
+    {
+      "id": "query-kis-0054",
+      "query": "Tòa án nhân dân; Hội đồng xét xử; Viện kiểm sát nhân dân; Xét xử sơ thẩm"
+    },
+    {
+      "id": "query-kis-0055",
+      "query": "công trình đang thi công; tiến độ thi công; an toàn lao động; dự án xây dựng"
+    },
+    {
+      "id": "query-kis-0056",
+      "query": "Ban quản lý KCN; Cổng KCN; Triển lãm quốc tế; Khu công nghiệp Việt Nam"
+    },
+    {
+      "id": "query-kis-0057",
+      "query": "Hội Người cao tuổi; Mặt trận Tổ quốc; UBND; chương trình thiện nguyện; hoạt động an sinh xã hội"
+    },
+    {
+      "id": "query-kis-0058",
+      "query": "tranh tường nghệ thuật; không gian đô thị; tác phẩm đường phố"
+    },
+    {
+      "id": "query-kis-0059",
+      "query": "nghệ thuật đường phố; tác phẩm graffiti; không gian đô thị"
+    },
+    {
+      "id": "query-kis-0060",
+      "query": "mô hình rau an toàn; kỹ thuật trồng rau; HTX nông nghiệp; khuyến nông"
+    },
+    {
+      "id": "query-kis-0061",
+      "query": "Bản tin giao thông; An toàn giao thông; Nhịp sống đô thị"
+    },
+    {
+      "id": "query-kis-0062",
+      "query": "hiện trường vụ cháy; cảnh sát PCCC và CNCH; tin nóng; thời sự"
+    },
+    {
+      "id": "query-kis-0063",
+      "query": "bản tin thời sự; tin ngập lụt đô thị; cảnh báo triều cường; mưa lớn gây ngập"
+    },
+    {
+      "id": "query-kis-0064",
+      "query": "Thời sự; Tin lũ lụt; Cảnh báo thiên tai; Khu dân cư ngập sâu"
+    },
+    {
+      "id": "query-kis-0065",
+      "query": "ô nhiễm môi trường; vấn đề rác thải; phóng sự môi trường"
+    },
+    {
+      "id": "query-kis-0066",
+      "query": "Quân đội nhân dân Việt Nam; Bộ Quốc phòng; diễn tập cứu hộ cứu nạn; diễn tập phòng chống thiên tai"
+    },
+    {
+      "id": "query-kis-0067",
+      "query": "tin thời sự; cảnh báo ngập lụt; giao thông tê liệt; hiện trường ngập sâu"
+    },
+    {
+      "id": "query-kis-0068",
+      "query": "Hiện trường cứu hộ; Lực lượng cứu nạn cứu hộ; Tin tức thời sự"
+    },
+    {
+      "id": "query-kis-0069",
+      "query": "Họ và tên; Chức danh; Bệnh viện; Sở Y tế; Bản tin Y tế"
+    },
+    {
+      "id": "query-kis-0070",
+      "query": "khu vực phong tỏa tạm thời; chốt kiểm soát y tế; cách ly y tế; UBND phường; bản tin thời sự"
+    },
+    {
+      "id": "query-kis-0071",
+      "query": "Thời sự; Tin lũ khẩn cấp; Hiện trường ngập lụt; Cảnh báo thiên tai"
+    },
+    {
+      "id": "query-kis-0072",
+      "query": "Cảng biển; Vận tải hàng hải; Bản tin kinh tế - logistics"
+    },
+    {
+      "id": "query-kis-0073",
+      "query": "hiện trường vụ việc; thiệt hại sau sự cố; khu vực phong tỏa; tin nóng hiện trường"
+    },
+    {
+      "id": "query-kis-0074",
+      "query": "Dự báo thời tiết biển; Thời tiết biển đảo; Hình ảnh flycam"
+    },
+    {
+      "id": "query-kis-0075",
+      "query": "tỷ lệ thu gom rác thải; thống kê xử lý rác; vệ sinh môi trường đô thị; bản tin môi trường"
+    },
+    {
+      "id": "query-kis-0076",
+      "query": "chợ truyền thống; bản tin thị trường; phóng sự đời sống; khu chợ dân sinh"
+    },
+    {
+      "id": "query-kis-0077",
+      "query": "Cáp quang biển; Công trình dưới đáy biển; Khám phá đại dương"
+    },
+    {
+      "id": "query-kis-0078",
+      "query": "Ngày hội Thiếu nhi; Hoạt động ngoài trời; Chương trình thiếu nhi"
+    },
+    {
+      "id": "query-kis-0079",
+      "query": "mô hình chăn nuôi; trang trại chăn nuôi heo; nông nghiệp nông thôn"
+    },
+    {
+      "id": "query-kis-0080",
+      "query": "nhà bỏ hoang; hiện trạng xuống cấp; công trình hư hại; thiên nhiên xâm lấn"
+    },
+    {
+      "id": "query-kis-0081",
+      "query": "Di tích lịch sử; Kiến trúc châu Âu; Du lịch khám phá"
+    },
+    {
+      "id": "query-kis-0082",
+      "query": "CÔNG AN; AN NINH 24H; BẢN TIN 113; PHONG TỎA HIỆN TRƯỜNG"
+    },
+    {
+      "id": "query-kis-0083",
+      "query": "Công trình trọng điểm; Dự án cầu vượt sông; Ban quản lý dự án; Tiến độ thi công"
+    },
+    {
+      "id": "query-kis-0084",
+      "query": "toàn cảnh từ trên cao; flycam nông nghiệp; chuyên mục nông nghiệp xanh"
+    },
+    {
+      "id": "query-kis-0085",
+      "query": "giáo dục; cơ sở vật chất; trường học; năm học mới"
+    },
+    {
+      "id": "query-kis-0086",
+      "query": "thời sự; hiện trường vụ việc; thiệt hại tài sản; khu vực xảy ra sự cố"
+    },
+    {
+      "id": "query-kis-0087",
+      "query": "Thời sự; Tin tức 24h; Cảnh báo ngập lụt; Giao thông"
+    },
+    {
+      "id": "query-kis-0088",
+      "query": "Toàn cảnh từ trên cao; Giao thông đường thủy; Vận tải thủy nội địa"
+    },
+    {
+      "id": "query-kis-0089",
+      "query": "triển lãm thời trang; gian hàng trưng bày; khu vực triển lãm; lễ hội thời trang"
+    },
+    {
+      "id": "query-kis-0090",
+      "query": "bản tin thời sự; tin lũ lụt; cảnh báo ngập úng; phóng sự nông nghiệp"
+    },
+    {
+      "id": "query-kis-0091",
+      "query": "nhân vật ẩn danh; phỏng vấn giấu mặt; bảo vệ danh tính nhân chứng; danh tính đã được thay đổi"
+    },
+    {
+      "id": "query-kis-0092",
+      "query": "Bản tin giao thông; Giao thông giờ cao điểm; Truyền hình giao thông; Cầu lớn nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0093",
+      "query": "bác sĩ nhi khoa; khám sức khỏe trẻ em; bệnh viện; chăm sóc y tế"
+    },
+    {
+      "id": "query-kis-0094",
+      "query": "cảnh báo nguy hiểm; cấm đường; hiện trường sụt lún; an toàn giao thông"
+    },
+    {
+      "id": "query-kis-0095",
+      "query": "Truyền hình trực tiếp; Góc quay flycam; Thể thao; Giải đua xe đạp"
+    },
+    {
+      "id": "query-kis-0096",
+      "query": "Giải đua xe đạp; Cúp Truyền hình; Trực tiếp; Chặng đua; Bảng tổng sắp"
+    },
+    {
+      "id": "query-kis-0097",
+      "query": "Truyền hình trực tiếp; Giải đua xe đạp; Bảo đảm an ninh trật tự; An toàn giao thông"
+    },
+    {
+      "id": "query-kis-0098",
+      "query": "Truyền hình trực tiếp; Chặng đua; Toàn cảnh flycam; Giải xe đạp"
+    },
+    {
+      "id": "query-kis-0099",
+      "query": "Giải xe đạp Cúp Truyền hình; Trực tiếp; VTV Thể thao; Chặng đua"
+    },
+    {
+      "id": "query-kis-0100",
+      "query": "Truyền hình trực tiếp; Giải xe đạp; chặng đua thành phố"
+    },
+    {
+      "id": "query-kis-0101",
+      "query": "Giải đua xe đạp; Trực tiếp; Cúp Truyền hình; Chặng đua"
+    },
+    {
+      "id": "query-kis-0102",
+      "query": "trực tiếp; toàn cảnh flycam; chặng đua; góc nhìn từ trên cao"
+    },
+    {
+      "id": "query-kis-0103",
+      "query": "Trực tiếp đường đua; Giải đua xe; Cổ vũ giải đấu; Lễ hội thể thao"
+    },
+    {
+      "id": "query-kis-0104",
+      "query": "Bài giảng Hóa học; Hóa học 12; Minh họa thí nghiệm; Phòng thí nghiệm"
+    },
+    {
+      "id": "query-kis-0105",
+      "query": "Câu hỏi trắc nghiệm; Môn Hóa học; Bài giảng; Giáo viên; Đáp án A; Đáp án B; Đáp án C; Đáp án D"
+    },
+    {
+      "id": "query-kis-0106",
+      "query": "Nguyên liệu; Công thức; Hướng dẫn làm bánh; Định lượng nguyên liệu"
+    },
+    {
+      "id": "query-kis-0107",
+      "query": "hướng dẫn làm bánh; công thức kem béo; nguyên liệu làm bánh"
+    },
+    {
+      "id": "query-kis-0108",
+      "query": "hướng dẫn nấu ăn; món ngon mỗi ngày; cách ướp cá; ẩm thực Việt Nam"
+    },
+    {
+      "id": "query-kis-0109",
+      "query": "nguyên liệu; định lượng nguyên liệu; công thức; hướng dẫn chế biến; món ngon"
+    },
+    {
+      "id": "query-kis-0110",
+      "query": "vào bếp; hướng dẫn nấu ăn; mẹo nấu ăn ngon"
+    },
+    {
+      "id": "query-kis-0111",
+      "query": "hướng dẫn pha trà sữa; công thức pha chế; trà sữa hòa tan"
+    },
+    {
+      "id": "query-kis-0112",
+      "query": "Cách làm sinh tố xoài; Món ngon mỗi ngày; Hướng dẫn pha chế"
+    },
+    {
+      "id": "query-kis-0113",
+      "query": "Vào bếp; Công thức nấu ăn; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-kis-0114",
+      "query": "vào bếp; dạy làm bánh; hướng dẫn nướng bánh; mẹo nhà bếp"
+    },
+    {
+      "id": "query-kis-0115",
+      "query": "Vào bếp đón Noel; Góc bếp Giáng sinh; MC dẫn chương trình"
+    },
+    {
+      "id": "query-kis-0116",
+      "query": "gia vị; công thức nấu ăn; hướng dẫn nấu ăn; vào bếp cùng bạn"
+    },
+    {
+      "id": "query-kis-0117",
+      "query": "nguyên liệu; hướng dẫn nấu ăn; cách làm tương ớt; món ngon mỗi ngày"
+    },
+    {
+      "id": "query-kis-0118",
+      "query": "Công thức nước dùng; Hướng dẫn nấu ăn; Định lượng nguyên liệu"
+    },
+    {
+      "id": "query-kis-0119",
+      "query": "hướng dẫn sử dụng; cách pha bột; định lượng nước; vào bếp"
+    },
+    {
+      "id": "query-kis-0120",
+      "query": "Ajinomoto Việt Nam; hướng dẫn nấu ăn; bí quyết nêm nếm"
+    },
+    {
+      "id": "query-kis-0121",
+      "query": "hướng dẫn sơ chế; kỹ thuật cắt; mẹo nhà bếp; dạy nấu ăn"
+    },
+    {
+      "id": "query-kis-0122",
+      "query": "hướng dẫn nấu ăn; vào bếp; món ngon mỗi ngày; dạy nấu ăn"
+    },
+    {
+      "id": "query-kis-0123",
+      "query": "công thức pha cacao sữa; hướng dẫn pha chế; nguyên liệu"
+    },
+    {
+      "id": "query-kis-0124",
+      "query": "Nguyên liệu; Công thức nấu ăn; Hướng dẫn chế biến; Món ngon mỗi ngày"
+    },
+    {
+      "id": "query-kis-0125",
+      "query": "nguyên liệu; công thức; hướng dẫn làm bánh; vào bếp"
+    },
+    {
+      "id": "query-kis-0126",
+      "query": "nguyên liệu; công thức; hướng dẫn làm bánh; cách pha bột"
+    },
+    {
+      "id": "query-kis-0127",
+      "query": "hướng dẫn làm bánh; công thức làm kem; mẹo làm bếp"
+    },
+    {
+      "id": "query-kis-0128",
+      "query": "hướng dẫn nấu ăn; vào bếp; công thức nước sốt"
+    },
+    {
+      "id": "query-kis-0129",
+      "query": "cách pha nước chấm; hướng dẫn nấu ăn; bí quyết bếp núc; món ngon mỗi ngày"
+    },
+    {
+      "id": "query-kis-0130",
+      "query": "CÔNG THỨC NẤU ĂN; NGUYÊN LIỆU; HƯỚNG DẪN VÀO BẾP; MẸO NHÀ BẾP"
+    },
+    {
+      "id": "query-kis-0131",
+      "query": "hướng dẫn pha chế; cách pha bột; định lượng nước"
+    },
+    {
+      "id": "query-kis-0132",
+      "query": "nguyên liệu; công thức; hướng dẫn pha chế; cách làm"
+    },
+    {
+      "id": "query-kis-0133",
+      "query": "công thức ướp thịt; nguyên liệu; hướng dẫn nấu ăn; món ngon mỗi ngày"
+    },
+    {
+      "id": "query-kis-0134",
+      "query": "nguyên liệu; công thức món kho; hướng dẫn nấu ăn; bí quyết nấu ngon"
+    },
+    {
+      "id": "query-kis-0135",
+      "query": "lò nướng; hướng dẫn nấu ăn; món nướng; nhiệt độ nướng"
+    },
+    {
+      "id": "query-kis-0136",
+      "query": "hướng dẫn nấu ăn; công thức món tráng miệng; vào bếp"
+    },
+    {
+      "id": "query-kis-0137",
+      "query": "Công thức; Hướng dẫn nấu ăn; Vào bếp; Nguyên liệu"
+    },
+    {
+      "id": "query-kis-0138",
+      "query": "Hướng dẫn pha chế; Cách pha chuẩn; Định lượng; Bột hòa tan"
+    },
+    {
+      "id": "query-kis-0139",
+      "query": "Người dẫn chương trình; MC; VTV; Chương trình ngoài trời"
+    },
+    {
+      "id": "query-kis-0140",
+      "query": "du lịch sông nước; trải nghiệm miền Tây; khám phá trên xuồng"
+    },
+    {
+      "id": "query-kis-0141",
+      "query": "khu vui chơi ngoài trời; khu du lịch; đường trượt gỗ; review du lịch; trải nghiệm"
+    },
+    {
+      "id": "query-kis-0142",
+      "query": "quán ngon; ẩm thực đường phố; khám phá ẩm thực"
+    },
+    {
+      "id": "query-kis-0143",
+      "query": "Di tích lịch sử; Đền cổ; Di tích quốc gia; Công trình xây dựng năm 1735"
+    },
+    {
+      "id": "query-kis-0144",
+      "query": "di tích lịch sử; kiến trúc đền cổ; di sản văn hóa"
+    },
+    {
+      "id": "query-kis-0145",
+      "query": "toàn cảnh flycam; di tích lịch sử; khu nghĩa trang cổ"
+    },
+    {
+      "id": "query-kis-0146",
+      "query": "chợ đầu mối thủy sản; giá hải sản hôm nay; bản tin thị trường"
+    },
+    {
+      "id": "query-kis-0147",
+      "query": "làng chài ven biển; cảng cá Việt Nam; tin tức ngư dân; kinh tế biển"
+    },
+    {
+      "id": "query-kis-0148",
+      "query": "đền thờ; di tích lịch sử; khu di tích; chân dung danh nhân"
+    },
+    {
+      "id": "query-kis-0149",
+      "query": "Toàn cảnh dự án; Vị trí dự án; Bản đồ kết nối giao thông; Quy hoạch khu đô thị ven biển"
+    },
+    {
+      "id": "query-kis-0150",
+      "query": "Người dẫn chương trình; Du lịch - Khám phá; Cầu vượt biển"
+    },
+    {
+      "id": "query-kis-0151",
+      "query": "Du lịch khám phá; Góc nhìn trên cao; Thị trấn ven biển"
+    },
+    {
+      "id": "query-kis-0152",
+      "query": "Hệ sinh thái rừng ngập mặn; Bảo vệ rừng phòng hộ; Khám phá thiên nhiên"
+    },
+    {
+      "id": "query-kis-0153",
+      "query": "Người dẫn chương trình; Trực tiếp; Bản tin nông nghiệp; Khám phá đồng lúa"
+    },
+    {
+      "id": "query-kis-0154",
+      "query": "trang trại bò sữa; hợp tác xã chăn nuôi; nông nghiệp nông thôn; người chăn nuôi"
+    },
+    {
+      "id": "query-kis-0155",
+      "query": "Miền Tây sông nước; Du lịch sinh thái; Đồng bằng sông Cửu Long"
+    },
+    {
+      "id": "query-kis-0156",
+      "query": "làng nghề phơi cá; đặc sản mực khô; làng chài ven biển"
+    },
+    {
+      "id": "query-kis-0157",
+      "query": "Phim tài liệu; Công trình thủy lợi; Đào kênh; Kênh thẳng tắp giữa cánh đồng"
+    },
+    {
+      "id": "query-kis-0158",
+      "query": "Bảo tàng Chứng tích Chiến tranh; Triển lãm tư liệu lịch sử; Khu trưng bày; Bảng số liệu thiệt hại"
+    },
+    {
+      "id": "query-kis-0159",
+      "query": "Tọa đàm; Nhân vật và câu chuyện; Không gian mái ngói; Phóng sự phỏng vấn"
+    },
+    {
+      "id": "query-kis-0160",
+      "query": "chợ dân sinh; giá cả thị trường; bản tin nông sản"
+    },
+    {
+      "id": "query-kis-0161",
+      "query": "Nhà sàn truyền thống; Làng chài ven biển; Du lịch biển đảo"
+    },
+    {
+      "id": "query-kis-0162",
+      "query": "làng nghề truyền thống; nghề nung gạch thủ công; nghệ nhân lớn tuổi"
+    },
+    {
+      "id": "query-kis-0163",
+      "query": "Khai mạc lễ hội truyền thống; Lễ hội 3 ngày; Trực tiếp lễ hội; Ban tổ chức lễ hội"
+    },
+    {
+      "id": "query-kis-0164",
+      "query": "LỄ ĐÓN ĐOÀN; ĐOÀN HỘ TỐNG; AN NINH TRẬT TỰ; TRỰC TIẾP"
+    },
+    {
+      "id": "query-kis-0165",
+      "query": "gian hàng triển lãm; hội chợ sản phẩm; quầy giới thiệu"
+    },
+    {
+      "id": "query-kis-0166",
+      "query": "Kỷ vật cây vú sữa; Gửi ra Bắc; Câu chuyện về Bác Hồ; Kỷ vật kháng chiến"
+    },
+    {
+      "id": "query-kis-0167",
+      "query": "di tích kiến trúc; điểm tham quan; giới thiệu địa danh"
+    },
+    {
+      "id": "query-kis-0168",
+      "query": "cảng cá; bản tin thời sự; cảng biển đêm; ngư dân bám biển"
+    },
+    {
+      "id": "query-kis-0169",
+      "query": "Giá nấm trắng; Giá cả thị trường; Nông sản hôm nay; Thị trường nông sản"
+    },
+    {
+      "id": "query-kis-0170",
+      "query": "gian hàng triển lãm; hội chợ giới thiệu sản phẩm; quầy tư vấn"
+    },
+    {
+      "id": "query-kis-0171",
+      "query": "chuồng số 120; khu A chuồng 120; trung tâm cứu hộ động vật; nhận nuôi chó mèo"
+    },
+    {
+      "id": "query-kis-0172",
+      "query": "bác sĩ thú y; phòng khám thú y; kiểm tra sức khỏe vật nuôi"
+    },
+    {
+      "id": "query-kis-0173",
+      "query": "VỰA HẢI SẢN; ĐẶC SẢN MỰC KHÔ; CÂU MỰC BAN ĐÊM; 18H - 3H SÁNG"
+    },
+    {
+      "id": "query-kis-0174",
+      "query": "cơ sở hải sản khô; đặc sản mực khô; phơi mực khô; làng nghề hải sản"
+    },
+    {
+      "id": "query-kis-0175",
+      "query": "hướng dẫn làm bánh; cách nặn bột; ẩm thực truyền thống; dạy nấu ăn"
+    },
+    {
+      "id": "query-kis-0176",
+      "query": "hướng dẫn làm bánh; dạy nấu ăn; cách làm bánh hấp; bí quyết làm bánh"
+    },
+    {
+      "id": "query-kis-0177",
+      "query": "Nghĩa trang liệt sĩ; Tri ân anh hùng liệt sĩ; Anh hùng liệt sĩ sinh năm 1945; Chiến đấu năm 1972"
+    },
+    {
+      "id": "query-kis-0178",
+      "query": "sổ tay cá nhân; ghi chép; tư liệu viết tay"
+    },
+    {
+      "id": "query-kis-0179",
+      "query": "thư viện tư nhân; hoạt động hơn 14 năm; hơn 4000 đầu sách; tủ sách cộng đồng"
+    },
+    {
+      "id": "query-kis-0180",
+      "query": "mô hình nuôi cá hiệu quả; khởi nghiệp nông nghiệp; nông dân làm giàu; chuyển đổi đất ruộng"
+    },
+    {
+      "id": "query-kis-0181",
+      "query": "Thư viện tại gia; Không gian đọc sách; Góc sưu tầm sách"
+    },
+    {
+      "id": "query-kis-0182",
+      "query": "kiểm đếm tiền mặt; thu ngân; quầy thu tiền; kiểm quỹ cuối ngày"
+    },
+    {
+      "id": "query-kis-0183",
+      "query": "Nhân viên y tế; Bệnh nhân lớn tuổi; Trao suất ăn; Bệnh viện"
+    },
+    {
+      "id": "query-kis-0184",
+      "query": "Gói bánh tét đón Tết; Tết Nguyên Đán; Xuân Ất Tỵ; Không khí chuẩn bị Tết"
+    },
+    {
+      "id": "query-kis-0185",
+      "query": "Thư viện; Câu lạc bộ người cao tuổi; Góc đọc sách; Tuổi già vui khỏe"
+    },
+    {
+      "id": "query-kis-0186",
+      "query": "tập kết hàng cứu trợ; điểm tập kết; vận chuyển hàng cứu trợ; quảng trường"
+    },
+    {
+      "id": "query-kis-0187",
+      "query": "Bệnh viện Nhi Trung ương; Khoa Nhi; Khoa Ung bướu; Chương trình thiện nguyện"
+    },
+    {
+      "id": "query-kis-0188",
+      "query": "bạo lực học đường; kỹ năng sống; phóng sự trẻ em"
+    },
+    {
+      "id": "query-kis-0189",
+      "query": "Đời sống dân sinh; Chợ truyền thống; Câu chuyện mưu sinh"
+    },
+    {
+      "id": "query-kis-0190",
+      "query": "trang trí hoa; nghệ thuật cắm hoa; lễ cưới; ngày lễ tình nhân"
+    },
+    {
+      "id": "query-kis-0191",
+      "query": "thiết bị y tế; phòng khám; khoa tim mạch; kiểm tra sức khỏe"
+    },
+    {
+      "id": "query-kis-0192",
+      "query": "kỷ vật học trò; góc ký ức; lưu giữ kỷ niệm"
+    },
+    {
+      "id": "query-kis-0193",
+      "query": "nhà sưu tập sách; sưu tầm sách giáo khoa; bộ sưu tập sách cũ; thư viện tư nhân; hành trình sưu tập"
+    },
+    {
+      "id": "query-kis-0194",
+      "query": "Đội thanh niên tình nguyện; Hành trình thiện nguyện; Chương trình hỗ trợ cộng đồng"
+    },
+    {
+      "id": "query-kis-0195",
+      "query": "Cộng hòa Xã hội Chủ nghĩa Việt Nam; Độc lập - Tự do - Hạnh phúc; Quyết định khen thưởng; Tặng"
+    },
+    {
+      "id": "query-kis-0196",
+      "query": "phóng sự đêm; hiện trường đường phố; câu chuyện gia đình"
+    },
+    {
+      "id": "query-kis-0197",
+      "query": "trao quà từ thiện; hoạt động cộng đồng; chương trình tặng quà"
+    },
+    {
+      "id": "query-kis-0198",
+      "query": "Lễ trao quà cho trẻ em; Chương trình thiện nguyện; Tết Trung thu; Ngày hội thiếu nhi"
+    },
+    {
+      "id": "query-kis-0199",
+      "query": "cơ cấu giải thưởng; ban tổ chức; thể lệ cuộc thi; thông tin chi tiết liên hệ"
+    },
+    {
+      "id": "query-qa-01",
+      "query": "Thời sự; Tin tức ĐBSCL; Hiện trường sạt lở; UBND tỉnh; Sở Nông nghiệp và PTNT"
+    },
+    {
+      "id": "query-qa-02",
+      "query": "Bản tin thời sự; Thời sự 19h; Triệt phá đường dây lừa đảo; Tang vật vụ án; Công an nhân dân"
+    },
+    {
+      "id": "query-qa-03",
+      "query": "Bản tin Thời sự; Yên Bái 24h; Bộ đội Biên phòng tỉnh Yên Bái; UBND tỉnh Yên Bái; Hồ thủy điện Thác Bà"
+    },
+    {
+      "id": "query-qa-04",
+      "query": "Bản tin thời sự; Thời sự 19h; Đề xuất hạ mức phạt vi phạm nồng độ cồn; CSGT; Bộ Công an; VTV"
+    },
+    {
+      "id": "query-qa-05",
+      "query": "THĐT; Thời sự Đồng Tháp; Đài PT-TH Đồng Tháp; Nông nghiệp Đồng Tháp; Chăn nuôi mùa nước nổi"
+    },
+    {
+      "id": "query-qa-06",
+      "query": "Bản tin thời sự quốc tế; Thời sự quốc tế; Nhiệt độ vượt kỷ lục; Châu Âu nắng nóng"
+    },
+    {
+      "id": "query-qa-07",
+      "query": "Bản tin thời sự; Thời sự; Cấp cứu; Khoa Hồi sức Cấp cứu; Bệnh viện"
+    },
+    {
+      "id": "query-qa-08",
+      "query": "Bản tin Thời sự; Thời sự TP.HCM; UBND TP.HCM; Sở GD&ĐT TP.HCM; Đào tạo nguồn nhân lực"
+    },
+    {
+      "id": "query-qa-09",
+      "query": "Bản tin Thời sự; Tiến độ dự án Vành đai 2 TP.HCM; Khép kín đường vành đai; Tổng chiều dài toàn tuyến; Đã hoàn thành; km"
+    },
+    {
+      "id": "query-qa-10",
+      "query": "Bản tin thời sự; Hội chợ kết nối cung cầu; Kết nối cung cầu giữa các tỉnh; Hội chợ xúc tiến thương mại"
+    },
+    {
+      "id": "query-qa-11",
+      "query": "TRỰC TIẾP; Cúp Truyền hình TP.HCM; Đua xe đạp; Còn cách đích; km"
+    },
+    {
+      "id": "query-qa-12",
+      "query": "Cúp Truyền hình TP.HCM; HTV Thể Thao; Trực tiếp chặng đua; Bảng tổng sắp; Liên đoàn Xe đạp - Mô tô Việt Nam"
+    },
+    {
+      "id": "query-qa-13",
+      "query": "Còn cách đích; Khoảng cách đến đích; Giải đua xe đạp; Chặng đua"
+    },
+    {
+      "id": "query-qa-14",
+      "query": "Bình luận trực tiếp; Giải đua xe đạp; Chặng đua; Tốc độ trung bình; Bản đồ chặng đua"
+    },
+    {
+      "id": "query-qa-15",
+      "query": "Giải đua xe đạp; Trực tiếp chặng đua; Còn cách đích ... km; Đường đua"
+    },
+    {
+      "id": "query-qa-16",
+      "query": "Chung kết Lân Sư Rồng; Đêm chung kết; Trọng tài; Tổng điểm; Ban Giám Khảo"
+    },
+    {
+      "id": "query-qa-17",
+      "query": "Giải Lân Sư Rồng; Đêm Chung Kết; Ban Giám Khảo; Trọng Tài; Bảng Điểm"
+    },
+    {
+      "id": "query-qa-18",
+      "query": "TRỰC TIẾP; ĐÊM CHUNG KẾT; GIẢI VÔ ĐỊCH MÚA LÂN; LỄ HỘI MÚA LÂN SƯ RỒNG"
+    },
+    {
+      "id": "query-qa-19",
+      "query": "TRỰC TIẾP; CHUNG KẾT MÚA LÂN SƯ RỒNG; LIÊN HOAN LÂN SƯ RỒNG TOÀN QUỐC; NHÀ THI ĐẤU"
+    },
+    {
+      "id": "query-qa-20",
+      "query": "Làng gạch Mang Thít; Làng gốm Vĩnh Long; Phóng sự làng nghề miền Tây; Nghề thủ công ven sông"
+    },
+    {
+      "id": "query-qa-21",
+      "query": "Bài giảng ôn thi THPT Quốc gia; Giáo viên Địa lý; Vùng Đồng bằng sông Hồng; gồm ... tỉnh thành; Vùng kinh tế trọng điểm"
+    },
+    {
+      "id": "query-qa-22",
+      "query": "Ôn thi tốt nghiệp THPT; Bài giảng Địa lý; Lát cắt địa hình Tây - Đông; Cơ cấu kinh tế nông lâm ngư nghiệp; Vùng Bắc Trung Bộ; Kênh Thanh Niên"
+    },
+    {
+      "id": "query-qa-23",
+      "query": "Bài giảng ôn thi THPT Quốc gia; Chuyên đề Các tổ chức quốc tế; Thầy giáo Lịch sử; Sơ đồ tổ chức khu vực; Đông Nam Á"
+    },
+    {
+      "id": "query-qa-24",
+      "query": "Bài giảng Hóa 12; Luyện thi THPT Quốc gia; Ancol etylic C2H5OH; Phenol C6H5OH; H2SO4 đặc; 170 độ C"
+    },
+    {
+      "id": "query-qa-25",
+      "query": "Bản tin Giáo dục; Lễ Tốt nghiệp; Trường Đại học Quốc tế; Giảng viên Lập trình; Tài trợ học bổng; Doanh nghiệp tài trợ"
+    },
+    {
+      "id": "query-qa-26",
+      "query": "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Công thức gà hấp gừng sả"
+    },
+    {
+      "id": "query-qa-27",
+      "query": "đầu bếp; MC dẫn chương trình; món ngon Giáng sinh; công thức đùi dê nướng; hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-qa-28",
+      "query": "Đầu bếp; Hướng dẫn nấu ăn; Nguyên liệu - Cách làm; Ajinomoto"
+    },
+    {
+      "id": "query-qa-29",
+      "query": "đầu bếp; MC; món ngon mỗi ngày; hướng dẫn chế biến; bí quyết món nướng"
+    },
+    {
+      "id": "query-qa-30",
+      "query": "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; Giá trị dinh dưỡng; Thành phần dinh dưỡng"
+    },
+    {
+      "id": "query-qa-31",
+      "query": "Du lịch tâm linh An Giang; Di tích lịch sử văn hóa; Phóng sự An Giang; Châu Đốc - An Giang"
+    },
+    {
+      "id": "query-qa-32",
+      "query": "Du lịch An Giang; Phóng sự du lịch; Khám phá An Giang; Tên suối; Địa danh An Giang"
+    },
+    {
+      "id": "query-qa-33",
+      "query": "Du lịch Kiên Giang; Thị trấn ven biển; Cầu vượt cửa sông; Phóng sự khám phá"
+    },
+    {
+      "id": "query-qa-34",
+      "query": "Phóng sự ẩm thực - du lịch; Toàn cảnh flycam; Thành phố ven biển; Khoảng cách địa lý"
+    },
+    {
+      "id": "query-qa-35",
+      "query": "Phóng sự đặc sản; Rau rừng Núi Cấm; Thu hái rau rừng; Du lịch An Giang"
+    },
+    {
+      "id": "query-qa-36",
+      "query": "Phóng sự: Kênh đào miền Tây; Đồng bằng sông Cửu Long; Di chỉ khảo cổ ven kênh; Tư liệu flycam xóm ven kênh"
+    },
+    {
+      "id": "query-qa-37",
+      "query": "Phóng sự Hà Tiên - Kiên Giang; Trường Tiểu học; UBND Thị xã Hà Tiên; Du lịch Hà Tiên"
+    },
+    {
+      "id": "query-qa-38",
+      "query": "Ký sự miền Tây; Lịch sử kênh đào Nam Bộ; Đồng bằng sông Cửu Long; Di sản Cửu Đỉnh triều Nguyễn"
+    },
+    {
+      "id": "query-qa-39",
+      "query": "Nhà văn; Phóng sự An Giang; Hệ thống kênh đào; Đồng bằng sông Cửu Long; Kênh Vĩnh Tế - An Giang"
+    },
+    {
+      "id": "query-qa-40",
+      "query": "Đặc sản Hà Tiên - Kiên Giang; Làng nghề làm mắm truyền thống; Phóng sự ẩm thực; Cơ sở chế biến thủy sản"
+    },
+    {
+      "id": "query-qa-41",
+      "query": "Làng nghề Cà Mau; Phóng sự làng nghề; Làng nghề làm khô; Nghệ nhân đan lạt tre"
+    },
+    {
+      "id": "query-qa-42",
+      "query": "Du lịch Cà Mau; Đất Mũi Cà Mau; Điểm đến sinh thái miền Tây; Khám phá vườn chim"
+    },
+    {
+      "id": "query-qa-43",
+      "query": "Phóng sự; Nghề biển Cà Mau; Ngư dân Cà Mau; Xóm nhà sàn ven sông; Thu mua hải sản"
+    },
+    {
+      "id": "query-qa-44",
+      "query": "Phóng sự Du lịch sinh thái; Bà - Giám đốc Khu du lịch; Khu du lịch sinh thái rừng tràm; Du lịch miền Tây"
+    },
+    {
+      "id": "query-qa-45",
+      "query": "phóng sự nông nghiệp; mô hình kinh tế nông thôn; khởi nghiệp từ nấm; HTX nông nghiệp"
+    },
+    {
+      "id": "query-qa-46",
+      "query": "Gương người tốt việc tốt; Việc tử tế; Phóng sự nhân ái; Nhân vật nhân ái"
+    },
+    {
+      "id": "query-qa-47",
+      "query": "Phóng sự; Lớp học tình thương ngoài trời; Cô giáo lớp học vỉa hè; Dạy chữ miễn phí"
+    },
+    {
+      "id": "query-qa-48",
+      "query": "Phóng sự nông nghiệp; Gương nông dân làm giàu; TP.HCM; Mô hình nuôi cá; Khởi nghiệp từ nông nghiệp"
+    },
+    {
+      "id": "query-qa-49",
+      "query": "phóng sự; TP.HCM; chủ tiệm sách; cho mượn miễn phí; không phí không cọc không thế chấp; tuổi"
+    },
+    {
+      "id": "query-qa-50",
+      "query": "phóng sự; gương người tốt việc tốt; quỹ vì trẻ em; heo đất tiết kiệm; ủng hộ đồng bào miền Bắc"
+    },
+    {
+      "id": "query-trake-01",
+      "query": "Chương trình dạy nấu ăn; Gian bếp trắng; Hướng dẫn món canh; Đầu bếp; Món ngon mỗi ngày"
+    },
+    {
+      "id": "query-trake-02",
+      "query": "Vào bếp; Món ngon mỗi ngày; Hướng dẫn chế biến; Đầu bếp; Công thức món chiên"
+    },
+    {
+      "id": "query-trake-03",
+      "query": "hướng dẫn nấu ăn; món khai vị; kỹ thuật trang trí món ăn; công thức gỏi cá hồi"
+    },
+    {
+      "id": "query-trake-04",
+      "query": "phóng sự làng nghề truyền thống; nghệ nhân gốm; HTX gốm sứ; làng nghề Việt Nam"
+    },
+    {
+      "id": "query-trake-05",
+      "query": "Phóng sự: Làng nghề ven biển; Làng chài - Nghề truyền thống; Nghệ nhân làm khô cá; Đặc sản làng biển"
+    },
+    {
+      "id": "query-trake-06",
+      "query": "Phóng sự: Nghề thủ công mỹ nghệ; Nghệ nhân thủ công; Làng nghề truyền thống; Sản phẩm thủ công tại nhà"
+    },
+    {
+      "id": "query-trake-07",
+      "query": "dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến; đầu bếp; MC dẫn chương trình"
+    },
+    {
+      "id": "query-trake-08",
+      "query": "Liên hoan Múa lân Sư Rồng; Đêm Chung kết; Trực tiếp; Lễ hội Văn hóa Thể thao; Ban Tổ chức; Nhà thi đấu"
+    },
+    {
+      "id": "query-trake-09",
+      "query": "phóng sự quốc tế; lớp học an toàn dưới nước; kỹ năng sống; hướng dẫn sơ cấp cứu; thực hành CPR; cứu hộ đuối nước"
+    },
+    {
+      "id": "query-trake-10",
+      "query": "Bản tin thời sự; Tin hiện trường; Cứu hộ cứu nạn; Hiện trường sạt lở; Lực lượng vũ trang; UBND xã; Ban chỉ huy PCTT & TKCN"
+    },
+    {
+      "id": "query-trake-11",
+      "query": "Vào bếp cùng đầu bếp; Hướng dẫn nấu ăn; Công thức món xào; Nguyên liệu chế biến; Món ngon mỗi ngày"
+    },
+    {
+      "id": "query-trake-12",
+      "query": "Chương trình Dạy nấu ăn; Đầu bếp hướng dẫn; Món xào thập cẩm"
+    },
+    {
+      "id": "query-trake-13",
+      "query": "Chương trình dạy nấu ăn; Vào bếp; Đầu bếp; MC dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-14",
+      "query": "Chương trình dạy nấu ăn; Dạy nấu ăn - Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Công thức lẩu vịt khoai môn; Nguyên liệu & Cách chế biến"
+    },
+    {
+      "id": "query-trake-15",
+      "query": "chương trình dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến mực hấp; đầu bếp; kỹ thuật hấp cách thủy"
+    },
+    {
+      "id": "query-trake-16",
+      "query": "Chương trình dạy nấu ăn; Đầu bếp; Người dẫn chương trình - MC; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-17",
+      "query": "Hướng dẫn nấu ăn; Công thức mì căn chiên; Món chay; Dạy nấu món chay"
+    },
+    {
+      "id": "query-trake-18",
+      "query": "Dạy nấu ăn; Món ngon mỗi ngày; Công thức chế biến; Đầu bếp; MC dẫn chương trình; Hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-trake-19",
+      "query": "Vào bếp; Món ngon mỗi ngày; Công thức chế biến; Hướng dẫn nấu ăn; Bí quyết của đầu bếp"
+    },
+    {
+      "id": "query-trake-20",
+      "query": "chương trình dạy nấu ăn; hướng dẫn nấu lẩu; món lẩu thái; đầu bếp; dạy nấu ăn"
+    },
+    {
+      "id": "query-trake-21",
+      "query": "Chương trình dạy nấu ăn; Món ngon mỗi ngày; Công thức súp tôm; Đầu bếp; MC dẫn chương trình; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-22",
+      "query": "Chương trình dạy nấu ăn; Đầu bếp hướng dẫn; Món tôm nấu chua cay; Công thức chế biến; Nguyên liệu - Cách làm"
+    },
+    {
+      "id": "query-trake-23",
+      "query": "Đầu bếp; MC dẫn chương trình; Vào bếp cùng chuyên gia; Công thức nước xốt; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-24",
+      "query": "Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Nguyên liệu: măng, đậu hũ; Hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-trake-25",
+      "query": "dạy nấu ăn; vào bếp cùng đầu bếp; đầu bếp; MC; người dẫn chương trình; món ngon mỗi ngày; hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-26",
+      "query": "Phóng sự làng nghề; Đặc sản miền Tây; Nghề truyền thống; HTX khô cá đồng"
+    },
+    {
+      "id": "query-trake-27",
+      "query": "phóng sự ẩm thực; đặc sản măng; món ngon từ măng; ẩm thực làng quê; chế biến măng tươi"
+    },
+    {
+      "id": "query-trake-28",
+      "query": "phóng sự; nghệ nhân trẻ; làng nghề gốm; khởi nghiệp gốm thủ công; chuyện nghề"
+    },
+    {
+      "id": "query-trake-29",
+      "query": "Phóng sự miền Tây; Chuyện nhà nông; Vựa khóm miền Tây; Nông nghiệp nông thôn; Đặc sản miền Tây"
+    },
+    {
+      "id": "query-trake-30",
+      "query": "phóng sự ẩm thực; món ngon dân dã; ẩm thực miền Tây; đặc sản miền quê"
+    },
+    {
+      "id": "query-trake-31",
+      "query": "Giải Lân Sư Rồng; Nhà Thi Đấu; Ban Giám Khảo; Trọng Tài; Bảng Điểm; Trực Tiếp"
+    },
+    {
+      "id": "query-trake-32",
+      "query": "liên hoan lân sư rồng; đêm thi chung kết; ban tổ chức; nhà thi đấu; trực tiếp"
+    },
+    {
+      "id": "query-trake-33",
+      "query": "phóng sự sức khỏe đời sống; lương y cao tuổi; đông y gia truyền; nghề thuốc nam"
+    },
+    {
+      "id": "query-trake-34",
+      "query": "Phóng sự: Khởi nghiệp xanh; Sản phẩm tái chế; Mô hình kinh tế tuần hoàn; Người thợ tái chế"
+    },
+    {
+      "id": "query-trake-35",
+      "query": "phóng sự; nghề truyền thống; mưu sinh sông nước; làng nghề miền Tây"
+    },
+    {
+      "id": "query-trake-36",
+      "query": "Chương trình dạy nấu ăn; Đầu bếp; MC dẫn chương trình; Món lẩu cá cà chua; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-37",
+      "query": "Vào bếp cùng đầu bếp; MC dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn nấu ăn; Đầu bếp áo trắng"
+    },
+    {
+      "id": "query-trake-38",
+      "query": "Chương trình dạy nấu ăn; Đầu bếp; MC dẫn chương trình; Món lẩu Thái cá dứa; Hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-trake-39",
+      "query": "Dạy nấu ăn; Vào bếp cùng đầu bếp; Đầu bếp; MC - Người dẫn chương trình; Món ngon mỗi ngày; Hướng dẫn chế biến"
+    },
+    {
+      "id": "query-trake-40",
+      "query": "chương trình dạy nấu ăn; món lẩu thái; đầu bếp; MC dẫn chương trình; hướng dẫn chế biến; nguyên liệu và gia vị"
+    },
+    {
+      "id": "query-trake-41",
+      "query": "dạy nấu ăn; đầu bếp; MC dẫn chương trình; món cá hồi nướng; công thức nước chấm; hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-trake-42",
+      "query": "Trực tiếp; Tường thuật chặng đua; Bảng thông tin chặng đua; Cúp Truyền Hình; HTV Thể Thao; Km còn lại"
+    },
+    {
+      "id": "query-trake-43",
+      "query": "Đêm Chung Kết Lân Sư Rồng; Biểu diễn Rồng Vàng; Ban Giám Khảo; Cho điểm; Liên đoàn Lân Sư Rồng Việt Nam"
+    },
+    {
+      "id": "query-trake-44",
+      "query": "Công an kiểm tra kho xưởng; Triệt phá xưởng thuốc giả; Bản tin Thời sự; Tang vật thu giữ; Xưởng sản xuất trái phép"
+    },
+    {
+      "id": "query-trake-45",
+      "query": "An ninh trật tự; Bản tin 113; Công an; Hiện trường vụ việc; Thu giữ tang vật"
+    },
+    {
+      "id": "query-trake-46",
+      "query": "Dạy nấu ăn; Vào bếp cùng đầu bếp; Món ngon mỗi ngày; Sơ chế nguyên liệu; Đầu bếp; Hướng dẫn nấu ăn"
+    },
+    {
+      "id": "query-trake-47",
+      "query": "đầu bếp; MC dẫn chương trình; dạy nấu ăn; món ngon mỗi ngày; hướng dẫn chế biến lẩu thái"
+    },
+    {
+      "id": "query-trake-48",
+      "query": "Chương trình Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC - Người dẫn chương trình; Công thức: Gà hấp hành răm; Sơ chế nguyên liệu; Bếp gia đình"
+    },
+    {
+      "id": "query-trake-49",
+      "query": "Dạy nấu ăn; Món ngon mỗi ngày; Đầu bếp; MC dẫn chương trình; Hướng dẫn ướp thịt; Gian bếp Việt"
+    },
+    {
+      "id": "query-trake-50",
+      "query": "bản tin thể thao; đua thuyền buồm; chặng đua; bảng chặng đua; tốc độ; trực tiếp"
+    }
+  ]
+}

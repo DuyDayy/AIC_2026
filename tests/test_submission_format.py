@@ -20,10 +20,22 @@ from pathlib import Path
 import pytest
 
 from src.submission.writer import (
-    MAX_ANSWER_CHARS, SUBMISSION_DIRNAME, SubmissionError, TaskSubmission,
+    FIELD_SEP, MAX_ANSWER_CHARS, QUOTE_ANSWER, SUBMISSION_DIRNAME,
+    SubmissionError,
+    TaskSubmission,
     clean_answer, format_task_csv, pack_submission_zip, parse_task_csv,
     task_type_from_filename, write_task_csv,
 )
+
+
+def _d(*cot: object) -> str:
+    """Một dòng CSV dựng theo `FIELD_SEP` đang cấu hình.
+
+    Cố ý KHÔNG mã cứng dấu phẩy trần: dấu phân cách là LỰA CHỌN của đội, vì thể lệ tự
+    mâu thuẫn — mục Format viết `L00_V000, 1234`, mục "CSV chuẩn" viết `L00_V000,1234`.
+    Bám hằng số thì test vẫn kiểm đúng thứ cần kiểm khi lựa chọn đó đổi.
+    """
+    return FIELD_SEP.join(str(c) for c in cot)
 
 
 def _kis(*rows):
@@ -62,14 +74,14 @@ def test_hau_to_la_lay_theo_DUOI_chu_khong_phai_tim_chuoi():
 
 def test_kis_hai_cot_khong_khoang_trang_khong_header():
     text, _ = format_task_csv(_kis(("L00_V000", 1234), ("L01_V028", 25300)))
-    assert text == "L00_V000,1234\nL01_V028,25300\n"
+    assert text == _d("L00_V000", 1234) + "\n" + _d("L01_V028", 25300) + "\n"
 
 
 def test_trake_dung_N_cot_theo_so_su_kien():
     sub = TaskSubmission("query-4-trake", "trake",
                          (("L10_V001", (1200, 1850, 2100, 2450), None),), n_moments=4)
     text, _ = format_task_csv(sub)
-    assert text == "L10_V001,1200,1850,2100,2450\n"
+    assert text == _d("L10_V001", 1200, 1850, 2100, 2450) + "\n"
 
 
 def test_trake_lech_so_moc_thi_NO_chu_khong_ghi_ra():
@@ -85,36 +97,71 @@ def test_trake_lech_so_moc_thi_NO_chu_khong_ghi_ra():
 # ============================================================
 
 
-def test_dap_an_co_dau_phay_PHAI_duoc_boc_ngoac_kep():
-    text, _ = format_task_csv(_qa("Có 3 người, bao gồm nam và nữ"))
-    assert text == 'L01_V028,3450,"Có 3 người, bao gồm nam và nữ"\n'
-    # và đọc ngược ra ĐÚNG BA cột — đây mới là điều thật sự quan trọng
-    assert parse_task_csv(text, "qa", 1) == [
-        ["L01_V028", "3450", "Có 3 người, bao gồm nam và nữ"]]
+def test_dap_an_di_KHU_HOI_khong_mat_mot_ky_tu_nao():
+    """Bất biến mạnh nhất của cột đáp án: ghi ra rồi đọc lại phải RA ĐÚNG bản gốc.
+
+    🔴 Ca `hơn 14,5 tỷ đồng` là ca ĐÃ TỪNG HỎNG: tiếng Việt dùng dấu PHẨY làm dấu
+    thập phân, và một phép "bỏ dấu phẩy cho an toàn" đã biến nó thành
+    `hơn 14 -5 tỷ đồng`. Thể lệ so khớp đáp án theo NGỮ NGHĨA nên câu đó mất trắng —
+    mà đây đúng là dạng đáp án bộ đề hay hỏi.
+
+    Ca ngoặc kép lồng đòi nhân đôi theo RFC4180, đúng như ví dụ trong thể lệ.
+    """
+    for goc in ("5", "Năm người", "Màu đỏ",
+                "hơn 14,5 tỷ đồng",
+                "Có 3 người, bao gồm nam và nữ",
+                'Anh ấy nói "Xin chào"'):
+        t, _ = format_task_csv(_qa(goc))
+        r = parse_task_csv(t, "qa", 1)
+        assert len(r) == 1 and len(r[0]) == 3, (goc, t)
+        assert r[0][2] == goc, (goc, r[0][2])
 
 
-def test_noi_chuoi_bang_dau_phay_lam_HONG_dong_that():
-    """Chứng minh vì sao phải dùng `csv.writer`: bản nối tay tách ra BỐN cột."""
-    tho = "L01_V028,3450," + "Có 3 người, bao gồm nam và nữ"
-    assert len(next(csv.reader(io.StringIO(tho)))) == 4      # sai
-    text, _ = format_task_csv(_qa("Có 3 người, bao gồm nam và nữ"))
-    assert len(next(csv.reader(io.StringIO(text)))) == 3     # đúng
+def test_dong_LUON_tach_dung_so_cot_du_dap_an_co_gi():
+    """Bất biến thật sự cần: bộ chấm đọc ra ĐÚNG 3 cột, bất kể đáp án chứa gì.
+
+    Với `FIELD_SEP = ", "` thì ngoặc kép MẤT HIỆU LỰC — `a, "x, y"` bị bộ đọc CSV coi
+    ngoặc là ký tự thường và tách theo dấu phẩy bên trong đáp án, ra 4 cột. Nên ở dạng
+    có dấu cách, `clean_answer` phải bỏ dấu phẩy/ngoặc kép khỏi đáp án. Test này chốt
+    kết quả CUỐI (số cột) chứ không chốt cách làm, nên nó đúng với cả hai dạng.
+    """
+    for ans in ("Năm người", "Có 3 người, bao gồm nam và nữ",
+                'Anh ấy nói "Xin chào"', "Dòng 1\nDòng 2"):
+        text, _ = format_task_csv(_qa(ans))
+        rows = list(csv.reader(io.StringIO(text), skipinitialspace=True))
+        assert len(rows) == 1 and len(rows[0]) == 3, (ans, rows)
 
 
-def test_dap_an_co_ngoac_kep_duoc_escape_bang_ngoac_kep_doi():
+def test_dap_an_co_ngoac_kep_van_ra_dung_3_cot():
+    """Ngoặc kép trong đáp án không được làm hỏng dòng.
+
+    Ở `FIELD_SEP = ","` nó được escape bằng ngoặc kép đôi (đúng thể lệ). Ở dạng có dấu
+    cách thì escape KHÔNG dùng được, nên `clean_answer` đổi `"` → `'`. Hai đường khác
+    nhau, cùng một bất biến: bộ chấm đọc ra đúng 3 cột và đáp án không nuốt cột khác.
+    """
     text, _ = format_task_csv(_qa('Anh ấy nói "Xin chào"'))
-    assert text == 'L01_V028,3450,"Anh ấy nói ""Xin chào"""\n'
-    assert parse_task_csv(text, "qa", 1)[0][2] == 'Anh ấy nói "Xin chào"'
+    r = parse_task_csv(text, "qa", 1)
+    assert len(r) == 1 and len(r[0]) == 3
+    assert "Xin chào" in r[0][2]
 
 
-def test_dap_an_don_gian_KHONG_bi_boc_ngoac_kep():
-    """Thể lệ: ngoặc kép chỉ BẮT BUỘC khi có ký tự đặc biệt. Cả hai cách đều hợp lệ."""
-    assert format_task_csv(_qa("Năm người"))[0] == "L01_V028,3450,Năm người\n"
+def test_dap_an_luon_boc_ngoac_kep_dung_nhu_vi_du_cua_BTC():
+    """Thể lệ mục 2 viết `L01_V028, 3450, "5"` — có dấu cách VÀ có ngoặc kép.
+
+    Mục "An toàn nhất" của thể lệ nói thẳng: "có thể luôn đặt dấu ngoặc kép cho tất cả
+    answer. Cả hai cách đều được hệ thống chấp nhận." Ta chọn luôn bọc.
+    """
+    t = format_task_csv(_qa("Năm người"))[0]
+    assert t == _d("L01_V028", 3450, '"Năm người"') + "\n" if QUOTE_ANSWER \
+        else t == _d("L01_V028", 3450, "Năm người") + "\n"
+    # và đọc ngược phải ra đáp án SẠCH, không dính ngoặc
+    assert parse_task_csv(t, "qa", 1)[0][2] == "Năm người"
 
 
-# ============================================================
-# Q&A: chuẩn hoá đáp án
-# ============================================================
+def test_cot_video_va_frame_KHONG_bi_boc_ngoac_kep():
+    """Chỉ cột đáp án được bọc. `frame_id` "so sánh dưới dạng số nguyên"."""
+    t = format_task_csv(_kis(("L00_V000", 1234)))[0]
+    assert '"' not in t
 
 
 def test_bo_khoang_trang_dau_cuoi_vi_bo_cham_KHONG_tu_trim():
@@ -150,7 +197,7 @@ def test_ten_video_con_duoi_mp4_thi_NO():
 
 def test_frame_id_luon_la_so_nguyen_thuan():
     text, _ = format_task_csv(_kis(("L01_V028", 25300)))
-    assert "25300" in text and " 25300" not in text
+    assert next(csv.reader(io.StringIO(text), skipinitialspace=True))[1] == "25300"
     with pytest.raises(SubmissionError, match="số nguyên"):
         parse_task_csv("L01_V028,25 300\n", "kis", 1)
 
@@ -170,7 +217,8 @@ def test_ten_file_khop_ten_truy_van_va_ma_hoa_utf8_khong_BOM(tmp_path):
     assert p.name == "query-3-qa.csv"
     raw = p.read_bytes()
     assert not raw.startswith(b"\xef\xbb\xbf")          # BOM làm hỏng cột đầu
-    assert raw.decode("utf-8") == "L01_V028,3450,Màu đỏ\n"
+    mong = f'"Màu đỏ"' if QUOTE_ANSWER else "Màu đỏ"
+    assert raw.decode("utf-8") == _d("L01_V028", 3450, mong) + "\n"
 
 
 def test_vuot_100_dong_thi_NO(tmp_path):
@@ -255,7 +303,7 @@ def test_delta_khac_0_thi_duoc_CONG_vao_moi_frame_id(tmp_path):
     d = _calib(tmp_path, 7)
     p, _ = write_task_csv(_kis(("L00_V000", 100), ("L00_V001", 200)),
                           tmp_path / "out", calibration_dir=d)
-    assert p.read_text(encoding="utf-8") == "L00_V000,107\nL00_V001,207\n"
+    assert p.read_text(encoding="utf-8") == _d("L00_V000",107)+"\n"+_d("L00_V001",207)+"\n"
 
 
 def test_delta_ap_cho_MOI_moc_cua_TRAKE(tmp_path):
@@ -263,7 +311,7 @@ def test_delta_ap_cho_MOI_moc_cua_TRAKE(tmp_path):
     sub = TaskSubmission("query-4-trake", "trake",
                          (("L10_V001", (10, 20, 30), None),), n_moments=3)
     p, _ = write_task_csv(sub, tmp_path / "out", calibration_dir=d)
-    assert p.read_text(encoding="utf-8") == "L10_V001,7,17,27\n"
+    assert p.read_text(encoding="utf-8") == _d("L10_V001",7,17,27) + "\n"
 
 
 def test_thieu_hieu_chinh_thi_NEM_chu_khong_ghi_bua(tmp_path):
@@ -276,4 +324,4 @@ def test_thieu_hieu_chinh_thi_NEM_chu_khong_ghi_bua(tmp_path):
 def test_delta_0_thi_khong_doi_gi(tmp_path):
     d = _calib(tmp_path, 0)
     p, _ = write_task_csv(_kis(("L00_V000", 1234)), tmp_path / "out", calibration_dir=d)
-    assert p.read_text(encoding="utf-8") == "L00_V000,1234\n"
+    assert p.read_text(encoding="utf-8") == _d("L00_V000",1234) + "\n"

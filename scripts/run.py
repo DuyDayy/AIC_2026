@@ -341,6 +341,14 @@ image = (
     .env({"HF_HOME": "/cache", "TOKENIZERS_PARALLELISM": "false"})
 )
 MODEL = "jinaai/jina-clip-v2"
+#: GHIM REVISION. `from_pretrained` không ghim sẽ kéo bản MỚI NHẤT trên HuggingFace —
+#: đã quan sát: nó tự tải bản mã remote mới ngay lần gọi đầu ở một script khác. Vector
+#: KHUNG mã hoá bằng cặp sha này (`artifacts/embed/embed/manifest.json`, và
+#: `PipelineConfig` của frame_extracting dùng đúng cặp đó). Truy vấn mã hoá bằng bản
+#: khác thì hai bên nằm ở hai không gian hơi lệch — cosine vẫn ra số, thứ hạng vẫn sắp
+#: được, và KHÔNG có gì báo.
+MODEL_SHA = "e10d47f5691d0454a0fb5d13f46f2199b74cb436"
+CODE_SHA = "39e6a55ae971b59bea6e44675d237c99762e7ee2"
 
 # Qwen2.5-VL cần transformers ≥ 4.49; jina-clip-v2 lại chốt ở 4.48. Hai image riêng
 # thay vì ép chung một phiên bản — ép chung là cách nhanh nhất để hỏng cả hai.
@@ -358,7 +366,9 @@ def encode_text(texts: list[str]) -> list[list[float]]:
     import torch
     from transformers import AutoModel
 
-    m = AutoModel.from_pretrained(MODEL, trust_remote_code=True).to("cuda").eval()
+    m = AutoModel.from_pretrained(MODEL, trust_remote_code=True,
+                                  revision=MODEL_SHA,
+                                  code_revision=CODE_SHA).to("cuda").eval()
     with torch.inference_mode():
         v = np.asarray(m.encode_text(texts, batch_size=16), dtype=np.float32)
     v /= np.maximum(np.linalg.norm(v, axis=1, keepdims=True), 1e-12)
@@ -376,7 +386,9 @@ def encode_crops(blobs: list[str]) -> list[list[float]]:
     from PIL import Image
     from transformers import AutoModel
 
-    m = AutoModel.from_pretrained(MODEL, trust_remote_code=True).to("cuda").eval()
+    m = AutoModel.from_pretrained(MODEL, trust_remote_code=True,
+                                  revision=MODEL_SHA,
+                                  code_revision=CODE_SHA).to("cuda").eval()
     ims = [Image.open(_io.BytesIO(b64.b64decode(b))).convert("RGB") for b in blobs]
     with torch.inference_mode():
         v = np.asarray(m.encode_image(ims, batch_size=32), dtype=np.float32)
